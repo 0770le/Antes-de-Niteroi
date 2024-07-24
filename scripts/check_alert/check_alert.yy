@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"check_alert",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_alert",
+  "parent":{
+    "name":"Parent",
+    "path":"folders/Scripts/Enemy/Parent.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

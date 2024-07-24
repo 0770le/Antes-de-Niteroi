@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"armadeira_anim",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"armadeira_anim",
+  "parent":{
+    "name":"Armadeira",
+    "path":"folders/Scripts/Enemy/Armadeira.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

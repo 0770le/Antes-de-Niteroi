@@ -1,0 +1,4 @@
+image_alpha -= fade;
+
+
+

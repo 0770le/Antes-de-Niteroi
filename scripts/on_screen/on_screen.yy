@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"on_screen",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"on_screen",
+  "parent":{
+    "name":"Objects",
+    "path":"folders/Scripts/Objects.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

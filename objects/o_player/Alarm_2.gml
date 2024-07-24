@@ -1,0 +1,3 @@
+/// @desc HURT
+hurt = false;
+

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"armadeira_idle_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"armadeira_idle_state",
+  "parent":{
+    "name":"Armadeira",
+    "path":"folders/Scripts/Enemy/Armadeira.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"evade_dust",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"evade_dust",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Scripts/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

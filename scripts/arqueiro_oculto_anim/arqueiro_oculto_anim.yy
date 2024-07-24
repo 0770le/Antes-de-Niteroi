@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"arqueiro_oculto_anim",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"arqueiro_oculto_anim",
+  "parent":{
+    "name":"Arqueiro_oculto",
+    "path":"folders/Scripts/Enemy/Arqueiro_oculto.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

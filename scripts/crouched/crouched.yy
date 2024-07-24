@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"crouched",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"crouched",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Scripts/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

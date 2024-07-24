@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"macros",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"macros",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Scripts/Game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

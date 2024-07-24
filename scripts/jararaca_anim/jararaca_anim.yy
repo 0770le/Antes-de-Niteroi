@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"jararaca_anim",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"jararaca_anim",
+  "parent":{
+    "name":"Jararaca",
+    "path":"folders/Scripts/Enemy/Jararaca.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"intern_idle_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"intern_idle_state",
+  "parent":{
+    "name":"Intern",
+    "path":"folders/Scripts/Enemy/Intern.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

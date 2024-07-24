@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"frog_idle_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"frog_idle_state",
+  "parent":{
+    "name":"Frog",
+    "path":"folders/Scripts/Enemy/Curso/Frog.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

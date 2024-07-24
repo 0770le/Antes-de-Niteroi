@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"bug_chase_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bug_chase_state",
+  "parent":{
+    "name":"Bug",
+    "path":"folders/Scripts/Enemy/Curso/Bug.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

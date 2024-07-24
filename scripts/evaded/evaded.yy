@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"evaded",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"evaded",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Scripts/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

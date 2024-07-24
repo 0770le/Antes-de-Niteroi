@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"calc_entity_movement",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"calc_entity_movement",
+  "parent":{
+    "name":"Objects",
+    "path":"folders/Scripts/Objects.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,4 @@
+Poder se mover pros lados esta em calc_movement
+Quando eu quero que o player não interrompa um movimento mas ainda receba input eu uso 
+o calc_entity_movement, que é a 'fisica' para objetos e inimigos
+

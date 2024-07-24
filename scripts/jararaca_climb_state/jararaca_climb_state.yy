@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"jararaca_climb_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"jararaca_climb_state",
+  "parent":{
+    "name":"Jararaca",
+    "path":"folders/Scripts/Enemy/Jararaca.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

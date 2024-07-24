@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"line_of_sight",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"line_of_sight",
+  "parent":{
+    "name":"Parent",
+    "path":"folders/Scripts/Enemy/Parent.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

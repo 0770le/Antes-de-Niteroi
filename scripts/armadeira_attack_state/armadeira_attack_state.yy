@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"armadeira_attack_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"armadeira_attack_state",
+  "parent":{
+    "name":"Armadeira",
+    "path":"folders/Scripts/Enemy/Armadeira.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

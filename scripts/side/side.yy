@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"side",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"side",
+  "parent":{
+    "name":"Objects",
+    "path":"folders/Scripts/Objects.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

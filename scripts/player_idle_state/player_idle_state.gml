@@ -15,6 +15,10 @@ function player_idle_state(){
 		image_index =0;
 	}
 	
+	if( !on_ground()) {
+		state = states.JUMP;
+	}
+	
 	if jump {
 		jumped();
 	}

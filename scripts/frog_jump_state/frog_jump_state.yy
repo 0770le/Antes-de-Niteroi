@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"frog_jump_state",
   "isCompatibility":false,
   "isDnD":false,

@@ -6,7 +6,7 @@ function player_shoot_state(){//o tempo pra dar o tiro é o tempo do sprite
 		calc_movement();
 		
 	// sprite do tiro
-	if (image_index == 4) and can_fire {
+	if (image_index == 6) and can_fire {
 		can_fire=false;
 		alarm[SHOOTING] = fire_delay;
 		//tem flecha
@@ -14,6 +14,11 @@ function player_shoot_state(){//o tempo pra dar o tiro é o tempo do sprite
 			//Shoot Arrow	
 			//set spawn pos (lado facing e altura)
 			var ypos = ((sprite_get_height(sprite_index) /2) -2) * spawn_pos;
+			ypos = -23;
+			
+			if down {
+				ypos = -15;	
+			}
 		
 			//create arrow
 			var inst =0;
@@ -39,7 +44,12 @@ function player_shoot_state(){//o tempo pra dar o tiro é o tempo do sprite
 			//sound fail
 			audio_play_sound(snd_arrow_firing,10, false);
 		}	
-	}	
+	}
+	
+	if(image_index >= 9 and image_index < 11 and shoot) {
+		image_index = 2;
+		can_fire = true;
+	}
 
 	//check state
 

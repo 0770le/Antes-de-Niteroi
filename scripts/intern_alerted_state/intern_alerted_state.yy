@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"intern_alerted_state",
   "isCompatibility":false,
   "isDnD":false,

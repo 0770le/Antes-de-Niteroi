@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"player_knockback_state",
   "isCompatibility":false,
   "isDnD":false,

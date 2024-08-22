@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"process_enemy_attack",
   "isCompatibility":false,
   "isDnD":false,

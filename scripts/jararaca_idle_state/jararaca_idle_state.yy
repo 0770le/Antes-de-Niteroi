@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"jararaca_idle_state",
   "isCompatibility":false,
   "isDnD":false,

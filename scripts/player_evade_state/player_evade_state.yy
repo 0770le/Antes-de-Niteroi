@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"player_evade_state",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"line_of_sight02",
   "isCompatibility":false,
   "isDnD":false,

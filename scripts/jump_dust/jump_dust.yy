@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"jump_dust",
   "isCompatibility":false,
   "isDnD":false,

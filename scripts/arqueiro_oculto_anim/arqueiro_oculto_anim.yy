@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"arqueiro_oculto_anim",
   "isCompatibility":false,
   "isDnD":false,

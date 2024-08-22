@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"armadeira_walk_state",
   "isCompatibility":false,
   "isDnD":false,

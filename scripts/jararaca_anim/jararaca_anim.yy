@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"jararaca_anim",
   "isCompatibility":false,
   "isDnD":false,

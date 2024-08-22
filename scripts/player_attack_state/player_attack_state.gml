@@ -112,7 +112,7 @@ function player_attack_state(){
 			
 		case attacks.STRIKE: //
 			//create hitbox
-			if image_index >= 1 and image_index <= 3 {
+			if image_index >= 3 and image_index <= 4 {
 				var inst= instance_create_layer(x,y, "Player", o_player_attack_hitbox);
 				inst.image_xscale = facing;
 				//sound 
@@ -124,9 +124,9 @@ function player_attack_state(){
 		
 		case attacks.BLOW:// 8 para 9 acerta o chao
 				//create hitbox
-			if image_index >= 1 and image_index <= 3 {
+			if image_index >=3 and image_index < 4 {
 				var inst= instance_create_layer(x,y, "Player", o_player_attack_hitbox);
-				inst.image_xscale = facing;
+				inst.image_xscale = facing*1.8;
 				//sound 
 				if (image_index == 1) {
 					audio_play_sound(snd_sword_swing, 20, false);

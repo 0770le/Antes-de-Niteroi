@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"arqueiro_oculto_hide_state",
   "isCompatibility":false,
   "isDnD":false,

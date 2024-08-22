@@ -58,7 +58,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"Antes de Niteroi 03",
   "resources":[
@@ -269,6 +269,8 @@
     {"id":{"name":"s_player_hanging","path":"sprites/s_player_hanging/s_player_hanging.yy",},},
     {"id":{"name":"s_player_hide_1","path":"sprites/s_player_hide_1/s_player_hide_1.yy",},},
     {"id":{"name":"s_player_hide","path":"sprites/s_player_hide/s_player_hide.yy",},},
+    {"id":{"name":"s_player_hitbox_crouch","path":"sprites/s_player_hitbox_crouch/s_player_hitbox_crouch.yy",},},
+    {"id":{"name":"s_player_hitbox","path":"sprites/s_player_hitbox/s_player_hitbox.yy",},},
     {"id":{"name":"s_player_hurting_1","path":"sprites/s_player_hurting_1/s_player_hurting_1.yy",},},
     {"id":{"name":"s_player_hurting","path":"sprites/s_player_hurting/s_player_hurting.yy",},},
     {"id":{"name":"s_player_idle_1","path":"sprites/s_player_idle_1/s_player_idle_1.yy",},},
@@ -281,7 +283,6 @@
     {"id":{"name":"s_player_walk_1","path":"sprites/s_player_walk_1/s_player_walk_1.yy",},},
     {"id":{"name":"s_player_walk","path":"sprites/s_player_walk/s_player_walk.yy",},},
     {"id":{"name":"s_player_walljump_1","path":"sprites/s_player_walljump_1/s_player_walljump_1.yy",},},
-    {"id":{"name":"s_player_walljump","path":"sprites/s_player_walljump/s_player_walljump.yy",},},
     {"id":{"name":"s_score","path":"sprites/s_score/s_score.yy",},},
     {"id":{"name":"s_sword_hit","path":"sprites/s_sword_hit/s_sword_hit.yy",},},
     {"id":{"name":"s_sword_hit2","path":"sprites/s_sword_hit2/s_sword_hit2.yy",},},
@@ -291,6 +292,7 @@
     {"id":{"name":"s_transition","path":"sprites/s_transition/s_transition.yy",},},
     {"id":{"name":"s_trigger_text","path":"sprites/s_trigger_text/s_trigger_text.yy",},},
     {"id":{"name":"s_trigger","path":"sprites/s_trigger/s_trigger.yy",},},
+    {"id":{"name":"Sprite91","path":"sprites/Sprite91/Sprite91.yy",},},
     {"id":{"name":"t_collisions_1","path":"tilesets/t_collisions_1/t_collisions_1.yy",},},
     {"id":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},},
   ],

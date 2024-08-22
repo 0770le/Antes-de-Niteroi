@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"calc_entity_movement",
   "isCompatibility":false,
   "isDnD":false,

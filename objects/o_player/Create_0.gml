@@ -53,7 +53,7 @@ vine_ball = vine_ball_initial;
 //attack
 dmg = 0;
 can_attack = true;
-attack_delay = 0.2 * room_speed;
+attack_delay = 1 * room_speed;
 	//how long enemies get knocked back for when hit
 knockback_time = room_speed /2;
 knockback_dis = 1.5;
@@ -168,16 +168,16 @@ sprites_array[states.GAME_END]		 = s_player_die;
 
 //create mask array
 
-mask_array[states.IDLE]				= s_player_idle; 
-mask_array[states.WALK]				= s_player_idle; 
-mask_array[states.JUMP]				= s_player_idle; 
-mask_array[states.ATTACK]			= s_player_idle; 
-mask_array[states.EVADE]			= s_player_idle; 
-mask_array[states.HIDE]				= s_player_crouch;
-mask_array[states.CROUCH]			= s_player_crouch;
-mask_array[states.SHOOT]			= s_player_idle;
-mask_array[states.HURTING]			= s_player_idle;
-mask_array[states.HANGING]			= s_player_idle;
+mask_array[states.IDLE]				= s_player_hitbox; 
+mask_array[states.WALK]				= s_player_hitbox; 
+mask_array[states.JUMP]				= s_player_hitbox; 
+mask_array[states.ATTACK]			= s_player_hitbox; 
+mask_array[states.EVADE]			= s_player_hitbox; 
+mask_array[states.HIDE]				= s_player_hitbox_crouch;
+mask_array[states.CROUCH]			= s_player_hitbox_crouch;
+mask_array[states.SHOOT]			= s_player_hitbox;
+mask_array[states.HURTING]			= s_player_hitbox;
+mask_array[states.HANGING]			= s_player_hitbox;
 mask_array[states.DIE]				= s_player_die;
 mask_array[states.GAME_END]			= s_player_die;
 

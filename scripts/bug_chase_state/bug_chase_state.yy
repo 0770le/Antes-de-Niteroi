@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"bug_chase_state",
   "isCompatibility":false,
   "isDnD":false,

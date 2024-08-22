@@ -45,21 +45,23 @@ function collision() {
 		vertical_side = bbox_top;
 	}
 	
-	//check left and right of side
+	//check left and right of bottom side
 	var vt1 = tilemap_get_at_pixel(global.map,bbox_left, vertical_side + vsp);
 	var vt2 = tilemap_get_at_pixel(global.map,bbox_right, vertical_side + vsp);
 	
-	var vt3 = tilemap_get_at_pixel(global.map, bbox_left, bbox_bottom);
-	var vt4 = tilemap_get_at_pixel(global.map, bbox_right, bbox_bottom);
+	var vt3 = tilemap_get_at_pixel(global.map, bbox_left, vertical_side);
+	var vt4 = tilemap_get_at_pixel(global.map, bbox_right, vertical_side);
 
 	if (vt1 != VOID and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and t3 == PLATAFORM)) or
 	   (vt2 != VOID and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and t4 == PLATAFORM)) {
 	
 		//collision found
 		if (vsp > 0) {
+			//y = bbox_bottom - (bbox_bottom mod global.tile_size) + global.tile_size - 1 - (vertical_side - bbox_bottom);
 			y = y - (y mod global.tile_size) + global.tile_size - 1 - (vertical_side - y);
 		} else { 
-			y = y - (y mod global.tile_size) - (vertical_side - y);
+			var y1 = bbox_top - (bbox_top mod global.tile_size);
+			y = y1 + (bbox_bottom - bbox_top);
 		}
 		vsp = 0;
 		//death tile check
@@ -67,6 +69,7 @@ function collision() {
 			hp = 0;
 		}
 	}
+	
 	y+= vsp;
 	
 }

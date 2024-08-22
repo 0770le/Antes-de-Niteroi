@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"armadeira_chase_state",
   "isCompatibility":false,
   "isDnD":false,

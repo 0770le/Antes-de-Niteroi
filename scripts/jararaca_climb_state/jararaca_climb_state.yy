@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"jararaca_climb_state",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"bug_patrol_state",
   "isCompatibility":false,
   "isDnD":false,

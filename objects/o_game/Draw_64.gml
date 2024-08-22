@@ -48,6 +48,9 @@ if (room != rm_menu) {
 				draw_sprite(s_lives, 0, xx + i * gap,yy)
 			}
 		}
+		//draw bow ammo
+		draw_text(48,62, o_player.arrows);	
+			
 		#endregion
 
 		//score

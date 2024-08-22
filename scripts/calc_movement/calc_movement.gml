@@ -12,8 +12,7 @@ function calc_movement(){
 	}
 	
 	////face horiz movement direction
-		//unless is evading, hurting or walljumping
-	if ((hsp != 0) ){ //and (state != states.EVADE or hurt)) {
+	if (hsp != 0 ){ 
 	 	facing= sign(hsp);
 	}
 	

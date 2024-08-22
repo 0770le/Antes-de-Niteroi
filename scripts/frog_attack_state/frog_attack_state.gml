@@ -11,7 +11,7 @@ function frog_attack_state(){
 	//attack warning
 	if ((image_index == 2) and (!inhale)) {
 		inhale = true;
-		alarm[PRE_ATTACK] =inhale_timer;
+		alarm[ATTACKING] =inhale_timer; // inhale_timer é o meu attack_delay e attack_delay é o meu CD 
 		image_speed = 0;
 	}
 	
@@ -27,10 +27,10 @@ function frog_attack_state(){
 			}
 		}
 		
-		//set tongue depth
+		//set tongue depth, coloca o inimigo na frente do player
 		depth = layer_get_depth(layer_get_id("Player")) -1;
 	
-		if ((image_index) >= (image_number - image_speed)) {
+		if ((image_index) >= (image_number - sprite_get_speed(sprite_index)/room_speed)) {
 			state = frog_states.IDLE;
 			alarm[CAN_ATTACK] = attack_delay;
 			depth = layer_get_depth(layer_get_id("Enemy"));

@@ -11,7 +11,7 @@ function player_idle_state(){
 	if hsp != 0 state = states.WALK;
 
 	if attack{
-		state =states.ATTACK;
+		state = states.ATTACK;
 		image_index =0;
 	}
 	

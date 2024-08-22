@@ -11,7 +11,7 @@ function armadeira_attack_state() {
 		} else if (distance_to_object(o_player) < alert_distance/2) and !attack {
 			//chase
 			attack = true;
-			alarm[PRE_ATTACK] = wait_time_initial * 0.6;
+			alarm[ATTACKING] = wait_time_initial * 0.6; 
 			start_x = x;
 			state = armadeira_states.CHASE;
 		} else { //parada

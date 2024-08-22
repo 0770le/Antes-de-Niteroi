@@ -4,7 +4,7 @@
 macros();
 
 //upgrades
-has_cloak = false;
+has_cloak = true;
 has_axe= false;
 has_bow= true;
 //has_collectable_nome = false;

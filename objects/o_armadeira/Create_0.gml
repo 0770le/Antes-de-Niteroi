@@ -9,7 +9,7 @@ max_vsp_initial = -1;
 spd = 0.4;
 drag = 0.05;	
 jump_vsp = -4;	
-jump_xsp = 4;
+jump_hsp = 4;
 
 hurt_time = room_speed * 1;
 hp = 1;
@@ -19,7 +19,7 @@ alert_cooling = room_speed * 1.5;
 //hide
 hide_delay = room_speed * 3;
 
-attack_delay = room_speed * random_range(3, 5);
+attack_cd = room_speed * random_range(3, 5); //emprestado como CD
 damage = 1;
 
 patrol_dis = random_range(40, 120);

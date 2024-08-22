@@ -34,7 +34,7 @@ max_vsp = max_vsp_initial;
 vsp_decimal = 0;
 
 jump_vsp = -3;
-jump_xsp = 3;
+jump_hsp = 3;
 
 facing = -1;
 drag = 0.12;

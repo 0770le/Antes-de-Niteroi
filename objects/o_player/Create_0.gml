@@ -1,4 +1,4 @@
-//walljump
+
 // speeds
 hsp =0; //horizontal
 vsp = 0; //vertical
@@ -7,7 +7,7 @@ walk_spd=0.3;
 
 hsp_decimal = 0;
 vsp_decimal =0;
-jump_spd = -5;
+jump_spd = -7;
 jump_dampner = 2.5; //'amortecedor' diminuidor do pulo
 jumps_initial = 1;
 jumps = jumps_initial;
@@ -23,7 +23,7 @@ evade_delay = 0.8;
 can_take_dmg = true;
 
 //friction
-drag=0.12;
+drag=0.1;
 //streching
 scale_x= 1;
 scale_y= 1;
@@ -40,7 +40,7 @@ hide_delay = 0.6;
 hidden = false;
 
 //curupira
-curupira_count_max = 3;
+curupira_count_max = 10;
 curupira_count_initial = 0;
 curupira_count = curupira_count_initial;
 vines_max = 3;
@@ -50,20 +50,39 @@ vine_ball_max = 1;
 vine_ball_initial = 0;
 vine_ball = vine_ball_initial;
 
+//attack
+dmg = 0;
+can_attack = true;
+attack_delay = 0.2 * room_speed;
+	//how long enemies get knocked back for when hit
+knockback_time = room_speed /2;
+knockback_dis = 1.5;
+
+enum attacks {
+	NONE,
+	LEAP,
+	LUNGE,
+	STRIKE,
+	BLOW
+}
+attack_type = attacks.NONE;
+
 //bow
-arrows_max = 5;
-arrows_initial = 0;
+can_fire = true;
+fire_delay = 1 * room_speed; //charging time -> sprites
+arrows_max = 9;
+arrows_initial = 9;
 arrows = arrows_initial;
-//arrow spawning y pos
-spawn_pos = 1;
+	//arrow spawning y pos
+spawn_pos = -1;
 	
 //gems
 gems = 0;
 gems_value = 50;
 
 //set rm_00 start position
-room_start_pos_x = 65; //ter das outra rm em comment
-room_start_pos_y = 94;
+room_start_pos_x = 144;//65; //ter das outra rm em comment
+room_start_pos_y = 280;//94;
 room_start_facing = 1;
 x = room_start_pos_x;
 y = room_start_pos_y;
@@ -75,9 +94,7 @@ hurt = false;
 hurt_time = room_speed;
 hp = 5;
 max_hp = hp;
-//how long enemies get knocked back for when hit
-knockback_time = room_speed /2;
-knockback_dis = 1.5;
+
 
 //lives
 lives_initial = 3;
@@ -98,6 +115,8 @@ shoot = 0;
 //camera 
 o_camera.follow = o_player;
 
+
+
 //states
 enum states {
 	IDLE,		//0
@@ -111,6 +130,7 @@ enum states {
 	HURTING,	//8
 	HANGING,	//9
 	DIE,		//10
+	//LOCKED alarm LOCK
 	GAME_END	//11
 }
 

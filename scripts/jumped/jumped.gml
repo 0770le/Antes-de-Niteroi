@@ -8,6 +8,9 @@ function jumped() {
 		}
 	}
 	
+	
+	
+	//jumping
 	if (jumps > 0) {
 		scale_x = scale_min;
 		scale_y = scale_max;
@@ -18,4 +21,6 @@ function jumped() {
 		jump_dust();
 		audio_play_sound(snd_jump, 15, false);
 	}	
+	
+	
 }

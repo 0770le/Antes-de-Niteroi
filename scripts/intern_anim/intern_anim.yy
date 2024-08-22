@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"intern_anim",
   "parent":{
-    "name":"Intern",
-    "path":"folders/Scripts/Enemy/Intern.yy",
+    "name":"ZIntern",
+    "path":"folders/Scripts/Enemy/ZIntern.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

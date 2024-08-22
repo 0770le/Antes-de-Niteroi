@@ -1,4 +1,4 @@
-/// @desc PRE_ATTACK attack:false
+/// @desc ATTACKING =!attack
 image_speed =1;
 attack = false;
 

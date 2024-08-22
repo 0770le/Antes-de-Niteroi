@@ -5,7 +5,7 @@ function jararaca_idle_state(){
 	// move if player is too close 
 	if ((distance_to_object(o_player) < alert_distance) and can_attack) {
 			can_attack = false;
-			alarm[CAN_ATTACK] = attack_delay;
+			alarm[CAN_ATTACK] = attack_cd;// emprestado como CD
 			state = jararaca_states.MOVING;
 	}
 	

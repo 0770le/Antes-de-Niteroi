@@ -2,10 +2,10 @@ function armadeira_jump_state(){
 	hidden=false;
 	if (can_attack) {
 		vsp = jump_vsp;
-		hsp = jump_xsp *facing;
+		hsp = jump_hsp *facing;
 		can_attack = false;
-		attack_delay =  room_speed * random_range(3, 5);
-		alarm[CAN_ATTACK] = attack_delay;
+		attack_cd =  room_speed * random_range(3, 5); 
+		alarm[CAN_ATTACK] = attack_cd; 
 		if(on_screen(40)) {
 			audio_play_sound(snd_frog_jump, 40, false);
 		}

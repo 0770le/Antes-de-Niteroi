@@ -36,30 +36,34 @@ function collision() {
 	}
 	x+= hsp;
 	
-	//vertical collision
-	var _side;
+	//VERTICAl collision
+	var vertical_side;
 	//determine wich side to test
-	if vsp > 0 _side = bbox_bottom else _side = bbox_top;
+	if (vsp > 0) {
+		vertical_side = bbox_bottom; 
+	}else{ 
+		vertical_side = bbox_top;
+	}
 	
 	//check left and right of side
-	var t1 = tilemap_get_at_pixel(global.map,bbox_left, _side + vsp);
-	var t2 = tilemap_get_at_pixel(global.map,bbox_right, _side + vsp);
+	var vt1 = tilemap_get_at_pixel(global.map,bbox_left, vertical_side + vsp);
+	var vt2 = tilemap_get_at_pixel(global.map,bbox_right, vertical_side + vsp);
 	
-	var t3 = tilemap_get_at_pixel(global.map, bbox_left, bbox_bottom);
-	var t4 = tilemap_get_at_pixel(global.map, bbox_right, bbox_bottom);
+	var vt3 = tilemap_get_at_pixel(global.map, bbox_left, bbox_bottom);
+	var vt4 = tilemap_get_at_pixel(global.map, bbox_right, bbox_bottom);
 
-	if (t1 != VOID and (((vsp > 0 or t1 != PLATAFORM)) and t3 != PLATAFORM) or (t1 == SOLID and t3 == PLATAFORM)) or
-	   (t2 != VOID and (((vsp > 0 or t2 != PLATAFORM)) and t4 != PLATAFORM) or  (t2 == SOLID and t4 == PLATAFORM)) {
+	if (vt1 != VOID and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and t3 == PLATAFORM)) or
+	   (vt2 != VOID and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and t4 == PLATAFORM)) {
 	
 		//collision found
 		if (vsp > 0) {
-			y = y - (y mod global.tile_size) + global.tile_size - 1 - (_side - y);
+			y = y - (y mod global.tile_size) + global.tile_size - 1 - (vertical_side - y);
 		} else { 
-			y = y - (y mod global.tile_size) - (_side - y);
+			y = y - (y mod global.tile_size) - (vertical_side - y);
 		}
 		vsp = 0;
 		//death tile check
-		if (((t1 == DEATH) or (t2 == DEATH)) or (y > room_height)) {
+		if (((vt1 == DEATH) or (vt2 == DEATH)) or (y > room_height)) {
 			hp = 0;
 		}
 	}

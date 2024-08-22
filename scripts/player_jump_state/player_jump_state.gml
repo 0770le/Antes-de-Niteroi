@@ -37,6 +37,11 @@ function player_jump_state(){
 		image_index =0;
 	}
 	
+	if shoot {
+		state = states.SHOOT;
+		image_index = 0;
+	}
+	
 	//enable double jumps
 	if jump {
 		jumped();

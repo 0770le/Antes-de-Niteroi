@@ -1,66 +1,90 @@
-function player_shoot_state(){
- 
+function player_shoot_state(){//o tempo pra dar o tiro é o tempo do sprite
 	//get input
 	get_input();
 
 	//caculate movement
-	calc_movement();
-	
-	//Shoot Arrow
-	if (arrows > 0) {//shooting delay
-		if (((image_index >= 1) and (image_index <= 3))) {
-			//set spawn transition from the orig
-			var ypos = ((sprite_get_height(sprite_index) /2) -2) * spawn_pos;
-			
-			//create arrow
-			var inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_arrow);
-			inst.facing = facing;
+		calc_movement();
 		
+	// sprite do tiro
+	if (image_index == 4) and can_fire {
+		can_fire=false;
+		alarm[SHOOTING] = fire_delay;
+		//tem flecha
+		if (arrows > 0) {
+			//Shoot Arrow	
+			//set spawn pos (lado facing e altura)
+			var ypos = ((sprite_get_height(sprite_index) /2) -2) * spawn_pos;
+		
+			//create arrow
+			var inst =0;
+			//rising arrow
+			if up and on_ground(){
+				inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_rising_arrow);
+			} else {
+				inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_arrow);
+			}
+		
+			inst.facing = facing;				
 			
-			var inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);
+			inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);
 			inst.image_xscale = facing;
 		
 			//muniçao
 			arrows--;
 	
 			//sound
-			audio_play_sound(snd_arrow_firing,10, false);		
-		}
-	}
-	
-	//check state
-	
-	if down {
-		crouched();
-	}
-	
-	if evade {
-		state=states.EVADE;
-	}
-	
-	if (image_index >= (image_number - sprite_get_speed(sprite_index)/room_speed)) {
-		if (!on_ground()){
-			state= states.JUMP
-		}else{
-			if (hsp != 0) { 
-				state= states.WALK; 
-			}else{
-				state = states.IDLE;
-			}
-		}
+			audio_play_sound(snd_arrow_firing,10, false);
+		
+		}else {//sem flecha
+			//sound fail
+			audio_play_sound(snd_arrow_firing,10, false);
+		}	
 	}	
+
+	//check state
+
+	if down {
+		var _temp = image_index;
+		crouched();
+		state = states.SHOOT;
+		image_index = _temp;
+	}
 	
 	if jump {
 		jumped();
 		state = states.SHOOT;
-	}
-
-		
-	
+	}	
 	//enable smaller jumps
 	if ((vsp < 0) and (!jump_held)) {
 		vsp = max(vsp,jump_spd/jump_dampner);
 	}
+	
+	//nao andar no chao
+	if on_ground() {
+		hsp=0;
+	}	
+	
+	//cancelar tiro
+	if attack { 
+		state= states.IDLE;
+	}
+	
+	if evade {
+		evaded();
+	}
+	
+	
+
+	//mudança de estado depois da animação
+	if ((image_index) >= (image_number - sprite_get_speed(sprite_index)/room_speed)) {
+		if (!on_ground()){
+			state= states.JUMP;
+		}else if down { 
+			state= states.CROUCH; 
+		}else{
+			state = states.IDLE;
+		}	
+	}	
 	
 	//apply movement
 	collision();

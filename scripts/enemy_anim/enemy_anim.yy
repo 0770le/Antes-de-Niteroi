@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"enemy_anim",
   "parent":{
-    "name":"Parent",
-    "path":"folders/Scripts/Enemy/Parent.yy",
+    "name":"1Parent",
+    "path":"folders/Scripts/Enemy/1Parent.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

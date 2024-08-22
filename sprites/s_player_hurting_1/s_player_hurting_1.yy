@@ -50,8 +50,8 @@
   },
   "origin":7,
   "parent":{
-    "name":"32x32",
-    "path":"folders/Sprites/Player/32x32.yy",
+    "name":"not in use 32x32",
+    "path":"folders/Sprites/Player/not in use 32x32.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

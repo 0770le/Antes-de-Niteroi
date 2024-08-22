@@ -12,7 +12,7 @@ hp = 1;
 
 alert_distance = 20;
 
-attack_delay = room_speed * random_range(8,9);
+attack_cd = room_speed * random_range(8,9); //emprestado como CD
 damage = 1;
 
 //how long to wait before patrolling

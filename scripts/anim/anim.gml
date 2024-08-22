@@ -38,13 +38,15 @@ function anim() {
 		
 		case states.SHOOT:
 				if (!on_ground()) {
-					sprite_index = s_player_shoot;
+					sprite_index = s_player_air_shoot;
 				} else { //on ground
-					if (hsp != 0) {
+					if down {//atirar abaixado
+						sprite_index = s_player_crouched_shoot;
+					} else if up {//pra cima
+						sprite_index = s_player_rising_shoot;
+					} else {//normal
 						sprite_index= s_player_shoot;
-					} else { 
-						sprite_index = s_player_shoot;
-					}	
+					}
 				}
 		break;
 	}

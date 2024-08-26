@@ -205,6 +205,7 @@
     {"name":"s_player_crouch","order":14,"path":"sprites/s_player_crouch/s_player_crouch.yy",},
     {"name":"s_player_crouched_shoot","order":23,"path":"sprites/s_player_crouched_shoot/s_player_crouched_shoot.yy",},
     {"name":"s_player_die_1","order":27,"path":"sprites/s_player_die_1/s_player_die_1.yy",},
+    {"name":"s_player_die_2","order":28,"path":"sprites/s_player_die_2/s_player_die_2.yy",},
     {"name":"s_player_die","order":6,"path":"sprites/s_player_die/s_player_die.yy",},
     {"name":"s_player_dust_jump","order":7,"path":"sprites/s_player_dust_jump/s_player_dust_jump.yy",},
     {"name":"s_player_dust_land","order":10,"path":"sprites/s_player_dust_land/s_player_dust_land.yy",},

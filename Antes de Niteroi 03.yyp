@@ -260,6 +260,7 @@
     {"id":{"name":"s_player_crouch","path":"sprites/s_player_crouch/s_player_crouch.yy",},},
     {"id":{"name":"s_player_crouched_shoot","path":"sprites/s_player_crouched_shoot/s_player_crouched_shoot.yy",},},
     {"id":{"name":"s_player_die_1","path":"sprites/s_player_die_1/s_player_die_1.yy",},},
+    {"id":{"name":"s_player_die_2","path":"sprites/s_player_die_2/s_player_die_2.yy",},},
     {"id":{"name":"s_player_die","path":"sprites/s_player_die/s_player_die.yy",},},
     {"id":{"name":"s_player_dust_jump","path":"sprites/s_player_dust_jump/s_player_dust_jump.yy",},},
     {"id":{"name":"s_player_dust_land","path":"sprites/s_player_dust_land/s_player_dust_land.yy",},},

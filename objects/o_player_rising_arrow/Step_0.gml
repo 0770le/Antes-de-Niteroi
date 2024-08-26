@@ -18,6 +18,8 @@ if (die) {
 	hsp = 0;
 }
 
+image_angle = radtodeg(arctan2(-vsp,hsp));
+
 
 //destroy at wall if moved more than one tile
 if (abs(xstart - x) > global.tile_size) {

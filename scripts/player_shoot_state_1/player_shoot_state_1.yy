@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_shoot_state_1",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_shoot_state_1",
+  "parent":{
+    "name":"States",
+    "path":"folders/Scripts/Player/States.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

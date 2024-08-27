@@ -6,7 +6,7 @@
   "name":"bug_anim",
   "parent":{
     "name":"Bug",
-    "path":"folders/Scripts/Enemy/Curso/Bug.yy",
+    "path":"folders/Scripts/Enemy/ZCurso/Bug.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

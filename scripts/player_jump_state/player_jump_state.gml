@@ -33,8 +33,10 @@ function player_jump_state(){
 	}
 
 	if attack {
-		state = states.ATTACK;
+		state = states.AIR_ATTACK;
 		image_index =0;
+		can_attack = false;
+		alarm[ATTACKING]= attack_delay;
 	}
 	
 	if shoot {

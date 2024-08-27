@@ -15,6 +15,9 @@ jumps = jumps_initial;
 // fps pra multiplicar por tempo em segundos
 // room_speed;
 
+//auxiliar
+runned_once = false;
+
 //evade
 evade_v_spd = jump_spd/2;
 evade_h_spd = max_hsp*4;
@@ -58,18 +61,9 @@ attack_delay = 1 * room_speed;
 knockback_time = room_speed /2;
 knockback_dis = 1.5;
 
-enum attacks {
-	NONE,
-	LEAP,
-	LUNGE,
-	STRIKE,
-	BLOW
-}
-attack_type = attacks.NONE;
-
 //bow
 can_fire = true;
-fire_delay = 1 * room_speed; //charging time -> sprites
+fire_delay = 0.5 * room_speed; //charging time -> sprites
 arrows_max = 9;
 arrows_initial = 9;
 arrows = arrows_initial;
@@ -107,10 +101,12 @@ right = 0;
 up= 0;
 down=0;
 attack=0;
+attack_held=0;
 jump = 0;
 evade = 0;
 jump_held = 0;
 shoot = 0;
+shoot_held = 0;
 
 //camera 
 o_camera.follow = o_player;
@@ -123,15 +119,18 @@ enum states {
 	WALK,		//1
 	JUMP,		//2
 	ATTACK,		//3
+	ATTACK_WALK,		//3
+	AIR_ATTACK,		//3
 	EVADE,		//4
 	CROUCH,		//5
 	HIDE,		//6
 	SHOOT,		//7
+	SHOOT_UP,		//7
 	HURTING,	//8
 	HANGING,	//9
 	DIE,		//10
-	//LOCKED alarm LOCK
-	GAME_END	//11
+	DIE_2,		//11
+	GAME_END	//
 }
 
 state = states.IDLE;
@@ -141,6 +140,8 @@ states_array[states.IDLE]			= player_idle_state;
 states_array[states.WALK]			= player_walk_state;
 states_array[states.JUMP]			= player_jump_state;
 states_array[states.ATTACK]			= player_attack_state;
+states_array[states.ATTACK_WALK]	= player_attack_walk_state;
+states_array[states.AIR_ATTACK]		= player_air_attack_state;
 states_array[states.EVADE]			= player_evade_state;
 states_array[states.CROUCH]			= player_crouch_state;
 states_array[states.HIDE]			= player_hide_state;
@@ -148,6 +149,7 @@ states_array[states.SHOOT]			= player_shoot_state;
 states_array[states.HURTING]		= player_hurting_state;
 states_array[states.HANGING]		= player_hanging_state;
 states_array[states.DIE]			= player_die_state;
+states_array[states.DIE_2]			= player_die_2_state;
 states_array[states.GAME_END]		= player_game_end_state;
 
 
@@ -157,6 +159,8 @@ sprites_array[states.IDLE]			 = s_player_idle;
 sprites_array[states.WALK]			 = s_player_walk;
 sprites_array[states.JUMP]			 = s_player_jump;
 sprites_array[states.ATTACK]		 = s_player_attack;
+sprites_array[states.ATTACK_WALK]	 = s_player_attack_walk;
+sprites_array[states.AIR_ATTACK]	 = s_player_air_attack;
 sprites_array[states.EVADE]			 = s_player_evade;
 sprites_array[states.CROUCH]		 = s_player_crouch;
 sprites_array[states.HIDE]			 = s_player_hide;
@@ -164,7 +168,8 @@ sprites_array[states.SHOOT]			 = s_player_shoot;
 sprites_array[states.HURTING]		 = s_player_hurting;
 sprites_array[states.HANGING]		 = s_player_hanging;
 sprites_array[states.DIE]			 = s_player_die;
-sprites_array[states.GAME_END]		 = s_player_die;
+sprites_array[states.DIE_2]			 = s_player_die_2;
+sprites_array[states.GAME_END]		 = s_player_die_2;
 
 //create mask array
 
@@ -172,14 +177,17 @@ mask_array[states.IDLE]				= s_player_hitbox;
 mask_array[states.WALK]				= s_player_hitbox; 
 mask_array[states.JUMP]				= s_player_hitbox; 
 mask_array[states.ATTACK]			= s_player_hitbox; 
+mask_array[states.ATTACK_WALK]		= s_player_hitbox; 
+mask_array[states.AIR_ATTACK]		= s_player_hitbox; 
 mask_array[states.EVADE]			= s_player_hitbox; 
 mask_array[states.HIDE]				= s_player_hitbox_crouch;
 mask_array[states.CROUCH]			= s_player_hitbox_crouch;
 mask_array[states.SHOOT]			= s_player_hitbox;
 mask_array[states.HURTING]			= s_player_hitbox;
 mask_array[states.HANGING]			= s_player_hitbox;
-mask_array[states.DIE]				= s_player_die;
-mask_array[states.GAME_END]			= s_player_die;
+mask_array[states.DIE]				= s_player_hitbox_crouch;
+mask_array[states.DIE_2]			= s_player_hitbox_crouch;
+mask_array[states.GAME_END]			= s_player_hitbox_crouch;
 
 
 

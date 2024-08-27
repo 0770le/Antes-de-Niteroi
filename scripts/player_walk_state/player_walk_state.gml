@@ -23,9 +23,17 @@ function player_walk_state(){
 	 }
 	 
 	 
-	if attack{
-		state = states.ATTACK;
-		image_index =0;
+	if attack{ //consistencia no ataque parado
+		if abs(hsp) < 2 {
+			hsp = 0;
+			state = states.ATTACK;
+		} else { //ataque movendo
+			state =	states.ATTACK_WALK;
+			image_index =0;
+			can_attack = false;
+			alarm[ATTACKING]= attack_delay;
+			launch(0,abs(hsp), -1*facing); //tranco do hit
+		}
 	}
 	
 	if jump {

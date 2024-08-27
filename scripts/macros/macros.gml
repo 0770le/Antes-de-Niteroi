@@ -19,6 +19,8 @@ function macros(){
 #macro HURT						2
 #macro HIDING					5
 #macro SHOOTING					9 //fire_delay
+#macro ANIM_PAUSE				10 //paradinha
+#macro ONCE						11//runned_once
 
 
 //o_enemy_parent alarms

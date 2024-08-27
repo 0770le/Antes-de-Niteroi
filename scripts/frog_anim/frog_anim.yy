@@ -6,7 +6,7 @@
   "name":"frog_anim",
   "parent":{
     "name":"Frog",
-    "path":"folders/Scripts/Enemy/Curso/Frog.yy",
+    "path":"folders/Scripts/Enemy/ZCurso/Frog.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

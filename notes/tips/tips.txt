@@ -1,0 +1,2 @@
+show_debug_message("image index = " + string(image_index));	
+show_debug_message("image speed = " + string(image_speed));

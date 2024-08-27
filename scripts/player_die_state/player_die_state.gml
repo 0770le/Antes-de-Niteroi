@@ -1,31 +1,28 @@
 
 function player_die_state(){
 
-
 	//caculate movement
 	calc_entity_movement()
 	
 	//check state
-	if (image_index >= (image_number - 1)) {
+	if anim_end() {
+		state = states.DIE_2;
+		image_index = 0;
+		image_speed = 1;
+	}
+	
+	if on_ground()  {
+		audio_play_sound(snd_enemy_dying, 5, false);
+		launch(vsp/2,hsp/2,facing*-1)
+		state = states.DIE_2;
+		jump_dust();
+		image_index = 0;
+		image_speed = 1;
+		scale_x=facing;
+		scale_y=1;
+	} else {
 		image_speed = 0;
-			//dead player
-			if (lives <= 0) {
-				o_game.game_over_lose = true;
-			} else {
-				//restart msg
-				show_msg("Aperte Pulo ou ataque para continuar",1);
-					//get input
-				get_input();
-				if (jump or attack) {
-					fade_to_room(room, room_start_pos_x, room_start_pos_y, room_start_facing, c_black);
-					//allow instant camera panning
-					with(o_camera) {
-							//enable instant panning
-							camera_pan_speed = 1;
-							alarm[CAMERA_RESET] = 3;
-					}
-				}
-			}
+		image_index = 2;
 	}
 	
 	//apply movement

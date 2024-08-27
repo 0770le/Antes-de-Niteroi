@@ -1,6 +1,9 @@
+/// @descr launch (_vsp, _hsp, _dir = facing)
 
-function launch(){
-	vsp = jump_vsp;
-	hsp = jump_hsp *facing;
+function launch(_vsp, _hsp, _dir = facing){
+	_vsp = _vsp*-1;
+	_hsp = abs(_hsp);
+	vsp += _vsp;
+	hsp += _hsp *_dir;
 	launched = true;
 }

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"check_enemy_hp",
   "parent":{
-    "name":"1Parent",
-    "path":"folders/Scripts/Enemy/1Parent.yy",
+    "name":"0Parent",
+    "path":"folders/Scripts/Enemy/0Parent.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

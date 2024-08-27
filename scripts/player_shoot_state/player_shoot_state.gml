@@ -1,56 +1,60 @@
-function player_shoot_state(){//o tempo pra dar o tiro é o tempo do sprite
+function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 	//get input
 	get_input();
 
 	//caculate movement
-		calc_movement();
+	calc_movement();
 		
 	// sprite do tiro
-	if (image_index == 6) and can_fire {
-		can_fire=false;
-		alarm[SHOOTING] = fire_delay;
-		//tem flecha
-		if (arrows > 0) {
-			//Shoot Arrow	
-			//set spawn pos (lado facing e altura)
-			var ypos = ((sprite_get_height(sprite_index) /2) -2) * spawn_pos;
-			ypos = -23;
+	if (image_index == 6 ) {
+		if shoot_held { //segura
+			image_speed = 0;
+		} else {	//solta
+			if can_fire {
+				image_speed = 1;
+				can_fire=false;
+				alarm[SHOOTING] = fire_delay;
+				//tem flecha
+				if (arrows > 0) {
+					//Shoot Arrow	
+					//set spawn pos (lado facing e altura)
+					var ypos = ((sprite_get_height(sprite_index) /2) -2) * spawn_pos;
+					ypos = -20;
 			
-			if down {
-				ypos = -15;	
-			}
+					if down {
+						ypos = -10;	
+					}
 		
-			//create arrow
-			var inst =0;
-			//rising arrow
-			if up and on_ground(){
-				inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_rising_arrow);
-			} else {
-				inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_arrow);
-			}
+					//create arrow
+					var inst =0;
+					//rising arrow
+					if up and on_ground(){
+						inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_rising_arrow);
+					} else {
+						inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_arrow);
+					}
 		
-			inst.facing = facing;				
+					inst.facing = facing;				
 			
-			inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);
-			inst.image_xscale = facing;
+					inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);
+					inst.image_xscale = facing;
 		
-			//muniçao
-			arrows--;
+					//muniçao
+					arrows--;
 	
-			//sound
-			audio_play_sound(snd_arrow_firing,10, false);
+					//sound
+					audio_play_sound(snd_arrow_firing,10, false);
 		
-		}else {//sem flecha
-			//sound fail
-			audio_play_sound(snd_arrow_firing,10, false);
-		}	
+				}else {//sem flecha
+					//sound fail			audio_play_sound(snd_arrow_firing,10, false);
+				}	
+			}
+		}
 	}
-	
-	if(image_index >= 9 and image_index < 11 and shoot) {
-		image_index = 2;
-		can_fire = true;
+	//repeating shots
+	if(image_index >= 9 and shoot) {
+		image_index = 3;
 	}
-
 	//check state
 
 	if down {
@@ -82,11 +86,9 @@ function player_shoot_state(){//o tempo pra dar o tiro é o tempo do sprite
 	if evade {
 		evaded();
 	}
-	
-	
 
 	//mudança de estado depois da animação
-	if ((image_index) >= (image_number - sprite_get_speed(sprite_index)/room_speed)) {
+	if anim_end() {
 		if (!on_ground()){
 			state= states.JUMP;
 		}else if down { 

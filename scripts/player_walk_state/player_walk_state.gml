@@ -24,7 +24,7 @@ function player_walk_state(){
 	 
 	 
 	if attack{ //consistencia no ataque parado
-		if abs(hsp) < 2 {
+		if abs(hsp) < max_hsp*0.8 {
 			hsp = 0;
 			state = states.ATTACK;
 		} else { //ataque movendo
@@ -32,7 +32,7 @@ function player_walk_state(){
 			image_index =0;
 			can_attack = false;
 			alarm[ATTACKING]= attack_delay;
-			launch(0,abs(hsp), -1*facing); //tranco do hit
+			launch(0,abs(hsp*0.8), -1*facing); //tranco do hit
 		}
 	}
 	

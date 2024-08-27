@@ -1,6 +1,5 @@
 
 function player_idle_state(){
- 
 	//get input
 	get_input();
 
@@ -31,8 +30,13 @@ function player_idle_state(){
 	}
 	
 	if shoot {
-		state = states.SHOOT;
-		image_index = 0;
+		if on_ground() and up {
+			state = states.SHOOT_UP;
+			image_index = 0;
+		} else {
+			state = states.SHOOT;
+			image_index = 0;
+		}	
 	}
 	
 	if down {

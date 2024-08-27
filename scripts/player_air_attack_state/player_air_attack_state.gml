@@ -23,15 +23,12 @@ function player_air_attack_state(){
 		var inst= instance_create_layer(x,y, "Player", o_player_attack_hitbox);
 		inst.image_xscale = facing*1.4;	
 	}
-		show_debug_message("image index = " + string(image_index));		
-		show_debug_message("image speed = " + string(image_speed));
 		
 	//loop
 	if floor(image_index) == 6 {
 		image_index = 4;
 	}	
 	
-		
 	if on_ground() {//reach ground during loop
 		if (image_index >= 4 and image_index <=6 ) {//stomp shake. move back
 			instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);

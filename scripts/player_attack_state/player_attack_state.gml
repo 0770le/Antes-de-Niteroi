@@ -25,7 +25,7 @@ function player_attack_state(){
 		runned_once = true;
 		alarm[ONCE] = _time* room_speed;
 	} 
-	if attack_held {
+	if (floor(image_index) == 2 and attack_held) {
 		runned_once=false;
 	}
 	

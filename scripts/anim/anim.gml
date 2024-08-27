@@ -44,8 +44,6 @@ function anim() {
 				} else { //on ground
 					if down {//atirar abaixado
 						sprite_index = s_player_crouched_shoot;
-					} else if up {//pra cima
-						sprite_index = s_player_rising_shoot;
 					} else {//normal
 						sprite_index= s_player_shoot;
 					}

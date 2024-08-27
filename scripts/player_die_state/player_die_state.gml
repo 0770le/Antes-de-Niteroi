@@ -13,7 +13,7 @@ function player_die_state(){
 	
 	if on_ground()  {
 		audio_play_sound(snd_enemy_dying, 5, false);
-		launch(vsp/2,hsp/2,facing*-1)
+		launch(3,3,facing*-1)
 		state = states.DIE_2;
 		jump_dust();
 		image_index = 0;

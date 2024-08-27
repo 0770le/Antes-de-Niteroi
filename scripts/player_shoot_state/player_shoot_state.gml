@@ -4,7 +4,11 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 
 	//caculate movement
 	calc_movement();
-		
+	//nao andar no chao
+	if on_ground() {
+		hsp=0;
+	}	
+	
 	// sprite do tiro
 	if (image_index == 6 ) {
 		if shoot_held { //segura
@@ -19,23 +23,18 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 					//Shoot Arrow	
 					//set spawn pos (lado facing e altura)
 					var ypos = ((sprite_get_height(sprite_index) /2) -2) * spawn_pos;
-					ypos = -20;
-			
+					ypos = -28;
+					
+					//spawn position
 					if down {
-						ypos = -10;	
+						ypos = -8;	
 					}
 		
 					//create arrow
 					var inst =0;
-					//rising arrow
-					if up and on_ground(){
-						inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_rising_arrow);
-					} else {
-						inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_arrow);
-					}
-		
+
+					inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_arrow);
 					inst.facing = facing;				
-			
 					inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);
 					inst.image_xscale = facing;
 		
@@ -73,10 +72,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 		vsp = max(vsp,jump_spd/jump_dampner);
 	}
 	
-	//nao andar no chao
-	if on_ground() {
-		hsp=0;
-	}	
+	
 	
 	//cancelar tiro
 	if attack { 

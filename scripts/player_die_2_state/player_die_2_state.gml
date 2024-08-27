@@ -5,7 +5,7 @@ function player_die_2_state(){
 	calc_entity_movement()
 	
 	if on_ground()and hsp > 0 {
-		launch(vsp, hsp,facing*-1)
+		launch(2, 2,facing*-1)
 		audio_play_sound(snd_enemy_dying, 5, false);
 	}
 	

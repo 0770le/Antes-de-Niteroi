@@ -11,7 +11,7 @@ function player_air_attack_state(){
 	}
 	
 		// light lift pull from weapon swing
-	if (image_index >= 4 and image_index < 5) and !runned_once { 
+	if (image_index > 4 and image_index < 5) and !runned_once { 
 		runned_once=true;
 		alarm[ONCE] = image_speed*room_speed;
 		launch(3,2);
@@ -19,26 +19,26 @@ function player_air_attack_state(){
 	}
 	
 	//create hitboxes during hits index
-	if image_index >= 4 and image_index < 7 {
+	if image_index > 4 and image_index < 9 {
 		var inst= instance_create_layer(x,y, "Player", o_player_attack_hitbox);
 		inst.image_xscale = facing*1.4;	
 	}
 		
 	//loop
-	if floor(image_index) == 6 {
-		image_index = 4;
+	if floor(image_index) == 8 {
+		image_index = 6;
 	}	
 	
 	if on_ground() {//reach ground during loop
-		if (image_index >= 4 and image_index <=6 ) {//stomp shake. move back
+		if (image_index >= 6 and image_index <= 8 ) {//stomp shake. move back
 			instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);
 			audio_play_sound(snd_enemy_dying, 10, false);
 			scr_screen_shake(0.5,1.5);	
 			//weapon recoil
-			image_index = 8;
-			anim_paused(0.2)
-			launch(3,4,-1*facing);
-		}else {
+			image_index = 9;
+			anim_paused(0.25)
+			launch(3,6,-1*facing);
+		}else { //anim ended. leave state
 			state = states.IDLE;
 		}
 	}				

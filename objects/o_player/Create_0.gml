@@ -119,18 +119,18 @@ enum states {
 	WALK,		//1
 	JUMP,		//2
 	ATTACK,		//3
-	ATTACK_WALK,		//3
-	AIR_ATTACK,		//3
-	EVADE,		//4
-	CROUCH,		//5
-	HIDE,		//6
-	SHOOT,		//7
-	SHOOT_UP,		//7
-	HURTING,	//8
-	HANGING,	//9
-	DIE,		//10
-	DIE_2,		//11
-	GAME_END	//
+	ATTACK_WALK,//4
+	AIR_ATTACK,	//5
+	EVADE,		//6
+	CROUCH,		//7
+	HIDE,		//8
+	SHOOT,		//9
+	SHOOT_UP,	//10
+	HURTING,	//11
+	HANGING,	//12
+	DIE,		//13
+	DIE_2,		//14
+	GAME_END	//15
 }
 
 state = states.IDLE;

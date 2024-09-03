@@ -27,10 +27,6 @@ function player_crouch_state(){
 		image_index = 0;
 	}
 	
-	if jump {
-		jumped();
-	}
-	
 	if shoot {
 		state = states.SHOOT;
 		image_index = 0;
@@ -40,6 +36,17 @@ function player_crouch_state(){
 		state = states.EVADE;
 		image_index = 0;
 	} 
+	
+	//allow player descend on plataforms
+	var vt1 = tilemap_get_at_pixel(global.map, bbox_left, bbox_bottom +1);
+	var vt2 = tilemap_get_at_pixel(global.map, bbox_right, bbox_bottom +1);
+	
+	if jump and (vt1 == PLATAFORM or vt2 == PLATAFORM){
+		state = states.JUMP;
+		y += 1;
+	}
+	
+	
 	
 	//apply movement
 	collision();

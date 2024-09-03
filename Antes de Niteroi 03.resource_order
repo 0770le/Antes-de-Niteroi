@@ -7,7 +7,7 @@
     {"name":"Enemy","order":3,"path":"folders/Objects/Enemy.yy",},
     {"name":"Curso","order":5,"path":"folders/Objects/Enemy/Curso.yy",},
     {"name":"Itens","order":4,"path":"folders/Objects/Itens.yy",},
-    {"name":"Object","order":5,"path":"folders/Objects/Object.yy",},
+    {"name":"Objetos","order":5,"path":"folders/Objects/Objetos.yy",},
     {"name":"Player","order":2,"path":"folders/Objects/Player.yy",},
     {"name":"Rooms","order":9,"path":"folders/Rooms.yy",},
     {"name":"Scripts","order":4,"path":"folders/Scripts.yy",},

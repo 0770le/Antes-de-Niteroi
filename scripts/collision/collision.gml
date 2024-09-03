@@ -52,14 +52,16 @@ function collision() {
 	var vt3 = tilemap_get_at_pixel(global.map, bbox_left, vertical_side);
 	var vt4 = tilemap_get_at_pixel(global.map, bbox_right, vertical_side);
 
+	//collision found
 	if (vt1 != VOID and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and t3 == PLATAFORM)) or
 	   (vt2 != VOID and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and t4 == PLATAFORM)) {
-	
-		//collision found
+		
+		//floor
 		if (vsp > 0) {
 			//y = bbox_bottom - (bbox_bottom mod global.tile_size) + global.tile_size - 1 - (vertical_side - bbox_bottom);
 			y = y - (y mod global.tile_size) + global.tile_size - 1 - (vertical_side - y);
 		} else { 
+		//ceiling
 			var y1 = bbox_top - (bbox_top mod global.tile_size);
 			y = y1 + (bbox_bottom - bbox_top);
 		}

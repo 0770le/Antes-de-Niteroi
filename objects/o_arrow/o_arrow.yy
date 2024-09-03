@@ -11,8 +11,8 @@
   "name":"o_arrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Object",
-    "path":"folders/Objects/Object.yy",
+    "name":"Objetos",
+    "path":"folders/Objects/Objetos.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,4 +1,4 @@
-function jump_dust() {
+function evade_dust() { //objeto diferente!
 	var inst = instance_create_layer(x, y, "Dust", o_player_dust_jump);
 		inst.image_xscale = -1* facing;	
 }

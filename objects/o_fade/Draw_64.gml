@@ -29,7 +29,7 @@ if (fade_to_colour == true) {
 			scale_y = 1;
 			
 			//reset player if dead
-			if (state == states.DIE) {
+			if (state == states.DIE_2) {
 				image_speed = 1;
 				hp = max_hp;
 			}

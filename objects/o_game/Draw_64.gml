@@ -69,6 +69,7 @@ if (room != rm_menu) {
 	draw_text(xx + text_xx, yy + text_yy, score);
 	#endregion
 	}
+	
 	//game over
 	#region
 	if (game_over_lose or (game_over_won and game_over_won_delay <= 0)) {
@@ -153,7 +154,8 @@ if (room != rm_menu) {
 		}
 	}
 #endregion
-} else {
+
+} else {//opening
 	//draw main menu and fade to first level
 	//draw bounce
 	var start_y = 350 //how far animation moves

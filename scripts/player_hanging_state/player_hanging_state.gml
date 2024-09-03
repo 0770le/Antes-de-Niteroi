@@ -15,7 +15,7 @@ function player_hanging_state(){
 	
 	//make dust
 	if (!instance_exists( o_player_dust_jump)) {
-		jump_dust();
+		evade_dust();
 	}
 	
 	// face :na frente e nao chao
@@ -35,7 +35,7 @@ function player_hanging_state(){
 
 	//pular na parede: walljump
 	if jump {
-		jump_dust();
+		evade_dust();
 		facing*=-1;
 		scale_x = scale_min;
 		scale_y = scale_max;

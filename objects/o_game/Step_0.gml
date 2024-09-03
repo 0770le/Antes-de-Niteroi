@@ -2,6 +2,20 @@
 
 //botao mouse pra teste
 #region
+
+if ( mouse_check_button_pressed(mb_left)){
+	with(o_player) {
+			hp = 0;
+	}
+}	
+
+//if( mouse_check_button_pressed(mb_left)){
+//	repeat(3) {
+//		instance_create_layer(mouse_x, mouse_y, "Drops", o_gem);
+//	}
+//}
+
+
 //if( mouse_check_button_pressed(mb_left)){
 //	repeat(3) {
 //		instance_create_layer(mouse_x, mouse_y, "Drops", o_gem);

@@ -20,7 +20,7 @@ function player_attack_state(){
 	
 	//paradinha
 	if (floor(image_index) == 2) and !runned_once {
-		var _time = 0.25;
+		var _time = 0.28;
 		anim_paused(_time);
 		runned_once = true;
 		alarm[ONCE] = _time* room_speed;
@@ -36,7 +36,7 @@ function player_attack_state(){
 		inst.image_xscale = facing*1.4;	
 		
 		//hit ground	
-		if 	image_index > 5	and !runned_once {	
+		if 	image_index > 8	and !runned_once {	
 				runned_once = true;
 				alarm[ONCE] = attack_delay;
 				audio_play_sound(snd_enemy_dying, 10, false);

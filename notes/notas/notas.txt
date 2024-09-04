@@ -14,4 +14,8 @@ existe uma troca entre evade e jump dust entre objetos e funçoes, mas eh difici
 	show_debug_message("bottom " + string( bbox_bottom));
 	show_debug_message("chao (319) " + string( y));
 	show_debug_message("---");
-	
+
+BUGS
+-atirando flecha pra cima toma dano e fica preso infinito
+
+-abaixar e esquivar ao mesmo tempo

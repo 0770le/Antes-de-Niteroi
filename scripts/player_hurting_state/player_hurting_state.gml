@@ -7,6 +7,9 @@ function player_hurting_state(){
 	//caculate movement
 	calc_entity_movement()
 	
+	//in case that image_speed was stoped.
+	image_speed = 1;
+	
 	//check state
 	//set to first frame and stop if animation has played once
 		
@@ -19,7 +22,7 @@ function player_hurting_state(){
 		}
 	}
 	
-	//making drag dust
+		//making drag dust
 	if on_ground and hsp != 0 {
 		if !runned_once {
 			runned_once = true;

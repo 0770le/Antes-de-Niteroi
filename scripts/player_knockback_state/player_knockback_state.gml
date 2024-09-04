@@ -15,6 +15,8 @@ function player_knockback_state(){
 		state = states.IDLE;
 	}
 	
+
+	
 	//apply movement
 	collision();
 	//check player hp

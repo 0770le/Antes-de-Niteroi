@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_knockback_state",
   "parent":{
-    "name":"States",
-    "path":"folders/Scripts/Player/States.yy",
+    "name":"zlixo",
+    "path":"folders/zlixo.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -9,7 +9,7 @@ y += vsp;
 //direction image
 image_angle = radtodeg(arctan2(-vsp,hsp));
 
-image_xscale = sign(hsp);
+image_xscale = 1;//sign(hsp);
 var t1 = 0;
 var t2 = 0;
 

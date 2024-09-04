@@ -19,6 +19,14 @@ function player_hurting_state(){
 		}
 	}
 	
+	//making drag dust
+	if on_ground and hsp != 0 {
+		if !runned_once {
+			runned_once = true;
+			alarm[ONCE] = 0.1*room_speed;
+			jump_dust()//faz o objeto dust_evade
+		}
+	}
 	//apply movement
 	collision();
 	//check player hp

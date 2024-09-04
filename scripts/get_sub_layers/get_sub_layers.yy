@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_sub_layers",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_sub_layers",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Scripts/Game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

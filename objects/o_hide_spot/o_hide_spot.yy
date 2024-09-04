@@ -8,8 +8,8 @@
   "name":"o_hide_spot",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objects/Objetos.yy",
+    "name":"General",
+    "path":"folders/Objects/General.yy",
   },
   "parentObjectId":null,
   "persistent":false,

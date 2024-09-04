@@ -10,9 +10,10 @@ function player_evade_state(){
 	
 	//check state
 	//change state after touching ground
-	if (hsp == 0) {
+	if on_ground() {
 		//change state
-		state = states.JUMP;
+		hsp=0;
+		state = states.IDLE;
 		can_take_dmg = true;
 	}
 	

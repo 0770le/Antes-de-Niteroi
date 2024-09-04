@@ -20,7 +20,7 @@ runned_once = false;
 
 //evade
 evade_v_spd = jump_spd/2;
-evade_h_spd = max_hsp*4;
+evade_h_spd = max_hsp*3;
 has_evade = true;
 evade_delay = 0.8;
 can_take_dmg = true;

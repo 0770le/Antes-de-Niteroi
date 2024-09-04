@@ -44,4 +44,10 @@ function macros(){
 //arrow
 #macro LAYER_CHANGE				0
 	
+//Layers menu
+#macro LAYER_GUI				"GUI"
+#macro LAYER_GUI_MENU			"GUI_Menu"
+#macro LAYER_GUI_MENU_BUTTONS	"GUI_Menu_Buttons"
+#macro LAYER_GUI_MENU_WINDOW	"GUI_Menu_Window"
+	
 }

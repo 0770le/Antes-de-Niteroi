@@ -13,6 +13,7 @@ function get_input() {
 	evade = keyboard_check(ord("Q"));
 	shoot = keyboard_check_pressed(ord("F"));
 	shoot_held = keyboard_check(ord("F"));
+	menu_start =keyboard_check_pressed(vk_escape);
 	
 	//controler input
 	var _dev = 0;
@@ -29,5 +30,6 @@ function get_input() {
 	evade = gamepad_button_check(_dev, gp_shoulderr) or evade;
 	shoot = gamepad_button_check_pressed(_dev, gp_face3) or shoot;
 	shoot_held = gamepad_button_check(_dev, gp_face3) or shoot_held;
+	menu_start = gamepad_button_check_pressed(_dev, gp_start) or menu_start;
 	}
 }

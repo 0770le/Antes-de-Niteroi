@@ -1,0 +1,17 @@
+
+
+player_end_game_state é usado no trigger da sala final
+
+window scale é 2
+
+existe uma troca entre evade e jump dust entre objetos e funçoes, mas eh dificil corrigir pq os objetos sao diferentes (seguem ou se afastam do player)
+
+	show_debug_message("image index = " + string(image_index));	
+	show_debug_message("image speed = " + string(image_speed));
+	show_debug_message("state = " + string(state));
+	show_debug_message("runned_once = " + string(runned_once));
+	show_debug_message("top" + string( bbox_top));
+	show_debug_message("bottom " + string( bbox_bottom));
+	show_debug_message("chao (319) " + string( y));
+	show_debug_message("---");
+	

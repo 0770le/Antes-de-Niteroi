@@ -4,9 +4,10 @@ if !launched {
 }
 calc_entity_movement();
 hsp = spd * facing;
-
-
 y += vsp;
+
+//direction image
+image_angle = radtodeg(arctan2(-vsp,hsp));
 
 image_xscale = sign(hsp);
 var t1 = 0;
@@ -18,7 +19,6 @@ if (die) {
 	hsp = 0;
 }
 
-image_angle = radtodeg(arctan2(-vsp,hsp));
 
 
 //destroy at wall if moved more than one tile

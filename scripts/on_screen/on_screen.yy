@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"on_screen",
   "parent":{
-    "name":"Objects",
-    "path":"folders/Scripts/Objects.yy",
+    "name":"General",
+    "path":"folders/Scripts/General.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

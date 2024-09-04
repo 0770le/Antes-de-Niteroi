@@ -7,7 +7,7 @@ spd = 6;
 launched = false;
 push_vsp = 7;
 push_hsp = spd;
-facing = -1;
+facing = o_player.facing;
 image_speed = 0;
 drag = 0.1;
 

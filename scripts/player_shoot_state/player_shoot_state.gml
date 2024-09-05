@@ -2,8 +2,9 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 	//get input
 	get_input();
 
-	//caculate movement
 	calc_movement();
+	//apply movement
+	
 	//nao andar no chao
 	if on_ground() {
 		hsp=0;
@@ -22,12 +23,12 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 				if (arrows > 0) {
 					//Shoot Arrow	
 					//set spawn pos (lado facing e altura)
-					var ypos = ((sprite_get_height(sprite_index) /2) -2) * spawn_pos;
-					ypos = -28;
+				//	var ypos = ((sprite_get_height(sprite_index) /2) -2 ) * spawn_pos;
+					ypos = -22;
 					
 					//spawn position
 					if down {
-						ypos = -8;	
+						ypos = -14;	
 					}
 		
 					//create arrow
@@ -51,16 +52,18 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 		}
 	}
 	//repeating shots
-	if(image_index >= 9 and shoot) {
+	if(image_index >= 13 and shoot) {
 		image_index = 3;
 	}
 	//check state
 
-	if down {
-		var _temp = image_index;
+	if down { //allow continuing shooting fluidity 
+		var _index_holder = image_index;
+		var _speed_holder = image_speed;
 		crouched();
 		state = states.SHOOT;
-		image_index = _temp;
+		image_index = _index_holder;
+		image_speed = _speed_holder;
 	}
 	
 	if jump {
@@ -93,8 +96,8 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 			state = states.IDLE;
 		}	
 	}	
+	//caculate movement
 	
-	//apply movement
 	collision();
 	//check player hp
 	check_player_hp();

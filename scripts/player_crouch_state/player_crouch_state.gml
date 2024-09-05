@@ -32,9 +32,8 @@ function player_crouch_state(){
 		image_index = 0;
 	}
 	
-	if evade and has_evade {
-		state = states.EVADE;
-		image_index = 0;
+	if evade {
+		evaded();
 	} 
 	
 	//allow player descend on plataforms

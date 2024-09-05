@@ -1,4 +1,4 @@
-
+para uma fonte aceitar acentos, mude para 255 o limite em ASKI
 
 player_end_game_state é usado no trigger da sala final
 
@@ -15,10 +15,13 @@ existe uma troca entre evade e jump dust entre objetos e funçoes, mas eh difici
 	show_debug_message("chao (319) " + string( y));
 	show_debug_message("---");
 
-BUGS
--atirando flecha pra cima toma dano e fica preso infinito
-
--abaixar e esquivar ao mesmo tempo
 
 
-para uma fonte aceitar acentos, mude para 255 o limite em ASKI
+
+BUGS e pendencias
+-perna do sprite atirando
+-atirando sem muniçao "ou mudar pra nada acontere sem muniçao"
+
+
+
+

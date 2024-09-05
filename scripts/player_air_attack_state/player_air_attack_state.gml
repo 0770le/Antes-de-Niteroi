@@ -16,12 +16,15 @@ function player_air_attack_state(){
 		alarm[ONCE] = image_speed*room_speed;
 		launch(3,2);
 		audio_play_sound(snd_sword_swing, 20, false);	
+		var inst= instance_create_layer(x -30*facing,y-25, "Player", o_player_attack_hitbox);
+		inst.image_xscale = facing*2;	
+
 	}
 	
 	//create hitboxes during hits index
 	if image_index > 4 and image_index < 9 {
-		var inst= instance_create_layer(x,y, "Player", o_player_attack_hitbox);
-		inst.image_xscale = facing*1.4;	
+		var inst= instance_create_layer(x +20*facing,y, "Player", o_player_attack_hitbox);
+		inst.image_xscale = facing*1;	
 	}
 		
 	//loop
@@ -43,12 +46,14 @@ function player_air_attack_state(){
 		}
 	}				
 	
-	//check state after anim
+	//check state
+	//after anim
 	if anim_end() {
 		state = states.IDLE;
 	}	
+	
 	if evade {
-		state = states.EVADE;		
+		evaded();		
 	}	
 	
 	//apply movement

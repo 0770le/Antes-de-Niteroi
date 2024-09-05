@@ -20,10 +20,10 @@ function player_attack_walk_state(){
 	//attacking
 	//create hitboxes during hits index
 	if image_index >= 3 and image_index <=5 {
-		var inst= instance_create_layer(x,y, "Player", o_player_attack_hitbox);
-		inst.image_xscale = facing*0.7;	
+		var inst= instance_create_layer(x+ 25*facing,y, "Player", o_player_attack_hitbox);
+		inst.image_xscale = facing*0.45;	
 		//impulso
-		hsp = lerp(abs(hsp), max_hsp*1.3,0.3)*facing ;
+		hsp = lerp(abs(hsp), max_hsp*1.6,0.3)*facing ;
 	}
 	
 	//apply movement

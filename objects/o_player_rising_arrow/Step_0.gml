@@ -49,15 +49,15 @@ if (die) {
 		audio_play_sound(snd_arrow_die, 20, false);
 	}
 	//play arrow die sound only if arrow is on screen
-	//if (on_screen(40)) {
-	//	if (image_index == 1){
-	//		audio_play_sound(snd_arrow_die, 20, false);
-	//	}
-	//}
+	if (on_screen(400)) {
+		if (image_index == 1){
+			audio_play_sound(snd_arrow_die, 20, false);
+		}
+	}
 }
 
 //destroy if leaving room
-//if (( t1 == -1) or (t2 == -1)) {
-//	instance_destroy();
-//}
+if (( t1 == -1) or (t2 == -1)) {
+	instance_destroy();
+}
 

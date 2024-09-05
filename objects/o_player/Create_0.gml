@@ -19,8 +19,6 @@ jumps = jumps_initial;
 runned_once = false;
 
 //evade
-evade_v_spd = jump_spd/2;
-evade_h_spd = max_hsp*3;
 has_evade = true;
 evade_delay = 0.8;
 can_take_dmg = true;
@@ -60,14 +58,15 @@ attack_delay = 1 * room_speed;
 	//how long enemies get knocked back for when hit
 knockback_time = room_speed /2;
 knockback_dis = 1.5;
+attack_held_time = 0;
 
 //bow
 can_fire = true;
 fire_delay = 0.5 * room_speed; //charging time -> sprites
 arrows_max = 9;
-arrows_initial = 9;
+arrows_initial = 20;
 arrows = arrows_initial;
-	//arrow spawning y pos
+	//arrow spawning dir pos
 spawn_pos = -1;
 	
 //gems

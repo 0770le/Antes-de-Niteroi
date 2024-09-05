@@ -1,21 +1,29 @@
 ///standar evade leap off the ground
 function evaded() {
 	if ((jumps > 0) or (on_ground()) and has_evade) {
+		image_index = 0;
+		image_speed = 1;
 		scale_x = scale_min;
 		scale_y = scale_max;
 		vsp_decimal = 0;
 		hsp_decimal = 0;
 		state = states.EVADE;
-		vsp = evade_v_spd;
-		hsp = evade_h_spd*-facing;
+		
+		//making dust contraria
+		jump_dust();
+		audio_play_sound(snd_jump, 15, false);
+		
 		jumps--;
 		has_evade = false;
 		alarm[EVADING] = room_speed * evade_delay;
 		untargetable = true;
 		
-		//making dust contraria
-		jump_dust();
-		
-		audio_play_sound(snd_jump, 15, false);
+		//allow 'rooted' evade
+		if down {
+			launch( (jump_spd/3)*-1 , 2 , -1*facing );
+		}else {
+			launch( (jump_spd/2)*-1 , max_hsp*3 , -1*facing );
+			
+		}
 	}	
 }

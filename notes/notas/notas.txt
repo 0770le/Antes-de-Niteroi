@@ -19,3 +19,6 @@ BUGS
 -atirando flecha pra cima toma dano e fica preso infinito
 
 -abaixar e esquivar ao mesmo tempo
+
+
+para uma fonte aceitar acentos, mude para 255 o limite em ASKI

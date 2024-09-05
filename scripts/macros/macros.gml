@@ -44,10 +44,18 @@ function macros(){
 //arrow
 #macro LAYER_CHANGE				0
 	
+//Layer controllers
+#macro LAYER_CONTROLLERS				"Controllers"
+	
 //Layers menu
-#macro LAYER_GUI				"GUI"
-#macro LAYER_GUI_MENU			"GUI_Menu"
-#macro LAYER_GUI_MENU_BUTTONS	"GUI_Menu_Buttons"
-#macro LAYER_GUI_MENU_WINDOW	"GUI_Menu_Window"
+#macro LAYER_GUI						"GUI"
+#macro LAYER_GUI_MENU					"GUI_Menu"
+#macro LAYER_GUI_MENU_BUTTONS			"GUI_Menu_Buttons"
+#macro LAYER_GUI_MENU_WINDOW			"GUI_Menu_Window"
+
+//layer confirmation
+#macro LAYER_GUI_CONFIRMATION			"GUI_Confirmation"
+#macro LAYER_GUI_CONFIRMATION_BUTTONS	"GUI_Confirmation_Buttons"
+#macro LAYER_GUI_CONFIRMATION_WINDOW	"GUI_Confirmation_Window"
 	
 }

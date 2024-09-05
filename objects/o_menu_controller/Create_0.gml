@@ -4,7 +4,6 @@ QUIT		//1
 
 }
 
-/// @desc 
 parent_layer		= LAYER_GUI_MENU;
 window_layer		= LAYER_GUI_MENU_WINDOW;
 buttons_layer		= LAYER_GUI_MENU_BUTTONS;
@@ -12,6 +11,8 @@ sub_layers			= get_sub_layers(parent_layer);
 
 window = noone;
 is_open = false;
+is_focused = false;
+
 title = noone;
 button_close = noone;
 selected_button = noone;
@@ -22,6 +23,9 @@ button_quit = noone;
 main_group = noone;
 selected_group = noone;
 
+function set_focused(_is_focused) {
+	is_focused = _is_focused;
+}
 
 function set_selected_button(_selected_button = noone){
 	unselect_all_buttons();
@@ -52,8 +56,8 @@ function create_window() {
 	window = instance_create_layer(window_get_width()/4, window_get_height()/4, window_layer, o_window_middle_center);
 
 	//acertar numeros manualmente
-	window.image_xscale = 18;
-	window.image_yscale = 12;
+	window.image_xscale = 4.5;
+	window.image_yscale = 3;
 	
 	title = instance_create_layer(window.bbox_left + 10, window.bbox_top +10, buttons_layer, o_txt);
 	title.label = "MENU";
@@ -69,7 +73,21 @@ function create_window() {
 	button_quit = instance_create_layer(button_close.x, button_close.bbox_bottom, buttons_layer, o_button);
 	button_quit.color = c_black;
 	button_quit.label = "Sair do jogo"
-	button_quit.on_click = function(){game_end()};
+	//button_quit.on_click = function(){
+	//	o_confirmation_controller.on_confirm = function(){
+	//		game_end();
+	//	}
+		
+	//	o_confirmation_controller.on_cancel = function() {
+	//		o_confirmation_controller.close();
+	//		o_confirmation_controller.set_focus(false);
+	//		set_focused(true);
+	//	}
+		
+	//	o_confirmation_controller.open();
+	//	o_confirmation_controller.set_focus(true);
+		
+	//};
 
 	//group
 		//nao aparece

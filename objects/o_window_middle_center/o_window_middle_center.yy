@@ -9,8 +9,8 @@
   "name":"o_window_middle_center",
   "overriddenProperties":[],
   "parent":{
-    "name":"GUI",
-    "path":"folders/Objects/GUI.yy",
+    "name":"View",
+    "path":"folders/Objects/GUI/abstract_window/View.yy",
   },
   "parentObjectId":null,
   "persistent":false,

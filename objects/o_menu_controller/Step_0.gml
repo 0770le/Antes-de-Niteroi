@@ -5,12 +5,14 @@ get_input()
 if menu_start {
 	if is_open {
 		close();
-	}else {
+		set_focused(false);
+	} else {
 		open();
+		set_focused(true);
 	}
 }
 
-if is_open{
+if is_focused {
 	if attack or jump {
 		selected_button.on_click();
 	}

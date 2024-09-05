@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"View",
-    "path":"folders/Objects/Menu/View.yy",
+    "path":"folders/Objects/GUI/Menu/View.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -22,7 +22,7 @@ function draw(){
 	draw_set_font(font);
 	draw_text(x + 7, y + 5, label);
 	
-	
+	//mark the selected changing alpha
 	if (is_selected)
 	{
 		draw_set_alpha(selection_alpha);

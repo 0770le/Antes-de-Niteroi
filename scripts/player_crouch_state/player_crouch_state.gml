@@ -32,7 +32,7 @@ function player_crouch_state(){
 		image_index = 0;
 	}
 	
-	if evade {
+	if evade and has_evade {
 		state = states.EVADE;
 		image_index = 0;
 	} 

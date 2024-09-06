@@ -22,6 +22,10 @@ BUGS e pendencias
 -perna do sprite atirando
 -atirando sem muniçao "ou mudar pra nada acontere sem muniçao"
 
-
-
-
+passo a passo janelas
+1 criar layers na sala
+2 criar macros prs layers
+3 criar pastasem GUI
+4 criar obj controller
+5 "copiar" outra controller
+inserir cod no creation code da room

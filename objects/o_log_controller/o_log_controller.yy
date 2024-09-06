@@ -1,17 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"o_button_group",
+  "%Name":"o_log_controller",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_button_group",
+  "name":"o_log_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"View",
-    "path":"folders/Objects/GUI/Menu/View.yy",
+    "name":"Controller",
+    "path":"folders/Objects/GUI/Log/Controller.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"o_abstract_window_controller",
+    "path":"objects/o_abstract_window_controller/o_abstract_window_controller.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,5 +34,5 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

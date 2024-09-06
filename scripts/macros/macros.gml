@@ -58,4 +58,11 @@ function macros(){
 #macro LAYER_GUI_CONFIRMATION_BUTTONS	"GUI_Confirmation_Buttons"
 #macro LAYER_GUI_CONFIRMATION_WINDOW	"GUI_Confirmation_Window"
 	
+//layer Log
+#macro LAYER_GUI_LOG					"GUI_Log"
+#macro LAYER_GUI_LOG_BUTTONS			"GUI_Log_Buttons"
+#macro LAYER_GUI_LOG_WINDOW				"GUI_Log_Window"
+	
+	
+	
 }

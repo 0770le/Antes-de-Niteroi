@@ -36,12 +36,19 @@ function close() {
 	is_open = false;	
 	
 	set_focus(false);
+
+	on_close();
+}
+
+//abstrata
+function on_close(){
+	
 }
 
 function set_title(_title = "Título") {
 	title.label = _title;
 }
-
+// tira o foco das demais janelas e o coloca na janela que chamou o metodo
 function set_focus(_is_focused = false) {
 	with (o_abstract_window_controller) {
 		is_focused = false;
@@ -75,18 +82,29 @@ function process_inputs()
 	get_input();
 	
 	if is_focused {
-		if attack or jump {
+		if keyboard_check_pressed(ord("E")) or keyboard_check_pressed(vk_space) {
 			selected_button.on_click();
 		}
 	
 		if keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) {
 			move_up();
+			
 		} else if keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord("S")) {
 			move_down();
 		}
+		
+		//if keyboard_check_pressed(ord("Q")) or keyboard_check_pressed(ord("F")) {
+		//	selected_button.on_click();
+		//}
+		
+		//if keyboard_check_pressed(vk_escape) {
+		//	close();
+		//}
+		
 	}
 }
 
+//caracteristicas da janela
 function create_window() {
 	window = instance_create_layer(window_x, window_y, window_layer, o_window_middle_center);
 	window.image_xscale = window_xscale;
@@ -107,14 +125,18 @@ function create_window() {
 	button_confirm.valign = fa_bottom;
 }
 
+//abstrato 
 function create_content() {
 	
 }
 
+//abre e fecha a tela
 function init_layers() {
 	array_push(all_layers, parent_layer, buttons_layer, window_layer);	
 }
 
+
+//metodo padrao pra criaçao inicial da janela
 function init() {
 	init_layers();
 	

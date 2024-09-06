@@ -8,11 +8,11 @@ window_xscale   = 6;
 window_yscale   = 3.5;
 // question
 statement		= noone;
-//buttns nav
+//buttns aparecem na janela
 option_yes		= noone;
 option_no		= noone;
 
-//change question
+//change pergunta
 function set_statement(_statement = "Hello, world?")
 {
 	statement.label = _statement;

@@ -4,12 +4,11 @@ enemy_animation = armadeira_anim;
 
 //movement 
 max_hsp_initial = 1;	//acelerado
-chase_spd = max_hsp_initial*2.5;
+chase_spd = max_hsp_initial*2.4;
 max_vsp_initial = -1;	
 spd = 0.5;
 drag = 0.02;	
-jump_vsp = -4;	
-jump_hsp = 4;
+
 
 hurt_time = room_speed * 1;
 hp = 1;

@@ -12,7 +12,7 @@ function armadeira_idle_state(){
 		start_x = x;
 		patrol_dis = random_range(40, 160);
 		state = armadeira_states.WALK;
-		wait_time = room_speed * random_range(4, 10);
+		wait_time = room_speed * random_range(2, 10);
 	} 
 
 //apply movement

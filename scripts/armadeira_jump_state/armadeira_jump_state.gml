@@ -1,6 +1,10 @@
+jump_vsp = -4;	
+jump_hsp = 4;
+
 function armadeira_jump_state(){
 	hidden=false;
 	if (can_attack) {
+		y -= 2;
 		vsp = jump_vsp;
 		hsp = jump_hsp *facing;
 		can_attack = false;

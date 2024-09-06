@@ -1,2 +1,2 @@
-/// @desc noise
-can_noise = true;
+/// @desc can zoomie
+can_zoomie = true;

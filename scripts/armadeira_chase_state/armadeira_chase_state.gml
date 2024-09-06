@@ -10,9 +10,9 @@ function armadeira_chase_state() {
 
 	if alert {
 		target_x = o_player.xprevious;
-		target_y = o_player.yprevious - sprite_get_height(o_player.sprite_index) / 2;
+		target_y = o_player.yprevious;// - sprite_get_height(o_player.sprite_index) / 2;
 			//stop if player keep distance
-		if (abs(x - start_x) > alert_distance) {
+		if (abs(x - start_x) > alert_distance*3) {
 			state = armadeira_states.IDLE;
 			alarm[HIDING] = hide_delay;
 		}

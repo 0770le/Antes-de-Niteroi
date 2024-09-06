@@ -8,9 +8,9 @@ if ((distance_to_object(o_player) < alert_distance) and (o_player.hp > 0)) and !
 	wait_time = room_speed * random_range(0,0.5);
 	
 	//se tiver em idle e sem pode mover nao faz o som 
-	if (state != jararaca_states.IDLE or can_attack) and can_noise { 
+	if (state != jararaca_states.IDLE or can_attack) and can_zoomie { 
 		//intervalo
-		can_noise = false;
+		can_zoomie = false;
 		alarm[8] = room_speed* 4;
 		audio_play_sound(snd_bug_sees_player, 40, false);
 	}

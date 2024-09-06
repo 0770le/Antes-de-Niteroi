@@ -4,7 +4,7 @@ can_alert = false;
 enemy_animation = jararaca_anim;
 tongue = false;//alarme intervalo lambida
 licking = false;//alarme tempo lambendo
-can_noise = true; //alarm gritinho
+can_zoomie = true; //alarm agitação
 
 
 hurt_time = room_speed * 1;

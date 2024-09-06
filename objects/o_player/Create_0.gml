@@ -12,8 +12,6 @@ jump_dampner = 2.5; //'amortecedor' diminuidor do pulo
 jumps_initial = 1;
 jumps = jumps_initial;
 
-// fps pra multiplicar por tempo em segundos
-// room_speed;
 
 //auxiliar
 runned_once = false;

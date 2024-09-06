@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_arrow",
-    "path":"sprites/s_arrow/s_arrow.yy",
+    "name":"s_player_arrow",
+    "path":"sprites/s_player_arrow/s_player_arrow.yy",
   },
   "spriteMaskId":null,
   "visible":true,

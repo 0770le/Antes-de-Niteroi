@@ -3,7 +3,7 @@ function armadeira_attack_state() {
 	image_index = 0;
 	hidden = false;
 	//pulou
-	if ((distance_to_object(o_player) < alert_distance/2) and can_attack) {
+	if ((distance_to_object(o_player) < alert_distance*0.75) and can_attack) {
 			//bote
 			state = armadeira_states.JUMP;
 			image_index=0;

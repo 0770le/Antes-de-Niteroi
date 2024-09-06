@@ -1,22 +1,19 @@
-var take_damage = false;
+var player_take_damage = false;
 
-//only do if arrow is not set to die
+//only run if arrow is not set to die
 if (!other.die ) {
-	//if loohing away, then damage
-	if (!can_take_dmg) {
-		take_damage = false;
-	} else {
-		take_damage = true;
+	if can_take_dmg {
+		player_take_damage = true;
 	}	
 	
 	if (hp <= 0) {
-		take_damage = false;
+		player_take_damage = false;
 		other.die = true;
 	}
 	
 	//process damage
-	if (take_damage) {
-		if (!hurt) {
+	if player_take_damage {
+		if !hurt {
 			hurt = true;
 			//damage player
 			hp -=1;

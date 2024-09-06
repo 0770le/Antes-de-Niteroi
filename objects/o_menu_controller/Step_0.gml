@@ -3,11 +3,13 @@
 get_input();
 
 if menu_start {
-	if is_open and is_focused {
+	if is_open {
 		close();
+		
 		set_focus(false);
-	} else if !is_open {
+	} else {
 		open();
+		
 		set_focus(true);
 	}
 }

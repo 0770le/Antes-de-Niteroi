@@ -97,10 +97,10 @@ function process_inputs()
 		//	selected_button.on_click();
 		//}
 		
-		//if keyboard_check_pressed(vk_escape) {
-		//	close();
-		//}
-		
+		if keyboard_check_pressed(ord("C")) {
+			
+			close();
+		}
 	}
 }
 
@@ -115,11 +115,11 @@ function create_window() {
 	title.font = fnt_arial_medium_to_large;
 	
 	button_cancel = instance_create_layer(window.bbox_right - 25, window.bbox_bottom - 20, buttons_layer, o_txt);
-	button_cancel.label = "< Esc > Cancelar";
+	button_cancel.label = "< C > Voltar";
 	button_cancel.halign = fa_right;
 	button_cancel.valign = fa_bottom;
 	
-	button_confirm = instance_create_layer(window.bbox_right - 175, window.bbox_bottom - 20, buttons_layer, o_txt);
+	button_confirm = instance_create_layer(window.bbox_right - 125, window.bbox_bottom - 20, buttons_layer, o_txt);
 	button_confirm.label = "< Espaço > Confirmar";
 	button_confirm.halign = fa_right;
 	button_confirm.valign = fa_bottom;

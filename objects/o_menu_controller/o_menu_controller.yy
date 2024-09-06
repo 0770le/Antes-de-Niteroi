@@ -12,7 +12,10 @@
     "name":"Controller",
     "path":"folders/Objects/GUI/Menu/Controller.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"o_abstract_window_controller",
+    "path":"objects/o_abstract_window_controller/o_abstract_window_controller.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,5 +35,5 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

@@ -9,3 +9,4 @@ if ((distance_to_object(o_player) < alert_distance) and (o_player.hp > 0)) and !
 
 
 
+show_debug_message("state = " + string(state));	

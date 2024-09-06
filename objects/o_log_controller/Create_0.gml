@@ -24,7 +24,14 @@ function create_content() {
 	button_biodiversidade.label = "Biodiversidade"
 	//funçao
 	button_biodiversidade.on_click = function() {
-		
+		o_biodiversidade_controller.open();
+		o_biodiversidade_controller.set_focus(true);
+	};
+	
+	button_biodiversidade.on_click = function() {
+		call_later(1,time_source_units_frames, function(){
+			set_focus(true);
+		});
 	};
 	update_selected_button(button_biodiversidade);
 

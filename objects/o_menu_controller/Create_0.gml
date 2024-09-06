@@ -38,6 +38,7 @@ function close() {
 	
 	o_confirmation_controller.close();
 	o_log_controller.close();
+	o_biodiversidade_controller.close();
 	
 	parent_close();
 	

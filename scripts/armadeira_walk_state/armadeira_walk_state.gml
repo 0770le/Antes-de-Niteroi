@@ -23,6 +23,7 @@ function armadeira_walk_state(){
 		if _turn_or_climb == 1 {
 			facing*=-1;
 		}else{
+			y-=1;
 			state = armadeira_states.CLIMB;
 		}
 	}

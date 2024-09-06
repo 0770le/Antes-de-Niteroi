@@ -2,7 +2,7 @@
 function armadeira_climb_state(){
 	
 	//roda 1x
-	if (can_alert) {
+	if can_alert {
 		start_x = x;
 	}
 	can_alert= false;
@@ -32,6 +32,8 @@ function armadeira_climb_state(){
 	if (t2 == SOLID) {
 		facing*=-1;
 		state = armadeira_states.JUMP;
+		y += 1
+		launch(0,2);
 	}
 	//apply movement
 	collision();

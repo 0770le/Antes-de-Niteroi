@@ -28,7 +28,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 					
 					//spawn position
 					if down {
-						ypos = -14;	
+						ypos = -8;	
 					}
 		
 					//create arrow

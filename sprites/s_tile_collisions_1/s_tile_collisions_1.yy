@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"s_tile_collisions_1",
-  "bboxMode":0,
-  "bbox_bottom":31,
-  "bbox_left":32,
-  "bbox_right":127,
+  "bboxMode":2,
+  "bbox_bottom":15,
+  "bbox_left":16,
+  "bbox_right":64,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":32,
+  "height":16,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"f6fee8c9-7048-4b39-9678-464d60d2a849","blendMode":0,"displayName":"default","isLocked":false,"name":"f6fee8c9-7048-4b39-9678-464d60d2a849","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"s_tile_collisions_1",
+    "%Name":"s_tile_collisions",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"s_tile_collisions_1",
+    "name":"s_tile_collisions",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":128,
+  "width":64,
 }

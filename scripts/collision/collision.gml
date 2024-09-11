@@ -53,8 +53,8 @@ function collision() {
 	var vt4 = tilemap_get_at_pixel(global.map, bbox_right, vertical_side);
 
 	//collision found
-	if (vt1 != VOID and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and t3 == PLATAFORM)) or
-	   (vt2 != VOID and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and t4 == PLATAFORM)) {
+	if (vt1 != VOID and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and vt3 == PLATAFORM)) or
+	   (vt2 != VOID and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and vt4 == PLATAFORM)) {
 		
 		//floor
 		if (vsp > 0) {

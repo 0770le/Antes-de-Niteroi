@@ -83,6 +83,12 @@ function create_content() {
 			//dealy para evitar que a funçao ocorra no mesmo frame "reabrir confirmaçao"
 			call_later(1, time_source_units_frames, function () { set_focus(true) });
 		}
+		
+		o_confirmation_controller.on_close = function() {
+			//dealy para evitar que a funçao ocorra no mesmo frame
+			call_later(1, time_source_units_frames, function () { set_focus(true) });
+		};
+		
 		//mudança da pergunta
 		o_confirmation_controller.set_statement("Deseja sair do jogo?")
 		o_confirmation_controller.set_focus(true);

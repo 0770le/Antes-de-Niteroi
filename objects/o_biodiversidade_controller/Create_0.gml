@@ -4,9 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
-parent_layer				= LAYER_GUI_LOG;
-window_layer				= LAYER_GUI_LOG_WINDOW;
-buttons_layer				= LAYER_GUI_LOG_BUTTONS;
+parent_layer				= LAYER_GUI_BIODIVERSIDADE;
+window_layer				= LAYER_GUI_BIODIVERSIDADE_WINDOW;
+buttons_layer				= LAYER_GUI_BIODIVERSIDADE_BUTTONS;
 
 window_xscale				= 6.5;
 window_yscale				= 3.2;

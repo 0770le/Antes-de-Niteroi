@@ -1,34 +1,74 @@
 function armadeira_walk_state(){
+
 //set mov
 	hsp = spd * facing;
 	hidden = false;
 	
 //change state
 	//idle
-	if (abs(start_x - x) > patrol_dis) { //patrol_dis-- < 0
+	if (abs(start_x - x) > patrol_dis) { 
 		alarm[HIDING] = hide_delay;
 		state = armadeira_states.IDLE;
 	}	
 	// attack 
-	if alert  {
-		state = states.ATTACK;
+	if alert and !on_ceeling()  {
+		state = armadeira_states.ATTACK;
 	}
-	
-	
-	////escalar ou voltar if a wall is found
-	
+
+	// a wall is found	
 	var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), y);
 	if (t1 == SOLID) {
-		var _turn_or_climb = choose (1,2,2);
-		if _turn_or_climb == 1 {
-			facing*=-1;
-		}else{
-			y-=1;
-			state = armadeira_states.CLIMB;
+	//decisão
+		var _choice = choose (1,2);
+		
+	//voltar horizontal
+		if _choice == 1 {
+			facing*=-1;	
+	
+	//seguir vertical
+		} else {		
+			//cair do teto
+			if on_ceeling() { 
+				facing*=-1;
+				state = armadeira_states.JUMP;
+				y += 1;
+				launch(0,2);
+			//escalar	
+			} else {
+				y-=1;
+				state = armadeira_states.CLIMB;	
+				target_x = x;
+			}
 		}
 	}
 
-	//apply movement
-	collision();
+	////////
+	
+	//tail
+	var t1 = tilemap_get_at_pixel(global.map, side(false), bbox_top -1);
+	//um na frente do ultimo e cima extra
+	var t2 = tilemap_get_at_pixel(global.map, side(false)+1*facing, bbox_top -1);
+	
+	//achou virada pro prox andar
+	if on_ceeling() {
+		if t1 == SOLID and t2 != SOLID {
+			//acertadinha pra ficar do lado da parede
+			x += 1*facing;
+			//vira pra parede
+			facing *= -1;
+			//acerta y pra encostar
+			y -= 1;
+			//mudar escalar pra começar por canto superior
+			state = armadeira_states.CLIMB;
+			target_x = x;
+			hsp=0;
+		
+		}
+	}
+	
 
+	//apply movement
+	
+	collision();
+	
 }

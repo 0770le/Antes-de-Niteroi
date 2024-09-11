@@ -1,16 +1,19 @@
 function armadeira_chase_state() {
 	hidden = false;
+
+	////voltar a dar o pulo 
+	//if (can_attack) {
+	//	state = armadeira_states.IDLE;
+	//	alarm[HIDING] = hide_delay;
+	//}
 	
-	//voltar a dar o pulo
-	if (can_attack) {
-		state = armadeira_states.IDLE;
-		alarm[HIDING] = hide_delay;
-	}
+	
 	//calculate target movement
 
 	if alert {
+		
 		target_x = o_player.xprevious;
-		target_y = o_player.yprevious;// - sprite_get_height(o_player.sprite_index) / 2;
+		target_y = o_player.yprevious;
 			//stop if player keep distance
 		if (abs(x - start_x) > alert_distance*3) {
 			state = armadeira_states.IDLE;
@@ -28,6 +31,7 @@ function armadeira_chase_state() {
 	}
 
 	//calculate movement
+	
 	var _dir = point_direction(x, y, target_x, target_y);
 	var xx = lengthdir_x(chase_spd, _dir);
 	var yy = lengthdir_y(chase_spd, _dir); 
@@ -35,9 +39,8 @@ function armadeira_chase_state() {
 	//if knock back, don´t advance
 	if ((!hurt) and (alarm[KNOCKEDBACK] < 0 )) {
 		//move towards the player
-		var buffer = 15; //stop flickin left/right when at players x
+		var buffer = sprite_width  ; //stop flickin left/right when at players x //15
 		if ((abs(x - o_player.x) > buffer) or (o_player.hp <= 0)) {
-			
 			hsp =xx;
 		}
 	} else {
@@ -53,6 +56,22 @@ function armadeira_chase_state() {
 		audio_play_sound(snd_bug_chase, 40, false);
 	}
 	
+	///////////////	
+	if (distance_to_object(o_player) < alert_distance*0.6) and !attack  {
+	//JUMP		
+		y -= 2;
+		launch(random_range(2,1.5), random_range(4,2.2));
+		//launch(4,2);
+		attack = true;
+		attack_cd =  room_speed * random_range(3, 4); 
+		alarm[ATTACKING] = attack_cd; 
+		state = armadeira_states.JUMP;
+		image_index=0;
+		image_speed=1;
+		if(on_screen(40)) {	audio_play_sound(snd_frog_jump, 40, false);}
+		
+	}
+///////////////////	
 
 	////escalar if a wall is found
 
@@ -61,7 +80,7 @@ function armadeira_chase_state() {
 		state = armadeira_states.CLIMB;
 	}
 	
-	
+
 	//apply movement
 	collision();
 

@@ -34,6 +34,8 @@ function macros(){
 #macro CHASING					7
 #macro CLIMBING					8
 	//SHOOTING					9
+	
+	//ONCE						11
 
 //chest
 #macro OPEN						0
@@ -63,6 +65,10 @@ function macros(){
 #macro LAYER_GUI_LOG_BUTTONS			"GUI_Log_Buttons"
 #macro LAYER_GUI_LOG_WINDOW				"GUI_Log_Window"
 	
+//Layer Biodiversidade
+#macro LAYER_GUI_BIODIVERSIDADE					"GUI_Biodiversidade"
+#macro LAYER_GUI_BIODIVERSIDADE_BUTTONS			"GUI_Biodiversidade_Buttons"
+#macro LAYER_GUI_BIODIVERSIDADE_WINDOW			"GUI_Biodiversidade_Window"
 	
 	
 }

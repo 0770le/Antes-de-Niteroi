@@ -24,6 +24,8 @@ is_open			= false;
 option_group    = [];
 selected_button = noone;
 
+
+
 function open() {
 	array_foreach(all_layers, function (_layer) { instance_activate_layer(_layer); });
 	
@@ -143,6 +145,9 @@ function init() {
 	create_window();
 	
 	create_content();
+	
+	//
+	//fade_to_room();
 	
 	close();
 }

@@ -10,6 +10,10 @@ flash_counter = 0;
 //CASE check_enemy_hp flash dead generico
 o_enemy = object_index;
 
+//aux
+runned_once = false;
+
+
 //PREENCHER MANUAl
 enemy_animation = 0; //inimigo_anim;
 

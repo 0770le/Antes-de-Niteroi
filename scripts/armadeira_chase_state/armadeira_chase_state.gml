@@ -1,6 +1,6 @@
 function armadeira_chase_state() {
 	hidden = false;
-
+	image_speed =1;
 	////voltar a dar o pulo 
 	//if (can_attack) {
 	//	state = armadeira_states.IDLE;
@@ -60,8 +60,8 @@ function armadeira_chase_state() {
 	if (distance_to_object(o_player) < alert_distance*0.6) and !attack  {
 	//JUMP		
 		y -= 2;
-		launch(random_range(2,1.5), random_range(4,2.2));
-		//launch(4,2);
+		launch(random_range(3,1), random_range(3.5,1.4));
+		//launch(3.5,1.5);
 		attack = true;
 		attack_cd =  room_speed * random_range(3, 4); 
 		alarm[ATTACKING] = attack_cd; 

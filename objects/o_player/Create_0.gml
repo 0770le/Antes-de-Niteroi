@@ -7,7 +7,7 @@ walk_spd=0.3;
 
 hsp_decimal = 0;
 vsp_decimal =0;
-jump_spd = -7;
+jump_spd = -6;
 jump_dampner = 2.5; //'amortecedor' diminuidor do pulo
 jumps_initial = 1;
 jumps = jumps_initial;

@@ -1,5 +1,5 @@
 function armadeira_walk_state(){
-
+image_speed =1;
 //set mov
 	hsp = spd * facing;
 	hidden = false;

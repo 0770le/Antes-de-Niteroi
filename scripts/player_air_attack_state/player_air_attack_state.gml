@@ -39,8 +39,10 @@ function player_air_attack_state(){
 			scr_screen_shake(0.5,1.5);	
 			//weapon recoil
 			image_index = 8;
-			anim_paused(0.25)
-			launch(3,6,-1*facing);
+			anim_paused(1)
+			launch(2,4,-1*facing);
+			//FAZER UM ESTADO pra recuar como evade mas com o sprite do bastao pra traz
+			state = states.EVADE;
 		}else { //anim ended. leave state
 			state = states.IDLE;
 		}

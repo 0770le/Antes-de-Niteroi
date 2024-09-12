@@ -23,6 +23,8 @@ BUGS e pendencias
 -armadeira 'some' durante o chase se estiver perto do x do player
 -existe uma troca entre evade e jump dust entre objetos e funçoes, mas eh dificil
 corrigir pq os objetos sao diferentes (seguem ou se afastam do player)
+-apos air attack o player se vira de costas devido a hsp
+
 
 O IDE fica travando depois de parar um jogo (parece q a aranha ainda fica rodando)
 

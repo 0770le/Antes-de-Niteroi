@@ -66,7 +66,6 @@ image_speed =1;
 		}
 	}
 	
-
 	//apply movement
 	
 	collision();

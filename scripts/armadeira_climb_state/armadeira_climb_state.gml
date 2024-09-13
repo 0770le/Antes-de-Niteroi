@@ -17,20 +17,7 @@ image_speed =1;
 	///
 	
 		if  t1 != SOLID and t2 != SOLID  {		//((abs(target_y - y) > sprite_height )) 
-			//subindo no solido
-			//if (abs(target_x - x) < abs(sprite_width)) { // 
-			//	vsp = 0;
-			//	hsp += facing* spd; 			
-			
-			//} else {
-			////depois de subir
-			//	state = armadeira_states.WALK;	
-			//	start_x = x;
-			//	patrol_dis = random_range(patrol_min_dis, patrol_max_dis);
-			//	spd = random_range(spd_min_limit, spd_max_limit);
-			//	wait_time_initial = room_speed * random_range(4, 10);
-			//}	
-			////
+		
 			x+= +1*facing;
 			state = armadeira_states.WALK;
 			start_x = x;

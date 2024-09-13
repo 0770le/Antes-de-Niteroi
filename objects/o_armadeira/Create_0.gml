@@ -1,9 +1,5 @@
 event_inherited();
 
-//pause_menu = false; 
-//state_previous_paused =noone;
-//image_speed_previous_paused =noone;
-
 enemy_animation = armadeira_anim;
 
 //movement 

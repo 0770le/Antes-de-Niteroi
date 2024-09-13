@@ -1,12 +1,5 @@
 event_inherited();
 
-//pause
-//if instance_exists(o_window_middle_center) {
-//	 state_previous_paused = state;
-//	 state = armadeira_states.MENU_PAUSED;
-//	 image_speed = 0;
-//}
-
 //armadeira percebe o player sempre
 
 show_debug_message("state = " + string(state));

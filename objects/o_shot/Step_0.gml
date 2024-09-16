@@ -38,7 +38,7 @@ if (die) {
 	//play arrow die sound only if arrow is on screen
 	if (on_screen(40)) {
 		if (image_index == 1){
-			audio_play_sound(snd_arrow_die, 20, false);
+			audio_play_sound(snd_arrow_die, 20, false, global.volume);
 		}
 	}
 }

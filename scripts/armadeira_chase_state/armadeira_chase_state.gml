@@ -46,7 +46,7 @@ function armadeira_chase_state() {
 
 	//sound
 	if (!audio_is_playing(snd_bug_chase)) {
-		audio_play_sound(snd_bug_chase, 40, false);
+		audio_play_sound(snd_bug_chase, 40, false, global.volume);
 	}
 	
 	if (distance_to_object(o_player) < alert_distance*0.6) and !attack  {
@@ -60,7 +60,7 @@ function armadeira_chase_state() {
 		state = armadeira_states.JUMP;
 		image_index=0;
 		image_speed=1;
-		if(on_screen(40)) {	audio_play_sound(snd_frog_jump, 40, false);}
+		if(on_screen(40)) {	audio_play_sound(snd_frog_jump, 40, false, global.volume);}
 		
 	}
 

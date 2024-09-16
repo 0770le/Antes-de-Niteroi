@@ -27,7 +27,7 @@ function arqueiro_oculto_idle_state() {
 			}
 		
 			//sound
-			audio_play_sound(snd_arrow_firing,10, false);
+			audio_play_sound(snd_arrow_firing,10, false, global.volume);
 		
 		} 
 		else {

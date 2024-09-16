@@ -11,7 +11,7 @@ function evaded() {
 		
 		//making dust contraria
 		jump_dust();
-		audio_play_sound(snd_jump, 15, false);
+		audio_play_sound(snd_jump, 15, false, global.volume);
 		
 		jumps--;
 		has_evade = false;

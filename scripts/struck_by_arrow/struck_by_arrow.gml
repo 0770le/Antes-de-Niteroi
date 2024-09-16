@@ -26,7 +26,7 @@ function struck_by_arrow(){
 				alarm[HURT] = hurt_time;
 				//screen shake
 				scr_screen_shake(.125, -1);
-				audio_play_sound(snd_player_hit, 20, false);
+				audio_play_sound(snd_player_hit, 20, false, global.volume);
 				other.die = true;
 			} else {
 				other.die = true;

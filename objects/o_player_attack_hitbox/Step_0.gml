@@ -33,7 +33,7 @@ with (o_enemy_parent) {
 				
 					//sound 
 					if (!audio_is_playing(snd_sword_hit)) {
-						audio_play_sound(snd_sword_hit, 10, false);
+						audio_play_sound(snd_sword_hit, 10, false, global.volume);
 					}
 				
 					var inst = instance_create_depth(x, (bbox_top + bbox_bottom)/2, depth -1, o_player_weapon_hit);

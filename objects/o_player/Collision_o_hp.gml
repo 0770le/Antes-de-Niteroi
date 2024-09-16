@@ -5,7 +5,7 @@ with(other) {
 		if (hp < max_hp) {
 			hp++;
 		}
-		audio_play_sound(snd_pickup_hp, 15, false);
+		audio_play_sound(snd_pickup_hp, 15, false, global.volume);
 	}
  }
 }

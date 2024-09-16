@@ -59,7 +59,7 @@ function player_attack_state(){
 		if 	image_index > 4	and !runned_once {	
 				runned_once = true;
 				alarm[ONCE] = attack_delay;
-				audio_play_sound(snd_enemy_dying, 10, false);
+				audio_play_sound(snd_enemy_dying, 10, false, global.volume);
 				scr_screen_shake(0.3,1)	
 				instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);
 		}

@@ -5,12 +5,12 @@ function check_enemy_hp(){
 		var _chance = random(1);
 		if (_chance <= hp_drop_chance) {
 			instance_create_layer(x,bbox_top, "Drops", o_hp);
-			audio_play_sound(snd_hp_spawning, 15, false);
+			audio_play_sound(snd_hp_spawning, 15, false, global.volume);
 		}
 		//play death sound
-		audio_play_sound(snd_enemy_dying, 10, false);
+		audio_play_sound(snd_enemy_dying, 10, false, global.volume);
 		//play gem spawn sound
-		audio_play_sound(snd_gems_spawning, 15, false);
+		audio_play_sound(snd_gems_spawning, 15, false, global.volume);
 		
 		repeat(death_gem_value) {
 			instance_create_layer(x, bbox_top, "Drops", o_gem);

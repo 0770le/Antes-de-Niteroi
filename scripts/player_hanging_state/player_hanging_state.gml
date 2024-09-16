@@ -43,7 +43,7 @@ function player_hanging_state(){
 		state = states.JUMP;
 		hsp = max_hsp *facing;
 		vsp = jump_spd;
-		audio_play_sound(snd_jump, 15, false);
+		audio_play_sound(snd_jump, 15, false, global.volume);
 	}
 
 	if evade {

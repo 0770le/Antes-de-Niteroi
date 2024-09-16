@@ -15,7 +15,7 @@ function player_air_attack_state(){
 		runned_once=true;
 		alarm[ONCE] = image_speed*room_speed;
 		launch(-4,0);
-		audio_play_sound(snd_sword_swing, 20, false);	
+		audio_play_sound(snd_sword_swing, 20, false, global.volume);	
 		var inst= instance_create_layer(x -30*facing,y-25, "Player", o_player_attack_hitbox);
 		inst.image_xscale = facing*2;	
 
@@ -35,7 +35,7 @@ function player_air_attack_state(){
 	if on_ground() {//reach ground during loop
 		if (image_index >= 3 and image_index < 7 ) {//stomp shake. move back
 			instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);
-			audio_play_sound(snd_enemy_dying, 10, false);
+			audio_play_sound(snd_enemy_dying, 10, false, global.volume);
 			scr_screen_shake(0.5,1.5);	
 			//weapon recoil
 			image_index = 8;

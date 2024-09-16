@@ -14,6 +14,8 @@ if (!instance_exists(o_fade)) {
 	//anim
 	enemy_anim();
 	
+	//not allow facing = 0;
+	if image_xscale == 0 { image_xscale= 1;}
 	
 	
 	//seta a visibilidade o oposto de hidden

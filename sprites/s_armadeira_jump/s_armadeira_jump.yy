@@ -26,7 +26,7 @@
   ],
   "name":"s_armadeira_jump",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"Armadeira",
     "path":"folders/Sprites/Enemy/Armadeira.yy",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":7,
-    "yorigin":12,
+    "yorigin":7,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

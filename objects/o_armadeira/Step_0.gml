@@ -34,6 +34,13 @@ if !on_ceeling() {
 	}
 }
 
+	var t1 = tilemap_get_at_pixel(global.map, side(), bbox_top);
+	var t2 = tilemap_get_at_pixel(global.map, side(false), bbox_top);
+	
+	if  (t1 == SOLID or t2 == SOLID) {
+		y += 1;
+	}	
+
 //caindo no player de uma plataforma
 //var t1 = tilemap_get_at_pixel(global.map, x, y);
 //if on_screen(32){

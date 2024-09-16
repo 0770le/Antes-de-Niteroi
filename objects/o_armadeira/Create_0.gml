@@ -54,7 +54,7 @@ sprites_array[armadeira_states.WALK] = s_armadeira_walk;
 sprites_array[armadeira_states.CLIMB] = s_armadeira_climb;
 sprites_array[armadeira_states.ATTACK] = s_armadeira_attack;
 sprites_array[armadeira_states.JUMP] = s_armadeira_jump;
-sprites_array[armadeira_states.CHASE] = s_armadeira_walk;
+sprites_array[armadeira_states.CHASE] = s_armadeira_chase;
 
 
 function on_ceeling(){

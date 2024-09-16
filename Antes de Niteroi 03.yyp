@@ -251,6 +251,7 @@
     {"id":{"name":"snd_sword_swing","path":"sounds/snd_sword_swing/snd_sword_swing.yy",},},
     {"id":{"name":"s_arara","path":"sprites/s_arara/s_arara.yy",},},
     {"id":{"name":"s_armadeira_attack","path":"sprites/s_armadeira_attack/s_armadeira_attack.yy",},},
+    {"id":{"name":"s_armadeira_chase","path":"sprites/s_armadeira_chase/s_armadeira_chase.yy",},},
     {"id":{"name":"s_armadeira_climb","path":"sprites/s_armadeira_climb/s_armadeira_climb.yy",},},
     {"id":{"name":"s_armadeira_idle","path":"sprites/s_armadeira_idle/s_armadeira_idle.yy",},},
     {"id":{"name":"s_armadeira_jump","path":"sprites/s_armadeira_jump/s_armadeira_jump.yy",},},

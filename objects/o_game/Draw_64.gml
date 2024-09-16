@@ -195,7 +195,7 @@ if (room != rm_menu) {
 if (fade_in) {
 	alpha = lerp(alpha, 0, fade_spd);
 	draw_set_alpha(alpha);
-	draw_rectangle_colour(0, 0, gw, gh, c_black, c_black, c_black, c_black, false);
+	//draw_rectangle_colour(0, 0, gw, gh, c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
 }
 

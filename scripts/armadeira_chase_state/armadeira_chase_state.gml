@@ -1,15 +1,8 @@
 function armadeira_chase_state() {
 	hidden = false;
 	image_speed =1;
-	////voltar a dar o pulo 
-	//if (can_attack) {
-	//	state = armadeira_states.IDLE;
-	//	alarm[HIDING] = hide_delay;
-	//}
-	
 	
 	//calculate target movement
-
 	if alert {
 		
 		target_x = o_player.xprevious;
@@ -56,7 +49,6 @@ function armadeira_chase_state() {
 		audio_play_sound(snd_bug_chase, 40, false, global.volume);
 	}
 	
-	///////////////	
 	if (distance_to_object(o_player) < alert_distance*0.6) and !attack  {
 	//JUMP		
 		y -= 2;
@@ -71,10 +63,8 @@ function armadeira_chase_state() {
 		if(on_screen(40)) {	audio_play_sound(snd_frog_jump, 40, false, global.volume);}
 		
 	}
-///////////////////	
 
-	////escalar if a wall is found
-
+	//escalar if a wall is found
 	var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), y);
 	if (t1 == SOLID) {
 		state = armadeira_states.CLIMB;

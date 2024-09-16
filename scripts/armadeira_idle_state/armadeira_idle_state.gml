@@ -9,7 +9,6 @@ function armadeira_idle_state(){
 		alert_distance = random_range (45, 64)
 	}
 
-
 	// walk  
 	if (wait_time-- < 0) {
 		start_x = x;

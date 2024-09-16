@@ -11,6 +11,6 @@ function check_player_hp() {
 		scale_x=1;
 		scale_y=1;
 		lives --;
-		audio_play_sound(snd_player_die, 5, false);	
+		audio_play_sound(snd_player_die, 5, false, global.volume);	
 	}
 }

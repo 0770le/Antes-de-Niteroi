@@ -12,7 +12,7 @@ if ((distance_to_object(o_player) < alert_distance) and (o_player.hp > 0)) and !
 		//intervalo
 		can_zoomie = false;
 		alarm[8] = room_speed* 4;
-		audio_play_sound(snd_bug_sees_player, 40, false);
+		audio_play_sound(snd_bug_sees_player, 40, false, global.volume);
 	}
 } 
 

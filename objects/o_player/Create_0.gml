@@ -1,4 +1,6 @@
 
+global.volume = 0.1;
+
 // speeds
 hsp =0; //horizontal
 vsp = 0; //vertical

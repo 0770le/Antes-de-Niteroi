@@ -30,12 +30,12 @@ if (die) {
 	} 
 	image_speed = 1;
 	if (image_index == 1){
-		audio_play_sound(snd_arrow_die, 20, false);
+		audio_play_sound(snd_arrow_die, 20, false, global.volume);
 	}
 	//play arrow die sound only if arrow is on screen
 	if (on_screen(200)) {
 		if (image_index == 1){
-			audio_play_sound(snd_arrow_die, 20, false);
+			audio_play_sound(snd_arrow_die, 20, false, global.volume);
 		}
 	}
 }

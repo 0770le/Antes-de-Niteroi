@@ -40,6 +40,6 @@ function process_enemy_attack () { // (hk, bk) {
 			scr_screen_shake(.125,1);
 			
 			//sound
-			audio_play_sound(snd_player_hit, 40, false);
+			audio_play_sound(snd_player_hit, 40, false, global.volume);
 	}	
 }	

@@ -191,7 +191,6 @@
     {"name":"s_arara","order":1,"path":"sprites/s_arara/s_arara.yy",},
     {"name":"s_armadeira_attack","order":1,"path":"sprites/s_armadeira_attack/s_armadeira_attack.yy",},
     {"name":"s_armadeira_climb","order":5,"path":"sprites/s_armadeira_climb/s_armadeira_climb.yy",},
-    {"name":"s_armadeira_fall","order":4,"path":"sprites/s_armadeira_fall/s_armadeira_fall.yy",},
     {"name":"s_armadeira_jump","order":2,"path":"sprites/s_armadeira_jump/s_armadeira_jump.yy",},
     {"name":"s_armadeira_walk","order":3,"path":"sprites/s_armadeira_walk/s_armadeira_walk.yy",},
     {"name":"s_armadeira","order":2,"path":"sprites/s_armadeira/s_armadeira.yy",},

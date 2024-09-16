@@ -19,7 +19,7 @@ function jumped() {
 		vsp = jump_spd;
 		jumps -= 1;
 		evade_dust();
-		audio_play_sound(snd_jump, 15, false);
+		audio_play_sound(snd_jump, 15, false, global.volume);
 	}	
 	
 	

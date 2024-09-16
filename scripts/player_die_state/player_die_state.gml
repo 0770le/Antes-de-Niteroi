@@ -20,7 +20,7 @@ function player_die_state(){
 			jump_dust();
 			state = states.DIE_2;
 			
-			audio_play_sound(snd_enemy_dying, 5, false);
+			audio_play_sound(snd_enemy_dying, 5, false, global.volume);
 	
 			image_index = 0;
 			image_speed = 0;

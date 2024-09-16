@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tupinamba_idle_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tupinamba_idle_state",
+  "parent":{
+    "name":"Tupinamba",
+    "path":"folders/Scripts/Enemy/Tupinamba.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

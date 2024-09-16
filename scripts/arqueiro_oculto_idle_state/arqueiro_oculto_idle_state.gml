@@ -8,7 +8,7 @@ function arqueiro_oculto_idle_state() {
 			fire_delay = fire_delay_initial;
 		
 			//set spawn transition from the center
-			var ypos = ((sprite_get_height(sprite_index) /2) - BLOCO/2) * spawn_pos;
+			var ypos = ((sprite_get_height(sprite_index) /2) - TILE_SIZE/2) * spawn_pos;
 			//switch position for next arrow
 			spawn_pos *= -1;
 		

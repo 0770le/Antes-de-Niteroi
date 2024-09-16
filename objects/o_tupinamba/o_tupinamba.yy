@@ -43,8 +43,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_enemy_parent",
-    "path":"sprites/s_enemy_parent/s_enemy_parent.yy",
+    "name":"s_tupinamba_idle",
+    "path":"sprites/s_tupinamba_idle/s_tupinamba_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

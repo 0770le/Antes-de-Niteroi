@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tupinamba_anim",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tupinamba_anim",
+  "parent":{
+    "name":"Tupinamba",
+    "path":"folders/Scripts/Enemy/Tupinamba.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

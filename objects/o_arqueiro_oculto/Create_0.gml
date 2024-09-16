@@ -20,7 +20,7 @@ anim_start = anim_start_initial;
 image_speed=0;
 facing = -1;
 
-alert_distance = BLOCO;
+alert_distance = TILE_SIZE;
 alert_cooling = 0;
 
 //HIDING

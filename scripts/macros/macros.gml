@@ -11,7 +11,7 @@ function macros(){
 	
 //game 
 #macro DISPLAY_MSG				0
-#macro BLOCO					32
+#macro TILE_SIZE					32
 	
 //player alarms
 #macro EVADING					0

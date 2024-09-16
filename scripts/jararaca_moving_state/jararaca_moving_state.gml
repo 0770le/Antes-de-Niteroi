@@ -16,16 +16,16 @@ function jararaca_moving_state(){
 	//buraco
 	var next_step = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + 1);
 	//nao cair se buraco > 3 blocos
-	var t0 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + BLOCO+1);	//2º bloco abaixo
-	var t1 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + BLOCO*2+1);	//3º bloco 
-	var t2 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + BLOCO*3+1);	//4º bloco
+	var t0 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + TILE_SIZE+1);	//2º bloco abaixo
+	var t1 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + TILE_SIZE*2+1);	//3º bloco 
+	var t2 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + TILE_SIZE*3+1);	//4º bloco
 	
 	//parede
 	var face = tilemap_get_at_pixel(global.map, side() +1*facing, y);
 	////nao subir se parede > 3 blocos 
-		var t3 = tilemap_get_at_pixel(global.map, side() +1*facing,  bbox_bottom - BLOCO-1);	//2º bloco acima
-		var t4 = tilemap_get_at_pixel(global.map, side() +1*facing,  bbox_bottom - BLOCO*2-1);//3º bloco
-		var t5 = tilemap_get_at_pixel(global.map, side() +1*facing,  bbox_bottom - BLOCO*3-1);//4º bloco
+		var t3 = tilemap_get_at_pixel(global.map, side() +1*facing,  bbox_bottom - TILE_SIZE-1);	//2º bloco acima
+		var t4 = tilemap_get_at_pixel(global.map, side() +1*facing,  bbox_bottom - TILE_SIZE*2-1);//3º bloco
+		var t5 = tilemap_get_at_pixel(global.map, side() +1*facing,  bbox_bottom - TILE_SIZE*3-1);//4º bloco
 	
 	
 	//hit a wall or an edge

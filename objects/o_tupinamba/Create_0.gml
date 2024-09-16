@@ -1,17 +1,31 @@
 ///@desc
+event_inherited();
+
+
+
+//arrow spawning y pos
+spawn_pos =1;
+can_fire = true;
+
+knockback_shoot_distance = 5;
+can_fire = true;
+fire_delay_initial = room_speed * 2;
+fire_delay = fire_delay_initial;
+
+
 
 //taking dmg
  
 hurt = false;
-hurt_time = room_speed * 1.5;
-hp = 1;
+hurt_time = room_speed * 0.5;
+hp = 3;
 can_take_dmg = true; 
 flash_counter = 0;
 //CASE check_enemy_hp flash dead generico
 o_enemy = object_index;
 
 //PREENCHER MANUAl
-enemy_animation = 0; //inimigo_anim;
+enemy_animation = tupinamba_anim;
 
 //alert
 can_alert = true;
@@ -32,7 +46,7 @@ vsp = 0;
 max_vsp_initial = -1;
 max_vsp = max_vsp_initial;
 vsp_decimal = 0;
-
+//jump
 jump_vsp = -3;
 jump_hsp = 3;
 
@@ -41,11 +55,11 @@ drag = 0.12;
 
 //loot
 hp_drop_chance = 0.3;
-death_gem_value = 3;
+arrow_drop_chance = 0.3;
 
 //actions
 //attack
-collision_dmg = true;
+collision_dmg = false;
 damage = 1;
 knockback_distance = 5;
 can_attack = true;
@@ -72,10 +86,7 @@ start_y = y;
 //how long to wait before patrolling
 wait_time_initial = random_range(2, 4) * room_speed;
 wait_time = wait_time_initial;
-	//CHASE
-//target to move to
-target_x = 0;
-target_y = 0;
+
 //minimum distance to start chasing
 chase_distance = alert_distance;	
 	//HIDING
@@ -85,14 +96,47 @@ hide_delay = 1.5 * room_speed;
 
 //states
 enum tupinamba_states {
-	IDLE
+	IDLE,
+	TUPINAMBA_SHOOT,
 }
 
-state = enemy_states.IDLE;
+//states
+states_array[tupinamba_states.IDLE] = tupinamba_idle_state;
+states_array[tupinamba_states.TUPINAMBA_SHOOT] = tupinamba_shoot_state;
 
-//states_array[enemy_states.IDLE] = intern_idle_state;
 
-//sprites_array[enemy_states.IDLE] = s_intern_idle;
+sprites_array[tupinamba_states.IDLE] = s_tupinamba_idle;
+sprites_array[tupinamba_states.TUPINAMBA_SHOOT] = s_tupinamba_shoot;
+
+
+//function back_to_idle(){}
+
+//function patrol(){}
+
+
+
+function tupinamba_shoot(){
+	can_fire = false;
+	fire_delay = fire_delay_initial;
+		
+	//set spawn transition from the center
+	var ypos = ((sprite_get_height(sprite_index) /2)) * spawn_pos;
+	//switch position for next arrow
+	spawn_pos *= -1;
+		
+	//create arrow
+	var inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_arrow);
+	inst.facing = facing;
+		
+	//create spark
+	var inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);			
+	inst.image_xscale = facing;
+		
+	//sound
+	audio_play_sound(snd_arrow_firing,10, false);
+			
+}
+
 
 
 

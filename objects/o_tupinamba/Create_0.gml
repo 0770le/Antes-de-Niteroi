@@ -2,15 +2,18 @@
 event_inherited();
 
 
-
+//BOW
 //arrow spawning y pos
 spawn_pos =1;
 can_fire = true;
 
 knockback_shoot_distance = 5;
 can_fire = true;
-fire_delay_initial = room_speed * 2;
+fire_delay_initial = room_speed * 6;
 fire_delay = fire_delay_initial;
+number_of_shots_initial = 3;
+number_of_shots = number_of_shots_initial;
+
 
 
 
@@ -30,7 +33,7 @@ enemy_animation = tupinamba_anim;
 //alert
 can_alert = true;
 alert = false;
-alert_distance = 100;
+alert_distance = TILE_SIZE * 6;
 alert_cooling = room_speed * random_range( 1.5, 3);
 
 //movement 
@@ -97,47 +100,40 @@ hide_delay = 1.5 * room_speed;
 //states
 enum tupinamba_states {
 	IDLE,
-	TUPINAMBA_SHOOT,
+	SHOOT,
 }
 
 //states
 states_array[tupinamba_states.IDLE] = tupinamba_idle_state;
-states_array[tupinamba_states.TUPINAMBA_SHOOT] = tupinamba_shoot_state;
+states_array[tupinamba_states.SHOOT] = tupinamba_shoot_state;
 
 
 sprites_array[tupinamba_states.IDLE] = s_tupinamba_idle;
-sprites_array[tupinamba_states.TUPINAMBA_SHOOT] = s_tupinamba_shoot;
+sprites_array[tupinamba_states.SHOOT] = s_tupinamba_shoot;
 
+mask_array[tupinamba_states.IDLE] = s_tupinamba_idle;
+mask_array[tupinamba_states.SHOOT] = s_tupinamba_idle;
 
-//function back_to_idle(){}
-
-//function patrol(){}
-
-
-
-function tupinamba_shoot(){
-	can_fire = false;
-	fire_delay = fire_delay_initial;
+function create_arrow() {
+		//gap in frames 
+		runned_once = true;
+		alarm[ONCE] = room_speed*0.2;
 		
-	//set spawn transition from the center
-	var ypos = ((sprite_get_height(sprite_index) /2)) * spawn_pos;
-	//switch position for next arrow
-	spawn_pos *= -1;
+		//set spawn position		
+		ypos = -22;
 		
-	//create arrow
-	var inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_arrow);
-	inst.facing = facing;
+		//create arrow
+		var inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_arrow);
+		inst.facing = facing;
+		//sound
+		audio_play_sound(snd_arrow_firing,10, false, global.volume);
 		
-	//create spark
-	var inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);			
-	inst.image_xscale = facing;
-		
-	//sound
-	audio_play_sound(snd_arrow_firing,10, false);
+		//create spark
+		var inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);			
+		inst.image_xscale = facing;
 			
+		number_of_shots -= choose(1,2,3);	
 }
-
-
 
 
 //puff of smoke on spawn

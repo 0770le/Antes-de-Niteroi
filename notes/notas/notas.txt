@@ -28,21 +28,15 @@ draw_line(bbox_right, bbox_top,bbox_right,bbox_bottom);
 BUGS e pendencias
 -perna do sprite atirando
 -atirando sem muniçao "ou mudar pra nada acontere sem muniçao"
--armadeira 'some' durante o chase se estiver perto do x do player
 -existe uma troca entre evade e jump dust entre objetos e funçoes, mas eh dificil
 corrigir pq os objetos sao diferentes (seguem ou se afastam do player)
--apos air attack o player se vira de costas devido a hsp
-
-
-O IDE fica travando depois de parar um jogo (parece q a aranha ainda fica rodando)
-
-o pause do menu faz com que varias funçoes de inimigos quebrem ao nao encontrarem o player
-tentei concertar implementando um menu_pause_state na armadeira que olha se o objeto 
-o_window_middle_senter existe, nao funcionou
 
 
 
+O IDE fica travando depois de parar um jogo (parece q a aranha ainda fica rodando) o fade
 
+
+call_later(1, time_source_units_frames, function () { set_focus(true) });	
 
 
 

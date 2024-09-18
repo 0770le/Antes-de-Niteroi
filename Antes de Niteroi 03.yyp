@@ -284,6 +284,7 @@
     {"id":{"name":"s_hide_spot","path":"sprites/s_hide_spot/s_hide_spot.yy",},},
     {"id":{"name":"s_hp_bar","path":"sprites/s_hp_bar/s_hp_bar.yy",},},
     {"id":{"name":"s_hp","path":"sprites/s_hp/s_hp.yy",},},
+    {"id":{"name":"s_humanoid_hitbox","path":"sprites/s_humanoid_hitbox/s_humanoid_hitbox.yy",},},
     {"id":{"name":"s_intern_alerted","path":"sprites/s_intern_alerted/s_intern_alerted.yy",},},
     {"id":{"name":"s_intern_idle","path":"sprites/s_intern_idle/s_intern_idle.yy",},},
     {"id":{"name":"s_jararaca_climb","path":"sprites/s_jararaca_climb/s_jararaca_climb.yy",},},

@@ -20,7 +20,7 @@ runned_once = false;
 
 //evade
 has_evade = true;
-evade_delay = 0.8;
+evade_delay = 0.5;
 can_take_dmg = true;
 
 //friction
@@ -29,7 +29,7 @@ drag=0.1;
 scale_x= 1;
 scale_y= 1;
 scale_min= 0.75;
-scale_max= 1.25;
+scale_max=1.30;// 1.25;
 scale_decay = 0.2;
 
 //Hide
@@ -57,14 +57,14 @@ can_attack = true;
 attack_delay = 1 * room_speed;
 	//how long enemies get knocked back for when hit
 knockback_time = room_speed /2;
-knockback_dis = 1.5;
+knockback_dis = 4; //1.5;
 attack_held_time = 0;
 
 //bow
 can_fire = true;
-fire_delay = 0.5 * room_speed; //charging time -> sprites
+fire_delay = 0.4 * room_speed; //charging time -> sprites
 arrows_max = 9;
-arrows_initial = 20;
+arrows_initial = 30;
 arrows = arrows_initial;
 	//arrow spawning dir pos
 spawn_pos = -1;
@@ -84,7 +84,7 @@ facing =- room_start_facing;
 //hurt
 flash_counter = 0;
 hurt = false;
-hurt_time = room_speed;
+hurt_time = room_speed*1.5;
 hp = 5;
 max_hp = hp;
 
@@ -120,6 +120,7 @@ enum states {
 	ATTACK,		//3
 	ATTACK_WALK,//4
 	AIR_ATTACK,	//5
+	AIR_ATTACK_END,
 	EVADE,		//6
 	CROUCH,		//7
 	HIDE,		//8
@@ -141,6 +142,7 @@ states_array[states.JUMP]			= player_jump_state;
 states_array[states.ATTACK]			= player_attack_state;
 states_array[states.ATTACK_WALK]	= player_attack_walk_state;
 states_array[states.AIR_ATTACK]		= player_air_attack_state;
+states_array[states.AIR_ATTACK_END]		= player_air_attack_end_state;
 states_array[states.EVADE]			= player_evade_state;
 states_array[states.CROUCH]			= player_crouch_state;
 states_array[states.HIDE]			= player_hide_state;
@@ -161,6 +163,7 @@ sprites_array[states.JUMP]			 = s_player_jump;
 sprites_array[states.ATTACK]		 = s_player_attack;
 sprites_array[states.ATTACK_WALK]	 = s_player_attack_walk;
 sprites_array[states.AIR_ATTACK]	 = s_player_air_attack;
+sprites_array[states.AIR_ATTACK_END]	 = s_player_air_attack_end;
 sprites_array[states.EVADE]			 = s_player_evade;
 sprites_array[states.CROUCH]		 = s_player_crouch;
 sprites_array[states.HIDE]			 = s_player_hide;
@@ -180,6 +183,7 @@ mask_array[states.JUMP]				= s_player_hitbox;
 mask_array[states.ATTACK]			= s_player_hitbox; 
 mask_array[states.ATTACK_WALK]		= s_player_hitbox; 
 mask_array[states.AIR_ATTACK]		= s_player_hitbox; 
+mask_array[states.AIR_ATTACK_END]		= s_player_hitbox; 
 mask_array[states.EVADE]			= s_player_hitbox; 
 mask_array[states.HIDE]				= s_player_hitbox_crouch;
 mask_array[states.CROUCH]			= s_player_hitbox_crouch;

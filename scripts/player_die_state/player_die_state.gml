@@ -2,7 +2,7 @@
 function player_die_state(){
 
 	//caculate movement
-	calc_entity_movement()
+	calc_entity_movement(global.grav*0.9)
 	
 	//check state
 	

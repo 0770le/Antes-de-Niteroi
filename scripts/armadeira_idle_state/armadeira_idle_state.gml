@@ -7,6 +7,7 @@ function armadeira_idle_state(){
 	if alert {
 		state = armadeira_states.ATTACK;
 		alert_distance = random_range (45, 64)
+		wait_time_initial = room_speed * random_range(3, 5);
 	}
 
 	// walk  

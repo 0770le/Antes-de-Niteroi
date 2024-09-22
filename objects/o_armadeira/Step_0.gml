@@ -2,18 +2,18 @@ event_inherited();
 
 //armadeira percebe o player sempre
 
-show_debug_message("state = " + string(state));
-show_debug_message("can_attack = " + string(can_attack));
-show_debug_message(" = " + string(state));
-
 if (((distance_to_object(o_player) < alert_distance) and (o_player.hp > 0)) and !o_player.hidden) and on_ground()  {
 	var _blocked_view = collision_line(x,y, o_player.x, o_player.y, layer_tilemap_get_id("View_Block") ,false ,false);
 	 if  _blocked_view == noone{
-	
 		stare();
 	 }
 }
 
+
+//mantem olhando o player
+if alert and on_ground()  {
+	stare();
+}
 
 if !on_ceeling() {
 	image_yscale = 1;

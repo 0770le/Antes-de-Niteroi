@@ -2,7 +2,7 @@
 function player_die_2_state(){
 
 	//caculate movement
-	calc_entity_movement()
+	calc_entity_movement(global.grav*0.9)
 	
 	//end of anim
 	if image_index >= 2   { 

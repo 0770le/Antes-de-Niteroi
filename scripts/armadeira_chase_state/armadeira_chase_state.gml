@@ -3,7 +3,7 @@ function armadeira_chase_state() {
 	image_speed =1;
 	
 	//calculate target movement
-	if alert {
+	if alert and !o_player.hurt {
 		
 		target_x = o_player.xprevious;
 		target_y = o_player.yprevious;
@@ -19,7 +19,7 @@ function armadeira_chase_state() {
 		//return to idle once at or near start pos
 		if (abs(x - start_x) < 4) {
 			state = armadeira_states.IDLE;
-			alarm[HIDING] = hiding_delay;
+			alarm[HIDING] = hide_delay;
 		}
 	}
 
@@ -49,13 +49,13 @@ function armadeira_chase_state() {
 		audio_play_sound(snd_bug_chase, 40, false, global.volume);
 	}
 	
-	if (distance_to_object(o_player) < alert_distance*0.6) and !attack  {
+	if (distance_to_object(o_player) < alert_distance*0.45) and !attack  {
 	//JUMP		
 		y -= 2;
-		//launch(random_range(3,1), random_range(3.5,1.4));
-		launch(5,1.5);
+		launch(random_range(3.6,4), random_range(0.9,1.1));
+		//launch(4,1.5);
 		attack = true;
-		attack_cd =  room_speed * random_range(3, 4); 
+		attack_cd =  room_speed * random_range(3, 5); 
 		alarm[ATTACKING] = attack_cd; 
 		state = armadeira_states.JUMP;
 		image_index=0;

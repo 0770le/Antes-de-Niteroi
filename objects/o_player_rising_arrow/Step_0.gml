@@ -1,6 +1,6 @@
 //movement
 if !launched {
-	launch(push_vsp, push_hsp);
+	launch(init_vsp, spd);
 }
 calc_entity_movement();
 hsp = spd * facing;
@@ -14,29 +14,33 @@ var t1 = 0;
 var t2 = 0;
 
 
+//if on_ground() {
+//	die = true;
+//}
+
 //stop if dead
 if (die) {
 	hsp = 0;
 }
 
+////destroy at wall if moved more than one tile
+//if (abs(xstart - x) > global.tile_size) {
+//	var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_top);
+//	var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_bottom);
 
-
-//destroy at wall if moved more than one tile
-if (abs(xstart - x) > global.tile_size) {
-	var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_top);
-	var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_bottom);
-
-	if (((t1 == SOLID) or (t1 == -1)) or ((t2 == SOLID) or (t2 == -1))) {
-		die = true;
-	}
-	collision();	
+//	if (((t1 == SOLID) or (t1 == -1)) or ((t2 == SOLID) or (t2 == -1))) {
+//		die = true;
+//	}
+	
+var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_bottom);	
+if t2 == SOLID {
+	die=true;
+	//collision();	
 } else { //pela parede
 	x += hsp; 	
 }
 
-if on_ground() {
-		die = true;
-	}
+
 	
 //play animation
 if (die) {

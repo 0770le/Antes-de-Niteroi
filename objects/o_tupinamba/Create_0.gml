@@ -5,11 +5,13 @@ event_inherited();
 //BOW
 //arrow spawning y pos
 spawn_pos =1;
+
 can_fire = true;
+
 
 knockback_shoot_distance = 5;
 can_fire = true;
-fire_delay_initial = room_speed * 6;
+fire_delay_initial = room_speed * random_range(2, 2.5);
 fire_delay = fire_delay_initial;
 number_of_shots_initial = 3;
 number_of_shots = number_of_shots_initial;
@@ -33,7 +35,7 @@ enemy_animation = tupinamba_anim;
 //alert
 can_alert = true;
 alert = false;
-alert_distance = TILE_SIZE * 6;
+alert_distance = TILE_SIZE * 20;
 alert_cooling = room_speed * random_range( 1.5, 3);
 
 //movement 
@@ -123,13 +125,16 @@ function create_arrow() {
 		ypos = -22;
 		
 		//create arrow
-		var inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_arrow);
+		
+		
+		var inst = instance_create_layer(side()+4*facing,y + ypos, "Arrow_shoot", o_tupinamba_rising_arrow);
 		inst.facing = facing;
+		
 		//sound
 		audio_play_sound(snd_arrow_firing,10, false, global.volume);
 		
 		//create spark
-		var inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);			
+		var inst = instance_create_layer (side()+4*facing, y + ypos, "Arrow_shoot", o_arrow_spark);			
 		inst.image_xscale = facing;
 			
 		number_of_shots -= choose(1,2,3);	

@@ -13,8 +13,9 @@ function tupinamba_shoot_state() {
 	
 	//finish firing
 	if anim_end() { 
-		can_fire = true;
-		fire_delay = 10;//fire_delay_initial;
+		can_fire = false;
+		fire_delay = fire_delay_initial;
+
 		number_of_shots = number_of_shots_initial;
 		state = tupinamba_states.IDLE; 
 		image_index =0;
@@ -22,11 +23,6 @@ function tupinamba_shoot_state() {
 	
 	//check state
 	
-	//not in range
-	if (distance_to_object(o_player) > alert_distance) {
-		state = tupinamba_states.IDLE;
-		image_index =0;
-	}
 	
 	collision();
 }

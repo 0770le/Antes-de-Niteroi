@@ -26,10 +26,6 @@ if (!instance_exists(o_fade)) {
 		image_alpha = lerp (image_alpha, 1, 0.1);
 	}
 	
-	//mantem olhando o player
-	if (alert) {
-		stare();
-	}
 	
 } else {
 //stop animation playing

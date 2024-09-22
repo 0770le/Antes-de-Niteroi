@@ -38,7 +38,7 @@ function macros(){
 	//ONCE						11
 
 //chest
-#macro OPEN						0
+//#macro OPEN						0
 	
 //o_arrow_spawner
 #macro FIRE						0

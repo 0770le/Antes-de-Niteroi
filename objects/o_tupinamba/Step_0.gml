@@ -12,4 +12,13 @@ if state == tupinamba_states.SHOOT {
 
 if !can_fire {
 	fire_delay--;
+	if fire_delay < 0 {
+		can_fire = true;
+	}
 }
+
+
+	//mantem olhando o player
+	if alert  {
+		stare();
+	}

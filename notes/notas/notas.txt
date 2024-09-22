@@ -1,3 +1,20 @@
+BUGS e pendencias
+
+-na funçao ballistic_arrow o _hsp recebe o valor certo mas na funçao ele fica infinito?
+
+-perna do sprite atirando
+-atirando sem muniçao "ou mudar pra nada acontere sem muniçao"
+-existe uma troca entre evade e jump dust entre objetos e funçoes, mas eh dificil
+corrigir pq os objetos sao diferentes (seguem ou se afastam do player)
+
+
+
+O IDE fica travando depois de parar um jogo (parece q a aranha ainda fica rodando) o fade
+
+
+
+
+
 para uma fonte aceitar acentos, mude para 255 o limite em ASKI
 
 player_end_game_state é usado no trigger da sala final
@@ -25,15 +42,6 @@ draw_line(bbox_left, bbox_top,bbox_left,bbox_bottom);
 draw_line(bbox_right, bbox_top,bbox_right,bbox_bottom);
 
 
-BUGS e pendencias
--perna do sprite atirando
--atirando sem muniçao "ou mudar pra nada acontere sem muniçao"
--existe uma troca entre evade e jump dust entre objetos e funçoes, mas eh dificil
-corrigir pq os objetos sao diferentes (seguem ou se afastam do player)
-
-
-
-O IDE fica travando depois de parar um jogo (parece q a aranha ainda fica rodando) o fade
 
 
 call_later(1, time_source_units_frames, function () { set_focus(true) });	
@@ -48,3 +56,7 @@ passo a passo janelas
 4 criar obj controller
 5 "copiar" outra controller
 inserir cod no creation code da room
+
+
+tarefa augusto
+novo objeto bolinha usando o motion_add() ir esquerda pra direita com hsp fixa

@@ -5,9 +5,9 @@ hsp_decimal = 0;
 vsp_decimal = 0;
 spd = 6;
 launched = false;
-push_vsp = 7;
-push_hsp = spd;
-facing = o_player.facing;
+init_vsp = 7;
+knockback_distance = 0.1;
+facing = -1;
 image_speed = 0;
 drag = 0.1;
 

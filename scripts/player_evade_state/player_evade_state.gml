@@ -6,7 +6,7 @@ function player_evade_state(){
 
 	//caculate movement
 	//calc_movement();
-	calc_entity_movement()
+	calc_entity_movement(global.grav*0.9)
 	
 	//check state
 	//change state after touching ground

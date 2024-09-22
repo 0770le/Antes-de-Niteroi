@@ -7,3 +7,8 @@ event_inherited();
 
 
 
+
+	//mantem olhando o player
+	if alert  {
+		stare();
+	}

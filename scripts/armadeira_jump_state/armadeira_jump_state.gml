@@ -2,7 +2,7 @@
 
 function armadeira_jump_state(){
 	image_speed = 1;	
-	vsp -= global.grav*0.5;
+	vsp -= grav;
 	
 	if(vsp < 0)
 		image_index = 0;

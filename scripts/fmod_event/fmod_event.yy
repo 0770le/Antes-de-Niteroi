@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fmod_event",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fmod_event",
+  "parent":{
+    "name":"Sound",
+    "path":"folders/Scripts/Sound.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

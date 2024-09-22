@@ -5,7 +5,7 @@ function armadeira_attack_state() {
 	hidden = false;
 
 	
-	if ((distance_to_object(o_player) < alert_distance*0.7)) and on_ground() {
+	if ((distance_to_object(o_player) < alert_distance*0.8)) and on_ground() {
 	//CHASE
 		if can_attack {
 			can_attack = false;
@@ -28,6 +28,14 @@ function armadeira_attack_state() {
 		state = armadeira_states.IDLE;
 	}
 
+	//go agressive if player dont leave 
+	if wait_time_initial > 0 {
+		wait_time_initial --;
+	} else {
+		y-=1;
+		launch(1.2,1.2);
+		wait_time_initial = room_speed * random_range(1.5, 2);
+	}	
 
 	//apply movement
 		collision();

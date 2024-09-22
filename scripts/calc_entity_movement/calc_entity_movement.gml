@@ -1,8 +1,10 @@
-function calc_entity_movement(){
-	vsp += global.grav;
+function calc_entity_movement(_grav = global.grav, _drag = drag){
 	
-	hsp = lerp(hsp,0, drag*0.9);
+	//grav
+	vsp += _grav;
 	
+	//drag
+	hsp = lerp(hsp,0, _drag);
 	//stop
 	if (abs(hsp) <= 0.005) {
 		hsp=0;

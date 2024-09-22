@@ -24,6 +24,7 @@ alert_distance = 100;
 alert_cooling = room_speed * random_range( 1.5, 3);
 
 //movement 
+grav = global.grav;
 spd = 1		//aceleraçao?;
 
 hsp = 0;

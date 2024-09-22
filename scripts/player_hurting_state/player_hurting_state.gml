@@ -13,7 +13,7 @@ function player_hurting_state(){
 	//check state
 	//set to first frame and stop if animation has played once
 		
-	var recover_time = 0.4; //1 = instant recover
+	var recover_time = 1; //1 = instant recover
 	if (anim_end()) {
 		if on_ground() {
 			state = states.IDLE;

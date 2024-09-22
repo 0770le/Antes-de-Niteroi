@@ -3,20 +3,20 @@ event_inherited();
 enemy_animation = armadeira_anim;
 
 //movement 
-chase_spd = max_hsp_initial*1.3;
+chase_spd = max_hsp_initial*1.4;
 
 spd_min_limit = 0.1;
 spd_max_limit = 0.4;
 max_hsp_initial = 1;
 spd = random_range(spd_min_limit, spd_max_limit);
-drag = 0.03;	
-
+drag = 0.01;	
+grav = global.grav*0.5;
 
 
 hurt_time = room_speed * 1;
 hp = 1;
 
-alert_distance = 48;
+alert_distance = random_range (TILE_SIZE*1.5, TILE_SIZE*2.2);
 alert_cooling = room_speed * 1.5;
 //hide
 hide_delay = room_speed * 1.5;

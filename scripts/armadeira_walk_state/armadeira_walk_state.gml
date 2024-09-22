@@ -13,6 +13,7 @@ image_speed =1;
 	// attack 
 	if alert and !on_ceeling()  {
 		state = armadeira_states.ATTACK;
+		wait_time_initial = room_speed * random_range(3, 5);
 	}
 
 	// a wall is found	

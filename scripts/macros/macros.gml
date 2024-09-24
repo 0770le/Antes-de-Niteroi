@@ -13,6 +13,11 @@ function macros(){
 #macro DISPLAY_MSG				0
 #macro TILE_SIZE					32
 	
+//player speeds
+#macro PLAYER_MAX_HSP			2.3
+#macro PLAYER_WALK_SPEED		0.3
+#macro PLAYER_JUMP_SPEED		6
+	
 //player alarms
 #macro EVADING					0
 #macro ATTACKING				1 //attack_delay

@@ -14,25 +14,8 @@ var t1 = 0;
 var t2 = 0;
 
 
-//if on_ground() {
-//	die = true;
-//}
 
-//stop if dead
-if (die) {
-	hsp = 0;
-}
-
-////destroy at wall if moved more than one tile
-//if (abs(xstart - x) > global.tile_size) {
-//	var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_top);
-//	var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_bottom);
-
-//	if (((t1 == SOLID) or (t1 == -1)) or ((t2 == SOLID) or (t2 == -1))) {
-//		die = true;
-//	}
-	
-var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_bottom);	
+t2 = tilemap_get_at_pixel(global.map, side() , bbox_bottom);	
 if t2 == SOLID {
 	die=true;
 	//collision();	
@@ -40,7 +23,12 @@ if t2 == SOLID {
 	x += hsp; 	
 }
 
-
+//stop if dead
+if (die) {
+	hsp = 0;
+	instance_destroy(tail_id);
+	instance_destroy(tail_id2);
+}
 	
 //play animation
 if (die) {

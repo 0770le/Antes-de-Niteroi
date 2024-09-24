@@ -12,7 +12,7 @@ function player_jump_state(){
 	
 	//check state
 	if on_ground() {
-		//apply strech
+		//apply strech 
 		scale_x = scale_max;
 		scale_y = scale_min;
 		if (hsp != 0) {
@@ -58,7 +58,7 @@ function player_jump_state(){
 	
 	//enable smaller jumps
 	if ((vsp < 0) and (jump_held == false)) {
-		vsp = max(vsp, jump_spd/jump_dampner);
+		vsp = max(vsp, jump_spd*-1/jump_dampner);
 	}
 	//apply movement
 	collision();

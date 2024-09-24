@@ -10,18 +10,16 @@ if (die) {
 	hsp = 0;
 }
 
-//destroy at wall if moved more than one/3 tile
-if (abs(xstart - x) > global.tile_size/6) {
-	var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_top);
-	var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_bottom);
+var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_top);
+var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_bottom);
 
-	if (((t1 == SOLID) or (t1 == -1)) or ((t2 == SOLID) or (t2 == -1))) {
-		die = true;
-	}
-	collision();
-} else {
-	x += hsp;
+if (((t1 == SOLID) or (t1 == -1)) or ((t2 == SOLID) or (t2 == -1))) {
+	die = true;
 }
+collision();
+
+x += hsp;
+
 //play animation
 if (die) {
 	//jump to image 1 the first time we run die

@@ -25,7 +25,7 @@ function player_walk_state(){
 	 
 	if attack{ 
 	 //consistencia no ataque parado
-		if abs(hsp) < max_hsp*0.7 {
+		if abs(hsp) < max_hsp*0.3 {
 			hsp = 0;
 			state = states.ATTACK;
 			image_index =0;

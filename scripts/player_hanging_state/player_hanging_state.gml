@@ -5,8 +5,6 @@ function player_hanging_state(){
 	get_input();
 
 	//caculate movement
-	//vsp entra do jump state /0.24
-	//global.grav == 0.25 caindo. em o_game
 	calc_movement();
 	// anulando a gravidade.
 	vsp -= global.grav;
@@ -42,7 +40,7 @@ function player_hanging_state(){
 		vsp_decimal = 0;
 		state = states.JUMP;
 		hsp = max_hsp *facing;
-		vsp = jump_spd;
+		launch(jump_spd,0);
 		audio_play_sound(snd_jump, 15, false, global.volume);
 	}
 

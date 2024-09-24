@@ -1,17 +1,9 @@
-speed = clamp(speed, min_spd , max_spd);
 
+speed = clamp(speed, min_spd , max_spd);
 gravity= grav;
-	//drag
-	hsp = lerp(hsp,0, drag);
-	//stop
-	if (abs(hsp) <= 0.005) {
-		hsp=0;
-	}
 
 //direction image
-//image_angle = (radtodeg(arctan2(-vsp,hsp))) *-1 ;
 image_angle = (direction) ;
-//image_angle = point_direction(x,y,x+hsp,y+vsp);
 
 image_xscale =1;// sign(hsp);
 var t1 = 0;
@@ -19,8 +11,10 @@ var t2 = 0;
 
 
 //stop if dead
-if (die) {
+if die {
 	speed=0;
+	instance_destroy(tail_id);
+	instance_destroy(tail_id2);
 }
 
 var t2 = tilemap_get_at_pixel(global.map, side() + sign(speed), bbox_bottom);
@@ -50,4 +44,3 @@ if (die) {
 if (( t1 == -1) or (t2 == -1)) {
 	instance_destroy();
 }
-

@@ -20,9 +20,9 @@ function evaded() {
 		
 		//allow 'rooted' evade
 		if down {
-			launch( (jump_spd*0.3)*-1 , 2 , -1*facing );
+			launch( (jump_spd*0.3) , 2 , -1*facing );
 		}else {
-			launch( (jump_spd*0.3)*-1 , max_hsp*4 , -1*facing );
+			launch( (jump_spd*0.3) , max_hsp*4 , -1*facing );
 			
 		}
 	}	

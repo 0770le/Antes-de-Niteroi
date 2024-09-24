@@ -16,7 +16,7 @@ function jumped() {
 		scale_y = scale_max;
 		vsp_decimal = 0;
 		state = states.JUMP;
-		vsp = jump_spd;
+		launch(jump_spd,0); 
 		jumps -= 1;
 		evade_dust();
 		audio_play_sound(snd_jump, 15, false, global.volume);

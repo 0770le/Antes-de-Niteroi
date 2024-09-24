@@ -1,15 +1,14 @@
 
-
-
 // speeds
 hsp =0; //horizontal
 vsp = 0; //vertical
-max_hsp= 2.3;
-walk_spd=0.3;
+//I want the enemy to be able to see this var
+max_hsp = PLAYER_MAX_HSP;// = 2.3;
+walk_spd = PLAYER_WALK_SPEED;// =0.3;
 
 hsp_decimal = 0;
 vsp_decimal =0;
-jump_spd = -6;
+jump_spd = PLAYER_JUMP_SPEED;
 jump_dampner = 2.5; //'amortecedor' diminuidor do pulo
 jumps_initial = 1;
 jumps = jumps_initial;
@@ -29,7 +28,7 @@ drag=0.1;
 scale_x= 1;
 scale_y= 1;
 scale_min= 0.75;
-scale_max=1.30;// 1.25;
+scale_max= 1.25;
 scale_decay = 0.2;
 
 //Hide

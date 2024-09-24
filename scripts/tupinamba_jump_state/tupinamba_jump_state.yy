@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"ballistic_arrow",
+  "%Name":"tupinamba_jump_state",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ballistic_arrow",
+  "name":"tupinamba_jump_state",
   "parent":{
-    "name":"General",
-    "path":"folders/Scripts/General.yy",
+    "name":"Tupinamba",
+    "path":"folders/Scripts/Enemy/Tupinamba.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

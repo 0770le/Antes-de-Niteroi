@@ -34,7 +34,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 					//create arrow
 					var inst =0;
 
-					inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_player_arrow);
+					inst = instance_create_layer(x+32*facing,y + ypos, "Arrow_shoot", o_player_arrow);
 					inst.facing = facing;				
 					inst = instance_create_layer (side(), y + ypos, "Arrow_shoot", o_arrow_spark);
 					inst.image_xscale = facing;
@@ -52,7 +52,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 		}
 	}
 	//repeating shots
-	if(image_index >= 13 and shoot) {
+	if(image_index >= 11 and shoot) {
 		image_index = 3;
 	}
 	//check state
@@ -72,7 +72,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 	}	
 	//enable smaller jumps
 	if ((vsp < 0) and (!jump_held)) {
-		vsp = max(vsp,jump_spd/jump_dampner);
+		vsp = max(vsp,jump_spd*-1/jump_dampner);
 	}
 	
 	

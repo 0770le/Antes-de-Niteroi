@@ -1,11 +1,6 @@
 
 function tupinamba_hurting_state(){
- 
-	//get input
-	get_input();
 
-	//caculate movement
-	calc_entity_movement()
 	
 	//in case that image_speed was stoped.
 	image_speed = 1;
@@ -16,9 +11,9 @@ function tupinamba_hurting_state(){
 	var recover_time = 1; //1 = instant recover
 	if (anim_end()) {
 		if on_ground() {
-			state = states.IDLE;
+			state = tupinamba_states.IDLE;
 		} else {
-			state = states.JUMP;
+			state = tupinamba_states.JUMP;
 		}
 	}
 	
@@ -32,9 +27,7 @@ function tupinamba_hurting_state(){
 	}
 	//apply movement
 	collision();
-	//check player hp
-	check_player_hp();
-	//apply animations
-	anim();
-
+	//caculate movement
+	calc_entity_movement()
+	
 }

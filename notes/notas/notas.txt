@@ -1,4 +1,10 @@
+fazendo:
+	ataque do tupinamba melee
+	hitbox
+
 BUGS e pendencias
+
+o hitbox tem formula pra scanear possiveis colizoes (flecha desviar e atacar tupi)
 
 serio-flechas rising em player e tupinamba aparecem invertidas durante 1 frame
 

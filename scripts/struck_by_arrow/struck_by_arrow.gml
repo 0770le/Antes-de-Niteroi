@@ -1,10 +1,10 @@
 
-function struck_by_arrow(){
+function struck_by_arrow(_dir = facing){
 	var take_damage = false;
 
 	//only do if arrow is not set to die
 	if (!other.die ) {
-		//if looking away, then damage
+		//if can take damage
 		if !can_take_dmg {
 			take_damage = false;
 		} else {
@@ -22,8 +22,13 @@ function struck_by_arrow(){
 				hurt = true;
 				//damage
 				hp -=1;
+				//move away from the hit
+				
+				var knockback_dis = 3;
+				hsp = _dir * knockback_dis;
 				//set hurt time
 				alarm[HURT] = hurt_time;
+				state= enemy_states.HURTING;
 				//screen shake
 				scr_screen_shake(.125, -1);
 				audio_play_sound(snd_player_hit, 20, false, global.volume);

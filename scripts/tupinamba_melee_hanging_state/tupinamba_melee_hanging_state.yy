@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tupinamba_melee_hanging_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tupinamba_melee_hanging_state",
+  "parent":{
+    "name":"Tupinamba_melee",
+    "path":"folders/Scripts/Enemy/Tupinamba_melee.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

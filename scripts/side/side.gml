@@ -1,4 +1,5 @@
 ///@desc use facing to return lateral position
+//trocar pra face()
 function side(_face = true){
 	if _face {
 		if (facing) { //direita

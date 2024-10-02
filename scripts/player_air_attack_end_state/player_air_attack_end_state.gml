@@ -5,7 +5,6 @@ function player_air_attack_end_state(){
 	get_input();
 
 	//caculate movement
-	//calc_movement();
 	calc_entity_movement(global.grav*0.9)
 	
 	//check state
@@ -14,7 +13,7 @@ function player_air_attack_end_state(){
 		//change state
 		hsp=0;
 		state = states.IDLE;
-		can_take_dmg = true;
+		//can_take_dmg = true;
 	}
 	
 	//apply movement

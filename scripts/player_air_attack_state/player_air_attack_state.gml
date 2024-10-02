@@ -23,7 +23,7 @@ function player_air_attack_state(){
 	
 	//create hitboxes during hits index
 	if image_index > 4 and image_index < 8 {
-		var inst= instance_create_layer(x +1*facing,y, "Player", o_player_attack_hitbox);
+		var inst= instance_create_layer(x +1*facing,y+5, "Player", o_player_attack_hitbox);
 		inst.image_xscale = facing*1.5;	
 	}
 		

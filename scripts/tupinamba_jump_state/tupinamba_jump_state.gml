@@ -34,9 +34,6 @@ function tupinamba_jump_state(){
 		patrol_destination *=-1;
 		facing *= -1;
 		state= tupinamba_states.JUMP;
-		//run 1 time
-		//x -= facing;
-		//y+=1;
 	}
 	
 	calc_entity_movement();

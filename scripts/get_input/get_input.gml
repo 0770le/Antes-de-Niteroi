@@ -2,17 +2,17 @@
 
 //keyboard input
 function get_input() {
-	left = keyboard_check(vk_left) or keyboard_check(ord("A"));
-	right = keyboard_check(vk_right) or keyboard_check(ord("D"));
-	up = keyboard_check(vk_up)or keyboard_check(ord("W"));
-	down = keyboard_check(vk_down)or keyboard_check(ord("S"));
+	left = keyboard_check(vk_left);// or keyboard_check(ord("A"));
+	right = keyboard_check(vk_right);// or keyboard_check(ord("D"));
+	up = keyboard_check(vk_up);// or keyboard_check(ord("W"));
+	down = keyboard_check(vk_down); // or keyboard_check(ord("S"));
 	attack =keyboard_check_pressed(ord("E"));
 	attack_held = keyboard_check(ord("E"));
 	jump = keyboard_check_pressed(vk_space);
 	jump_held = keyboard_check(vk_space);
 	evade = keyboard_check(ord("Q"));
-	shoot = keyboard_check_pressed(ord("F"));
-	shoot_held = keyboard_check(ord("F"));
+	shoot = keyboard_check_pressed(ord("W"));
+	shoot_held = keyboard_check(ord("W"));
 	menu_start =keyboard_check_pressed(vk_escape);
 	
 	//controler input

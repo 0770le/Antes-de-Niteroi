@@ -22,6 +22,8 @@ if (!other.die ) {
 			hurt = true;
 			//damage player
 			hp -=1;
+			var knockback_dis = 2;
+			hsp = other.facing * knockback_dis;
 			//set hurt time
 			alarm[HURT] = hurt_time;
 			//change state

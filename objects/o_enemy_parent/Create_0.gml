@@ -48,13 +48,14 @@ drag = 0.12;
 hp_drop_chance = 0.3;
 death_gem_value = 3;
 
-//actions
+
 //attack
 collision_dmg = true;
 damage = 1;
 knockback_distance = 5;
 can_attack = true;
 attack_delay = room_speed;
+
 //animation
 attack = false;
 anim_duration = room_speed *.3;
@@ -65,10 +66,10 @@ image_speed=0;
 
 
 //will he jump this chance
-jump_chance = 0.5;
+//jump_chance = 0.5;
 //how often to check for a jump chance
-jump_timer_initial = random_range(1, 1.5) * room_speed;
-jump_timer = jump_timer_initial;
+//jump_timer_initial = random_range(1, 1.5) * room_speed;
+//jump_timer = jump_timer_initial;
 	//CHANGE STATE -PATROL
 patrol_dis = 100;
 //patrol start position
@@ -90,7 +91,8 @@ hide_delay = 1.5 * room_speed;
 
 //states
 enum enemy_states {
-	IDLE
+	IDLE,
+	HURTING
 }
 
 state = enemy_states.IDLE;

@@ -22,11 +22,15 @@ if (!other.die ) {
 			hurt = true;
 			//damage player
 			hp -=1;
-			//set hurt time
+			var knockback_dis = 2;
+			hsp = other.facing * knockback_dis;
+		
+		//set hurt time
 			alarm[HURT] = hurt_time;
 			//change state
 			state = states.HURTING;
 			image_index = 0;
+		
 
 			//screen shake
 			scr_screen_shake(.125, -1);

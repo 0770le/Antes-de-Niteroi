@@ -16,12 +16,13 @@ function evaded() {
 		jumps--;
 		has_evade = false;
 		alarm[EVADING] = room_speed * evade_delay;
-		untargetable = true;
+		can_take_dmg = false;
 		
 		//allow 'rooted' evade
 		if down {
 			launch( (jump_spd*0.3) , 2 , -1*facing );
 		}else {
+			//long evade
 			launch( (jump_spd*0.3) , max_hsp*4 , -1*facing );
 			
 		}

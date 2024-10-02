@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_jump_state",
   "parent":{
-    "name":"Tupinamba",
-    "path":"folders/Scripts/Enemy/Tupinamba.yy",
+    "name":"States",
+    "path":"folders/Scripts/Player/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

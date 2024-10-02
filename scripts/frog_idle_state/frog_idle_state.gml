@@ -14,7 +14,7 @@ function frog_idle_state(){
 	alert_distance = 40;
 	alert = false; //player in front and within range, but attack is not ready
 	//player in range, in facin, if can attack
-	if (distance_to_object(o_player) < detect_player_dis) and (sign(o_player.x - x) = facing) {
+	if (distance_to_object(o_player) < detect_player_dis) and (sign(o_player.x - x) == facing) {
 		if (o_player.hp > 0) {
 			if (can_attack) {
 				//attack

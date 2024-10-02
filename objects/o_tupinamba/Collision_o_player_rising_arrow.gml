@@ -1,1 +1,1 @@
-struck_by_arrow();
+event_inherited();

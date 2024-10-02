@@ -1,8 +1,7 @@
 //cycle through all enemies and see if they were hit
 with (instance_place(x,y, o_player)) {
-	process_enemy_attack(5);
+	process_enemy_attack();
 }	
 //enable death at begin step
 die = true;
-
 

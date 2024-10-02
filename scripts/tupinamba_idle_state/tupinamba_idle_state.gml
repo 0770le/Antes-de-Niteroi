@@ -1,14 +1,15 @@
 
 function tupinamba_idle_state() {
-
+image_speed=1;
 //sees player
 	if alert {
 	//shoot
-		if can_fire {
+		if o_player.hp > 0 and can_fire {
 		state = tupinamba_states.SHOOT;
 		image_index=0;
 		} //else {//skirmish	
-		
+	stare()
+	
 	} else {
 	//	//patrol  
 		if patrol and wait_time-- < 0  {

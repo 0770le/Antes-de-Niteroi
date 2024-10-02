@@ -23,7 +23,7 @@
   ],
   "name":"s_enemy_attack_hitbox",
   "nineSlice":null,
-  "origin":0,
+  "origin":6,
   "parent":{
     "name":"Enemy",
     "path":"folders/Sprites/Enemy.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":32,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

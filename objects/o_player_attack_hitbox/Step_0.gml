@@ -28,6 +28,10 @@ with (o_enemy_parent) {
 					//set hurt timer
 					alarm[HURT] = hurt_time;
 					
+					//change state
+					state = enemy_states.HURTING;
+					image_index = 0;
+					
 					//screnn shake
 					scr_screen_shake(.1,1.5);
 				

@@ -3,7 +3,7 @@ event_inherited();
 //BOW
 //arrow spawning y pos
 spawn_pos =1;
-can_fire = true;
+can_fire = false;
 knockback_shoot_distance = 5;
 fire_delay_initial = room_speed * random_range(3, 5);
 fire_delay = fire_delay_initial;
@@ -37,7 +37,9 @@ vsp_decimal = 0;
 //jump
 jump_vsp = PLAYER_JUMP_SPEED+2;
 jump_hsp = 4;
-
+//evade
+has_evade = true;
+evade_delay = room_speed* 3;
 
 //loot
 hp_drop_chance = 0.3;
@@ -80,34 +82,76 @@ chase_distance = alert_distance;
 //states
 enum tupinamba_states {
 	IDLE,
+	HURTING,
 	SHOOT,
 	PATROL,
 	JUMP,
 	HANGING,
-	HURTING
+	EVADE
+
 }
 
 //states
-states_array[tupinamba_states.IDLE] = tupinamba_idle_state;
+states_array[enemy_states.IDLE] = tupinamba_idle_state;
+states_array[enemy_states.HURTING] = tupinamba_hurting_state;
 states_array[tupinamba_states.SHOOT] = tupinamba_shoot_state;
 states_array[tupinamba_states.PATROL] = tupinamba_patrol_state;
 states_array[tupinamba_states.JUMP] = tupinamba_jump_state;
 states_array[tupinamba_states.HANGING] = tupinamba_hanging_state;
-states_array[tupinamba_states.HURTING] = tupinamba_hurting_state;
+states_array[tupinamba_states.EVADE] = tupinamba_evade_state;
+
 
 sprites_array[tupinamba_states.IDLE] = s_tupinamba_idle;
+sprites_array[tupinamba_states.HURTING] = s_tupinamba_hurting;
 sprites_array[tupinamba_states.SHOOT] = s_tupinamba_shoot;
 sprites_array[tupinamba_states.PATROL] = s_tupinamba_patrol;
 sprites_array[tupinamba_states.JUMP] = s_tupinamba_jump;
 sprites_array[tupinamba_states.HANGING] = s_tupinamba_hanging;
-sprites_array[tupinamba_states.HURTING] = s_tupinamba_hurting;
+sprites_array[tupinamba_states.EVADE] = s_tupinamba_evade;
+
 
 mask_array[tupinamba_states.IDLE] = s_tupinamba_idle;
+mask_array[tupinamba_states.HURTING] = s_tupinamba_idle;
 mask_array[tupinamba_states.SHOOT] = s_tupinamba_idle;
 mask_array[tupinamba_states.PATROL] = s_tupinamba_idle;
 mask_array[tupinamba_states.JUMP] = s_tupinamba_idle;
 mask_array[tupinamba_states.HANGING] = s_tupinamba_idle;
-mask_array[tupinamba_states.HURTING] = s_tupinamba_idle;
+mask_array[tupinamba_states.EVADE] = s_tupinamba_idle;
+
+
+function can_evade() {	
+	if o_player.hp >0 and has_evade and alert {
+		if distance_to_object(o_player) < 60 {
+			stare();	
+			has_evade = false;
+			can_take_dmg = false;
+			evade_delay = room_speed* 3;
+			y+= -1;
+			launch( jump_vsp*0.4 , max_hsp*7.5 , -1*facing );
+			state = tupinamba_states.EVADE;
+			
+			//dust
+			jump_dust();
+			audio_play_sound(snd_jump, 15, false, global.volume);
+		}
+	} else {
+		evade_delay--
+		if evade_delay < 0 {
+			has_evade = true;
+			can_take_dmg = true;
+		}
+	}
+}
+
+
+function can_shoot(){
+	if !can_fire {
+		fire_delay--;
+		if fire_delay < 0 {
+			can_fire = true;
+		}
+	}
+}
 
 function create_arrow() {
 	//gap in frames 
@@ -128,9 +172,13 @@ function create_arrow() {
 		
 }
 
-
 //puff of smoke on spawn
 //if (room == rm_02) {
 //	alarm[SPAWN]=1;
 //}
 
+			
+//			//sound
+//			audio_play_sound(snd_player_hit, 40, false, global.volume);
+//	}	
+//}

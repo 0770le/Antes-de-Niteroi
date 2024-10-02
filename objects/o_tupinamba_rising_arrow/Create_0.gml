@@ -43,7 +43,7 @@ follow_y = y;
 
 //rastro de ambas as penas
 call_later(follow_moment, time_source_units_frames, function () {	//cria o rastro
-		var inst = instance_create_depth(follow_x, follow_y-2 , depth, o_projectil_tail);
+		var inst = instance_create_depth(follow_x+3*facing, follow_y-2 , depth, o_projectil_tail);
 		tail_id = inst.id;
 		with(tail_id) {
 			

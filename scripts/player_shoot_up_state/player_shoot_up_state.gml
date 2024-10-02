@@ -7,7 +7,7 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 	hsp = 0;
 	
 	// sprite do tiro
-	if (image_index == 6 ) {
+	if (image_index == 5 ) {
 		if shoot_held { //segura
 			image_speed = 0;
 		} else {	//solta

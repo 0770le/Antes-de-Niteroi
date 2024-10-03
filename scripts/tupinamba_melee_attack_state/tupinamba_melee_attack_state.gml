@@ -1,12 +1,12 @@
 function tupinamba_melee_attack_state(){
 	
 	//caculate movement
-		calc_entity_movement();
+	calc_entity_movement();
 	
 	hsp = 0;
 	
 	//check state after anim
-	if floor(image_index) == 10 { //anim_end() {
+	if floor(image_index) > 10 { //anim_end() {
 		state = tupinamba_melee_states.IDLE;
 	}	
 	

@@ -1,14 +1,5 @@
 event_inherited();
 
-//BOW
-//arrow spawning y pos
-spawn_pos =1;
-can_fire = true;
-knockback_shoot_distance = 5;
-fire_delay_initial = room_speed * random_range(3, 5);
-fire_delay = fire_delay_initial;
-number_of_shots_initial = 3;
-number_of_shots = number_of_shots_initial;
 
 //taking dmg
 hurt_time = room_speed * 0.5;

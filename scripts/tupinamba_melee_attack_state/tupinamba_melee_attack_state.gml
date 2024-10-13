@@ -6,18 +6,20 @@ function tupinamba_melee_attack_state(){
 	hsp = 0;
 	
 	//check state after anim
-	if floor(image_index) > 10 { //anim_end() {
+	if anim_end() {
 		state = tupinamba_melee_states.IDLE;
+		image_index = 0;
+		image_speed =1;
 	}	
 	
 	
-	////paradinha
-	//var _pause = random(1);
-	//if (floor(image_index) == 2) and !runned_once {	
-	//	runned_once = true;
-	//	alarm[ONCE] = _pause* room_speed;
-	//	anim_paused(_pause);
-	//} 
+	//paradinha
+	var _pause = random_range(0.2,0.6);
+	if (floor(image_index) == 2) and !runned_once {	
+		runned_once = true;
+		alarm[ONCE] = _pause* room_speed;
+		anim_paused(_pause);
+	} 
 	
 	
 	//attacking
@@ -41,6 +43,7 @@ function tupinamba_melee_attack_state(){
 		//hit ground	
 		if 	image_index > 4	and !runned_once {	
 				runned_once = true;
+				attack_delay =  room_speed * random_range(1, 2);
 				alarm[ONCE] = attack_delay;	
 
 				var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
@@ -52,10 +55,9 @@ function tupinamba_melee_attack_state(){
 				}
 		}
 	}
-	
+
 	//apply movement
 	collision();
-	//apply animations
-	anim();
+
 
 }

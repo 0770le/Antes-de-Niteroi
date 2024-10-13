@@ -60,10 +60,6 @@ anim_start_initial = room_speed * random_range( 1.75, 2.25);
 anim_start = anim_start_initial;
 image_speed=0;
 
-//avoid player arrow
-evade_chance = 0.25;
-evade_cd = room_speed;
-evade_timer = evade_cd;
 
 //patrol 
 patrol = true;
@@ -120,7 +116,7 @@ mask_array[tupinamba_states.EVADE] = s_tupinamba_idle;
 
 
 function can_evade() {	
-	if o_player.hp >0 and has_evade and alert {
+	if o_player.hp > 0 and has_evade and alert {
 		if distance_to_object(o_player) < 60 {
 			stare();	
 			has_evade = false;
@@ -136,9 +132,11 @@ function can_evade() {
 		}
 	} else {
 		evade_delay--
-		if evade_delay < 0 {
-			has_evade = true;
+		if on_ground() {
 			can_take_dmg = true;
+		}
+		if evade_delay < 0 {
+			has_evade = true;	
 		}
 	}
 }

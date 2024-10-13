@@ -1,6 +1,6 @@
 event_inherited();
 
-
+in_idle_state = false; 
 //taking dmg
 hurt_time = room_speed * 0.5;
 hp = 3; 
@@ -12,8 +12,8 @@ o_enemy = object_index;
 enemy_animation = tupinamba_melee_anim;
 
 //alert
-alert_distance = TILE_SIZE * 20;
-alert_cooling = room_speed * random_range(3, 4);
+alert_distance = TILE_SIZE * 7;
+alert_cooling = room_speed * random_range(6, 8);
 
 //movement 
 spd =  PLAYER_WALK_SPEED;		//"aceleração";
@@ -22,13 +22,11 @@ max_hsp_initial =  PLAYER_WALK_SPEED*0.8;
 max_hsp =  PLAYER_MAX_HSP*0.9;
 hsp_decimal = 0;
 chase_spd = max_hsp;
-
 vsp = 0;
 vsp_decimal = 0;
 //jump
 jump_vsp = PLAYER_JUMP_SPEED+2;
 jump_hsp = 4;
-
 
 //loot
 hp_drop_chance = 0.3;
@@ -36,37 +34,38 @@ arrow_drop_chance = 0.3;
 
 //actions
 //attack
+attack_range = 40;//nao muda a hitbox
 collision_dmg = false;
 damage = 1;
-knockback_distance = 8;
+knockback_distance = 10;
 can_attack = true;
 attack_delay = room_speed;
 //animation
 attack = false;
-anim_duration = room_speed *.3;
-//randon start to avoic sinc enemies
-anim_start_initial = room_speed * random_range( 1.75, 2.25);
-anim_start = anim_start_initial;
-image_speed=0;
 
-//avoid player arrow
-
-evade_cd = room_speed;
-evade_timer = evade_cd;
 
 //patrol 
 patrol = true;
-patrol_left_limit = x - 300;
-patrol_right_limit = x + 50;
+patrol_left_limit = x - TILE_SIZE * 7;
+patrol_right_limit = x + TILE_SIZE * 2;
 patrol_destination = choose(-1,1);
+//how long to wait before patrolling
+wait_time_initial = random_range(2, 4) * room_speed;
+wait_time = wait_time_initial;
+	
+//CHASE
+//chase start position
+start_x = x;
+start_y = y;
+//minimum distance to start chasing
+chase_distance = alert_distance;	
+//target to move to
+target_x = 0;
+target_y = 0;
 
 //how long to wait before patrolling
 wait_time_initial = random_range(4, 6) * room_speed;
 wait_time = wait_time_initial;
-
-//minimum distance to start chasing
-chase_distance = alert_distance;	
-
 
 //states
 enum tupinamba_melee_states {
@@ -76,57 +75,74 @@ enum tupinamba_melee_states {
 	PATROL,
 	JUMP,
 	HANGING,
-	EVADE
-
+	EVADE,
+	CHASE
 }
 
-//states
+//enemy_states
 states_array[enemy_states.IDLE] = tupinamba_melee_idle_state;
 states_array[enemy_states.HURTING] = tupinamba_melee_hurting_state;
-
+//tupinamba_melee_states
 states_array[tupinamba_melee_states.ATTACK] = tupinamba_melee_attack_state;
 states_array[tupinamba_melee_states.PATROL] =tupinamba_melee_patrol_state;
 states_array[tupinamba_melee_states.JUMP] = tupinamba_melee_jump_state;
 states_array[tupinamba_melee_states.HANGING] = tupinamba_melee_hanging_state;
 states_array[tupinamba_melee_states.EVADE] = tupinamba_melee_evade_state;
+states_array[tupinamba_melee_states.CHASE] = tupinamba_melee_chase_state;
 
 
 sprites_array[tupinamba_melee_states.IDLE] = s_tupinamba_melee_idle;
 sprites_array[tupinamba_melee_states.HURTING] = s_tupinamba_hurting;
-
+//
 sprites_array[tupinamba_melee_states.ATTACK] = s_tupinamba_melee_attack;
 sprites_array[tupinamba_melee_states.PATROL] = s_tupinamba_patrol;
 sprites_array[tupinamba_melee_states.JUMP] = s_tupinamba_jump;
 sprites_array[tupinamba_melee_states.HANGING] = s_tupinamba_hanging;
 sprites_array[tupinamba_melee_states.EVADE] = s_tupinamba_evade;
+sprites_array[tupinamba_melee_states.CHASE] = s_tupinamba_patrol;
 
 
 mask_array[tupinamba_melee_states.IDLE] = s_tupinamba_melee_idle;
 mask_array[tupinamba_melee_states.HURTING] = s_tupinamba_melee_idle;
-
+//
 mask_array[tupinamba_melee_states.ATTACK] = s_tupinamba_melee_idle;
 mask_array[tupinamba_melee_states.PATROL] = s_tupinamba_melee_idle;
 mask_array[tupinamba_melee_states.JUMP] = s_tupinamba_melee_idle;
 mask_array[tupinamba_melee_states.HANGING] = s_tupinamba_melee_idle;
 mask_array[tupinamba_melee_states.EVADE] = s_tupinamba_melee_idle;
+mask_array[tupinamba_melee_states.CHASE] = s_tupinamba_melee_idle;
+
 
 
 //evade
 has_evade = true;
-evade_delay_initial = room_speed*0.5;
+evade_delay_initial = room_speed*3;
 evade_delay = evade_delay_initial;
-evade_chance = 2;//0.33;
+evade_chance = 0.3;
+
+function tupinamba_melee_evaded() {
+	
+	can_take_dmg = false;
+	y+= -1;
+	facing*= -1;
+	launch( jump_vsp * 0.7 , max_hsp*7 , -1*facing );
+	state = tupinamba_melee_states.EVADE;
+	image_index=0;
+	image_speed=1;		
+	//dust
+	jump_dust();
+	audio_play_sound(snd_jump, 15, false, global.volume)		
+	
+}
+
+
 //avoid one hit
 function tupinamba_melee_evade(){
 	
-	var  _evade = random(1);
-
+	var  _evade = random(1);	
 	var evade_window = false;
+	
 	//if player are attacking
-	
-	show_debug_message("player state: " + string(o_player.state));
-	show_debug_message("player evade_window: " + string(evade_window));
-	
 	if has_evade {
 		if instance_exists(o_player) {
 			if (o_player.state == 3 or	//o_player.states_array[states.ATTACK] or
@@ -135,32 +151,25 @@ function tupinamba_melee_evade(){
 				evade_window = true;
 			}
 		
-			if distance_to_object(o_player) < 50 and
-			 o_player.hp  > 0 and 
-			 o_player.facing == facing*-1 and
-			 alert and  evade_window {
+			if (distance_to_object(o_player) < 60) and //perto do player
+			 (o_player.hp  > 0) and				//player vivo
+			 (o_player.facing == facing*-1) and //olhando player
+			 alert and  evade_window {		//alerta e player atacando
+			 
+			 //chance
+				if (_evade < evade_chance) {			
+					tupinamba_melee_evaded();		
+				} 
 				
-				has_evade = false;
+				has_evade = false;			
 				evade_delay = evade_delay_initial;
-					
-				if 	_evade < evade_chance {
-					can_take_dmg = false;
-					y+= -1;
-					facing*= -1;
-					launch( jump_vsp * 0.7 , max_hsp*7 , -1*facing );
-					state = tupinamba_melee_states.EVADE;
-			
-					//dust
-					jump_dust();
-					audio_play_sound(snd_jump, 15, false, global.volume);
-			
-					image_index=0;
-					image_speed=1;
-				}
-			}		
+			 }
 		}
-	}else {
+	}else { //sem evade
 		evade_delay--
+		if on_ground() {
+			can_take_dmg = true;
+		}
 		if evade_delay < 0 {
 			has_evade = true;
 		}
@@ -170,13 +179,13 @@ function tupinamba_melee_evade(){
 
 
 function tupinamba_melee_attack() {
+	if distance_to_object(o_player) < attack_range //no alcance
+	 and alert
+	 and can_attack						//pode atacar
+	 and sign(o_player.x - x) == facing  {//olhando pro player
 	
-	if distance_to_object(o_player) < 50
-	 and can_attack
-	 and sign(o_player.x - x) == facing { //olhando pro player
-		
 			can_attack = false;
-			attack_delay = room_speed * 5;
+			attack_delay = room_speed * 3;
 			state = tupinamba_melee_states.ATTACK;
 			image_index =0;
 			alarm[CAN_ATTACK]= attack_delay;

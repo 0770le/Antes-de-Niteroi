@@ -146,8 +146,7 @@ function init() {
 	
 	create_content();
 	
-	//
-	//fade_to_room();
+
 	
 	close();
 }

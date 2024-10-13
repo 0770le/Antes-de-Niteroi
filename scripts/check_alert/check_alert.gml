@@ -1,6 +1,5 @@
-///@desc check if saw player 
+///@desc check if  (player is in range) E (player not dead)) E (in lign of sight)))
 function check_alert() {	
-	//if (((player is in range) E (not dead)) E (in lign of sight)))
 	//visto
 	var sight = line_of_sight();
 	

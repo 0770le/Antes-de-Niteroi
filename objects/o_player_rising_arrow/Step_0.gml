@@ -1,6 +1,7 @@
 //movement
 if !launched {
 	launch(init_vsp, spd);
+	launched = true;
 }
 calc_entity_movement();
 hsp = spd * facing;

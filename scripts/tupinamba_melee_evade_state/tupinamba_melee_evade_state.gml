@@ -10,7 +10,6 @@ function tupinamba_melee_evade_state(){
 		//change state
 		hsp=0;
 		state = tupinamba_melee_states.IDLE;
-		can_take_dmg = true;
 		image_index = 0;
 		image_speed = 1;
 	}

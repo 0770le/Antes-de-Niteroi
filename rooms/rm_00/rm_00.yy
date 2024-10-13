@@ -6,13 +6,13 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_316FCEE2","path":"rooms/rm_00/rm_00.yy",},
+    {"name":"inst_4DAE7951","path":"rooms/rm_00/rm_00.yy",},
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRTileLayer":"","%Name":"Tiles_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":22,"SerialiseWidth":40,"TileCompressedData":[
-          -287,-2147483648,-2,0,-37,-2147483648,-2,0,-316,-2147483648,-3,0,6,-2147483648,0,0,-2147483648,-2147483648,
-          0,-34,-2147483648,-6,0,-187,-2147483648,
+    {"$GMRTileLayer":"","%Name":"Tiles_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":22,"SerialiseWidth":80,"TileCompressedData":[
+          -567,-2147483648,-2,0,-77,-2147483648,-2,0,-636,-2147483648,-3,0,6,-2147483648,0,0,-2147483648,-2147483648,
+          0,-74,-2147483648,-6,0,-387,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"t_collisions_1","path":"tilesets/t_collisions_1/t_collisions_1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"View_Block","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"View_Block","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Controllers","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Controllers","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
@@ -42,15 +42,17 @@
     {"$GMRInstanceLayer":"","%Name":"Arrow_flight","depth":2100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Arrow_flight","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Dust","depth":2200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Dust","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Enemy","depth":2300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_316FCEE2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_316FCEE2","objectId":{"name":"o_tupinamba_melee","path":"objects/o_tupinamba_melee/o_tupinamba_melee.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":406.0,"y":314.0,},
+        {"$GMRInstance":"v1","%Name":"inst_4DAE7951","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4DAE7951","objectId":{"name":"o_tupinamba","path":"objects/o_tupinamba/o_tupinamba.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":344.0,"y":131.0,},
       ],"layers":[],"name":"Enemy","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player","depth":2400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Drops","depth":2500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Drops","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRTileLayer":"","%Name":"Collisions","depth":2600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":11,"SerialiseWidth":20,"TileCompressedData":[
-          -20,1,-2,2,-8,0,-3,-2147483648,-3,0,-3,-2147483648,-2,1,3,0,2,2,-12,0,-3,-2147483648,-2,1,-2,0,-2,2,
-          -10,0,-4,-2147483648,-2,1,-16,0,-4,1,-15,0,-3,-2147483648,-2,1,-5,0,1,1,-7,0,1,1,-4,-2147483648,-3,1,
-          -4,0,1,1,-7,0,2,1,0,-3,2,-2,1,-5,0,1,1,-7,0,2,1,-2147483648,-3,0,-2,1,-3,2,-2,0,1,1,-7,0,1,1,-4,0,-21,
-          1,
+    {"$GMRTileLayer":"","%Name":"Collisions","depth":2600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":11,"SerialiseWidth":40,"TileCompressedData":[
+          -20,1,-20,-2147483648,-2,2,-8,0,-3,-2147483648,-3,0,-3,-2147483648,1,1,-20,-2147483648,4,1,0,2,2,-12,
+          0,-3,-2147483648,1,0,-20,-2147483648,5,1,0,0,2,2,-10,0,-4,-2147483648,1,0,-20,-2147483648,1,1,-16,0,
+          -2,1,1,0,-20,-2147483648,1,1,-15,0,-3,-2147483648,1,0,-12,-2147483648,1,1,-7,-2147483648,1,1,-9,0,5,
+          1,0,2,2,0,-4,-2147483648,1,0,-12,-2147483648,1,1,-7,-2147483648,-2,1,-8,0,1,1,-5,0,-2,2,-2,0,-12,-2147483648,
+          1,1,-7,-2147483648,1,1,-9,0,1,1,-3,0,2,1,-2147483648,-4,0,-12,-2147483648,1,1,-7,-2147483648,1,1,-3,
+          2,-6,0,1,1,-3,0,1,1,-5,0,-12,-2147483648,1,1,-7,-2147483648,-7,1,1,0,-29,1,3,-2147483648,1,1,
         ],"TileDataFormat":1,},"tilesetId":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Collectables","depth":2700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Collectables","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"HideSpots","depth":2800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"HideSpots","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
@@ -84,7 +86,7 @@
     "Height":352,
     "inheritRoomSettings":false,
     "persistent":false,
-    "Width":640,
+    "Width":1280,
   },
   "sequenceId":null,
   "views":[

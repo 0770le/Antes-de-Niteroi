@@ -3,7 +3,7 @@ function process_enemy_attack () { // (hk, bk) {
 ///@arg hurt_knockback_def_-1
 ///@arg block_knockback_def_-1
 	
-	if ((o_player.hp > 0) and  (!hurt)) {
+	if ((o_player.hp > 0) and  (!hurt)) and can_take_dmg {
 			hurt = true;
 
 			//facing the enemy

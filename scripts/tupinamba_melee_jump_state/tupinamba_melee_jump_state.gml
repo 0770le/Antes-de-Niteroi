@@ -11,7 +11,7 @@ function tupinamba_melee_jump_state(){
 		image_index = 0;
 		image_speed = 1;
 		//create dust if landing
-		if (vsp > 0) {
+		if (vsp > 0) {//caiu
 			instance_create_layer(x,y, "Dust", o_player_dust_land);
 			audio_play_sound(snd_landing, 20, false, global.volume);
 		}	

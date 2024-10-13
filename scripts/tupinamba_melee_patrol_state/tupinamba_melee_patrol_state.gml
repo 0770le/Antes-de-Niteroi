@@ -1,5 +1,4 @@
 function tupinamba_melee_patrol_state(){
-image_speed =1;
 
 //set mov
 //go for destination
@@ -8,15 +7,16 @@ if (patrol_destination == -1 and x > patrol_left_limit) or (patrol_destination =
 	hsp = spd * facing;
 	x += hsp;
 } else {//switching destination on end of path
-	wait_time = random_range(1, 3) * room_speed;
 	state = tupinamba_melee_states.IDLE;
+	in_idle_state = true;
 	patrol_destination *= -1;
 }
 
 //pula
-// a wall is found	
+// a wall or a void floor is found	
 var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y);
-if t1 == SOLID {
+//var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 1*facing, y+30);
+if t1 == SOLID {//or (t2 == VOID or t2 == DEATH) {
 	state =  tupinamba_melee_states.JUMP;
 	image_index = 0;
 	image_speed = 1;
@@ -30,17 +30,17 @@ if vsp != 0 and !on_ground() {
 	image_speed = 1;
 } 
 
-//sees player
-//if alert {
-////shoot
-//	if can_fire {
-//	state = tupinamba_states.SHOOT;
-//	image_index=0;
-//	} //else {//skirmish	
-//}
+if alert {
+	state = tupinamba_melee_states.CHASE;
+	image_index = 0;
+	image_speed =1;
+	//chase start position
+	start_x = x;
+	start_y = y;
+}
+
 
 calc_entity_movement();
-
 collision();
 	
 }

@@ -4,12 +4,16 @@ fazendo:
 
 BUGS e pendencias
 
-o hitbox tem formula pra scanear possiveis colizoes (flecha desviar e atacar tupi)
+menu se voltar com o C o espaço passa a chamar o menu em jogo
+
+perguntar pro leo da ordem de verificaçao dos stados 
 
 serio-flechas rising em player e tupinamba aparecem invertidas durante 1 frame
 
-medio- acertar o rastro das flechas . o_projectil_tail
+medio- acertar o rastro das flechas . o_projectil_tail do jogador
 medio-atirando sem muniçao "ou mudar pra nada acontere sem muniçao"
+
+(flecha desviar e atacar tupi) o hitbox tem formula pra scanear possiveis colizoes
 
 fraco-existe uma troca entre evade e jump dust entre objetos e funçoes, mas eh dificil corrigir pq os objetos sao diferentes (seguem ou se afastam do player)
 fraco-perna do sprite atirando

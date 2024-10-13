@@ -15,6 +15,7 @@ var _lines = 1+ (room_height/ _tile_size);
 var t1 = tilemap_get_at_pixel(layer_tilemap_get_id("Collisions"),  0  , 0 );
 	
 
+//objeto que tapa visao do inimigo
 //fazer coluna
 for (var i = 0; i < _columns; ++i) {
 	//linha

@@ -1,10 +1,8 @@
 
 function tupinamba_evade_state(){
 
-
 	//caculate movement
 	calc_entity_movement(grav*0.9)
-	
 	
 	//check state
 	//change state after touching ground
@@ -12,7 +10,6 @@ function tupinamba_evade_state(){
 		//change state
 		hsp=0;
 		state = tupinamba_states.IDLE;
-		can_take_dmg = true;
 		image_index = 0;
 		image_speed = 1;
 	}

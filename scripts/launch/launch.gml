@@ -6,6 +6,4 @@ function launch(_vsp, _hsp, _dir = facing){
 	vsp = _vsp;
 	hsp += _hsp *_dir;
 	
-	//arrow case
-	launched = true;
 }

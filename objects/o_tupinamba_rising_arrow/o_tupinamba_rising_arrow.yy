@@ -12,8 +12,8 @@
   "name":"o_tupinamba_rising_arrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"General",
-    "path":"folders/Objects/General.yy",
+    "name":"Projectil",
+    "path":"folders/Objects/General/Projectil.yy",
   },
   "parentObjectId":null,
   "persistent":false,

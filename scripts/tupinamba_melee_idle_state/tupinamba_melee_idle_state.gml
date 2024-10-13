@@ -1,23 +1,57 @@
 
 function tupinamba_melee_idle_state() {
-image_speed=1;
-//sees player
-	if alert {
-	//chase
-		//if o_player.hp > 0 and can_fire {
-		//state = tupinamba_melee_states.SHOOT;
-		//image_index=0;
-		//} //else {//skirmish	
-	stare()
 	
-	} else {
-	//	//patrol  
+	//enter state,set wait time
+	if !in_idle_state {
+		//next patrol 
+		wait_time = random_range(2, 4) * room_speed;
+		image_speed=1;
+		image_index = 0;
+		in_idle_state = true;
+	} //seting var in step
+	
+	//sees player
+	if alert  {//combat
+		stare();
+		//player e tupi fora do limite do patrol 
+		if (x < patrol_left_limit or x > patrol_right_limit) 
+		and (o_player.x < patrol_left_limit or o_player.x > patrol_right_limit) {	
+			
+			//if wait_time-- < 0 {
+				//taunt
+			//}
+			
+		} else { //inside patrol area
+			//next to player
+			if ((abs(x - o_player.x) < attack_range) ){
+				state = tupinamba_melee_states.IDLE;
+				
+				////if player is in other y, go
+				if x == xprevious and abs(y - o_player.y) > TILE_SIZE and y < o_player.y {
+					if has_evade {
+						has_evade = false;			
+						evade_delay = evade_delay_initial;
+						tupinamba_melee_evaded();	
+					}
+				}
+				
+			} else { //	chase	
+				state = tupinamba_melee_states.CHASE;
+				image_index = 0;
+				image_speed =1;
+				
+			}
+		}
+			
+	} else {//!alert
+		//patrol  
 		if patrol and wait_time-- < 0  {
 			state = tupinamba_melee_states.PATROL;
 			image_index = 0;
 			image_speed = 1;
 		} 
 	}
+
 	
 	calc_entity_movement();
 	//apply movement

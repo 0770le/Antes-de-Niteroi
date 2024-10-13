@@ -1,5 +1,4 @@
-/// @function		line_of_sight()
-/// @description	check if thes collision tiles between the caller and the player
+/// @description	check if there collision tiles between the caller and the player
 
 function line_of_sight() { 
 // retorna true se (jogador nao esta escondido E vendo player na esquerda OU direita, sem nada na frente

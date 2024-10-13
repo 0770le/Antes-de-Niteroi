@@ -32,12 +32,11 @@ function armadeira_chase_state() {
 	//if knock back, don´t advance
 	if ((!hurt) and (alarm[KNOCKEDBACK] < 0 )) {
 		//move towards the player
-		var buffer = sprite_width  ; //stop flickin left/right when at players x //15
-		if ((abs(x - o_player.x) > buffer) or (o_player.hp <= 0)) {
+		var buffer = sprite_width  ; //stop flickin left/right when at players x
+		if ((abs(x - o_player.x) > buffer)  or (o_player.hp <= 0)) {
 			hsp =xx;
 		}
-	} else {
-		//enemy hurt
+	} else {//enemy hurt
 		//ensure no vertical movement when knocked back
 		vsp =0;
 		//slowdown knockback

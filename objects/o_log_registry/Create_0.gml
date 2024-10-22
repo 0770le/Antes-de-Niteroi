@@ -20,6 +20,7 @@ function get_logs() {
 function init() {
 	log_by_type[? LOG_TYPE.ARARA]= new LogArara();
 	log_by_type[? LOG_TYPE.ARMADEIRA]= new LogArmadeira();
+	log_by_type[? LOG_TYPE.CIDADE_VELHA]= new LogCidadeVelha();
 	
 }
 

@@ -4,11 +4,23 @@
 macros();
 
 //upgrades
-has_cloak = true;
+has_cloak = false;
 has_axe= false;
 has_bow= true;
 //has_collectable_nome = false;
 collectable_count = 0;
+
+
+//logs
+enum logs {
+	LOG_PARENT,		//00
+	LOG_ARMADEIRA
+}
+
+//create states array
+logs_array[logs.LOG_PARENT] = false;
+logs_array[logs.LOG_ARMADEIRA] = false;
+
 
 global.grav = 0.25;
 

@@ -10,8 +10,8 @@
   "name":"o_gem",
   "overriddenProperties":[],
   "parent":{
-    "name":"Itens",
-    "path":"folders/Objects/Itens.yy",
+    "name":"Iten",
+    "path":"folders/Objects/Iten.yy",
   },
   "parentObjectId":null,
   "persistent":false,

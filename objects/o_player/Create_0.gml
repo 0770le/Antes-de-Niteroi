@@ -62,7 +62,7 @@ attack_held_time = 0;
 //bow
 can_fire = true;
 fire_delay = 0.1 * room_speed; //charging time -> sprites
-arrows_max = 9;
+arrows_max = 30;
 arrows_initial = 30;
 arrows = arrows_initial;
 	//arrow spawning dir pos

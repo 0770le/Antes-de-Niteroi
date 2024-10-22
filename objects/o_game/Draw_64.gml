@@ -196,7 +196,7 @@ if (room != rm_menu) {
 if (fade_in) {
 	alpha = lerp(alpha, 0, fade_spd);
 	draw_set_alpha(alpha);
-	//draw_rectangle_colour(0, 0, gw, gh, c_black, c_black, c_black, c_black, false);
+	draw_rectangle_colour(0, 0, gw, gh, c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
 }
 
@@ -206,10 +206,10 @@ if (alarm[DISPLAY_MSG] > 0) {
 	draw_set_font(fnt_bookman);
 	//sombra da msg
 	draw_set_color(c_black);
-	draw_text(gw/2 + 1, gh *.85 +1, msg);
+	draw_text(gw/2 + 1, gh *.35 +1, msg); //.85, msg);
 	//msg
 	draw_set_color(c_white);
-	draw_text(gw/2, gh *.85, msg);
+	draw_text(gw/2, gh *.35, msg); //.85, msg);
 }
 
 

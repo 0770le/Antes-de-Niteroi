@@ -4,8 +4,12 @@ function tupinamba_melee_anim(){
 	image_xscale = -facing;
 	
 	
-
-	show_debug_message("state = " + string(state));
 	
-	
+	//it uses imgase_speed 0 in attack
+	if sign(hsp) != 0 and sign(hsp) != facing {
+		image_speed = -1;
+	}
+	if sign(hsp) != 0 and sign(hsp) == facing {
+		image_speed = 1;
+	}
 }

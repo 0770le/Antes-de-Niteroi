@@ -49,7 +49,7 @@ if (fade_to_colour == true) {
 	//fade from colour (terminando fade)
 	alpha -= fade_spd;
 	draw_set_alpha(alpha);
-	//draw_rectangle_color(0, 0, dw, dh, col, col, col, col, false);
+	draw_rectangle_color(0, 0, dw, dh, col, col, col, col, false);
 	if (alpha <= 0) {
 		//reset camera pan speed
 		o_camera.camera_pan_speed = o_camera.camera_pan_speed_initial;

@@ -13,4 +13,4 @@ drag = 0.1;
 saved = false;
 
 runned_once=false;
-
+msg = "Posso te levar de canoa até + destination \n Me encontre em + origem"

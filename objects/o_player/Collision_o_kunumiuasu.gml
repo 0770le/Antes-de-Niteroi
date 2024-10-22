@@ -1,6 +1,6 @@
 
 //show_msg 
-show_msg("Aperte o direcional para cima para viajar: + destination", 2);
+show_msg("Aperte o direcional para cima para viajar:\nother.destination", 2);
 	
 if up {
 	with(other){

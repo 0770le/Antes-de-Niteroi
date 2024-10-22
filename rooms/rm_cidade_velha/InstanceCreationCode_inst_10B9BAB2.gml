@@ -1,0 +1,1 @@
+msg = "Liberte os jovens maracajas prisioneiros\n e destrua as fortificações inimigas.";  

@@ -30,10 +30,10 @@ if ( mouse_check_button_pressed(mb_left)){
 
 #endregion
 
-if (game_over_lose == true) {
+if (game_over_lose) {
 	with(o_player) {
 		get_input();
-		if ((jump == true) or (attack == true)) {
+		if (jump or attack) {
 			game_restart();
 		}
 	}
@@ -42,3 +42,4 @@ if (game_over_lose == true) {
 if (game_over_won) {
 	game_over_won_delay--;
 }
+

@@ -95,11 +95,11 @@ sprites_array[tupinamba_melee_states.IDLE] = s_tupinamba_melee_idle;
 sprites_array[tupinamba_melee_states.HURTING] = s_tupinamba_hurting;
 //
 sprites_array[tupinamba_melee_states.ATTACK] = s_tupinamba_melee_attack;
-sprites_array[tupinamba_melee_states.PATROL] = s_tupinamba_patrol;
+sprites_array[tupinamba_melee_states.PATROL] = s_tupinamba_melee_walk;
 sprites_array[tupinamba_melee_states.JUMP] = s_tupinamba_jump;
 sprites_array[tupinamba_melee_states.HANGING] = s_tupinamba_hanging;
-sprites_array[tupinamba_melee_states.EVADE] = s_tupinamba_evade;
-sprites_array[tupinamba_melee_states.CHASE] = s_tupinamba_patrol;
+sprites_array[tupinamba_melee_states.EVADE] = s_tupinamba_melee_evade;
+sprites_array[tupinamba_melee_states.CHASE] = s_tupinamba_melee_walk;
 
 
 mask_array[tupinamba_melee_states.IDLE] = s_tupinamba_melee_idle;

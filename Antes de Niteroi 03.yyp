@@ -334,6 +334,7 @@
     {"id":{"name":"s_fances_shoot","path":"sprites/s_fances_shoot/s_fances_shoot.yy",},},
     {"id":{"name":"s_fances_walk","path":"sprites/s_fances_walk/s_fances_walk.yy",},},
     {"id":{"name":"s_france_arma","path":"sprites/s_france_arma/s_france_arma.yy",},},
+    {"id":{"name":"s_frances_fumaca","path":"sprites/s_frances_fumaca/s_frances_fumaca.yy",},},
     {"id":{"name":"s_frances_idle","path":"sprites/s_frances_idle/s_frances_idle.yy",},},
     {"id":{"name":"s_frog_attack_hitbox","path":"sprites/s_frog_attack_hitbox/s_frog_attack_hitbox.yy",},},
     {"id":{"name":"s_frog_attack","path":"sprites/s_frog_attack/s_frog_attack.yy",},},

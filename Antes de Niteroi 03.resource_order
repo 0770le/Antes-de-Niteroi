@@ -259,6 +259,7 @@
     {"name":"s_fances_shoot","order":1,"path":"sprites/s_fances_shoot/s_fances_shoot.yy",},
     {"name":"s_fances_walk","order":2,"path":"sprites/s_fances_walk/s_fances_walk.yy",},
     {"name":"s_france_arma","order":6,"path":"sprites/s_france_arma/s_france_arma.yy",},
+    {"name":"s_frances_fumaca","order":8,"path":"sprites/s_frances_fumaca/s_frances_fumaca.yy",},
     {"name":"s_frog_attack_hitbox","order":1,"path":"sprites/s_frog_attack_hitbox/s_frog_attack_hitbox.yy",},
     {"name":"s_frog_idle","order":2,"path":"sprites/s_frog_idle/s_frog_idle.yy",},
     {"name":"s_frog_jump_land","order":4,"path":"sprites/s_frog_jump_land/s_frog_jump_land.yy",},

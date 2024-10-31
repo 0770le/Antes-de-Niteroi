@@ -1,11 +1,10 @@
 function tupinamba_melee_chase_state() {
 	
 	//calculate target movement
-	if !o_player.hurt {	
-		target_x = o_player.xprevious;
-		target_y = o_player.yprevious;
-		stare();
-	}
+	
+	target_x = o_player.xprevious;
+	target_y = o_player.yprevious;
+	stare();
 
 	
 	//calculate movement
@@ -18,7 +17,7 @@ function tupinamba_melee_chase_state() {
 	//move towards the player
 		//stop flickin left/right when at players x
 		var buffer = attack_range; 
-		if ((abs(x - o_player.x) > buffer) ){
+		if ((abs(x - target_x) > buffer) ){
 			hsp =xx;
 		}else{
 		//dont move

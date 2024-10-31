@@ -5,11 +5,11 @@ function tupinamba_melee_anim(){
 	
 	
 	
-	//it uses imgase_speed 0 in attack
-	if sign(hsp) != 0 and sign(hsp) != facing {
-		image_speed = -1;
-	}
-	if sign(hsp) != 0 and sign(hsp) == facing {
-		image_speed = 1;
-	}
+	////it uses imgase_speed 0 in attack
+	//if sign(hsp) != 0 and sign(hsp) != facing {
+	//	image_speed = -1;
+	//}
+	//if sign(hsp) != 0 and sign(hsp) == facing {
+	//	image_speed = 1;
+	//}
 }

@@ -21,10 +21,10 @@ function tupinamba_melee_jump_state(){
 	var face = tilemap_get_at_pixel(global.map, side() +1*facing, y-1);
 	
 	if (face == SOLID) and (vsp > 0.24) { // vsp caindo q entra no sliding
-			wait_time = room_speed * 0.4;
+			wait_time = room_speed * 0.2;
 			state = tupinamba_melee_states.HANGING;
 			//pro começo do arrastar nao ficar truncado
-			vsp += 1; 
+			vsp = 0; 
 	}
 
 	//change direction if hit ceiling

@@ -18,8 +18,8 @@ function tupinamba_melee_hanging_state(){
 	
 	
 	
-	//wall jump
-	if wait_time-- > 0 { 
+	//wall jump //ERRO NO SINAL instant -> quando poe o wait time ele explode
+	if wait_time-- > 0 { //time setted in jump 
 		launch(jump_vsp,jump_hsp, facing*-1);
 		state = tupinamba_melee_states.JUMP;
 		evade_dust();

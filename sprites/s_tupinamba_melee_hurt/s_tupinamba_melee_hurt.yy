@@ -14,6 +14,7 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"e1b3dd6a-4d2d-4482-87f7-9b0c92c3dc4d","name":"e1b3dd6a-4d2d-4482-87f7-9b0c92c3dc4d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"57610dee-ae7a-4774-b976-4e606d7dadb0","name":"57610dee-ae7a-4774-b976-4e606d7dadb0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e08a8c92-3715-4ad5-a460-c764a29d37cf","name":"e08a8c92-3715-4ad5-a460-c764a29d37cf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"ab344cde-19f3-4905-87b2-987ae54ff95d","name":"ab344cde-19f3-4905-87b2-987ae54ff95d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
@@ -51,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":3.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -61,7 +62,7 @@
     },
     "name":"s_tupinamba_melee_hurt",
     "playback":1,
-    "playbackSpeed":12.0,
+    "playbackSpeed":6.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -77,8 +78,11 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"57610dee-ae7a-4774-b976-4e606d7dadb0","path":"sprites/s_tupinamba_melee_hurt/s_tupinamba_melee_hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"874d91a1-cad4-413f-aade-62b0f72f9ac7","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e08a8c92-3715-4ad5-a460-c764a29d37cf","path":"sprites/s_tupinamba_melee_hurt/s_tupinamba_melee_hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"32d1c077-5463-4979-8700-aa636ddc1045","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ab344cde-19f3-4905-87b2-987ae54ff95d","path":"sprites/s_tupinamba_melee_hurt/s_tupinamba_melee_hurt.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6900671a-e9f5-46b1-8093-80d74269f0b4","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"6900671a-e9f5-46b1-8093-80d74269f0b4","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

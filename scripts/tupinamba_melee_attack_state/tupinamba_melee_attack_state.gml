@@ -39,6 +39,7 @@ function tupinamba_melee_attack_state(){
 		inst.image_xscale = facing*1.5;	
 		inst.damage = damage;
 		inst.knockback_distance = knockback_distance;
+		hsp+= 3*facing;
 		
 		//hit ground	
 		if 	image_index > 4	and !runned_once {	
@@ -46,13 +47,13 @@ function tupinamba_melee_attack_state(){
 				attack_delay =  room_speed * random_range(1, 2);
 				alarm[ONCE] = attack_delay;	
 
-				var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
+				//var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
 				
-				if t1 != VOID { 
-					audio_play_sound(snd_enemy_dying, 10, false, global.volume);
-					scr_screen_shake(0.3,1)	
-					instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);
-				}
+				//if t1 != VOID { 
+				//	audio_play_sound(snd_enemy_dying, 10, false, global.volume);
+				//	scr_screen_shake(0.3,1)	
+				//	instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);
+				//}
 		}
 	}
 

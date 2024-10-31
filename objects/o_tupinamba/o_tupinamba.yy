@@ -42,10 +42,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_tupinamba_idle",
-    "path":"sprites/s_tupinamba_idle/s_tupinamba_idle.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

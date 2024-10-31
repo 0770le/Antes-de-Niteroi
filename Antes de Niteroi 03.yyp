@@ -175,6 +175,7 @@
     {"id":{"name":"o_window_middle_center","path":"objects/o_window_middle_center/o_window_middle_center.yy",},},
     {"id":{"name":"obj_fmod","path":"objects/obj_fmod/obj_fmod.yy",},},
     {"id":{"name":"rm_00","path":"rooms/rm_00/rm_00.yy",},},
+    {"id":{"name":"rm_akaray","path":"rooms/rm_akaray/rm_akaray.yy",},},
     {"id":{"name":"rm_cidade_velha","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},},
     {"id":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
@@ -402,7 +403,6 @@
     {"id":{"name":"s_tupinamba_evade","path":"sprites/s_tupinamba_evade/s_tupinamba_evade.yy",},},
     {"id":{"name":"s_tupinamba_hanging","path":"sprites/s_tupinamba_hanging/s_tupinamba_hanging.yy",},},
     {"id":{"name":"s_tupinamba_hurting","path":"sprites/s_tupinamba_hurting/s_tupinamba_hurting.yy",},},
-    {"id":{"name":"s_tupinamba_idle","path":"sprites/s_tupinamba_idle/s_tupinamba_idle.yy",},},
     {"id":{"name":"s_tupinamba_jump","path":"sprites/s_tupinamba_jump/s_tupinamba_jump.yy",},},
     {"id":{"name":"s_tupinamba_melee_arma","path":"sprites/s_tupinamba_melee_arma/s_tupinamba_melee_arma.yy",},},
     {"id":{"name":"s_tupinamba_melee_attack","path":"sprites/s_tupinamba_melee_attack/s_tupinamba_melee_attack.yy",},},
@@ -430,6 +430,7 @@
     {"roomId":{"name":"rm_00","path":"rooms/rm_00/rm_00.yy",},},
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
+    {"roomId":{"name":"rm_akaray","path":"rooms/rm_akaray/rm_akaray.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

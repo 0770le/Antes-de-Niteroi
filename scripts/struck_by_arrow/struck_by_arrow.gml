@@ -29,6 +29,7 @@ function struck_by_arrow(_dir = facing){
 				//set hurt time
 				alarm[HURT] = hurt_time;
 				state= enemy_states.HURTING;
+				image_index = 0;
 				//screen shake
 				scr_screen_shake(.125, -1);
 				audio_play_sound(snd_player_hit, 20, false, global.volume);

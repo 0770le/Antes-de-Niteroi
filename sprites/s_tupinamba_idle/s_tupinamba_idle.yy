@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"s_tupinamba_idle2",
+  "%Name":"s_tupinamba_idle",
   "bboxMode":2,
   "bbox_bottom":37,
   "bbox_left":21,
@@ -22,7 +22,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"e6b8a0b8-7339-4a6b-aacc-e2206a67163c","blendMode":0,"displayName":"default","isLocked":false,"name":"e6b8a0b8-7339-4a6b-aacc-e2206a67163c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"s_tupinamba_idle2",
+  "name":"s_tupinamba_idle",
   "nineSlice":{
     "$GMNineSliceData":"",
     "bottom":0,
@@ -53,7 +53,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"s_tupinamba_idle2",
+    "%Name":"s_tupinamba_idle",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -77,7 +77,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"s_tupinamba_idle2",
+    "name":"s_tupinamba_idle",
     "playback":1,
     "playbackSpeed":3.0,
     "playbackSpeedType":0,
@@ -89,10 +89,10 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1d302e6d-3c1a-4fd0-bd05-27d64a21f66b","path":"sprites/s_tupinamba_idle2/s_tupinamba_idle2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1d302e6d-3c1a-4fd0-bd05-27d64a21f66b","path":"sprites/s_tupinamba_idle/s_tupinamba_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"90c07340-14bc-4fda-be20-d5cff0565b71","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bbb0f637-1498-42d8-a0c2-f2b2e61097c3","path":"sprites/s_tupinamba_idle2/s_tupinamba_idle2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bbb0f637-1498-42d8-a0c2-f2b2e61097c3","path":"sprites/s_tupinamba_idle/s_tupinamba_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"6714fead-6f79-4f5e-9405-60e82ee335b6","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

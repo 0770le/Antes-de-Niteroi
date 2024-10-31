@@ -43,10 +43,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_tupinamba_idle2",
-    "path":"sprites/s_tupinamba_idle2/s_tupinamba_idle2.yy",
+    "name":"s_tupinamba_idle",
+    "path":"sprites/s_tupinamba_idle/s_tupinamba_idle.yy",
   },
-  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

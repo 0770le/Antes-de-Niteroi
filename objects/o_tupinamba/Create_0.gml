@@ -97,7 +97,7 @@ states_array[tupinamba_states.HANGING] = tupinamba_hanging_state;
 states_array[tupinamba_states.EVADE] = tupinamba_evade_state;
 
 
-sprites_array[tupinamba_states.IDLE] = s_tupinamba_idle2;
+sprites_array[tupinamba_states.IDLE] = s_tupinamba_idle;
 sprites_array[tupinamba_states.HURTING] = s_tupinamba_hurting;
 sprites_array[tupinamba_states.SHOOT] = s_tupinamba_shoot;
 sprites_array[tupinamba_states.PATROL] = s_tupinamba_walk;
@@ -106,13 +106,13 @@ sprites_array[tupinamba_states.HANGING] = s_tupinamba_hanging;
 sprites_array[tupinamba_states.EVADE] = s_tupinamba_evade;
 
 
-mask_array[tupinamba_states.IDLE] = s_tupinamba_idle2;
-mask_array[tupinamba_states.HURTING] = s_tupinamba_idle2;
-mask_array[tupinamba_states.SHOOT] = s_tupinamba_idle2;
-mask_array[tupinamba_states.PATROL] = s_tupinamba_idle2;
-mask_array[tupinamba_states.JUMP] = s_tupinamba_idle2;
-mask_array[tupinamba_states.HANGING] = s_tupinamba_idle2;
-mask_array[tupinamba_states.EVADE] = s_tupinamba_idle2;
+mask_array[tupinamba_states.IDLE] = s_tupinamba_idle;
+mask_array[tupinamba_states.HURTING] = s_tupinamba_idle;
+mask_array[tupinamba_states.SHOOT] = s_tupinamba_idle;
+mask_array[tupinamba_states.PATROL] = s_tupinamba_idle;
+mask_array[tupinamba_states.JUMP] = s_tupinamba_idle;
+mask_array[tupinamba_states.HANGING] = s_tupinamba_idle;
+mask_array[tupinamba_states.EVADE] = s_tupinamba_idle;
 
 
 function can_evade() {	

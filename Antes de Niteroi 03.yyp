@@ -402,7 +402,7 @@
     {"id":{"name":"s_tupinamba_evade","path":"sprites/s_tupinamba_evade/s_tupinamba_evade.yy",},},
     {"id":{"name":"s_tupinamba_hanging","path":"sprites/s_tupinamba_hanging/s_tupinamba_hanging.yy",},},
     {"id":{"name":"s_tupinamba_hurting","path":"sprites/s_tupinamba_hurting/s_tupinamba_hurting.yy",},},
-    {"id":{"name":"s_tupinamba_idle","path":"sprites/s_tupinamba_idle/s_tupinamba_idle.yy",},},
+    {"id":{"name":"s_tupinamba_idle2","path":"sprites/s_tupinamba_idle2/s_tupinamba_idle2.yy",},},
     {"id":{"name":"s_tupinamba_jump","path":"sprites/s_tupinamba_jump/s_tupinamba_jump.yy",},},
     {"id":{"name":"s_tupinamba_melee_arma","path":"sprites/s_tupinamba_melee_arma/s_tupinamba_melee_arma.yy",},},
     {"id":{"name":"s_tupinamba_melee_attack","path":"sprites/s_tupinamba_melee_attack/s_tupinamba_melee_attack.yy",},},

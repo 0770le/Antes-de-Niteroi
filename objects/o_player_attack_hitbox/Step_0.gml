@@ -14,7 +14,8 @@ with (o_enemy_parent) {
 					}
 				
 					//move away from the hitbox
-					var knockback_dis = 3;
+					var knockback_dis = 12;
+					hsp = 0;
 					hsp = _dir * knockback_dis;
 			
 					//face the hitbox if on ground

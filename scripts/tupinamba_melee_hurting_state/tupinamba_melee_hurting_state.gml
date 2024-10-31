@@ -8,7 +8,7 @@ function tupinamba_melee_hurting_state(){
 	//check state
 	//set to first frame and stop if animation has played once
 		
-	var recover_time = 1; //1 = instant recover
+	var recover_time = 0.5; //1 = instant recover
 	if (anim_end()) {
 		if on_ground() {
 			state = tupinamba_states.IDLE;
@@ -21,10 +21,13 @@ function tupinamba_melee_hurting_state(){
 	if on_ground and hsp != 0 {
 		if !runned_once {
 			runned_once = true;
-			alarm[ONCE] = 0.1*room_speed;
+			alarm[ONCE] = 0.08*room_speed;
 			jump_dust()//faz o objeto dust_evade
 		}
 	}
+	
+	//knockback in player hitbox
+	
 	//apply movement
 	collision();
 	//caculate movement

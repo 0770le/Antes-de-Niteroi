@@ -2,7 +2,7 @@
 //draw_text(x,y, state);
 
 //flash red when taking damage
-if (hurt == true) {
+if (hurt) {
 	flash_counter++;
 	var flash_on_time = 8; //how long the sprite will stay red
 	if (flash_counter < flash_on_time) {

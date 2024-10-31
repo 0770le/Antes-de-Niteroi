@@ -46,6 +46,7 @@
     "name":"s_tupinamba_idle2",
     "path":"sprites/s_tupinamba_idle2/s_tupinamba_idle2.yy",
   },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

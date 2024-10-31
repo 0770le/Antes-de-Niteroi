@@ -2,6 +2,7 @@
 function tupinamba_melee_idle_state() {
 	
 	//enter state,set wait time
+
 	if !in_idle_state {
 		//next patrol 
 		wait_time = random_range(2, 4) * room_speed;

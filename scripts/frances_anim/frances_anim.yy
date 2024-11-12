@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"frances_anim",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"frances_anim",
+  "parent":{
+    "name":"Frances",
+    "path":"folders/Scripts/Enemy/Frances.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

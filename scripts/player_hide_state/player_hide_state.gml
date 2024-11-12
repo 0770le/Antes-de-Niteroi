@@ -22,11 +22,11 @@ function player_hide_state(){
 		jumped();		
 	}
 	
-	if shoot {
-		state= states.SHOOT;
-		hsp = 0;
-		image_index =0;
-	}
+	//if shoot {
+	//	state= states.SHOOT;
+	//	hsp = 0;
+	//	image_index =0;
+	//}
 	
 	if evade {
 		state=states.EVADE;

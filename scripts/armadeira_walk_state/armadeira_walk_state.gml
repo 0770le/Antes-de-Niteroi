@@ -2,7 +2,7 @@ function armadeira_walk_state(){
 image_speed =1;
 //set mov
 	hsp = spd * facing;
-	hidden = false;
+
 	
 //change state
 	//idle
@@ -13,7 +13,8 @@ image_speed =1;
 	// attack 
 	if alert and !on_ceeling()  {
 		state = armadeira_states.ATTACK;
-		wait_time_initial = room_speed * random_range(3, 5);
+		
+		agressive_timer = room_speed * random_range(1.5, 3);
 	}
 
 	// a wall is found	

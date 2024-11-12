@@ -1,4 +1,6 @@
 function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
+	
+	
 	//get input
 	get_input();
 
@@ -54,7 +56,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 		}
 	}
 	//repeating shots
-	if(image_index >= 11 and shoot) {
+	if((image_index >= 11 and shoot) and arrows > 0) {
 		image_index = 3;
 	}
 	//check state

@@ -2,7 +2,7 @@
 function armadeira_climb_state(){
 image_speed =1;	
 	can_alert= false;
-	hidden = false;
+
 	vsp = -spd*0.8;
 	hsp= 0 ;
 	
@@ -23,8 +23,6 @@ image_speed =1;
 			start_x = x;
 			patrol_dis = random_range(patrol_min_dis, patrol_max_dis);
 			spd = random_range(spd_min_limit, spd_max_limit);
-			wait_time_initial = room_speed * random_range(4, 10);
-			////
 		} 
 	
 	//no teto: 
@@ -36,7 +34,7 @@ image_speed =1;
 		start_x = x;
 		patrol_dis = random_range(patrol_min_dis, patrol_max_dis);
 		spd = random_range(spd_min_limit, spd_max_limit);
-		wait_time_initial = room_speed * random_range(4, 10);
+		
 	}
 	
 	//apply movement

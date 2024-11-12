@@ -19,9 +19,9 @@ hp = 1;
 alert_distance = random_range (TILE_SIZE*1.5, TILE_SIZE*2.2);
 alert_cooling = room_speed * 1.5;
 //hide
-hide_delay = room_speed * 1.5;
+hide_delay = room_speed * 1;
 
-attack_cd = room_speed * random_range(3, 5); //emprestado como CD
+attack_cd = room_speed * random_range(0, 0); //emprestado como CD
 damage = 1;
 
 patrol_min_dis =20;
@@ -29,8 +29,10 @@ patrol_max_dis =120;
 
 patrol_dis = random_range(patrol_min_dis, patrol_max_dis);
 //how long to wait before patrolling
-wait_time_initial = room_speed * random_range(4, 10);
+wait_time_initial = room_speed * random_range(2.5, 7);
+wait_time = wait_time_initial;
 
+agressive_timer = room_speed * random_range(1.5, 3);
 
 //states
 enum armadeira_states {

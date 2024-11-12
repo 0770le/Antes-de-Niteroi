@@ -76,7 +76,7 @@ patrol_dis = 100;
 start_x = x;
 start_y = y;
 //how long to wait before patrolling
-wait_time_initial = random_range(2, 4) * room_speed;
+wait_time_initial = 0;//random_range(0, 0) * room_speed;
 wait_time = wait_time_initial;
 	//CHASE
 //target to move to
@@ -101,7 +101,9 @@ state = enemy_states.IDLE;
 
 //sprites_array[enemy_states.IDLE] = s_intern_idle;
 
-
+function death(){
+	
+}
 
 //puff of smoke on spawn
 //if (room == rm_02) {

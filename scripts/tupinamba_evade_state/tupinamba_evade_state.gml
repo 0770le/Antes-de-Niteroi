@@ -18,7 +18,7 @@ function tupinamba_evade_state(){
 	var back = tilemap_get_at_pixel(global.map, side(false) -1*facing, y-1);
 	
 	if (back == SOLID) and (vsp > 0.24) { // vsp caindo q entra no sliding
-			wait_time = room_speed * 0.4;
+			hanging_time = hanging_time_initial;
 			facing *= -1;
 			state = tupinamba_states.HANGING;
 			//pro começo do arrastar nao ficar truncado

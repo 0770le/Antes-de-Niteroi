@@ -39,7 +39,8 @@ function player_jump_state(){
 		alarm[ATTACKING]= attack_delay;
 	}
 	
-	if shoot {
+ 
+	if (shoot and arrows > 0) {
 		state = states.SHOOT;
 		image_index = 0;
 	}

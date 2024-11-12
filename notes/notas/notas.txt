@@ -4,6 +4,7 @@ fazendo:
 
 BUGS e pendencias
 
+
 menu se voltar com o C o espaço passa a chamar o menu em jogo
 
 perguntar pro leo da ordem de verificaçao dos stados 

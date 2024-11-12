@@ -8,6 +8,8 @@ function tupinamba_hanging_state(){
 	//nova gravidade
 	vsp +=  0.06; 
 	
+	hsp =0;
+	
 	//make dust
 	if (!instance_exists( o_player_dust_jump)) {
 		evade_dust();
@@ -19,7 +21,7 @@ function tupinamba_hanging_state(){
 	
 	
 	//wall jump
-	if wait_time-- > 0 { 
+	if hanging_time-- <= 0 { 
 		launch(jump_vsp,jump_hsp, facing*-1);
 		state = tupinamba_states.JUMP;
 		evade_dust();

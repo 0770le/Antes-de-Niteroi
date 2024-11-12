@@ -21,7 +21,7 @@ function tupinamba_melee_jump_state(){
 	var face = tilemap_get_at_pixel(global.map, side() +1*facing, y-1);
 	
 	if (face == SOLID) and (vsp > 0.24) { // vsp caindo q entra no sliding
-			wait_time = room_speed * 0.2;
+			hanging_time = hanging_time_initial;
 			state = tupinamba_melee_states.HANGING;
 			//pro começo do arrastar nao ficar truncado
 			vsp = 0; 

@@ -8,6 +8,8 @@ function tupinamba_melee_hanging_state(){
 	//nova gravidade
 	vsp +=  0.06; 
 	
+	hsp = 0;
+	
 	//make dust
 	if (!instance_exists( o_player_dust_jump)) {
 		evade_dust();
@@ -18,8 +20,8 @@ function tupinamba_melee_hanging_state(){
 	
 	
 	
-	//wall jump //ERRO NO SINAL instant -> quando poe o wait time ele explode
-	if wait_time-- > 0 { //time setted in jump 
+	//wall jump 
+	if hanging_time-- <= 0 { 
 		launch(jump_vsp,jump_hsp, facing*-1);
 		state = tupinamba_melee_states.JUMP;
 		evade_dust();

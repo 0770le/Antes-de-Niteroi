@@ -2,7 +2,7 @@
 image_speed = 0;
 
 hp = 2;
-facing = 1;
+facing = -1;
 vsp_initial  = 0;
 vsp = vsp_initial;
 hsp_initial = 0;

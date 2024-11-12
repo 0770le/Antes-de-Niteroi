@@ -2,6 +2,7 @@
 function tupinamba_shoot_state() {
 	
 	stare();
+
 	//fire in right image
 	if number_of_shots >= 1 and floor(image_index) == 6 and !runned_once {
 		create_arrow()

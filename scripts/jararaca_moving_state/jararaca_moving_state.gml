@@ -31,7 +31,7 @@ function jararaca_moving_state(){
 	//hit a wall or an edge
 	if (face == SOLID or next_step == VOID) {
 		//mt baixo ou mt alto: volta 
-		if ((t0 == VOID and t1 == VOID and t2 == VOID) or (t3 == SOLID and t4 == SOLID and t5 == SOLID)) {
+		if (((t0 == VOID and t1 == VOID and t2 == VOID) or (t3 == SOLID and t4 == SOLID and t5 == SOLID)) or ((t0 == DEATH) or (t1 == DEATH) or (t2 == DEATH))) {
 			facing*=-1;
 		} 
 		//climb  

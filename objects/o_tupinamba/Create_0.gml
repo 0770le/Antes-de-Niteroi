@@ -1,5 +1,9 @@
 event_inherited();
 
+//hanging
+hanging_time_initial = room_speed * 1;
+hanging_time = hanging_time_initial;
+
 //BOW
 //arrow spawning y pos
 spawn_pos =1;

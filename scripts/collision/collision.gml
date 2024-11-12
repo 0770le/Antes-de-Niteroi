@@ -26,9 +26,11 @@ function collision() {
 
 	if ((t1 != VOID) and (t1 != PLATAFORM )) or
 	   ((t2 != VOID) and (t2 != PLATAFORM)) {
-		//collision found
+//collision found
+		//indo para a direita
 		if (hsp > 0) {
-			x = x - (x mod global.tile_size) + global.tile_size - 1 - (_side - x);
+			x = x - (x mod global.tile_size) + global.tile_size - 1 - (_side - x);	
+		//esquerda
 		}else{
 			x = x - (x mod global.tile_size) - (_side - x);
 		}

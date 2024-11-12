@@ -7,6 +7,7 @@ function jararaca_idle_state(){
 			can_attack = false;
 			alarm[CAN_ATTACK] = attack_cd;// emprestado como CD
 			state = jararaca_states.MOVING;
+			stare();
 	}
 	
 	// move due time

@@ -49,10 +49,10 @@ function player_walk_state(){
 		image_index =0;
 	}
 	
-	if shoot {
-		state= states.SHOOT;
-		image_index =0;
-	}
+	//if shoot {
+	//	state= states.SHOOT;
+	//	image_index =0;
+	//}
 	
 	if down {
 		crouched();

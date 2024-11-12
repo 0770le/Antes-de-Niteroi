@@ -27,7 +27,7 @@ function player_crouch_state(){
 		image_index = 0;
 	}
 	
-	if shoot {
+	if (shoot and arrows > 0) {
 		state = states.SHOOT;
 		image_index = 0;
 	}

@@ -1,26 +1,28 @@
 function armadeira_chase_state() {
-	hidden = false;
+
 	image_speed =1;
 	
 	//calculate target movement
 	if alert and !o_player.hurt {
 		
-		target_x = o_player.xprevious;
-		target_y = o_player.yprevious;
-			//stop if player keep distance
+		target_x = o_player.x;//previous;
+		target_y = o_player.y;//previous;
+		
+		//stop if player keep distance
 		if (abs(x - start_x) > alert_distance*3) {
-			state = armadeira_states.IDLE;
-			alarm[HIDING] = hide_delay;
+			state = armadeira_states.ATTACK //IDLE;
+			//alarm[HIDING] = hide_delay;
+			target_x = x;
+			target_y = y;
 		}
-	} else {
-		//return to start position if not alert 
-		target_x = start_x;
-		target_y = start_y;
-		//return to idle once at or near start pos
-		if (abs(x - start_x) < 4) {
-			state = armadeira_states.IDLE;
-			alarm[HIDING] = hide_delay;
-		}
+	//} else {//return to start position if not alert 
+	//	target_x = start_x;
+	//	target_y = start_y;
+	//	//return to idle once at or near start pos
+	//	if (abs(x - start_x) < 10) {
+	//		state = armadeira_states.IDLE;
+	//		alarm[HIDING] = hide_delay;
+	//	}
 	}
 
 	//calculate movement
@@ -54,7 +56,7 @@ function armadeira_chase_state() {
 		launch(random_range(3.6,4), random_range(0.9,1.1));
 		//launch(4,1.5);
 		attack = true;
-		attack_cd =  room_speed * random_range(3, 5); 
+		attack_cd =  room_speed * random_range(2, 4); 
 		alarm[ATTACKING] = attack_cd; 
 		state = armadeira_states.JUMP;
 		image_index=0;
@@ -69,6 +71,8 @@ function armadeira_chase_state() {
 		state = armadeira_states.CLIMB;
 	}
 	
+	//not in chse if hsp 0
+	if (hsp == 0) { state = armadeira_states.ATTACK;}
 
 	//apply movement
 	collision();

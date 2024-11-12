@@ -33,13 +33,20 @@ function tupinamba_melee_attack_state(){
 		inst.knockback_distance = knockback_distance;
 	}
 	
-	//club
+	//club swing
 	if image_index >= 3 and image_index < 7 {
 		var inst= instance_create_layer(x +1*facing,y, "Player", o_enemy_attack_hitbox);
 		inst.image_xscale = facing*1.5;	
 		inst.damage = damage;
 		inst.knockback_distance = knockback_distance;
+		
 		hsp+= 3*facing;
+		//dust
+		if !runned_once {
+			runned_once = true;
+			alarm[ONCE] = 0.06*room_speed;
+			jump_dust()//faz o objeto dust_evade
+		}
 		
 		//hit ground	
 		if 	image_index > 4	and !runned_once {	

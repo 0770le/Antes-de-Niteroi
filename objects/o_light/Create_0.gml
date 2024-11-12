@@ -8,7 +8,7 @@ col_index =0;
 //circle or ellipse
 circle = true;
 
-//tpe
+//type
 //0 wall torch
 //1 window
 //2 chest

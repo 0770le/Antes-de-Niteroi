@@ -2,15 +2,15 @@
 function armadeira_attack_state() {
 	//image_index = 0;
 	image_speed =1;
-	hidden = false;
+
 
 	
 	if ((distance_to_object(o_player) < alert_distance*0.8)) and on_ground() {
 	//CHASE
 		if can_attack {
 			can_attack = false;
-			wait_time_initial = room_speed * random_range(1.5, 3);
-			alarm[CAN_ATTACK] = wait_time_initial; 
+			//chase CD
+			alarm[CAN_ATTACK] = room_speed * random_range(1.5, 2.5);
 			start_x = x;
 			state = armadeira_states.CHASE;
 		}
@@ -21,6 +21,14 @@ function armadeira_attack_state() {
 		hsp = 0;
 		image_index=0;
 		}
+		//go agressive if player dont leave 
+		if agressive_timer > 0 {
+			agressive_timer --;
+		} else {
+			y-=1;
+			launch(1.4,1.4);
+			agressive_timer = room_speed * random_range(1.5, 2);
+		}	
 	}	
 		
 	if !alert {
@@ -28,14 +36,7 @@ function armadeira_attack_state() {
 		state = armadeira_states.IDLE;
 	}
 
-	//go agressive if player dont leave 
-	if wait_time_initial > 0 {
-		wait_time_initial --;
-	} else {
-		y-=1;
-		launch(1.2,1.2);
-		wait_time_initial = room_speed * random_range(1.5, 2);
-	}	
+	
 
 	//apply movement
 		collision();

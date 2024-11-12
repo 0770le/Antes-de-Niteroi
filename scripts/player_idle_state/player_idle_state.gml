@@ -29,14 +29,16 @@ function player_idle_state(){
 		image_index = 0;
 	}
 	
-	if shoot {
-		if on_ground() and up {
-			state = states.SHOOT_UP;
-			image_index = 0;
-		} else {
-			state = states.SHOOT;
-			image_index = 0;
-		}	
+	if (arrows >0) {
+		if shoot {
+			if on_ground() and up {
+				state = states.SHOOT_UP;
+				image_index = 0;
+			} else {
+				state = states.SHOOT;
+				image_index = 0;
+			}	
+		}
 	}
 	
 	if down {

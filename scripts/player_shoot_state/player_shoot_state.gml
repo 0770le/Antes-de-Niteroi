@@ -13,11 +13,9 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 	}	
 	
 	// sprite do tiro
-	if (floor(image_index) == 5 and !runned_once) {
+	if (floor(image_index) == 5) {
 		if shoot_held { //segura
 			image_speed = 0;
-			runned_once = true;
-			alarm[ONCE]= room_speed *0.2;
 		} else {	//solta
 			if can_fire {
 				image_speed = 1;

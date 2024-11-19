@@ -22,9 +22,11 @@ function player_crouch_state(){
 		state = states.WALK;
 	}
 	
-	if attack {
-		state = states.ATTACK;
+	if (attack and can_attack){
+		state =	states.ATTACK;
 		image_index = 0;
+		can_attack = false;
+		alarm[ATTACKING]= attack_delay;
 	}
 	
 	if (shoot and arrows > 0) {

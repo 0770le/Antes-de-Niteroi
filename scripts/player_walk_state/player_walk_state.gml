@@ -23,9 +23,9 @@ function player_walk_state(){
 	 }
 	 
 	 
-	if attack{ 
+	if (attack and can_attack) { 
 	 //consistencia no ataque parado
-		if abs(hsp) < max_hsp*0.3 {
+		if(!left and !right) {
 			hsp = 0;
 			state = states.ATTACK;
 			image_index =0;
@@ -35,7 +35,7 @@ function player_walk_state(){
 			state =	states.ATTACK_WALK;
 			image_index =0;
 			can_attack = false;
-			alarm[ATTACKING]= attack_delay;
+			alarm[ATTACKING]= attack_delay/2;
 			launch(0,abs(hsp*0.7), -1*facing); //tranco do hit
 		}
 	}
@@ -49,10 +49,10 @@ function player_walk_state(){
 		image_index =0;
 	}
 	
-	//if shoot {
-	//	state= states.SHOOT;
-	//	image_index =0;
-	//}
+	if (shoot and !left and !right) {
+		state= states.SHOOT;
+		image_index =0;
+	}
 	
 	if down {
 		crouched();

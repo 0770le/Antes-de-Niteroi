@@ -3,7 +3,7 @@
 //is the object on the screen
 
 
-function on_screen(_tile_size = 32){
+function on_screen(_tile_size = TILE_SIZE){
 
 	
 	var _left =   global.cx - _tile_size;

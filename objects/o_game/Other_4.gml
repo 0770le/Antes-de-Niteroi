@@ -1,7 +1,7 @@
 //tiles
 //get tile map
 global.map = layer_tilemap_get_id("collisions");
-global.tile_size = 32;
+global.tile_size = TILE_SIZE;
 
 //player create
 if (( (room!= rm_init) and (room != rm_menu) ) and (!instance_exists(o_player) ) ) {

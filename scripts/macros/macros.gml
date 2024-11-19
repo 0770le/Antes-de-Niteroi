@@ -11,7 +11,7 @@ function macros(){
 	
 //game 
 #macro DISPLAY_MSG				0
-#macro TILE_SIZE					32
+#macro TILE_SIZE				16
 	
 //player speeds
 #macro PLAYER_MAX_HSP			2.3

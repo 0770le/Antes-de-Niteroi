@@ -18,7 +18,7 @@ instance_deactivate_layer(layer_id);
 //o_sound_controller.play(FMOD_EVENT.MUSIC_GAMEPLAY);
 
 //// view_block
-var _tile_size = 32;
+var _tile_size = TILE_SIZE;
 var _columns = 1+ (room_width/ _tile_size);
 var _lines = 1+ (room_height/ _tile_size);
 var t1 = tilemap_get_at_pixel(layer_tilemap_get_id("Collisions"),  0  , 0 );

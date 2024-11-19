@@ -53,7 +53,7 @@ vine_ball = vine_ball_initial;
 //attack
 dmg = 0;
 can_attack = true;
-attack_delay = 1 * room_speed;
+attack_delay = 0.7 * room_speed;
 	//how long enemies get knocked back for when hit
 knockback_time = room_speed /2;
 knockback_dis = 4; //1.5;
@@ -140,7 +140,7 @@ states_array[states.WALK]			= player_walk_state;
 states_array[states.JUMP]			= player_jump_state;
 states_array[states.ATTACK]			= player_attack_state;
 states_array[states.ATTACK_WALK]	= player_attack_walk_state;
-states_array[states.AIR_ATTACK]		= player_air_attack_state;
+states_array[states.AIR_ATTACK]		= player_air_attack_state_2;
 states_array[states.AIR_ATTACK_END]		= player_air_attack_end_state;
 states_array[states.EVADE]			= player_evade_state;
 states_array[states.CROUCH]			= player_crouch_state;
@@ -161,7 +161,7 @@ sprites_array[states.WALK]			 = s_player_walk;
 sprites_array[states.JUMP]			 = s_player_jump;
 sprites_array[states.ATTACK]		 = s_player_attack;
 sprites_array[states.ATTACK_WALK]	 = s_player_attack_walk;
-sprites_array[states.AIR_ATTACK]	 = s_player_air_attack;
+sprites_array[states.AIR_ATTACK]	 = s_player_air_attack_2;
 sprites_array[states.AIR_ATTACK_END]	 = s_player_air_attack_end;
 sprites_array[states.EVADE]			 = s_player_evade;
 sprites_array[states.CROUCH]		 = s_player_crouch;

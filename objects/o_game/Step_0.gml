@@ -3,7 +3,7 @@
 //botao mouse pra teste
 #region
 
-if ( mouse_check_button_pressed(mb_left)){
+if ( mouse_check_button_pressed(mb_right)){
 	with(o_player) {
 			hp = 0;
 	}

@@ -33,8 +33,9 @@ if vsp != 0 and !on_ground() {
 //sees player
 if alert {
 //shoot
-	if can_fire {
+	if can_attack {
 	state = tupinamba_states.SHOOT;
+	can_fire = true;
 	image_index=0;
 	} //else {//skirmish	
 }

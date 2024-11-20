@@ -4,7 +4,7 @@ function player_air_attack_state_2(){
 	get_input();
 	
 	//caculate movement
-	if (image_index <= 3 ) {
+	if (image_index <= 23 ) {
 		calc_movement();
 	} else {//others attacks cant change direction
 		calc_entity_movement();
@@ -37,7 +37,7 @@ function player_air_attack_state_2(){
 	
 	
 	if on_ground() {//reach ground during loop
-		if (image_index >= 3 and image_index < 7 ) {//stomp shake. move back
+		if (image_index >= 4 and image_index < 7 ) {//stomp shake. move back
 			var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
 				if t1 != VOID { 
 					audio_play_sound(snd_enemy_dying, 10, false, global.volume);

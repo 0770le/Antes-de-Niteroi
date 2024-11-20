@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_view_block",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_view_block",
+  "parent":{
+    "name":"General",
+    "path":"folders/Scripts/General.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

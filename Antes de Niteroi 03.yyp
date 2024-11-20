@@ -211,6 +211,7 @@
     {"id":{"name":"check_enemy_hp","path":"scripts/check_enemy_hp/check_enemy_hp.yy",},},
     {"id":{"name":"check_player_hp","path":"scripts/check_player_hp/check_player_hp.yy",},},
     {"id":{"name":"collision","path":"scripts/collision/collision.yy",},},
+    {"id":{"name":"create_view_block","path":"scripts/create_view_block/create_view_block.yy",},},
     {"id":{"name":"crouched","path":"scripts/crouched/crouched.yy",},},
     {"id":{"name":"enemy_anim","path":"scripts/enemy_anim/enemy_anim.yy",},},
     {"id":{"name":"evade_dust","path":"scripts/evade_dust/evade_dust.yy",},},

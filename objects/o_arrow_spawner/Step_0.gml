@@ -1,5 +1,5 @@
 //shoot if within player's views
-if (on_screen(global.tile_size)) {
+if (on_screen(TILE_SIZE)) { // global.tile_size)) {
 	//object is within screen
 	if (can_fire) {
 		can_fire = false;

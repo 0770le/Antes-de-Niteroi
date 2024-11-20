@@ -3,7 +3,7 @@ if (!instance_exists(o_fade)) {
 	//check enemy hp
 	check_enemy_hp();
 	//check alert
-	if can_alert {check_alert();}
+	if (can_alert and !alert) {check_alert();}
 		
 	if instance_exists(o_player) {
 		if o_player.hp <0 {alert=false;}

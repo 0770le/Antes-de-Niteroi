@@ -28,7 +28,7 @@ function tupinamba_melee_idle_state() {
 				state = tupinamba_melee_states.IDLE;
 				
 				////if player is in other y, go
-				if x == xprevious and abs(y - o_player.y) > TILE_SIZE and y < o_player.y {
+				if x == xprevious and abs(y - o_player.y) > TILE_SIZE*2 and y < o_player.y {
 					if has_evade {
 						has_evade = false;			
 						evade_delay = evade_delay_initial;

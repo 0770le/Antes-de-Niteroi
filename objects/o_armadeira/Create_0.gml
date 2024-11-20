@@ -16,7 +16,7 @@ grav = global.grav*0.5;
 hurt_time = room_speed * 1;
 hp = 1;
 
-alert_distance = random_range (TILE_SIZE*1.5, TILE_SIZE*2.2);
+alert_distance = random_range ((TILE_SIZE*2)*1.5, (TILE_SIZE*2)*2.2);
 alert_cooling = room_speed * 1.5;
 //hide
 hide_delay = room_speed * 1;

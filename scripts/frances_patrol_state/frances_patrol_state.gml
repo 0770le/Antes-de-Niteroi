@@ -17,12 +17,11 @@ if (patrol_destination == -1 and x > patrol_left_limit) or (patrol_destination =
 // a wall is found	
 var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y);
 var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y - TILE_SIZE);
-
-
+var t3 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y - (TILE_SIZE*2));
 
 if (t1 == SOLID) {
 	//jump
-	if (t2 != SOLID)  {
+	if ((t2 != SOLID) or (t3 != SOLID))  {
 		state =  frances_states.JUMP;
 		image_index = 0;
 		image_speed = 1;

@@ -11,7 +11,7 @@ if (die) {
 }
 
 //destroy at wall if moved more than one tile
-if (abs(xstart - x) > global.tile_size) {
+if (abs(xstart - x) > TILE_SIZE){ //global.tile_size) {
 	var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_top);
 	var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp), bbox_bottom);
 

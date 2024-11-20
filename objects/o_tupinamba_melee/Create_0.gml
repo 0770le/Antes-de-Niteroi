@@ -15,7 +15,7 @@ o_enemy = object_index;
 enemy_animation = tupinamba_melee_anim;
 
 //alert
-alert_distance = TILE_SIZE * 7;
+alert_distance = (TILE_SIZE*2) * 7;
 alert_cooling = room_speed * random_range(6, 8);
 
 //movement 
@@ -49,8 +49,8 @@ attack = false;
 
 //patrol 
 patrol = true;
-patrol_left_limit = x - TILE_SIZE * 30;
-patrol_right_limit = x + TILE_SIZE * 30;
+patrol_left_limit = x - (TILE_SIZE*2) * 30;
+patrol_right_limit = x + (TILE_SIZE*2) * 30;
 patrol_destination = choose(-1,1);
 //how long to wait before patrolling
 wait_time_initial = random_range(2, 4) * room_speed;

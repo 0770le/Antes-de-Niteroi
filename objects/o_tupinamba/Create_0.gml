@@ -1,7 +1,7 @@
 event_inherited();
 
 //hanging
-hanging_time_initial = room_speed * 1;
+hanging_time_initial = room_speed * 0.2;
 hanging_time = hanging_time_initial;
 
 //BOW
@@ -9,8 +9,6 @@ hanging_time = hanging_time_initial;
 spawn_pos =1;
 can_fire = false;
 knockback_shoot_distance = 5;
-fire_delay_initial = room_speed * random_range(3, 5);
-fire_delay = fire_delay_initial;
 number_of_shots_initial = 3;
 number_of_shots = number_of_shots_initial;
 
@@ -54,8 +52,9 @@ arrow_drop_chance = 0.3;
 collision_dmg = false;
 damage = 1;
 knockback_distance = 5;
-can_attack = true;
-attack_delay = room_speed;
+can_attack = false;
+alarm[CAN_ATTACK] = room_speed* random_range(3,5);
+
 //animation
 attack = false;
 anim_duration = room_speed *.3;
@@ -146,19 +145,8 @@ function can_evade() {
 }
 
 
-function can_shoot(){
-	if !can_fire {
-		fire_delay--;
-		if fire_delay < 0 {
-			can_fire = true;
-		}
-	}
-}
 
 function create_arrow() {
-	//gap in frames 
-		runned_once = true;
-		alarm[ONCE] = room_speed*0.2;
 	//set spawn position		
 		ypos = -22;
 	//create arrow
@@ -167,10 +155,8 @@ function create_arrow() {
 	//sound
 		audio_play_sound(snd_arrow_firing,10, false, global.volume);
 	//create spark
-		var inst = instance_create_layer (side()+4*facing, y + ypos, "Arrow_shoot", o_arrow_spark);			
+		inst = instance_create_layer (side()+4*facing, y + ypos, "Arrow_shoot", o_arrow_spark);			
 		inst.image_xscale = facing;
-	//shot round		
-		number_of_shots -= choose(1,2,3);	
 		
 }
 

@@ -26,7 +26,7 @@ function collision() {
 
 	if ((t1 != VOID) and (t1 != PLATAFORM )) or
 	   ((t2 != VOID) and (t2 != PLATAFORM)) {
-//collision found
+		//collision found
 		//indo para a direita
 		if (hsp > 0) {
 			x = x - (x mod global.tile_size) + global.tile_size - 1 - (_side - x);	
@@ -37,6 +37,14 @@ function collision() {
 		hsp = 0;
 	}
 	x+= hsp;
+	
+	//verificando se entrou no chao por seguranca
+	t1 = tilemap_get_at_pixel(global.map, bbox_right, bbox_top);
+	t2 = tilemap_get_at_pixel(global.map, bbox_right, bbox_bottom);
+	if(t1 == SOLID or t2 == SOLID) {
+		x = x - (x mod global.tile_size) + global.tile_size - 1 - (bbox_right - x);
+	}
+	
 	
 	//VERTICAl collision
 	var vertical_side;

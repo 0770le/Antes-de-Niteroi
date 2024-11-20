@@ -5,8 +5,9 @@ image_speed=1;
 	if alert {
 		stare()
 		//shoot
-		if o_player.hp > 0 and can_fire {
+		if o_player.hp > 0 and can_attack {
 		state = tupinamba_states.SHOOT;
+		can_fire = true;
 		image_index=0;
 		} //else {//skirmish	
 	

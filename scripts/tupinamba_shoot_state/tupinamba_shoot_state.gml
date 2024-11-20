@@ -4,25 +4,27 @@ function tupinamba_shoot_state() {
 	stare();
 
 	//fire in right image
-	if number_of_shots >= 1 and floor(image_index) == 6 and !runned_once {
-		create_arrow()
+	if (can_fire and number_of_shots >= 1 and image_index >= 4) {
+		can_fire = false;
+		create_arrow();
+		//shot round		
+		number_of_shots -= choose(1,2,3);	
 	} 
 		
 	//repeating shots
-	if number_of_shots >= 1 and image_index >= 13 {
-		image_index = 3;
-	}	
+	if (number_of_shots >= 1 and image_index > 7) {
+		image_index = 2;
+		can_fire = true;
+	}
 	
-	//finish firing
-	if anim_end() { 
-		can_fire = false;
-		fire_delay = fire_delay_initial;
+	if (anim_end()) { 
 		number_of_shots = number_of_shots_initial;
-
+		can_attack = false;
+		alarm[CAN_ATTACK] = room_speed * random_range(3,5);
 		state = tupinamba_states.IDLE; 
 		wait_time = random_range(1, 2) * room_speed;
 		image_index =0;
-	}				
+	}
 	
 	calc_entity_movement();
 	collision();

@@ -21,7 +21,8 @@ function tupinamba_hanging_state(){
 	
 	
 	//wall jump
-	if hanging_time-- <= 0 { 
+	if hanging_time-- <= 0 {
+		hanging_time = hanging_time_initial;
 		launch(jump_vsp,jump_hsp, facing*-1);
 		state = tupinamba_states.JUMP;
 		evade_dust();

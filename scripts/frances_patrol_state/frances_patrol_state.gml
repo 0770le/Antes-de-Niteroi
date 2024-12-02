@@ -19,6 +19,16 @@ var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y);
 var t2 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y - TILE_SIZE);
 var t3 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y - (TILE_SIZE*2));
 
+//cabeça
+var t4 = tilemap_get_at_pixel(global.map, side(), bbox_top);
+if (t4 == SOLID) {//turn back
+		wait_time = random_range(4, 6) * room_speed;
+		state = frances_states.IDLE;
+		facing *=-1;
+		patrol_destination *=-1;
+}
+
+
 if (t1 == SOLID) {
 	//jump
 	if ((t2 != SOLID) or (t3 != SOLID))  {

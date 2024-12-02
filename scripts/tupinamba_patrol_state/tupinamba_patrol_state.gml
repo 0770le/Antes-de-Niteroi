@@ -16,7 +16,11 @@ if (patrol_destination == -1 and x > patrol_left_limit) or (patrol_destination =
 //pula
 // a wall is found	
 var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y);
-if t1 == SOLID {
+//cabeça
+var t2 = tilemap_get_at_pixel(global.map, side(), bbox_top);
+
+
+if (t1 == SOLID or t2 == SOLID)  {
 	state =  tupinamba_states.JUMP;
 	image_index = 0;
 	image_speed = 1;

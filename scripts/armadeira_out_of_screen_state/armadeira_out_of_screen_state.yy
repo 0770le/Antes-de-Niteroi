@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"armadeira_out_of_screen_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"armadeira_out_of_screen_state",
+  "parent":{
+    "name":"Armadeira",
+    "path":"folders/Scripts/Enemy/Armadeira.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

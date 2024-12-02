@@ -41,7 +41,8 @@ enum armadeira_states {
 	CLIMB,	//2
 	ATTACK,	//3
 	JUMP,	//4
-	CHASE	//5
+	CHASE,	//5
+	OUT_OF_SCREEN
 }
 
 states_array[armadeira_states.IDLE] = armadeira_idle_state;
@@ -50,6 +51,7 @@ states_array[armadeira_states.CLIMB] = armadeira_climb_state;
 states_array[armadeira_states.ATTACK] = armadeira_attack_state;
 states_array[armadeira_states.JUMP] = armadeira_jump_state;
 states_array[armadeira_states.CHASE] = armadeira_chase_state;
+states_array[armadeira_states.OUT_OF_SCREEN] = armadeira_out_of_screen_state;
 
 sprites_array[armadeira_states.IDLE] = s_armadeira_idle;
 sprites_array[armadeira_states.WALK] = s_armadeira_walk;
@@ -57,6 +59,7 @@ sprites_array[armadeira_states.CLIMB] = s_armadeira_climb;
 sprites_array[armadeira_states.ATTACK] = s_armadeira_attack;
 sprites_array[armadeira_states.JUMP] = s_armadeira_jump;
 sprites_array[armadeira_states.CHASE] = s_armadeira_chase;
+sprites_array[armadeira_states.OUT_OF_SCREEN] = s_armadeira_idle;
 
 
 function on_ceeling(){

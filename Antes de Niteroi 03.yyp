@@ -196,6 +196,7 @@
     {"id":{"name":"armadeira_climb_state","path":"scripts/armadeira_climb_state/armadeira_climb_state.yy",},},
     {"id":{"name":"armadeira_idle_state","path":"scripts/armadeira_idle_state/armadeira_idle_state.yy",},},
     {"id":{"name":"armadeira_jump_state","path":"scripts/armadeira_jump_state/armadeira_jump_state.yy",},},
+    {"id":{"name":"armadeira_out_of_screen_state","path":"scripts/armadeira_out_of_screen_state/armadeira_out_of_screen_state.yy",},},
     {"id":{"name":"armadeira_walk_state","path":"scripts/armadeira_walk_state/armadeira_walk_state.yy",},},
     {"id":{"name":"arqueiro_oculto_anim","path":"scripts/arqueiro_oculto_anim/arqueiro_oculto_anim.yy",},},
     {"id":{"name":"arqueiro_oculto_hide_state","path":"scripts/arqueiro_oculto_hide_state/arqueiro_oculto_hide_state.yy",},},
@@ -451,8 +452,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
-    {"roomId":{"name":"rm_cidade_velha","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},},
     {"roomId":{"name":"rm_00","path":"rooms/rm_00/rm_00.yy",},},
+    {"roomId":{"name":"rm_cidade_velha","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},},
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"roomId":{"name":"rm_akaray","path":"rooms/rm_akaray/rm_akaray.yy",},},

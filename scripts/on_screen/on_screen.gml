@@ -3,18 +3,14 @@
 //is the object on the screen
 
 
-function on_screen(_tile_size = TILE_SIZE){
+function on_screen(_buffer = 50){
 
 	
-	var _left =   global.cx - _tile_size;
-	var _right =  global.cx + global.cw + _tile_size;
-	var _top =    global.cy - _tile_size;
-	var _bottom = global.cy + global.ch + _tile_size;
+	var _left =   global.cx - _buffer;
+	var _right =  global.cx + global.cw + _buffer;
+	var _top =    global.cy - _buffer;
+	var _bottom = global.cy + global.ch + _buffer;
 
-	if ((( x > _left) and (x < _right)) and (y > _top) and ( y < _bottom)) {
-		return true;
-	} else {
-		return false;
-	}
-
+	return ((( bbox_right > _left) and (bbox_left < _right)) and (bbox_bottom > _top) and ( bbox_top < _bottom)) 
+	
 }

@@ -2,7 +2,7 @@ event_inherited();
 
 can_alert = false;
 enemy_animation = jararaca_anim;
-tongue = false;//alarme intervalo lambida
+tongue = false;//alarme intervalo entre linguinhas
 licking = false;//alarme tempo lambendo
 can_zoomie = true; //alarm agitação
 
@@ -10,7 +10,7 @@ can_zoomie = true; //alarm agitação
 hurt_time = room_speed * 1;
 hp = 1;
 
-alert_distance = 20;
+alert_distance = 40;
 
 attack_cd = room_speed * random_range(5,6); //emprestado como CD
 damage = 1;
@@ -19,7 +19,7 @@ damage = 1;
 wait_time_initial = room_speed * random_range(4, 6);
 
 //movement 
-max_hsp_initial = 4;	//acelerado
+max_hsp_initial = 5;	//acelerado
 max_vsp_initial = -max_hsp_initial;	
 spd = 0.8;
 drag = 0.12;	
@@ -50,6 +50,7 @@ sprites_array[jararaca_states.IDLE] = s_jararaca_idle;
 sprites_array[jararaca_states.MOVING] = s_jararaca_moving;
 sprites_array[jararaca_states.CLIMB] = s_jararaca_climb;
 
+
 function snake_gear() {
 	
 	gear_spd = spd;
@@ -68,7 +69,7 @@ function snake_gear() {
 		wait_time = room_speed * random_range(0,0.5);
 	
 		//se tiver em idle e sem pode mover nao faz o som 
-		if (state != jararaca_states.IDLE or can_attack) and can_zoomie { 
+		if ((state != jararaca_states.IDLE or can_attack) and can_zoomie) { 
 			//intervalo
 			can_zoomie = false;
 			alarm[8] = room_speed* 4;

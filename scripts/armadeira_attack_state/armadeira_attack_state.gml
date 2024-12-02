@@ -10,7 +10,7 @@ function armadeira_attack_state() {
 		if can_attack {
 			can_attack = false;
 			//chase CD
-			alarm[CAN_ATTACK] = room_speed * random_range(1.5, 2.5);
+			alarm[CAN_ATTACK] = room_speed * random_range(1.5, 2);
 			start_x = x;
 			state = armadeira_states.CHASE;
 		}
@@ -25,8 +25,8 @@ function armadeira_attack_state() {
 		if agressive_timer > 0 {
 			agressive_timer --;
 		} else {
-			y-=1;
-			launch(1.4,1.4);
+			y-=2;
+			launch(1.8,1.8);
 			agressive_timer = room_speed * random_range(1.5, 2);
 		}	
 	}	

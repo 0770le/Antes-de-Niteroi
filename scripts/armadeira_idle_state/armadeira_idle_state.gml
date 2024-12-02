@@ -21,10 +21,12 @@ function armadeira_idle_state(){
 			patrol_dis = random_range(patrol_min_dis, patrol_max_dis);
 			spd = random_range(spd_min_limit, spd_max_limit);
 		} 
-	
 		
 	}
 
+	if !on_screen(60) {
+		state = armadeira_states.OUT_OF_SCREEN;
+	}
 	
 	//apply movement
 	

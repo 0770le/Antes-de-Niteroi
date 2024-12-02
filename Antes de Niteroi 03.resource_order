@@ -144,6 +144,7 @@
     {"name":"armadeira_chase_state","order":5,"path":"scripts/armadeira_chase_state/armadeira_chase_state.yy",},
     {"name":"armadeira_climb_state","order":4,"path":"scripts/armadeira_climb_state/armadeira_climb_state.yy",},
     {"name":"armadeira_jump_state","order":2,"path":"scripts/armadeira_jump_state/armadeira_jump_state.yy",},
+    {"name":"armadeira_out_of_screen_state","order":8,"path":"scripts/armadeira_out_of_screen_state/armadeira_out_of_screen_state.yy",},
     {"name":"armadeira_walk_state","order":3,"path":"scripts/armadeira_walk_state/armadeira_walk_state.yy",},
     {"name":"arqueiro_oculto_hide_state","order":2,"path":"scripts/arqueiro_oculto_hide_state/arqueiro_oculto_hide_state.yy",},
     {"name":"arqueiro_oculto_idle_state","order":1,"path":"scripts/arqueiro_oculto_idle_state/arqueiro_oculto_idle_state.yy",},

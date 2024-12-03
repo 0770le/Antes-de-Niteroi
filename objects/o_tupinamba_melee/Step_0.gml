@@ -8,6 +8,12 @@ if state !=  tupinamba_melee_states.IDLE {
 	in_idle_state = false;	
 } 
 
+if (state !=  tupinamba_melee_states.ATTACK) {
+	unstoppable = false;
+}else {
+	unstoppable= true;
+}  
+
 tupinamba_melee_evade();
 tupinamba_melee_attack();
 

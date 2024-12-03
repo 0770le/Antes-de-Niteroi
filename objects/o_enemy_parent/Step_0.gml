@@ -11,6 +11,7 @@ if (!instance_exists(o_fade)) {
 	
 	//calc movement
 	calc_entity_movement()
+	
 	//anim
 	enemy_anim();
 	

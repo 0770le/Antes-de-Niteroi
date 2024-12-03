@@ -1,3 +1,5 @@
+image_angle += angle_speed;
+
 //bounce
 if on_ground() { 
 	//give vert movement
@@ -11,6 +13,8 @@ if on_ground() {
 			vsp = vsp_initial*0.5;
 		}	
 	bounce++;
+	y += vsp;
+	angle_speed *= -0.7;
 }
 
 //bounce off walls
@@ -20,11 +24,11 @@ if (sign(hsp) == true) {
 	var _side = bbox_left;
 }
 
-var t1 = tilemap_get_at_pixel(global.map, _side + sign(hsp_initial), bbox_bottom);
+var t1 = tilemap_get_at_pixel(global.map, _side + sign(hsp_initial), bbox_top);
 	
 		if (t1 == SOLID) {
 			//wall found, reverse direction
-			hsp *= -1;
+			hsp_initial *= -1;
 		}
 	
 
@@ -35,5 +39,8 @@ if (y > room_height) {
 
 //movement 
 calc_entity_movement(grav,);
+
+hsp = hsp_initial;
+
 //collision
 collision();

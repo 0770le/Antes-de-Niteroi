@@ -12,9 +12,17 @@ with (o_enemy_parent) {
 					if (_dir == 0) {
 						_dir = 1;
 					}
-				
+				//
+					var knockback_dis = 6;
+					
+					if (!unstoppable) {
+						//change state
+						state = enemy_states.HURTING;
+						image_index = 0;
+						knockback_dis*=2;
+					}
+				//	
 					//move away from the hitbox
-					var knockback_dis = 12;
 					hsp = 0;
 					hsp = _dir * knockback_dis;
 			
@@ -29,9 +37,7 @@ with (o_enemy_parent) {
 					//set hurt timer
 					alarm[HURT] = hurt_time;
 					
-					//change state
-					state = enemy_states.HURTING;
-					image_index = 0;
+				
 					
 					//screnn shake
 					scr_screen_shake(.1,1.5);

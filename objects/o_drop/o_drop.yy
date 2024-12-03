@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"o_frances_capacete",
+  "%Name":"o_drop",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_frances_capacete",
+  "name":"o_drop",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemy",
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_frances_capacete",
-    "path":"sprites/s_frances_capacete/s_frances_capacete.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -1,7 +1,7 @@
 ///@desc criar Parent
 
 //taking dmg
- 
+unstoppable = false; 
 hurt = false;
 hurt_time = room_speed * 1.5;
 hp = 1;
@@ -46,7 +46,7 @@ drag = 0.12;
 
 //loot
 hp_drop_chance = 0.3;
-death_gem_value = 3;
+death_gem_value =0;// 3;
 
 
 //attack

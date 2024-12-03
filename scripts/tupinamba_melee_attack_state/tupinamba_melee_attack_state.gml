@@ -3,6 +3,8 @@ function tupinamba_melee_attack_state(){
 	//caculate movement
 	calc_entity_movement();
 	
+
+	
 	hsp = 0;
 	
 	//check state after anim
@@ -19,6 +21,7 @@ function tupinamba_melee_attack_state(){
 		runned_once = true;
 		alarm[ONCE] = _pause* room_speed;
 		anim_paused(_pause);
+	
 	} 
 	
 	
@@ -62,6 +65,9 @@ function tupinamba_melee_attack_state(){
 				//	instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);
 				//}
 		}
+		
+		
+		
 	}
 
 	//apply movement

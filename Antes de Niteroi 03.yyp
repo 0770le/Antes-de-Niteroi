@@ -452,8 +452,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
-    {"roomId":{"name":"rm_00","path":"rooms/rm_00/rm_00.yy",},},
     {"roomId":{"name":"rm_cidade_velha","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},},
+    {"roomId":{"name":"rm_00","path":"rooms/rm_00/rm_00.yy",},},
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"roomId":{"name":"rm_akaray","path":"rooms/rm_akaray/rm_akaray.yy",},},

@@ -61,19 +61,24 @@ function macros(){
 #macro LAYER_GUI_MENU_WINDOW			"GUI_Menu_Window"
 
 //layer confirmation
-#macro LAYER_GUI_CONFIRMATION			"GUI_Confirmation"
-#macro LAYER_GUI_CONFIRMATION_BUTTONS	"GUI_Confirmation_Buttons"
-#macro LAYER_GUI_CONFIRMATION_WINDOW	"GUI_Confirmation_Window"
+#macro LAYER_GUI_CONFIRMATION				"GUI_Confirmation"
+#macro LAYER_GUI_CONFIRMATION_BUTTONS		"GUI_Confirmation_Buttons"
+#macro LAYER_GUI_CONFIRMATION_WINDOW		"GUI_Confirmation_Window"
 	
 //layer Log
-#macro LAYER_GUI_LOG					"GUI_Log"
-#macro LAYER_GUI_LOG_BUTTONS			"GUI_Log_Buttons"
-#macro LAYER_GUI_LOG_WINDOW				"GUI_Log_Window"
+#macro LAYER_GUI_LOG						"GUI_Log"
+#macro LAYER_GUI_LOG_BUTTONS				"GUI_Log_Buttons"
+#macro LAYER_GUI_LOG_WINDOW					"GUI_Log_Window"
+
+#macro LAYER_GUI_LOG_ENTRY					"GUI_Log_Entry"
+#macro LAYER_GUI_LOG_ENTRY_BUTTONS			"GUI_Log_Entry_Buttons"
+#macro LAYER_GUI_LOG_ENTRY_WINDOW			"GUI_Log_Entry_Window"
+
 	
 //Layer Biodiversidade
-#macro LAYER_GUI_BIODIVERSIDADE					"GUI_Biodiversidade"
-#macro LAYER_GUI_BIODIVERSIDADE_BUTTONS			"GUI_Biodiversidade_Buttons"
-#macro LAYER_GUI_BIODIVERSIDADE_WINDOW			"GUI_Biodiversidade_Window"
+#macro LAYER_GUI_BIODIVERSIDADE				"GUI_Biodiversidade"
+#macro LAYER_GUI_BIODIVERSIDADE_BUTTONS		"GUI_Biodiversidade_Buttons"
+#macro LAYER_GUI_BIODIVERSIDADE_WINDOW		"GUI_Biodiversidade_Window"
 	
 	
 }

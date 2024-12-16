@@ -25,14 +25,20 @@ function create_content() {
 		
 		var _log = o_log_registry.get_log_by_type(_type);
 		
+		var _aux = {
+			log:_log, 
+			callback: function() {
+					o_log_disclosure.set_log(self.log);	
+			}
+		}
+		
+		
 		//adiciona botoes
 		var _button = instance_create_layer(title.x + 25, title.y + 50 +(i*25), buttons_layer, o_button_option);
 		//cor do texto
 		_button.label = _log.name;
 		//funçao
-		_button.on_click = function() {
-		
-		};
+		_button.on_click = _aux.callback
 		
 		array_push(option_group,_button);
 	}

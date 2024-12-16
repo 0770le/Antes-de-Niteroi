@@ -22,6 +22,8 @@
     {"name":"Controller","order":1,"path":"folders/Objects/GUI/Log/biodiversidade/Controller.yy",},
     {"name":"Disclosure","order":2,"path":"folders/Objects/GUI/Log/biodiversidade/Disclosure.yy",},
     {"name":"Controller","order":1,"path":"folders/Objects/GUI/Log/Controller.yy",},
+    {"name":"Disclosure","order":3,"path":"folders/Objects/GUI/Log/Disclosure.yy",},
+    {"name":"Controller","order":1,"path":"folders/Objects/GUI/Log/Disclosure/Controller.yy",},
     {"name":"Menu","order":3,"path":"folders/Objects/GUI/Menu.yy",},
     {"name":"Controller","order":1,"path":"folders/Objects/GUI/Menu/Controller.yy",},
     {"name":"Iten","order":3,"path":"folders/Objects/Iten.yy",},

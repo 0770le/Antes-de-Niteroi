@@ -17,8 +17,6 @@ with(other){
 		}
 	}
 	
-	//get layer id
-	//var layer_id = layer_get_id("Travel" + string(other.travel)); //ex:stage1 set on creation code
 
 	//game var
 	//activate layer

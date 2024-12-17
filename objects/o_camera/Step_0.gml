@@ -6,7 +6,7 @@ camera_set_view_pos(camera, x- camera_get_view_width(camera)/2, y - camera_get_v
 
 if (follow != noone) {
 	move_to_x = follow.x;
-	var _buffer = TILE_SIZE; //global.tile_size/2;
+	var _buffer = 80; //global.tile_size/2;
 	//movimentos verticais mais smooth
 	move_to_y = follow.y - _buffer;  
 }
@@ -31,7 +31,7 @@ global.ch = camera_get_view_height(camera);
 
 
 //background scrolling
-var layer_id = layer_get_id("Background");
-layer_x(layer_id, lerp(0, camera_get_view_x(view_camera[0]), 0.7));
-layer_y(layer_id, lerp(0, camera_get_view_y(view_camera[0]), 0.4));
+//var layer_id = layer_get_id("Background");
+//layer_x(layer_id, lerp(0, camera_get_view_x(view_camera[0]), 0.7));
+//layer_y(layer_id, lerp(0, camera_get_view_y(view_camera[0]), 0.4));
 

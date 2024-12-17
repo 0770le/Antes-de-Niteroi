@@ -15,9 +15,6 @@ drag = 0.1;
 //destroy objetc
 die = false;
 
-//change objects layer after a set time
-alarm[LAYER_CHANGE] = room_speed/7;
-
 //generate tail
 grav = global.grav;
 tail_id2 = noone;

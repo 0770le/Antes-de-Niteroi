@@ -19,7 +19,7 @@ function frog_attack_state(){
 	if attack{
 		if ((image_index >= 5) and (image_index <=6)) {
 			//create the hitbox
-			var inst = instance_create_layer(x,y,"Enemy",o_enemy_attack_hitbox);
+			var inst = instance_create_layer(x,y,LAYER_INSTANCES,o_enemy_attack_hitbox);
 			//ensure hitbox faces the way the froh that created it is facing
 			inst.image_xscale= facing;
 			if (image_index == 5) {
@@ -28,12 +28,12 @@ function frog_attack_state(){
 		}
 		
 		//set tongue depth, coloca o inimigo na frente do player
-		depth = layer_get_depth(layer_get_id("Player")) -1;
+		//NUNCA FAZER ISSO
+		//depth = layer_get_depth(layer_get_id("Player")) -1;
 	
 		if ((image_index) >= (image_number - sprite_get_speed(sprite_index)/room_speed)) {
 			state = frog_states.IDLE;
 			alarm[CAN_ATTACK] = attack_delay;
-			depth = layer_get_depth(layer_get_id("Enemy"));
 			inhale = false;
 			attack = false;
 		} 

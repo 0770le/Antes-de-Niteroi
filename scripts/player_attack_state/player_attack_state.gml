@@ -46,13 +46,13 @@ function player_attack_state(){
 	
 	//above
 	if image_index >= 3 and image_index <=5  {
-		var inst= instance_create_layer(x -30*facing,y-35, "Player", o_player_attack_hitbox);
+		var inst= instance_create_layer(x -30*facing,y-35, LAYER_INSTANCES, o_player_attack_hitbox);
 		inst.image_xscale = facing*2;	
 	}
 	
 	//club
 	if image_index >= 3 and image_index < 8 {
-		var inst= instance_create_layer(x +10*facing,y+5, "Player", o_player_attack_hitbox);
+		var inst= instance_create_layer(x +10*facing,y+5, LAYER_INSTANCES, o_player_attack_hitbox);
 		inst.image_xscale = facing*1.3;	
 		
 		//hit ground	
@@ -64,7 +64,7 @@ function player_attack_state(){
 				if t1 != VOID { 
 					audio_play_sound(snd_enemy_dying, 10, false, global.volume);
 					scr_screen_shake(0.3,1)	
-					instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);
+					instance_create_layer(x+ 65*facing,y, LAYER_EFFECTS, o_player_dust_land);
 				}
 		}
 	}

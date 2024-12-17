@@ -24,7 +24,7 @@ bounce = false;
 can_pickup = false;
 
 //enable light
-var inst = instance_create_layer(x,y, "Travel", o_light); //gambiarra no layer pra só aparecer apos salvar o npc
+var inst = instance_create_layer(x,y, LAYER_EFFECTS, o_light); //gambiarra no layer pra só aparecer apos salvar o npc
 light_id = inst.id;
 inst.type = 4;
 //get the gem colour

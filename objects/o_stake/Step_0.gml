@@ -6,6 +6,8 @@ if hp <= 0 {
 	die = true;
 }
 
+image_xscale = facing;
+
 
 //generate debris
  if die {
@@ -23,6 +25,4 @@ if hp <= 0 {
 	}
 	instance_destroy();
  }
- 
-//collision
-collision();
+

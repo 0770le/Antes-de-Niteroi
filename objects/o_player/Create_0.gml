@@ -73,8 +73,8 @@ gems = 0;
 gems_value = 50;
 
 //set rm_00 start position
-room_start_pos_x = 144;//65; //ter das outra rm em comment
-room_start_pos_y = 280;//94;
+room_start_pos_x = 150;//65; //ter das outra rm em comment
+room_start_pos_y = 390;//94;
 room_start_facing = 1;
 x = room_start_pos_x;
 y = room_start_pos_y;

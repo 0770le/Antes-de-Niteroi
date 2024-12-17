@@ -10,7 +10,4 @@ image_speed = 0;
 //destroy objetc
 die = false;
 
-//change objects layer after a set time
-alarm[LAYER_CHANGE] = room_speed/7;
-
 

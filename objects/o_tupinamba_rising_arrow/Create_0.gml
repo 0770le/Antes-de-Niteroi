@@ -10,9 +10,6 @@ knockback_distance = 0.1;
 //destroy objetc
 die = false;
 
-//change objects layer after a set time
-alarm[LAYER_CHANGE] = room_speed/7;
-
 //calculating vertical speed
 var _x_delta = abs((o_player.x + o_player.hsp * o_player.facing) - x) / spd;
 var _y_delta = y - (o_player.bbox_top + (o_player.vsp/2)*_x_delta)-6;

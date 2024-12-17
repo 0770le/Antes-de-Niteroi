@@ -13,9 +13,9 @@ if saved {
 	
 	if !runned_once{
 		//get layer id
-		var layer_id = layer_get_id("Travel"); 
-		//activate layer
-		instance_activate_layer(layer_id);
+		//var layer_id = layer_get_id("Travel"); 
+		////activate layer
+		//instance_activate_layer(layer_id);
 		runned_once = true;
 	}
 	

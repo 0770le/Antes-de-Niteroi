@@ -32,5 +32,5 @@
     "path":"sprites/s_view_block/s_view_block.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

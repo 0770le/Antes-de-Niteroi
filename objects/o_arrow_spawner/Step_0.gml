@@ -11,16 +11,15 @@ if (on_screen(TILE_SIZE)) { // global.tile_size)) {
 		spawn_pos *= -1;
 		
 		//create arrow
-		var inst = instance_create_layer(x,y + ypos, "Arrow_shoot", o_arrow);
+		var inst = instance_create_layer(x,y + ypos, LAYER_PROJECTILES, o_arrow);
 		inst.facing = facing;
 		
 		//create spark
+		var _side = bbox_left;
 		if (facing) {
-			var _side = bbox_right; 
-		} else {
-			var _side = bbox_left;
+			_side = bbox_right; 
 		}
-		var inst = instance_create_layer (_side, y + ypos, "Arrow_shoot", o_arrow_spark);
+		inst = instance_create_layer (_side, y + ypos, LAYER_PROJECTILES, o_arrow_spark);
 		inst.image_xscale = facing;
 		
 		//sound

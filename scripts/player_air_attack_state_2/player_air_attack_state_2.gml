@@ -18,7 +18,7 @@ function player_air_attack_state_2(){
 	
 	// light lift pull from weapon swing
 	if (image_index >= 3 and image_index < 6){	
-		var inst= instance_create_layer(x,y, "Player", o_player_attack_hitbox);
+		var inst= instance_create_layer(x,y, LAYER_INSTANCES, o_player_attack_hitbox);
 		inst.image_xscale = facing;	
 		switch(floor(image_index)) {
 			case 3:	
@@ -42,7 +42,7 @@ function player_air_attack_state_2(){
 				if t1 != VOID { 
 					audio_play_sound(snd_enemy_dying, 10, false, global.volume);
 					scr_screen_shake(0.3,1)	
-					instance_create_layer(x+ 35*facing,y, "Dust", o_player_dust_land);
+					instance_create_layer(x+ 35*facing,y, LAYER_EFFECTS, o_player_dust_land);
 				}
 			//weapon recoil
 			image_index = 1;

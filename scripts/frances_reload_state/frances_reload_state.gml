@@ -7,7 +7,6 @@ function frances_reload_state(){
 		can_fire = true;
 	}
 	
-	
 	calc_entity_movement();
 	//apply movement
 	collision();

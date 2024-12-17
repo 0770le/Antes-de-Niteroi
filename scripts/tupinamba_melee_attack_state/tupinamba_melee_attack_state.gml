@@ -30,7 +30,7 @@ function tupinamba_melee_attack_state(){
 	
 	//above
 	if image_index >= 3 and image_index <= 4  {
-		var inst= instance_create_layer(x -30*facing,y-25, "Player", o_enemy_attack_hitbox);
+		var inst= instance_create_layer(x -30*facing,y-25, LAYER_INSTANCES, o_enemy_attack_hitbox);
 		inst.image_xscale = facing*2;	
 		inst.damage = damage;
 		inst.knockback_distance = knockback_distance;
@@ -38,7 +38,7 @@ function tupinamba_melee_attack_state(){
 	
 	//club swing
 	if image_index >= 3 and image_index < 7 {
-		var inst= instance_create_layer(x +1*facing,y, "Player", o_enemy_attack_hitbox);
+		var inst= instance_create_layer(x +1*facing,y, LAYER_INSTANCES, o_enemy_attack_hitbox);
 		inst.image_xscale = facing*1.5;	
 		inst.damage = damage;
 		inst.knockback_distance = knockback_distance;
@@ -62,7 +62,7 @@ function tupinamba_melee_attack_state(){
 				//if t1 != VOID { 
 				//	audio_play_sound(snd_enemy_dying, 10, false, global.volume);
 				//	scr_screen_shake(0.3,1)	
-				//	instance_create_layer(x+ 65*facing,y, "Dust", o_player_dust_land);
+				//	instance_create_layer(x+ 65*facing,y, LAYER_EFFECTS, o_player_dust_land);
 				//}
 		}
 		

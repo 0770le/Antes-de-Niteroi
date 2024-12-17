@@ -19,7 +19,7 @@ var t1 = tilemap_get_at_pixel(layer_tilemap_get_id("Collisions"),  0  , 0 );
 		
 			if t1 == SOLID {
 				//gerar o o_view_block
-				var inst = instance_create_layer ( TILE_SIZE * i  , TILE_SIZE * j , "View_Block", o_view_block);		
+				var inst = instance_create_layer ( TILE_SIZE * i  , TILE_SIZE * j , LAYER_INSTANCES, o_view_block);		
 			}
 		}
 	}		

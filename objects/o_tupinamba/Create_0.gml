@@ -150,12 +150,12 @@ function create_arrow() {
 	//set spawn position		
 		ypos = -22;
 	//create arrow
-		var inst = instance_create_layer(side()+4*facing,y + ypos, "Arrow_shoot", o_tupinamba_rising_arrow);
+		var inst = instance_create_layer(side()+4*facing,y + ypos, LAYER_PROJECTILES, o_tupinamba_rising_arrow);
 		inst.facing = facing;
 	//sound
 		audio_play_sound(snd_arrow_firing,10, false, global.volume);
 	//create spark
-		inst = instance_create_layer (side()+4*facing, y + ypos, "Arrow_shoot", o_arrow_spark);			
+		inst = instance_create_layer (side()+4*facing, y + ypos, LAYER_PROJECTILES, o_arrow_spark);			
 		inst.image_xscale = facing;
 		
 }

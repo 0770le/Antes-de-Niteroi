@@ -1,6 +1,6 @@
 /// descr fade_to_room(target_room, target_x, target_y, facing, colour);
 function fade_to_room(){
-	var _fade = instance_create_layer(x,y, "Fade",o_fade);
+	var _fade = instance_create_layer(x, y, LAYER_CONTROLLERS, o_fade);
 	with(_fade) {
 		target_rm = argument0;
 		target_x = argument1;

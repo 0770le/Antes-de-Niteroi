@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_hostage",
-    "path":"sprites/s_hostage/s_hostage.yy",
+    "name":"s_barqueiro",
+    "path":"sprites/s_barqueiro/s_barqueiro.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -5,7 +5,7 @@ event_inherited();
 //armadeira percebe o player sempre
 
 if (((distance_to_object(o_player) < alert_distance) and (o_player.hp > 0)) and !o_player.hidden) and on_ground()  {
-	var _blocked_view = collision_line(x,y-1, o_player.x, o_player.y-1, layer_tilemap_get_id("View_Block") ,false ,false);
+	var _blocked_view = collision_line(x,y-1, o_player.x, o_player.y-1, o_view_block ,false ,false);
 	 if  _blocked_view == noone{
 		stare();
 

@@ -1,5 +1,5 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"t_collisions_1",
   "autoTileSets":[],
   "macroPageTiles":{
@@ -12,8 +12,8 @@
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"Tile Sets",
-    "path":"folders/Tile Sets.yy",
+    "name":"collision",
+    "path":"folders/Tile Sets/collision.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
@@ -25,10 +25,6 @@
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",
-  },
-  "tileAnimation":{
-    "FrameData":[0,1,2,3,],
-    "SerialiseFrameCount":1,
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

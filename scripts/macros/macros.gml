@@ -76,9 +76,20 @@ function macros(){
 
 	
 //Layer Biodiversidade
-#macro LAYER_GUI_BIODIVERSIDADE				"GUI_Biodiversidade"
-#macro LAYER_GUI_BIODIVERSIDADE_BUTTONS		"GUI_Biodiversidade_Buttons"
-#macro LAYER_GUI_BIODIVERSIDADE_WINDOW		"GUI_Biodiversidade_Window"
-	
+#macro LAYER_GUI_BIODIVERSIDADE					"GUI_Biodiversidade"
+#macro LAYER_GUI_BIODIVERSIDADE_BUTTONS			"GUI_Biodiversidade_Buttons"
+#macro LAYER_GUI_BIODIVERSIDADE_WINDOW			"GUI_Biodiversidade_Window"
+
+#macro LAYER_EFFECTS				"Effects"
+#macro LAYER_PROJECTILES			"Projectiles"
+#macro LAYER_INSTANCES				"Instances"
+
+#macro LAYER_BACKGROUND_1			"Backgrounds_1"
+#macro LAYER_BACKGROUND_2			"Backgrounds_2"
+#macro LAYER_BACKGROUND_3			"Backgrounds_3"
+#macro LAYER_BACKGROUND_4			"Backgrounds_4"
+#macro LAYER_BACKGROUND_5			"Backgrounds_5"
+#macro LAYER_BACKGROUND_6			"Backgrounds_6"
+#macro LAYER_BACKGROUND_7			"Backgrounds_7"
 	
 }

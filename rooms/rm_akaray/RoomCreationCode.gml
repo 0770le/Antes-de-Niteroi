@@ -10,10 +10,6 @@ instance_create_layer(0,0,LAYER_CONTROLLERS, o_biodiversidade_controller);
 instance_create_layer(0,0,LAYER_CONTROLLERS, o_log_controller);
 instance_create_layer(0,0,LAYER_CONTROLLERS, o_menu_controller);
 
-//var layer_id = layer_get_id("Hostage");
-//instance_deactivate_layer(layer_id);
-layer_id = layer_get_id("Travel");
-instance_deactivate_layer(layer_id);
 
 //o_sound_controller.play(FMOD_EVENT.MUSIC_GAMEPLAY);
 

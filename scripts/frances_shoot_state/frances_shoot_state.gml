@@ -7,7 +7,7 @@ function frances_shoot_state() {
 	if floor(image_index) == 7 and !runned_once {
 		create_bullet()
 		//smoke
-		var inst = instance_create_layer (side()+11*facing, y - 20, "Arrow_shoot", o_frances_fumaca);			
+		var inst = instance_create_layer (side()+11*facing, y - 20, LAYER_EFFECTS, o_frances_fumaca);			
 		inst.image_xscale = facing*-1;
 	} 
 		

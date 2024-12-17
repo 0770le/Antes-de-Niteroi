@@ -6,18 +6,18 @@
 	//set spawn position		
 		ypos = y;
 	//create arrow
-		var inst = instance_create_layer(side()+4*facing,y + ypos, "Arrow_shoot", o_frances_die);
+		var inst = instance_create_layer(side()+4*facing,y + ypos, LAYER_INSTANCES, o_frances_die);
 		inst.facing = facing;
 	//sound
 		audio_play_sound(snd_arrow_firing,10, false, global.volume);
 	//create hat
-		var inst = instance_create_layer (x, bbox_top, "Arrow_shoot", o_drop);			
+		var inst = instance_create_layer (x, bbox_top, LAYER_INSTANCES, o_drop);			
 		
 		inst.sprite_index = s_frances_capacete;
 			
 	//inst.image_xscale = facing;
 	//create gun
-		var inst = instance_create_layer (side()+4*facing, y - 22, "Arrow_shoot", o_drop);			
+		var inst = instance_create_layer (side()+4*facing, y - 22, LAYER_INSTANCES, o_drop);	
 		//inst.image_xscale = facing;
 		
 		inst.sprite_index = s_france_arma;

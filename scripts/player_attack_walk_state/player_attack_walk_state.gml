@@ -20,7 +20,7 @@ function player_attack_walk_state(){
 	//attacking
 	//create hitboxes during hits index
 	if image_index >= 3 and image_index <=5 {
-		var inst= instance_create_layer(side(),y -10, "Player", o_player_attack_hitbox);
+		var inst= instance_create_layer(side(),y -10, LAYER_INSTANCES, o_player_attack_hitbox);
 		inst.image_xscale = facing*0.8;	
 		inst.image_yscale *= 0.7;	
 		//impulso

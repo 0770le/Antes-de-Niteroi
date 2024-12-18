@@ -6,5 +6,3 @@ quest_step = 0;
 
 msgs = [];
 talk = true;
-
-quest_draw_timer = 0;

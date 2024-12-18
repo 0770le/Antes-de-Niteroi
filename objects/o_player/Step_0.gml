@@ -22,3 +22,10 @@ if (!instance_exists(o_fade)) {
 	
 	
 }
+
+if(keyboard_check_pressed(vk_f1) and room != rm_cidade_velha) {
+	fade_to_room(rm_cidade_velha, 3762, 415, other.facing, c_black);	
+}
+if(keyboard_check_pressed(vk_f2) and room != rm_akarai) {
+	fade_to_room(rm_akarai, 2920, 751, other.facing, c_black);	
+}

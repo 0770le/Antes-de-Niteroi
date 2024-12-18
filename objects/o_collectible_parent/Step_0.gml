@@ -23,8 +23,8 @@ if (t1 == SOLID) {
 }
 
 //destroy gems if falls out of room
-if (y > room_height) {
-	instance_destroy(id, false);
+if (y > room_height or o_game.collectible[collectible_index]) {
+	instance_destroy();
 }
  
 //collision

@@ -21,3 +21,6 @@ target_y = 309;
 
 msgs = ["Liberte o jovem maracajas prisioneiro", "Navegue para Nitcheroy e destrua as fortificações inimigas."]
 quest = true;
+
+step1_x = 1711;
+step1_y = 415;

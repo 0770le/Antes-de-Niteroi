@@ -1,5 +1,10 @@
 
 function macros(){
+
+#macro GAME_W 640
+#macro GAME_H 360
+	
+	
 #macro VOID						0
 #macro SOLID					1
 #macro PLATAFORM				2
@@ -14,7 +19,7 @@ function macros(){
 #macro TILE_SIZE				16
 	
 //player speeds
-#macro PLAYER_MAX_HSP			2.3
+#macro PLAYER_MAX_HSP			12.3
 #macro PLAYER_WALK_SPEED		0.3
 #macro PLAYER_JUMP_SPEED		6
 	
@@ -91,5 +96,13 @@ function macros(){
 #macro LAYER_BACKGROUND_5			"Backgrounds_5"
 #macro LAYER_BACKGROUND_6			"Backgrounds_6"
 #macro LAYER_BACKGROUND_7			"Backgrounds_7"
+
+#macro COLLECTIBLE_ARARA			1
+#macro COLLECTIBLE_ARARIBOIA		2
+#macro COLLECTIBLE_ARMADEIRA		3
+#macro COLLECTIBLE_CIDADE_VELHA		4
+#macro COLLECTIBLE_KUNUMIUASU		5
+#macro COLLECTIBLE_MORUBIXABA		6
+#macro COLLECTIBLE_MUCURANA			7
 	
 }

@@ -73,6 +73,16 @@ msg = "";
 
 quest_saved_kunumiuasu = false;
 
+//collecibles acquired
+
+collectible[COLLECTIBLE_ARARA] = false;
+collectible[COLLECTIBLE_ARARIBOIA] = false;
+collectible[COLLECTIBLE_ARMADEIRA] = false;
+collectible[COLLECTIBLE_CIDADE_VELHA] = false;
+collectible[COLLECTIBLE_KUNUMIUASU] = false;
+collectible[COLLECTIBLE_MORUBIXABA] = false;
+collectible[COLLECTIBLE_MUCURANA] = false;
+
 //tooltip messages
 //msg#, properties
 //0 - pre msg

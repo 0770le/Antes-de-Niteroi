@@ -2,6 +2,8 @@
 //create log obj
 //drop by enemy ?
 
+collectible_index = 0;
+
 log_title = "Teste";
 log = "logs.LOG_PARENT";
 

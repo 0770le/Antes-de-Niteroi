@@ -1,61 +1,13 @@
 //get dimensions 
-var dw = display_get_gui_width();
-var dh = display_get_gui_height();
+//var _x1 = camera_get_view_x(view_camera[0]);
+//var _y1 = camera_get_view_y(view_camera[0]);
+
+//var _x2 = _x1 + GAME_W;
+//var _y2 = _y1 + GAME_H;
 
 //fade colour
-if (fade_to_colour == true) {
-	alpha += fade_spd;
-	draw_set_alpha(alpha);
-	//draw_rectangle_color(0, 0, dw, dh, col, col, col, col, false);
-	if (alpha >= 1) {
-		fade_to_colour = false;
-		with(o_player) {
-			//set starting position
-			room_start_pos_x = other.target_x;
-			room_start_pos_y = other.target_y;
-			x = room_start_pos_x;
-			y = room_start_pos_y;
-			
-			//set facing direction
-			room_start_facing = other.facing;
-			facing = room_start_facing;
-			
-			//reset values
-			hsp = 0;
-			csp = 0;
-			hsp_decimal = 0;
-			vsp_decimal = 0;
-			scale_x = 1;
-			scale_y = 1;
-			
-			//reset player if dead
-			if (state == states.DIE_2) {
-				image_speed = 1;
-				hp = max_hp;
-			}
-			
-			//ensure we stay in game_end_state
-			if (state != states.GAME_END) {
-				//change start and update animation
-				state = states.IDLE;
-				anim();				
-			}
-		}
-		//pan camera quickly
-		o_camera.camera_pan_speed = 1;
-		room_goto(target_rm);
-	}
-} else {
-	//fade from colour (terminando fade)
-	alpha -= fade_spd;
-	draw_set_alpha(alpha);
-	draw_rectangle_color(0, 0, dw, dh, col, col, col, col, false);
-	if (alpha <= 0) {
-		//reset camera pan speed
-		o_camera.camera_pan_speed = o_camera.camera_pan_speed_initial;
-		instance_destroy();
-	}
-}
+draw_set_alpha(alpha);
+draw_rectangle_color(0, 0, window_get_width(),  window_get_height(), col, col, col, col, false);
 draw_set_alpha(1);
 
 

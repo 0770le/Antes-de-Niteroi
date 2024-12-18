@@ -1,4 +1,7 @@
 //init variables
+event_inherited();
+
+
 image_speed = 1;
 image_index = 1;
 
@@ -16,4 +19,5 @@ target_rm = rm_00;
 target_x = 167;
 target_y = 309;
 
-msg = "prencha no create";
+msgs = ["Liberte o jovem maracajas prisioneiro", "Navegue para Nitcheroy e destrua as fortificações inimigas."]
+quest = true;

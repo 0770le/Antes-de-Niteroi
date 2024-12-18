@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"quest_complete_kunumiuasu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"quest_complete_kunumiuasu",
+  "parent":{
+    "name":"quest",
+    "path":"folders/Scripts/quest.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

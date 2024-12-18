@@ -76,8 +76,7 @@ gems_value = 50;
 room_start_pos_x = 150;//65; //ter das outra rm em comment
 room_start_pos_y = 390;//94;
 room_start_facing = 1;
-x = room_start_pos_x;
-y = room_start_pos_y;
+
 facing =- room_start_facing;
 
 //hurt

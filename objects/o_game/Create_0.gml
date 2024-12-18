@@ -3,6 +3,7 @@
 //macros
 macros();
 
+
 //upgrades
 has_cloak = false;
 has_axe= false;
@@ -67,6 +68,10 @@ ini_close();
 
 //final room 
 msg = "";
+
+//GAME PROGRESS
+
+quest_saved_kunumiuasu = false;
 
 //tooltip messages
 //msg#, properties

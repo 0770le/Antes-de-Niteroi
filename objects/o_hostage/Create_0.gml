@@ -1,6 +1,7 @@
 //init variables
-image_speed = 0;
+event_inherited()
 
+talk = false;
 
 facing = 1;
 vsp_initial  = 0;
@@ -10,7 +11,9 @@ hsp = hsp_initial;
 hsp_decimal = 0;
 vsp_decimal = 0;
 drag = 0.1;
-saved = false;
 
-runned_once=false;
-msg = "Posso te levar de canoa até + destination \n Me encontre em + origem"
+saved = false;
+saving = false;
+released = false;
+
+msgs = ["Avise ao Português"]

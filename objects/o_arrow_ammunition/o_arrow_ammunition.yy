@@ -10,8 +10,8 @@
   "name":"o_arrow_ammunition",
   "overriddenProperties":[],
   "parent":{
-    "name":"Iten",
-    "path":"folders/Objects/Iten.yy",
+    "name":"Item",
+    "path":"folders/Objects/Item.yy",
   },
   "parentObjectId":null,
   "persistent":false,

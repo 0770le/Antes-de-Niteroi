@@ -1,26 +1,16 @@
-
-//movement 
-calc_entity_movement();
- 
-//collision
-collision();
-
-stare(); 
-image_xscale = facing;
-
-if saved {
-	image_index = 1;
-	
-	if !runned_once{
-		//get layer id
-		//var layer_id = layer_get_id("Travel"); 
-		////activate layer
-		//instance_activate_layer(layer_id);
-		runned_once = true;
+if(saving and !saved) {
+	if(sprite_index != s_barqueiro_libertando) {
+		sprite_index = s_barqueiro_libertando;
+		image_index = 0;
+	} else {
+		if(anim_end()) {
+			saved = true;
+			o_portugues.quest = true;
+		}
 	}
-	
-	//destroy if leave screen
-	if (!on_screen(200)) {
-		instance_destroy(self);
-	}
+}
+
+if(saved and !released){
+	sprite_index = s_barqueiro_liberto;
+	talk = true;
 }

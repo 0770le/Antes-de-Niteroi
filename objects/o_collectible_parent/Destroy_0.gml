@@ -1,6 +1,4 @@
-with(light_id) {
-	instance_destroy();
-}
+instance_destroy(light_id);
 
 
 

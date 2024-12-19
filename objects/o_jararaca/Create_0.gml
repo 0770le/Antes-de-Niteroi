@@ -53,7 +53,7 @@ sprites_array[jararaca_states.CLIMB] = s_jararaca_climb;
 
 function snake_gear() {
 	
-	gear_spd = spd;
+	var gear_spd = spd;
 
 	spd_array[jararaca_spds.TOP]	=	max_hsp_initial;
 	spd_array[jararaca_spds.FAST]	=	spd * 1.4;
@@ -66,9 +66,9 @@ function snake_gear() {
 		//speed up
 		gear_spd = spd_array[jararaca_spds.TOP];
 		//speed cooler
-		wait_time = room_speed * random_range(0,0.5);
+		wait_time = room_speed * random_range(0,0.7);
 	
-		//se tiver em idle e sem pode mover nao faz o som 
+		//se tiver (diferente de idle ou pode atacar) E pode zoomie 
 		if ((state != jararaca_states.IDLE or can_attack) and can_zoomie) { 
 			//intervalo
 			can_zoomie = false;

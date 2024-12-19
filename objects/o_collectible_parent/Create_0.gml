@@ -24,8 +24,7 @@ bounce = false;
 can_pickup = false;
 
 //enable light
-var inst = instance_create_layer(x,y, LAYER_EFFECTS, o_light);
-light_id = inst.id;
-inst.type = 4;
+light_id = instance_create_layer(x,y, LAYER_EFFECTS, o_light);
+light_id.type = 4;
 //get the gem colour
-inst.col_index = image_index;
+light_id.col_index = image_index;

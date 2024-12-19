@@ -19,7 +19,7 @@ function macros(){
 #macro TILE_SIZE				16
 	
 //player speeds
-#macro PLAYER_MAX_HSP			12.3
+#macro PLAYER_MAX_HSP			2.3
 #macro PLAYER_WALK_SPEED		0.3
 #macro PLAYER_JUMP_SPEED		6
 	

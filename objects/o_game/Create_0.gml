@@ -73,6 +73,7 @@ msg = "";
 
 quest_saved_kunumiuasu = false;
 
+
 //collecibles acquired
 
 collectible[COLLECTIBLE_ARARA] = false;

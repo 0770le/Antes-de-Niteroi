@@ -85,6 +85,7 @@ hurt = false;
 hurt_time = room_speed*1.5;
 hp = 5;
 max_hp = hp;
+hp_losing = max_hp;
 
 
 //lives

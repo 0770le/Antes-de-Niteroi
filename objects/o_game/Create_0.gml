@@ -29,7 +29,7 @@ global.grav = 0.25;
 global.volume = 0.1;
 
 //set GUI size
-display_set_gui_size(640, 360);  //(720, 360);
+display_set_gui_size(640,360);  //(720, 360);
 
 
 //how many sparks come off gems

@@ -1,3 +1,6 @@
+//check hp
+
+
 //execute state .
 if (!instance_exists(o_fade)) {
 	script_execute(states_array[state]);

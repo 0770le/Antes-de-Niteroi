@@ -13,4 +13,11 @@ function check_player_hp() {
 		lives --;
 		audio_play_sound(snd_player_die, 5, false, global.volume);	
 	}
+	
+	if(hp_losing < hp) {
+		hp_losing = hp;
+	}
+	if(hp_losing > hp) {
+		hp_losing -= 0.01;	
+	}
 }

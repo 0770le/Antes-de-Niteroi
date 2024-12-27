@@ -121,7 +121,7 @@ mask_array[tupinamba_melee_states.CHASE] = s_tupinamba_melee_idle;
 has_evade = true;
 evade_delay_initial = room_speed*3;
 evade_delay = evade_delay_initial;
-evade_chance = 0.3;
+evade_chance = 0.5;
 
 function tupinamba_melee_evaded() {
 	

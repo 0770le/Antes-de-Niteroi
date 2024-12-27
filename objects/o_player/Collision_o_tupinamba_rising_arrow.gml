@@ -22,6 +22,8 @@ if (!other.die ) {
 			hurt = true;
 			//damage player
 			hp -=1;
+			instance_create_layer(0,0,LAYER_INSTANCES,o_hp_lost_effect);
+			
 			var knockback_dis = 2;
 			hsp = other.facing * knockback_dis;
 		

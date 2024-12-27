@@ -36,6 +36,8 @@ function player_attack_state(){
 				runned_once=true;
 			} 	
 		} else{
+			o_sound_controller.stop(FMOD_EVENT.ATTACK_MELEE);
+			o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.GROUND_HIT)
 			attack_held_time = 0;
 		}
 	} 
@@ -62,7 +64,7 @@ function player_attack_state(){
 				
 				var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
 				if t1 != VOID { 
-					audio_play_sound(snd_enemy_dying, 10, false, global.volume);
+					//audio_play_sound(snd_enemy_dying, 10, false, global.volume);
 					scr_screen_shake(0.3,1)	
 					instance_create_layer(x+ 65*facing,y, LAYER_EFFECTS, o_player_dust_land);
 				}

@@ -5,6 +5,7 @@ if(saving and !saved) {
 	} else {
 		if(anim_end()) {
 			saved = true;
+			quest = true;
 			o_portugues.quest_step++;
 			o_portugues.quest = true;
 		}

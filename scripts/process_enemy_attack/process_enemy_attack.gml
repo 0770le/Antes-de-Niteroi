@@ -27,7 +27,10 @@ function process_enemy_attack () { // (hk, bk) {
 			hsp = other.knockback_distance*-facing;
 			
 			//damage no  hp do player
-			hp -= other.damage;  
+			repeat(other.damage) {
+				hp--; 
+				instance_create_layer(0,0,LAYER_INSTANCES,o_hp_lost_effect);
+			}
 				
 			//set hurt timer
 			alarm[HURT] = hurt_time;	

@@ -1,5 +1,13 @@
 //check hp
 
+if(keyboard_check_pressed(ord("P"))) {
+	max_hp++;
+	hp++;
+}
+if(keyboard_check_pressed(ord("O"))) {
+	hp--;
+	instance_create_layer(0,0,LAYER_INSTANCES,o_hp_lost_effect);
+}
 
 //execute state .
 if (!instance_exists(o_fade)) {

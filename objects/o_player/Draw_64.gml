@@ -1,11 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
 var _x = 13;
-var _y = 46;
+var _y = 10;
 
-draw_sprite(s_HUD_back,0, _x, _y);
-var _bar_width = sprite_get_width(s_HUD_hp_bar) * (hp/max_hp);
+var _bar_width = (sprite_get_width(s_HUD_hp_bar)/2) * max_hp;
 var _bar_height = sprite_get_height(s_HUD_hp_bar);
-var _bar_x_offset = sprite_get_xoffset(s_HUD_hp_bar);
-var _bar_y_offset = sprite_get_yoffset(s_HUD_hp_bar);
-draw_sprite_part(s_HUD_hp_bar,0,0,0,_bar_width,_bar_height,_x-_bar_x_offset,_y-_bar_y_offset);
+
+
+var _hud_background_width = _bar_width + 60
+
+
+draw_sprite_stretched(s_HUD_back,0,-3,_y-5,_hud_background_width,sprite_get_height(s_HUD_back));
+draw_sprite_stretched(s_HUD_hp_bar_loss,0,_x,_y,_bar_width,_bar_height);
+
+
+_bar_width = (sprite_get_width(s_HUD_hp_bar)/2) * hp;
+draw_sprite_stretched(s_HUD_hp_bar,0,_x,_y,_bar_width,_bar_height);
+  

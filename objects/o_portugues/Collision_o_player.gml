@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
-if(o_hostage.saved and quest_step == 1) {
+if(o_hostage.saved and quest_step == 1 and other.up) {
 	quest_step++;
 	quest_complete_kunumiuasu();
 }

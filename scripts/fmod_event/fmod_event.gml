@@ -27,154 +27,26 @@ enum FMOD_VCA
 		MUSIC_MENU,
 		WEATHER_AMBIENCE,
 		
-		// hovers
+		// player
+		
+		ATTACK_MELEE,
 	
-		HOVER_BUTTON_MENU_START_SCREEN,
-		HOVER_BUTTON_MENU_INTERNAL, // options inside menus
-		HOVER_BUTTON_GENERAL, // time machine, tools, infos and confirm dialogs // TODO check challenge option hover
 		
-		// clicks
-		
-		CLICK_BUTTON_MENU_START_SCREEN,
-		CLICK_BUTTON_TIME_MACHINE,
-		CLICK_BUTTON_INFOS_CHALLENGE_OPTION_AND_INTERNALS, // the internals of this section
-		CLICK_BUTTON_TOOLS_AND_CONFIRMATION_DIALOGS, // tools and confirm dialogs, mouse right-click (unselect)
-		CLICK_TAB_CATALOG,
-		
-		// perform actions
-		
-		ACTION_SELECT_SEED,
-		ACTION_SELECT_SOIL,
-		ACTION_TOOL_HARVEST,		
-		ACTION_TOOL_PLANT,
-		ACTION_TOOL_PLOW,
-		ACTION_TOOL_REMOVE,
-		ACTION_TOOL_WATER,
-		ACTION_TOOL_CLEAN,
-				
-		// notifications
-		
-		NOTIFICATION_GENERAL,
-		NOTIFICATION_QUEST_COMPLETE,
-		NOTIFICATION_CHALLENGE_ANSWER,
-		NOTIFICATION_GAME_BEAT,
-		NOTIFICATION_GAME_WIN_OR_LOSE,
-		
-		// game actions
-		
-		GAME_EXIT_TO_DESKTOP_OR_START_SCREEN,
-		GAME_NEW_OR_LOAD,
-		
-		// challenges
-		
-		CHALLENGE_SHOW
 	}
 
 #endregion
 
 #region parameters
 
-	#region notification game win or lose parameters
+	#region PARAMETRO PADRÃO
 	
-		#macro FMOD_PARAMETER_NAME_WIN_LOSE		"win-lose"
+		#macro FMOD_PARAMETER_NAME_MOVE		"move"
 		
-		enum FMOD_PARAMETER_WIN_LOSE
+		enum FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK
 		{
-			PLACE_HOLDER, WIN, LOSE
+			PLACE_HOLDER, GROUND_PREPARE, GROUND_HIT, MOVING, AIR
 		}
 	
-	#endregion
-
-	#region ambiente weather parameters
-
-		#macro FMOD_PARAMETER_NAME_TIME_LAPSE	"time lapse" 
-		#macro FMOD_PARAMETER_NAME_RAIN			"rain" 
-		#macro FMOD_PARAMETER_NAME_DAY_NIGHT	"day - night" 
-		#macro FMOD_PARAMETER_NAME_STOP_TIME	"stop time" 
-
-		enum FMOD_PARAMETER_TIME_LAPSE
-		{
-			PLACE_HOLDER, NORMAL, FASTER, FASTEST
-		}
-
-		enum FMOD_PARAMETER_RAIN
-		{
-			PLACE_HOLDER, NOT_RAINING, RAINING
-		}
-
-		enum FMOD_PARAMETER_DAY_NIGHT
-		{
-			PLACE_HOLDER, DAY, NIGHT
-		}
-
-		enum FMOD_PARAMETER_STOP_TIME 
-		{
-			PLACE_HOLDER, NORMAL, PAUSED
-		}
-
-	#endregion
-
-	#region time machine buttons
-
-		#macro FMOD_PARAMETER_NAME_TIME_MACHINE "time machine" 
-
-		enum FMOD_PARAMETER_TIME_MACHINE 
-		{
-			PLACE_HOLDER,
-			NORMAL,
-			FASTER,
-			FASTEST,
-			STOP
-		}
-
-	#endregion
-
-	#region seeds icon
-
-		#macro FMOD_PARAMETER_NAME_PANTRY	"pantry" 
-
-	#endregion
-	
-	#region button tools
-	
-		#macro FMOD_PARAMETER_NAME_BUTTON_TOOLS	"pantry" 
-		
-		enum FMOD_PARAMETER_BUTTON_TOOLS
-		{
-			PLACE_HOLDER, SELECT, UNSELECT
-		}
-
-	#region crop seed action
-
-		#macro FMOD_PARAMETER_NAME_HOLD_RELEASE_FORBIDDEN	"hold-release-forbiden" 
-
-		enum FMOD_PARAMETER_HOLD_RELEASE_FORBIDDEN
-		{
-			PLACE_HOLDER, HOLD, RELEASE, FORBIDDEN
-		}
-
-	#endregion
-
-	#region plow action
-
-		#macro FMOD_PARAMETER_NAME_PLOW_HOLD_RELEASE	"hold - release" 
-
-		enum FMOD_PARAMETER_PLOW_HOLD_RELEASE
-		{
-			PLACE_HOLDER, HOLD, RELEASE
-		}
-
-	#endregion
-
-	#region open close basic
-
-		#macro FMOD_PARAMETER_NAME_OPEN_CLOSE_BASIC	"open-close" 
-
-		enum FMOD_PARAMETER_OPEN_CLOSE_BASIC
-		{
-			PLACE_HOLDER, OPEN, CLOSE
-		}
-
 	#endregion
 
 #endregion

@@ -33,14 +33,11 @@ function player_air_attack_state_2(){
 		}
 	}
 	
-	//create hitboxes during hits index
-	
-	
 	if on_ground() {//reach ground during loop
 		if (image_index >= 4 and image_index < 7 ) {//stomp shake. move back
 			var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
 				if t1 != VOID { 
-					audio_play_sound(snd_enemy_dying, 10, false, global.volume);
+					//o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.GROUND_HIT)
 					scr_screen_shake(0.3,1)	
 					instance_create_layer(x+ 35*facing,y, LAYER_EFFECTS, o_player_dust_land);
 				}

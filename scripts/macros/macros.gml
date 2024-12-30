@@ -85,6 +85,9 @@ function macros(){
 #macro LAYER_GUI_BIODIVERSIDADE_BUTTONS			"GUI_Biodiversidade_Buttons"
 #macro LAYER_GUI_BIODIVERSIDADE_WINDOW			"GUI_Biodiversidade_Window"
 
+#macro LAYER_GROUND					"Tiles_ground"
+#macro LAYER_COLLISION				"Collisions"
+
 #macro LAYER_EFFECTS				"Effects"
 #macro LAYER_PROJECTILES			"Projectiles"
 #macro LAYER_INSTANCES				"Instances"

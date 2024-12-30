@@ -1,6 +1,7 @@
 //tiles
 //get tile map
-global.map = layer_tilemap_get_id("collisions");
+global.map = layer_tilemap_get_id(LAYER_COLLISION);
+global.ground_map = layer_tilemap_get_id(LAYER_GROUND);
 global.tile_size = TILE_SIZE;
 
 //player create

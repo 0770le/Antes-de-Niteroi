@@ -68,7 +68,19 @@ function load_events()
 			FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.MOVING,
 			FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.AIR]),
 		]);
-		#endregion
+			
+	event_per_enum[? FMOD_EVENT.WALK] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_run",
+		[
+			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
+			FMOD_PARAMETERE_MOVE_WALK.DIRT,
+			FMOD_PARAMETERE_MOVE_WALK.GRASS,
+			FMOD_PARAMETERE_MOVE_WALK.STONE,
+			FMOD_PARAMETERE_MOVE_WALK.SAND]),
+		]);
+		
+		
+	#endregion
 }
 
 function load_busses()

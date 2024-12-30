@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"play_walk_sound",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"play_walk_sound",
+  "parent":{
+    "name":"Sound",
+    "path":"folders/Scripts/Sound.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

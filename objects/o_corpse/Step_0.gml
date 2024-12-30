@@ -1,41 +1,41 @@
+if(image_speed > 0) {
+	if(image_index > image_number - 3) {
+		image_speed = 0;
+	}
+} else {
+	if(vspd > 0) {
+		image_index = image_number - 2;
+	} else {
+		image_index = image_number - 1;
+	}
+}
 
+if(!stop_movement) {
+	x+=hspd;
+	y+=vspd;
 
-//bounce
-if on_ground() { 
-	//give vert movement
-	
-	if bounce >= 2 {
+	vspd+=0.1;
+
+	//bounce
+	if(bouncerTimer-- <= 0) {
+		if(on_ground_2()) {
+			if bounce >= 2 {
+				stop_movement = true;
+			} else {
+				vspd = vspd * (-0.4);
+				bounce++;
+				bouncerTimer = 5;
+			}
+		}
+		var _side = sign(hspd) == 1?bbox_right:bbox_left;
+
+		var t1 = tilemap_get_at_pixel(global.map, _side + sign(hspd), bbox_top);
+		if (t1 == SOLID) {
+			hspd *= -0.5;
+		}
+	}
+
+	if (y > room_height) {
 		instance_destroy();
 	}
-		if bounce == 0 {
-			vsp = vsp_initial*0.7;
-		} else { 
-			vsp = vsp_initial*0.5;
-		}	
-	bounce++;
 }
-
-//bounce off walls
-if (sign(hsp) == true) {
-	var _side = bbox_right;
-} else {
-	var _side = bbox_left;
-}
-
-var t1 = tilemap_get_at_pixel(global.map, _side + sign(hsp_initial), bbox_bottom);
-	
-		if (t1 == SOLID) {
-			//wall found, reverse direction
-			hsp *= -1;
-		}
-	
-
-//destroy debris if falls out of room
-if (y > room_height) {
-	instance_destroy();
-}
-
-//movement 
-calc_entity_movement();
-//collision
-collision();

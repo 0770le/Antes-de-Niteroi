@@ -12,15 +12,17 @@ function player_walk_state(){
 		state = states.IDLE;
 	}
 	
+	play_walk_sound(image_index, image_speed,[2,7]);
+	
 	 //check if falling off ledge
-	 var _bottom = bbox_bottom;
-	 var t1 = tilemap_get_at_pixel(global.map, bbox_left, _bottom + 1);
-	 var t2 = tilemap_get_at_pixel(global.map, bbox_right, _bottom + 1);
+	var _bottom = bbox_bottom;
+	var t1 = tilemap_get_at_pixel(global.map, bbox_left, _bottom + 1);
+	var t2 = tilemap_get_at_pixel(global.map, bbox_right, _bottom + 1);
 	 
-	 if ((t1 == VOID) and (t2 == VOID)) {
-		state= states.JUMP;
-		jumps= jumps_initial;
-	 }
+	if ((t1 == VOID) and (t2 == VOID)) {
+	state= states.JUMP;
+	jumps= jumps_initial;
+	}
 	 
 	 
 	if (attack and can_attack) { 

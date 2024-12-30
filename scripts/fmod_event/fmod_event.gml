@@ -30,6 +30,7 @@ enum FMOD_VCA
 		// player
 		
 		ATTACK_MELEE,
+		WALK,
 	
 		
 	}
@@ -45,6 +46,11 @@ enum FMOD_VCA
 		enum FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK
 		{
 			PLACE_HOLDER, GROUND_PREPARE, GROUND_HIT, MOVING, AIR
+		}
+		
+		enum FMOD_PARAMETERE_MOVE_WALK
+		{
+			PLACE_HOLDER, DIRT, GRASS, STONE, SAND
 		}
 	
 	#endregion

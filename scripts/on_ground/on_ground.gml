@@ -19,3 +19,9 @@ function on_ground(){
 	return  ((((t1 == SOLID or t1 == PLATAFORM) and (t3 != SOLID and t3 != PLATAFORM)) or (t1 == SOLID and t3 == PLATAFORM)) or	
 		(((t2 == SOLID or t2 == PLATAFORM) and (t4 != SOLID and t4 != PLATAFORM)) or (t1 == SOLID and t3 == PLATAFORM)));
 }
+
+function on_ground_2(){
+	var _t = tilemap_get_at_pixel(global.map, x, bbox_bottom + 1);
+
+	return  (_t == SOLID or _t == PLATAFORM)
+}

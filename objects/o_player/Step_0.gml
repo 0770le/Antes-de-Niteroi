@@ -1,5 +1,7 @@
 //check hp
-
+if(mouse_check_button_pressed(mb_middle)) {
+	instance_create_layer(mouse_x,mouse_y,LAYER_INSTANCES,o_corpse);	
+}
 if(keyboard_check_pressed(ord("P"))) {
 	max_hp++;
 	hp++;

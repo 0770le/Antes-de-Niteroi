@@ -150,6 +150,7 @@
     {"name":"rm_cidade_velha","order":4,"path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"rm_game_end","order":3,"path":"rooms/rm_game_end/rm_game_end.yy",},
     {"name":"rm_init","order":2,"path":"rooms/rm_init/rm_init.yy",},
+    {"name":"rm_morguja_uasu","order":9,"path":"rooms/rm_morguja_uasu/rm_morguja_uasu.yy",},
     {"name":"rm_parent","order":6,"path":"rooms/rm_parent/rm_parent.yy",},
     {"name":"rm_pendotiba","order":8,"path":"rooms/rm_pendotiba/rm_pendotiba.yy",},
     {"name":"anim_end","order":6,"path":"scripts/anim_end/anim_end.yy",},

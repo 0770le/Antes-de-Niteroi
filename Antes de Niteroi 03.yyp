@@ -202,6 +202,7 @@
     {"id":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"id":{"name":"rm_morguja_uasu","path":"rooms/rm_morguja_uasu/rm_morguja_uasu.yy",},},
     {"id":{"name":"rm_parent","path":"rooms/rm_parent/rm_parent.yy",},},
     {"id":{"name":"rm_pendotiba","path":"rooms/rm_pendotiba/rm_pendotiba.yy",},},
     {"id":{"name":"anim_end","path":"scripts/anim_end/anim_end.yy",},},
@@ -507,6 +508,7 @@
     {"roomId":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"roomId":{"name":"rm_parent","path":"rooms/rm_parent/rm_parent.yy",},},
     {"roomId":{"name":"rm_pendotiba","path":"rooms/rm_pendotiba/rm_pendotiba.yy",},},
+    {"roomId":{"name":"rm_morguja_uasu","path":"rooms/rm_morguja_uasu/rm_morguja_uasu.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

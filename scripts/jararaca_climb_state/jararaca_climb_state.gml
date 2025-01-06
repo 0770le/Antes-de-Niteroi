@@ -27,7 +27,21 @@ function jararaca_climb_state(){
 	
 	//apply movement
 	collision();
-
-	
 }
 
+
+function jararaca_start_climb_state(){
+	if(anim_end()) {
+		state = jararaca_states.CLIMB;
+		image_index = 0;
+		y += 60;
+	}
+}
+
+function jararaca_stop_climb_state(){
+	if(anim_end()) {
+		state = jararaca_states.MOVING;
+		image_index = 0;
+		x -= 55 * facing;
+	}
+}

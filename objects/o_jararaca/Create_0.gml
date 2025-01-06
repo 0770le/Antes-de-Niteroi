@@ -38,17 +38,32 @@ enum jararaca_spds {
 enum jararaca_states {
 	IDLE,
 	MOVING,
-	CLIMB
+	CLIMB,
+	DESCEND,
+	START_CLIMB,
+	STOP_CLIMB,
+	START_DESCEND,
+	STOP_DESCEND
 }
 
 states_array[enemy_states.IDLE] = jararaca_idle_state;
 states_array[jararaca_states.MOVING] = jararaca_moving_state;
 states_array[jararaca_states.CLIMB] = jararaca_climb_state;
+states_array[jararaca_states.DESCEND] = jararaca_descend_state;
+states_array[jararaca_states.START_CLIMB] = jararaca_start_climb_state;
+states_array[jararaca_states.STOP_CLIMB] = jararaca_stop_climb_state;
+states_array[jararaca_states.START_DESCEND] = jararaca_start_descend_state;
+states_array[jararaca_states.STOP_DESCEND] = jararaca_start_descend_state;
 
 
 sprites_array[jararaca_states.IDLE] = s_jararaca_idle;
 sprites_array[jararaca_states.MOVING] = s_jararaca_moving;
 sprites_array[jararaca_states.CLIMB] = s_jararaca_climb;
+sprites_array[jararaca_states.DESCEND] = s_jararaca_descend;
+sprites_array[jararaca_states.START_CLIMB] = s_jararaca_climb_start;
+sprites_array[jararaca_states.STOP_CLIMB] = s_jararaca_climb_stop;
+sprites_array[jararaca_states.START_DESCEND] = s_jararaca_descend_start;
+sprites_array[jararaca_states.STOP_DESCEND] = s_jararaca_descend_stop;
 
 
 function snake_gear() {

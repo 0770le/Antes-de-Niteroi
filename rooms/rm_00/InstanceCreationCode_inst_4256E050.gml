@@ -1,1 +1,0 @@
-evade_chance = 0.9

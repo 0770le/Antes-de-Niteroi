@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"jararaca_descend_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"jararaca_descend_state",
+  "parent":{
+    "name":"Jararaca",
+    "path":"folders/Scripts/Enemy/Jararaca.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

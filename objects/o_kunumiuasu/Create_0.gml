@@ -11,7 +11,7 @@ vsp_decimal = 0;
 drag = 0.1;
 
 runned_once= false;
-target_rm = rm_00;
+target_rm = rm_cidade_velha;
 target_x = 167;
 target_y = 309;
 

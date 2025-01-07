@@ -150,6 +150,7 @@
     {"id":{"name":"o_enemy_parent","path":"objects/o_enemy_parent/o_enemy_parent.yy",},},
     {"id":{"name":"o_fade","path":"objects/o_fade/o_fade.yy",},},
     {"id":{"name":"o_falling_leaves","path":"objects/o_falling_leaves/o_falling_leaves.yy",},},
+    {"id":{"name":"o_flammable_wall","path":"objects/o_flammable_wall/o_flammable_wall.yy",},},
     {"id":{"name":"o_frances_arma","path":"objects/o_frances_arma/o_frances_arma.yy",},},
     {"id":{"name":"o_frances_die","path":"objects/o_frances_die/o_frances_die.yy",},},
     {"id":{"name":"o_frances_fumaca","path":"objects/o_frances_fumaca/o_frances_fumaca.yy",},},

@@ -110,6 +110,7 @@
     {"name":"o_enemy_attack_hitbox","order":1,"path":"objects/o_enemy_attack_hitbox/o_enemy_attack_hitbox.yy",},
     {"name":"o_fade","order":1,"path":"objects/o_fade/o_fade.yy",},
     {"name":"o_falling_leaves","order":6,"path":"objects/o_falling_leaves/o_falling_leaves.yy",},
+    {"name":"o_flammable_wall","order":14,"path":"objects/o_flammable_wall/o_flammable_wall.yy",},
     {"name":"o_frances_arma","order":10,"path":"objects/o_frances_arma/o_frances_arma.yy",},
     {"name":"o_frances_die","order":11,"path":"objects/o_frances_die/o_frances_die.yy",},
     {"name":"o_frances_fumaca","order":12,"path":"objects/o_frances_fumaca/o_frances_fumaca.yy",},

@@ -1,5 +1,6 @@
-vspd =  random_range(-3,-1);
+vspd =  random_range(-4,-2);
 hspd = random_range(1.7,2);
+facing = 1;
 
 stop_movement = false;
 

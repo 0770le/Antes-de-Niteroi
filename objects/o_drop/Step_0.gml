@@ -16,7 +16,7 @@ if on_ground() {
 	y += vsp;
 	angle_speed *= -0.7;
 }
-
+hsp = hsp_initial * facing;
 //bounce off walls
 if (sign(hsp) == true) {
 	var _side = bbox_right;

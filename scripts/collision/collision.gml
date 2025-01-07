@@ -77,7 +77,7 @@ function collision() {
 			var _diff = (vsp + bbox_top) mod global.tile_size;
 			var _diff2 = global.tile_size - _diff;
 			
-			var y1 = bbox_top + _diff2;
+			var y1 = bbox_top + vsp + _diff2;
 			y = y1 + (y - bbox_top);
 		}
 		vsp = 0;

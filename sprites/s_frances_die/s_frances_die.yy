@@ -15,8 +15,8 @@
     {"$GMSpriteFrame":"","%Name":"27b6c930-0b2b-471a-a6cb-340303fa4012","name":"27b6c930-0b2b-471a-a6cb-340303fa4012","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"08f12cca-9a96-4923-9da3-304cdea29fe6","name":"08f12cca-9a96-4923-9da3-304cdea29fe6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"30cfa086-0c50-4b44-936a-cbfcd3253c97","name":"30cfa086-0c50-4b44-936a-cbfcd3253c97","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"cdaaeb54-5e6e-412c-9ef3-03e7791ca60b","name":"cdaaeb54-5e6e-412c-9ef3-03e7791ca60b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"ea3c3096-c99c-412c-a292-4c84c7a4a2b4","name":"ea3c3096-c99c-412c-a292-4c84c7a4a2b4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"cdaaeb54-5e6e-412c-9ef3-03e7791ca60b","name":"cdaaeb54-5e6e-412c-9ef3-03e7791ca60b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -82,11 +82,11 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"30cfa086-0c50-4b44-936a-cbfcd3253c97","path":"sprites/s_frances_die/s_frances_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7874ef57-beb8-40b3-8c99-d56858ad6db2","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cdaaeb54-5e6e-412c-9ef3-03e7791ca60b","path":"sprites/s_frances_die/s_frances_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"dab72437-6aca-4c5e-b64e-c584a7d0b020","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ea3c3096-c99c-412c-a292-4c84c7a4a2b4","path":"sprites/s_frances_die/s_frances_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"35771c5d-e363-423b-a337-66bad749599c","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"35771c5d-e363-423b-a337-66bad749599c","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cdaaeb54-5e6e-412c-9ef3-03e7791ca60b","path":"sprites/s_frances_die/s_frances_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"dab72437-6aca-4c5e-b64e-c584a7d0b020","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

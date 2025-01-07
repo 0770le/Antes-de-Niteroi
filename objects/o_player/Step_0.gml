@@ -2,14 +2,6 @@
 if(mouse_check_button_pressed(mb_middle)) {
 	instance_create_layer(mouse_x,mouse_y,LAYER_INSTANCES,o_corpse);	
 }
-if(keyboard_check_pressed(ord("P"))) {
-	max_hp++;
-	hp++;
-}
-if(keyboard_check_pressed(ord("O"))) {
-	hp--;
-	instance_create_layer(0,0,LAYER_INSTANCES,o_hp_lost_effect);
-}
 
 //execute state .
 if (!instance_exists(o_fade)) {

@@ -1,10 +1,10 @@
 function armadeira_walk_state(){
-image_speed =1;
-//set mov
-	hsp = spd * facing;
-
+	image_speed =1;
 	
-//change state
+	//set mov
+	hsp = spd * facing;
+	
+	//change state
 	//idle
 	if (abs(start_x - x) > patrol_dis) { 
 		alarm[HIDING] = hide_delay;
@@ -20,14 +20,12 @@ image_speed =1;
 	// a wall is found	
 	var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), y);
 	if (t1 == SOLID) {
-	//decisão
+		//decisão
 		var _choice = choose (1,2);
 		
-	//voltar horizontal
-		if _choice == 1 {
-			facing*=-1;	
-	
-	//seguir vertical
+		//voltar horizontal
+		if (_choice == 3) {
+			facing*=-1;
 		} else {		
 			//cair do teto
 			if on_ceeling() { 
@@ -43,8 +41,6 @@ image_speed =1;
 			}
 		}
 	}
-
-	////////
 	
 	//tail
 	var t1 = tilemap_get_at_pixel(global.map, side(false), bbox_top -1);
@@ -69,7 +65,12 @@ image_speed =1;
 	}
 	
 	//apply movement
-	calc_entity_movement();
-	collision();
 	
+	var _grav = global.grav;
+	if(on_ceeling()) {
+		_grav = 0;
+	}
+	
+	calc_entity_movement(_grav);
+	collision();
 }

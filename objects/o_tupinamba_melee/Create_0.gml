@@ -19,7 +19,7 @@ alert_distance = (TILE_SIZE*2) * 7;
 alert_cooling = room_speed * random_range(6, 8);
 
 //movement 
-spd =  PLAYER_WALK_SPEED;		//"aceleração";
+spd = 1;		//"aceleração";
 hsp = 0;
 max_hsp_initial =  PLAYER_WALK_SPEED*0.8;
 max_hsp =  PLAYER_MAX_HSP*0.9;
@@ -28,7 +28,7 @@ chase_spd = max_hsp;
 vsp = 0;
 vsp_decimal = 0;
 //jump
-jump_vsp = PLAYER_JUMP_SPEED+2;
+jump_vsp = PLAYER_JUMP_SPEED;
 jump_hsp = 4;
 
 //loot
@@ -119,8 +119,8 @@ mask_array[tupinamba_melee_states.CHASE] = s_tupinamba_melee_idle;
 
 //evade
 has_evade = true;
-evade_delay_initial = room_speed*3;
-evade_delay = evade_delay_initial;
+evade_delay_initial = room_speed*2;
+evade_delay = evade_delay_initial
 evade_chance = 0.5;
 
 function tupinamba_melee_evaded() {
@@ -128,7 +128,7 @@ function tupinamba_melee_evaded() {
 	can_take_dmg = false;
 	y+= -1;
 	facing*= -1;
-	launch( jump_vsp * 0.7 , max_hsp*7 , -1*facing );
+	launch( jump_vsp * 0.7 , max_hsp*3 , -1*facing );
 	state = tupinamba_melee_states.EVADE;
 	image_index=0;
 	image_speed=1;		

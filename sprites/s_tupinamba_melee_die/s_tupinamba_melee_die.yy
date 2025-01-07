@@ -1,17 +1,18 @@
 {
   "$GMSprite":"",
   "%Name":"s_tupinamba_melee_die",
-  "bboxMode":0,
-  "bbox_bottom":42,
-  "bbox_left":0,
-  "bbox_right":47,
-  "bbox_top":0,
+  "bboxMode":2,
+  "bbox_bottom":32,
+  "bbox_left":7,
+  "bbox_right":43,
+  "bbox_top":24,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
+    {"$GMSpriteFrame":"","%Name":"9b3719e3-9bc5-4a8c-abd3-2721daecaef4","name":"9b3719e3-9bc5-4a8c-abd3-2721daecaef4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"06e04ed2-458b-4142-8266-71ed14bb4549","name":"06e04ed2-458b-4142-8266-71ed14bb4549","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"be63f615-263a-4476-a7a6-cb3b4447fecb","name":"be63f615-263a-4476-a7a6-cb3b4447fecb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"52d76b3e-814b-4d7f-aec5-35850972d574","name":"52d76b3e-814b-4d7f-aec5-35850972d574","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
@@ -52,7 +53,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":4.0,
+    "length":5.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -72,23 +73,26 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9b3719e3-9bc5-4a8c-abd3-2721daecaef4","path":"sprites/s_tupinamba_melee_die/s_tupinamba_melee_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d6bda81b-8a5a-4306-b37d-b7dc17d54e01","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"06e04ed2-458b-4142-8266-71ed14bb4549","path":"sprites/s_tupinamba_melee_die/s_tupinamba_melee_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"58eb7db6-a6c3-4415-8db3-512eeea893c2","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"58eb7db6-a6c3-4415-8db3-512eeea893c2","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"be63f615-263a-4476-a7a6-cb3b4447fecb","path":"sprites/s_tupinamba_melee_die/s_tupinamba_melee_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"d51d96e7-8978-416d-86be-7457ba6a09c9","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"d51d96e7-8978-416d-86be-7457ba6a09c9","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"52d76b3e-814b-4d7f-aec5-35850972d574","path":"sprites/s_tupinamba_melee_die/s_tupinamba_melee_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3f75f82e-552d-44e1-9334-de00116a3e40","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"3f75f82e-552d-44e1-9334-de00116a3e40","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"34d30ce9-1caa-4f45-be9e-b285874410c6","path":"sprites/s_tupinamba_melee_die/s_tupinamba_melee_die.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"268a5669-a43e-4720-aaaa-c150ca62c2e6","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"268a5669-a43e-4720-aaaa-c150ca62c2e6","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
     "xorigin":22,
-    "yorigin":32,
+    "yorigin":42,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

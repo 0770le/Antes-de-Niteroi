@@ -1,4 +1,5 @@
 if(image_speed > 0) {
+	image_xscale = -facing;
 	if(image_index > image_number - 3) {
 		image_speed = 0;
 	}
@@ -10,17 +11,19 @@ if(image_speed > 0) {
 	}
 }
 
+
 if(!stop_movement) {
-	x+=hspd;
+	x+=hspd*-facing;
 	y+=vspd;
 
-	vspd+=0.1;
+	vspd+=global.grav;
 
 	//bounce
 	if(bouncerTimer-- <= 0) {
 		if(on_ground_2()) {
 			if bounce >= 2 {
 				stop_movement = true;
+				vspd = 0;
 			} else {
 				vspd = vspd * (-0.4);
 				bounce++;

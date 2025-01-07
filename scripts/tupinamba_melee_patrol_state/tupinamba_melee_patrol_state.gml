@@ -5,7 +5,6 @@ function tupinamba_melee_patrol_state(){
 if (patrol_destination == -1 and x > patrol_left_limit) or (patrol_destination == 1 and x < patrol_right_limit){
 	facing = patrol_destination;
 	hsp = spd * facing;
-	x += hsp;
 } else {//switching destination on end of path
 	state = tupinamba_melee_states.IDLE;
 	in_idle_state = true;
@@ -14,8 +13,8 @@ if (patrol_destination == -1 and x > patrol_left_limit) or (patrol_destination =
 
 //pula
 // a wall or a void floor is found	
-var step = tilemap_get_at_pixel(global.map, side() + hsp, y-1);
-var face = tilemap_get_at_pixel(global.map, side(), bbox_top);
+var step = tilemap_get_at_pixel(global.map, side() + hsp, y+1);
+var face = tilemap_get_at_pixel(global.map, side()+2*facing, y-2);
 
 if (face == SOLID)  {
 	state =  tupinamba_states.JUMP;
@@ -37,7 +36,7 @@ if alert {
 	start_y = y;
 }
 
-calc_entity_movement();
+calc_entity_movement(global.grav, 0);
 collision();
 	
 }

@@ -9,7 +9,6 @@ function tupinamba_jump_state(){
 	if on_ground() {
 		state = tupinamba_states.PATROL;
 		image_index = 0;
-		image_speed = 1;
 		//create dust if landing
 		if (vsp > 0) {
 			instance_create_layer(x,y, LAYER_EFFECTS, o_player_dust_land);

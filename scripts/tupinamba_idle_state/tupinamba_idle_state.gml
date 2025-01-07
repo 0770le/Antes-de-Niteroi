@@ -17,7 +17,6 @@ image_speed=1;
 		if patrol and wait_time-- < 0  {
 			state = tupinamba_states.PATROL;
 			image_index = 0;
-			image_speed = 1;
 		} 
 	}
 	

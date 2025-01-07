@@ -69,7 +69,7 @@ image_speed =1;
 	}
 	
 	//apply movement
-	
+	calc_entity_movement();
 	collision();
 	
 }

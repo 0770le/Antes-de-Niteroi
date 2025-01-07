@@ -29,7 +29,7 @@ function armadeira_idle_state(){
 	}
 	
 	//apply movement
-	
+	calc_entity_movement();
 	collision();
 	
 }

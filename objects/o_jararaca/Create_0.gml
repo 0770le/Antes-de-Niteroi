@@ -6,11 +6,12 @@ tongue = false;//alarme intervalo entre linguinhas
 licking = false;//alarme tempo lambendo
 can_zoomie = true; //alarm agitação
 
+drag = 0;
 
 hurt_time = room_speed * 1;
 hp = 1;
 
-alert_distance = 1;
+alert_distance = 80;
 
 attack_cd = room_speed * random_range(5,6); //emprestado como CD
 damage = 1;

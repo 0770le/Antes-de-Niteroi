@@ -11,7 +11,6 @@ function tupinamba_melee_attack_state(){
 	if anim_end() {
 		state = tupinamba_melee_states.IDLE;
 		image_index = 0;
-		image_speed =1;
 	}	
 	
 	

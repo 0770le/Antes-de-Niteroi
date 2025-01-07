@@ -11,7 +11,6 @@ function tupinamba_melee_evade_state(){
 		hsp=0;
 		state = tupinamba_melee_states.IDLE;
 		image_index = 0;
-		image_speed = 1;
 	}
 	
 

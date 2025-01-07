@@ -39,7 +39,6 @@ function tupinamba_melee_idle_state() {
 			} else { //	chase	
 				state = tupinamba_melee_states.CHASE;
 				image_index = 0;
-				image_speed =1;
 				
 			}
 		}
@@ -49,7 +48,6 @@ function tupinamba_melee_idle_state() {
 		if patrol and wait_time-- < 0  {
 			state = tupinamba_melee_states.PATROL;
 			image_index = 0;
-			image_speed = 1;
 		} 
 	}
 

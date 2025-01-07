@@ -14,13 +14,12 @@ if (patrol_destination == -1 and x > patrol_left_limit) or (patrol_destination =
 
 //pula
 // a wall or a void floor is found	
-var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp) + 12*facing, y);
-var t2 = tilemap_get_at_pixel(global.map, side(), bbox_top);
+var step = tilemap_get_at_pixel(global.map, side() + hsp, y-1);
+var face = tilemap_get_at_pixel(global.map, side(), bbox_top);
 
-if (t1 == SOLID or t2 == SOLID)  {
+if (face == SOLID)  {
 	state =  tupinamba_states.JUMP;
 	image_index = 0;
-	image_speed = 1;
 	launch(jump_vsp, jump_hsp);
 }
 
@@ -28,18 +27,15 @@ if (t1 == SOLID or t2 == SOLID)  {
 if vsp != 0 and !on_ground() {
 	state = tupinamba_melee_states.JUMP;
 	image_index = 0;
-	image_speed = 1;
 } 
 
 if alert {
 	state = tupinamba_melee_states.CHASE;
 	image_index = 0;
-	image_speed =1;
 	//chase start position
 	start_x = x;
 	start_y = y;
 }
-
 
 calc_entity_movement();
 collision();

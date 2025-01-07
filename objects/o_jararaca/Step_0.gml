@@ -2,7 +2,7 @@ event_inherited();
 
 snake_gear();
 
-//snake_hide();
+snake_hide();
 
 //tongue
 if (alarm[11] < 0) {

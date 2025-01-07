@@ -39,7 +39,8 @@ function armadeira_attack_state() {
 	
 
 	//apply movement
-		collision();
+	calc_entity_movement();
+	collision();
 
 }
 

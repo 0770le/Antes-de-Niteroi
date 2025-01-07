@@ -1,12 +1,12 @@
 {
   "$GMRoom":"v1",
-  "%Name":"rm_test_snake",
+  "%Name":"rm_tests",
   "creationCodeFile":"rooms/rm_parent/RoomCreationCode.gml",
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":true,
   "instanceCreationOrder":[
-    {"name":"inst_2BFD7C2C","path":"rooms/rm_test_snake/rm_test_snake.yy",},
+    {"name":"inst_3C00BE7C","path":"rooms/rm_tests/rm_tests.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -95,24 +95,21 @@
         ],"TileDataFormat":1,},"tilesetId":null,"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Projectiles","depth":2500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Projectiles","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":2600,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_2BFD7C2C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2BFD7C2C","objectId":{"name":"o_jararaca","path":"objects/o_jararaca/o_jararaca.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":288.0,},
+        {"$GMRInstance":"v1","%Name":"inst_3C00BE7C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3C00BE7C","objectId":{"name":"o_tupinamba_melee","path":"objects/o_tupinamba_melee/o_tupinamba_melee.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":288.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRTileLayer":"","%Name":"Collisions","depth":2700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":29,"SerialiseWidth":69,"TileCompressedData":[
-          -66,1,-3,-2147483648,1,1,-31,0,-32,-2147483648,1,1,-4,-2147483648,1,1,-31,0,-32,-2147483648,1,1,-4,-2147483648,
-          1,1,-31,0,-32,-2147483648,1,1,-4,-2147483648,1,1,-31,0,-32,-2147483648,1,1,-4,-2147483648,1,1,-31,0,
-          -32,-2147483648,1,1,-4,-2147483648,1,1,-31,0,-32,-2147483648,1,1,-4,-2147483648,1,1,-31,0,-32,-2147483648,
-          1,1,-4,-2147483648,1,1,-31,0,-32,-2147483648,1,1,-4,-2147483648,-14,1,-18,0,-32,-2147483648,1,1,-4,-2147483648,
-          1,1,-5,0,1,1,-6,0,1,1,-18,0,-32,-2147483648,1,1,-4,-2147483648,1,1,-5,0,1,1,-6,0,-10,1,-9,0,-32,-2147483648,
-          1,1,-4,-2147483648,-18,1,-4,0,1,1,-9,0,-3,-2147483648,1,1,-28,-2147483648,1,1,-4,-2147483648,-18,1,-4,
-          0,-14,1,-28,-2147483648,1,1,-4,-2147483648,-18,1,-4,0,1,1,-9,0,-3,-2147483648,1,1,-28,-2147483648,1,
-          1,-4,-2147483648,-5,0,-7,1,-5,0,-2,1,-3,0,1,1,-9,0,-3,-2147483648,1,1,-28,-2147483648,1,1,-4,-2147483648,
-          -5,0,-7,1,-5,0,-4,1,2,0,1,-9,0,-3,-2147483648,1,1,-28,-2147483648,1,1,-4,-2147483648,-6,0,1,1,-15,0,
-          1,1,-9,0,-3,-2147483648,1,1,-28,-2147483648,1,1,-4,-2147483648,-5,0,-7,1,-10,0,1,1,-9,0,-3,-2147483648,
-          1,1,-28,-2147483648,1,1,-4,-2147483648,1,1,-4,0,-7,1,-7,0,4,1,0,0,1,-9,0,-3,-2147483648,1,1,-14,-2147483648,
-          -6,1,-8,-2147483648,1,1,-4,-2147483648,1,1,-4,0,-7,1,-4,0,-49,1,-4,-2147483648,1,1,-4,0,-7,1,-4,0,-2,
-          1,-14,0,-37,-2147483648,1,1,-4,0,-7,1,-4,0,-2,1,-14,0,-37,-2147483648,1,1,-4,0,1,1,-5,0,1,1,-4,0,-2,
-          1,-14,0,-37,-2147483648,1,1,-4,0,1,1,-5,0,1,1,-4,0,-2,1,-14,0,-37,-2147483648,1,1,-3,0,2,-2147483648,
-          1,-3,-2147483648,-3,1,-4,0,-2,1,-8,-2147483648,-2,1,-41,-2147483648,-9,1,-3,-2147483648,-15,1,-180,-2147483648,
+    {"$GMRTileLayer":"","%Name":"Collisions","depth":2700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":57,"TileCompressedData":[
+          -23,1,-9,0,-25,-2147483648,1,1,-11,0,-2,1,-8,0,1,1,-9,0,-25,-2147483648,1,1,-12,0,1,1,-8,0,1,1,-9,0,
+          -25,-2147483648,1,1,-12,0,1,1,-8,0,1,1,-9,0,-25,-2147483648,1,1,-12,0,1,1,-8,0,1,1,-9,0,-25,-2147483648,
+          1,1,-12,0,1,1,-8,0,1,1,-9,0,-25,-2147483648,1,1,-11,0,1,1,-9,0,1,1,-9,0,-25,-2147483648,-8,1,-4,0,1,
+          1,-9,0,1,1,-9,0,-25,-2147483648,1,1,-7,0,-5,1,-9,0,1,1,-9,0,-25,-2147483648,1,1,-12,0,-16,1,-3,0,-25,
+          -2147483648,1,1,-12,0,1,1,-14,0,1,1,-3,0,-25,-2147483648,1,1,-12,0,1,1,-14,0,1,1,-3,0,-25,-2147483648,
+          1,1,-12,0,1,1,-14,0,1,1,-3,0,-25,-2147483648,1,1,-12,0,1,1,-14,0,1,1,-3,0,-25,-2147483648,1,1,-12,0,
+          -6,1,-9,0,1,1,-3,0,-25,-2147483648,1,1,-17,0,1,1,-9,0,1,1,-3,0,-25,-2147483648,1,1,-17,0,1,1,-9,0,1,
+          1,-3,0,-25,-2147483648,1,1,-17,0,1,1,-9,0,1,1,-3,0,-25,-2147483648,1,1,-17,0,1,1,-9,0,1,1,-3,0,-25,-2147483648,
+          -14,1,-4,0,1,1,-9,0,1,1,-3,0,-25,-2147483648,-5,1,-8,0,1,1,-4,0,1,1,-9,0,1,1,-3,0,-25,-2147483648,1,
+          1,-12,0,1,1,-4,0,-19,1,-20,-2147483648,1,1,-18,0,1,1,-12,0,-25,-2147483648,1,1,-18,0,1,1,-12,0,-25,-2147483648,
+          1,1,-18,0,1,1,-12,0,-25,-2147483648,-20,1,-12,0,-25,-2147483648,-32,0,-25,-2147483648,-32,0,-25,-2147483648,
+          -32,0,-25,-2147483648,-32,0,-25,-2147483648,-32,0,-25,-2147483648,-32,0,-25,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Tiles_back","depth":2800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"$GMRTileLayer":"","%Name":"Tiles_back_1","depth":2900,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_back_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":375,"TileCompressedData":[
@@ -160,7 +157,7 @@
       ],"name":"Backgrounds","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"Background_color","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":4200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background_color","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"rm_test_snake",
+  "name":"rm_tests",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",
@@ -179,10 +176,10 @@
   "resourceType":"GMRoom",
   "resourceVersion":"2.0",
   "roomSettings":{
-    "Height":450,
+    "Height":500,
     "inheritRoomSettings":false,
     "persistent":false,
-    "Width":1100,
+    "Width":900,
   },
   "sequenceId":null,
   "views":[

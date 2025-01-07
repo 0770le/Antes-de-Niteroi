@@ -62,7 +62,6 @@ anim_duration = room_speed *.3;
 //randon start to avoic sinc enemies
 anim_start_initial = room_speed * random_range( 1.75, 2.25);
 anim_start = anim_start_initial;
-image_speed=0;
 
 
 //will he jump this chance

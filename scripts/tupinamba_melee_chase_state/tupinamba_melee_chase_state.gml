@@ -48,7 +48,6 @@ function tupinamba_melee_chase_state() {
 	if t1 == SOLID{ // or (t2 == VOID or t2 == DEATH) {
 		state =  tupinamba_melee_states.JUMP;
 		image_index = 0;
-		image_speed = 1;
 		launch(jump_vsp, jump_hsp);
 	}
 
@@ -56,7 +55,6 @@ function tupinamba_melee_chase_state() {
 	if vsp != 0 and !on_ground() {
 		state = tupinamba_melee_states.JUMP;
 		image_index = 0;
-		image_speed = 1;
 	} 
 
 	calc_entity_movement();

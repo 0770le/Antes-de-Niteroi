@@ -1,19 +1,23 @@
 if (!instance_exists(o_fade)) {
 	script_execute (states_array[state]);
-	//check enemy hp
+	
 	check_enemy_hp();
-	//check alert
-	if (can_alert) {check_alert();}
+	
+	if (can_alert) {
+		check_alert();
+	}
 		
-	if instance_exists(o_player) {
-		if o_player.hp <0 {alert=false;}
+	if (instance_exists(o_player) and o_player.hp < 0) {
+		alert = false;
 	}
 	
 	//anim
 	enemy_anim();
 	
 	//not allow facing = 0;
-	if image_xscale == 0 { image_xscale= 1;}
+	if (image_xscale == 0) {
+		image_xscale = 1;
+	}
 	
 	
 	//seta a visibilidade o oposto de hidden
@@ -26,7 +30,6 @@ if (!instance_exists(o_fade)) {
 	
 	
 } else {
-//stop animation playing
 	image_index = 0;
 }
 

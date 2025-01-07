@@ -154,7 +154,7 @@
     {"name":"rm_keryi","order":11,"path":"rooms/rm_keryi/rm_keryi.yy",},
     {"name":"rm_morguja_uasu","order":9,"path":"rooms/rm_morguja_uasu/rm_morguja_uasu.yy",},
     {"name":"rm_parent","order":6,"path":"rooms/rm_parent/rm_parent.yy",},
-    {"name":"rm_test_snake","order":10,"path":"rooms/rm_test_snake/rm_test_snake.yy",},
+    {"name":"rm_tests","order":12,"path":"rooms/rm_tests/rm_tests.yy",},
     {"name":"anim_end","order":6,"path":"scripts/anim_end/anim_end.yy",},
     {"name":"anim_paused","order":7,"path":"scripts/anim_paused/anim_paused.yy",},
     {"name":"armadeira_anim","order":1,"path":"scripts/armadeira_anim/armadeira_anim.yy",},

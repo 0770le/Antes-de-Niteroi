@@ -1,5 +1,4 @@
 function tupinamba_patrol_state(){
-image_speed =1;
 
 //set mov
 //go for destination
@@ -23,7 +22,6 @@ var t2 = tilemap_get_at_pixel(global.map, side(), bbox_top);
 if (t1 == SOLID or t2 == SOLID)  {
 	state =  tupinamba_states.JUMP;
 	image_index = 0;
-	image_speed = 1;
 	launch(jump_vsp, jump_hsp);
 }
 
@@ -31,7 +29,6 @@ if (t1 == SOLID or t2 == SOLID)  {
 if vsp != 0 and !on_ground() {
 	state = tupinamba_states.JUMP;
 	image_index = 0;
-	image_speed = 1;
 } 
 
 //sees player

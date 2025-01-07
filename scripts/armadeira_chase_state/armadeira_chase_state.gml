@@ -75,6 +75,7 @@ function armadeira_chase_state() {
 	if (hsp == 0) { state = armadeira_states.ATTACK;}
 
 	//apply movement
+	calc_entity_movement();
 	collision();
 
 }

@@ -16,6 +16,7 @@ function armadeira_jump_state(){
 	} 
 	
 	//apply movement
+	calc_entity_movement();
 	collision();
 
 }

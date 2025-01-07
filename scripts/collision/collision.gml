@@ -29,10 +29,10 @@ function collision() {
 		//collision found
 		//indo para a direita
 		if (hsp > 0) {
-			x = x - (x mod global.tile_size) + global.tile_size - 1 - (_side - x);	
+			x = _side - (_side mod global.tile_size) + global.tile_size - 1 - (_side - x);	
 		//esquerda
 		}else{
-			x = x - (x mod global.tile_size) - (_side - x);
+			x = _side - (_side mod global.tile_size) + (x - _side);
 		}
 		hsp = 0;
 	}
@@ -68,8 +68,7 @@ function collision() {
 		
 		//floor
 		if (vsp > 0) {
-			//y = bbox_bottom - (bbox_bottom mod global.tile_size) + global.tile_size - 1 - (vertical_side - bbox_bottom);
-			y = y - (y mod global.tile_size) + global.tile_size - 1 - (vertical_side - y);
+			y = (bbox_bottom+vsp) - ((bbox_bottom+vsp) mod global.tile_size) - 1 - (bbox_bottom - y);
 		} else { 
 		//ceiling
 			//var y1 = bbox_top - (bbox_top mod global.tile_size);

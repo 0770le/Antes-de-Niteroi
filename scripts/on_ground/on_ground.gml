@@ -25,3 +25,25 @@ function on_ground_2(){
 
 	return  (_t == SOLID or _t == PLATAFORM)
 }
+
+function find_ground(_x, _y, _dir) {
+	var _t = tilemap_get_at_pixel(global.map, _x, _y);
+	
+	while(_t == SOLID or _t == PLATAFORM) {
+		_y+=_dir;
+		_t = tilemap_get_at_pixel(global.map, _x, _y);
+	}
+	
+	return {x : _x, y : _y};
+}
+
+function find_wall(_x, _y, _dir) {
+	var _t = tilemap_get_at_pixel(global.map, _x, _y);
+	
+	while(_t == SOLID or _t == PLATAFORM) {
+		_x+=_dir;
+		_t = tilemap_get_at_pixel(global.map, _x, _y);
+	}
+	
+	return {x : _x, y : _y};
+}

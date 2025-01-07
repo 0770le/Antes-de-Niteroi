@@ -2,13 +2,7 @@ event_inherited();
 
 snake_gear();
 
-snake_hide();
-
-//change directions
-if (alarm[10] < 0){
-	alarm[10] = room_speed *random_range(8 , 16);
-}
-
+//snake_hide();
 
 //tongue
 if (alarm[11] < 0) {

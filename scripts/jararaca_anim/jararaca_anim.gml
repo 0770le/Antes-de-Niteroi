@@ -3,11 +3,9 @@ function jararaca_anim(){
 	if (licking) { //sprite lingua
 		sprites_array[jararaca_states.IDLE]		=	s_jararaca_tongue_idle;
 		sprites_array[jararaca_states.MOVING]	=	s_jararaca_tongue_moving;
-		sprites_array[jararaca_states.CLIMB]	=	s_jararaca_tongue_climb;
 	} else { //sprite sem lingua
 		sprites_array[jararaca_states.IDLE]		 =	s_jararaca_idle;
 		sprites_array[jararaca_states.MOVING]	 =	s_jararaca_moving;
-		sprites_array[jararaca_states.CLIMB]	 =	s_jararaca_climb;
 	}
 	
 	sprite_index = sprites_array[state];

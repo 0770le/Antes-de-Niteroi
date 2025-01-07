@@ -9,9 +9,6 @@ if (!instance_exists(o_fade)) {
 		if o_player.hp <0 {alert=false;}
 	}
 	
-	//calc movement
-	calc_entity_movement()
-	
 	//anim
 	enemy_anim();
 	

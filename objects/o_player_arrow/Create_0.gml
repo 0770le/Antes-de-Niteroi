@@ -10,4 +10,4 @@ image_speed = 0;
 //destroy objetc
 die = false;
 
-
+on_fire=false;

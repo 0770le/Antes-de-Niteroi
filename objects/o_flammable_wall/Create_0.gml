@@ -1,5 +1,5 @@
 //init variables
-image_speed = 0;
+
 
 hp = 2;
 facing = -1;

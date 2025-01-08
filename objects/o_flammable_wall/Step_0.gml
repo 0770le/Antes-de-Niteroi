@@ -2,8 +2,13 @@
 //movement 
 calc_entity_movement();
 
-if hp <= 0 {
-	die = true;
+if (on_fire) {
+	if ( sprite_index != s_flammable_wall_burning) {
+		sprite_index = s_flammable_wall_burning;
+		image_index = 0;
+	} else if (anim_end()) {
+		die = true;
+	}
 }
 
 image_xscale = facing;

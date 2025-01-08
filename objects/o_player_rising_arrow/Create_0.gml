@@ -12,6 +12,8 @@ image_speed = 0;
 drag = 0.1;
 
 
+on_fire=false;
+
 //destroy objetc
 die = false;
 

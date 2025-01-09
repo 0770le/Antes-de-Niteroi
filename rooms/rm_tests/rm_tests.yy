@@ -5,7 +5,9 @@
   "inheritCode":true,
   "inheritCreationOrder":true,
   "inheritLayers":true,
-  "instanceCreationOrder":[],
+  "instanceCreationOrder":[
+    {"name":"inst_3C00BE7C","path":"rooms/rm_tests/rm_tests.yy",},
+  ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Controllers","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Controllers","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

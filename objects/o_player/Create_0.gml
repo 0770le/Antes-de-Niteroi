@@ -13,6 +13,7 @@ jump_dampner = 2.5; //'amortecedor' diminuidor do pulo
 jumps_initial = 1;
 jumps = jumps_initial;
 
+death_protection = false;
 
 //auxiliar
 runned_once = false;

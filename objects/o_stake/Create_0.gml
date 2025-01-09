@@ -12,6 +12,5 @@ vsp_decimal = 0;
 drag = 0.1;
 die = false;
 hurt = false;
-right_debris = random_range(1,3);
-left_debris = random_range(1,3);
+debris_number = random_range(5,10);
 hurt_time = room_speed * 0.5;

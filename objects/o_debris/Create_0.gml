@@ -6,6 +6,7 @@ hsp = hsp_initial;
 hsp_decimal = 0;
 vsp_decimal = 0;
 drag = 0.01;
+death_protection = true;
 
 //pick one sprite
 image_index = irandom(image_number -1); //começa em zero

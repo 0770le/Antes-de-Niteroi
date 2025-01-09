@@ -5,7 +5,6 @@ function tupinamba_patrol_state(){
 if (patrol_destination == -1 and x > patrol_left_limit) or (patrol_destination == 1 and x < patrol_right_limit){
 	facing = patrol_destination;
 	hsp = spd * facing;
-	x += hsp;
 } else {//switching destination on end of path
 	wait_time = random_range(4, 6) * room_speed;
 	state = tupinamba_states.IDLE;
@@ -41,8 +40,7 @@ if alert {
 	} //else {//skirmish	
 }
 
-//calc_entity_movement();
-
+calc_entity_movement();
 collision();
 	
 }

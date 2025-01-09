@@ -24,12 +24,17 @@ function armadeira_idle_state(){
 		
 	}
 
-	if !on_screen(60) {
+	if (!on_screen(60)) {
 		state = armadeira_states.OUT_OF_SCREEN;
 	}
 	
 	//apply movement
-	calc_entity_movement();
+	var _grav = global.grav;
+	if(on_ceeling()) {
+		_grav = 0;
+	}
+	
+	calc_entity_movement(_grav);	
 	collision();
 	
 }

@@ -9,6 +9,7 @@ hsp = hsp_initial;
 hsp_decimal = 0;
 vsp_decimal = 0;
 drag = 0.1;
+death_protection = true;
 
 runned_once= false;
 target_rm = rm_cidade_velha;

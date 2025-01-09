@@ -7,11 +7,4 @@ function armadeira_out_of_screen_state(){
 		state = armadeira_states.IDLE;
 		wait_time= wait_time_initial;
 	}
-	
-
-	
-	//apply movement
-	calc_entity_movement();
-	collision();
-	
 }

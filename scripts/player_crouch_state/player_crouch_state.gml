@@ -27,7 +27,7 @@ function player_crouch_state(){
 		image_index = 0;
 		can_attack = false;
 		alarm[ATTACKING]= attack_delay;
-		o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE)
+		o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE)
 	}
 	
 	if (shoot and arrows > 0) {

@@ -5,6 +5,8 @@ enemy_animation = armadeira_anim;
 //movement 
 chase_spd = max_hsp_initial*1.4;
 
+death_protection = true;
+
 spd_min_limit = 0.1;
 spd_max_limit = 0.4;
 max_hsp_initial = 1;

@@ -1,5 +1,9 @@
 //show_debug_overlay(true);
 
+if(global.timer++ >= 1000) {
+	global.timer = 0;	
+}
+
 //botao mouse pra teste
 #region
 

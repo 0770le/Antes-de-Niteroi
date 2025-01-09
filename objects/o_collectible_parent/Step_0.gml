@@ -1,8 +1,8 @@
 //movement 
-calc_entity_movement();
+calc_entity_movement(grav);
 
 //bounce
-if ((on_ground() == true) and (bounce == false)){
+if (on_ground() and !bounce){
 	//give vert movement
 	vsp = vsp_initial * random_range(.7, .8);
 	bounce = true;

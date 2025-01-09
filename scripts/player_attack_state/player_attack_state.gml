@@ -37,7 +37,7 @@ function player_attack_state(){
 			} 	
 		} else{
 			o_sound_controller.stop(FMOD_EVENT.ATTACK_MELEE);
-			o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.GROUND_HIT)
+			o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_HIT)
 			attack_held_time = 0;
 		}
 	} 

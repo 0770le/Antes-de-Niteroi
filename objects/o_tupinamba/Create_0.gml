@@ -27,7 +27,7 @@ alert_distance = (TILE_SIZE*2) * 20;
 alert_cooling = room_speed * random_range(3, 4);
 
 //movement 
-spd =  PLAYER_WALK_SPEED;		//"aceleração";
+spd =  1;		//"aceleração";
 hsp = 0;
 max_hsp_initial =  PLAYER_WALK_SPEED*0.8;
 max_hsp =  PLAYER_MAX_HSP;
@@ -37,7 +37,7 @@ chase_spd = max_hsp;
 vsp = 0;
 vsp_decimal = 0;
 //jump
-jump_vsp = PLAYER_JUMP_SPEED+2;
+jump_vsp = PLAYER_JUMP_SPEED+1;
 jump_hsp = 4;
 //evade
 has_evade = true;
@@ -66,8 +66,8 @@ image_speed=0;
 
 //patrol 
 patrol = true;
-patrol_left_limit = x - 130;
-patrol_right_limit = x + 50;
+patrol_left_limit = x - 250;
+patrol_right_limit = x + 250;
 patrol_destination = choose(-1,1);
 
 //how long to wait before patrolling
@@ -119,14 +119,14 @@ mask_array[tupinamba_states.EVADE] = s_tupinamba_idle;
 
 
 function can_evade() {	
-	if o_player.hp > 0 and has_evade and alert {
-		if distance_to_object(o_player) < 60 {
+	if (o_player.hp > 0 and has_evade and alert) {
+		if (distance_to_object(o_player) < 60) {
 			stare();	
 			has_evade = false;
 			can_take_dmg = false;
 			evade_delay = room_speed* 3;
 			y+= -1;
-			launch( jump_vsp*0.4 , max_hsp*7.5 , -1*facing );
+			launch(jump_vsp*0.4, 8, -1*facing);
 			state = tupinamba_states.EVADE;
 			
 			//dust
@@ -159,14 +159,3 @@ function create_arrow() {
 		inst.image_xscale = facing;
 		
 }
-
-//puff of smoke on spawn
-//if (room == rm_02) {
-//	alarm[SPAWN]=1;
-//}
-
-			
-//			//sound
-//			audio_play_sound(snd_player_hit, 40, false, global.volume);
-//	}	
-//}

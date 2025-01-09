@@ -1,4 +1,3 @@
-///collision();
 function collision() {
 	//apply carried over decimals
 	hsp += hsp_decimal;
@@ -32,7 +31,17 @@ function collision() {
 			x = _side - (_side mod global.tile_size) + global.tile_size - 1 - (_side - x);	
 		//esquerda
 		}else{
-			x = _side - (_side mod global.tile_size) + (x - _side);
+			
+			var _diff = (_side+hsp) mod global.tile_size;
+			var _diff2 = global.tile_size - _diff;
+			
+			var x1 = (_side+hsp) + _diff2;
+			x = x1 + (x - _side);
+			
+			
+			
+			
+			//x = (_side+hsp) - ((_side+hsp) mod global.tile_size) + (x - _side);
 		}
 		hsp = 0;
 	}
@@ -66,14 +75,11 @@ function collision() {
 	if (vt1 != VOID and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and vt3 == PLATAFORM)) or
 	   (vt2 != VOID and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and vt4 == PLATAFORM)) {
 		
-		//floor
-		if (vsp > 0) {
+		
+		if (vsp > 0) { //floor
 			y = (bbox_bottom+vsp) - ((bbox_bottom+vsp) mod global.tile_size) - 1 - (bbox_bottom - y);
-		} else { 
-		//ceiling
-			//var y1 = bbox_top - (bbox_top mod global.tile_size);
-			//y = y1 + (bbox_bottom - bbox_top);
-			
+		} else { //ceiling
+		
 			var _diff = (vsp + bbox_top) mod global.tile_size;
 			var _diff2 = global.tile_size - _diff;
 			
@@ -82,7 +88,7 @@ function collision() {
 		}
 		vsp = 0;
 		//death tile check
-		if (((vt1 == DEATH) or (vt2 == DEATH)) or (y > room_height)) {
+		if (!death_protection and ((vt1 == DEATH) or (vt2 == DEATH)) or (y > room_height)) {
 			hp = 0;
 		}
 	}

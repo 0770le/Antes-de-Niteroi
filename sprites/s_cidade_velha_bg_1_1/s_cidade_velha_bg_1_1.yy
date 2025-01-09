@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":499,
   "bbox_left":0,
-  "bbox_right":1839,
+  "bbox_right":1956,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6a5bff07-380a-4d04-ad88-4f62e2e72c32","name":"6a5bff07-380a-4d04-ad88-4f62e2e72c32","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"225aa88d-bf9e-4362-9a31-2c0a8819818c","name":"225aa88d-bf9e-4362-9a31-2c0a8819818c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":500,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"18ec998a-b65e-4850-9111-ec10510adaf0","blendMode":0,"displayName":"default","isLocked":false,"name":"18ec998a-b65e-4850-9111-ec10510adaf0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"b47b5b60-02ed-4efe-935a-d490c2748f4b","blendMode":0,"displayName":"default","isLocked":false,"name":"b47b5b60-02ed-4efe-935a-d490c2748f4b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"s_cidade_velha_bg_1_1",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6a5bff07-380a-4d04-ad88-4f62e2e72c32","path":"sprites/s_cidade_velha_bg_1_1/s_cidade_velha_bg_1_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fb8be61d-b4ed-4715-8e6c-8e3f9a4fcace","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"225aa88d-bf9e-4362-9a31-2c0a8819818c","path":"sprites/s_cidade_velha_bg_1_1/s_cidade_velha_bg_1_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a45113e6-a39e-4a27-b5fe-9800fe725423","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1854,
+  "width":2028,
 }

@@ -2,6 +2,9 @@
 //create log obj
 //drop by enemy ?
 
+grav = global.grav;
+
+death_protection = true;
 collectible_index = 0;
 
 log_title = "Teste";

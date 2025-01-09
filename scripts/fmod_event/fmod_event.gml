@@ -32,6 +32,7 @@ enum FMOD_VCA
 		ATTACK_MELEE,
 		WALK,
 	
+		TUPI_MELEE_ATK,
 		
 	}
 
@@ -43,14 +44,19 @@ enum FMOD_VCA
 	
 		#macro FMOD_PARAMETER_NAME_MOVE		"move"
 		
-		enum FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK
+		enum FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK
 		{
 			PLACE_HOLDER, GROUND_PREPARE, GROUND_HIT, MOVING, AIR
 		}
 		
-		enum FMOD_PARAMETERE_MOVE_WALK
+		enum FMOD_PARAMETER_MOVE_WALK
 		{
 			PLACE_HOLDER, DIRT, GRASS, STONE, SAND
+		}
+		
+		enum FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK
+		{
+			PLACE_HOLDER, MISS, GROUND_HIT
 		}
 	
 	#endregion
@@ -78,6 +84,7 @@ constructor
 	static play = function ()
 	{
 		fmod_studio_event_instance_start(event_instance);
+		fmod_studio_system_get_num_listeners()
 	}
 	
 	static stop = function ()
@@ -108,6 +115,22 @@ constructor
 			
 			parameters_by_name[? _parameter.name] = _parameter;	 
 		}
+	}
+
+	static update_position = function(_x,_y) {
+	
+		var fmod_3d_att = new Fmod3DAttributes();
+
+		fmod_3d_att.position.x = _x;
+		fmod_3d_att.position.y = _y;
+		
+		fmod_3d_att.forward.z = -1;
+		fmod_3d_att.up.y = -1;
+	
+		fmod_studio_event_instance_set_3d_attributes(event_instance, fmod_3d_att);
+		
+		var att = fmod_studio_event_instance_get_3d_attributes(event_instance)
+		show_debug_message("event x: "+ string(att.position.x) +", event y: "+ string(att.position.y))
 	}
 	
 	static init = function () 

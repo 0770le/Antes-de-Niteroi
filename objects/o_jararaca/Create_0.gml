@@ -13,6 +13,8 @@ hp = 1;
 
 alert_distance = 80;
 
+death_protection = true;
+
 attack_cd = room_speed * random_range(5,6); //emprestado como CD
 damage = 1;
 

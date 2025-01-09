@@ -13,6 +13,8 @@ o_enemy = object_index;
 //aux
 runned_once = false;
 
+death_protection = false;
+
 
 //PREENCHER MANUAl
 enemy_animation = 0; //inimigo_anim;

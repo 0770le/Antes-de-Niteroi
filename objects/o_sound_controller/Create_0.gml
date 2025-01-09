@@ -23,6 +23,13 @@ function stop(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE)
 	event_per_enum[? _event_enum].stop();
 }
 
+function update_event_position(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
+								_x, 
+								_y )
+{
+	event_per_enum[? _event_enum].update_position(_x, _y);
+}
+
 function update_event_parameter(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
 								_parameter_name = undefined, 
 								_parameter_value = undefined)
@@ -40,9 +47,23 @@ function update_event_parameter_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIEN
 	event_per_enum[? _event_enum].play();
 }
 
+function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
+										 _parameter_name = undefined, 
+										 _parameter_value = undefined,
+										 _x = 0,
+										 _y = 0,
+										 _stop = true)
+{
+	if(_stop) event_per_enum[? _event_enum].stop();
+	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
+	event_per_enum[? _event_enum].update_position(_x, _y);
+	event_per_enum[? _event_enum].play();
+}
+
 function load_fmod()
 {
 	fmod = instance_create_depth(0, 0, 0, obj_fmod);
+	obj_fmod.
 	
 	master_bank_index = fmod_studio_system_load_bank_file(fmod_path_bundle("sounds/Master.bank"), FMOD_STUDIO_LOAD_BANK.NORMAL);
 	
@@ -63,21 +84,31 @@ function load_events()
 		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_melee",
 		[
 			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE,
-			FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.GROUND_HIT,
-			FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.MOVING,
-			FMOD_PARAMETERE_MOVE_VALUE_MELEE_ATTACK.AIR]),
+			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE,
+			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_HIT,
+			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.MOVING,
+			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.AIR]),
 		]);
 			
 	event_per_enum[? FMOD_EVENT.WALK] = new FmodEvent(
 		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_run",
 		[
 			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETERE_MOVE_WALK.DIRT,
-			FMOD_PARAMETERE_MOVE_WALK.GRASS,
-			FMOD_PARAMETERE_MOVE_WALK.STONE,
-			FMOD_PARAMETERE_MOVE_WALK.SAND]),
+			FMOD_PARAMETER_MOVE_WALK.DIRT,
+			FMOD_PARAMETER_MOVE_WALK.GRASS,
+			FMOD_PARAMETER_MOVE_WALK.STONE,
+			FMOD_PARAMETER_MOVE_WALK.SAND]),
 		]);
+		
+		event_per_enum[? FMOD_EVENT.TUPI_MELEE_ATK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_atk",
+		[
+			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
+			FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.MISS,
+			FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.GROUND_HIT]),
+		]);
+		
+		
 		
 		
 	#endregion
@@ -127,6 +158,18 @@ function init()
 	//fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.MUSIC], 1);// music_enabled ? (music_volume / 100) : 0);
 	//fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX],   1);// sfx_enabled ?   (sfx_volume   / 100) : 0);
 	
+}
+
+function set_listener_position(_x, _y){
+	var fmod_3d_att = new Fmod3DAttributes();
+
+	fmod_3d_att.position.x = _x;
+	fmod_3d_att.position.y = _y;
+
+	fmod_3d_att.forward.z = -1;
+	fmod_3d_att.up.y = -1;
+
+	fmod_studio_system_set_listener_attributes(0,fmod_3d_att);
 }
 
 init();

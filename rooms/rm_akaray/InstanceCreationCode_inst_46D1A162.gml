@@ -1,2 +1,2 @@
-patrol_left_limit = 1720;
-patrol_right_limit = 1930;
+patrol_left_limit = 1349;
+patrol_right_limit = 1470;

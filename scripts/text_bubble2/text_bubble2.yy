@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"text_bubble2",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"text_bubble2",
+  "parent":{
+    "name":"General",
+    "path":"folders/Scripts/General.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

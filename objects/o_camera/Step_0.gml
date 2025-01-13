@@ -6,9 +6,7 @@ camera_set_view_pos(camera, x- camera_get_view_width(camera)/2, y - camera_get_v
 
 if (follow != noone) {
 	move_to_x = follow.x;
-	var _buffer = 0; //global.tile_size/2;
-	//movimentos verticais mais smooth
-	move_to_y = follow.y - _buffer;  
+	move_to_y = follow.y + y_offset;  
 }
 
 var xx = clamp(camera_get_view_x(camera), 0 , room_width - camera_get_view_width(camera)); //mantem a camera na tela

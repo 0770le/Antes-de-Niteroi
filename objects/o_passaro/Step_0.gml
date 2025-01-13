@@ -1,21 +1,19 @@
 
 if instance_exists(o_player) {
-	if (distance_to_object(o_player) < 60) {
-		//state = passaro_states.FLYING;
-		state = "flying";
+	if (distance_to_object(o_player) < range) {
 		
-		//fly away from player
-		if (x > o_player.x) {
-			facing = 1;
-		} else {
-			facing = -1;
+		state = passaro_flying;
+		dir = random_range(20,60);
+		if(o_player.x > x) {
+			dir = 180 - dir;
+			image_yscale = -1;
 		}
+		sprite_index = flying_sprite;
+		image_speed = 1
+		image_xscale = 1;
+		image_angle = dir;
 	}
 }
 
-if state == "idle" {
-	passaro_idle();
-} else {
-	passaro_flying();
-}
+script_execute(state);
 	

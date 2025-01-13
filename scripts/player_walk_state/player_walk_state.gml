@@ -3,6 +3,10 @@ function player_walk_state(){
  
 	//get input
 	get_input();
+	
+	if(up) {
+		o_camera.y_offset = -80;
+	}
 
 	//caculate movement  
 	calc_movement();
@@ -53,7 +57,7 @@ function player_walk_state(){
 		image_index =0;
 	}
 	
-	if (shoot and !left and !right) {
+	if (has_bow and shoot and !left and !right) {
 		state= states.SHOOT;
 		image_index =0;
 	}

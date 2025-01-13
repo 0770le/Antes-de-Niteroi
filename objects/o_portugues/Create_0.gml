@@ -19,7 +19,12 @@ target_rm = rm_cidade_velha;
 target_x = 167;
 target_y = 309;
 
-msgs = ["Liberte o jovem maracajas prisioneiro", "Navegue para Nitcheroy e destrua as fortificações inimigas."]
+msgs = ["Liberte o jovem\nmaracajas prisioneiro",
+		"Navegue para Nitcheroy e destrua\nas fortificações inimigas."]
+
+text_x_scale = [4.3,7];
+text_y_scale = [TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_2l];
+
 quest = true;
 
 step1_x = 1711;

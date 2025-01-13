@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"hitboxes",
+    "path":"folders/Sprites/Player/hitboxes.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

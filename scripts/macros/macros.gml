@@ -85,6 +85,9 @@ function macros(){
 #macro LAYER_GUI_BIODIVERSIDADE_BUTTONS			"GUI_Biodiversidade_Buttons"
 #macro LAYER_GUI_BIODIVERSIDADE_WINDOW			"GUI_Biodiversidade_Window"
 
+
+#macro LAYER_MESSAGES				"Messages"
+
 #macro LAYER_GROUND					"Tiles_ground"
 #macro LAYER_COLLISION				"Collisions"
 
@@ -107,5 +110,10 @@ function macros(){
 #macro COLLECTIBLE_KUNUMIUASU		5
 #macro COLLECTIBLE_MORUBIXABA		6
 #macro COLLECTIBLE_MUCURANA			7
+
+#macro COLOR_DK_GRAY		make_color_rgb(89,86,82)
+
+#macro TEXT_Y_HEIGHT_1l				1.75
+#macro TEXT_Y_HEIGHT_2l				2.5
 	
 }

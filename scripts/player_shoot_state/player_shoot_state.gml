@@ -93,7 +93,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 		if (!on_ground()){
 			state= states.JUMP;
 		}else if down { 
-			state= states.CROUCH; 
+			crouched();
 		}else{
 			state = states.IDLE;
 		}	

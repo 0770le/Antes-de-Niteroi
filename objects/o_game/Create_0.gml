@@ -7,7 +7,7 @@ macros();
 //upgrades
 has_cloak = false;
 has_axe= false;
-has_bow= true;
+has_bow= false;
 //has_collectable_nome = false;
 collectable_count = 0;
 
@@ -29,6 +29,8 @@ global.grav = 0.25;
 global.volume = 0.1;
 
 global.timer = 0;
+
+global.fontSmall = font_add_sprite_ext(spr_font_small, "AÁÀÃÂaáàãâBbCÇcçDdEÉÊeéêFfGgHhIÍiíJjKkLlMmNnOÓÕÔoóõôPpQqRrSsTtUÚuúVvWwXxYyZz1234567890()',.%+-/:?!<>°•", true, 1);
 
 //set GUI size
 display_set_gui_size(640,360);  //(720, 360);

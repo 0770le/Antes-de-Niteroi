@@ -18,8 +18,8 @@ function armadeira_attack_state() {
 	//ARMADA
 	} else { 
 		if on_ground() {
-		hsp = 0;
-		image_index=0;
+			hsp = 0;
+			image_index=0;
 		}
 		//go agressive if player dont leave 
 		if agressive_timer > 0 {

@@ -130,7 +130,6 @@ constructor
 		fmod_studio_event_instance_set_3d_attributes(event_instance, fmod_3d_att);
 		
 		var att = fmod_studio_event_instance_get_3d_attributes(event_instance)
-		show_debug_message("event x: "+ string(att.position.x) +", event y: "+ string(att.position.y))
 	}
 	
 	static init = function () 

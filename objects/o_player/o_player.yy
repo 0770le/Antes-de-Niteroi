@@ -53,8 +53,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_player_idle",
-    "path":"sprites/s_player_idle/s_player_idle.yy",
+    "name":"s_player_bow_idle",
+    "path":"sprites/s_player_bow_idle/s_player_bow_idle.yy",
   },
   "spriteMaskId":{
     "name":"s_player_hitbox",

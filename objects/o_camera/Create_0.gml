@@ -1,13 +1,15 @@
 //get dimensions. modifica a info pega no camera
 
-var _w =camera_get_view_width(view_camera[0])
-var _h =camera_get_view_height(view_camera[0])
+var _w = 480;
+var _h = 270;
 
 
 
 //create camera.(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])
 camera = camera_create_view(0,0,_w,_h,0,-1,-1,-1,128,128 ) 
 view_set_camera(0, camera);
+
+window_set_size(_w*3, _h*3);
 
 // declarando posiçao da camera
 global.cx = 0;
@@ -19,6 +21,8 @@ global.ch = 0;
 follow = noone;
 move_to_x = x;
 move_to_y = y;
+
+y_offset = 0;
 
 // how fast the camera pans
 camera_pan_speed_initial = 0.15; //lower = slowed pan

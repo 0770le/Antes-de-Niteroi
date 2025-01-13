@@ -16,4 +16,6 @@ saved = false;
 saving = false;
 released = false;
 
-msgs = ["Avise ao Português"]
+msgs = ["Avise ao Português"];
+text_x_scale = [4.3]
+text_y_scale = [TEXT_Y_HEIGHT_1l];

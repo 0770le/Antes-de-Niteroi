@@ -9,7 +9,7 @@ function player_hanging_state(){
 	// anulando a gravidade.
 	vsp -= global.grav;
 	//nova gravidade
-	vsp +=  0.06; 
+	vsp +=  0.06;
 	
 	//make dust
 	if (!instance_exists( o_player_dust_jump)) {

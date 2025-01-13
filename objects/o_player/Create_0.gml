@@ -1,4 +1,7 @@
 
+
+o_camera.y_offset = -80;
+
 // speeds
 hsp =0; //horizontal
 vsp = 0; //vertical
@@ -107,6 +110,8 @@ jump_held = 0;
 shoot = 0;
 shoot_held = 0;
 
+has_bow = false;
+
 //camera 
 o_camera.follow = o_player;
 
@@ -162,13 +167,13 @@ sprites_array[states.WALK]			 = s_player_walk;
 sprites_array[states.JUMP]			 = s_player_jump;
 sprites_array[states.ATTACK]		 = s_player_attack;
 sprites_array[states.ATTACK_WALK]	 = s_player_attack_walk;
-sprites_array[states.AIR_ATTACK]	 = s_player_air_attack_2;
-sprites_array[states.AIR_ATTACK_END]	 = s_player_air_attack_end;
+sprites_array[states.AIR_ATTACK]	 = s_player_air_attack;
+sprites_array[states.AIR_ATTACK_END] = s_player_air_attack_end;
 sprites_array[states.EVADE]			 = s_player_evade;
 sprites_array[states.CROUCH]		 = s_player_crouch;
-sprites_array[states.HIDE]			 = s_player_hide;
-sprites_array[states.SHOOT]			 = s_player_shoot;
-sprites_array[states.SHOOT_UP]		 = s_player_shoot_up;
+sprites_array[states.HIDE]			 = s_player_crouch;
+sprites_array[states.SHOOT]			 = s_player_bow_shoot;
+sprites_array[states.SHOOT_UP]		 = s_player_bow_shoot_up;
 sprites_array[states.HURTING]		 = s_player_hurting;
 sprites_array[states.HANGING]		 = s_player_hanging;
 sprites_array[states.DIE]			 = s_player_die;
@@ -196,4 +201,22 @@ mask_array[states.DIE_2]			= s_player_hitbox_crouch;
 mask_array[states.GAME_END]			= s_player_hitbox_crouch;
 
 
-
+function acquire_bow() {
+	has_bow = true;
+	
+	sprites_array[states.IDLE]			 = s_player_bow_idle; 
+	sprites_array[states.WALK]			 = s_player_bow_walk;
+	sprites_array[states.JUMP]			 = s_player_bow_jump;
+	sprites_array[states.ATTACK]		 = s_player_bow_attack;
+	sprites_array[states.ATTACK_WALK]	 = s_player_bow_attack_walk;
+	sprites_array[states.AIR_ATTACK]	 = s_player_bow_air_attack;
+	sprites_array[states.AIR_ATTACK_END] = s_player_bow_air_attack_end;
+	sprites_array[states.EVADE]			 = s_player_bow_evade;
+	sprites_array[states.CROUCH]		 = s_player_bow_crouch;
+	sprites_array[states.HIDE]			 = s_player_bow_crouch;
+	sprites_array[states.HURTING]		 = s_player_bow_hurting;
+	sprites_array[states.HANGING]		 = s_player_bow_hanging;
+	sprites_array[states.DIE]			 = s_player_bow_die;
+	sprites_array[states.DIE_2]			 = s_player_bow_die_2;
+	sprites_array[states.GAME_END]		 = s_player_bow_die_2;
+}

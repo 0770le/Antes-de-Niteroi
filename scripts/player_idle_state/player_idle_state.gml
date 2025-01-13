@@ -2,6 +2,10 @@
 function player_idle_state(){
 	//get input
 	get_input();
+	
+	if(up) {
+		o_camera.y_offset = -80;
+	}
 
 	//caculate movement
 	calc_movement();
@@ -30,7 +34,7 @@ function player_idle_state(){
 		image_index = 0;
 	}
 	
-	if (arrows >0) {
+	if (has_bow and arrows >0) {
 		if shoot {
 			if on_ground() and up {
 				state = states.SHOOT_UP;

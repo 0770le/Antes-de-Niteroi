@@ -9,8 +9,8 @@
   "name":"o_passaro",
   "overriddenProperties":[],
   "parent":{
-    "name":"General",
-    "path":"folders/Objects/General.yy",
+    "name":"Fauna",
+    "path":"folders/Objects/Fauna.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_passaro_idle",
-    "path":"sprites/s_passaro_idle/s_passaro_idle.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

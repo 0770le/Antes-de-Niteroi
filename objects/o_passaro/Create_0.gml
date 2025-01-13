@@ -1,49 +1,36 @@
 
+spd = 0;
+range = 0;
+flying_sprite = undefined;
 
-facing = choose(-1,1);
-vspd = random_range(-3,-4);
-hspd = random_range(4,5);
-
-state = "idle";
-
-//states
-//enum passaro_states {
-//	IDLE,
-//	FLYING
-//}
-
-//state = passaro_states.IDLE;
-
-//states_array[passaro_states.IDLE] = passaro_idle_state;
-//states_array[passaro_states.FLYING] = passaro_flying_state;
-
-//sprites_array[passaro_states.IDLE] = s_passaro_idle;
-//sprites_array[passaro_states.FLYING] = s_passaro_flying;
+dir = 0;
+image_xscale = choose(-1,1);
 
 function passaro_idle() {
+	if(anim_end()) {
+		image_speed = 0;
+	}
 	
-	//anim
-	sprite_index = s_passaro_idle;
-	image_xscale = -facing;
-
+	if(image_speed == 0 and random(300) < 2) {
+		image_speed = 1;
+		image_index = 0;
+	}
 }
 
 function passaro_flying() {
 	
-	//anim
-	sprite_index = s_passaro_flying;
-	image_xscale = -facing;
-	
 	//moving
-	y+= vspd;
-	x+= hspd*facing;
+	x+= spd*dcos(dir);
+	y-= spd*dsin(dir);
 
 	//destroy if leaving room
-	
 	if ( !on_screen(100)) {
 		instance_destroy();
 	}
 }
+
+
+state = passaro_idle;
 
 	
 	

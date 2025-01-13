@@ -41,7 +41,7 @@ function player_jump_state(){
 	}
 	
  
-	if (shoot and arrows > 0) {
+	if (has_bow and shoot and arrows > 0) {
 		state = states.SHOOT;
 		image_index = 0;
 	}

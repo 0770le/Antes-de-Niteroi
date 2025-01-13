@@ -1,6 +1,7 @@
 
 function crouched(){
 	state = states.CROUCH;
+	o_camera.y_offset = 0;
 	hsp=0;
 	image_index = 0;
 	image_speed = 1;

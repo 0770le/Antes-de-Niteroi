@@ -14,22 +14,14 @@ function anim() {
 					image_index = 5;
 			}
 		break;
-		
-		case states.ATTACK:
-			if (!on_ground()) {
-				sprite_index = s_player_air_attack;
-			} else { //on ground
-				if (hsp != 0) {
-					sprite_index= s_player_attack_walk;
-				} else { 
-					sprite_index = s_player_attack;
-				}
-			}
-		break;
 			
 		case states.HURTING:
 				if (!on_ground()) {
-					sprite_index = s_player_jump;
+					if(has_bow) {
+						sprite_index = s_player_bow_jump;
+					} else {
+						sprite_index = s_player_jump;
+					}
 					if (vsp < 0) {
 						image_index = 0;
 					} else {
@@ -40,12 +32,12 @@ function anim() {
 		
 		case states.SHOOT:
 				if (!on_ground()) {
-					sprite_index = s_player_air_shoot;
+					sprite_index = s_player_bow_air_shoot;
 				} else { //on ground
 					if down {//atirar abaixado
-						sprite_index = s_player_crouched_shoot;
+						sprite_index = s_player_bow_crouched_shoot;
 					} else {//normal
-						sprite_index= s_player_shoot;
+						sprite_index= s_player_bow_shoot;
 					}
 				}
 		break;

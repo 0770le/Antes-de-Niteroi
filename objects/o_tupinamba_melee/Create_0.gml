@@ -128,7 +128,7 @@ function tupinamba_melee_evaded() {
 	can_take_dmg = false;
 	y+= -1;
 	facing*= -1;
-	launch( jump_vsp * 0.7 , max_hsp*3 , -1*facing );
+	launch( jump_vsp * 0.5 , max_hsp*3.5 , -1*facing );
 	state = tupinamba_melee_states.EVADE;
 	image_index=0;
 	image_speed=1;		

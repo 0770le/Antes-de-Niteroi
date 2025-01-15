@@ -1,6 +1,6 @@
 function chavalier_attack_state(){
 	
-	aerial_riposte();
+//	aerial_riposte();
 	
 	//check state after anim
 	if (anim_end()) {

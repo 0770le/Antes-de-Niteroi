@@ -1,6 +1,6 @@
-function chavalier_attack_state(){
+function chavalier_aerial_riposte_state(){
 	
-	aerial_riposte();
+	
 	
 	//check state after anim
 	if (anim_end()) {
@@ -8,18 +8,10 @@ function chavalier_attack_state(){
 		image_index = 0;
 	}	
 	
-	
-	//paradinha
-	var _pause = random_range(1,2);
-	if (floor(image_index) == 4) and !runned_once {	
-		runned_once = true;
-		alarm[ONCE] = _pause* room_speed;
-		anim_paused(_pause);
-	
-	} 
+
 
 	//create hitboxes during hits index
-	if ((image_index >= 5) and (image_index <= image_number))  {
+	if ((image_index >= 2) and (image_index <= image_number))  {
 		
 		var inst = instance_create_layer(x +1*facing,y, LAYER_INSTANCES, o_enemy_attack_hitbox);
 		inst.image_xscale = facing*1.5;	

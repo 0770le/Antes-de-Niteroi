@@ -5,7 +5,7 @@ can_take_dmg = false;
 
 //taking dmg
 hurt_time = room_speed * 0.5;
-hp = 3; 
+hp = 4; 
 flash_counter = 0;
 //CASE check_enemy_hp flash dead generico
 o_enemy = object_index;
@@ -14,7 +14,7 @@ o_enemy = object_index;
 enemy_animation = chevalier_anim;
 
 //alert
-alert_distance = TILE_SIZE*4;
+alert_distance =70;
 alert_cooling = room_speed * random_range(3, 4);
 
 //movement 
@@ -26,7 +26,7 @@ arrow_drop_chance = 0.3;
 
 //actions
 //attack
-attack_range = 40;//nao muda a hitbox
+attack_range = 30;//nao muda a hitbox
 collision_dmg = false;
 damage = 1;
 knockback_distance = 10;
@@ -79,6 +79,8 @@ states_array[chevalier_states.ENGAGED] = chevalier_engaged_state;
 states_array[chevalier_states.TURNING] = chevalier_turning_state;
 states_array[chevalier_states.ATTACK] = chevalier_attack_state;
 states_array[chevalier_states.CHASE] = chevalier_chase_state;
+states_array[chevalier_states.AERIAL_RIPOSTE] = chevalier_aerial_riposte_state;
+states_array[chevalier_states.BLOCKING] = chevalier_blocking_state;
 
 
 
@@ -88,6 +90,8 @@ sprites_array[chevalier_states.ENGAGED] = s_chevalier_idle;
 sprites_array[chevalier_states.TURNING] = s_chevalier_turning;
 sprites_array[chevalier_states.ATTACK] = s_chevalier_attack;
 sprites_array[chevalier_states.CHASE] = s_chevalier_chase;
+sprites_array[chevalier_states.AERIAL_RIPOSTE] = s_chevalier_aerial_riposte;
+sprites_array[chevalier_states.BLOCKING] = s_chevalier_blocking;
 
 
 
@@ -97,6 +101,8 @@ mask_array[chevalier_states.ENGAGED] = s_chevalier_idle;
 mask_array[chevalier_states.TURNING] = s_chevalier_idle;
 mask_array[chevalier_states.ATTACK] = s_chevalier_idle;
 mask_array[chevalier_states.CHASE] = s_chevalier_idle;
+mask_array[chevalier_states.AERIAL_RIPOSTE] = s_chevalier_idle;
+mask_array[chevalier_states.BLOCKING] = s_chevalier_idle;
 
 
 //slowly turn to player
@@ -138,4 +144,12 @@ function aerial_riposte() {
 	
 }	
 	
-function block() {}
+function blocking() {
+	if instance_exists(o_player) {
+		//player na esquerda e olhando pra esquerda. OU player na direita e olhando para a direita
+		if ((o_player.x > x and facing = 1) or (o_player.x < x and facing = -1)) {
+		return true;;	
+		}
+	}	
+}
+

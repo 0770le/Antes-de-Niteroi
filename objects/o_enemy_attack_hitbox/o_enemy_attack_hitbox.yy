@@ -36,5 +36,5 @@
     "path":"sprites/s_enemy_attack_hitbox/s_enemy_attack_hitbox.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

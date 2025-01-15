@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"chevalier_anim",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"chevalier_anim",
+  "parent":{
+    "name":"Chevalier",
+    "path":"folders/Scripts/Enemy/Chevalier.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

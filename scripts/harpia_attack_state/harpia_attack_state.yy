@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"harpia_attack_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"harpia_attack_state",
+  "parent":{
+    "name":"Harpia",
+    "path":"folders/Scripts/Enemy/Harpia.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

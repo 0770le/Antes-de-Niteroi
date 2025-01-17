@@ -16,10 +16,10 @@ with(other) {
 			state = enemy_states.HURTING;
 			image_index = 0;
 			knockback_dis*=2;
+			//move away from the hitbox
+			hsp = _dir * knockback_dis;
 		}
 		
-		//move away from the hitbox
-		hsp = _dir * knockback_dis;
 			
 		//face the hitbox if on ground
 		if (on_ground()){

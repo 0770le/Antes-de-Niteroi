@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"emit_smoke",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"emit_smoke",
+  "parent":{
+    "name":"particles",
+    "path":"folders/Scripts/particles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

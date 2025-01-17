@@ -20,10 +20,10 @@ function on_ground(){
 		(((t2 == SOLID or t2 == PLATAFORM) and (t4 != SOLID and t4 != PLATAFORM)) or (t1 == SOLID and t3 == PLATAFORM)));
 }
 
-function on_ground_2(){
+function on_ground_2(_platform = true){
 	var _t = tilemap_get_at_pixel(global.map, x, bbox_bottom + 1);
 
-	return  (_t == SOLID or _t == PLATAFORM)
+	return  (_t == SOLID or (_platform and _t == PLATAFORM))
 }
 
 function find_ground(_x, _y, _dir) {

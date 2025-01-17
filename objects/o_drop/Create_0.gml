@@ -1,8 +1,8 @@
-vsp_initial  = random_range(-5,-2);
-vsp = vsp_initial;
-facing = 1;
-hsp_initial = random_range(0.3, 2);
-hsp = 0;
+stop_movement = false;
+
+vsp = random_range(-5,-2);
+hsp = random_range(1, 3);
+
 hsp_decimal = 0;
 vsp_decimal = 0;
 drag = 0;

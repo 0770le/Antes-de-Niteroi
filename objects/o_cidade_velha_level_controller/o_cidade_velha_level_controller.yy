@@ -13,7 +13,10 @@
     "name":"Level",
     "path":"folders/Objects/Level.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"o_level_controller_parent",
+    "path":"objects/o_level_controller_parent/o_level_controller_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

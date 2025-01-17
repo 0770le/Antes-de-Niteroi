@@ -20,7 +20,7 @@ if(!stop_movement) {
 
 	//bounce
 	if(bouncerTimer-- <= 0) {
-		if(on_ground_2()) {
+		if(on_ground_2(false)) {
 			if bounce >= 2 {
 				stop_movement = true;
 				vspd = 0;

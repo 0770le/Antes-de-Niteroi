@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"harpia_anim",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"harpia_anim",
+  "parent":{
+    "name":"Harpia",
+    "path":"folders/Scripts/Enemy/Harpia.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

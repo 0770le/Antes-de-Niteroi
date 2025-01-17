@@ -1,4 +1,4 @@
-function process_enemy_attack () { // (hk, bk) {
+function process_enemy_attack() { // (hk, bk) {
 ///@desc process_enemy_attack(hurt_knockback, block_knockback)
 ///@arg hurt_knockback_def_-1
 ///@arg block_knockback_def_-1

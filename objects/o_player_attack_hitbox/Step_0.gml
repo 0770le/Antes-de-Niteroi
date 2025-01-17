@@ -8,11 +8,6 @@ with (o_enemy_parent) {
 }	
 
 //destroy arrows that are hit
-var inst = instance_place(x, y, o_arrow); // get the id of object from the collision
-if (inst != noone){ //para q só retorne em caso d collisao
-	inst.die = true;
-}
-
 var inst = instance_place(x, y, o_player_arrow); // get the id of object from the collision
 if (inst != noone){ //para q só retorne em caso d collisao
 	inst.die = true;
@@ -89,11 +84,6 @@ with (o_stake) {
 	}
 }	
 
-//destroy arrows that are hit
-var inst = instance_place(x, y, o_arrow); // get the id of object from the collision
-if (inst != noone){ //para q só retorne em caso d collisao
-	inst.die = true;
-}
 
 //enable death at begin step
 die = true;

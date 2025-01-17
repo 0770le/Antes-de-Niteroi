@@ -62,8 +62,7 @@ function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AM
 
 function load_fmod()
 {
-	fmod = instance_create_depth(0, 0, 0, obj_fmod);
-	obj_fmod.
+	fmod = instance_create_depth(0, 0, 0, o_fmod);
 	
 	master_bank_index = fmod_studio_system_load_bank_file(fmod_path_bundle("sounds/Master.bank"), FMOD_STUDIO_LOAD_BANK.NORMAL);
 	

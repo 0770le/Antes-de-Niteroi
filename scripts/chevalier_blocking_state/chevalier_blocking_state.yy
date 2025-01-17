@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"chevalier_blocking_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"chevalier_blocking_state",
+  "parent":{
+    "name":"Chevalier",
+    "path":"folders/Scripts/Enemy/Chevalier.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

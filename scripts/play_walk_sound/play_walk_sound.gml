@@ -6,7 +6,9 @@ function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y){
 	((_image_index >= _sound_indexes[1]) and (_image_index < (_sound_indexes[1]+1)) and ((_image_index - _image_speed) < _sound_indexes[1]))) {
 		var t = tilemap_get_at_pixel(global.ground_map, x, bbox_bottom + 10);
 		var param;
-		if (t >= 0 and t < 100) { //terra
+		if(t == 0) {
+			param = FMOD_PARAMETER_MOVE_WALK.WOOD
+		} else if (t >= 1 and t < 100) { //terra
 			param = FMOD_PARAMETER_MOVE_WALK.DIRT
 		} else if (t >= 100 and t < 200) { //grama
 			param = FMOD_PARAMETER_MOVE_WALK.GRASS

@@ -7,9 +7,9 @@ function tupinamba_melee_hurting_state(){
 	var recover_time = 0.5; //1 = instant recover
 	if (anim_end()) {
 		if on_ground() {
-			state = tupinamba_states.IDLE;
+			state = tupinamba_melee_states.IDLE;
 		} else {
-			state = tupinamba_states.JUMP;
+			state = tupinamba_melee_states.JUMP;
 		}
 	}
 	

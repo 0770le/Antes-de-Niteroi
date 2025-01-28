@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"iaguara_landing_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"iaguara_landing_state",
+  "parent":{
+    "name":"Iaguara",
+    "path":"folders/Scripts/Enemy/Iaguara.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

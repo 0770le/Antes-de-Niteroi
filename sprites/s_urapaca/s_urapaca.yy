@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Antes de Niteroi 03",
-    "path":"Antes de Niteroi 03.yyp",
+    "name":"Collectible",
+    "path":"folders/Sprites/Collectible.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

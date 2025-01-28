@@ -30,18 +30,15 @@ grav = global.grav;
 spd = 1		//aceleraçao?;
 
 hsp = 0;
-max_hsp_initial = 1;
-max_hsp = max_hsp_initial;
+
+max_hsp = 1;
 hsp_decimal = 0;
-chase_spd = max_hsp_initial*1.3;
+chase_spd = max_hsp*1.3;
 
 vsp = 0;
-max_vsp_initial = -1;
-max_vsp = max_vsp_initial;
+
 vsp_decimal = 0;
 
-jump_vsp = -3;
-jump_hsp = 3;
 
 facing = -1;
 drag = 0.12;

@@ -27,8 +27,8 @@ wait_time_initial = room_speed * random_range(4, 6);
 idle_move_timer = room_speed * random_range(5, 9);
 
 //movement 
-max_hsp_initial = 5;	//acelerado
-max_vsp_initial = -max_hsp_initial;	
+
+
 spd = 0.8;
 drag = 0.12;
 

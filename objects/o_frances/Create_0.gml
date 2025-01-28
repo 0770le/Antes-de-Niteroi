@@ -29,7 +29,7 @@ alert_cooling = room_speed * random_range(3, 4);
 //movement 
 spd =  PLAYER_WALK_SPEED;		//"aceleração";
 hsp = 0;
-max_hsp_initial =  PLAYER_WALK_SPEED*0.5;
+
 max_hsp =  PLAYER_MAX_HSP;
 hsp_decimal = 0;
 chase_spd = max_hsp*1.3;

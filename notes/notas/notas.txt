@@ -55,3 +55,16 @@ passo a passo janelas
 inserir cod no creation code da room
 
 
+// 
+onça 
+
+states
+	idle deitada com bocejo
+	falling
+	patrol 
+	chase
+	pre pulo
+	jump
+	hanguing
+	
+	

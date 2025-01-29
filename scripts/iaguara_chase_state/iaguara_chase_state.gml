@@ -1,6 +1,6 @@
 function iaguara_chase_state() {
 	
-	iaguara_attack();
+	
 	
 	//calculate target movement
 	
@@ -43,6 +43,7 @@ function iaguara_chase_state() {
 		state = iaguara_states.IDLE;
 	}
 	
+	iaguara_attack();
 
 	calc_entity_movement();
 	collision();

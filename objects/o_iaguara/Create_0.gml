@@ -36,15 +36,7 @@ hp_drop_chance = 0.3;
 arrow_drop_chance = 0.3;
 
 //actions
-//attack
-attack_range = 80;
-collision_dmg = true;
-damage = 1;
-knockback_distance = 17;
-can_attack = true;
-attack_delay = room_speed *3;
-//animation
-attack = false;
+
 
 
 //patrol 
@@ -71,11 +63,11 @@ target_y = 0;
 enum iaguara_states {
 	IDLE,			//0
 	HURTING,		//1
-	CHASE,
-	FALL,
-	LANDING,
-	ATTACK,
-	JUMP
+	CHASE,			//2
+	FALL,			//3
+	LANDING,		//4
+	ATTACK,			//5
+	JUMP			//6
 }
 
 //enemy_states
@@ -126,16 +118,26 @@ function descend() {
 	}	
 }
 
+//attack
+attack_range = 80;
+collision_dmg = true;
+damage = 1;
+knockback_distance = 17;
+can_attack = true;
+attack_delay = room_speed *4;
+//animation
+attack = false;
+
 function iaguara_attack() {
-	if distance_to_object(o_player) < attack_range //no alcance
+	if ((distance_to_object(o_player) < attack_range) //no alcance
 	 and alert
 	 and can_attack						//pode atacar
-	 and (sign(o_player.x - x) == facing)  //olhando pro player
-	 and y >= o_player.y { // abaixo ou na altura do player
+	 and (sign(o_player.x - x) == sign(facing))  //olhando pro player
+	 and (y >= o_player.y)) { // abaixo ou na altura do player
 			can_attack = false;
-			attack_delay = room_speed * 3;
 			state = iaguara_states.ATTACK;
 			image_index =0;
+			attack_delay = random_range(4,6) * room_speed;
 			alarm[CAN_ATTACK]= attack_delay;
 	} 
 }

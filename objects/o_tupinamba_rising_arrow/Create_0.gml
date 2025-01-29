@@ -7,6 +7,8 @@ grav = global.grav*0.25;
 gravity= grav;
 knockback_distance = 0.1;
 
+damage = 1;
+
 //destroy objetc
 die = false;
 

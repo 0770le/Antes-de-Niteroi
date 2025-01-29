@@ -1,13 +1,10 @@
 function iaguara_chase_state() {
 	
-	
-	
 	//calculate target movement
 	
 	target_x = o_player.xprevious;
 	target_y = o_player.yprevious;
 	stare();
-
 	
 	//calculate movement
 	var _dir = point_direction(x, y, target_x, target_y);
@@ -32,17 +29,18 @@ function iaguara_chase_state() {
 		hsp = lerp(hsp, 0, drag);
 	}
 	
-	//stop if player leaves limited area
-	if (x < patrol_left_limit or x > patrol_right_limit) 
-	and (o_player.x < patrol_left_limit or o_player.x > patrol_right_limit) {
-		state = iaguara_states.IDLE;
-	}
+	////stop if player leaves limited area
+	//if (x < patrol_left_limit or x > patrol_right_limit) 
+	//and (o_player.x < patrol_left_limit or o_player.x > patrol_right_limit) {
+	//	state = iaguara_states.IDLE;
+	//}
 	
-	//go to idle if not mooving
-	if hsp == 0 {
-		state = iaguara_states.IDLE;
-	}
+	////go to idle if not mooving
+	//if hsp == 0 {
+	//	state = iaguara_states.IDLE;
+	//}
 	
+	descend();
 	iaguara_attack();
 
 	calc_entity_movement();

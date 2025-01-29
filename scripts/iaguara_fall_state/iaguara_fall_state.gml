@@ -1,9 +1,7 @@
 
 function iaguara_fall_state(){
 	
-	//moving
-	//hsp = spd * facing;
-	
+
 	//landing
 	if on_ground() {
 		state = iaguara_states.LANDING;

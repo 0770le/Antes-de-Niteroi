@@ -8,10 +8,10 @@ function player_crouch_state(){
 	
 	//check state
 	if down {
-		state = states.CROUCH;
 		hsp=0;
 	} else {
 		state = states.IDLE;
+		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.CROUCH, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_CROUCH.CROUCH, x, y);
 	}
 		
 	if (alarm[HIDING] == 0) {

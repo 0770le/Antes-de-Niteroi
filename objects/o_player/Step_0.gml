@@ -1,7 +1,4 @@
 //check hp
-if(global.timer mod 10 == 0) {
-	o_sound_controller.set_listener_position(x, y);
-}
 
 if(mouse_check_button_pressed(mb_middle)) {
 	instance_create_layer(mouse_x,mouse_y,LAYER_INSTANCES,o_corpse);	

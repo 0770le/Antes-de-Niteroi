@@ -20,7 +20,7 @@ if (inst != noone){ //para q só retorne em caso d collisao
 
 
 
-//cod pra bater num enemy só. (em baixo de alarm[HURT])
+//cod pra bater num enemy só. (em baixo de alarm[ALARM_HURTING])
 		//var _create = true;
 		//			if (instance_exists(o_sword_hit) == true) {
 		//				with(o_sword_hit) {
@@ -61,7 +61,7 @@ with (o_stake) {
 					hp -= 1;
 				
 					//set hurt timer
-					alarm[HURT] = hurt_time;
+					alarm[ALARM_HURTING] = hurt_time;
 					
 					//screnn shake
 					scr_screen_shake(.1,1.5);

@@ -11,7 +11,6 @@ function evaded() {
 		
 		//making dust contraria
 		jump_dust();
-		audio_play_sound(snd_jump, 15, false, global.volume);
 		
 		jumps--;
 		has_evade = false;
@@ -20,9 +19,10 @@ function evaded() {
 		
 		//allow 'rooted' evade
 		if down {
+			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.EVADE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_EVADE.SHORT, x, y);
 			launch( (jump_spd*0.3) , 2 , -1*facing );
 		}else {
-			//long evade
+			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.EVADE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_EVADE.LONG, x, y);
 			launch( (jump_spd*0.3) , max_hsp*4 , -1*facing );
 			
 		}

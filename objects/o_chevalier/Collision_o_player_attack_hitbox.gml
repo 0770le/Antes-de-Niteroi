@@ -79,7 +79,7 @@
 		hp -= 1;
 				
 		//set hurt timer
-		alarm[HURT] = hurt_time;
+		alarm[ALARM_HURTING] = hurt_time;
 					
 		//screnn shake
 		scr_screen_shake(.1,1.5);

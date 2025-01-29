@@ -30,6 +30,14 @@ function update_event_position(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE,
 	event_per_enum[? _event_enum].update_position(_x, _y);
 }
 
+function update_event_position_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
+								_x, 
+								_y )
+{
+	event_per_enum[? _event_enum].update_position(_x, _y);
+	event_per_enum[? _event_enum].play();
+}
+
 function update_event_parameter(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
 								_parameter_name = undefined, 
 								_parameter_value = undefined)
@@ -98,8 +106,31 @@ function load_events()
 			FMOD_PARAMETER_MOVE_WALK.STONE,
 			FMOD_PARAMETER_MOVE_WALK.SAND]),
 		]);
+			
+	event_per_enum[? FMOD_EVENT.CROUCH] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_crouch",
+		[
+			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
+			FMOD_PARAMETER_MOVE_CROUCH.CROUCH,
+			FMOD_PARAMETER_MOVE_CROUCH.STAND]),
+		]);
+			
+	event_per_enum[? FMOD_EVENT.EVADE] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_evade",
+		[
+			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
+			FMOD_PARAMETER_MOVE_EVADE.SHORT,
+			FMOD_PARAMETER_MOVE_EVADE.LONG,
+			FMOD_PARAMETER_MOVE_EVADE.LAND]),
+		]);
+			
+	event_per_enum[? FMOD_EVENT.HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hurt",
+		[
+			
+		]);
 		
-		event_per_enum[? FMOD_EVENT.TUPI_MELEE_ATK] = new FmodEvent(
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_ATK] = new FmodEvent(
 		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_atk",
 		[
 			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [

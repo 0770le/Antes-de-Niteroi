@@ -14,7 +14,8 @@ function player_attack_walk_state(){
 		state = states.IDLE;
 	}	
 	if evade {
-		state = states.EVADE;		
+		state = states.EVADE;
+		
 	}	
 	
 	//attacking

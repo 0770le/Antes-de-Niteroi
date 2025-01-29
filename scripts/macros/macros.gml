@@ -26,7 +26,7 @@ function macros(){
 //player alarms
 #macro EVADING					0
 #macro ATTACKING				1 //attack_delay
-#macro HURT						2
+#macro ALARM_HURTING			2
 #macro HIDING					5
 #macro SHOOTING					9 //fire_delay
 #macro ANIM_PAUSE				10 //paradinha

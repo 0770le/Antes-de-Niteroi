@@ -27,7 +27,7 @@ function struck_by_arrow(_dir = facing){
 				var knockback_dis = 3;
 				hsp = _dir * knockback_dis;
 				//set hurt time
-				alarm[HURT] = hurt_time;
+				alarm[ALARM_HURTING] = hurt_time;
 				state= enemy_states.HURTING;
 				image_index = 0;
 				//screen shake

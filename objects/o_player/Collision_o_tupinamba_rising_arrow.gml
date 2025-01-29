@@ -28,7 +28,7 @@ if (!other.die ) {
 			hsp = other.facing * knockback_dis;
 		
 		//set hurt time
-			alarm[HURT] = hurt_time;
+			alarm[ALARM_HURTING] = hurt_time;
 			//change state
 			state = states.HURTING;
 			image_index = 0;

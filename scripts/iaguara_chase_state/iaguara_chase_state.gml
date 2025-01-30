@@ -21,6 +21,7 @@ function iaguara_chase_state() {
 		}else{
 		//dont move
 			state = iaguara_states.IDLE;
+			image_index = 0;
 		}
 	} else {
 		//enemy hurt
@@ -35,13 +36,16 @@ function iaguara_chase_state() {
 	//	state = iaguara_states.IDLE;
 	//}
 	
-	////go to idle if not mooving
-	//if hsp == 0 {
-	//	state = iaguara_states.IDLE;
-	//}
+	//go to idle if not mooving
+	if hsp == 0 {
+		state = iaguara_states.IDLE;
+		image_index = 0;
+	}
 	
-	descend();
-	iaguara_attack();
+	if (o_player.hp > 0) {
+		descend();
+		iaguara_attack();
+	}
 
 	calc_entity_movement();
 	collision();

@@ -145,4 +145,17 @@ function iaguara_attack() {
 	} 
 }
 
-function iaguara_pounce() {	}
+//function iaguara_pounce(jump_y, jump_x) {
+//	var jump_y =0;
+//	var jump_x =0;
+	
+//	if (o_player.y < bbox_top) {
+//		jump_y = 7;	
+//		jump_x= 4.5;
+//	} else {
+//		jump_y = 4.5;
+//		jump_x = 7;
+//	}
+		
+//	launch(jump_y, jump_x);	
+//}

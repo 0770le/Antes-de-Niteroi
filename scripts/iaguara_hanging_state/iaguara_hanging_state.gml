@@ -13,7 +13,15 @@ function iaguara_hanging_state(){
 	//wall jump 
 	if (anim_end()) { 
 		x+= 1*facing;
-		launch(4.5, 7);
+		
+		//player abaixo
+		if (o_player.bbox_top > bbox_bottom) {
+			launch(0,1);
+			state= iaguara_states.FALL;
+			image_index = 0;
+		}
+		
+		launch(4.5,7);
 		state = iaguara_states.JUMP;
 		image_index=0;
 		audio_play_sound(snd_jump, 15, false, global.volume);

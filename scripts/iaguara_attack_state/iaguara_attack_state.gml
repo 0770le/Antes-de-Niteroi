@@ -10,7 +10,7 @@ function iaguara_attack_state(){
 		//jump
 		state = iaguara_states.JUMP;
 		image_index= 0;
-		launch(4.5, 7);
+		launch(4.5,7);
 	}
 	
 }

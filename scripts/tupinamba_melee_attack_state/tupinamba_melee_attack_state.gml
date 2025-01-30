@@ -1,10 +1,5 @@
 function tupinamba_melee_attack_state(){
 	
-	//caculate movement
-	calc_entity_movement();
-	
-
-	
 	hsp = 0;
 	
 	//check state after anim
@@ -71,6 +66,8 @@ function tupinamba_melee_attack_state(){
 
 	//apply movement
 	collision();
-
+	//caculate movement
+	calc_entity_movement();
+	
 
 }

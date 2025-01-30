@@ -15,7 +15,7 @@ function iaguara_hanging_state(){
 		x+= 1*facing;
 		
 		//player abaixo
-		if (o_player.bbox_top > bbox_bottom + 38) {
+		if (o_player.bbox_top > bbox_bottom + 42) {
 			launch(0,1);
 			state= iaguara_states.FALL;
 			image_index = 0;

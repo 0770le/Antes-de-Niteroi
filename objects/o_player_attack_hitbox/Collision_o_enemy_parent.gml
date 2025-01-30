@@ -1,5 +1,5 @@
 with(other) {
-	if (can_take_dmg and !hurt) {
+	if (can_take_dmg and !hurt) and line_of_sight() {
 		hurt = true;
 		//get sign direction from hitbox to enemy
 		var _dir = sign(x - other.x);
@@ -9,18 +9,17 @@ with(other) {
 			_dir = 1;
 		}
 		
-		var knockback_dis = 4;
 					
 		if (!unstoppable) {
 			//change state
 			state = enemy_states.HURTING;
 			image_index = 0;
-			knockback_dis*=2;
+				
+			var knockback_dis = 8;
 			//move away from the hitbox
 			hsp = _dir * knockback_dis;
-		}
+		} 
 		
-			
 		//face the hitbox if on ground
 		if (on_ground()){
 			facing = -_dir;

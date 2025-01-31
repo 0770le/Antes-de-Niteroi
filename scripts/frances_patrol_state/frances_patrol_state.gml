@@ -1,5 +1,4 @@
 function frances_patrol_state(){
-image_speed =1;
 
 //set mov
 //go for destination
@@ -28,37 +27,23 @@ if (t4 == SOLID) {//turn back
 		patrol_destination *=-1;
 }
 
-
-if (t1 == SOLID) {
-	//jump
-	if ((t2 != SOLID) or (t3 != SOLID))  {
-		state =  frances_states.JUMP;
-		image_index = 0;
-		image_speed = 1;
-		launch(jump_vsp, jump_hsp);
-	} else {
-//too hight, turn back
-		wait_time = random_range(4, 6) * room_speed;
-		state = frances_states.IDLE;
-		facing *=-1;
-		patrol_destination *=-1;
-	}
-}	
-
-//fall	
-if vsp != 0 and !on_ground() {
-	state = frances_states.JUMP;
-	image_index = 0;
-	image_speed = 1;
-} 
-
 //sees player
 if alert {
 //shoot
-	if can_fire {
-	state = frances_states.RELOAD;
-	image_index=0;
-	} //else {//skirmish	
+	if (line_of_sight(true) and abs(y-o_player.y)< 30) {
+		//reload
+		if !can_fire {
+			state = frances_states.RELOAD;
+			image_index = 0;
+				
+		//fire	
+		} else { 
+			state = frances_states.SHOOT;
+			image_index = 0;
+		}
+	} else {
+		state = frances_states.RUN;
+	}
 }
 
 //calc_entity_movement();

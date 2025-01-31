@@ -1,6 +1,6 @@
 function chevalier_turning_state(){	
 	if (anim_end()) {
-		stare();
+		facing = -facing;
 		state = chevalier_states.IDLE;
 		image_index = 0;
 	}

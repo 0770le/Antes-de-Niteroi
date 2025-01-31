@@ -1,6 +1,5 @@
 
 function frances_idle_state() {
-image_speed=1;
 //sees player
 	if alert {
 		stare()
@@ -9,23 +8,22 @@ image_speed=1;
 		//if (distance_to_object(o_player_arrow) < TILE_SIZE) {
 		//	state = frances_states.DUCK;
 		//	image_index = 0;
-		//	image_speed = 1;
 		//}
 		
 		
-		if o_player.hp > 0 {
+		if (line_of_sight(true) and abs(y-o_player.y)< 30) {
 			//reload
 			if !can_fire {
 				state = frances_states.RELOAD;
 				image_index = 0;
-				image_speed = 1;
 				
 			//fire	
 			} else { 
 				state = frances_states.SHOOT;
 				image_index = 0;
-				image_speed = 1;
 			}
+		} else if(abs(o_player.x - x) < 200) {
+			state = frances_states.RUN;
 		}
 	//not alert	
 	} else {
@@ -33,7 +31,6 @@ image_speed=1;
 		if patrol and wait_time-- < 0  {
 			state = frances_states.PATROL;
 			image_index = 0;
-			image_speed = 1;
 		} 
 	}
 	

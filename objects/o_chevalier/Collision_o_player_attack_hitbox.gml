@@ -1,24 +1,25 @@
-	if (blocking()) {
-		if (!runned_once) {
-			runned_once = true;
-			alarm[ONCE] = 0.06*room_speed;
+if (blocking()) {
+	if (!runned_once) {
+		runned_once = true;
+		alarm[ONCE] = 0.06*room_speed;
 			
-			//get sign direction from hitbox to enemy
-			var _dir = sign(x - other.x);
+		//get sign direction from hitbox to enemy
+		var _dir = sign(x - other.x);
 			
-			//ensure objects are not at the same x
-			if (_dir == 0) {
-				_dir = 1;
-			}
-		
-			var knockback_dis = 4;			
-		
-			if (!unstoppable) {
-			//change state
-			state = chevalier_states.BLOCKING;
-			image_index = 0;
-			knockback_dis=2;
+		//ensure objects are not at the same x
+		if (_dir == 0) {
+			_dir = 1;
 		}
+		
+		var knockback_dis = 4;			
+		
+		if (!unstoppable) {
+			//change state
+			if(state != chevalier_states.ATTACK) {
+				state = chevalier_states.BLOCKING;
+				image_index = 0;
+			}
+			knockback_dis=2;
 		
 			//move away from the hitbox
 			hsp = _dir * knockback_dis;
@@ -27,9 +28,6 @@
 			if (on_ground()){
 				facing = -_dir;
 			}
-				
-			//damage enemy
-			hp -= 0;
 					
 			//screnn shake
 			scr_screen_shake(.1,1.5);
@@ -46,6 +44,7 @@
 				inst.image_xscale = o_player.facing;
 				inst.sprite_index = s_sword_hit2;
 			}
+		}
 	}	
 } else {
 	if (!hurt) {

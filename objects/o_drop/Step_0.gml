@@ -1,19 +1,6 @@
 if(!stop_movement) {
 	image_angle += angle_speed;
-
-	var t1 = tilemap_get_at_pixel(global.map, x, bbox_bottom + vsp);
-	if(t1 == SOLID) {
-		//give vert movement
 	
-		if bounce >= 2 {
-			stop_movement = true;
-			exit;
-		}
-		vsp *= -0.7;
-		bounce++;
-		angle_speed *= -0.7;
-	}
-	//bounce off walls
 	
 	var _side = bbox_left;
 	if (sign(hsp) == 1) {
@@ -22,8 +9,22 @@ if(!stop_movement) {
 
 	var t1 = tilemap_get_at_pixel(global.map, _side + hsp, bbox_top);
 	if (t1 == SOLID) {
-		//wall found, reverse direction
 		hsp *= -1;
+	}
+	
+	t1 = tilemap_get_at_pixel(global.map, x, bbox_bottom + vsp);
+	if(t1 == SOLID) {
+		if(vsp < 0) {
+			vsp *= -1;
+		} else {
+			if bounce >= 2 {
+				stop_movement = true;
+				exit;
+			}
+			vsp *= -0.7;
+			bounce++;
+			angle_speed *= -0.7;
+		}
 	}
 	
 

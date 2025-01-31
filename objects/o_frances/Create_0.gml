@@ -50,8 +50,8 @@ arrow_drop_chance = 0.3;
 //actions
 //attack
 collision_dmg = false;
-damage = 5;
-knockback_distance = 40;
+damage = 1;
+knockback_distance = 5;
 can_attack = true;
 attack_delay = room_speed;
 //animation
@@ -60,7 +60,6 @@ anim_duration = room_speed *.3;
 //randon start to avoic sinc enemies
 anim_start_initial = room_speed * random_range( 1.75, 2.25);
 anim_start = anim_start_initial;
-image_speed=0;
 
 
 //patrol 
@@ -85,8 +84,8 @@ enum frances_states {
 	PATROL,
 	JUMP,
 	RELOAD,
-	DUCK//,
-//	DIE
+	DUCK,
+	RUN
 
 }
 
@@ -98,6 +97,7 @@ states_array[frances_states.PATROL] = frances_patrol_state;
 states_array[frances_states.JUMP] = frances_jump_state;
 states_array[frances_states.RELOAD] = frances_reload_state;
 states_array[frances_states.DUCK] = frances_duck_state;
+states_array[frances_states.RUN] = frances_run_state;
 
 
 sprites_array[frances_states.IDLE] = s_frances_idle;
@@ -107,6 +107,7 @@ sprites_array[frances_states.PATROL] = s_frances_walk;
 sprites_array[frances_states.JUMP] = s_frances_jump;
 sprites_array[frances_states.RELOAD] = s_frances_reload;
 sprites_array[frances_states.DUCK] = s_frances_duck;
+sprites_array[frances_states.RUN] = s_frances_run;
 
 
 mask_array[frances_states.IDLE] = s_frances_idle;
@@ -116,6 +117,7 @@ mask_array[frances_states.PATROL] = s_frances_idle;
 mask_array[frances_states.JUMP] = s_frances_idle;
 mask_array[frances_states.RELOAD] = s_frances_idle;
 mask_array[frances_states.DUCK] = s_frances_duck;
+mask_array[frances_states.RUN] = s_frances_idle;
 
 
 
@@ -123,20 +125,11 @@ mask_array[frances_states.DUCK] = s_frances_duck;
 
 
 function create_bullet() {
-	//gap in frames 
-		runned_once = true;
-		alarm[ONCE] = room_speed*0.2;
-	//set spawn position		
-		ypos = -22;
-	//create arrow
-		var inst = instance_create_layer(side()+4*facing,y + ypos, LAYER_PROJECTILES, o_bullet);
-		inst.facing = facing;
-	//sound
-		audio_play_sound(snd_arrow_firing,10, false, global.volume);
-	//create spark
-		var inst = instance_create_layer (side()+4*facing, y + ypos, LAYER_PROJECTILES, o_arrow_spark);			
-		inst.image_xscale = facing;
-		
+	if(line_of_sight() and collision_line(x, y-10, x + facing * GAME_W, y-10,o_player, false, true)) {
+		with(o_player) {
+			process_enemy_attack();	
+		}
+	}
 }
 
 //puff of smoke on spawn

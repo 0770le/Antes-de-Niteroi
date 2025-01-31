@@ -6,7 +6,7 @@ function harpia_attack_state(){
 	}
 	
 	if(y > o_player.y or attack_hit_ground) {
-		if(on_ground_2()) {
+		if(on_ground_2(id)) {
 			vsp = 0;
 			emit_smoke(x,bbox_bottom,0.2,0.5,10,1);
 		}

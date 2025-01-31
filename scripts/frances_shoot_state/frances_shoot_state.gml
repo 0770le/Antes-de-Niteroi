@@ -4,7 +4,7 @@ function frances_shoot_state() {
 	stare();
 
 	//fire in right image
-	if floor(image_index) == 7 and !runned_once {
+	if floor(image_index) == 5 and !runned_once {
 		create_bullet()
 		//smoke
 		var inst = instance_create_layer (side()+11*facing, y - 20, LAYER_EFFECTS, o_frances_fumaca);			

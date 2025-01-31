@@ -7,7 +7,9 @@
   "inheritLayers":true,
   "instanceCreationOrder":[
     {"name":"inst_4D637F45","path":"rooms/rm_tests/rm_tests.yy",},
-    {"name":"inst_4E8E21AF","path":"rooms/rm_tests/rm_tests.yy",},
+    {"name":"inst_45DB74D8","path":"rooms/rm_tests/rm_tests.yy",},
+    {"name":"inst_53E9CE55","path":"rooms/rm_tests/rm_tests.yy",},
+    {"name":"inst_1485B666","path":"rooms/rm_tests/rm_tests.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -77,7 +79,9 @@
         ],"TileDataFormat":1,},"tilesetId":null,"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Projectiles","depth":1000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Projectiles","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":1100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":false,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_4E8E21AF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4E8E21AF","objectId":{"name":"o_chevalier","path":"objects/o_chevalier/o_chevalier.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":208.0,"y":288.0,},
+        {"$GMRInstance":"v1","%Name":"inst_45DB74D8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_45DB74D8","objectId":{"name":"o_frances","path":"objects/o_frances/o_frances.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":272.0,"y":176.0,},
+        {"$GMRInstance":"v1","%Name":"inst_53E9CE55","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_53E9CE55","objectId":{"name":"o_chevalier","path":"objects/o_chevalier/o_chevalier.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":208.0,"y":288.0,},
+        {"$GMRInstance":"v1","%Name":"inst_1485B666","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1485B666","objectId":{"name":"o_chevalier","path":"objects/o_chevalier/o_chevalier.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":176.0,"y":176.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Collisions","depth":1200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":57,"TileCompressedData":[
           -26,1,-6,0,-25,-2147483648,1,1,-24,0,1,1,-6,0,-25,-2147483648,1,1,-24,0,1,1,-6,0,-25,-2147483648,1,1,
@@ -85,7 +89,7 @@
           1,1,-22,0,3,2,0,1,-6,0,-25,-2147483648,1,1,-21,0,4,2,0,0,1,-6,0,2,-2147483648,0,-8,-2147483648,1,0,-14,
           -2147483648,1,1,-20,0,1,2,-3,0,1,1,-7,0,-5,-2147483648,1,0,-3,-2147483648,1,0,-14,-2147483648,1,1,-19,
           0,1,2,-4,0,1,1,-17,0,-14,-2147483648,1,1,-18,0,1,2,-5,0,1,1,-9,0,-6,-2147483648,-3,0,-13,-2147483648,
-          1,1,-4,2,-21,1,-7,0,3,-2147483648,0,0,-5,-2147483648,-3,0,-13,-2147483648,2,1,2,-23,0,1,1,-10,0,-5,-2147483648,
+          1,1,-3,2,-22,1,-7,0,3,-2147483648,0,0,-5,-2147483648,-3,0,-13,-2147483648,2,1,2,-23,0,1,1,-10,0,-5,-2147483648,
           -3,0,-13,-2147483648,3,1,0,2,-22,0,1,1,-7,0,3,-2147483648,0,0,-6,-2147483648,-2,0,-13,-2147483648,4,
           1,0,0,2,-21,0,1,1,-7,0,3,-2147483648,0,0,-5,-2147483648,-3,0,-13,-2147483648,1,1,-3,0,1,2,-20,0,1,1,
           -9,0,-6,-2147483648,-3,0,-13,-2147483648,1,1,-4,0,1,2,-19,0,1,1,-13,0,-2,-2147483648,-3,0,-13,-2147483648,

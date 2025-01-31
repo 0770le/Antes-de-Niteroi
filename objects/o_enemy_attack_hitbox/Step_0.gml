@@ -2,6 +2,6 @@
 with (instance_place(x,y, o_player)) {
 	process_enemy_attack();
 }	
-//enable death at begin step
-die = true;
+
+instance_destroy();
 

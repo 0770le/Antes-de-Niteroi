@@ -1,6 +1,10 @@
 
 function chevalier_blocking_state(){
 	
+	if(aerial_riposte()) {
+		return;	
+	}
+	
 	//check state
 	//set to first frame and stop if animation has played once
 		

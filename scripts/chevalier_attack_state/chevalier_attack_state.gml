@@ -1,39 +1,27 @@
-function chavalier_attack_state(){
+function chevalier_attack_state(){
 	
-//	aerial_riposte();
-	
+	if(aerial_riposte()) {
+		return;	
+	}
+
 	//check state after anim
 	if (anim_end()) {
 		state = chevalier_states.ENGAGED;
 		image_index = 0;
-	}	
-	
-	
-	//paradinha
-	var _pause = random_range(1,2);
-	if (floor(image_index) == 4) and !runned_once {	
-		runned_once = true;
-		alarm[ONCE] = _pause* room_speed;
-		anim_paused(_pause);
-	
-	} 
+	}
 
 	//create hitboxes during hits index
-	if ((image_index >= 5) and (image_index <= image_number))  {
+	if ((image_index >= 9) and (image_index < 10) and !runned_once)  {
 		
 		var inst = instance_create_layer(x +1*facing,y, LAYER_INSTANCES, o_enemy_attack_hitbox);
 		inst.image_xscale = facing*1.5;	
 		inst.damage = damage;
 		inst.knockback_distance = knockback_distance;
 		
-		hsp+= 3*facing;
-		
-		//dust
-		if !runned_once {
-			runned_once = true;
-			alarm[ONCE] = 0.06*room_speed;
-			jump_dust()//faz o objeto dust_evade
-		}
+		hsp+= 6*facing;
+		runned_once = true;
+		alarm[ONCE] = 10;
+		jump_dust()//faz o objeto dust_evade
 	}
 	
 	//physics

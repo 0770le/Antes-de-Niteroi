@@ -1,7 +1,13 @@
 function chevalier_chase_state() {
 	
 	turn();
-	aerial_riposte();
+	if(aerial_riposte()) {
+		return;	
+	}
+	
+	if(attack_up()) {
+		return;
+	}
 	
 	//calculate target movement
 	target_x = o_player.xprevious;
@@ -32,8 +38,9 @@ function chevalier_chase_state() {
 	}
 	
 	//stop if player leaves limited area
-	if (x < patrol_left_limit or x > patrol_right_limit) 
-	and (o_player.x < patrol_left_limit or o_player.x > patrol_right_limit) {
+	if (o_player.hp <= 0
+	or (x < patrol_left_limit or x > patrol_right_limit) 
+	and (o_player.x < patrol_left_limit or o_player.x > patrol_right_limit)) {
 		state =  chevalier_states.ENGAGED;
 	}
 	

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"frances_run_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"frances_run_state",
+  "parent":{
+    "name":"Frances",
+    "path":"folders/Scripts/Enemy/Frances.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

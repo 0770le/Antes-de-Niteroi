@@ -1,9 +1,5 @@
 
 function frances_hurting_state(){
-
-	
-	//in case that image_speed was stoped.
-	image_speed = 1;
 	
 	//check state
 	//set to first frame and stop if animation has played once

@@ -1,25 +1,16 @@
-//death
+with(instance_create_layer(x,y-3,LAYER_INSTANCES,o_corpse)) {
+	sprite_index = s_frances_die;
+	facing = other.facing;
+}
 
-	//gap in frames 
-		runned_once = true;
-		alarm[ONCE] = room_speed*0.2;
-	//set spawn position		
-		ypos = y;
-	//create arrow
-		var inst = instance_create_layer(side()+4*facing,y + ypos, LAYER_INSTANCES, o_frances_die);
-		inst.facing = facing;
-	//sound
-		audio_play_sound(snd_arrow_firing,10, false, global.volume);
-	//create hat
-		var inst = instance_create_layer (x, bbox_top, LAYER_INSTANCES, o_drop);			
-		
-		inst.sprite_index = s_frances_capacete;
-			
-	//inst.image_xscale = facing;
-	//create gun
-		var inst = instance_create_layer (side()+4*facing, y - 22, LAYER_INSTANCES, o_drop);	
-		//inst.image_xscale = facing;
-		
-		inst.sprite_index = s_france_arma;
-		inst.bounce = 1;
-		inst.facing = facing;
+with(instance_create_layer (side()+4*facing, y - 22, LAYER_INSTANCES, o_drop)) {
+	sprite_index = s_frances_capacete;
+	bounce = 2;
+	facing = other.facing;
+}
+
+with(instance_create_layer (side()+4*facing, y - 22, LAYER_INSTANCES, o_drop)) {
+	sprite_index = s_france_arma;
+	bounce = 2;
+	facing = other.facing;
+}

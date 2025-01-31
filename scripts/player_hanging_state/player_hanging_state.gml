@@ -23,28 +23,28 @@ function player_hanging_state(){
 
 	//chegou no chão
 	if on_ground(){
+		o_sound_controller.stop(FMOD_EVENT.HANG);
 		state = states.IDLE;
 	}
 	
 	//saiu da parede
 	if (face != SOLID) { 
-			state = states.JUMP;
+		o_sound_controller.stop(FMOD_EVENT.HANG);
+		state = states.JUMP;
 	}
 
 	//pular na parede: walljump
 	if jump {
-		evade_dust();
+		
 		facing*=-1;
-		scale_x = scale_min;
-		scale_y = scale_max;
-		vsp_decimal = 0;
-		state = states.JUMP;
 		hsp = max_hsp *facing;
-		launch(jump_spd,0);
-		audio_play_sound(snd_jump, 15, false, global.volume);
+		o_sound_controller.stop(FMOD_EVENT.HANG);
+		jumped(true);
 	}
 
 	if evade {
+		
+		o_sound_controller.stop(FMOD_EVENT.HANG);
 		evaded();
 		image_index = 0;
 	}

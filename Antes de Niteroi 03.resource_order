@@ -452,6 +452,7 @@
     {"name":"s_player_idle","order":18,"path":"sprites/s_player_idle/s_player_idle.yy",},
     {"name":"s_player_jump","order":19,"path":"sprites/s_player_jump/s_player_jump.yy",},
     {"name":"s_player_walk","order":20,"path":"sprites/s_player_walk/s_player_walk.yy",},
+    {"name":"s_player_weapon","order":21,"path":"sprites/s_player_weapon/s_player_weapon.yy",},
     {"name":"s_pointer","order":9,"path":"sprites/s_pointer/s_pointer.yy",},
     {"name":"s_poste_barqueiro","order":4,"path":"sprites/s_poste_barqueiro/s_poste_barqueiro.yy",},
     {"name":"s_quest_indicator","order":5,"path":"sprites/s_quest_indicator/s_quest_indicator.yy",},

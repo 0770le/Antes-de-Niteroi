@@ -1,17 +1,24 @@
 function check_player_hp() {
 	if hp <= 0 {
+		
+		o_sound_controller.update_event_position_and_play(FMOD_EVENT.DIE,x,y);
 		state = states.DIE;
 		
-		//avoid start next state on ground
-		y += -2;
-		launch(4,5,-1*facing)
-		
-		image_index = 0;	
-		image_speed = 1;
-		scale_x=1;
-		scale_y=1;
+		visible = false;
 		lives --;
-		audio_play_sound(snd_player_die, 5, false, global.volume);	
+		
+		with(instance_create_layer(x,y-3,LAYER_INSTANCES,o_corpse)) {
+			sprite_index = s_player_die;
+			facing = other.facing;
+			other.corpse = id;
+		}
+		
+		with(instance_create_layer (side()+4*facing, y - 22, LAYER_INSTANCES, o_drop)) {
+			sprite_index = s_player_weapon;
+			bounce = 2;
+			facing = other.facing;
+		}
+
 	}
 	
 	if(hp_losing < hp) {

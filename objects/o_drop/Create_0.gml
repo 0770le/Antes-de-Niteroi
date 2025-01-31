@@ -3,6 +3,8 @@ stop_movement = false;
 vsp = random_range(-5,-2);
 hsp = random_range(1, 3);
 
+facing = 1;
+
 hsp_decimal = 0;
 vsp_decimal = 0;
 drag = 0;

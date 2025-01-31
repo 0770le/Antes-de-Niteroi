@@ -40,6 +40,8 @@ function tupinamba_melee_attack_state(){
 		hsp+= 3*facing;
 		//dust
 		if !runned_once {
+			
+			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.TUPI_MELEE_ATK,FMOD_PARAMETER_NAME_MOVE,FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.SWING,x,y);
 			runned_once = true;
 			alarm[ONCE] = 0.06*room_speed;
 			jump_dust()//faz o objeto dust_evade

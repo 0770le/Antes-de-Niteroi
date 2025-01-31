@@ -43,6 +43,9 @@ vsp_decimal = 0;
 facing = -1;
 drag = 0.12;
 
+hurt_sound_event = undefined;
+die_sound_event = undefined;
+
 //loot
 hp_drop_chance = 0.3;
 death_gem_value =0;// 3;

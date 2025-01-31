@@ -21,13 +21,14 @@ function player_jump_state(){
 			state = states.IDLE;
 		}
 		//create dust if landing
-		if (vsp > 0) {
+		if (vsp > 2) {
 			instance_create_layer(x,y, LAYER_EFFECTS, o_player_dust_land);
-			audio_play_sound(snd_landing, 20, false, global.volume);
+			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.LAND,x,y);
 		}	
 		//tocando a parede no ar
 	} else if (face == SOLID) and (vsp > 0.24) { // vsp caindo q entra no sliding
 			state = states.HANGING;
+			o_sound_controller.update_event_position_and_play(FMOD_EVENT.HANG,x,y);
 			//pro começo do arrastar nao ficar truncado
 			vsp += 1; 
 	}
@@ -37,7 +38,7 @@ function player_jump_state(){
 		image_index =0;
 		can_attack = false;
 		alarm[ATTACKING]= attack_delay;
-		o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.AIR)
+		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.AIR,x,y);
 	}
 	
  

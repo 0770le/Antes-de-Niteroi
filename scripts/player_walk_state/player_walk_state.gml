@@ -29,7 +29,6 @@ function player_walk_state(){
 	 
 	if ((t1 == VOID) and (t2 == VOID)) {
 	state= states.JUMP;
-	jumps= jumps_initial;
 	}
 	 
 	 
@@ -41,14 +40,14 @@ function player_walk_state(){
 			image_index =0;
 			can_attack = false;
 			alarm[ATTACKING]= attack_delay;
-			o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE)
+			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE,x,y);
 		} else { //ataque movendo
 			state =	states.ATTACK_WALK;
 			image_index =0;
 			can_attack = false;
 			alarm[ATTACKING]= attack_delay/2;
 			launch(0,abs(hsp*0.7), -1*facing); //tranco do hit
-			o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.MOVING)
+			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.MOVING,x,y);
 		}
 	}
 	

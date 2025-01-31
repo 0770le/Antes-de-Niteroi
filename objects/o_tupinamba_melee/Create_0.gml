@@ -82,6 +82,9 @@ enum tupinamba_melee_states {
 	CHASE
 }
 
+hurt_sound_event = FMOD_EVENT.TUPI_MELEE_HURT;
+die_sound_event = FMOD_EVENT.TUPI_MELEE_DIE;
+
 //enemy_states
 states_array[enemy_states.IDLE] = tupinamba_melee_idle_state;
 states_array[enemy_states.HURTING] = tupinamba_melee_hurting_state;
@@ -187,11 +190,12 @@ function tupinamba_melee_attack() {
 	 and can_attack						//pode atacar
 	 and sign(o_player.x - x) == facing  {//olhando pro player
 	
-			can_attack = false;
-			attack_delay = room_speed * 3;
-			state = tupinamba_melee_states.ATTACK;
-			image_index =0;
-			alarm[CAN_ATTACK]= attack_delay;
+		can_attack = false;
+		attack_delay = room_speed * 3;
+		state = tupinamba_melee_states.ATTACK;
+		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.TUPI_MELEE_ATK,FMOD_PARAMETER_NAME_MOVE,FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.PREPARE,x,y);
+		image_index =0;
+		alarm[CAN_ATTACK]= attack_delay;
 	} 
 }
 

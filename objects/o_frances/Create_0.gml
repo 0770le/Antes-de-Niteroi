@@ -76,6 +76,9 @@ wait_time = wait_time_initial;
 chase_distance = alert_distance;	
 
 
+hurt_sound_event = FMOD_EVENT.FRENCH_SHOOTER_HURT;
+die_sound_event = FMOD_EVENT.FRENCH_SHOOTER_DIE;
+
 //states
 enum frances_states {
 	IDLE,

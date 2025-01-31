@@ -36,6 +36,6 @@ if(!stop_movement) {
 	//movement 
 	calc_entity_movement(grav, 0.01);
 	
-	x += hsp;
+	x += hsp*facing;
 	y += vsp;
 }

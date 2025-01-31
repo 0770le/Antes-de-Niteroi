@@ -14,35 +14,45 @@ sfx_volume					= 100;
 
 function play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, _stop = true)
 {
-	if(_stop) event_per_enum[? _event_enum].stop();
-	event_per_enum[? _event_enum].play();
+	if(!is_undefined(_event_enum)) {
+		if(_stop) event_per_enum[? _event_enum].stop();
+		event_per_enum[? _event_enum].play();
+	}
 }
 
 function stop(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE)
 {
-	event_per_enum[? _event_enum].stop();
+	if(!is_undefined(_event_enum)) {
+		event_per_enum[? _event_enum].stop();
+	}
 }
 
 function update_event_position(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
 								_x, 
 								_y )
 {
-	event_per_enum[? _event_enum].update_position(_x, _y);
+	if(!is_undefined(_event_enum)) {
+		event_per_enum[? _event_enum].update_position(_x, _y);
+	}
 }
 
 function update_event_position_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
 								_x, 
 								_y )
 {
-	event_per_enum[? _event_enum].update_position(_x, _y);
-	event_per_enum[? _event_enum].play();
+	if(!is_undefined(_event_enum)) {
+		event_per_enum[? _event_enum].update_position(_x, _y);
+		event_per_enum[? _event_enum].play();
+	}
 }
 
 function update_event_parameter(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
 								_parameter_name = undefined, 
 								_parameter_value = undefined)
 {
-	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
+	if(!is_undefined(_event_enum)) {
+		event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
+	}
 }
 
 function update_event_parameter_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
@@ -50,9 +60,11 @@ function update_event_parameter_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIEN
 										 _parameter_value = undefined,
 										 _stop = true)
 {
-	if(_stop) event_per_enum[? _event_enum].stop();
-	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
-	event_per_enum[? _event_enum].play();
+	if(!is_undefined(_event_enum)) {
+		if(_stop) event_per_enum[? _event_enum].stop();
+		event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
+		event_per_enum[? _event_enum].play();
+	}
 }
 
 function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
@@ -62,10 +74,12 @@ function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AM
 										 _y = 0,
 										 _stop = true)
 {
-	if(_stop) event_per_enum[? _event_enum].stop();
-	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
-	event_per_enum[? _event_enum].update_position(_x, _y);
-	event_per_enum[? _event_enum].play();
+	if(!is_undefined(_event_enum)) {
+		if(_stop) event_per_enum[? _event_enum].stop();
+		event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
+		event_per_enum[? _event_enum].update_position(_x, _y);
+		event_per_enum[? _event_enum].play();
+	}
 }
 
 function load_fmod()
@@ -86,15 +100,24 @@ function load_events()
 	
 	#region PLAYER
 	
-	//event_per_enum[? FMOD_EVENT.ATTACK_MELEE_GROUND_HIT] = new FmodEvent("event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_melee");
 	event_per_enum[? FMOD_EVENT.ATTACK_MELEE] = new FmodEvent(
 		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_melee",
 		[
 			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
 			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE,
-			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_HIT,
+			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND,
 			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.MOVING,
 			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.AIR]),
+		]);
+		
+	event_per_enum[? FMOD_EVENT.ATTACK_HIT] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_hit",
+		[
+			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
+			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_HIT,
+			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_GROUND,
+			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.ARROW_GROUND,
+			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.ARROW_HIT]),
 		]);
 			
 	event_per_enum[? FMOD_EVENT.WALK] = new FmodEvent(
@@ -129,18 +152,87 @@ function load_events()
 		[
 			
 		]);
+			
+	event_per_enum[? FMOD_EVENT.JUMP] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_jump",
+		[
+			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
+			FMOD_PARAMETER_MOVE_JUMP.JUMP,
+			FMOD_PARAMETER_MOVE_JUMP.DOUBLE_JUMP,
+			FMOD_PARAMETER_MOVE_JUMP.LAND]),
+		]);
+			
+	event_per_enum[? FMOD_EVENT.HANG] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hanging",
+		[
+			
+		]);
+			
+	event_per_enum[? FMOD_EVENT.DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hanging",
+		[
+			
+		]);
+		
+	#endregion
+	
+	
+	#region MELEE_TUPI
 		
 	event_per_enum[? FMOD_EVENT.TUPI_MELEE_ATK] = new FmodEvent(
 		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_atk",
 		[
 			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.MISS,
-			FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.GROUND_HIT]),
+			FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.PREPARE,
+			FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.SWING]),
 		]);
-		
-		
-		
-		
+			
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_die",
+		[
+			
+		]);
+			
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_hurt",
+		[
+			
+		]);
+	
+	#endregion
+	
+	
+	#region ARCHER_TUPI
+			
+	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_die",
+		[
+			
+		]);
+			
+	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_hurt",
+		[
+			
+		]);
+	
+	#endregion
+	
+	
+	#region FRENCH_SHOOTER
+			
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_die",
+		[
+			
+		]);
+			
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_hurt",
+		[
+			
+		]);
+	
 	#endregion
 }
 

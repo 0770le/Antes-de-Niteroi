@@ -14,6 +14,8 @@ with(other) {
 			//change state
 			state = enemy_states.HURTING;
 			image_index = 0;
+			
+			o_sound_controller.update_event_position_and_play(hurt_sound_event,x,y);
 				
 			var knockback_dis = 8;
 			//move away from the hitbox
@@ -35,9 +37,7 @@ with(other) {
 		scr_screen_shake(.1,1.5);
 				
 		//sound 
-		if (!audio_is_playing(snd_sword_hit)) {
-			audio_play_sound(snd_sword_hit, 10, false, global.volume);
-		}
+		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_HIT, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_HIT,x,y,false);
 				
 		var inst = instance_create_layer(x, (bbox_top + bbox_bottom)/2, LAYER_EFFECTS, o_player_weapon_hit);
 		inst.image_xscale = o_player.facing;

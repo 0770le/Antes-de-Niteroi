@@ -75,9 +75,10 @@ wait_time_initial = random_range(4, 6) * room_speed;
 wait_time = wait_time_initial;
 
 //minimum distance to start chasing
-chase_distance = alert_distance;	
+chase_distance = alert_distance;
 
-
+hurt_sound_event = FMOD_EVENT.TUPI_ARCHER_HURT;
+die_sound_event = FMOD_EVENT.TUPI_ARCHER_DIE;
 //states
 enum tupinamba_states {
 	IDLE,

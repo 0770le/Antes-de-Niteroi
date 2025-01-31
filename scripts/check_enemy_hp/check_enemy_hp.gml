@@ -7,10 +7,8 @@ function check_enemy_hp(){
 			instance_create_layer(x,bbox_top, LAYER_INSTANCES, o_hp);
 			audio_play_sound(snd_hp_spawning, 15, false, global.volume);
 		}
-		//play death sound
-		audio_play_sound(snd_enemy_dying, 10, false, global.volume);
-		//play gem spawn sound
-		audio_play_sound(snd_gems_spawning, 15, false, global.volume);
+		
+		o_sound_controller.update_event_position_and_play(die_sound_event,x,y);
 		
 		repeat(death_gem_value) {
 			instance_create_layer(x, bbox_top, LAYER_INSTANCES, o_gem);

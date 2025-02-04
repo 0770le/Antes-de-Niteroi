@@ -169,7 +169,7 @@ function load_events()
 		]);
 			
 	event_per_enum[? FMOD_EVENT.DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hanging",
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_die",
 		[
 			
 		]);
@@ -229,6 +229,38 @@ function load_events()
 			
 	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_HURT] = new FmodEvent(
 		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_hurt",
+		[
+			
+		]);
+	
+	#endregion
+	
+	#region ARMADEIRA
+			
+	event_per_enum[? FMOD_EVENT.SPIDER_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_die",
+		[
+			
+		]);
+			
+	event_per_enum[? FMOD_EVENT.SPIDER_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_hurt",
+		[
+			
+		]);
+	
+	#endregion
+	
+	#region JARARACA
+			
+	event_per_enum[? FMOD_EVENT.SNAKE_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SNAKE/sfx_enem_snake_die",
+		[
+			
+		]);
+			
+	event_per_enum[? FMOD_EVENT.SNAKE_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SNAKE/sfx_enem_snake_hurt",
 		[
 			
 		]);

@@ -43,8 +43,8 @@ vsp_decimal = 0;
 facing = -1;
 drag = 0.12;
 
-hurt_sound_event = undefined;
-die_sound_event = undefined;
+die_sound_event = FMOD_EVENT.SNAKE_DIE;
+hurt_sound_event = FMOD_EVENT.SNAKE_HURT;
 
 //loot
 hp_drop_chance = 0.3;

@@ -2,6 +2,17 @@ function player_attack_walk_state(){
 	//get input
 	get_input();
 	
+	if(image_index < 3 or image_index > 4) {
+		if jump {
+			jumped();
+			return;
+		}
+		if down {
+			crouched();
+			return;
+		}
+	}
+	
 	//caculate movement
 	if (image_index <= 3 ) {
 		calc_movement();

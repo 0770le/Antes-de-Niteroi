@@ -62,6 +62,9 @@ enum jararaca_states {
 	STOP_DESCEND
 }
 
+die_sound_event = FMOD_EVENT.SNAKE_DIE;
+hurt_sound_event = FMOD_EVENT.SNAKE_HURT;
+
 states_array[enemy_states.IDLE] = jararaca_idle_state;
 states_array[jararaca_states.MOVING] = jararaca_moving_state;
 states_array[jararaca_states.CLIMB] = jararaca_climb_state;

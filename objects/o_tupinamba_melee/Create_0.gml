@@ -82,8 +82,8 @@ enum tupinamba_melee_states {
 	CHASE
 }
 
-hurt_sound_event = FMOD_EVENT.TUPI_MELEE_HURT;
 die_sound_event = FMOD_EVENT.TUPI_MELEE_DIE;
+hurt_sound_event = FMOD_EVENT.TUPI_MELEE_HURT;
 
 //enemy_states
 states_array[enemy_states.IDLE] = tupinamba_melee_idle_state;

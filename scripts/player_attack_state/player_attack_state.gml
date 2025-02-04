@@ -2,6 +2,17 @@ function player_attack_state(){
 	//get input
 	get_input();
 	
+	if(image_index < 3 or image_index > 8) {
+		if jump {
+			jumped();
+			return;
+		}
+		if down {
+			crouched();
+			return;
+		}
+	}
+	
 	//caculate movement
 	if (image_index <= 3 ) {
 		calc_movement();
@@ -36,7 +47,6 @@ function player_attack_state(){
 				runned_once=true;
 			} 	
 		} else{
-			o_sound_controller.stop(FMOD_EVENT.ATTACK_MELEE);
 			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND,x,y);
 			attack_held_time = 0;
 		}

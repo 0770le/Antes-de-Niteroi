@@ -75,9 +75,8 @@ wait_time = wait_time_initial;
 //minimum distance to start chasing
 chase_distance = alert_distance;	
 
-
-hurt_sound_event = FMOD_EVENT.FRENCH_SHOOTER_HURT;
 die_sound_event = FMOD_EVENT.FRENCH_SHOOTER_DIE;
+hurt_sound_event = FMOD_EVENT.FRENCH_SHOOTER_HURT;
 
 //states
 enum frances_states {

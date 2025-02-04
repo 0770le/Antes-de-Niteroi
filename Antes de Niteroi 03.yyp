@@ -613,6 +613,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
+    {"roomId":{"name":"rm_akaray_1","path":"rooms/rm_akaray_1/rm_akaray_1.yy",},},
     {"roomId":{"name":"rm_tests","path":"rooms/rm_tests/rm_tests.yy",},},
     {"roomId":{"name":"rm_tests_1","path":"rooms/rm_tests_1/rm_tests_1.yy",},},
     {"roomId":{"name":"rm_cidade_velha","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},},
@@ -622,7 +623,6 @@
     {"roomId":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"roomId":{"name":"rm_parent","path":"rooms/rm_parent/rm_parent.yy",},},
     {"roomId":{"name":"rm_keryi","path":"rooms/rm_keryi/rm_keryi.yy",},},
-    {"roomId":{"name":"rm_akaray_1","path":"rooms/rm_akaray_1/rm_akaray_1.yy",},},
     {"roomId":{"name":"rm_reri_pe","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},},
   ],
   "templateType":"game",

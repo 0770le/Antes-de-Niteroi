@@ -51,6 +51,14 @@ enum FMOD_VCA
 		FRENCH_SHOOTER_DIE,
 		FRENCH_SHOOTER_HURT,
 		
+		//armadeira
+		SPIDER_DIE,
+		SPIDER_HURT,
+		
+		//jararaca
+		SNAKE_DIE,
+		SNAKE_HURT,
+		
 	}
 
 #endregion

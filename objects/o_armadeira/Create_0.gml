@@ -47,6 +47,9 @@ enum armadeira_states {
 	OUT_OF_SCREEN
 }
 
+die_sound_event = FMOD_EVENT.SPIDER_DIE;
+hurt_sound_event = FMOD_EVENT.SPIDER_HURT;
+
 states_array[armadeira_states.IDLE] = armadeira_idle_state;
 states_array[armadeira_states.WALK] = armadeira_walk_state;
 states_array[armadeira_states.CLIMB] = armadeira_climb_state;

@@ -3,7 +3,7 @@ if instance_exists(o_player) {
 	if (distance_to_object(o_player) < range) {
 		
 		state = passaro_flying;
-		dir = random_range(20,60);
+		dir = random_range(10,45); //20,60
 		if(o_player.x > x) {
 			dir = 180 - dir;
 			image_yscale = -1;

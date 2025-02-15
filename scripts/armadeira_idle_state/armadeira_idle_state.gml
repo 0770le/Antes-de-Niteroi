@@ -24,7 +24,7 @@ function armadeira_idle_state(){
 		
 	}
 
-	if (!on_screen(60)) {
+	if (!on_screen( TILE_SIZE*10)) {
 		state = armadeira_states.OUT_OF_SCREEN;
 	}
 	

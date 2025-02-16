@@ -45,3 +45,6 @@ if(keyboard_check_pressed(vk_f3) and room != rm_seregipe) {
 if(keyboard_check_pressed(vk_f4) and room != rm_morguja_uasu) {
 	fade_to_room(rm_morguja_uasu, 50, 400, other.facing, c_black);	
 }
+if(keyboard_check_pressed(vk_f5) and room != rm_morguja_uasu) {
+	fade_to_room(rm_morguja_uasu, 6900, 750, other.facing, c_black);	
+}

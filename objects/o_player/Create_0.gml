@@ -56,7 +56,7 @@ vine_ball = vine_ball_initial;
 //attack
 dmg = 0;
 can_attack = true;
-attack_delay = 0.7 * room_speed;
+attack_delay = 0.1 * room_speed;
 	//how long enemies get knocked back for when hit
 knockback_time = room_speed /2;
 knockback_dis = 4; //1.5;
@@ -64,7 +64,7 @@ attack_held_time = 0;
 
 //bow
 can_fire = true;
-fire_delay = 0.1 * room_speed; //charging time -> sprites
+fire_delay = 0.0 * room_speed; //charging time -> sprites
 arrows_max = 30;
 arrows_initial = 30;
 arrows = arrows_initial;

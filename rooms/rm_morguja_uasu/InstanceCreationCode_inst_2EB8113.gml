@@ -1,8 +1,8 @@
 //patrol 
 facing = -1;
 patrol = true;
-patrol_left_limit = x - 10;
-patrol_right_limit = x + 10;
+patrol_left_limit = x - 5;
+patrol_right_limit = x + 5;
 patrol_destination = choose(-1,1);
 
 //how long to wait before patrolling

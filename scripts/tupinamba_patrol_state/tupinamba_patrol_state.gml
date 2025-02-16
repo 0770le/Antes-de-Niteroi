@@ -33,7 +33,7 @@ if vsp != 0 and !on_ground() {
 //sees player
 if alert {
 //shoot
-	if can_attack {
+	if ((o_player.hp > 0) and (can_attack) and line_of_sight() and on_screen(64)) {
 	state = tupinamba_states.SHOOT;
 	can_fire = true;
 	image_index=0;

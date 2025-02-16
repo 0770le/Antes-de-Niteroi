@@ -23,7 +23,7 @@ o_enemy = object_index;
 enemy_animation = tupinamba_anim;
 
 //alert
-alert_distance = (TILE_SIZE*2) * 20;
+alert_distance = TILE_SIZE * 16;
 alert_cooling = room_speed * random_range(3, 4);
 
 //movement 

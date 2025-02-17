@@ -16,11 +16,8 @@ function player_walk_state(){
 		state = states.IDLE;
 	}
 	
-	var _tile = play_walk_sound(image_index, image_speed,[2,7], x, y);
+	play_walk_sound(image_index, image_speed,[2,7], x, y);
 	
-	if(!is_undefined(_tile) and _tile == FMOD_PARAMETER_MOVE_WALK.DIRT) {
-		emit_smoke(x + (5*facing),bbox_bottom,0.1,0.3,1,1);	
-	}
 	
 	 //check if falling off ledge
 	var _bottom = bbox_bottom;

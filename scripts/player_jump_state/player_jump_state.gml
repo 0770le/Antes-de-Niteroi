@@ -20,8 +20,11 @@ function player_jump_state(){
 		} else {
 			state = states.IDLE;
 		}
-		//create dust if landing
-		if (vsp > 2) {
+		
+		var _water_tile = tilemap_get_at_pixel(layer_tilemap_get_id(LAYER_WATER), bbox_left, bbox_bottom-1);
+		if(_water_tile > 0) {
+			emit_water(x,y-4,irandom_range(20,25));
+		} else if (vsp > 2) {
 			instance_create_layer(x,y, LAYER_EFFECTS, o_player_dust_land);
 			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.LAND,x,y);
 		}	

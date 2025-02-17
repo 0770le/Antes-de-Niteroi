@@ -1,5 +1,5 @@
 function emit_smoke(xPos, yPos, minSize, maxSize, radius, ammount, spdMin=0, spdMax=0.2, spdInc = 0, dirMin=0, dirMax=359, distribution = ps_distr_gaussian) {
-	with(SmokeParticle){
+	with(o_smoke_particle){
 	    part_type_size(partSmoke, minSize, maxSize, 0, 0);
 		
 		

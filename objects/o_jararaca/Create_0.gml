@@ -40,7 +40,7 @@ spd_array[jararaca_spds.SLOW]	=	0.2;
 img_spd_array[jararaca_spds.TOP]	=	2;
 img_spd_array[jararaca_spds.FAST]	=	1.5;
 img_spd_array[jararaca_spds.MID]	=	1;
-img_spd_array[jararaca_spds.SLOW]	=	0.5;
+img_spd_array[jararaca_spds.SLOW]	=	0.1;
 
 //speeds
 enum jararaca_spds {

@@ -1,9 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y){
-	var _tile = undefined;
-	if(((_image_index >= _sound_indexes[0]) and (_image_index < (_sound_indexes[0]+1)) and ((_image_index - _image_speed) < _sound_indexes[0])) or
-	((_image_index >= _sound_indexes[1]) and (_image_index < (_sound_indexes[1]+1)) and ((_image_index - _image_speed) < _sound_indexes[1]))) {
+	if(last_walk_index != floor(_image_index) and (((_image_index >= _sound_indexes[0]) and (_image_index < (_sound_indexes[0]+1)) and ((_image_index - _image_speed) < _sound_indexes[0])) or
+	((_image_index >= _sound_indexes[1]) and (_image_index < (_sound_indexes[1]+1)) and ((_image_index - _image_speed) < _sound_indexes[1])))) {
+		
+		last_walk_index = floor(_image_index);
+		
 		var t = tilemap_get_at_pixel(global.ground_map, x, bbox_bottom + 10);
 		var param;
 		if(t == 0) {
@@ -20,9 +22,15 @@ function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y){
 			param = FMOD_PARAMETER_MOVE_WALK.TREE
 		}
 		
-		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.WALK, FMOD_PARAMETER_NAME_MOVE, param, _x, _y)
-		_tile = param;
-	}
+		var _water_tile = tilemap_get_at_pixel(layer_tilemap_get_id(LAYER_WATER), bbox_left, bbox_bottom-1);
 	
-	return _tile;
+		if(_water_tile > 0) {
+			emit_water(x,y-5,irandom_range(2,4));
+		} else if(param == FMOD_PARAMETER_MOVE_WALK.DIRT) {
+			emit_smoke(x + (5*facing),bbox_bottom,0.1,0.3,1,1);	
+		}
+		
+		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.WALK, FMOD_PARAMETER_NAME_MOVE, param, _x, _y)
+		
+	}
 }

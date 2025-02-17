@@ -40,9 +40,9 @@ function jararaca_moving_state(){
 		var t1 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + (TILE_SIZE)*2+1);	//3º bloco abaixo
 		var t2 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + (TILE_SIZE)*3+1);	//4º bloco abaixo
 		
-		var t0_2 = tilemap_get_at_pixel(global.map, x,  bbox_bottom + (TILE_SIZE)+1);		//2º bloco diretamente abaixo
-		var t1_2 = tilemap_get_at_pixel(global.map, x,  bbox_bottom + (TILE_SIZE)*2+1);	//3º bloco diretamente abaixo
-		var t2_2 = tilemap_get_at_pixel(global.map, x,  bbox_bottom + (TILE_SIZE)*3+1);	//4º bloco diretamente abaixo
+		var t0_2 = tilemap_get_at_pixel(global.map, side() -2*facing,  bbox_bottom + (TILE_SIZE)+1);		//2º bloco diretamente abaixo
+		var t1_2 = tilemap_get_at_pixel(global.map, side() -2*facing,  bbox_bottom + (TILE_SIZE)*2+1);	//3º bloco diretamente abaixo
+		var t2_2 = tilemap_get_at_pixel(global.map, side() -2*facing,  bbox_bottom + (TILE_SIZE)*3+1);	//4º bloco diretamente abaixo
 		
 		if(t0 == VOID and t1 == VOID and t2 == VOID and t0_2 == SOLID and t1_2 == SOLID and t2_2 == SOLID) {
 			state = jararaca_states.START_DESCEND;

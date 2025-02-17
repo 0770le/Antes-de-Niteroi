@@ -19,6 +19,7 @@ death_protection = false;
 
 //auxiliar
 runned_once = false;
+last_walk_index = 0;
 
 //evade
 has_evade = true;

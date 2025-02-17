@@ -89,6 +89,8 @@ function macros(){
 #macro LAYER_MESSAGES				"Messages"
 
 #macro LAYER_GROUND					"Tiles_ground"
+#macro LAYER_WATER					"Tiles_water"
+
 #macro LAYER_COLLISION				"Collisions"
 
 #macro LAYER_EFFECTS				"Effects"

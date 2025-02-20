@@ -1,18 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"o_menu_controller",
+  "%Name":"o_options_controller",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_menu_controller",
+  "name":"o_options_controller",
   "overriddenProperties":[],
   "parent":{
     "name":"Controller",
-    "path":"folders/Objects/GUI/Menu/Controller.yy",
+    "path":"folders/Objects/Options/Controller.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"s_window_middle_center",
-    "path":"sprites/s_window_middle_center/s_window_middle_center.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

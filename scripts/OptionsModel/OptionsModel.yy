@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"OptionsModel",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"OptionsModel",
+  "parent":{
+    "name":"Model",
+    "path":"folders/Objects/Options/Model.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

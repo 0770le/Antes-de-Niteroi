@@ -36,6 +36,11 @@ screen_shake = false;
 screen_shake_amount_initial = 3;
 screen_shake_amount = screen_shake_amount_initial;
 
+function on_options_change(_options = new OptionsModel())
+{
+	window_set_fullscreen(_options.fullscreen);
+}
+
 //move to main room
 room_goto_next();
 

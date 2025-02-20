@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MenuItem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MenuItem",
+  "parent":{
+    "name":"Model",
+    "path":"folders/Objects/GUI/Menu/Model.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

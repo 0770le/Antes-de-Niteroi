@@ -1,101 +1,188 @@
-event_inherited();
+toggle_key			= vk_f10;
+is_open				= false;
+x					= 320;
+y					= 180;
+image_xscale		= 16 / 2;
+image_yscale		= 9 / 2;
+font				= fnt_arial_medium_to_small;
+font_description    = fnt_arial_small;
 
-enum MENU_BUTTON {
-CLOSE,		//0
-LOG,		//1
-QUIT		//2
+root_menu			= noone;
+
+x_padding			= 20;
+y_padding			= 20;
+x_level_padding		= 14;
+y_level_padding		= 20;
+selector_padding	= 12;
+
+function draw_pointer(_position = 0)
+{
+	draw_text(
+		bbox_left + x_padding, 
+		bbox_top + y_padding + (1 + _position) * y_level_padding, 
+		">>>"); 
 }
 
-parent_layer		= LAYER_GUI_MENU;
-window_layer		= LAYER_GUI_MENU_WINDOW;
-buttons_layer		= LAYER_GUI_MENU_BUTTONS;
+function draw_parent()
+{
+	draw_set_font(font);
+	
+	draw_text(bbox_left + x_padding, bbox_top + y_padding, selected_item.parent.title); 
+}
 
-window_xscale		= 6.5;
-window_yscale		= 3.2;
+function draw_item(_menu_item = new MenuItem(), _index = 0)
+{
+	draw_set_font(font_description);
+	draw_set_color(c_black);
+	
+	if (_menu_item.type == MENU_TYPE.LEAF)
+	{
+		var _sprite_padding = 0;
+		
+		if (_menu_item.sprite != noone)
+		{
+			var _sprite_x = bbox_left + 46;
+			var _sprite_y = bbox_top + 66;
+			var _sprite_width = 24;
+			var _sprite_height = 24;
+				
+			draw_rectangle(
+				_sprite_x - _sprite_width, 
+				_sprite_y - _sprite_height, 
+				_sprite_x + _sprite_width, 
+				_sprite_y + _sprite_height, true);
+		
+			draw_sprite(_menu_item.sprite, 0, _sprite_x, _sprite_y);
+			
+			_sprite_padding += _sprite_width + 20;
+		}
+		
+		draw_text_ext(
+			bbox_left + x_padding + x_level_padding + _sprite_padding, 
+			bbox_top + y_padding + (1 + _index) * y_level_padding, 
+			_menu_item.title, 15, 420);
+	}
+	else 
+	{
+		draw_text(
+			bbox_left + x_padding + x_level_padding + selector_padding, 
+			bbox_top + y_padding + (1 + _index) * y_level_padding, 
+			_menu_item.title); 
+	}
+	
+	if (_menu_item.type == MENU_TYPE.CHECKBOX) 
+	{
+		draw_text_ext(
+			bbox_right - 40, 
+			bbox_top + y_padding + (1 + _index) * y_level_padding, 
+			_menu_item.checked ? "V" : "X", 15, 420);
+	}
+}
 
-button_close		= noone;
-button_quit			= noone;
-button_log			= noone;
+function draw_menu_items() 
+{
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	draw_set_color(c_black);
 
-//recebe a funçao do parent e guarda
-parent_open			= open;
-parent_close		= close;
+	draw_set_font(font);
+	
+	var _selected_group = selected_item.parent;
+	
+	draw_parent();
+	
+	array_foreach(_selected_group.children, function(_child, _index) 
+	{ 
+		draw_item(_child, _index);
+		
+		if (_child == selected_item && _child.type != MENU_TYPE.LEAF)
+		{
+			draw_pointer(_index);
+		}
+	});
+}
 
 function open() {
-	//pause game
+	is_open = true;
+	
 	instance_deactivate_all(true);
-	instance_activate_layer(LAYER_CONTROLLERS);
-	
-	parent_open();
-	
-	set_focus(true);
 }
 
-
-//despausa o jogo, fecha outras janelas, chama parent close e tira o foco de outras janelas
 function close() {
 	instance_activate_all();
 	
-	o_confirmation_controller.close();
-	o_log_controller.close();
-	o_biodiversidade_controller.close();
+	is_open = false;
 	
-	parent_close();
-	
-	set_focus(false);
+	selected_item = root_menu.children[0];
 }
 
-function create_content() {
-	title.label = "Menu";
+function init()
+{
+	global.menu_controller = self;
 	
-	//adiciona botoes
-	button_close = instance_create_layer(title.x + 25, title.y + 50, buttons_layer, o_button_option);
-	//cor do texto
-	button_close.label = "Voltar ao jogo"
-	//funçao
-	button_close.on_click = function() {
-		close()
-	};
-	update_selected_button(button_close);
-
-	button_log = instance_create_layer(title.x + 25, title.y + 75, buttons_layer, o_button_option);
-	button_log.label = "Log"
-	//funçao de chamar o log
-	button_log.on_click = function() {
-		o_log_controller.open();
-		o_log_controller.set_focus(true);
-		o_log_controller.on_close = function() {
-			//dealy para evitar que a funçao ocorra no mesmo frame
-			call_later(1, time_source_units_frames, function () { set_focus(true) });
-		};
-	};
-
-	button_quit = instance_create_layer(title.x + 25, title.y + 100, buttons_layer, o_button_option);
-	button_quit.label = "Sair do jogo"
+	root_menu = new MenuNode("Menu Principal");
+	root_menu.add_child(new MenuButton("Voltar ao Jogo", close));
 	
-	button_quit.on_click = function() {
-		//sobrescrevi a funçao on_confirm para fechar o jogo
-		o_confirmation_controller.on_confirm = function() {
-			game_end();
-		}
-		
-		o_confirmation_controller.on_cancel = function() {
-			//dealy para evitar que a funçao ocorra no mesmo frame "reabrir confirmaçao"
-			call_later(1, time_source_units_frames, function () { set_focus(true) });
-		}
-		
-		o_confirmation_controller.on_close = function() {
-			//dealy para evitar que a funçao ocorra no mesmo frame
-			call_later(1, time_source_units_frames, function () { set_focus(true) });
-		};
-		
-		//mudança da pergunta
-		o_confirmation_controller.set_statement("Deseja sair do jogo?")
-		o_confirmation_controller.set_focus(true);
-		o_confirmation_controller.open();		
-	};
+	var _log_node = root_menu.add_child(new MenuNode("Registros"));
 	
-	array_push(option_group, button_close, button_log, button_quit);
+	var _biodiversity_node = _log_node.add_child(new MenuNode("Biodiversidade"));
+	
+	var _arara_caninde_node = _biodiversity_node.add_child(new MenuNode("Arara-canindé"));
+	_arara_caninde_node.add_child(
+		new MenuLeaf(
+			"A arara-canindé (Ara ararauna) é uma ave impressionante, famosa por sua plumagem azul e amarela. Os tupinambás a adoravam, capturando-a viva para usar suas penas em rituais importantes, mas sem causar danos, soltando-a em seguida. Social e inteligente, essa arara tem um bico forte para quebrar sementes e desempenha um papel crucial na dispersão de sementes nas florestas tropicais.",
+			s_jararaca_idle
+		)
+	);
+	
+	var _aranha_armadeira_node = _biodiversity_node.add_child(new MenuNode("Armadeira"));
+	_aranha_armadeira_node.add_child(
+		new MenuLeaf(
+			"A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.",
+			s_armadeira_idle
+		)
+	);
+	
+	var _frances_node = _biodiversity_node.add_child(new MenuNode("Francês"));
+	_frances_node.add_child(
+		new MenuLeaf(
+			"Franceses são inimigos!",
+			s_frances_idle
+		)
+	);
+	
+	var _regions_node = _log_node.add_child(new MenuNode("Regiões"));
+	var _cidade_velha_node = _regions_node.add_child(new MenuNode("Cidade-Velha"));
+	_cidade_velha_node.add_child(
+		new MenuLeaf(
+			"Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações."
+		)
+	);
+	
+	var _history_node = _log_node.add_child(new MenuNode("História"))
+	
+	var _nova_historia_node = _history_node.add_child(new MenuNode("Nova História"));
+	_nova_historia_node.add_child(
+		new MenuLeaf(
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non lacus ac nunc elementum euismod. Phasellus eros diam, convallis quis lorem eu, aliquam viverra lorem. Donec dapibus odio eu ipsum sagittis, sed convallis turpis finibus. Mauris id mollis augue. Vestibulum egestas nisl id lorem egestas, in efficitur justo rutrum. Proin eu leo quis justo bibendum accumsan eu non lorem. Vivamus consectetur sem nulla, nec tempor elit consequat sed."
+		)
+	);
+	
+	root_menu.add_child(new MenuCheckbox("Tela Cheia", function ()
+	{
+		var _is_fullscreen = global.options_controller.get_option(OPTIONS_FULLSCREEN);
+		
+		self.checked = !_is_fullscreen;
+		
+		global.options_controller.set_option(OPTIONS_FULLSCREEN, !_is_fullscreen);
+	}));
+	
+	root_menu.add_child(new MenuButton("Sair do Jogo", function() 
+	{ 
+		game_end(0); 
+	}));
+	
+	selected_item = root_menu.children[0];
 }
 
 init();

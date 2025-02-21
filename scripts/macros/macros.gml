@@ -78,12 +78,16 @@ function macros(){
 #macro LAYER_GUI_LOG_ENTRY					"GUI_Log_Entry"
 #macro LAYER_GUI_LOG_ENTRY_BUTTONS			"GUI_Log_Entry_Buttons"
 #macro LAYER_GUI_LOG_ENTRY_WINDOW			"GUI_Log_Entry_Window"
-
 	
 //Layer Biodiversidade
-#macro LAYER_GUI_BIODIVERSIDADE					"GUI_Biodiversidade"
-#macro LAYER_GUI_BIODIVERSIDADE_BUTTONS			"GUI_Biodiversidade_Buttons"
-#macro LAYER_GUI_BIODIVERSIDADE_WINDOW			"GUI_Biodiversidade_Window"
+#macro LAYER_GUI_BIODIVERSIDADE				"GUI_Biodiversidade"
+#macro LAYER_GUI_BIODIVERSIDADE_BUTTONS		"GUI_Biodiversidade_Buttons"
+#macro LAYER_GUI_BIODIVERSIDADE_WINDOW		"GUI_Biodiversidade_Window"
+
+//Layer Catalog
+#macro LAYER_GUI_CATALOG					"GUI_Catalog"
+#macro LAYER_GUI_CATALOG_BUTTONS			"GUI_Catalog_Buttons"
+#macro LAYER_GUI_CATALOG_WINDOW				"GUI_Catalog_Window"
 
 
 #macro LAYER_MESSAGES				"Messages"

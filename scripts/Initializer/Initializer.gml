@@ -7,35 +7,57 @@ constructor
 	
 	static focus = function (_object_index = obj_menu_controller)
 	{
-		instance_deactivate_all(false);
-		
-		// deactivate mutually exclusive		
-		for (var _i = 0; _i < array_length(mutually_exclusives); _i++)
+		if (_object_index == noone) 
 		{
-			if (_object_index != mutually_exclusives[_i])
+			instance_activate_all();
+			
+			for (var _i = 0; _i < array_length(mutually_exclusives); _i++)
 			{
+				with(mutually_exclusives[_i])
+				{
+					hide_all();
+				}
+				
 				instance_deactivate_object(mutually_exclusives[_i]);
 			}
 		}
-		
-		// reactivate objects that cannot be deactivated
-		for (var _i = 0; _i < array_length(always_actives); _i++)
+		else 
 		{
-			instance_activate_object(always_actives[_i]);
-		}
+			instance_deactivate_all(true);
+			
+			// deactivate mutually exclusive		
+			for (var _i = 0; _i < array_length(mutually_exclusives); _i++)
+			{
+				if (_object_index != mutually_exclusives[_i])
+				{
+					with(mutually_exclusives[_i]) 
+					{
+						hide_all();
+					}
+				
+					instance_deactivate_object(mutually_exclusives[_i]);
+				}
+			}
 		
-		// reactivate focused object
-		instance_activate_object(_object_index);
+			// reactivate objects that cannot be deactivated
+			for (var _i = 0; _i < array_length(always_actives); _i++)
+			{
+				instance_activate_object(always_actives[_i]);
+			}
+		
+			// reactivate focused object
+			instance_activate_object(_object_index);
+		}
 	}
 	
 	static init = function () 
 	{
-		for (var _i = 0; _i < array_length(creation_order); _i++)
-		{
-			instance_create_layer(0, 0, LAYER_CONTROLLERS, creation_order[_i]);
-		}
-		
 		global.initializer = self;
+		
+		for (var _i = 0; _i < array_length(creation_order); _i++)
+		{			
+			instance_create_layer(0, 0, LAYER_CONTROLLERS, creation_order[_i]);
+		}
 	}
 	
 	init();

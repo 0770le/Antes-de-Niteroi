@@ -1,15 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_catalog_controller",
+  "%Name":"obj_catalog_tab",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_catalog_controller",
+  "name":"obj_catalog_tab",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controller",
-    "path":"folders/Objects/GUI/Catalog/Controller.yy",
+    "name":"View",
+    "path":"folders/Objects/GUI/Catalog/View.yy",
   },
   "parentObjectId":{
     "name":"obj_shared_window",
@@ -32,7 +34,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_catalog_tab",
+    "path":"sprites/spr_catalog_tab/spr_catalog_tab.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

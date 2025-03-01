@@ -1,44 +1,34 @@
-x					= 320;
-y					= 180;
-image_xscale		= 16 / 2;
-image_yscale		= 9 / 2;
-is_open				= false;
+event_inherited();
+
+window = noone;
+
+sub_layers = 
+[
+	LAYER_GUI_CATALOG, LAYER_GUI_CATALOG_BUTTONS, LAYER_GUI_CATALOG_WINDOW
+]
 
 function open()
 {
-	is_open = true;
-	
-	global.menu_controller.close();
-	
-	global.initializer.focus(object_index);
+	window.open();
 }
 
 function close()
 {
-	instance_activate_all();
-	
-	is_open = false;
+	window.close();
 }
 
-function on_input_menu(_input = new MenuInputModel())
+function create_content()
 {
-	if (!is_open)
-	{
-		if (_input.toggle_catalog) 
-		{
-			open();
-		} 
-		
-		return;
-	}
-	
-	if (_input.toggle_catalog) close();
+	window = instance_create_layer(0, 0, LAYER_GUI_CATALOG_WINDOW, obj_catalog_window);
 }
 
 function init()
 {
 	global.catalog_controller = self;
-	global.input_manager.subscribe(self, INPUT_TYPE.MENU);
+	
+	create_content();
+	
+	close();
 }
 
 init();

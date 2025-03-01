@@ -14,7 +14,10 @@
     "name":"Controller",
     "path":"folders/Objects/GUI/Menu/Controller.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_shared_window",
+    "path":"objects/obj_shared_window/obj_shared_window.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_catalog_controller",
+  "%Name":"obj_catalog_window",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_catalog_controller",
+  "name":"obj_catalog_window",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controller",
-    "path":"folders/Objects/GUI/Catalog/Controller.yy",
+    "name":"View",
+    "path":"folders/Objects/GUI/Catalog/View.yy",
   },
-  "parentObjectId":{
-    "name":"obj_shared_window",
-    "path":"objects/obj_shared_window/obj_shared_window.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_catalog_window",
+    "path":"sprites/spr_catalog_window/spr_catalog_window.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

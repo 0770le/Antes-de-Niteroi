@@ -1,8 +1,10 @@
+event_inherited();
+
 is_open				= false;
 x					= 320;
 y					= 180;
-image_xscale		= 16 / 2;
-image_yscale		= 9 / 2;
+image_xscale		= 16 / 5;
+image_yscale		= 9 / 4;
 font				= fnt_arial_medium_to_small;
 font_description    = fnt_arial_small;
 
@@ -18,6 +20,23 @@ fullscreen_button   = noone;
 volume_master       = noone;
 volume_music		= noone;
 volume_sfx          = noone;
+
+function open() {
+	is_open = true;
+	
+	global.catalog_controller.close();
+	
+	global.initializer.focus(object_index);
+}
+
+function close() {
+	
+	global.initializer.focus(noone);
+	
+	is_open = false;
+	
+	selected_item = root_menu.children[0];
+}
 
 function draw_pointer(_position = 0)
 {
@@ -114,22 +133,6 @@ function draw_menu_items()
 	});
 }
 
-function open() {
-	is_open = true;
-	
-	global.catalog_controller.close();
-	
-	global.initializer.focus(object_index);
-}
-
-function close() {
-	instance_activate_all();
-	
-	is_open = false;
-	
-	selected_item = root_menu.children[0];
-}
-
 function on_input_menu(_input = new MenuInputModel()) 
 {
 	if (!is_open)
@@ -214,52 +217,10 @@ function init()
 	// Back to the Game
 	root_menu.add_child(new MenuButton("Voltar ao Jogo", close));
 	
-	// Registry
-	var _log_node = root_menu.add_child(new MenuNode("Registros"));
-	
-	var _biodiversity_node = _log_node.add_child(new MenuNode("Biodiversidade"));
-	
-	var _arara_caninde_node = _biodiversity_node.add_child(new MenuNode("Arara-canindé"));
-	_arara_caninde_node.add_child(
-		new MenuLeaf(
-			"A arara-canindé (Ara ararauna) é uma ave impressionante, famosa por sua plumagem azul e amarela. Os tupinambás a adoravam, capturando-a viva para usar suas penas em rituais importantes, mas sem causar danos, soltando-a em seguida. Social e inteligente, essa arara tem um bico forte para quebrar sementes e desempenha um papel crucial na dispersão de sementes nas florestas tropicais.",
-			s_jararaca_idle
-		)
-	);
-	
-	var _aranha_armadeira_node = _biodiversity_node.add_child(new MenuNode("Armadeira"));
-	_aranha_armadeira_node.add_child(
-		new MenuLeaf(
-			"A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.",
-			s_armadeira_idle
-		)
-	);
-	
-	var _frances_node = _biodiversity_node.add_child(new MenuNode("Francês"));
-	_frances_node.add_child(
-		new MenuLeaf(
-			"Franceses são inimigos!",
-			s_frances_idle
-		)
-	);
-	
-	var _regions_node = _log_node.add_child(new MenuNode("Regiões"));
-	var _cidade_velha_node = _regions_node.add_child(new MenuNode("Cidade-Velha"));
-	_cidade_velha_node.add_child(
-		new MenuLeaf(
-			"Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações."
-		)
-	);
-	
-	var _history_node = _log_node.add_child(new MenuNode("História"))
-	
-	var _nova_historia_node = _history_node.add_child(new MenuNode("Nova História"));
-	_nova_historia_node.add_child(
-		new MenuLeaf(
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non lacus ac nunc elementum euismod. Phasellus eros diam, convallis quis lorem eu, aliquam viverra lorem. Donec dapibus odio eu ipsum sagittis, sed convallis turpis finibus. Mauris id mollis augue. Vestibulum egestas nisl id lorem egestas, in efficitur justo rutrum. Proin eu leo quis justo bibendum accumsan eu non lorem. Vivamus consectetur sem nulla, nec tempor elit consequat sed."
-		)
-	);
-	
+	root_menu.add_child(new MenuButton("Catálogo", function () 
+	{
+		global.catalog_controller.open();	
+	}));
 	
 	// Options	
 	var _options_node = root_menu.add_child(new MenuNode("Opções"))

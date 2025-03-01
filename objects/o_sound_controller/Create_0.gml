@@ -281,12 +281,13 @@ function load_vcas()
 
 function on_options_change(_options = instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_options_instance))
 {
+	master_enabled	= _options.master_enabled;
 	music_enabled	= _options.music_enabled;
 	sfx_enabled		= _options.sfx_enabled;
-	music_volume	= _options.music_volume;
-	sfx_volume		= _options.sfx_volume;
-	master_enabled	= _options.master_enabled;
-	master_volume	= _options.master_volume;
+	
+	master_volume	= floor(_options.master_volume / 10);
+	music_volume	= floor(_options.music_volume / 10);
+	sfx_volume		= floor(_options.sfx_volume / 10);
 	
 	fmod_studio_bus_set_volume(busses_per_enum[? FMOD_BUS.MASTER], master_enabled ? (master_volume / 100) : 0);
 	

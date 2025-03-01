@@ -74,7 +74,8 @@ constructor
 	left			= false;
 	right			= false;
 	
-	toggle			= false;
+	toggle_menu		= false;
+	toggle_catalog  = false;
 	
 	cancel			= false;
 	confirm			= false;

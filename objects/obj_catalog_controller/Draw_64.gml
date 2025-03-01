@@ -1,0 +1,1 @@
+if (is_open) draw_self();

@@ -1,15 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_menu_slider",
+  "%Name":"obj_catalog_controller",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_menu_slider",
+  "name":"obj_catalog_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"menu_slider",
-    "path":"folders/Objects/GUI/Menu/Model/menu_slider.yy",
+    "name":"Controller",
+    "path":"folders/Objects/GUI/Catalog/Controller.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_catalog_window",
+    "path":"sprites/spr_catalog_window/spr_catalog_window.yy",
+  },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

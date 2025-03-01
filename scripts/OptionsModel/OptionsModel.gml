@@ -3,11 +3,11 @@ function OptionsModel (
 	{
 		fullscreen: false,
 		master_enabled: true,
-		master_volume: 1.0,
+		master_volume: 10,
 		music_enabled: true,
-		music_volume: 1.0,
+		music_volume: 10,
 		sfx_enabled: true,
-		sfx_volume: 1.0
+		sfx_volume: 10
 	}) 
 constructor 
 {

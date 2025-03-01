@@ -43,7 +43,7 @@ function notify_listeners()
 
 function write_all()
 {
-	var _json = json_stringify(options, true);
+	var _json = json_stringify(options);
 	
 	var _savefile = file_text_open_write(savefile);
 	
@@ -67,7 +67,7 @@ function read_all()
 		options = new OptionsModel(_options_model);	
 	} catch (_e) {
 		
-		global.logger.error("failed to load options file");
+		global.logger.error($"failed to load options file: {_e}");
 		
 		options = new OptionsModel();
 		
@@ -99,6 +99,7 @@ function set_option(_option_macro = OPTIONS_FULLSCREEN, _new_value = 0)
 function register_listeners()
 {
 	with(o_camera) other.register_listener(self);
+	with(o_sound_controller) other.register_listener(self);
 }
 
 function init()

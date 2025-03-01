@@ -1,17 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_catalog_text",
+  "%Name":"obj_menu_slider",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_catalog_text",
+  "name":"obj_menu_slider",
   "overriddenProperties":[],
   "parent":{
-    "name":"Model",
-    "path":"folders/Objects/GUI/Shared/Model.yy",
+    "name":"menu_slider",
+    "path":"folders/Objects/GUI/Menu/Model/menu_slider.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,5 +31,5 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

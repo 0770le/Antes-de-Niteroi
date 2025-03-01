@@ -1,8 +1,8 @@
-font = fnt_arial_small;
-text = "Placeholder";
-valign = fa_top;
-halign = fa_left;
-color = c_black;
+font	= fnt_arial_small;
+text	= "Placeholder";
+valign	= fa_top;
+halign	= fa_left;
+color	= c_black;
 
 function get_text_witdh()
 {

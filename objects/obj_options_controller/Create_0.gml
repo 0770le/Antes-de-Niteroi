@@ -43,7 +43,7 @@ function notify_listeners()
 
 function write_all()
 {
-	var _json = json_stringify(options);
+	var _json = json_stringify(options, true);
 	
 	var _savefile = file_text_open_write(savefile);
 	
@@ -54,15 +54,25 @@ function write_all()
 
 function read_all()
 {
-	show_debug_message($"reading log file {filename_path(savefile)}{savefile}");
+	global.logger.debug($"reading log file {filename_path(savefile)}{savefile}");
 	
-	var _savefile = file_text_open_read(savefile);
+	try {
+		
+		var _savefile = file_text_open_read(savefile);
 	
-	var _json = file_text_read_string(_savefile);
+		var _json = file_text_read_string(_savefile);
 	
-	var _options_model = json_parse(_json);
+		var _options_model = json_parse(_json);
 	
-	options = new OptionsModel(_options_model);
+		options = new OptionsModel(_options_model);	
+	} catch (_e) {
+		
+		global.logger.error("failed to load options file");
+		
+		options = new OptionsModel();
+		
+		write_all();
+	}
 }
 
 #endregion

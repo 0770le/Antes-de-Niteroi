@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"InputModel",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InputModel",
+  "parent":{
+    "name":"Model",
+    "path":"folders/Objects/InputManager/Model.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

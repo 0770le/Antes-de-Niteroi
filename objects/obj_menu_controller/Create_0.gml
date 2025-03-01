@@ -106,6 +106,8 @@ function open() {
 	is_open = true;
 	
 	instance_deactivate_all(true);
+	
+	instance_activate_layer(LAYER_CONTROLLERS);
 }
 
 function close() {
@@ -114,6 +116,68 @@ function close() {
 	is_open = false;
 	
 	selected_item = root_menu.children[0];
+}
+
+function on_input_menu(_input = new MenuInputModel()) 
+{
+	if (!is_open)
+	{
+		if (_input.toggle)
+		{
+			open();
+		}
+	
+		return;
+	} 
+	
+	if (_input.toggle)
+	{
+		selected_item = root_menu;
+		
+		close();
+	}
+
+	if (_input.confirm) 
+	{
+		switch (selected_item.type)
+		{
+			case MENU_TYPE.NODE:
+				selected_item = selected_item.children[0];
+			
+				break;
+			case MENU_TYPE.LEAF:
+				// do nothing
+			
+				break;
+			case MENU_TYPE.BUTTON:
+			case MENU_TYPE.CHECKBOX:
+				selected_item.on_click();	
+			
+				break;
+		}
+	}
+
+	if (_input.up) 
+	{
+		selected_item = selected_item.previous;
+	}
+
+	if (_input.down) 
+	{
+		selected_item = selected_item.next;
+	}
+
+	if (_input.cancel) 
+	{
+		if (selected_item.parent != selected_item.parent.parent)
+		{
+			selected_item = selected_item.parent;
+		}
+		else 
+		{
+			close();
+		}
+	}
 }
 
 function init()
@@ -183,6 +247,8 @@ function init()
 	}));
 	
 	selected_item = root_menu.children[0];
+	
+	global.input_manager.subscribe(self, INPUT_TYPE.MENU);
 }
 
 init();

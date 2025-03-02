@@ -1,7 +1,7 @@
 event_inherited();
 
-image_yscale	= 1.5;
-image_xscale	= 4;
+image_yscale	= 0.5;
+image_xscale	= 0.5;
 label			= "Placeholder";
 font			= fnt_arial_medium;
 previous		= self;
@@ -21,7 +21,7 @@ function draw()
 {
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
-	draw_set_color(c_black);
+	draw_set_color(c_white);
 	draw_set_font(font);
 	
 	var _xx = get_sprite_center_x();

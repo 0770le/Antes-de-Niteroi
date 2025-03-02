@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_catalog_tab",
-    "path":"sprites/spr_catalog_tab/spr_catalog_tab.yy",
+    "name":"spr_catalog_tab_2",
+    "path":"sprites/spr_catalog_tab_2/spr_catalog_tab_2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

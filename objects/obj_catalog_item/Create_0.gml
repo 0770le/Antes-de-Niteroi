@@ -4,8 +4,8 @@ event_inherited();
 layer_text		= LAYER_GUI_CATALOG_BUTTONS;
 
 catalog_text	= noone;
-image_xscale	= 4;
-image_yscale	= 1;
+image_xscale	= 1.2;
+image_yscale	= 1.2;
 top_y			= bbox_top;
 
 // text
@@ -41,20 +41,22 @@ function draw()
 	draw_set_valign(valign);
 	draw_set_halign(halign);
 	draw_set_color(color);
+	draw_set_color(c_white);
 	
 	draw_text(x + 10, get_sprite_center_y(), label);
 	
 	// image
 	if (image_index == 1) return; // not active
 	
-	draw_sprite(image, 0, bbox_right + 2, top_y + 5);
+	draw_sprite(image, 0, bbox_right + 40, top_y + 40);
 	
 	// description
-	var _xx = bbox_right + sprite_get_width(image) + 10;
+	var _xx = bbox_right + sprite_get_width(image) + 70;
 	
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
+	draw_set_color(c_black);
 	draw_set_font(fnt_arial_medium);
 	
-	draw_text_ext(_xx, top_y + 10, text, 30, 600-64);
+	draw_text_ext(_xx, top_y + 40, text, 30, 600-94);
 }

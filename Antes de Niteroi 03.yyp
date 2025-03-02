@@ -136,6 +136,7 @@
   "name":"Antes de Niteroi 03",
   "resources":[
     {"id":{"name":"FMOD","path":"extensions/FMOD/FMOD.yy",},},
+    {"id":{"name":"fnt_arial_medium_bold","path":"fonts/fnt_arial_medium_bold/fnt_arial_medium_bold.yy",},},
     {"id":{"name":"fnt_arial_medium_to_large","path":"fonts/fnt_arial_medium_to_large/fnt_arial_medium_to_large.yy",},},
     {"id":{"name":"fnt_arial_medium_to_small","path":"fonts/fnt_arial_medium_to_small/fnt_arial_medium_to_small.yy",},},
     {"id":{"name":"fnt_arial_medium","path":"fonts/fnt_arial_medium/fnt_arial_medium.yy",},},
@@ -634,6 +635,8 @@
     {"id":{"name":"spr_catalog_tab","path":"sprites/spr_catalog_tab/spr_catalog_tab.yy",},},
     {"id":{"name":"spr_catalog_window","path":"sprites/spr_catalog_window/spr_catalog_window.yy",},},
     {"id":{"name":"spr_font_small","path":"sprites/spr_font_small/spr_font_small.yy",},},
+    {"id":{"name":"spr_gamepad_xbox_a","path":"sprites/spr_gamepad_xbox_a/spr_gamepad_xbox_a.yy",},},
+    {"id":{"name":"spr_gamepad_xbox_b","path":"sprites/spr_gamepad_xbox_b/spr_gamepad_xbox_b.yy",},},
     {"id":{"name":"spr_menu_background","path":"sprites/spr_menu_background/spr_menu_background.yy",},},
     {"id":{"name":"spr_menu_button","path":"sprites/spr_menu_button/spr_menu_button.yy",},},
     {"id":{"name":"spr_menu_title","path":"sprites/spr_menu_title/spr_menu_title.yy",},},

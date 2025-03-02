@@ -25,7 +25,7 @@ function step()
 	_input_menu.left		= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(0, gp_padl) > 0 || (gamepad_axis_value(0, gp_axislh) < -axis_deadzone && !_input_in_game.left);  // D-LEFT
 	_input_menu.right		= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(0, gp_padr) > 0 || (gamepad_axis_value(0, gp_axislh) > axis_deadzone && !_input_in_game.right);  // D-DOWN
 	
-	_input_menu.toggle_menu    = keyboard_check_pressed(vk_f10) || gamepad_button_check_pressed(0, gp_start) > 0;	// START
+	_input_menu.toggle_menu    = keyboard_check_pressed(vk_f10) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start) > 0;	// START
 	_input_menu.toggle_catalog = keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(0, gp_select) > 0;	// SELECT
 	
 	// in game

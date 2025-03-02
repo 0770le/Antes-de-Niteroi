@@ -126,8 +126,10 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 		var _yy = 300 + (_index * 70);
 		
 		draw_set_halign(fa_right);
+		draw_set_font(fnt_arial_medium_bold);
+		draw_set_color(_menu_item.checked ? c_green : c_red);
 		
-		draw_text(_xx + 100, _yy, _menu_item.checked ? "V" : "X");
+		draw_text(_xx + 85, _yy, _menu_item.checked ? "V" : "X");
 	}
 	
 	if (_menu_item.type == MENU_TYPE.INTEGER)
@@ -137,12 +139,44 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 		
 		draw_set_halign(fa_right);
 		
-		draw_text(_xx + 100, _yy, _menu_item.value);
+		draw_text(_xx + 85, _yy, $"{_menu_item.value}");
+		
+		if (_menu_item == selected_item)
+		{
+			var _selector = "<   >";
+			
+			if (_menu_item.value >= 10)
+			{
+				_selector = "<       ";
+			}
+			else if (_menu_item.value <= 0) 
+			{
+				_selector = $"   >"
+			}
+			
+			draw_text(_xx + 99, _yy, _selector);
+		}
 	}
+}
+
+function draw_controller_buttons()
+{
+	draw_set_color(c_black);
+	draw_set_font(fnt_arial_medium_to_small);
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_right);
+	
+	draw_text(bbox_right - sprite_get_width(spr_gamepad_xbox_b) - 70, bbox_bottom - 99, "Voltar");
+	draw_sprite_ext(spr_gamepad_xbox_b, 0, bbox_right - 50, bbox_bottom - 100, 2, 2, 0, c_white, 1.0);
+	
+	draw_text(bbox_right - sprite_get_width(spr_gamepad_xbox_b) - 70, bbox_bottom - 64, "Confirmar");
+	draw_sprite_ext(spr_gamepad_xbox_a, 0, bbox_right - 50, bbox_bottom - 65, 2, 2, 0, c_white, 1.0);
 }
 
 function draw_menu_items() 
 {
+	draw_controller_buttons();
+	
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	draw_set_color(c_black);
@@ -215,7 +249,6 @@ function on_input_menu(_input = new MenuInputModel())
 				break;
 		}
 	}
-
 	if (_input.up) selected_item = selected_item.previous; 
 	if (_input.down) selected_item = selected_item.next;
 
@@ -229,6 +262,16 @@ function on_input_menu(_input = new MenuInputModel())
 		{
 			close();
 		}
+	}
+
+	// play sounds	
+	if (_input.left || _input.right || _input.up || _input.down) 
+	{
+		o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.CROUCH, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_CROUCH.CROUCH);
+	} 
+	else if (_input.confirm || _input.toggle_menu || _input.cancel)
+	{
+		o_sound_controller.update_event_parameter_and_play(FMOD_EVENT.CROUCH, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_CROUCH.STAND);
 	}
 }
 
@@ -246,12 +289,7 @@ function init()
 	root_menu = new MenuNode("Menu Principal");
 	
 	// Back to the Game
-	root_menu.add_child(new MenuButton("Voltar ao Jogo", close));
-	
-	root_menu.add_child(new MenuButton("Catálogo", function () 
-	{
-		global.catalog_controller.open();	
-	}));
+	// root_menu.add_child(new MenuButton("Voltar ao Jogo", close));
 	
 	// Options	
 	var _options_node = root_menu.add_child(new MenuNode("Opções"))
@@ -295,7 +333,7 @@ function init()
 	}));
 	volume_music .set_value(global.options_controller.options.music_volume);
 	
-	volume_sfx = _options_node.add_child(new MenuInteger("Efeitos Sonoros", 
+	volume_sfx = _options_node.add_child(new MenuInteger("Efeitos", 
 	function ()
 	{
 		volume_sfx.set_value(volume_sfx.value - 1);
@@ -309,6 +347,12 @@ function init()
 		global.options_controller.set_option(OPTIONS_SFX_VOLUME, volume_sfx.value);
 	}));
 	volume_sfx.set_value(global.options_controller.options.sfx_volume);
+	
+	// Catalog	
+	root_menu.add_child(new MenuButton("Catálogo", function () 
+	{
+		global.catalog_controller.open();	
+	}));
 	
 	// Quit Game	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 

@@ -105,6 +105,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"FMOD","order":1,"path":"extensions/FMOD/FMOD.yy",},
+    {"name":"fnt_arial_medium_bold","order":8,"path":"fonts/fnt_arial_medium_bold/fnt_arial_medium_bold.yy",},
     {"name":"fnt_arial_medium_to_large","order":3,"path":"fonts/fnt_arial_medium_to_large/fnt_arial_medium_to_large.yy",},
     {"name":"fnt_arial_medium_to_small","order":4,"path":"fonts/fnt_arial_medium_to_small/fnt_arial_medium_to_small.yy",},
     {"name":"fnt_arial_medium","order":5,"path":"fonts/fnt_arial_medium/fnt_arial_medium.yy",},
@@ -519,6 +520,8 @@
     {"name":"spr_catalog_tab","order":1,"path":"sprites/spr_catalog_tab/spr_catalog_tab.yy",},
     {"name":"spr_catalog_window","order":2,"path":"sprites/spr_catalog_window/spr_catalog_window.yy",},
     {"name":"spr_font_small","order":9,"path":"sprites/spr_font_small/spr_font_small.yy",},
+    {"name":"spr_gamepad_xbox_a","order":6,"path":"sprites/spr_gamepad_xbox_a/spr_gamepad_xbox_a.yy",},
+    {"name":"spr_gamepad_xbox_b","order":7,"path":"sprites/spr_gamepad_xbox_b/spr_gamepad_xbox_b.yy",},
     {"name":"spr_menu_background","order":3,"path":"sprites/spr_menu_background/spr_menu_background.yy",},
     {"name":"spr_menu_button","order":5,"path":"sprites/spr_menu_button/spr_menu_button.yy",},
     {"name":"spr_menu_title","order":4,"path":"sprites/spr_menu_title/spr_menu_title.yy",},

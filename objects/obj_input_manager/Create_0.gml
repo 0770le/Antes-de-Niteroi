@@ -17,7 +17,7 @@ function step()
 	var _input_in_game = data_sets[INPUT_TYPE.IN_GAME].input;
 	
 	// menu 
-	_input_menu.confirm		= keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1) > 0; // A
+	_input_menu.confirm		= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1) > 0; // A
 	_input_menu.cancel      = keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(0, gp_face2) > 0; // B
 	
 	_input_menu.up			= keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0, gp_padu) > 0 || (gamepad_axis_value(0, gp_axislv) < -axis_deadzone && !_input_in_game.up);  // D-UP

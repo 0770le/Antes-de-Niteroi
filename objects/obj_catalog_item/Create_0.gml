@@ -58,5 +58,5 @@ function draw()
 	draw_set_color(c_black);
 	draw_set_font(fnt_arial_medium);
 	
-	draw_text_ext(_xx, top_y + 40, text, 30, 600-94);
+	draw_text_ext(_xx, top_y + 40, text, 30, 480);
 }

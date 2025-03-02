@@ -5,10 +5,10 @@ enum CATALOG_TAB
 	REGIONS
 }
 
-x					= 320;
-y					= 180;
-image_xscale		= 16 / 2;
-image_yscale		= 9 / 2;
+x					= 320 * 2;
+y					= 180 * 2;
+image_xscale		= 16;
+image_yscale		= 9;
 is_open				= false;
 
 catalog_tabs		= [];
@@ -90,8 +90,24 @@ function draw_selected_item()
 function create_content()
 {
 	//tabs
+	//// regions items
+	catalog_tabs[CATALOG_TAB.REGIONS] = instance_create_layer(bbox_right, bbox_top, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
+	catalog_tabs[CATALOG_TAB.REGIONS].label	= "Regiões";
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(bbox_left, bbox_top, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Nova História";
+	_last_item.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non lacus ac nunc elementum euismod. Phasellus eros diam, convallis quis lorem eu, aliquam viverra lorem. Donec dapibus odio eu ipsum sagittis, sed convallis turpis finibus. Mauris id mollis augue. Vestibulum egestas nisl id lorem egestas, in efficitur justo rutrum. Proin eu leo quis justo bibendum accumsan eu non lorem. Vivamus consectetur sem nulla, nec tempor elit consequat sed.";
+	catalog_tabs[CATALOG_TAB.REGIONS].set_selected(false);
+	
+	//// history items
+	catalog_tabs[CATALOG_TAB.HISTORY] = instance_create_layer(catalog_tabs[CATALOG_TAB.REGIONS].bbox_left, bbox_top, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
+	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(bbox_left, bbox_top, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Cidade-Velha";
+	_last_item.text = "Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.";
+	catalog_tabs[CATALOG_TAB.HISTORY].set_selected(false);
+	
 	//// biodiversity items
-	catalog_tabs[CATALOG_TAB.BIODIVERSITY] = instance_create_layer(bbox_right, bbox_top, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
+	catalog_tabs[CATALOG_TAB.BIODIVERSITY] = instance_create_layer(catalog_tabs[CATALOG_TAB.HISTORY].bbox_left, bbox_top, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "Biodiversidade";
 	var _last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(bbox_left, bbox_top, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Arara-canindé";
@@ -104,32 +120,17 @@ function create_content()
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(bbox_left, _last_item.bbox_bottom, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Francês";
 	_last_item.text = "Franceses são inimigos!";
-	catalog_tabs[CATALOG_TAB.BIODIVERSITY].set_selected(false);
-	
-	//// history items
-	catalog_tabs[CATALOG_TAB.HISTORY] = instance_create_layer(catalog_tabs[CATALOG_TAB.BIODIVERSITY].bbox_left, bbox_top, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
-	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
-	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(bbox_left, bbox_top, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Cidade-Velha";
-	_last_item.text = "Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.";
-	catalog_tabs[CATALOG_TAB.HISTORY].set_selected(false);
-	
-	//// regions items
-	catalog_tabs[CATALOG_TAB.REGIONS] = instance_create_layer(catalog_tabs[CATALOG_TAB.HISTORY].bbox_left, bbox_top, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
-	catalog_tabs[CATALOG_TAB.REGIONS].label	= "Regiões";
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(bbox_left, bbox_top, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Nova História";
-	_last_item.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non lacus ac nunc elementum euismod. Phasellus eros diam, convallis quis lorem eu, aliquam viverra lorem. Donec dapibus odio eu ipsum sagittis, sed convallis turpis finibus. Mauris id mollis augue. Vestibulum egestas nisl id lorem egestas, in efficitur justo rutrum. Proin eu leo quis justo bibendum accumsan eu non lorem. Vivamus consectetur sem nulla, nec tempor elit consequat sed.";
-	catalog_tabs[CATALOG_TAB.REGIONS].set_selected(true);
+	catalog_tabs[CATALOG_TAB.BIODIVERSITY].set_selected(true);
 	
 	// tabs chaining
-	catalog_tabs[CATALOG_TAB.BIODIVERSITY].previous = catalog_tabs[CATALOG_TAB.HISTORY];
-	catalog_tabs[CATALOG_TAB.HISTORY].previous = catalog_tabs[CATALOG_TAB.REGIONS];
-	catalog_tabs[CATALOG_TAB.HISTORY].next = catalog_tabs[CATALOG_TAB.BIODIVERSITY];
-	catalog_tabs[CATALOG_TAB.REGIONS].next = catalog_tabs[CATALOG_TAB.HISTORY];
+	catalog_tabs[CATALOG_TAB.REGIONS].previous = catalog_tabs[CATALOG_TAB.HISTORY];
+	catalog_tabs[CATALOG_TAB.HISTORY].previous = catalog_tabs[CATALOG_TAB.BIODIVERSITY];
+	catalog_tabs[CATALOG_TAB.BIODIVERSITY].next = catalog_tabs[CATALOG_TAB.HISTORY];
+	catalog_tabs[CATALOG_TAB.HISTORY].next = catalog_tabs[CATALOG_TAB.REGIONS];
+	
 	
 	// tab selection
-	selected_tab = catalog_tabs[CATALOG_TAB.REGIONS];
+	selected_tab = catalog_tabs[CATALOG_TAB.BIODIVERSITY];
 }
 
 function init()

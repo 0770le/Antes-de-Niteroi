@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_catalog_window",
-    "path":"sprites/spr_catalog_window/spr_catalog_window.yy",
+    "name":"spr_menu_background",
+    "path":"sprites/spr_menu_background/spr_menu_background.yy",
   },
   "spriteMaskId":null,
   "visible":true,

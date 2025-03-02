@@ -1,9 +1,9 @@
 event_inherited();
 
-image_yscale	= 0.7;
-image_xscale	= 2;
+image_yscale	= 1.5;
+image_xscale	= 4;
 label			= "Placeholder";
-font			= fnt_arial_very_small;
+font			= fnt_arial_medium;
 previous		= self;
 next			= self;
 

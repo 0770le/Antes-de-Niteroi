@@ -4,12 +4,12 @@ event_inherited();
 layer_text		= LAYER_GUI_CATALOG_BUTTONS;
 
 catalog_text	= noone;
-image_xscale	= 2;
-image_yscale	= 0.5;
+image_xscale	= 4;
+image_yscale	= 1;
 top_y			= bbox_top;
 
 // text
-font			= fnt_arial_small;
+font			= fnt_arial_medium;
 label			= "Label";
 text			= "Placeholder";
 image			= spr_catalog_image;
@@ -49,11 +49,12 @@ function draw()
 	
 	draw_sprite(image, 0, bbox_right + 2, top_y + 5);
 	
+	// description
 	var _xx = bbox_right + sprite_get_width(image) + 10;
 	
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
-	draw_set_font(fnt_arial_very_small);
+	draw_set_font(fnt_arial_medium);
 	
-	draw_text_ext(_xx, top_y + 10, text, 15, 300);
+	draw_text_ext(_xx, top_y + 10, text, 30, 600-64);
 }

@@ -1,25 +1,27 @@
 event_inherited();
 
 is_open				= false;
-x					= 320;
-y					= 180;
-image_xscale		= 16 / 5;
-image_yscale		= 9 / 4;
-font				= fnt_arial_medium_to_small;
-font_description    = fnt_arial_small;
+x					= 320 * 2;
+y					= 180 * 2;
+image_xscale		= 1;
+image_yscale		= 1;
+font				= fnt_arial_medium_to_large
+font_description    = fnt_arial_medium;
 
 root_menu			= noone;
 
-x_padding			= 20;
+x_padding			= 30;
 y_padding			= 20;
-x_level_padding		= 14;
-y_level_padding		= 20;
+x_level_padding		= 35;
+y_level_padding		= 40;
 selector_padding	= 12;
 
 fullscreen_button   = noone;
 volume_master       = noone;
 volume_music		= noone;
 volume_sfx          = noone;
+
+title				= noone;
 
 function open() {
 	is_open = true;
@@ -40,23 +42,37 @@ function close() {
 
 function draw_pointer(_position = 0)
 {
-	draw_text(
-		bbox_left + x_padding, 
-		bbox_top + y_padding + (1 + _position) * y_level_padding, 
-		">>>"); 
+	var _xx = get_sprite_center_x();
+	var _yy = 300 + (_position * 70);
+	
+	draw_set_color(c_black);
+	draw_set_alpha(0.7);
+	
+	draw_rectangle(_xx - 120, _yy - 30, _xx + 120, _yy + 30, false);
+	
+	draw_set_alpha(1.0);
 }
 
 function draw_parent()
 {
-	draw_set_font(font);
+	var _xx = get_sprite_center_x();
 	
-	draw_text(bbox_left + x_padding, bbox_top + y_padding, selected_item.parent.title); 
+	draw_sprite(spr_menu_title, 0, _xx, bbox_top + 100);
+	
+	draw_set_font(font);
+	draw_set_color(c_white);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_top);
+	
+	draw_text(_xx, bbox_top + 115, selected_item.parent.title); 
 }
 
 function draw_item(_menu_item = new MenuItem(), _index = 0)
 {
 	draw_set_font(font_description);
-	draw_set_color(c_black);
+	draw_set_color(c_white);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
 	
 	if (_menu_item.type == MENU_TYPE.LEAF)
 	{
@@ -87,26 +103,41 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 	}
 	else 
 	{
-		draw_text(
-			bbox_left + x_padding + x_level_padding + selector_padding, 
-			bbox_top + y_padding + (1 + _index) * y_level_padding, 
-			_menu_item.title); 
+		var _xx = get_sprite_center_x();
+		var _yy = 300 + (_index * 70);
+		
+		draw_sprite(spr_menu_button, 0, _xx, _yy);
+		
+		if (_menu_item.type == MENU_TYPE.CHECKBOX || _menu_item.type == MENU_TYPE.INTEGER)
+		{
+			draw_set_halign(fa_left);
+		
+			draw_text(_xx - 100, _yy, _menu_item.title);
+		}
+		else 
+		{
+			draw_text(_xx, _yy, _menu_item.title);
+		}
 	}
 	
 	if (_menu_item.type == MENU_TYPE.CHECKBOX) 
 	{
-		draw_text_ext(
-			bbox_right - 40, 
-			bbox_top + y_padding + (1 + _index) * y_level_padding, 
-			_menu_item.checked ? "V" : "X", 15, 420);
+		var _xx = get_sprite_center_x();
+		var _yy = 300 + (_index * 70);
+		
+		draw_set_halign(fa_right);
+		
+		draw_text(_xx + 100, _yy, _menu_item.checked ? "V" : "X");
 	}
 	
 	if (_menu_item.type == MENU_TYPE.INTEGER)
 	{
-		draw_text_ext(
-			bbox_right - 40, 
-			bbox_top + y_padding + (1 + _index) * y_level_padding, 
-			_menu_item.value, 15, 420);
+		var _xx = get_sprite_center_x();
+		var _yy = 300 + (_index * 70);
+		
+		draw_set_halign(fa_right);
+		
+		draw_text(_xx + 100, _yy, _menu_item.value);
 	}
 }
 
@@ -124,12 +155,12 @@ function draw_menu_items()
 	
 	array_foreach(_selected_group.children, function(_child, _index) 
 	{ 
-		draw_item(_child, _index);
-		
 		if (_child == selected_item && _child.type != MENU_TYPE.LEAF)
 		{
 			draw_pointer(_index);
 		}
+		
+		draw_item(_child, _index);
 	});
 }
 

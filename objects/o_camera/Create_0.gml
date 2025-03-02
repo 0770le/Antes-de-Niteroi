@@ -1,15 +1,14 @@
 //get dimensions. modifica a info pega no camera
 
-var _w = 480;
-var _h = 270;
-
-
+var _w		= 480;
+var _h		= 270;
+var _scale	= 3;
 
 //create camera.(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])
 camera = camera_create_view(0,0,_w,_h,0,-1,-1,-1,128,128 ) 
 view_set_camera(0, camera);
 
-window_set_size(_w*3, _h*3);
+window_set_size(_w * _scale, _h * _scale);
 
 // declarando posiçao da camera
 global.cx = 0;
@@ -40,6 +39,8 @@ function on_options_change(_options = new OptionsModel())
 {
 	window_set_fullscreen(_options.fullscreen);
 }
+
+display_set_gui_size(_w * _scale, _h * _scale);
 
 //move to main room
 room_goto_next();

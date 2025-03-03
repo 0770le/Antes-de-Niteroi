@@ -28,6 +28,8 @@ function step()
 	_input_menu.toggle_menu    = keyboard_check_pressed(vk_f10) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start) > 0;	// START
 	_input_menu.toggle_catalog = keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(0, gp_select) > 0;	// SELECT
 	
+	_input_menu.debug_unlock = keyboard_check_pressed(ord("O"));
+	
 	// in game
 	_input_in_game.up			= gamepad_button_check(0, gp_padu) > 0 || gamepad_axis_value(0, gp_axislv) < -axis_deadzone; // D-UP
 	_input_in_game.down			= gamepad_button_check(0, gp_padd) > 0 || gamepad_axis_value(0, gp_axislv) > axis_deadzone;	 // D-DOWN

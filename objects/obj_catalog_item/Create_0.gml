@@ -1,12 +1,24 @@
 // window
 event_inherited();
 
+enum CATALOG_ITEM_TYPE
+{
+	ARARIBOIA,
+	ARARA_CANINDE,
+	ARMADEIRA,
+	BARQUEIRO,
+	FRANCES,
+	CIDADE_VELHA
+}
+
 layer_text		= LAYER_GUI_CATALOG_BUTTONS;
+type			= CATALOG_ITEM_TYPE.ARARIBOIA;
 
 catalog_text	= noone;
 image_xscale	= 1.2;
 image_yscale	= 1.2;
 top_y			= bbox_top;
+locked			= true;
 
 // text
 font			= fnt_arial_medium;
@@ -23,6 +35,8 @@ next			= self;
 // selection
 is_selected		= false;
 is_hovered		= false;
+
+frame_color     = make_color_rgb(109, 89, 68);
 
 function set_hover(_hover = false)
 {
@@ -43,20 +57,35 @@ function draw()
 	draw_set_color(color);
 	draw_set_color(c_white);
 	
-	draw_text(x + 10, get_sprite_center_y(), label);
+	draw_text(x + 15, get_sprite_center_y(), locked ? "???" : label);
 	
 	// image
 	if (image_index == 1) return; // not active
 	
-	draw_sprite(image, 0, bbox_right + 40, top_y + 40);
+	var _image = locked ? spr_catalog_question_mark : image;
+	var _xx = bbox_right + 30;
+	var _yy = top_y + 44;
+	
+	draw_sprite(_image, 0, _xx, _yy);
+	
+	// image frame
+	var _sprite_width = sprite_get_width(_image);
+	var _sprite_height = sprite_get_height(_image);
+	var _xx_1 = _xx + _sprite_width;
+	var _yy_1 = _yy + _sprite_height;
+	
+	draw_set_color(frame_color);
+	
+	draw_rectangle(_xx, _yy, _xx_1, _yy_1, true);
+	draw_rectangle(_xx-1, _yy-1, _xx_1+1, _yy_1+1, true);
 	
 	// description
-	var _xx = bbox_right + sprite_get_width(image) + 70;
+	_xx = bbox_right + sprite_get_width(image) + 60;
 	
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
 	draw_set_color(c_black);
 	draw_set_font(fnt_arial_medium);
 	
-	draw_text_ext(_xx, top_y + 40, text, 30, 480);
+	draw_text_ext(_xx, _yy - 2, locked ? "Entrada bloqueada.\n\nEncontre o registro para desbloquear." : text, 30, 480);
 }

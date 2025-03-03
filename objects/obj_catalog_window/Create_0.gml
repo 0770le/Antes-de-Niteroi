@@ -101,6 +101,13 @@ function on_input_menu(_input = new MenuInputModel())
 		
 		selected_tab.selected_item.set_hover(true);
 	}
+	
+	if (_input.debug_unlock)
+	{
+		var _next_index = min(array_length(global.options_controller.options.unlocked_catalog_items), 5);
+		
+		global.catalog_controller.unlock_item(_next_index);
+	}
 }
 
 function draw_selected_item()
@@ -115,36 +122,48 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.REGIONS] = instance_create_layer(bbox_right - 20, bbox_top + 10, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.REGIONS].label	= "Regiões";
 	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Nova História";
-	_last_item.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non lacus ac nunc elementum euismod. Phasellus eros diam, convallis quis lorem eu, aliquam viverra lorem. Donec dapibus odio eu ipsum sagittis, sed convallis turpis finibus. Mauris id mollis augue. Vestibulum egestas nisl id lorem egestas, in efficitur justo rutrum. Proin eu leo quis justo bibendum accumsan eu non lorem. Vivamus consectetur sem nulla, nec tempor elit consequat sed.";
-	_last_item.image = spr_catalog_image_5;
+	_last_item.label = "Cidade-Velha";
+	_last_item.text = "Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.";
+	_last_item.image = spr_catalog_image;
+	_last_item.type = CATALOG_ITEM_TYPE.CIDADE_VELHA;
 	catalog_tabs[CATALOG_TAB.REGIONS].set_selected(false);
 	
 	//// history items
 	catalog_tabs[CATALOG_TAB.HISTORY] = instance_create_layer(catalog_tabs[CATALOG_TAB.REGIONS].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Cidade-Velha";
-	_last_item.text = "Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.";
-	_last_item.image = spr_catalog_image_4;
+	_last_item.label = "O Barqueiro";
+	_last_item.text = "Cara legal que te leva de um lugar para o outro por um preço justo.";
+	_last_item.image = spr_catalog_boatman;
+	_last_item.type = CATALOG_ITEM_TYPE.BARQUEIRO;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Francês";
+	_last_item.text = "Franceses são inimigos!";
+	_last_item.image = spr_catalog_image;
+	_last_item.type = CATALOG_ITEM_TYPE.FRANCES;
 	catalog_tabs[CATALOG_TAB.HISTORY].set_selected(false);
 	
 	//// biodiversity items
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY] = instance_create_layer(catalog_tabs[CATALOG_TAB.HISTORY].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "Biodiversidade";
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Arariboia";
+	_last_item.text = "Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi, que habitava o litoral brasileiro no século XVI. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa, em homenagem ao donatário da Capitania de São Vicente, Martim Afonso de Sousa.\n\nFicou conhecido na história devido à sua aliança com os portugueses, fundamental para a conquista da baía de Guanabara frente aos tamoios e franceses, em 1567.";	
+	_last_item.image = spr_catalog_arariboia;
+	_last_item.type = CATALOG_ITEM_TYPE.ARARIBOIA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Arara-canindé";
 	_last_item.text = "A arara-canindé (Ara ararauna) é uma ave impressionante, famosa por sua plumagem azul e amarela. Os tupinambás a adoravam, capturando-a viva para usar suas penas em rituais importantes, mas sem causar danos, soltando-a em seguida. Social e inteligente, essa arara tem um bico forte para quebrar sementes e desempenha um papel crucial na dispersão de sementes nas florestas tropicais.";
+	_last_item.image = spr_catalog_caninde;
+	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Armadeira";
 	_last_item.text = "A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.";
-	_last_item.image = spr_catalog_image_2;
-	
-	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Francês";
-	_last_item.text = "Franceses são inimigos!";
-	_last_item.image = spr_catalog_image_3;
+	_last_item.image = spr_catalog_image;
+	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].set_selected(true);
 	
 	// tabs chaining
@@ -158,9 +177,26 @@ function create_content()
 	selected_tab = catalog_tabs[CATALOG_TAB.BIODIVERSITY];
 }
 
+function unlock_saved_items()
+{
+	global.logger.debug($"unlock_saved_items length {array_length(global.options_controller.options.unlocked_catalog_items)}");
+	
+	with (obj_catalog_item)
+	{
+		global.logger.debug($"unlock_saved_items type: {self.type}");
+		
+		if (array_contains(global.options_controller.options.unlocked_catalog_items, type))
+		{
+			locked = false;	
+		}
+	}
+}
+
 function init()
 {
 	create_content();
+	
+	unlock_saved_items();
 	
 	close();
 	

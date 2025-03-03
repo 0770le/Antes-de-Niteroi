@@ -96,6 +96,16 @@ function set_option(_option_macro = OPTIONS_FULLSCREEN, _new_value = 0)
 	save_and_notify();
 }
 
+function add_unlocked_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
+{
+	if (!array_contains(options.unlocked_catalog_items, _catalog_item_type))
+	{	
+		array_push(options.unlocked_catalog_items, _catalog_item_type);
+	
+		write_all();
+	}
+}
+
 function register_listeners()
 {
 	with(o_camera) other.register_listener(self);

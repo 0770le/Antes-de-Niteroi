@@ -7,7 +7,9 @@ function OptionsModel (
 		music_enabled: true,
 		music_volume: 10,
 		sfx_enabled: true,
-		sfx_volume: 10
+		sfx_volume: 10,
+		
+		unlocked_catalog_items: []
 	}) 
 constructor 
 {
@@ -21,4 +23,7 @@ constructor
 	music_volume = _options_model.music_volume;
 	sfx_enabled = _options_model.sfx_enabled;
 	sfx_volume = _options_model.sfx_volume;
+	
+	// catalog items
+	unlocked_catalog_items = _options_model.unlocked_catalog_items;
 }

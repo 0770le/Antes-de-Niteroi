@@ -77,6 +77,8 @@ constructor
 	toggle_menu		= false;
 	toggle_catalog  = false;
 	
+	debug_unlock	= false;
+	
 	cancel			= false;
 	confirm			= false;
 }

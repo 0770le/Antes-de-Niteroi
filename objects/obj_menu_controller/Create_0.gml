@@ -51,7 +51,7 @@ function draw_parent()
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
 	
-	draw_text(_xx, bbox_top + 85, selected_item.parent.title); 
+	draw_text(_xx, bbox_top + 88, selected_item.parent.title); 
 }
 
 function draw_item(_menu_item = new MenuItem(), _index = 0)
@@ -155,14 +155,20 @@ function draw_controller_buttons()
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_right);
 	
-	draw_text(bbox_right - sprite_get_width(spr_gamepad_xbox_start) - 70, bbox_bottom - 134, "Fechar");
-	draw_sprite_ext(spr_gamepad_xbox_start, 0, bbox_right - 50, bbox_bottom - 133, 2, 2, 0, c_white, 1.0);
+	var _confirm_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CONFIRM);
+	var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CANCEL);
+	var _toggle_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TOGGLE_MENU);
 	
-	draw_text(bbox_right - sprite_get_width(spr_gamepad_xbox_b) - 70, bbox_bottom - 99, "Voltar");
-	draw_sprite_ext(spr_gamepad_xbox_b, 0, bbox_right - 50, bbox_bottom - 100, 2, 2, 0, c_white, 1.0);
+	var _scale = global.input_manager.get_input_sprite_scale();
 	
-	draw_text(bbox_right - sprite_get_width(spr_gamepad_xbox_b) - 70, bbox_bottom - 64, "Confirmar");
-	draw_sprite_ext(spr_gamepad_xbox_a, 0, bbox_right - 50, bbox_bottom - 65, 2, 2, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 60, bbox_bottom - 134, "Fechar");
+	draw_sprite_ext(_toggle_sprite, 0, bbox_right - 50, bbox_bottom - 133, _scale, _scale, 0, c_white, 1.0);
+	
+	draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 60, bbox_bottom - 99, "Voltar");
+	draw_sprite_ext(_cancel_sprite, 0, bbox_right - 50, bbox_bottom - 100, _scale, _scale, 0, c_white, 1.0);
+	
+	draw_text(bbox_right - (sprite_get_width(_confirm_sprite)*_scale) - 60, bbox_bottom - 64, "Confirmar");
+	draw_sprite_ext(_confirm_sprite, 0, bbox_right - 50, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 }
 
 function draw_menu_items() 

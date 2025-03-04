@@ -3,6 +3,38 @@ enum INPUT_TYPE
 	IN_GAME, MENU
 }
 
+enum INPUT_SOURCE_TYPE
+{
+	GAMEPAD, KEYBOARD
+}
+
+enum INPUT_MENU_ACTION 
+{
+	CONFIRM, CANCEL, TOGGLE_MENU
+}
+
+last_input_source_type = INPUT_SOURCE_TYPE.GAMEPAD;
+
+input_menu_action_sprites = 
+[
+	INPUT_SOURCE_TYPE.GAMEPAD,
+	INPUT_SOURCE_TYPE.KEYBOARD
+]
+
+input_menu_action_sprites[INPUT_SOURCE_TYPE.GAMEPAD] = 
+[
+	spr_gamepad_xbox_a,    // INPUT_MENU_ACTION.CONFIRM
+	spr_gamepad_xbox_b,    // INPUT_MENU_ACTION.CANCEL
+	spr_gamepad_xbox_start // INPUT_MENU_ACTION.TOGGLE_MENU
+]
+
+input_menu_action_sprites[INPUT_SOURCE_TYPE.KEYBOARD] = 
+[
+	spr_keyboard_space,		// INPUT_MENU_ACTION.CONFIRM
+	spr_keyboard_c,			// INPUT_MENU_ACTION.CANCEL
+	spr_keyboard_escape  	// INPUT_MENU_ACTION.TOGGLE_MENU
+]
+
 data_sets = 
 [
 	new InputDataSet(INPUT_TYPE.IN_GAME, new InGameInputModel()),
@@ -10,6 +42,11 @@ data_sets =
 ]
 
 axis_deadzone = 0.5;
+
+function get_menu_action_sprite(_input_menu_action = INPUT_MENU_ACTION.CONFIRM)
+{
+	return input_menu_action_sprites[last_input_source_type][_input_menu_action];
+}
 
 function step()
 {
@@ -39,9 +76,36 @@ function step()
 	_input_in_game.attack        = gamepad_button_check_pressed(0, gp_face3) > 0; // X
 	_input_in_game.jump			= gamepad_button_check_pressed(0, gp_face1) > 0; // A
 	
+	if (keyboard_check(vk_anykey))
+	{
+		last_input_source_type = INPUT_SOURCE_TYPE.KEYBOARD;
+	}
+	else if (gamepad_check_any())
+	{
+		last_input_source_type = INPUT_SOURCE_TYPE.GAMEPAD;
+	}
+	
 	// notify
 	if (_input_menu.any()) data_sets[INPUT_TYPE.MENU].notify();
 	if (_input_in_game.any()) data_sets[INPUT_TYPE.IN_GAME].notify();
+}
+
+function gamepad_check_any()
+{
+	for (var _i = gp_face1; _i < gp_axisrv; _i++)
+	{
+	    if (gamepad_button_check(0, _i)) {
+	        
+			return true;			
+        }
+    }
+	
+	return false;
+}
+
+function get_input_sprite_scale()
+{
+	return last_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD ? 2 : 1.8;
 }
 
 #region events

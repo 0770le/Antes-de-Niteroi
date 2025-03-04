@@ -114,11 +114,9 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 		var _xx = get_sprite_center_x();
 		var _yy = _xxx + (_index * 70);
 		
-		draw_set_halign(fa_right);
-		draw_set_font(fnt_arial_medium_bold);
-		draw_set_color(_menu_item.checked ? c_green : c_red);
+		var _checkbox_sprite = _menu_item.checked ? spr_checkbox_checked : spr_checkbox_unchecked;
 		
-		draw_text(_xx + 100, _yy, _menu_item.checked ? "V" : "X");
+		draw_sprite_ext(_checkbox_sprite, 0, _xx + 105, _yy, 0.25, 0.25, 0, c_white, 1);
 	}
 	
 	if (_menu_item.type == MENU_TYPE.INTEGER)
@@ -140,7 +138,7 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 			}
 			else if (_menu_item.value <= 0) 
 			{
-				_selector = $"   >"
+				_selector = "   >"
 			}
 			
 			draw_text(_xx + 114, _yy, _selector);
@@ -201,7 +199,7 @@ function on_input_menu(_input = new MenuInputModel())
 		}
 	
 		return;
-	} 
+	}
 	
 	if (_input.toggle_menu)
 	{
@@ -273,6 +271,8 @@ function on_options_change(_options = new OptionsModel())
 	volume_master.set_value(_options.master_volume);
 	volume_music.set_value(_options.music_volume);
 	volume_sfx.set_value(_options.sfx_volume);
+	
+	fullscreen_button.set_checked(_options.fullscreen);
 }
 
 function init()
@@ -290,7 +290,7 @@ function init()
 	{
 		var _is_fullscreen = global.options_controller.get_option(OPTIONS_FULLSCREEN);
 		
-		self.fullscreen_button.set_checked(!_is_fullscreen);
+		// self.fullscreen_button.set_checked(!_is_fullscreen);
 		
 		global.options_controller.set_option(OPTIONS_FULLSCREEN, !_is_fullscreen);
 	}));
@@ -344,6 +344,8 @@ function init()
 	// Catalog	
 	root_menu.add_child(new MenuButton("Catálogo", function () 
 	{
+		global.menu_controller.close();
+		
 		global.catalog_controller.open();	
 	}));
 	

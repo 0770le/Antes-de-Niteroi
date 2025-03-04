@@ -13,8 +13,6 @@ enum INPUT_MENU_ACTION
 	CONFIRM, CANCEL, TOGGLE_MENU
 }
 
-last_input_source_type = INPUT_SOURCE_TYPE.GAMEPAD;
-
 input_menu_action_sprites = 
 [
 	INPUT_SOURCE_TYPE.GAMEPAD,
@@ -41,7 +39,8 @@ data_sets =
 	new InputDataSet(INPUT_TYPE.MENU, new MenuInputModel())
 ]
 
-axis_deadzone = 0.5;
+last_input_source_type	= INPUT_SOURCE_TYPE.GAMEPAD;
+axis_deadzone			= 0.5;
 
 function get_menu_action_sprite(_input_menu_action = INPUT_MENU_ACTION.CONFIRM)
 {
@@ -50,32 +49,33 @@ function get_menu_action_sprite(_input_menu_action = INPUT_MENU_ACTION.CONFIRM)
 
 function step()
 {
-	var _input_menu = data_sets[INPUT_TYPE.MENU].input;
-	var _input_in_game = data_sets[INPUT_TYPE.IN_GAME].input;
+	var _input_menu				= data_sets[INPUT_TYPE.MENU].input;
+	var _input_in_game			= data_sets[INPUT_TYPE.IN_GAME].input;
 	
 	// menu 
-	_input_menu.confirm		= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1) > 0; // A
-	_input_menu.cancel      = keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(0, gp_face2) > 0; // B
+	_input_menu.confirm			= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1) > 0; // A
+	_input_menu.cancel			= keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(0, gp_face2) > 0; // B
 	
-	_input_menu.up			= keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0, gp_padu) > 0 || (gamepad_axis_value(0, gp_axislv) < -axis_deadzone && !_input_in_game.up);  // D-UP
-	_input_menu.down		= keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(0, gp_padd) > 0 || (gamepad_axis_value(0, gp_axislv) > axis_deadzone && !_input_in_game.down);  // D-DOWN
-	_input_menu.left		= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(0, gp_padl) > 0 || (gamepad_axis_value(0, gp_axislh) < -axis_deadzone && !_input_in_game.left);  // D-LEFT
-	_input_menu.right		= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(0, gp_padr) > 0 || (gamepad_axis_value(0, gp_axislh) > axis_deadzone && !_input_in_game.right);  // D-DOWN
+	_input_menu.up				= keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0, gp_padu) > 0 || (gamepad_axis_value(0, gp_axislv) < -axis_deadzone && !_input_in_game.up);  // D-UP
+	_input_menu.down			= keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(0, gp_padd) > 0 || (gamepad_axis_value(0, gp_axislv) > axis_deadzone && !_input_in_game.down);  // D-DOWN
+	_input_menu.left			= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(0, gp_padl) > 0 || (gamepad_axis_value(0, gp_axislh) < -axis_deadzone && !_input_in_game.left);  // D-LEFT
+	_input_menu.right			= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(0, gp_padr) > 0 || (gamepad_axis_value(0, gp_axislh) > axis_deadzone && !_input_in_game.right);  // D-DOWN
 	
-	_input_menu.toggle_menu    = keyboard_check_pressed(vk_f10) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start) > 0;	// START
-	_input_menu.toggle_catalog = keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(0, gp_select) > 0;	// SELECT
+	_input_menu.toggle_menu		= keyboard_check_pressed(vk_f10) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start) > 0;	// START
+	_input_menu.toggle_catalog	= keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(0, gp_select) > 0;	// SELECT
 	
-	_input_menu.debug_unlock = keyboard_check_pressed(ord("O"));
+	_input_menu.debug_unlock	= keyboard_check_pressed(ord("O"));
 	
 	// in game
 	_input_in_game.up			= gamepad_button_check(0, gp_padu) > 0 || gamepad_axis_value(0, gp_axislv) < -axis_deadzone; // D-UP
 	_input_in_game.down			= gamepad_button_check(0, gp_padd) > 0 || gamepad_axis_value(0, gp_axislv) > axis_deadzone;	 // D-DOWN
 	_input_in_game.left			= gamepad_button_check(0, gp_padl) > 0 || gamepad_axis_value(0, gp_axislh) < -axis_deadzone; // D-LEFT
-	_input_in_game.right			= gamepad_button_check(0, gp_padr) > 0 || gamepad_axis_value(0, gp_axislh) > axis_deadzone;  // D-DOWN
+	_input_in_game.right		= gamepad_button_check(0, gp_padr) > 0 || gamepad_axis_value(0, gp_axislh) > axis_deadzone;  // D-DOWN
 	
-	_input_in_game.attack        = gamepad_button_check_pressed(0, gp_face3) > 0; // X
+	_input_in_game.attack       = gamepad_button_check_pressed(0, gp_face3) > 0; // X
 	_input_in_game.jump			= gamepad_button_check_pressed(0, gp_face1) > 0; // A
 	
+	// changes icon set based on input method
 	if (keyboard_check(vk_anykey))
 	{
 		last_input_source_type = INPUT_SOURCE_TYPE.KEYBOARD;

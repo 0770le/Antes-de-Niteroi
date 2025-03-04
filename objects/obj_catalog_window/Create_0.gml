@@ -71,11 +71,14 @@ function on_input_menu(_input = new MenuInputModel())
 	
 	if (_input.cancel) 
 	{
-		_input.toggle_menu = true;
-		
-		global.menu_controller.on_input_menu(_input);
-		
 		close();
+		
+		var _input_2 = new MenuInputModel();
+		_input_2.toggle_menu = true;
+			
+		global.menu_controller.on_input_menu(_input_2);
+		
+		return;
 	}
 	
 	if (_input.left || _input.right)
@@ -109,9 +112,7 @@ function on_input_menu(_input = new MenuInputModel())
 	
 	if (_input.debug_unlock)
 	{
-		var _next_index = min(array_length(global.options_controller.options.unlocked_catalog_items), 5);
-		
-		global.catalog_controller.unlock_item(_next_index);
+		global.catalog_controller.unlock_item(selected_tab.selected_item.type);
 	}
 }
 

@@ -38,11 +38,84 @@ is_hovered		= false;
 
 frame_color     = make_color_rgb(109, 89, 68);
 
+// scroll text
+line_separation = 30;
+height_max		= 400;
+line_width		= 480;
+text_parts		= [];
+text_shown		= "";
+cursor			= 0;
+cursor_max		= 0;
+page_length     = 0;
+
 function set_hover(_hover = false)
 {
 	is_hovered = _hover;
 	
 	image_index = is_hovered ? 0 : 1;
+	
+	if (!_hover) cursor = 0;
+}
+
+function previous_page()
+{
+	cursor = max(0, cursor - 1);
+}
+
+function next_page()
+{
+	cursor = min(cursor + 1, cursor_max);
+}
+
+function set_text(_text = "Placeholder")
+{
+	text = _text;
+	
+	calculate_text_parts();
+	
+	cursor_max = array_length(text_parts) - 1;
+}
+
+function calculate_text_parts()
+{
+	draw_set_valign(fa_top);
+	draw_set_halign(fa_left);
+	draw_set_color(c_black);
+	draw_set_font(font);
+	
+	text_parts = [""];
+	
+	var _text_paragraphs = string_split(text, "\n", true);
+	
+	var _part_index = 0;
+	
+	for (var _i = 0; _i < array_length(_text_paragraphs); _i++)
+	{
+		var _text_paragraph = _text_paragraphs[_i];
+		
+		var _candidate = text_parts[_part_index] + (string_length(text_parts[_part_index]) == 0 ? "" : "\n\n") +  _text_paragraph;
+		
+		if (string_height_ext(_candidate, line_separation, line_width) <= height_max)
+		{
+			text_parts[_part_index] = _candidate;
+		}
+		else 
+		{
+			_part_index++;
+			
+			array_push(text_parts, _text_paragraph);
+		}
+	}
+}
+
+function get_number_of_pages()
+{
+	return array_length(text_parts);
+}
+
+function get_current_page()
+{
+	return cursor + 1;
 }
 
 function draw()
@@ -85,7 +158,21 @@ function draw()
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
 	draw_set_color(c_black);
-	draw_set_font(fnt_arial_medium);
+	draw_set_font(font);
 	
-	draw_text_ext(_xx, _yy - 2, locked ? "Entrada bloqueada.\n\nEncontre o registro para desbloquear." : text, 30, 480);
+	if (locked)
+	{
+		draw_text_ext(_xx, _yy - 2, "Entrada bloqueada.\n\nEncontre o registro para desbloquear.", line_separation, line_width);
+	}
+	else 
+	{
+		draw_description(_xx, _yy - 2);
+	}
+}
+
+function draw_description(_xx, _yy)
+{
+	draw_set_font(font);
+	
+	draw_text_ext(_xx, _yy, text_parts[cursor], line_separation, line_width);
 }

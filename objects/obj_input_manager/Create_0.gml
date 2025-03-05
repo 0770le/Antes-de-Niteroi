@@ -10,7 +10,7 @@ enum INPUT_SOURCE_TYPE
 
 enum INPUT_MENU_ACTION 
 {
-	CONFIRM, CANCEL, TOGGLE_MENU
+	CONFIRM, CANCEL, TOGGLE_MENU, PAGE_UP, PAGE_DOWN, TAB_LEFT, TAB_RIGHT
 }
 
 input_menu_action_sprites = 
@@ -21,16 +21,24 @@ input_menu_action_sprites =
 
 input_menu_action_sprites[INPUT_SOURCE_TYPE.GAMEPAD] = 
 [
-	spr_gamepad_xbox_a,    // INPUT_MENU_ACTION.CONFIRM
-	spr_gamepad_xbox_b,    // INPUT_MENU_ACTION.CANCEL
-	spr_gamepad_xbox_start // INPUT_MENU_ACTION.TOGGLE_MENU
+	spr_gamepad_xbox_a,     // INPUT_MENU_ACTION.CONFIRM
+	spr_gamepad_xbox_b,     // INPUT_MENU_ACTION.CANCEL
+	spr_gamepad_xbox_start, // INPUT_MENU_ACTION.TOGGLE_MENU,
+	spr_gamepad_xbox_dleft,	// INPUT_MENU_ACTION.PAGE_UP,
+	spr_gamepad_xbox_dright,// INPUT_MENU_ACTION.PAGE_DOWN,
+	spr_gamepad_xbox_lb,	// INPUT_MENU_ACTION.TAB_LEFT,
+	spr_gamepad_xbox_rb,	// INPUT_MENU_ACTION.TAB_RIGHT,
 ]
 
 input_menu_action_sprites[INPUT_SOURCE_TYPE.KEYBOARD] = 
 [
 	spr_keyboard_space,		// INPUT_MENU_ACTION.CONFIRM
 	spr_keyboard_c,			// INPUT_MENU_ACTION.CANCEL
-	spr_keyboard_escape  	// INPUT_MENU_ACTION.TOGGLE_MENU
+	spr_keyboard_escape,  	// INPUT_MENU_ACTION.TOGGLE_MENU
+	spr_keyboard_left,		// INPUT_MENU_ACTION.PAGE_UP,
+	spr_keyboard_right,		// INPUT_MENU_ACTION.PAGE_DOWN,
+	spr_keyboard_page_up,	// INPUT_MENU_ACTION.TAB_LET,
+	spr_keyboard_page_down,	// INPUT_MENU_ACTION.TAB_RIGHT,
 ]
 
 data_sets = 
@@ -64,6 +72,12 @@ function step()
 	_input_menu.toggle_menu		= keyboard_check_pressed(vk_f10) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0, gp_start) > 0;	// START
 	_input_menu.toggle_catalog	= keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(0, gp_select) > 0;	// SELECT
 	
+	_input_menu.page_up			= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(0, gp_padl) > 0;	// D-left
+	_input_menu.page_down 		= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(0, gp_padr) > 0;	// D-right
+	
+	_input_menu.tab_left		= keyboard_check_pressed(vk_pageup) ||  gamepad_button_check_pressed(0, gp_shoulderl) > 0;  // LB
+	_input_menu.tab_right 		= keyboard_check_pressed(vk_pagedown) || gamepad_button_check_pressed(0, gp_shoulderr) > 0;	// RB
+	
 	_input_menu.debug_unlock	= keyboard_check_pressed(ord("O"));
 	
 	// in game
@@ -75,19 +89,39 @@ function step()
 	_input_in_game.attack       = gamepad_button_check_pressed(0, gp_face3) > 0; // X
 	_input_in_game.jump			= gamepad_button_check_pressed(0, gp_face1) > 0; // A
 	
-	// changes icon set based on input method
-	if (keyboard_check(vk_anykey))
-	{
-		last_input_source_type = INPUT_SOURCE_TYPE.KEYBOARD;
-	}
-	else if (gamepad_check_any())
-	{
-		last_input_source_type = INPUT_SOURCE_TYPE.GAMEPAD;
-	}
+	var _has_input = false;
 	
 	// notify
-	if (_input_menu.any()) data_sets[INPUT_TYPE.MENU].notify();
-	if (_input_in_game.any()) data_sets[INPUT_TYPE.IN_GAME].notify();
+	if (_input_menu.any()) 
+	{
+		data_sets[INPUT_TYPE.MENU].notify();
+		
+		_has_input = true;
+	}
+	
+	if (_input_in_game.any()) 
+	{
+		data_sets[INPUT_TYPE.IN_GAME].notify()
+		
+		_has_input = true;
+	}
+	
+	update_input_source(_has_input);
+}
+
+function update_input_source(_has_input = false)
+{
+	if (_has_input)
+	{
+		if (keyboard_check(vk_anykey))
+		{
+			last_input_source_type = INPUT_SOURCE_TYPE.KEYBOARD;
+		}
+		else if (gamepad_check_any())
+		{
+			last_input_source_type = INPUT_SOURCE_TYPE.GAMEPAD;
+		}
+	}
 }
 
 function gamepad_check_any()
@@ -99,6 +133,12 @@ function gamepad_check_any()
 			return true;			
         }
     }
+	
+	if (gamepad_axis_value(0, gp_axisrv) < -axis_deadzone || gamepad_axis_value(0, gp_axisrv) > axis_deadzone
+		|| gamepad_axis_value(0, gp_axislv) < -axis_deadzone || gamepad_axis_value(0, gp_axislv) > axis_deadzone)
+	{
+		return true;
+	}
 	
 	return false;
 }

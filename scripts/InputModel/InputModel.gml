@@ -81,4 +81,10 @@ constructor
 	
 	cancel			= false;
 	confirm			= false;
+	
+	page_up 		= false;
+	page_down		= false;
+	
+	tab_left 		= false;
+	tab_right		= false;
 }

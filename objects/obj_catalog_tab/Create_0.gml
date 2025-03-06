@@ -1,7 +1,7 @@
 event_inherited();
 
 image_yscale	= 0.5;
-image_xscale	= 0.5;
+image_xscale	= 0.6;
 label			= "Placeholder";
 font			= fnt_arial_medium;
 previous		= self;
@@ -17,6 +17,16 @@ function set_selected(_selected = false)
 	toggle_items(_selected);
 }
 
+function has_new_item()
+{
+	for (var _i = 0; _i < array_length(items); ++_i) 
+	{
+		if (items[_i].is_new) return true;    
+	}
+	
+	return false;
+}
+
 function draw() 
 {
 	draw_set_halign(fa_center);
@@ -28,6 +38,11 @@ function draw()
 	var _yy = get_sprite_center_y();
 	
 	draw_text(_xx, _yy, label);
+	
+	if (has_new_item())
+	{
+		draw_sprite_ext(spr_catalog_new_item, 0, bbox_right - 15, _yy, 0.35, 0.35, 0, c_white, 1);
+	}
 }
 
 function add_item(_item = noone)
@@ -46,6 +61,7 @@ function add_item(_item = noone)
 	}
 	
 	_item.top_y = bbox_bottom;
+	_item.parent_tab = self;
 	
 	array_push(items, _item);
 	

@@ -3,12 +3,16 @@ event_inherited();
 
 enum CATALOG_ITEM_TYPE
 {
+	UNSET,
 	ARARIBOIA,
 	ARARA_CANINDE,
 	ARMADEIRA,
 	BARQUEIRO,
 	FRANCES,
-	CIDADE_VELHA
+	CIDADE_VELHA,
+	MORUBIXABA,
+	KUNUMIUASU,
+	MUCURANA
 }
 
 layer_text		= LAYER_GUI_CATALOG_BUTTONS;
@@ -40,13 +44,15 @@ frame_color     = make_color_rgb(109, 89, 68);
 
 // scroll text
 line_separation = 30;
-height_max		= 400;
+height_max		= 360;
 line_width		= 480;
 text_parts		= [];
 text_shown		= "";
 cursor			= 0;
 cursor_max		= 0;
 page_length     = 0;
+is_new			= false;
+parent_tab		= noone;
 
 function set_hover(_hover = false)
 {
@@ -105,7 +111,8 @@ function calculate_text_parts()
 			
 			array_push(text_parts, _text_paragraph);
 		}
-	}
+	}
+
 }
 
 function get_number_of_pages()
@@ -130,7 +137,14 @@ function draw()
 	draw_set_color(color);
 	draw_set_color(c_white);
 	
-	draw_text(x + 15, get_sprite_center_y(), locked ? "???" : label);
+	var _yy = get_sprite_center_y();
+	
+	draw_text(x + 15, _yy, locked ? "???" : label);
+	
+	if (is_new)
+	{
+		draw_sprite_ext(spr_catalog_new_item, 0, bbox_right - 10, _yy, 0.35, 0.35, 0, c_white, 1);
+	}
 	
 	// image
 	if (image_index == 1) return; // not active

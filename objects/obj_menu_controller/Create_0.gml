@@ -23,12 +23,16 @@ volume_sfx          = noone;
 
 title				= noone;
 
+has_new_items		= false;
+
 function open() {
 	is_open = true;
 	
 	global.catalog_controller.close();
 	
 	global.initializer.focus(object_index);
+	
+	has_new_items = global.catalog_controller.has_new_item();
 }
 
 function close() {
@@ -107,6 +111,11 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 		{
 			draw_text(_xx, _yy, _menu_item.title);
 		}
+		
+		if (_menu_item.type == MENU_TYPE.CATALOG)
+		{
+			if (has_new_items) draw_sprite_ext(spr_catalog_new_item, 0, _xx + 120, _yy, 0.35, 0.35, 0, c_white, 1);
+		} 
 	}
 	
 	if (_menu_item.type == MENU_TYPE.CHECKBOX) 
@@ -222,6 +231,7 @@ function on_input_menu(_input = new MenuInputModel())
 				break;
 			case MENU_TYPE.BUTTON:
 			case MENU_TYPE.CHECKBOX:
+			case MENU_TYPE.CATALOG:
 				selected_item.on_click();
 			
 				break;
@@ -342,7 +352,7 @@ function init()
 	volume_sfx.set_value(global.options_controller.options.sfx_volume);
 	
 	// Catalog	
-	root_menu.add_child(new MenuButton("Catálogo", function () 
+	root_menu.add_child(new MenuCatalog("Catálogo", function () 
 	{
 		global.menu_controller.close();
 		

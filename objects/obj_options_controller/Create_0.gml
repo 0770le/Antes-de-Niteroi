@@ -106,6 +106,13 @@ function add_unlocked_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
 	}
 }
 
+function clear_unlocks()
+{
+	array_delete(options.unlocked_catalog_items, 0, array_length(options.unlocked_catalog_items))
+	
+	write_all();
+}
+
 function register_listeners()
 {
 	with(o_camera) other.register_listener(self);

@@ -1,6 +1,6 @@
 enum MENU_TYPE 
 {
-	UNSET, NODE, LEAF, BUTTON, CHECKBOX, SELECTOR, INTEGER
+	UNSET, NODE, LEAF, BUTTON, CHECKBOX, SELECTOR, INTEGER, CATALOG
 }
 
 function MenuItem(_type = MENU_TYPE.UNSET, _title = "MenuItem") 
@@ -59,6 +59,13 @@ constructor
 
 function MenuButton(_title = "MenuButton", _on_click = function () {})
 	: MenuItem(MENU_TYPE.BUTTON, _title) 
+constructor 
+{
+	on_click = _on_click;
+}
+
+function MenuCatalog(_title = "MenuCatalog", _on_click = function () {})
+	: MenuItem(MENU_TYPE.CATALOG, _title) 
 constructor 
 {
 	on_click = _on_click;

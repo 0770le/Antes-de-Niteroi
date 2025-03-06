@@ -7,6 +7,9 @@ sub_layers =
 	LAYER_GUI_CATALOG, LAYER_GUI_CATALOG_BUTTONS, LAYER_GUI_CATALOG_WINDOW
 ]
 
+animate = false;
+animation_frame = 0;
+
 function open()
 {
 	window.open();
@@ -17,17 +20,34 @@ function close()
 	window.close();
 }
 
+function has_new_item()
+{
+	return window.has_new_item();
+}
+
 function unlock_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
 {
-	with (obj_catalog_item)
+	for (var _i = 0; _i < array_length(window.catalog_items); _i++)
 	{
-		if (type == _catalog_item_type)
+		if (window.catalog_items[_i].type == _catalog_item_type)
 		{
-			locked = false;
+			window.catalog_items[_i].locked = false;
+			
+			window.catalog_items[_i].is_new = true;
 		}
 	}
 	
 	global.options_controller.add_unlocked_item(_catalog_item_type);
+}
+
+function clear()
+{
+	for (var _i = 0; _i < array_length(window.catalog_items); _i++)
+	{
+		window.catalog_items[_i].locked = true;
+	}
+	
+	global.options_controller.clear_unlocks();
 }
 
 function on_options_change(_options_model = new OptionsModel()) 

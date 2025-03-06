@@ -12,6 +12,7 @@ image_yscale		= 1.1;
 is_open				= false;
 
 catalog_tabs		= [];
+catalog_items		= [];
 selected_tab		= noone;
 
 function open()
@@ -23,6 +24,18 @@ function open()
 	selected_tab.toggle_items(true);
 	
 	global.catalog_controller.show_all();
+	
+	selected_tab.selected_item.is_new = false;
+}
+
+function has_new_item()
+{
+	for (var _i = 0; _i < array_length(catalog_tabs); ++_i) 
+	{
+		if (catalog_tabs[_i].has_new_item()) return true;
+	}
+	
+	return false;
 }
 
 function close()
@@ -137,6 +150,8 @@ function on_input_menu(_input = new MenuInputModel())
 			selected_tab.selected_item = selected_tab.items[0];
 			
 			selected_tab.selected_item.set_hover(true);
+			
+			selected_tab.selected_item.is_new = false;
 		}
 	}
 	
@@ -147,16 +162,17 @@ function on_input_menu(_input = new MenuInputModel())
 		selected_tab.selected_item = _input.up ? selected_tab.selected_item.previous : selected_tab.selected_item.next;
 		
 		selected_tab.selected_item.set_hover(true);
+		
+		selected_tab.selected_item.is_new = false;
 	}
 	
 	if (_input.page_up) selected_tab.selected_item.previous_page();
 	
 	if (_input.page_down) selected_tab.selected_item.next_page();
 	
-	if (_input.debug_unlock)
-	{
-		global.catalog_controller.unlock_item(selected_tab.selected_item.type);
-	}
+	if (_input.debug_unlock) global.catalog_controller.unlock_item(selected_tab.selected_item.type);
+	
+	if (_input.debug_clear) global.catalog_controller.clear();
 }
 
 function draw_selected_item()
@@ -173,7 +189,7 @@ function create_content()
 	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Cidade-Velha";
 	_last_item.set_text("Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.");
-	_last_item.image = spr_catalog_image;
+	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.CIDADE_VELHA;
 	catalog_tabs[CATALOG_TAB.REGIONS].set_selected(false);
 	
@@ -181,18 +197,16 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.HISTORY] = instance_create_layer(catalog_tabs[CATALOG_TAB.REGIONS].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "O Barqueiro";
-	_last_item.set_text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend mollis nisi, et fringilla turpis. Pellentesque ac ligula lorem. Etiam tempor, leo ac molestie hendrerit, lectus lorem fringilla enim, quis eleifend enim mauris ac eros. Ut ultricies vestibulum sodales. Ut ac consequat risus. Nulla fringilla leo et turpis fermentum, sit amet congue mauris egestas. Aenean at tempus orci. Maecenas fringilla eros neque, non ornare enim vestibulum dapibus.\n" 
-		+ "Nullam eu ante massa. Nam in orci metus. Morbi velit lorem, vehicula non arcu ut, egestas iaculis diam. Etiam condimentum tincidunt dui, nec consequat nulla lobortis ac. Suspendisse venenatis eros quis tristique egestas. In ac aliquet dolor. Vivamus nibh diam, dignissim vel placerat interdum, dapibus sit amet purus.\n"
-		+ "Morbi eu leo ante. Mauris mollis ipsum lacus, sit amet bibendum dolor hendrerit quis. Nunc eu turpis mollis, imperdiet nunc eu, placerat eros. Cras eget accumsan neque. Nunc cursus dapibus lacus ut gravida. In vel ante aliquet, pretium nunc non, pretium ex. Nulla facilisi. Integer id arcu placerat, rhoncus mi quis, scelerisque lacus. Morbi nec dui eleifend felis pharetra maximus. Donec in lectus ex. Curabitur non tincidunt diam. Praesent a arcu tempor metus feugiat maximus. Ut condimentum feugiat erat sit amet dictum.");
-	_last_item.image = spr_catalog_boatman;
-	_last_item.type = CATALOG_ITEM_TYPE.BARQUEIRO;
+	_last_item.label = "Morubixaba";
+	_last_item.set_text("Apesar do uso do termo cacique pelos colonizadores europeus em toda a América, cada grupo indígena de diferentes regiões do continente possuía uma denominação e concepção próprias para suas lideranças.\nMburovixá é a denominação que os povos guaranis deram para seus líderes.\nJá para os tupis, as denominações eram morubixaba, murumuxaua, muruxaua, tubixaba e tuxaua.\nO termo curaca era usado para uma espécie de prefeito entre os povos incas de terras andinas no tempo da invasão promovida pela colonização europeia.");
+	_last_item.image = spr_catalog_morubixaba;
+	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Francês";
-	_last_item.set_text("Franceses são inimigos!");
+	_last_item.label = "Kunumĩuasu";
+	_last_item.set_text("Lorem Ipsum...");
 	_last_item.image = spr_catalog_image;
-	_last_item.type = CATALOG_ITEM_TYPE.FRANCES;
+	_last_item.type = CATALOG_ITEM_TYPE.KUNUMIUASU;
 	catalog_tabs[CATALOG_TAB.HISTORY].set_selected(false);
 	
 	//// biodiversity items
@@ -216,8 +230,15 @@ function create_content()
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Armadeira";
 	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
-	_last_item.image = spr_catalog_image;
+	_last_item.image = spr_catalog_armadeira;
 	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Muçurana";
+	_last_item.set_text("Pertence a família Dipsadidae. Seu porte vai de pequeno a médio,podendo chegar a medir 2,40 metros de comprimento quando alcançar a vida adulta.\nA sua coloração varia de acordo com a idade, possuindo uma coloração rosada com cabeça escura, quando jovem, e quando adultos são preto azuladas com uma faixa branca na parte ventral.\nApresenta veneno na sua peçonha mas não apresenta risco ao ser humano.");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].set_selected(true);
 	
 	// tabs chaining
@@ -229,6 +250,19 @@ function create_content()
 	
 	// tab selection
 	selected_tab = catalog_tabs[CATALOG_TAB.BIODIVERSITY];
+	
+	fill_catalog_items();
+}
+
+function fill_catalog_items()
+{
+	for (var _i = 0; _i < array_length(catalog_tabs); _i++)
+	{
+		for (var _j = 0; _j < array_length(catalog_tabs[_i].items); _j++)
+		{
+			array_push(catalog_items, catalog_tabs[_i].items[_j]);
+		}
+	}
 }
 
 function unlock_saved_items()

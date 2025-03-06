@@ -79,6 +79,7 @@ function step()
 	_input_menu.tab_right 		= keyboard_check_pressed(vk_pagedown) || gamepad_button_check_pressed(0, gp_shoulderr) > 0;	// RB
 	
 	_input_menu.debug_unlock	= keyboard_check_pressed(ord("O"));
+	_input_menu.debug_clear 	= keyboard_check_pressed(ord("P"));
 	
 	// in game
 	_input_in_game.up			= gamepad_button_check(0, gp_padu) > 0 || gamepad_axis_value(0, gp_axislv) < -axis_deadzone; // D-UP

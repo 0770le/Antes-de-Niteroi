@@ -4,6 +4,8 @@ audio_play_sound(snd_pickup_gem, 5, false, global.volume);
 show_msg("Novo registro adquirido: " + string(log_title),5);
 o_game.collectible[collectible_index] = true;
 
+global.catalog_controller.unlock_item(catalog_item_type);
+
 repeat(o_game.gem_sparks) {
 	var inst = instance_create_depth(x,y, depth, o_spark);
 	//set colour

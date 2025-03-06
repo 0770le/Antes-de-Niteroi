@@ -78,6 +78,7 @@ constructor
 	toggle_catalog  = false;
 	
 	debug_unlock	= false;
+	debug_clear		= false;
 	
 	cancel			= false;
 	confirm			= false;

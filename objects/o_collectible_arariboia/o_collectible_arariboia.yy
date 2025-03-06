@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_collectible_parent",
-    "path":"sprites/s_collectible_parent/s_collectible_parent.yy",
+    "name":"spr_catalog_collectible",
+    "path":"sprites/spr_catalog_collectible/spr_catalog_collectible.yy",
   },
   "spriteMaskId":null,
   "visible":true,

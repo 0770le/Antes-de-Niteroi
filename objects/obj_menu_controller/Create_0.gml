@@ -292,7 +292,10 @@ function init()
 	root_menu = new MenuNode("Menu Principal");
 	
 	// Back to the Game
-	// root_menu.add_child(new MenuButton("Voltar ao Jogo", close));
+	root_menu.add_child(new MenuButton("Reiniciar Partida", function () 
+	{
+		game_restart();
+	}));
 	
 	// Options	
 	var _options_node = root_menu.add_child(new MenuNode("Opções"))

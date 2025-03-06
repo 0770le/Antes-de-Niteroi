@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_catalog_controller",
+  "%Name":"obj_initializer",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_catalog_controller",
+  "name":"obj_initializer",
   "overriddenProperties":[],
   "parent":{
     "name":"Controller",
-    "path":"folders/Objects/GUI/Catalog/Controller.yy",
+    "path":"folders/Objects/GUI/Initializer/Controller.yy",
   },
-  "parentObjectId":{
-    "name":"obj_shared_window",
-    "path":"objects/obj_shared_window/obj_shared_window.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

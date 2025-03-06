@@ -22,6 +22,7 @@ logs_array[logs.LOG_PARENT] = false;
 logs_array[logs.LOG_ARMADEIRA] = false;
 
 
+global.initializer = noone;
 global.grav = 0.25;
 
 //volume

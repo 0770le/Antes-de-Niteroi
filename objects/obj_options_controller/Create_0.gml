@@ -65,6 +65,8 @@ function read_all()
 		var _options_model = json_parse(_json);
 	
 		options = new OptionsModel(_options_model);	
+		
+		file_text_close(_savefile);
 	} catch (_e) {
 		
 		global.logger.error($"failed to load options file: {_e}");

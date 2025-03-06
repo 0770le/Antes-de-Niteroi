@@ -21,6 +21,8 @@
     {"name":"View","order":1,"path":"folders/Objects/GUI/Catalog/View.yy",},
     {"name":"Confirmation","order":4,"path":"folders/Objects/GUI/Confirmation.yy",},
     {"name":"Controller","order":1,"path":"folders/Objects/GUI/Confirmation/Controller.yy",},
+    {"name":"Initializer","order":8,"path":"folders/Objects/GUI/Initializer.yy",},
+    {"name":"Controller","order":1,"path":"folders/Objects/GUI/Initializer/Controller.yy",},
     {"name":"Log","order":5,"path":"folders/Objects/GUI/Log.yy",},
     {"name":"biodiversidade","order":2,"path":"folders/Objects/GUI/Log/biodiversidade.yy",},
     {"name":"Controller","order":1,"path":"folders/Objects/GUI/Log/biodiversidade/Controller.yy",},

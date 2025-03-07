@@ -108,9 +108,20 @@ function add_unlocked_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
 	}
 }
 
+function add_checked_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
+{
+	if (!array_contains(options.checked_catalog_items, _catalog_item_type))
+	{	
+		array_push(options.checked_catalog_items, _catalog_item_type);
+	
+		write_all();
+	}
+}
+
 function clear_unlocks()
 {
 	array_delete(options.unlocked_catalog_items, 0, array_length(options.unlocked_catalog_items))
+	array_delete(options.checked_catalog_items, 0, array_length(options.checked_catalog_items))
 	
 	write_all();
 }

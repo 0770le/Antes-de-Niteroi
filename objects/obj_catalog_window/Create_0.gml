@@ -25,7 +25,7 @@ function open()
 	
 	global.catalog_controller.show_all();
 	
-	selected_tab.selected_item.is_new = false;
+	selected_tab.selected_item.clear_new();
 }
 
 function has_new_item()
@@ -151,7 +151,7 @@ function on_input_menu(_input = new MenuInputModel())
 			
 			selected_tab.selected_item.set_hover(true);
 			
-			selected_tab.selected_item.is_new = false;
+			selected_tab.selected_item.clear_new();
 		}
 	}
 	
@@ -163,7 +163,7 @@ function on_input_menu(_input = new MenuInputModel())
 		
 		selected_tab.selected_item.set_hover(true);
 		
-		selected_tab.selected_item.is_new = false;
+		selected_tab.selected_item.clear_new();
 	}
 	
 	if (_input.page_up) selected_tab.selected_item.previous_page();
@@ -276,6 +276,11 @@ function unlock_saved_items()
 		if (array_contains(global.options_controller.options.unlocked_catalog_items, type))
 		{
 			locked = false;	
+			
+			if (!array_contains(global.options_controller.options.checked_catalog_items, type))
+			{
+				is_new = true;
+			}
 		}
 	}
 }

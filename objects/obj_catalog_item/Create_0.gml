@@ -54,6 +54,16 @@ page_length     = 0;
 is_new			= false;
 parent_tab		= noone;
 
+function clear_new()
+{
+	if (is_new)
+	{
+		global.options_controller.add_checked_item(type);
+		
+		is_new = false;
+	}
+}
+
 function set_hover(_hover = false)
 {
 	is_hovered = _hover;

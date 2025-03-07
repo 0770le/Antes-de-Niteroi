@@ -9,7 +9,8 @@ function OptionsModel (
 		sfx_enabled: true,
 		sfx_volume: 10,
 		
-		unlocked_catalog_items: []
+		unlocked_catalog_items: [],
+		checked_catalog_items: []
 	}) 
 constructor 
 {
@@ -26,4 +27,5 @@ constructor
 	
 	// catalog items
 	unlocked_catalog_items = _options_model.unlocked_catalog_items;
+	checked_catalog_items = _options_model.checked_catalog_items;
 }

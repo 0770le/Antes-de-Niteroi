@@ -58,6 +58,8 @@ function on_options_change(_options_model = new OptionsModel())
 		{
 			locked = false;
 		}
+		
+		
 	}
 }
 

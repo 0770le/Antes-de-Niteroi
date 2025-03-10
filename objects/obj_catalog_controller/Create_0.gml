@@ -40,6 +40,19 @@ function unlock_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
 	global.options_controller.add_unlocked_item(_catalog_item_type);
 }
 
+function is_unlocked(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
+{
+	for (var _i = 0; _i < array_length(window.catalog_items); _i++)
+	{
+		if (window.catalog_items[_i].type == _catalog_item_type)
+		{
+			return true;
+		}
+	}
+	
+	return false;
+}
+
 function clear()
 {
 	for (var _i = 0; _i < array_length(window.catalog_items); _i++)

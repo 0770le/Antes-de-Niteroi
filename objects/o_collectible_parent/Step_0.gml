@@ -23,7 +23,7 @@ if (t1 == SOLID) {
 }
 
 //destroy gems if falls out of room
-if (y > room_height or o_game.collectible[collectible_index]) {
+if (y > room_height or global.catalog_controller.is_unlocked(catalog_item_type)) {
 	instance_destroy();
 }
  

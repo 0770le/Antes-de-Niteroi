@@ -46,7 +46,7 @@ function is_unlocked(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
 	{
 		if (window.catalog_items[_i].type == _catalog_item_type)
 		{
-			return true;
+			return !window.catalog_items[_i].locked;
 		}
 	}
 	
@@ -58,22 +58,10 @@ function clear()
 	for (var _i = 0; _i < array_length(window.catalog_items); _i++)
 	{
 		window.catalog_items[_i].locked = true;
+		window.catalog_items[_i].is_new = false;
 	}
 	
 	global.options_controller.clear_unlocks();
-}
-
-function on_options_change(_options_model = new OptionsModel()) 
-{
-	with (obj_catalog_item)
-	{
-		if (array_contains(_options_model.unlocked_catalog_items, type))
-		{
-			locked = false;
-		}
-		
-		
-	}
 }
 
 function create_content()

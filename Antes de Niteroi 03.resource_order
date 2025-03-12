@@ -81,6 +81,7 @@
     {"name":"Sounds","order":2,"path":"folders/Sounds.yy",},
     {"name":"Backgrounds","order":1,"path":"folders/Sprites/Backgrounds.yy",},
     {"name":"cidade_velha","order":3,"path":"folders/Sprites/Backgrounds/cidade_velha.yy",},
+    {"name":"akaray","order":4,"path":"folders/Sprites/Backgrounds/akaray.yy",},
     {"name":"Collectible","order":6,"path":"folders/Sprites/Collectible.yy",},
     {"name":"Enemy","order":9,"path":"folders/Sprites/Enemy.yy",},
     {"name":"Arqueiro_oculto","order":6,"path":"folders/Sprites/Enemy/Arqueiro_oculto.yy",},

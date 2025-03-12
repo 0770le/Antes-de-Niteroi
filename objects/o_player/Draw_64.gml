@@ -3,7 +3,7 @@
 var _x = 13;
 var _y = 10;
 
-var _bar_width = (sprite_get_width(s_HUD_hp_bar)/2) * max_hp;
+var _bar_width = (sprite_get_width(s_HUD_hp_bar)/2) * o_game.max_hp;
 var _bar_height = sprite_get_height(s_HUD_hp_bar);
 
 

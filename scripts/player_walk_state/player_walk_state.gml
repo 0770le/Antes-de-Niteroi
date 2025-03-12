@@ -35,14 +35,10 @@ function player_walk_state(){
 			hsp = 0;
 			state = states.ATTACK;
 			image_index =0;
-			can_attack = false;
-			alarm[ATTACKING]= attack_delay;
 			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE,x,y);
 		} else { //ataque movendo
 			state =	states.ATTACK_WALK;
 			image_index =0;
-			can_attack = false;
-			alarm[ATTACKING]= attack_delay/2;
 			launch(0,abs(hsp*0.7), -1*facing); //tranco do hit
 			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.MOVING,x,y);
 		}
@@ -57,7 +53,7 @@ function player_walk_state(){
 		image_index =0;
 	}
 	
-	if (has_bow and shoot and !left and !right) {
+	if (o_game.has_bow and shoot and !left and !right and arrows > 0) {
 		state= states.SHOOT;
 		image_index =0;
 	}

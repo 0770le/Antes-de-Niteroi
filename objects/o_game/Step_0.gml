@@ -4,9 +4,6 @@ if(global.timer++ >= 1000) {
 	global.timer = 0;	
 }
 
-if(has_bow and !o_player.has_bow) {
-	o_player.acquire_bow();	
-}
 
 //botao mouse pra teste
 #region

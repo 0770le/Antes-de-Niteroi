@@ -10,7 +10,7 @@ function get_input() {
 	attack_held = keyboard_check(ord("E"));
 	jump = keyboard_check_pressed(vk_space);
 	jump_held = keyboard_check(vk_space);
-	evade = keyboard_check(ord("Q"));
+	evade = keyboard_check_pressed(ord("Q"));
 	shoot = keyboard_check_pressed(ord("W"));
 	shoot_held = keyboard_check(ord("W"));
 	menu_start =keyboard_check_pressed(vk_escape);

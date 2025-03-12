@@ -17,7 +17,7 @@ function anim() {
 			
 		case states.HURTING:
 				if (!on_ground()) {
-					if(has_bow) {
+					if(o_game.has_bow) {
 						sprite_index = s_player_bow_jump;
 					} else {
 						sprite_index = s_player_jump;

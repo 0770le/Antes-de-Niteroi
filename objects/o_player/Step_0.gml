@@ -8,6 +8,7 @@ if(o_game.has_cloak and on_ground()) {
 	jumps = 1;	
 }
 
+
 //execute state
 if (!instance_exists(o_fade)) {
 	script_execute(states_array[state]);

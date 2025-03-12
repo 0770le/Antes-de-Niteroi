@@ -24,7 +24,7 @@ if (fade_to_colour == true) {
 			//reset player if dead
 			if (state == states.DIE_2) {
 				image_speed = 1;
-				hp = max_hp;
+				hp = o_game.max_hp;
 			}
 			
 			//ensure we stay in game_end_state

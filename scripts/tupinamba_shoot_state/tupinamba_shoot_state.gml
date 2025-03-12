@@ -3,17 +3,28 @@ function tupinamba_shoot_state() {
 	
 	stare();
 
+	//paradinha
+	var _pause = random_range(0.5,0.8);
+	if (floor(image_index) == 3) and !runned_once {	
+		runned_once = true;
+		alarm[ONCE] = _pause* room_speed;
+		anim_paused(_pause);
+		
+	}
+
 	//fire in right image
-	if (can_fire and number_of_shots >= 1 and image_index >= 4) {
+	if (can_fire and number_of_shots >= 1 and image_index >= 5) {
 		can_fire = false;
+
 		create_arrow();
 		//shot round		
 		number_of_shots -= choose(1,2,3);	
-	} 
+	}
+	 
 		
 	//repeating shots
-	if (number_of_shots >= 1 and image_index > 7) {
-		image_index = 2;
+	if (number_of_shots >= 1 and image_index > 9) {
+		image_index = 1;
 		can_fire = true;
 	}
 	

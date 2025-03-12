@@ -1,6 +1,6 @@
 //patrol 
 facing = -1;
-patrol = true;;
+patrol =false;
 patrol_left_limit = x - 10;
 patrol_right_limit = x + 10;
 patrol_destination = choose(-1,1);

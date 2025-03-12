@@ -14,11 +14,12 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 	
 	// sprite do tiro
 	if (floor(image_index) == 5) {
-		if shoot_held { //segura
+		if shoot_held  { //segura
 			image_speed = 0;
 		} else {	//solta
+			image_speed = 1;
 			if can_fire {
-				image_speed = 1;
+				
 				can_fire=false;
 				alarm[SHOOTING] = fire_delay;
 				//tem flecha
@@ -59,7 +60,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 	}
 	//check state
 
-	if down { //allow continuing shooting fluidity 
+	if (down and arrows > 0) { //allow continuing shooting fluidity 
 		var _index_holder = image_index;
 		var _speed_holder = image_speed;
 		crouched();
@@ -68,7 +69,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 		image_speed = _speed_holder;
 	}
 	
-	if jump {
+	if (jump and arrows > 0) {
 		jumped();
 		state = states.SHOOT;
 	}	
@@ -89,7 +90,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 	}
 
 	//mudança de estado depois da animação
-	if anim_end() {
+	if (anim_end()) {
 		if (!on_ground()){
 			state= states.JUMP;
 		}else if down { 

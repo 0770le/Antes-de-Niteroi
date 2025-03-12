@@ -1,6 +1,6 @@
 ///standar evade leap off the ground
 function evaded() {
-	if ((jumps > 0) or (on_ground()) and has_evade) {
+	if (((jumps > 0) or on_ground()) and has_evade) {
 		image_index = 0;
 		image_speed = 1;
 		scale_x = scale_min;
@@ -14,7 +14,7 @@ function evaded() {
 		
 		jumps--;
 		has_evade = false;
-		alarm[EVADING] = room_speed * evade_delay;
+		alarm[EVADING] = evade_delay;
 		can_take_dmg = false;
 		
 		//allow 'rooted' evade

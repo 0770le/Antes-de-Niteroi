@@ -10,7 +10,9 @@ function OptionsModel (
 		sfx_volume: 10,
 		
 		unlocked_catalog_items: [],
-		checked_catalog_items: []
+		checked_catalog_items: [],
+		
+		gamepad_keymap: []
 	}) 
 constructor 
 {
@@ -28,4 +30,7 @@ constructor
 	// catalog items
 	unlocked_catalog_items = _options_model.unlocked_catalog_items;
 	checked_catalog_items = _options_model.checked_catalog_items;
+	
+	// keymaps 
+	gamepad_keymap = _options_model.gamepad_keymap;
 }

@@ -64,7 +64,7 @@ constructor
 	on_click = _on_click;
 }
 
-function MenuInput(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
+function MenuInput(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _input_source_type = INPUT_SOURCE_TYPE.GAMEPAD)
 	: MenuItem(MENU_TYPE.INPUT, "PlaceHolder") 
 constructor 
 {
@@ -72,12 +72,32 @@ constructor
 	input_in_game_action    = _input_in_game_action;
 	title					= global.input_manager.get_input_in_game_action_name(input_in_game_action);
 	sprite					= global.input_manager.get_input_in_game_action_sprite(input_in_game_action);
-	
+	input_source_type		= _input_in_game_action;
+}
+
+function MenuInputGamepad(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
+	: MenuInput(_input_in_game_action, INPUT_SOURCE_TYPE.GAMEPAD)
+constructor 
+{
 	on_click = function () 
 	{
 		global.input_manager.start_capture(self);
 		
 		sprite = spr_gamepad_xbox_choose;
+		
+		is_active = true;
+	}
+}
+
+function MenuInputKeyboard(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
+	: MenuInput(_input_in_game_action, INPUT_SOURCE_TYPE.KEYBOARD)
+constructor 
+{
+	on_click = function () 
+	{
+		global.input_manager.start_capture(self);
+		
+		sprite = spr_keyboard_choose;
 		
 		is_active = true;
 	}

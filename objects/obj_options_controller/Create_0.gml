@@ -6,6 +6,8 @@
 #macro OPTIONS_SFX_ENABLED		"sfx_enabled"
 #macro OPTIONS_SFX_VOLUME		"sfx_volume"
 
+#macro OPTIONS_GAMEPAD_KEYMAP	"gamepad_keymap"
+
 // saveables
 
 options = new OptionsModel();
@@ -67,6 +69,8 @@ function read_all()
 		options = new OptionsModel(_options_model);	
 		
 		file_text_close(_savefile);
+		
+		global.input_manager.gamepad_keymap = options.gamepad_keymap;
 	} catch (_e) {
 		
 		global.logger.error($"failed to load options file: {_e}");

@@ -1,5 +1,5 @@
 /// @description show message
-if(talk and other.up) {
+if(talk and other.interact) {
 	//show_msg(msgs[min(array_length(msgs)-1, quest_step)], 2);
 	var _text = msgs[min(array_length(msgs)-1, quest_step)];
 	var _text_len = string_length(_text);

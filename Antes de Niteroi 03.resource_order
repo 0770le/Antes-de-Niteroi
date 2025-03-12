@@ -565,6 +565,7 @@
     {"name":"spr_keyboard_back_slash","order":20,"path":"sprites/spr_keyboard_back_slash/spr_keyboard_back_slash.yy",},
     {"name":"spr_keyboard_backspace","order":21,"path":"sprites/spr_keyboard_backspace/spr_keyboard_backspace.yy",},
     {"name":"spr_keyboard_caps_lock","order":23,"path":"sprites/spr_keyboard_caps_lock/spr_keyboard_caps_lock.yy",},
+    {"name":"spr_keyboard_choose","order":82,"path":"sprites/spr_keyboard_choose/spr_keyboard_choose.yy",},
     {"name":"spr_keyboard_colon","order":24,"path":"sprites/spr_keyboard_colon/spr_keyboard_colon.yy",},
     {"name":"spr_keyboard_comma","order":25,"path":"sprites/spr_keyboard_comma/spr_keyboard_comma.yy",},
     {"name":"spr_keyboard_ctrl","order":26,"path":"sprites/spr_keyboard_ctrl/spr_keyboard_ctrl.yy",},

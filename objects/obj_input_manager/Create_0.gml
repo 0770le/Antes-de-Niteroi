@@ -114,6 +114,8 @@ function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_A
 function set_gamepad_key_for_action(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _gm_gamepad_input = gp_face1)
 {
 	gamepad_keymap[_input_in_game_action] = _gm_gamepad_input;
+	
+	global.options_controller.set_option(OPTIONS_GAMEPAD_KEYMAP, gamepad_keymap);
 }
 
 function step()
@@ -174,8 +176,17 @@ function step_not_capturing()
 	_input_in_game.left			= gamepad_button_check(0, gp_padl) > 0 || gamepad_axis_value(0, gp_axislh) < -axis_deadzone; // D-LEFT
 	_input_in_game.right		= gamepad_button_check(0, gp_padr) > 0 || gamepad_axis_value(0, gp_axislh) > axis_deadzone;  // D-DOWN
 	
-	_input_in_game.attack       = gamepad_button_check_pressed(0, gp_face3) > 0; // X
-	_input_in_game.jump			= gamepad_button_check_pressed(0, gp_face1) > 0; // A
+	_input_in_game.attack       = gamepad_button_check_pressed(0, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0;
+	_input_in_game.jump			= gamepad_button_check_pressed(0, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0;
+	_input_in_game.dodge		= gamepad_button_check_pressed(0, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0;
+	_input_in_game.bow_shot		= gamepad_button_check_pressed(0, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0;
+	_input_in_game.interact		= gamepad_button_check_pressed(0, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0;
+	
+	_input_in_game.attack_held  = gamepad_button_check(0, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0;
+	_input_in_game.jump_held	= gamepad_button_check(0, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0;
+	_input_in_game.dodge_held	= gamepad_button_check(0, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0;
+	_input_in_game.bow_shot_held= gamepad_button_check(0, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0;
+	_input_in_game.interact_held= gamepad_button_check(0, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0;
 	
 	var _has_input = false;
 	
@@ -220,7 +231,7 @@ function gamepad_get_checked_key()
 		{
 			return _i;
 		}
-	}
+	}
 	
 	return false;
 }
@@ -247,6 +258,11 @@ function gamepad_check_any()
 function get_input_sprite_scale()
 {
 	return last_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD ? 2 : 1.8;
+}
+
+function get_in_game_input()
+{
+	return data_sets[INPUT_TYPE.IN_GAME].input;
 }
 
 #region events

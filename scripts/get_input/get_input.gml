@@ -17,19 +17,26 @@ function get_input() {
 	
 	//controler input
 	var _dev = 0;
-	if gamepad_is_connected(_dev) {
-	var _deadzone = 0.3;
-	left = gamepad_axis_value(_dev, gp_axislh) < -_deadzone or left;
-	right = gamepad_axis_value(_dev, gp_axislh) >_deadzone or right;
-	up = gamepad_axis_value(_dev, gp_axislv) < -_deadzone or up;
-	down = gamepad_axis_value(_dev, gp_axislv) >_deadzone or down;
-	attack = gamepad_button_check_pressed(_dev, gp_face2) or attack ;
-	attack_held = gamepad_button_check(_dev, gp_face2) or attack_held ;
-	jump = gamepad_button_check_pressed(_dev, gp_face1) or jump;
-	jump_held = gamepad_button_check(_dev, gp_face1) or jump_held;
-	evade = gamepad_button_check(_dev, gp_shoulderr) or evade;
-	shoot = gamepad_button_check_pressed(_dev, gp_face3) or shoot;
-	shoot_held = gamepad_button_check(_dev, gp_face3) or shoot_held;
-	menu_start = gamepad_button_check_pressed(_dev, gp_start) or menu_start;
+	if (gamepad_is_connected(_dev)) 
+	{
+		var _input = global.input_manager.get_in_game_input();
+		
+		left		= _input.left	or left;
+		right		= _input.right  or right;
+		up			= _input.up		or up;
+		down		= _input.down	or down;
+		
+		attack		= _input.attack			or attack;
+		attack_held = _input.attack_held	or attack_held;
+		jump		= _input.jump			or jump;
+		jump_held	= _input.jump_held		or jump_held;
+		evade		= _input.dodge			or evade;
+		evade_held	= _input.dodge_held		or evade;
+		shoot		= _input.bow_shot		or shoot;
+		shoot_held	= _input.bow_shot_held	or shoot_held;
+		
+		interact	= _input.interact		or up;
+		
+		// menu_start	= gamepad_button_check_pressed(_dev, gp_start) or menu_start;
 	}
 }

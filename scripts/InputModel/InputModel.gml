@@ -70,6 +70,15 @@ constructor
 	
 	jump			= false;
 	attack			= false;
+	dodge			= false;
+	bow_shot		= false;
+	interact		= false;
+	
+	jump_held		= false;
+	attack_held		= false;
+	dodge_held		= false;
+	bow_shot_held	= false;
+	interact_help	= false;
 }
 
 function MenuInputModel () : InputModel ()

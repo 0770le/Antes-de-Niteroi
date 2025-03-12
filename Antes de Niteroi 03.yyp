@@ -683,6 +683,7 @@
     {"id":{"name":"spr_keyboard_backspace","path":"sprites/spr_keyboard_backspace/spr_keyboard_backspace.yy",},},
     {"id":{"name":"spr_keyboard_c","path":"sprites/spr_keyboard_c/spr_keyboard_c.yy",},},
     {"id":{"name":"spr_keyboard_caps_lock","path":"sprites/spr_keyboard_caps_lock/spr_keyboard_caps_lock.yy",},},
+    {"id":{"name":"spr_keyboard_choose","path":"sprites/spr_keyboard_choose/spr_keyboard_choose.yy",},},
     {"id":{"name":"spr_keyboard_colon","path":"sprites/spr_keyboard_colon/spr_keyboard_colon.yy",},},
     {"id":{"name":"spr_keyboard_comma","path":"sprites/spr_keyboard_comma/spr_keyboard_comma.yy",},},
     {"id":{"name":"spr_keyboard_ctrl","path":"sprites/spr_keyboard_ctrl/spr_keyboard_ctrl.yy",},},

@@ -14,7 +14,7 @@ switch(room) {
 text_bubble2(id, _text, -1, 6, TEXT_Y_HEIGHT_2l);
 
 
-if other.up {
+if other.interact {
 	switch(room) {
 		case rm_cidade_velha:
 			target_rm = rm_akaray_1;

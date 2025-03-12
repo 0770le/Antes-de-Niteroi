@@ -1,11 +1,13 @@
 function InputDataSet (
 	_input_type = INPUT_TYPE.MENU,
-	_input = new MenuInputModel()) 
+	_input = new MenuInputModel(),
+	_menu_item = undefined) 
 constructor 
 {
 	listeners = ds_map_create();
 	input_type = _input_type;
 	input = _input;
+	menu_item = _menu_item;
 	
 	static subscribe = function (_object = noone) 
 	{
@@ -30,6 +32,10 @@ constructor
 			else if (input_type == INPUT_TYPE.MENU)
 			{
 				_array[_i].on_input_menu(input);	
+			}
+			else if (input_type == INPUT_TYPE.KEY_MAP)
+			{
+				_array[_i].on_input_key_map(menu_item, input);	
 			}
 		}
 	}
@@ -88,4 +94,10 @@ constructor
 	
 	tab_left 		= false;
 	tab_right		= false;
+}
+
+function KeyMapInputModel () : InputModel ()
+constructor
+{
+	key_pressed		= false;
 }

@@ -14,9 +14,9 @@ collectible_index = 0;
 log_title = "Teste";
 log = "logs.LOG_PARENT";
 
-vsp_initial  = random_range (-6,-3);
+vsp_initial = 0; //random_range (-6,-3);
 vsp = vsp_initial;
-hsp_initial = random_range(2,5) * choose(-1,1);
+hsp_initial = 0; //random_range(2,5) * choose(-1,1);
 hsp = hsp_initial;
 hsp_decimal = 0;
 vsp_decimal = 0;

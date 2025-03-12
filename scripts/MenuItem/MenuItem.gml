@@ -1,6 +1,6 @@
 enum MENU_TYPE 
 {
-	UNSET, NODE, LEAF, BUTTON, CHECKBOX, SELECTOR, INTEGER, CATALOG
+	UNSET, NODE, LEAF, BUTTON, CHECKBOX, SELECTOR, INTEGER, CATALOG, INPUT
 }
 
 function MenuItem(_type = MENU_TYPE.UNSET, _title = "MenuItem") 
@@ -62,6 +62,25 @@ function MenuButton(_title = "MenuButton", _on_click = function () {})
 constructor 
 {
 	on_click = _on_click;
+}
+
+function MenuInput(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
+	: MenuItem(MENU_TYPE.INPUT, "PlaceHolder") 
+constructor 
+{
+	is_active				= false;
+	input_in_game_action    = _input_in_game_action;
+	title					= global.input_manager.get_input_in_game_action_name(input_in_game_action);
+	sprite					= global.input_manager.get_input_in_game_action_sprite(input_in_game_action);
+	
+	on_click = function () 
+	{
+		global.input_manager.start_capture(self);
+		
+		sprite = spr_gamepad_xbox_choose;
+		
+		is_active = true;
+	}
 }
 
 function MenuCatalog(_title = "MenuCatalog", _on_click = function () {})

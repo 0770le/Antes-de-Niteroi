@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":5,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Objects/InputManager/Sprites.yy",
+    "name":"keyboard",
+    "path":"folders/Objects/InputManager/Sprites/keyboard.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

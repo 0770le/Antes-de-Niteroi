@@ -4,7 +4,7 @@ is_open				= false;
 x					= 480 * 1.5;
 y					= 270 * 1.5;
 image_xscale		= 1;
-image_yscale		= 1;
+image_yscale		= 1.1;
 font				= fnt_arial_medium_to_large
 font_description    = fnt_arial_medium;
 
@@ -60,14 +60,14 @@ function draw_parent()
 
 function draw_item(_menu_item = new MenuItem(), _index = 0)
 {
-	var _xxx = 340;
+	var _xxx = 300;
 	
 	draw_set_font(font_description);
 	draw_set_color(c_white);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	
-	if (_menu_item.type == MENU_TYPE.LEAF)
+	if (_menu_item.type == MENU_TYPE.LEAF) // DEPRECATED
 	{
 		var _sprite_padding = 0;
 		
@@ -101,7 +101,7 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 		
 		draw_sprite_ext(spr_menu_button, _menu_item == selected_item ? 0 : 1, _xx, _yy, 1.2, 1.2, 0, c_white, 1);
 		
-		if (_menu_item.type == MENU_TYPE.CHECKBOX || _menu_item.type == MENU_TYPE.INTEGER)
+		if (_menu_item.type == MENU_TYPE.CHECKBOX || _menu_item.type == MENU_TYPE.INTEGER || _menu_item.type == MENU_TYPE.INPUT)
 		{
 			draw_set_halign(fa_left);
 		
@@ -116,6 +116,15 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 		{
 			if (has_new_items) draw_sprite_ext(spr_catalog_new_item, 0, _xx + 120, _yy, 0.35, 0.35, 0, c_white, 1);
 		} 
+	}
+	
+	if (_menu_item.type == MENU_TYPE.INPUT)
+	{
+		var _xx = get_sprite_center_x();
+		var _yy = _xxx + (_index * 70);
+		
+		// how icon based on action key mapping		
+		draw_sprite_ext(_menu_item.sprite, 0, _xx + 120, _yy, 2, 2, 0, c_white, 1);
 	}
 	
 	if (_menu_item.type == MENU_TYPE.CHECKBOX) 
@@ -198,6 +207,13 @@ function draw_menu_items()
 	});
 }
 
+function on_input_key_map(_menu_item = new MenuInput(INPUT_IN_GAME_ACTION.JUMP), _keymap_input_model = new KeyMapInputModel())
+{
+	global.input_manager.set_gamepad_key_for_action(_menu_item.input_in_game_action, _keymap_input_model.key_pressed);
+	
+	_menu_item.sprite = global.input_manager.get_input_in_game_action_sprite(_menu_item.input_in_game_action);
+}
+
 function on_input_menu(_input = new MenuInputModel()) 
 {
 	if (!is_open)
@@ -232,6 +248,7 @@ function on_input_menu(_input = new MenuInputModel())
 			case MENU_TYPE.BUTTON:
 			case MENU_TYPE.CHECKBOX:
 			case MENU_TYPE.CATALOG:
+			case MENU_TYPE.INPUT:
 				selected_item.on_click();
 			
 				break;
@@ -362,6 +379,22 @@ function init()
 		global.catalog_controller.open();	
 	}));
 	
+	// Key Mapping
+	var _controls_node = root_menu.add_child(new MenuNode("Controles"))
+	var _gamepad_node = _controls_node.add_child(new MenuNode("Gamepad"))
+	_gamepad_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.JUMP));
+	_gamepad_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.ATTACK));
+	_gamepad_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.DODGE));
+	_gamepad_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.BOW_SHOT));
+	_gamepad_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.INTERACT));
+	
+	var _controls_node = _controls_node.add_child(new MenuNode("Teclado"))
+	_controls_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.JUMP));
+	_controls_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.ATTACK));
+	_controls_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.DODGE));
+	_controls_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.BOW_SHOT));
+	_controls_node.add_child(new MenuInput(INPUT_IN_GAME_ACTION.INTERACT));
+	
 	// Quit Game	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 
 	{ 
@@ -371,6 +404,7 @@ function init()
 	selected_item = root_menu.children[0];
 	
 	global.input_manager.subscribe(self, INPUT_TYPE.MENU);
+	global.input_manager.subscribe(self, INPUT_TYPE.KEY_MAP);
 	global.options_controller.register_listener(self);
 }
 

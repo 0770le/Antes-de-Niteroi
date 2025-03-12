@@ -1,6 +1,6 @@
 enum INPUT_TYPE 
 {
-	IN_GAME, MENU
+	IN_GAME, MENU, KEY_MAP
 }
 
 enum INPUT_SOURCE_TYPE
@@ -12,6 +12,37 @@ enum INPUT_MENU_ACTION
 {
 	CONFIRM, CANCEL, TOGGLE_MENU, PAGE_UP, PAGE_DOWN, TAB_LEFT, TAB_RIGHT
 }
+
+enum INPUT_IN_GAME_ACTION
+{
+	JUMP, ATTACK, DODGE, BOW_SHOT, INTERACT
+}
+
+gamepad_keymap = // INPUT_IN_GAME_ACTION
+[
+	gp_face1,
+	gp_face2,
+	gp_face3,
+	gp_face4,
+	gp_shoulderr
+]
+
+gamepad_button_sprites = // GM Gamepad Input https://manual.gamemaker.io/monthly/en/#t=GameMaker_Language%2FGML_Reference%2FGame_Input%2FGamePad_Input%2FGamepad_Input.htm
+[
+	spr_gamepad_xbox_a, // gp_face1
+	spr_gamepad_xbox_b, // gp_face2
+	spr_gamepad_xbox_x, // gp_face3
+	spr_gamepad_xbox_y, // gp_face4
+	spr_gamepad_xbox_l, // gp_shoulderl
+	spr_gamepad_xbox_r, // gp_shoulderr
+	spr_gamepad_xbox_lt,// gp_shoulderlb
+	spr_gamepad_xbox_rt,// gp_shoulderrb
+]
+
+input_in_game_action_names = // INPUT_IN_GAME_ACTION
+[
+	"Pular", "Atacar", "Esquivar", "Tiro de Arco", "Interagir"
+]
 
 input_menu_action_sprites = 
 [
@@ -26,8 +57,8 @@ input_menu_action_sprites[INPUT_SOURCE_TYPE.GAMEPAD] =
 	spr_gamepad_xbox_start, // INPUT_MENU_ACTION.TOGGLE_MENU,
 	spr_gamepad_xbox_dleft,	// INPUT_MENU_ACTION.PAGE_UP,
 	spr_gamepad_xbox_dright,// INPUT_MENU_ACTION.PAGE_DOWN,
-	spr_gamepad_xbox_lb,	// INPUT_MENU_ACTION.TAB_LEFT,
-	spr_gamepad_xbox_rb,	// INPUT_MENU_ACTION.TAB_RIGHT,
+	spr_gamepad_xbox_l,		// INPUT_MENU_ACTION.TAB_LEFT,
+	spr_gamepad_xbox_r,		// INPUT_MENU_ACTION.TAB_RIGHT,
 ]
 
 input_menu_action_sprites[INPUT_SOURCE_TYPE.KEYBOARD] = 
@@ -44,18 +75,74 @@ input_menu_action_sprites[INPUT_SOURCE_TYPE.KEYBOARD] =
 data_sets = 
 [
 	new InputDataSet(INPUT_TYPE.IN_GAME, new InGameInputModel()),
-	new InputDataSet(INPUT_TYPE.MENU, new MenuInputModel())
+	new InputDataSet(INPUT_TYPE.MENU, new MenuInputModel()),
+	new InputDataSet(INPUT_TYPE.KEY_MAP, new KeyMapInputModel()),
 ]
 
 last_input_source_type	= INPUT_SOURCE_TYPE.GAMEPAD;
 axis_deadzone			= 0.5;
+
+is_capturing			= false;
+
+function start_capture(_menu_item = new MenuInput(INPUT_IN_GAME_ACTION.JUMP))
+{
+	is_capturing = true;
+	
+	data_sets[INPUT_TYPE.KEY_MAP].menu_item = _menu_item;
+}
+
+function stop_capture()
+{
+	is_capturing = false;
+}
 
 function get_menu_action_sprite(_input_menu_action = INPUT_MENU_ACTION.CONFIRM)
 {
 	return input_menu_action_sprites[last_input_source_type][_input_menu_action];
 }
 
+function get_input_in_game_action_name(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
+{
+	return input_in_game_action_names[_input_in_game_action];
+}
+
+function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
+{
+	return gamepad_button_sprites[gamepad_keymap[_input_in_game_action] - gp_face1];
+}
+
+function set_gamepad_key_for_action(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _gm_gamepad_input = gp_face1)
+{
+	gamepad_keymap[_input_in_game_action] = _gm_gamepad_input;
+}
+
 function step()
+{
+	if (!is_capturing)
+	{
+		step_not_capturing();
+	}
+	else
+	{
+		step_capturing();
+	}
+}
+
+function step_capturing()
+{
+	var _checked_key = gamepad_get_checked_key();
+	
+	if (_checked_key)
+	{
+		data_sets[INPUT_TYPE.KEY_MAP].input.key_pressed = _checked_key;
+		
+		notify(INPUT_TYPE.KEY_MAP);
+		
+		stop_capture();
+	}
+}
+
+function step_not_capturing()
 {
 	var _input_menu				= data_sets[INPUT_TYPE.MENU].input;
 	var _input_in_game			= data_sets[INPUT_TYPE.IN_GAME].input;
@@ -125,9 +212,22 @@ function update_input_source(_has_input = false)
 	}
 }
 
+function gamepad_get_checked_key()
+{
+	for (var _i = gp_face1; _i <= gp_shoulderrb; _i++)
+	{
+		if (gamepad_button_check_pressed(0, _i))
+		{
+			return _i;
+		}
+	}
+	
+	return false;
+}
+
 function gamepad_check_any()
 {
-	for (var _i = gp_face1; _i < gp_axisrv; _i++)
+	for (var _i = gp_face1; _i < gp_extra6; _i++)
 	{
 	    if (gamepad_button_check(0, _i)) {
 	        

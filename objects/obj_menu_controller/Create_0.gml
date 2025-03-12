@@ -25,6 +25,9 @@ title				= noone;
 
 has_new_items		= false;
 
+gamepad_node		= undefined;
+keyboard_node		= undefined;
+
 function open() {
 	is_open = true;
 	
@@ -209,9 +212,17 @@ function draw_menu_items()
 
 function on_input_key_map(_menu_item = new MenuInput(INPUT_IN_GAME_ACTION.JUMP), _keymap_input_model = new KeyMapInputModel())
 {
-	global.input_manager.set_gamepad_key_for_action(_menu_item.input_in_game_action, _keymap_input_model.key_pressed);
+	if (_menu_item.input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
+	{
+		global.input_manager.set_gamepad_key_for_action(_menu_item.input_in_game_action, _keymap_input_model.key_pressed);
+		
+		for (var _i = 0; _i < array_length(gamepad_node.children); _i++)
+		{
+			gamepad_node.children[_i].sprite = global.input_manager.get_input_in_game_action_sprite(gamepad_node.children[_i].input_in_game_action);
+		}
+	}
 	
-	_menu_item.sprite = global.input_manager.get_input_in_game_action_sprite(_menu_item.input_in_game_action);
+	// _menu_item.sprite = global.input_manager.get_input_in_game_action_sprite(_menu_item.input_in_game_action);
 }
 
 function on_input_menu(_input = new MenuInputModel()) 
@@ -381,19 +392,19 @@ function init()
 	
 	// Key Mapping
 	var _controls_node = root_menu.add_child(new MenuNode("Controles"))
-	var _gamepad_node = _controls_node.add_child(new MenuNode("Gamepad"))
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.JUMP));
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.ATTACK));
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.DODGE));
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.BOW_SHOT));
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
+	gamepad_node = _controls_node.add_child(new MenuNode("Gamepad"))
+	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.JUMP));
+	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.ATTACK));
+	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.DODGE));
+	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.BOW_SHOT));
+	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
 	
-	var _keyboard_node = _controls_node.add_child(new MenuNode("Teclado"))
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.JUMP));
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.ATTACK));
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.DODGE));
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
+	keyboard_node = _controls_node.add_child(new MenuNode("Teclado"))
+	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.JUMP));
+	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.ATTACK));
+	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.DODGE));
+	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
+	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
 	
 	// Quit Game	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 

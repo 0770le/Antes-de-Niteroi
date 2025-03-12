@@ -113,6 +113,16 @@ function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_A
 
 function set_gamepad_key_for_action(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _gm_gamepad_input = gp_face1)
 {
+	for (var _i = 0; _i < array_length(gamepad_keymap); _i++)
+	{
+		if (gamepad_keymap[_i] == _gm_gamepad_input)
+		{
+			gamepad_keymap[_i] = gamepad_keymap[_input_in_game_action];
+			
+			break;		
+		} 
+	}
+	
 	gamepad_keymap[_input_in_game_action] = _gm_gamepad_input;
 	
 	global.options_controller.set_option(OPTIONS_GAMEPAD_KEYMAP, gamepad_keymap);

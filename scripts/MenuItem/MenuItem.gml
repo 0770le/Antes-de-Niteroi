@@ -72,7 +72,7 @@ constructor
 	input_in_game_action    = _input_in_game_action;
 	title					= global.input_manager.get_input_in_game_action_name(input_in_game_action);
 	sprite					= global.input_manager.get_input_in_game_action_sprite(input_in_game_action);
-	input_source_type		= _input_in_game_action;
+	input_source_type		= _input_source_type;
 }
 
 function MenuInputGamepad(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)

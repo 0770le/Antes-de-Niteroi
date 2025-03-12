@@ -121,7 +121,7 @@ function set_gamepad_key_for_action(_input_in_game_action = INPUT_IN_GAME_ACTION
 			
 			break;		
 		} 
-	}
+	}
 	
 	gamepad_keymap[_input_in_game_action] = _gm_gamepad_input;
 	
@@ -142,19 +142,32 @@ function step()
 
 function step_capturing()
 {
-	var _checked_key = gamepad_get_checked_key();
+	data_sets[INPUT_TYPE.KEY_MAP].input.cancel = gamepad_button_check_pressed(0, gp_start) || keyboard_check_pressed(vk_escape);
 	
-	if (_checked_key)
+	if (data_sets[INPUT_TYPE.KEY_MAP].input.cancel)
 	{
-		data_sets[INPUT_TYPE.KEY_MAP].input.key_pressed = _checked_key;
-		
 		notify(INPUT_TYPE.KEY_MAP);
 		
 		stop_capture();
 	}
+	else 
+	{
+		var _checked_key = gamepad_get_checked_key();
+	
+		if (_checked_key)
+		{
+			data_sets[INPUT_TYPE.KEY_MAP].input.key_pressed = _checked_key;
+		
+			notify(INPUT_TYPE.KEY_MAP);
+		
+			stop_capture();
+		}
+	}
+	
+	step_not_capturing(false);
 }
 
-function step_not_capturing()
+function step_not_capturing(_should_notify = true)
 {
 	var _input_menu				= data_sets[INPUT_TYPE.MENU].input;
 	var _input_in_game			= data_sets[INPUT_TYPE.IN_GAME].input;
@@ -203,14 +216,14 @@ function step_not_capturing()
 	// notify
 	if (_input_menu.any()) 
 	{
-		data_sets[INPUT_TYPE.MENU].notify();
+		if (_should_notify) data_sets[INPUT_TYPE.MENU].notify();
 		
 		_has_input = true;
 	}
 	
 	if (_input_in_game.any()) 
 	{
-		data_sets[INPUT_TYPE.IN_GAME].notify()
+		if (_should_notify) data_sets[INPUT_TYPE.IN_GAME].notify()
 		
 		_has_input = true;
 	}

@@ -25,9 +25,6 @@ title				= noone;
 
 has_new_items		= false;
 
-gamepad_node		= undefined;
-keyboard_node		= undefined;
-
 function open() {
 	is_open = true;
 	
@@ -127,7 +124,7 @@ function draw_item(_menu_item = new MenuItem(), _index = 0)
 		var _yy = _xxx + (_index * 70);
 		
 		// how icon based on action key mapping		
-		draw_sprite_ext(_menu_item.sprite, 0, _xx + 120, _yy, 2, 2, 0, c_white, 1);
+		draw_sprite_ext(_menu_item.get_sprite(), 0, _xx + 120, _yy, 2, 2, 0, c_white, 1);
 	}
 	
 	if (_menu_item.type == MENU_TYPE.CHECKBOX) 
@@ -174,20 +171,30 @@ function draw_controller_buttons()
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_right);
 	
-	var _confirm_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CONFIRM);
-	var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CANCEL);
-	var _toggle_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TOGGLE_MENU);
-	
 	var _scale = global.input_manager.get_input_sprite_scale();
 	
-	draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 60, bbox_bottom - 134, "Fechar");
-	draw_sprite_ext(_toggle_sprite, 0, bbox_right - 50, bbox_bottom - 133, _scale, _scale, 0, c_white, 1.0);
+	if (global.input_manager.is_capturing)
+	{
+		var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TOGGLE_MENU);
+		
+		draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 60, bbox_bottom - 64, "Cancelar Captura");
+		draw_sprite_ext(_cancel_sprite, 0, bbox_right - 50, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	}
+	else 
+	{
+		var _confirm_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CONFIRM);
+		var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CANCEL);
+		var _toggle_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TOGGLE_MENU);
 	
-	draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 60, bbox_bottom - 99, "Voltar");
-	draw_sprite_ext(_cancel_sprite, 0, bbox_right - 50, bbox_bottom - 100, _scale, _scale, 0, c_white, 1.0);
+		draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 60, bbox_bottom - 134, "Fechar");
+		draw_sprite_ext(_toggle_sprite, 0, bbox_right - 50, bbox_bottom - 133, _scale, _scale, 0, c_white, 1.0);
 	
-	draw_text(bbox_right - (sprite_get_width(_confirm_sprite)*_scale) - 60, bbox_bottom - 64, "Confirmar");
-	draw_sprite_ext(_confirm_sprite, 0, bbox_right - 50, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+		draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 60, bbox_bottom - 99, "Voltar");
+		draw_sprite_ext(_cancel_sprite, 0, bbox_right - 50, bbox_bottom - 100, _scale, _scale, 0, c_white, 1.0);
+	
+		draw_text(bbox_right - (sprite_get_width(_confirm_sprite)*_scale) - 60, bbox_bottom - 64, "Confirmar");
+		draw_sprite_ext(_confirm_sprite, 0, bbox_right - 50, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	}
 }
 
 function draw_menu_items() 
@@ -212,17 +219,15 @@ function draw_menu_items()
 
 function on_input_key_map(_menu_item = new MenuInput(INPUT_IN_GAME_ACTION.JUMP), _keymap_input_model = new KeyMapInputModel())
 {
-	if (_menu_item.input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
+	if (!_keymap_input_model.cancel)
 	{
-		global.input_manager.set_gamepad_key_for_action(_menu_item.input_in_game_action, _keymap_input_model.key_pressed);
-		
-		for (var _i = 0; _i < array_length(gamepad_node.children); _i++)
+		if (_menu_item.input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
 		{
-			gamepad_node.children[_i].sprite = global.input_manager.get_input_in_game_action_sprite(gamepad_node.children[_i].input_in_game_action);
-		}
-	}
+			global.input_manager.set_gamepad_key_for_action(_menu_item.input_in_game_action, _keymap_input_model.key_pressed);
+		}
+	}	
 	
-	// _menu_item.sprite = global.input_manager.get_input_in_game_action_sprite(_menu_item.input_in_game_action);
+	_menu_item.is_active = false;
 }
 
 function on_input_menu(_input = new MenuInputModel()) 
@@ -392,19 +397,19 @@ function init()
 	
 	// Key Mapping
 	var _controls_node = root_menu.add_child(new MenuNode("Controles"))
-	gamepad_node = _controls_node.add_child(new MenuNode("Gamepad"))
-	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.JUMP));
-	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.ATTACK));
-	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.DODGE));
-	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.BOW_SHOT));
-	gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
+	var _gamepad_node = _controls_node.add_child(new MenuNode("Gamepad"))
+	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.JUMP));
+	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.ATTACK));
+	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.DODGE));
+	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.BOW_SHOT));
+	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
 	
-	keyboard_node = _controls_node.add_child(new MenuNode("Teclado"))
-	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.JUMP));
-	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.ATTACK));
-	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.DODGE));
-	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
-	keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
+	var _keyboard_node = _controls_node.add_child(new MenuNode("Teclado"))
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.JUMP));
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.ATTACK));
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.DODGE));
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
 	
 	// Quit Game	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 

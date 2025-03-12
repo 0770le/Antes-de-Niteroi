@@ -71,8 +71,19 @@ constructor
 	is_active				= false;
 	input_in_game_action    = _input_in_game_action;
 	title					= global.input_manager.get_input_in_game_action_name(input_in_game_action);
-	sprite					= global.input_manager.get_input_in_game_action_sprite(input_in_game_action);
 	input_source_type		= _input_source_type;
+	
+	static get_sprite = function ()
+	{
+		if (is_active)
+		{
+			return spr_gamepad_xbox_choose;
+		}
+		else 
+		{
+			return global.input_manager.get_input_in_game_action_sprite(input_in_game_action);
+		}
+	}
 }
 
 function MenuInputGamepad(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
@@ -92,7 +103,7 @@ constructor
 function MenuInputKeyboard(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
 	: MenuInput(_input_in_game_action, INPUT_SOURCE_TYPE.KEYBOARD)
 constructor 
-{
+{	
 	on_click = function () 
 	{
 		global.input_manager.start_capture(self);

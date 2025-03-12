@@ -108,5 +108,6 @@ constructor
 function KeyMapInputModel () : InputModel ()
 constructor
 {
+	cancel			= false;
 	key_pressed		= false;
 }

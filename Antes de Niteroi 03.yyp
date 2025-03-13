@@ -444,7 +444,6 @@
     {"id":{"name":"snd_sword_swing","path":"sounds/snd_sword_swing/snd_sword_swing.yy",},},
     {"id":{"name":"s_akaray_bg_1_1","path":"sprites/s_akaray_bg_1_1/s_akaray_bg_1_1.yy",},},
     {"id":{"name":"s_akaray_bg_1_2","path":"sprites/s_akaray_bg_1_2/s_akaray_bg_1_2.yy",},},
-    {"id":{"name":"s_akaray_bg_4","path":"sprites/s_akaray_bg_4/s_akaray_bg_4.yy",},},
     {"id":{"name":"s_arara_azul_flying","path":"sprites/s_arara_azul_flying/s_arara_azul_flying.yy",},},
     {"id":{"name":"s_arara_azul_idle","path":"sprites/s_arara_azul_idle/s_arara_azul_idle.yy",},},
     {"id":{"name":"s_arara_caninde_flying","path":"sprites/s_arara_caninde_flying/s_arara_caninde_flying.yy",},},

@@ -11,8 +11,9 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 		if shoot_held { //segura
 			image_speed = 0;
 		} else {	//solta
+			image_speed = 1;
 			if can_fire {
-				image_speed = 1;
+				
 				can_fire=false;
 				alarm[SHOOTING] = fire_delay;
 				
@@ -69,7 +70,7 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 	}
 
 	//mudança de estado depois da animação
-	if anim_end() {
+	if  (anim_end() ) {
 		state = states.IDLE;
 	}	
 			

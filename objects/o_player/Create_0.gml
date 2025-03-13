@@ -7,7 +7,7 @@ hsp =0; //horizontal
 vsp = 0; //vertical
 //I want the enemy to be able to see this var
 max_hsp = PLAYER_MAX_HSP;// = 2.3;
-walk_spd = PLAYER_WALK_SPEED;// =0.3;
+walk_spd = PLAYER_WALK_SPEED;// =0.3;   
 
 hsp_decimal = 0;
 vsp_decimal =0;
@@ -23,7 +23,7 @@ last_walk_index = 0;
 
 //evade
 has_evade = true;
-evade_delay = 0.5;
+evade_delay = room_speed * 0.5;
 can_take_dmg = true;
 
 //friction
@@ -57,7 +57,6 @@ vine_ball = vine_ball_initial;
 //attack
 dmg = 0;
 can_attack = true;
-attack_delay = 0.1 * room_speed;
 	//how long enemies get knocked back for when hit
 knockback_time = room_speed /2;
 knockback_dis = 4; //1.5;
@@ -86,22 +85,23 @@ facing =- room_start_facing;
 //hurt
 flash_counter = 0;
 hurt = false;
-hurt_time = room_speed*1.5;
-hp = 5;
-max_hp = hp;
-hp_losing = max_hp;
+hurt_time = room_speed*0.8;
+hp = o_game.max_hp;
+//max_hp = hp;
+hp_losing = hp;
 
 
 //lives
 lives_initial = 3;
 lives = lives_initial;
-lives_value = 1000;
+
+//lives_value = 1000;
 
 //contrl movement
-left =0;
+left = 0;
 right = 0;
 up= 0;
-down=0;
+down= 0;
 attack=0;
 attack_held=0;
 jump = 0;
@@ -110,7 +110,7 @@ jump_held = 0;
 shoot = 0;
 shoot_held = 0;
 
-has_bow = false;
+
 
 //camera 
 o_camera.follow = o_player;
@@ -202,7 +202,6 @@ mask_array[states.GAME_END]			= s_player_hitbox_crouch;
 
 
 function acquire_bow() {
-	has_bow = true;
 	
 	sprites_array[states.IDLE]			 = s_player_bow_idle; 
 	sprites_array[states.WALK]			 = s_player_bow_walk;
@@ -219,4 +218,8 @@ function acquire_bow() {
 	sprites_array[states.DIE]			 = s_player_bow_die;
 	sprites_array[states.DIE_2]			 = s_player_bow_die_2;
 	sprites_array[states.GAME_END]		 = s_player_bow_die_2;
+}
+
+if (o_game.has_bow) {
+	acquire_bow();
 }

@@ -70,7 +70,7 @@ function player_attack_state(){
 		//hit ground	
 		if 	image_index > 4	and !runned_once {	
 				runned_once = true;
-				alarm[ONCE] = attack_delay;
+				alarm[ONCE] = 20;
 				
 				var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
 				if t1 != VOID { 

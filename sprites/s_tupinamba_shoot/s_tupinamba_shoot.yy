@@ -15,7 +15,8 @@
     {"$GMSpriteFrame":"","%Name":"920f7704-a41e-4ec7-972d-0a897dcef06b","name":"920f7704-a41e-4ec7-972d-0a897dcef06b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"4502b775-61ed-4540-84b5-3464c5de6bce","name":"4502b775-61ed-4540-84b5-3464c5de6bce","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"b26bf415-0107-48bb-ba6a-e2ec8f62a3d5","name":"b26bf415-0107-48bb-ba6a-e2ec8f62a3d5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"24bdf784-5ffe-4844-819c-fa2061c1bd99","name":"24bdf784-5ffe-4844-819c-fa2061c1bd99","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ce1b5814-1e4c-4f10-859c-e6ce39ea3d58","name":"ce1b5814-1e4c-4f10-859c-e6ce39ea3d58","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"27e3aaf4-a9ba-4123-8ac1-0d933b8c8ce3","name":"27e3aaf4-a9ba-4123-8ac1-0d933b8c8ce3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"58828a3d-18ad-43bf-8d98-e6546a7d682a","name":"58828a3d-18ad-43bf-8d98-e6546a7d682a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"3d190330-4b14-4edb-a5dd-a666cbb64a55","name":"3d190330-4b14-4edb-a5dd-a666cbb64a55","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"b354e9fd-674e-47be-81a3-f04d2aa8deb7","name":"b354e9fd-674e-47be-81a3-f04d2aa8deb7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
@@ -76,7 +77,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":9.0,
+    "length":10.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -105,23 +106,26 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b26bf415-0107-48bb-ba6a-e2ec8f62a3d5","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"00b40513-8a75-4b80-8b5f-244541b3fd33","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"24bdf784-5ffe-4844-819c-fa2061c1bd99","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"afd1c68a-cf61-4174-985d-f8ea3c5605b4","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ce1b5814-1e4c-4f10-859c-e6ce39ea3d58","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2998df97-6321-43cc-add0-f3810c8bc8f0","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"27e3aaf4-a9ba-4123-8ac1-0d933b8c8ce3","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0e046fcb-83d2-485b-ad22-6aabf5006f4a","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"58828a3d-18ad-43bf-8d98-e6546a7d682a","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7c4ba2b2-1150-438a-b938-12cf8f43b92e","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"7c4ba2b2-1150-438a-b938-12cf8f43b92e","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3d190330-4b14-4edb-a5dd-a666cbb64a55","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4c6486f6-49ee-4452-a2e6-a1453d193bcf","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"4c6486f6-49ee-4452-a2e6-a1453d193bcf","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b354e9fd-674e-47be-81a3-f04d2aa8deb7","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"5849040b-348e-4b0e-be81-5d1302a6efc8","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"5849040b-348e-4b0e-be81-5d1302a6efc8","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"313713bb-1d3c-4beb-8eca-5e3a3ca1aa79","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4b1339db-9d6e-4cbf-9b4b-91816aa0c045","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"4b1339db-9d6e-4cbf-9b4b-91816aa0c045","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"999f9276-554f-453b-b445-c8206395317e","path":"sprites/s_tupinamba_shoot/s_tupinamba_shoot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"27d8768d-fa7d-433d-a9d6-c16e29b90150","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"27d8768d-fa7d-433d-a9d6-c16e29b90150","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

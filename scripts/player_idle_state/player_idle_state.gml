@@ -13,11 +13,9 @@ function player_idle_state(){
 	//check state
 	if hsp != 0 state = states.WALK;
 
-	if attack and can_attack{
+	if (attack and can_attack) {
 		state = states.ATTACK;
 		image_index =0;
-		can_attack = false;
-		alarm[ATTACKING]= attack_delay;
 		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE,x,y);
 	}
 	
@@ -34,16 +32,14 @@ function player_idle_state(){
 		image_index = 0;
 	}
 	
-	if (has_bow and arrows >0) {
-		if shoot {
-			if on_ground() and up {
-				state = states.SHOOT_UP;
-				image_index = 0;
-			} else {
-				state = states.SHOOT;
-				image_index = 0;
-			}	
-		}
+	if (shoot and o_game.has_bow and arrows >0) {
+		if on_ground() and up {
+			state = states.SHOOT_UP;
+			image_index = 0;
+		} else {
+			state = states.SHOOT;
+			image_index = 0;
+		}	
 	}
 	
 	if down {

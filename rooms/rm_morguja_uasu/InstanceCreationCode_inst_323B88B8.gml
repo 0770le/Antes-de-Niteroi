@@ -1,5 +1,5 @@
 //patrol 
-facing = -1;
+facing = 1;
 patrol = false;
 patrol_left_limit = x - 3200;
 patrol_right_limit = x + 3200;

@@ -10,10 +10,10 @@ function tupinamba_melee_attack_state(){
 	
 	
 	//paradinha
-	var _pause = random_range(0.2,0.6);
+	var _pause = random_range(0.2,0.6)* room_speed;
 	if (floor(image_index) == 2) and !runned_once {	
 		runned_once = true;
-		alarm[ONCE] = _pause* room_speed;
+		alarm[ONCE] = _pause;
 		anim_paused(_pause);
 	
 	} 

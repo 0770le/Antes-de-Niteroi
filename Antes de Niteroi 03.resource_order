@@ -185,6 +185,7 @@
     {"name":"o_transition","order":2,"path":"objects/o_transition/o_transition.yy",},
     {"name":"o_trigger","order":1,"path":"objects/o_trigger/o_trigger.yy",},
     {"name":"o_tupinamba_melee","order":8,"path":"objects/o_tupinamba_melee/o_tupinamba_melee.yy",},
+    {"name":"o_tupinamba_rising_arrow_1","order":7,"path":"objects/o_tupinamba_rising_arrow_1/o_tupinamba_rising_arrow_1.yy",},
     {"name":"o_tupinamba_rising_arrow","order":2,"path":"objects/o_tupinamba_rising_arrow/o_tupinamba_rising_arrow.yy",},
     {"name":"o_tupinamba_spawner","order":15,"path":"objects/o_tupinamba_spawner/o_tupinamba_spawner.yy",},
     {"name":"o_tupinamba","order":6,"path":"objects/o_tupinamba/o_tupinamba.yy",},

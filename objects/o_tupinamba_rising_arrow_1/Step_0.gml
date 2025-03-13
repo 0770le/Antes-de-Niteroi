@@ -13,6 +13,20 @@ var t2 = 0;
 var t2 = tilemap_get_at_pixel(global.map, side() , bbox_bottom);
 if t2 == SOLID{die=true}
 
+speed = clamp(speed, min_spd , max_spd);
+gravity= grav;
+
+//direction image
+image_angle = (direction) ;
+
+image_xscale =1;// sign(hsp);
+var t1 = 0;
+var t2 = 0;
+
+
+var t2 = tilemap_get_at_pixel(global.map, side() , bbox_bottom);
+if t2 == SOLID{die=true}
+
 
 	
 //play animation

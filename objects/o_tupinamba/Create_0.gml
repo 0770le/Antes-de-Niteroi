@@ -7,6 +7,7 @@ hanging_time = hanging_time_initial;
 //BOW
 //arrow spawning y pos
 spawn_pos =1;
+ypos = -22; 
 can_fire = false;
 knockback_shoot_distance = 5;
 number_of_shots_initial = 3;
@@ -146,19 +147,81 @@ function can_evade() {
 	}
 }
 
+//para o objeto tupinamba rising arrow original. (inimigo + dificil)
+//function create_arrow() {
+//	if (on_screen()) {
+//		//set spawn position		
+//			ypos = -22;
+//		//create arrow
+//			var inst = instance_create_layer(side()+4*facing,y + ypos, LAYER_PROJECTILES, o_tupinamba_rising_arrow);
+//			inst.facing = facing;
+//		//sound
+//			audio_play_sound(snd_arrow_firing,10, false, global.volume);
+//		//create spark
+//			inst = instance_create_layer (side()+4*facing, y + ypos, LAYER_PROJECTILES, o_arrow_spark);			
+//			inst.image_xscale = facing;
+//	}
+//}
+target_data = noone;
+function get_target_data() {	
+	var _spd = TUPINAMBA_ARROW_SPD;
+	var _x_delta = abs((o_player.x + o_player.hsp * o_player.facing) - (side()+4*facing)) / _spd; //x do tupinamba. botar x da flecha 
+	var _y_delta = y + ypos - (o_player.bbox_top + (o_player.vsp/2)*_x_delta)-6;	
+    var target_data = {
+        spd: _spd,
+        v_spd: 0,
+        grav: global.grav * 0.25,
+	//calculating vertical speed
+		x_delta : _x_delta,
+		y_delta : _y_delta,
+		dir : o_player.x >= x ? 0 : 180	
+    };
+    target_data.v_spd = (target_data.y_delta + (0.5 * target_data.grav * power(target_data.x_delta, 2))) / target_data.x_delta;	
+    return target_data;
+}
+// Função para criar a flecha com os dados obtidos
+function create_arrow_1(target_data) {
+	//create arrow
+	
+	var inst = instance_create_layer(side()+4*facing,y + ypos, LAYER_PROJECTILES, o_tupinamba_rising_arrow_1);
+	inst.facing = facing;
+	
+	with(inst) {
+		
+		v_spd = target_data.v_spd;
+		spd = target_data.spd;	
+	  
+		gravity = grav;
+		dir = target_data.dir;
+	
+		
+		
+	    image_angle = dir;//direction;	
+		//faz ir na direçao do player
+		motion_add(90, v_spd);
+		motion_add(dir, spd);
+		speed = clamp(speed, min_spd, max_spd);
 
-
-function create_arrow() {
-	if (on_screen()) {
-		//set spawn position		
-			ypos = -22;
-		//create arrow
-			var inst = instance_create_layer(side()+4*facing,y + ypos, LAYER_PROJECTILES, o_tupinamba_rising_arrow);
-			inst.facing = facing;
-		//sound
-			audio_play_sound(snd_arrow_firing,10, false, global.volume);
-		//create spark
-			inst = instance_create_layer (side()+4*facing, y + ypos, LAYER_PROJECTILES, o_arrow_spark);			
-			inst.image_xscale = facing;
+		start_speed = target_data.spd;
+	    start_v_spd = target_data.v_spd;
+	    start_direction = dir;// direction;
+		
+		//rastro de ambas as penas
+			call_later(follow_moment, time_source_units_frames, function () {	//cria o rastro
+			var inst = instance_create_depth(follow_x+3*facing, follow_y-2 , depth, o_projectil_tail);
+			tail_id = inst.id;
+			with(tail_id) {
+			
+				min_spd = other.min_spd;
+				max_spd = other.max_spd;
+				speed = clamp(speed, min_spd , max_spd);
+				direction = other.start_direction;
+				//player direction
+				motion_add(90,  other.start_v_spd);
+				motion_add(other.x >= x ? 0 : 180,  other.start_speed);
+				grav= other.grav;
+			 } 
+		 });
+		
 	}
 }

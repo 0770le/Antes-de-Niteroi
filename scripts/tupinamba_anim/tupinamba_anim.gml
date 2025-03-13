@@ -8,12 +8,18 @@ function tupinamba_anim(){
 	if (state ==  tupinamba_states.SHOOT) { 
 		var _dir = point_direction(x,y,o_player.x, o_player.y);
 		var _angle = 25;
-		//up
-		if (_dir > _angle and _dir < 180 - _angle) {
-			sprite_index = s_tupinamba_shoot_up;
-		// down	
-		} else if (_dir > 180+ _angle and (_dir < 360 - _angle)) {
-			sprite_index = s_tupinamba_shoot_down;	
-		}  
+		
+	//nao mudar depois q mirou
+		if(image_index > 3 and image_index < 5) {
+			return;
+		} else {	
+			//up
+			if (_dir > _angle and _dir < 180 - _angle) {
+				sprite_index = s_tupinamba_shoot_up;
+			// down	
+			} else if (_dir > 180+ _angle and (_dir < 360 - _angle)) {
+				sprite_index = s_tupinamba_shoot_down;	
+			}  
+		}
 	}
 }

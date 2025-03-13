@@ -1,12 +1,13 @@
 //init variables
 line_width = 4.5;
-arrow_parent = noone;
-player_arrow= false;
+player_arrow = false;
 hsp=0;
 vsp=0;
+spd=0;
 min_spd = 0;
 max_spd = 0;
 grav = 0;
+facing = 0;
 //set colour
 col_head = c_white; 
 col_tail=  c_white; //make_colour_rgb(235,116,116);

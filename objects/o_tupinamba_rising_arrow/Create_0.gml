@@ -1,12 +1,13 @@
+event_inherited();
+
 //init
-spd = 6;
+spd =  TUPINAMBA_ARROW_SPD;
 v_spd = 0;
 facing = 0;
 image_speed = 0;
 grav = global.grav*0.25;
 gravity= grav;
 knockback_distance = 0.1;
-
 damage = 1;
 
 //destroy objetc
@@ -33,7 +34,7 @@ start_v_spd = v_spd;
 start_direction = direction;
 	
 //generate tail
-tail_id2 = noone;
+
 tail_id = noone;
 _once = false;
 follow_moment = 33/spd;//arrow_width

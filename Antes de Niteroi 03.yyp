@@ -238,6 +238,7 @@
     {"id":{"name":"o_trigger_text","path":"objects/o_trigger_text/o_trigger_text.yy",},},
     {"id":{"name":"o_trigger","path":"objects/o_trigger/o_trigger.yy",},},
     {"id":{"name":"o_tupinamba_melee","path":"objects/o_tupinamba_melee/o_tupinamba_melee.yy",},},
+    {"id":{"name":"o_tupinamba_rising_arrow_1","path":"objects/o_tupinamba_rising_arrow_1/o_tupinamba_rising_arrow_1.yy",},},
     {"id":{"name":"o_tupinamba_rising_arrow","path":"objects/o_tupinamba_rising_arrow/o_tupinamba_rising_arrow.yy",},},
     {"id":{"name":"o_tupinamba_spawner","path":"objects/o_tupinamba_spawner/o_tupinamba_spawner.yy",},},
     {"id":{"name":"o_tupinamba","path":"objects/o_tupinamba/o_tupinamba.yy",},},

@@ -47,6 +47,9 @@ function macros(){
 	
 	//ONCE						11
 
+//enemy var
+#macro TUPINAMBA_ARROW_SPD		6
+
 //chest
 //#macro OPEN						0
 	

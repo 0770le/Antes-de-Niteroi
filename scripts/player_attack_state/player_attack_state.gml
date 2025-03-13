@@ -30,10 +30,10 @@ function player_attack_state(){
 	}	
 	
 	//paradinha
-	var _pause = 0.1;
+	var _pause = 0.1* room_speed;
 	if (floor(image_index) == 2) and !runned_once {	
 		runned_once = true;
-		alarm[ONCE] = _pause* room_speed;
+		alarm[ONCE] = _pause;
 		anim_paused(_pause);
 		
 		//atacando direto se segurou mais q a pausa

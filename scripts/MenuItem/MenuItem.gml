@@ -1,6 +1,6 @@
 enum MENU_TYPE 
 {
-	UNSET, NODE, LEAF, BUTTON, CHECKBOX, SELECTOR, INTEGER, CATALOG, INPUT
+	UNSET, NODE, LEAF, BUTTON, CHECKBOX, SELECTOR, INTEGER, CATALOG, INPUT, TWO_COLUMNS_NODE
 }
 
 function MenuItem(_type = MENU_TYPE.UNSET, _title = "MenuItem") 
@@ -11,6 +11,9 @@ constructor
 	parent = self;
 	previous = self;
 	next = self;
+	
+	left = self;
+	right = self;
 }
 
 function MenuNode(_title = "MenuNode", _children = []) 
@@ -48,6 +51,59 @@ constructor
 	}
 	
 	init(_children);
+}
+
+function MenuTwoColumnsNode(_title = "MenuNode", _children = [], _children_2 = []) 
+	: MenuNode(MENU_TYPE.NODE, _children) 
+constructor 
+{
+	title = _title;
+	type = MENU_TYPE.TWO_COLUMNS_NODE;
+	
+	children = [];
+	children_2 = [];
+	
+	static add_child_2 = function (_menu_item = new MenuItem()) 
+	{
+		var _last = array_last(children_2);
+		
+		if (_last != undefined) 
+		{
+			_last.next = _menu_item;
+			
+			_menu_item.previous = _last;
+		}
+		
+		array_push(children_2, _menu_item);
+		
+		if (array_length(children) >= array_length(children_2))
+		{
+			var _reference_index = array_length(children_2) - 1;
+			
+			var _last_from_children = children[_reference_index];
+			var _last_from_children_2 = children_2[_reference_index];
+			
+			_last_from_children.right = _last_from_children_2;
+			_last_from_children_2.left = _last_from_children;
+		}
+		
+		_menu_item.parent = self;
+		
+		return _menu_item;
+	}
+	
+	static add_children_2 = function (_menu_items = []) 
+	{
+		array_foreach(_menu_items, add_child_2);
+	}
+	
+	static init = function (_children = [], _children_2 = [])
+	{
+		add_children(_children)
+		add_children_2(_children_2)
+	}
+	
+	init(_children, _children_2);
 }
 
 function MenuLeaf(_title = "MenuLeaf", _sprite = noone)
@@ -104,6 +160,18 @@ function MenuInputKeyboard(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
 	: MenuInput(_input_in_game_action, INPUT_SOURCE_TYPE.KEYBOARD)
 constructor 
 {	
+	static get_sprite = function ()
+	{
+		if (is_active)
+		{
+			return spr_keyboard_choose;
+		}
+		else 
+		{
+			return global.input_manager.get_input_in_game_action_sprite(input_in_game_action, input_source_type);
+		}
+	}
+	
 	on_click = function () 
 	{
 		global.input_manager.start_capture(self);

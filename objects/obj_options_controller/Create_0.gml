@@ -7,6 +7,7 @@
 #macro OPTIONS_SFX_VOLUME		"sfx_volume"
 
 #macro OPTIONS_GAMEPAD_KEYMAP	"gamepad_keymap"
+#macro OPTIONS_KEYBOARD_KEYMAP	"keyboard_keymap"
 
 // saveables
 
@@ -70,7 +71,15 @@ function read_all()
 		
 		file_text_close(_savefile);
 		
-		global.input_manager.gamepad_keymap = options.gamepad_keymap;
+		if (array_length(options.gamepad_keymap) > 0)
+		{
+			global.input_manager.gamepad_keymap = options.gamepad_keymap;
+		}
+		
+		if (array_length(options.keyboard_keymap) > 0)
+		{
+			global.input_manager.keyboard_keymap = options.keyboard_keymap;
+		}
 	} catch (_e) {
 		
 		global.logger.error($"failed to load options file: {_e}");

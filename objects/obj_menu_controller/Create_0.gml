@@ -58,90 +58,59 @@ function draw_parent()
 	draw_text(_xx, bbox_top + 88, selected_item.parent.title); 
 }
 
-function draw_item(_menu_item = new MenuItem(), _index = 0)
+function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false, _second_column = false)
 {
-	var _xxx = 300;
+	var _yyy = 300;
 	
 	draw_set_font(font_description);
 	draw_set_color(c_white);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	
-	if (_menu_item.type == MENU_TYPE.LEAF) // DEPRECATED
+	// any node
+	var _xx = get_sprite_center_x();
+	if (_dual_column)
 	{
-		var _sprite_padding = 0;
+		_xx -= 150;
+	}
+	if (_second_column)
+	{
+		_xx += 300;
+	}
+	
+	var _yy = _yyy + (_index * 70);
 		
-		if (_menu_item.sprite != noone)
-		{
-			var _sprite_x = bbox_left + 46;
-			var _sprite_y = bbox_top + 66;
-			var _sprite_width = 24;
-			var _sprite_height = 24;
-				
-			draw_rectangle(
-				_sprite_x - _sprite_width, 
-				_sprite_y - _sprite_height, 
-				_sprite_x + _sprite_width, 
-				_sprite_y + _sprite_height, true);
+	draw_sprite_ext(spr_menu_button, _menu_item == selected_item ? 0 : 1, _xx, _yy, 1.2, 1.2, 0, c_white, 1);
 		
-			draw_sprite(_menu_item.sprite, 0, _sprite_x, _sprite_y);
-			
-			_sprite_padding += _sprite_width + 20;
-		}
+	if (_menu_item.type == MENU_TYPE.CHECKBOX || _menu_item.type == MENU_TYPE.INTEGER || _menu_item.type == MENU_TYPE.INPUT)
+	{
+		draw_set_halign(fa_left);
 		
-		draw_text_ext(
-			bbox_left + x_padding + x_level_padding + _sprite_padding, 
-			bbox_top + y_padding + (1 + _index) * y_level_padding, 
-			_menu_item.title, 15, 420);
+		draw_text(_xx - 115, _yy, _menu_item.title);
 	}
 	else 
 	{
-		var _xx = get_sprite_center_x();
-		var _yy = _xxx + (_index * 70);
-		
-		draw_sprite_ext(spr_menu_button, _menu_item == selected_item ? 0 : 1, _xx, _yy, 1.2, 1.2, 0, c_white, 1);
-		
-		if (_menu_item.type == MENU_TYPE.CHECKBOX || _menu_item.type == MENU_TYPE.INTEGER || _menu_item.type == MENU_TYPE.INPUT)
-		{
-			draw_set_halign(fa_left);
-		
-			draw_text(_xx - 115, _yy, _menu_item.title);
-		}
-		else 
-		{
-			draw_text(_xx, _yy, _menu_item.title);
-		}
-		
-		if (_menu_item.type == MENU_TYPE.CATALOG)
-		{
-			if (has_new_items) draw_sprite_ext(spr_catalog_new_item, 0, _xx + 120, _yy, 0.35, 0.35, 0, c_white, 1);
-		} 
-	}
+		draw_text(_xx, _yy, _menu_item.title);
+	}	
 	
-	if (_menu_item.type == MENU_TYPE.INPUT)
+	// specific nodes
+	if (_menu_item.type == MENU_TYPE.CATALOG)
 	{
-		var _xx = get_sprite_center_x();
-		var _yy = _xxx + (_index * 70);
-		
+		if (has_new_items) draw_sprite_ext(spr_catalog_new_item, 0, _xx + 120, _yy, 0.35, 0.35, 0, c_white, 1);
+	} 
+	else if (_menu_item.type == MENU_TYPE.INPUT)
+	{
 		// how icon based on action key mapping		
 		draw_sprite_ext(_menu_item.get_sprite(), 0, _xx + 120, _yy, 2, 2, 0, c_white, 1);
-	}
-	
-	if (_menu_item.type == MENU_TYPE.CHECKBOX) 
+	} 
+	else if (_menu_item.type == MENU_TYPE.CHECKBOX) 
 	{
-		var _xx = get_sprite_center_x();
-		var _yy = _xxx + (_index * 70);
-		
 		var _checkbox_sprite = _menu_item.checked ? spr_checkbox_checked : spr_checkbox_unchecked;
 		
 		draw_sprite_ext(_checkbox_sprite, 0, _xx + 105, _yy, 0.25, 0.25, 0, c_white, 1);
 	}
-	
-	if (_menu_item.type == MENU_TYPE.INTEGER)
+	else if (_menu_item.type == MENU_TYPE.INTEGER)
 	{
-		var _xx = get_sprite_center_x();
-		var _yy = _xxx + (_index * 70);
-		
 		draw_set_halign(fa_right);
 		
 		draw_text(_xx + 100, _yy, $"{_menu_item.value}");
@@ -213,8 +182,16 @@ function draw_menu_items()
 	
 	array_foreach(_selected_group.children, function(_child, _index) 
 	{ 
-		draw_item(_child, _index);
+		draw_item(_child, _index, _child.parent.type == MENU_TYPE.TWO_COLUMNS_NODE);
 	});
+	
+	if (_selected_group.type == MENU_TYPE.TWO_COLUMNS_NODE)
+	{
+		array_foreach(_selected_group.children_2, function(_child, _index) 
+		{ 
+			draw_item(_child, _index, true, true);
+		});
+	}
 }
 
 function on_input_key_map(_menu_item = new MenuInput(INPUT_IN_GAME_ACTION.JUMP), _keymap_input_model = new KeyMapInputModel())
@@ -225,7 +202,11 @@ function on_input_key_map(_menu_item = new MenuInput(INPUT_IN_GAME_ACTION.JUMP),
 		{
 			global.input_manager.set_gamepad_key_for_action(_menu_item.input_in_game_action, _keymap_input_model.key_pressed);
 		}
-	}	
+		else 
+		{
+			global.input_manager.set_keyboard_key_for_action(_menu_item.input_in_game_action, _keymap_input_model.key_pressed);
+		}
+	}
 	
 	_menu_item.is_active = false;
 }
@@ -254,6 +235,7 @@ function on_input_menu(_input = new MenuInputModel())
 		switch (selected_item.type)
 		{
 			case MENU_TYPE.NODE:
+			case MENU_TYPE.TWO_COLUMNS_NODE:
 				selected_item = selected_item.children[0];
 			
 				break;
@@ -279,6 +261,11 @@ function on_input_menu(_input = new MenuInputModel())
 			case MENU_TYPE.INTEGER:
 				if (_input.left) selected_item.on_left();
 				if (_input.right) selected_item.on_right();
+			
+				break;
+			default:
+				if (_input.left) selected_item = selected_item.left;
+				if (_input.right) selected_item = selected_item.right;
 			
 				break;
 		}
@@ -404,12 +391,18 @@ function init()
 	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.BOW_SHOT));
 	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
 	
-	var _keyboard_node = _controls_node.add_child(new MenuNode("Teclado"))
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.JUMP));
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.ATTACK));
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.DODGE));
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
-	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
+	var _keyboard_node = _controls_node.add_child(new MenuTwoColumnsNode("Teclado"))
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.UP));
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.LEFT));
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.DOWN));
+	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.RIGHT));
+	
+	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.JUMP));
+	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.ATTACK));
+	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.DODGE));
+	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
+	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
+	
 	
 	// Quit Game	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 

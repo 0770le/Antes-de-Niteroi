@@ -12,7 +12,8 @@ function OptionsModel (
 		unlocked_catalog_items: [],
 		checked_catalog_items: [],
 		
-		gamepad_keymap: []
+		gamepad_keymap: [],
+		keyboard_keymap: [],
 	}) 
 constructor 
 {
@@ -33,4 +34,5 @@ constructor
 	
 	// keymaps 
 	gamepad_keymap = _options_model.gamepad_keymap;
+	keyboard_keymap = _options_model.keyboard_keymap;
 }

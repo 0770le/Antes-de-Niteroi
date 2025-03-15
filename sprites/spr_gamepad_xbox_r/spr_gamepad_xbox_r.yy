@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":5,
   "parent":{
-    "name":"gamepad",
-    "path":"folders/Objects/InputManager/Sprites/gamepad.yy",
+    "name":"xbox",
+    "path":"folders/Objects/InputManager/Sprites/gamepad/xbox.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -133,7 +133,7 @@ constructor
 	{
 		if (is_active)
 		{
-			return spr_gamepad_xbox_choose;
+			return spr_gamepad_choose;
 		}
 		else 
 		{
@@ -150,7 +150,7 @@ constructor
 	{
 		global.input_manager.start_capture(self);
 		
-		sprite = spr_gamepad_xbox_choose;
+		sprite = spr_gamepad_choose;
 		
 		is_active = true;
 	}

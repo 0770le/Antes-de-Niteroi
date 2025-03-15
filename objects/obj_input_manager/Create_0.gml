@@ -227,7 +227,7 @@ data_sets =
 
 last_input_source_type	= INPUT_SOURCE_TYPE.GAMEPAD;
 last_gamepad_type		= GAMEPAD_TYPE.XBOX;
-last_gamepad_index		= 4;
+last_gamepad_index		= 0;
 axis_deadzone			= 0.5;
 
 is_capturing			= false;
@@ -248,7 +248,7 @@ function get_menu_action_sprite(_input_menu_action = INPUT_MENU_ACTION.CONFIRM)
 {
 	if (last_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
 	{
-		return input_menu_action_sprites[last_input_source_type][_input_menu_action][last_gamepad_type];
+		return input_menu_action_sprites[last_input_source_type][last_gamepad_type][_input_menu_action];
 	}
 	else 
 	{
@@ -265,7 +265,7 @@ function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_A
 {
 	if (_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
 	{
-		return gamepad_button_sprites[gamepad_keymap[_input_in_game_action] - gp_face1][last_gamepad_type];
+		return gamepad_button_sprites[last_gamepad_type][gamepad_keymap[_input_in_game_action] - gp_face1];
 	}
 	else 
 	{
@@ -440,7 +440,7 @@ function gamepad_get_checked_key()
 {
 	for (var _i = gp_face1; _i <= gp_shoulderrb; _i++)
 	{
-		if (gamepad_button_check_pressed(0, _i))
+		if (gamepad_button_check_pressed(last_gamepad_index, _i))
 		{
 			return _i;
 		}
@@ -469,21 +469,48 @@ function keyboard_get_checked_key()
 
 function gamepad_check_any()
 {
-	for (var _i = gp_face1; _i <= gp_extra6; _i++)
+	for (var _j = 0; _j <= 4; _j+=4) // input indexes
 	{
-	    if (gamepad_button_check(0, _i)) {
-	        
-			return true;			
-        }
-    }
+		for (var _i = gp_face1; _i <= gp_extra6; _i++)
+		{
+			if (gamepad_button_check(_j, _i)) 
+			{
+				last_gamepad_index = _j;
+				last_gamepad_type  = get_gamepad_type(_j);
+				
+				return true;
+	        }
+	    }
 	
-	if (gamepad_axis_value(0, gp_axisrv) < -axis_deadzone || gamepad_axis_value(0, gp_axisrv) > axis_deadzone
-		|| gamepad_axis_value(0, gp_axislv) < -axis_deadzone || gamepad_axis_value(0, gp_axislv) > axis_deadzone)
-	{
-		return true;
+		if (gamepad_axis_value(_j, gp_axisrv) < -axis_deadzone || gamepad_axis_value(_j, gp_axisrv) > axis_deadzone
+			|| gamepad_axis_value(_j, gp_axislv) < -axis_deadzone || gamepad_axis_value(_j, gp_axislv) > axis_deadzone)
+		{
+			last_gamepad_index = _j;
+			last_gamepad_type  = get_gamepad_type(_j);
+			
+			return true;
+		}
 	}
 	
 	return false;
+}
+
+function get_gamepad_type(_gamepad_index = 0)
+{
+	var _description = string_lower(gamepad_get_description(_gamepad_index));
+	
+	if (string_pos("switch", _description) > 0) 
+	{		
+		return GAMEPAD_TYPE.SWITCH;
+	}
+	else if (string_pos("ps", _description) > 0)
+	{
+		return GAMEPAD_TYPE.PLAYSTATION;
+	}
+	else 
+	{
+		return GAMEPAD_TYPE.XBOX;
+	}
 }
 
 function get_input_sprite_scale()

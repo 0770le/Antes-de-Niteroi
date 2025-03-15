@@ -35,17 +35,17 @@ if (!instance_exists(o_fade)) {
 }
 
 if(keyboard_check_pressed(vk_f1) and room != rm_cidade_velha) {
-	fade_to_room(rm_cidade_velha, 3762, 415, other.facing, c_black);	
+	fade_to_room(rm_cidade_velha, 3762, 415, other.facing);	
 }
 if(keyboard_check_pressed(vk_f2) and room != rm_akaray_1) {
-	fade_to_room(rm_akaray_1, 2920, 751, other.facing, c_black);	
+	fade_to_room(rm_akaray_1, 2920, 751, other.facing);	
 }
 if(keyboard_check_pressed(vk_f3) and room != rm_seregipe) {
-	fade_to_room(rm_seregipe, 3030, 3000, other.facing, c_black);	
+	fade_to_room(rm_seregipe, 3030, 3000, other.facing);	
 }
 if(keyboard_check_pressed(vk_f4) and room != rm_morguja_uasu) {
-	fade_to_room(rm_morguja_uasu, 50, 400, other.facing, c_black);	
+	fade_to_room(rm_morguja_uasu, 4188, 1234, other.facing);	
 }
 if(keyboard_check_pressed(vk_f5) and room != rm_morguja_uasu) {
-	fade_to_room(rm_morguja_uasu, 6900, 750, other.facing, c_black);	
+	fade_to_room(rm_morguja_uasu, 6900, 750, other.facing);	
 }

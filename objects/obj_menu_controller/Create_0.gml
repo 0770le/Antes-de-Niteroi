@@ -24,6 +24,7 @@ volume_sfx          = noone;
 title				= noone;
 
 has_new_items		= false;
+game_version		= "v0.0.1";
 
 function open() {
 	is_open = true;
@@ -166,8 +167,19 @@ function draw_controller_buttons()
 	}
 }
 
+function draw_version()
+{
+	draw_set_color(c_black);
+	draw_set_font(fnt_arial_medium_to_small);
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_left);
+	
+	draw_text(bbox_left + 50, bbox_bottom - 64, $"Antes de Niterói {game_version}");
+}
+
 function draw_menu_items() 
 {
+	draw_version();
 	draw_controller_buttons();
 	
 	draw_set_halign(fa_left);

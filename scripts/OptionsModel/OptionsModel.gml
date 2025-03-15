@@ -12,8 +12,26 @@ function OptionsModel (
 		unlocked_catalog_items: [],
 		checked_catalog_items: [],
 		
-		gamepad_keymap: [],
-		keyboard_keymap: [],
+		gamepad_keymap: 
+		[
+			gp_face1,
+			gp_face2,
+			gp_face3,
+			gp_face4,
+			gp_shoulderr
+		],
+		keyboard_keymap: 
+		[
+			vk_space,
+			ord("J"),
+			ord("K"),
+			ord("L"),
+			ord("U"),
+			vk_up,
+			vk_left,
+			vk_down,
+			vk_right,
+		],
 	}) 
 constructor 
 {

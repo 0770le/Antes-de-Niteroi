@@ -683,6 +683,8 @@
     {"id":{"name":"spr_gamepad_switch_dright","path":"sprites/spr_gamepad_switch_dright/spr_gamepad_switch_dright.yy",},},
     {"id":{"name":"spr_gamepad_switch_l","path":"sprites/spr_gamepad_switch_l/spr_gamepad_switch_l.yy",},},
     {"id":{"name":"spr_gamepad_switch_r","path":"sprites/spr_gamepad_switch_r/spr_gamepad_switch_r.yy",},},
+    {"id":{"name":"spr_gamepad_switch_sl","path":"sprites/spr_gamepad_switch_sl/spr_gamepad_switch_sl.yy",},},
+    {"id":{"name":"spr_gamepad_switch_sr","path":"sprites/spr_gamepad_switch_sr/spr_gamepad_switch_sr.yy",},},
     {"id":{"name":"spr_gamepad_switch_start","path":"sprites/spr_gamepad_switch_start/spr_gamepad_switch_start.yy",},},
     {"id":{"name":"spr_gamepad_switch_x","path":"sprites/spr_gamepad_switch_x/spr_gamepad_switch_x.yy",},},
     {"id":{"name":"spr_gamepad_switch_y","path":"sprites/spr_gamepad_switch_y/spr_gamepad_switch_y.yy",},},

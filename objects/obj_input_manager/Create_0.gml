@@ -261,7 +261,7 @@ function get_input_in_game_action_name(_input_in_game_action = INPUT_IN_GAME_ACT
 	return input_in_game_action_names[_input_in_game_action];
 }
 
-function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _input_source_type = INPUT_SOURCE_TYPE.GAMEPAD)
+function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _input_source_type = last_input_source_type)
 {
 	if (_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
 	{

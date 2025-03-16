@@ -1,4 +1,6 @@
 /// @description show message
+show_interact_key = true;
+
 if(talk and other.interact) {
 	//show_msg(msgs[min(array_length(msgs)-1, quest_step)], 2);
 	var _text = msgs[min(array_length(msgs)-1, quest_step)];

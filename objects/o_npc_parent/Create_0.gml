@@ -14,3 +14,5 @@ text_x_offset = 0;
 text_y_offset = -100;
 
 talk = true;
+
+show_interact_key = false;

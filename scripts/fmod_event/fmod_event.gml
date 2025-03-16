@@ -59,6 +59,11 @@ enum FMOD_VCA
 		SNAKE_DIE,
 		SNAKE_HURT,
 		
+		// UI
+		BUTTON_TALK,
+		COLLECT_LIFE,
+		COLLECT_REGISTER,
+		TRANSITION_BOAT
 	}
 
 #endregion

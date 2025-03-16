@@ -23,15 +23,19 @@ function OptionsModel (
 		keyboard_keymap: 
 		[
 			vk_space,
-			ord("J"),
-			ord("K"),
-			ord("L"),
-			ord("U"),
+			ord("F"),
+			ord("S"),
+			ord("D"),
+			ord("E"),
 			vk_up,
 			vk_left,
 			vk_down,
 			vk_right,
 		],
+		
+		last_room: rm_cidade_velha,
+		last_player_x: 0,
+		last_player_y: 0
 	}) 
 constructor 
 {
@@ -53,4 +57,9 @@ constructor
 	// keymaps 
 	gamepad_keymap = _options_model.gamepad_keymap;
 	keyboard_keymap = _options_model.keyboard_keymap;
+	
+	// game progress
+	last_room = _options_model.last_room;
+	last_player_x = _options_model.last_player_x;
+	last_player_y = _options_model.last_player_y;
 }

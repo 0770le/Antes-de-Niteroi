@@ -9,6 +9,10 @@
 #macro OPTIONS_GAMEPAD_KEYMAP	"gamepad_keymap"
 #macro OPTIONS_KEYBOARD_KEYMAP	"keyboard_keymap"
 
+#macro OPTIONS_LAST_ROOM		"last_room"
+#macro OPTIONS_LAST_PLAYER_X	"last_player_x"
+#macro OPTIONS_LAST_PLAYER_Y	"last_player_y"
+
 // saveables
 
 options = new OptionsModel();

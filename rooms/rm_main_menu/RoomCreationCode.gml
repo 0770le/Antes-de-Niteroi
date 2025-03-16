@@ -1,0 +1,1 @@
+instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_main_menu_controller);

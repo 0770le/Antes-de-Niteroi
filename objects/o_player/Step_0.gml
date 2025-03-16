@@ -49,3 +49,6 @@ if(keyboard_check_pressed(vk_f4) and room != rm_morguja_uasu) {
 if(keyboard_check_pressed(vk_f5) and room != rm_morguja_uasu) {
 	fade_to_room(rm_morguja_uasu, 6900, 750, other.facing);	
 }
+if(keyboard_check_pressed(vk_f6) and room != rm_main_menu) {
+	fade_to_room(rm_main_menu, 6900, 750, other.facing);
+}

@@ -111,6 +111,8 @@ function macros(){
 #macro LAYER_BACKGROUND_5			"Backgrounds_5"
 #macro LAYER_BACKGROUND_6			"Backgrounds_6"
 #macro LAYER_BACKGROUND_7			"Backgrounds_7"
+#macro LAYER_BACKGROUND_8			"Backgrounds_8"
+#macro LAYER_BACKGROUND_9			"Backgrounds_9"
 
 #macro COLLECTIBLE_ARARA			1
 #macro COLLECTIBLE_ARARIBOIA		2

@@ -49,8 +49,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_iaguara_idle",
-    "path":"sprites/s_iaguara_idle/s_iaguara_idle.yy",
+    "name":"s_iaguara_sleep",
+    "path":"sprites/s_iaguara_sleep/s_iaguara_sleep.yy",
   },
   "spriteMaskId":null,
   "visible":true,

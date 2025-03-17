@@ -28,13 +28,13 @@ function jararaca_moving_state(){
 		var t1_2 = tilemap_get_at_pixel(global.map, x,  bbox_bottom - (TILE_SIZE)*2-1);	//3º bloco diretamente acima
 		var t2_2 = tilemap_get_at_pixel(global.map, x,  bbox_bottom - (TILE_SIZE)*3-1);	//4º bloco diretamente acima
 		
-		if(t0 == SOLID and t1 == SOLID and t2 == SOLID and t0_2 == VOID and t1_2 == VOID and t2_2 == VOID) {
+		if(t0 == SOLID and t1 == SOLID and t2 == SOLID and (t0_2 == VOID or t0_2 == DEATH) and t1_2 == (VOID or t1_2 == DEATH) and (t2_2 == VOID or t2_2 == DEATH)) {
 			image_index = 0;
 			state = jararaca_states.START_CLIMB;
 		} else {
 			facing = facing * -1;
 		}
-	} else if (next_step == VOID) { //buraco
+	} else if (next_step == VOID or next_step == DEATH) { //buraco
 		
 		var t0 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + (TILE_SIZE)+1);	//2º bloco abaixo
 		var t1 = tilemap_get_at_pixel(global.map, side() +1*facing, bbox_bottom + (TILE_SIZE)*2+1);	//3º bloco abaixo
@@ -44,7 +44,7 @@ function jararaca_moving_state(){
 		var t1_2 = tilemap_get_at_pixel(global.map, side() -2*facing,  bbox_bottom + (TILE_SIZE)*2+1);	//3º bloco diretamente abaixo
 		var t2_2 = tilemap_get_at_pixel(global.map, side() -2*facing,  bbox_bottom + (TILE_SIZE)*3+1);	//4º bloco diretamente abaixo
 		
-		if(t0 == VOID and t1 == VOID and t2 == VOID and t0_2 == SOLID and t1_2 == SOLID and t2_2 == SOLID) {
+		if((t0 == VOID or t0 == DEATH) and (t1 == VOID or t1 == DEATH) and (t2 == VOID or t2 == DEATH) and t0_2 == SOLID and t1_2 == SOLID and t2_2 == SOLID) {
 			state = jararaca_states.START_DESCEND;
 			image_index = 0;
 			var _pos = find_ground( side() +1*facing ,y, -1);

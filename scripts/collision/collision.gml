@@ -23,8 +23,7 @@ function collision() {
 	var t1 = tilemap_get_at_pixel(global.map, _side + hsp, bbox_top);
 	var t2 = tilemap_get_at_pixel(global.map, _side + hsp, bbox_bottom);	
 
-	if ((t1 != VOID) and (t1 != PLATAFORM )) or
-	   ((t2 != VOID) and (t2 != PLATAFORM)) {
+	if (t1 == SOLID or t2 == SOLID) {
 		//collision found
 		//indo para a direita
 		if (hsp > 0) {
@@ -72,8 +71,10 @@ function collision() {
 	var vt4 = tilemap_get_at_pixel(global.map, bbox_right, vertical_side);
 
 	//collision found
-	if (vt1 != VOID and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and vt3 == PLATAFORM)) or
-	   (vt2 != VOID and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and vt4 == PLATAFORM)) {
+	if (!death_protection and ((vt1 == DEATH) or (vt2 == DEATH)) or (y > room_height)) {
+		hp = 0;
+	} else if ((vt1 != VOID and vt1 != DEATH) and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and vt3 == PLATAFORM)) or
+	   ((vt2 != VOID and vt2 != DEATH) and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and vt4 == PLATAFORM)) {
 		
 		
 		if (vsp > 0) { //floor
@@ -88,9 +89,6 @@ function collision() {
 		}
 		vsp = 0;
 		//death tile check
-		if (!death_protection and ((vt1 == DEATH) or (vt2 == DEATH)) or (y > room_height)) {
-			hp = 0;
-		}
 	}
 	
 	y+= vsp;

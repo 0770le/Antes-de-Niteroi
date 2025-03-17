@@ -22,6 +22,8 @@ o_enemy = object_index;
 
 //anim
 enemy_animation = tupinamba_anim;
+sprite_stoped = false;
+sprite_aux = noone;
 
 //alert
 alert_distance = TILE_SIZE * 16;
@@ -58,7 +60,7 @@ alarm[CAN_ATTACK] = room_speed* random_range(3,5);
 
 //animation
 attack = false;
-anim_duration = room_speed *.3;
+//anim_duration = room_speed *.3;
 //randon start to avoic sinc enemies
 anim_start_initial = room_speed * random_range( 1.75, 2.25);
 anim_start = anim_start_initial;
@@ -162,8 +164,10 @@ function can_evade() {
 //			inst.image_xscale = facing;
 //	}
 //}
+
 target_data = noone;
 function get_target_data() {	
+	sprite_aux = sprite_index;
 	var _spd = TUPINAMBA_ARROW_SPD;
 	var _x_delta = abs((o_player.x + o_player.hsp * o_player.facing) - (side()+4*facing)) / _spd; //x do tupinamba. botar x da flecha 
 	var _y_delta = y + ypos - (o_player.bbox_top + (o_player.vsp/2)*_x_delta)-6;	

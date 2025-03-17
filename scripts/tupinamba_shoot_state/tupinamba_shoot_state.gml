@@ -7,6 +7,7 @@ function tupinamba_shoot_state() {
 	var _pause = random_range(0.5,0.9)* room_speed;
 	if (floor(image_index) == 3) and !runned_once {	
 		runned_once = true;
+		sprite_stoped = true;
 		alarm[ONCE] = _pause;
 		anim_paused(_pause);
 		

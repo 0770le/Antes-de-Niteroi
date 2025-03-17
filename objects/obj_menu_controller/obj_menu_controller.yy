@@ -15,8 +15,8 @@
     "path":"folders/Objects/GUI/Menu/Controller.yy",
   },
   "parentObjectId":{
-    "name":"obj_shared_window",
-    "path":"objects/obj_shared_window/obj_shared_window.yy",
+    "name":"obj_abstract_menu",
+    "path":"objects/obj_abstract_menu/obj_abstract_menu.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -261,7 +261,7 @@ function get_input_in_game_action_name(_input_in_game_action = INPUT_IN_GAME_ACT
 	return input_in_game_action_names[_input_in_game_action];
 }
 
-function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _input_source_type = INPUT_SOURCE_TYPE.GAMEPAD)
+function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _input_source_type = last_input_source_type)
 {
 	if (_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
 	{
@@ -321,7 +321,7 @@ function step()
 
 function step_capturing()
 {
-	data_sets[INPUT_TYPE.KEY_MAP].input.cancel = gamepad_button_check_pressed(0, gp_start) || keyboard_check_pressed(vk_escape);
+	data_sets[INPUT_TYPE.KEY_MAP].input.cancel = gamepad_button_check_pressed(last_gamepad_index, gp_start) || keyboard_check_pressed(vk_escape);
 	
 	if (data_sets[INPUT_TYPE.KEY_MAP].input.cancel)
 	{
@@ -359,11 +359,13 @@ function step_capturing()
 
 function step_not_capturing(_should_notify = true)
 {
+	update_input_source();
+	
 	var _input_menu				= data_sets[INPUT_TYPE.MENU].input;
 	var _input_in_game			= data_sets[INPUT_TYPE.IN_GAME].input;
 	
 	// menu 
-	_input_menu.confirm			= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1) > 0; // A
+	_input_menu.confirm			= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(last_gamepad_index, gp_face1) > 0; // A
 	_input_menu.cancel			= keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(last_gamepad_index, gp_face2) > 0; // B
 	
 	_input_menu.up				= keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(last_gamepad_index, gp_padu) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) < -axis_deadzone && !_input_in_game.up);  // D-UP
@@ -401,38 +403,27 @@ function step_not_capturing(_should_notify = true)
 	_input_in_game.bow_shot_held= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0		 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]);
 	_input_in_game.interact_held= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0		 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.INTERACT]);
 	
-	var _has_input = false;
-	
 	// notify
 	if (_input_menu.any()) 
 	{
 		if (_should_notify) data_sets[INPUT_TYPE.MENU].notify();
-		
-		_has_input = true;
 	}
 	
 	if (_input_in_game.any()) 
 	{
 		if (_should_notify) data_sets[INPUT_TYPE.IN_GAME].notify()
-		
-		_has_input = true;
 	}
-	
-	update_input_source(_has_input);
 }
 
-function update_input_source(_has_input = false)
+function update_input_source()
 {
-	if (_has_input)
+	if (keyboard_check(vk_anykey))
 	{
-		if (keyboard_check(vk_anykey))
-		{
-			last_input_source_type = INPUT_SOURCE_TYPE.KEYBOARD;
-		}
-		else if (gamepad_check_any())
-		{
-			last_input_source_type = INPUT_SOURCE_TYPE.GAMEPAD;
-		}
+		last_input_source_type = INPUT_SOURCE_TYPE.KEYBOARD;
+	}
+	else if (gamepad_check_any())
+	{
+		last_input_source_type = INPUT_SOURCE_TYPE.GAMEPAD;
 	}
 }
 
@@ -469,7 +460,7 @@ function keyboard_get_checked_key()
 
 function gamepad_check_any()
 {
-	for (var _j = 0; _j <= 4; _j+=4) // input indexes
+	for (var _j = 0; _j < 8; _j++) // input indexes
 	{
 		for (var _i = gp_face1; _i <= gp_extra6; _i++)
 		{
@@ -478,11 +469,13 @@ function gamepad_check_any()
 				last_gamepad_index = _j;
 				last_gamepad_type  = get_gamepad_type(_j);
 				
+				global.logger.trace($"device: {last_gamepad_type}, index: {last_gamepad_index}");
+				
 				return true;
 	        }
 	    }
 	
-		if (gamepad_axis_value(_j, gp_axisrv) < -axis_deadzone || gamepad_axis_value(_j, gp_axisrv) > axis_deadzone
+		if (gamepad_axis_value(_j, gp_axislh) < -axis_deadzone || gamepad_axis_value(_j, gp_axislh) > axis_deadzone
 			|| gamepad_axis_value(_j, gp_axislv) < -axis_deadzone || gamepad_axis_value(_j, gp_axislv) > axis_deadzone)
 		{
 			last_gamepad_index = _j;

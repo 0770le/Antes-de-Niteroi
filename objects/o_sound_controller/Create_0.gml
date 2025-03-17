@@ -266,6 +266,34 @@ function load_events()
 		]);
 	
 	#endregion
+	
+	#region UI
+	
+	event_per_enum[? FMOD_EVENT.BUTTON_TALK] = new FmodEvent(
+		"event:/SFX/UI/BUTTONS/sfx_ui_buttons_talk", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.COLLECT_LIFE] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_life", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.COLLECT_REGISTER] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_register", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.TRANSITION_BOAT] = new FmodEvent(
+		"event:/SFX/UI/TRANSITIONS/sfx_ui_transition_boat", 
+		[
+		
+		]);
+	
+	#endregion
 }
 
 function load_busses()

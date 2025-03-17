@@ -1,5 +1,7 @@
 //show_msg("Aperte o direcional para cima para viajar:\nother.destination", 2);
 
+show_interact_key = true;
+
 var _text = "Aperte para cima para viajar\npara ";
 
 switch(room) {

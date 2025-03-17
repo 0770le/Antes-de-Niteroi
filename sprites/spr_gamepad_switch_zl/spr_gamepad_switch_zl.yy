@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"1245acd8-9a27-4b9a-ac1e-a4b29ece1288","name":"1245acd8-9a27-4b9a-ac1e-a4b29ece1288","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"b5bfebd7-df2a-4209-b9c1-ed9d2f4e7380","name":"b5bfebd7-df2a-4209-b9c1-ed9d2f4e7380","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":13,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c3a20389-088a-41c7-bb0e-05c6eab7e9ba","blendMode":0,"displayName":"default","isLocked":false,"name":"c3a20389-088a-41c7-bb0e-05c6eab7e9ba","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"66a61e57-9367-44e1-a0e7-4647a47669b2","blendMode":0,"displayName":"default","isLocked":false,"name":"66a61e57-9367-44e1-a0e7-4647a47669b2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_gamepad_switch_zl",
   "nineSlice":null,
@@ -59,7 +59,7 @@
     },
     "name":"spr_gamepad_switch_zl",
     "playback":1,
-    "playbackSpeed":0.0,
+    "playbackSpeed":30.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1245acd8-9a27-4b9a-ac1e-a4b29ece1288","path":"sprites/spr_gamepad_switch_zl/spr_gamepad_switch_zl.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"68f6cabf-9088-4a57-9ce3-5f443eec8b17","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b5bfebd7-df2a-4209-b9c1-ed9d2f4e7380","path":"sprites/spr_gamepad_switch_zl/spr_gamepad_switch_zl.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d18133d4-e179-404f-8a25-fce6c6cef5fd","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

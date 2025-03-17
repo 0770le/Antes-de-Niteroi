@@ -137,7 +137,7 @@ constructor
 		}
 		else 
 		{
-			return global.input_manager.get_input_in_game_action_sprite(input_in_game_action);
+			return global.input_manager.get_input_in_game_action_sprite(input_in_game_action, input_source_type);
 		}
 	}
 }

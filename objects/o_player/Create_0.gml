@@ -1,4 +1,4 @@
-
+global.player = self;
 
 o_camera.y_offset = -80;
 

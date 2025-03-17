@@ -21,7 +21,6 @@ function tupinamba_anim(){
 			} else if (_dir > 180+ _angle and (_dir < 360 - _angle)) {
 				sprite_index = s_tupinamba_shoot_down;	
 			}  
-	//	}
 		}
 	}
 }

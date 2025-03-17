@@ -22,5 +22,6 @@ function tupinamba_anim(){
 				sprite_index = s_tupinamba_shoot_down;	
 			}  
 	//	}
+		}
 	}
 }

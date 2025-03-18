@@ -3,7 +3,7 @@
 function quest_complete_kunumiuasu(){
 	instance_create_layer(3630,390,LAYER_INSTANCES,o_kunumiuasu);
 	o_game.quest_saved_kunumiuasu = true;
-	
+
 	o_portugues.quest_step = 2;
 	o_portugues.quest = false;
 	

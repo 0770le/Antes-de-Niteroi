@@ -32,6 +32,15 @@ gamepad_keymap = // INPUT_IN_GAME_ACTION
 	gp_shoulderr
 ]
 
+gamepad_keymap_alt = // INPUT_IN_GAME_ACTION
+[
+	-1,
+	-1,
+	-1,
+	-1,
+	gp_padu // INPUT_IN_GAME_ACTION.INTERACT
+]
+
 keyboard_keymap = 
 [
 	vk_space,
@@ -45,6 +54,19 @@ keyboard_keymap =
 	vk_right,
 ]
 
+keyboard_keymap_alt = 
+[
+	-1,
+	-1,
+	-1,
+	-1,
+	vk_up, // INPUT_IN_GAME_ACTION.INTERACT
+	-1,
+	-1,
+	-1,
+	-1,
+]
+
 gamepad_button_sprites = // GM Gamepad Input https://manual.gamemaker.io/monthly/en/#t=GameMaker_Language%2FGML_Reference%2FGame_Input%2FGamePad_Input%2FGamepad_Input.htm
 [
 	[
@@ -56,6 +78,14 @@ gamepad_button_sprites = // GM Gamepad Input https://manual.gamemaker.io/monthly
 		spr_gamepad_xbox_r, // gp_shoulderr
 		spr_gamepad_xbox_lt,// gp_shoulderlb
 		spr_gamepad_xbox_rt,// gp_shoulderrb
+		
+		spr_gamepad_choose, // gp_select
+		spr_gamepad_choose, // gp_start
+		spr_gamepad_choose, // gp_stickl
+		spr_gamepad_choose, // gp_stickr
+		
+		spr_gamepad_xbox_dup, // gp_dup
+		
 	],
 	[
 		spr_gamepad_playstation_x,
@@ -66,6 +96,13 @@ gamepad_button_sprites = // GM Gamepad Input https://manual.gamemaker.io/monthly
 		spr_gamepad_playstation_r1,
 		spr_gamepad_playstation_l2,
 		spr_gamepad_playstation_r2,
+		
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		
+		spr_gamepad_playstation_dup,
 	],
 	[
 		spr_gamepad_switch_b,
@@ -75,7 +112,14 @@ gamepad_button_sprites = // GM Gamepad Input https://manual.gamemaker.io/monthly
 		spr_gamepad_switch_l,
 		spr_gamepad_switch_r,
 		spr_gamepad_switch_zl,
-		spr_gamepad_switch_zl
+		spr_gamepad_switch_zl,
+		
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		
+		spr_gamepad_switch_dup,
 	]
 ]
 
@@ -182,28 +226,28 @@ input_menu_action_sprites[INPUT_SOURCE_TYPE.GAMEPAD] =
 		spr_gamepad_xbox_a,     // INPUT_MENU_ACTION.CONFIRM
 		spr_gamepad_xbox_b,     // INPUT_MENU_ACTION.CANCEL
 		spr_gamepad_xbox_start, // INPUT_MENU_ACTION.TOGGLE_MENU,
-		spr_gamepad_xbox_dleft,	// INPUT_MENU_ACTION.PAGE_UP,
-		spr_gamepad_xbox_dright,// INPUT_MENU_ACTION.PAGE_DOWN,
 		spr_gamepad_xbox_l,		// INPUT_MENU_ACTION.TAB_LEFT,
 		spr_gamepad_xbox_r,		// INPUT_MENU_ACTION.TAB_RIGHT,
+		spr_gamepad_xbox_dleft,	// INPUT_MENU_ACTION.PAGE_UP,
+		spr_gamepad_xbox_dright,// INPUT_MENU_ACTION.PAGE_DOWN,
 	],
 	[
 		spr_gamepad_playstation_x,
 		spr_gamepad_playstation_circle,
 		spr_gamepad_playstation_start,
-		spr_gamepad_playstation_dleft,
-		spr_gamepad_playstation_dright,
 		spr_gamepad_playstation_l1,
 		spr_gamepad_playstation_r1,
+		spr_gamepad_playstation_dleft,
+		spr_gamepad_playstation_dright,
 	],
 	[
 		spr_gamepad_switch_b,
 		spr_gamepad_switch_a,
 		spr_gamepad_switch_start,
-		spr_gamepad_switch_dleft,
-		spr_gamepad_switch_dright,
 		spr_gamepad_switch_l,
 		spr_gamepad_switch_r,
+		spr_gamepad_switch_dleft,
+		spr_gamepad_switch_dright,
 	]
 ]
 
@@ -212,10 +256,63 @@ input_menu_action_sprites[INPUT_SOURCE_TYPE.KEYBOARD] =
 	spr_keyboard_space,		// INPUT_MENU_ACTION.CONFIRM
 	spr_keyboard_c,			// INPUT_MENU_ACTION.CANCEL
 	spr_keyboard_escape,  	// INPUT_MENU_ACTION.TOGGLE_MENU
-	spr_keyboard_left,		// INPUT_MENU_ACTION.PAGE_UP,
-	spr_keyboard_right,		// INPUT_MENU_ACTION.PAGE_DOWN,
-	spr_keyboard_page_up,	// INPUT_MENU_ACTION.TAB_LET,
-	spr_keyboard_page_down,	// INPUT_MENU_ACTION.TAB_RIGHT,
+	spr_keyboard_page_up,	// INPUT_MENU_ACTION.PAGE_UP,
+	spr_keyboard_page_down,	// INPUT_MENU_ACTION.PAGE_DOWN,
+	spr_keyboard_left,		// INPUT_MENU_ACTION.TAB_LEFT,
+	spr_keyboard_right,		// INPUT_MENU_ACTION.TAB_RIGHT,
+]
+
+
+// INPUT_SOURCE_TYPE.GAMEPAD
+gamepad_button_sprites_alt = 
+[
+	[
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_xbox_dup, // INPUT_IN_GAME_ACTION_ALT.INTERACT
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 			
+	],
+	[
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_playstation_dup, // INPUT_IN_GAME_ACTION_ALT.INTERACT
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+	],
+	[
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_switch_dup, // INPUT_IN_GAME_ACTION_ALT.INTERACT
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+		spr_gamepad_choose, 
+	],
+]
+
+// INPUT_SOURCE_TYPE.KEYBOARD
+keyboard_button_sprites_alt = 
+[
+	spr_keyboard_choose,
+	spr_keyboard_choose,
+	spr_keyboard_choose,
+	spr_keyboard_choose,
+	spr_keyboard_up, // INPUT_IN_GAME_ACTION_ALT.INTERACT
+	spr_keyboard_choose,
+	spr_keyboard_choose,
+	spr_keyboard_choose,
+	spr_keyboard_choose,
 ]
 
 data_sets = 
@@ -270,6 +367,18 @@ function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_A
 	else 
 	{
 		return keyboard_button_sprites[? keyboard_keymap[_input_in_game_action]];
+	}	
+}
+
+function get_input_in_game_action_sprite_alt(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _input_source_type = last_input_source_type)
+{
+	if (_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
+	{
+		return gamepad_button_sprites[last_gamepad_type][gamepad_keymap_alt[_input_in_game_action] - gp_face1];
+	}
+	else 
+	{
+		return keyboard_button_sprites[? keyboard_keymap_alt[_input_in_game_action]];
 	}	
 }
 
@@ -376,11 +485,11 @@ function step_not_capturing(_should_notify = true)
 	_input_menu.toggle_menu		= keyboard_check_pressed(vk_f10) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(last_gamepad_index, gp_start) > 0;	// START
 	_input_menu.toggle_catalog	= keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(last_gamepad_index, gp_select) > 0;	// SELECT
 	
-	_input_menu.page_up			= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0;	// D-left
-	_input_menu.page_down 		= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0;	// D-right
+	_input_menu.page_up			= keyboard_check_pressed(vk_pageup) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderl) > 0;	// D-left
+	_input_menu.page_down 		= keyboard_check_pressed(vk_pagedown) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderr) > 0;	// D-right
 	
-	_input_menu.tab_left		= keyboard_check_pressed(vk_pageup) ||  gamepad_button_check_pressed(last_gamepad_index, gp_shoulderl) > 0;  // LB
-	_input_menu.tab_right 		= keyboard_check_pressed(vk_pagedown) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderr) > 0;	// RB
+	_input_menu.tab_left		= keyboard_check_pressed(vk_left) ||  gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0;  // LB
+	_input_menu.tab_right 		= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0;	// RB
 	
 	_input_menu.debug_unlock	= keyboard_check_pressed(ord("O"));
 	_input_menu.debug_clear 	= keyboard_check_pressed(ord("P"));
@@ -395,7 +504,8 @@ function step_not_capturing(_should_notify = true)
 	_input_in_game.jump			= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0	 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.JUMP]);
 	_input_in_game.dodge		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0	 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.DODGE]);
 	_input_in_game.bow_shot		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]);
-	_input_in_game.interact		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.INTERACT]);
+	_input_in_game.interact		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.INTERACT])
+									|| gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]);
 	
 	_input_in_game.attack_held  = gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.ATTACK]);
 	_input_in_game.jump_held	= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.JUMP]);
@@ -509,6 +619,11 @@ function get_gamepad_type(_gamepad_index = 0)
 function get_input_sprite_scale()
 {
 	return last_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD ? 2 : 1.8;
+}
+
+function get_input_sprite_scale_alt()
+{
+	return last_input_source_type == INPUT_SOURCE_TYPE.GAMEPAD ? 1 : 0.8;
 }
 
 function get_in_game_input()

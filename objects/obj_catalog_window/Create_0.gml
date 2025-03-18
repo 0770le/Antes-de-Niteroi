@@ -55,7 +55,7 @@ function draw_second_background()
 	
 	draw_controller_buttons();
 	
-	draw_page_number();
+	// draw_page_number();
 }
 
 function draw_controller_buttons()
@@ -71,31 +71,21 @@ function draw_controller_buttons()
 	var _scale = global.input_manager.get_input_sprite_scale();
 	
 	// fechar e voltar
-	draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 60, bbox_bottom - 99, "Fechar");
-	draw_sprite_ext(_toggle_sprite, 0, bbox_right - 50, bbox_bottom - 100, _scale, _scale, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 60, bbox_bottom - 64, "Fechar");
+	draw_sprite_ext(_toggle_sprite, 0, bbox_right - 50, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
-	draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 60, bbox_bottom - 64, "Voltar");
-	draw_sprite_ext(_cancel_sprite, 0, bbox_right - 50, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
-	
-	// anterior e próxima página
-	var _page_up_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.PAGE_UP);
-	var _page_down_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.PAGE_DOWN);
-	
-	draw_text(bbox_right - (sprite_get_width(_page_up_sprite)*_scale) - 180, bbox_bottom - 99, "Página Anterior");
-	draw_sprite_ext(_page_up_sprite, 0, bbox_right - 170, bbox_bottom - 100, _scale, _scale, 0, c_white, 1.0);
-	
-	draw_text(bbox_right - (sprite_get_width(_page_down_sprite)*_scale) - 180, bbox_bottom - 64, "Próxima Página");
-	draw_sprite_ext(_page_down_sprite, 0, bbox_right - 170, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 170, bbox_bottom - 64, "Voltar");
+	draw_sprite_ext(_cancel_sprite, 0, bbox_right - 160, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
 	// anterior e próxima aba
 	var _tab_left_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TAB_LEFT);
 	var _tab_right_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TAB_RIGHT);
 	
-	draw_text(bbox_right - (sprite_get_width(_tab_left_sprite)*_scale) - 360, bbox_bottom - 99, "Aba Anterior");
-	draw_sprite_ext(_tab_left_sprite, 0, bbox_right - 350, bbox_bottom - 100, _scale, _scale, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_tab_left_sprite)*_scale) - 420, bbox_bottom - 64, "Aba Anterior");
+	draw_sprite_ext(_tab_left_sprite, 0, bbox_right - 410, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
-	draw_text(bbox_right - (sprite_get_width(_tab_right_sprite)*_scale) - 360, bbox_bottom - 64, "Próxima Aba");
-	draw_sprite_ext(_tab_right_sprite, 0, bbox_right - 350, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_tab_right_sprite)*_scale) - 270, bbox_bottom - 64, "Próxima Aba");
+	draw_sprite_ext(_tab_right_sprite, 0, bbox_right - 260, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 }
 
 function draw_page_number()
@@ -191,6 +181,12 @@ function create_content()
 	_last_item.set_text("Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.CIDADE_VELHA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Entrada Nova";
+	_last_item.set_text("Texto da entrada nova");
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.ENTRADA_NOVA;	
 	catalog_tabs[CATALOG_TAB.REGIONS].set_selected(false);
 	
 	//// history items

@@ -5,7 +5,7 @@ global.ground_map = layer_tilemap_get_id(LAYER_GROUND);
 global.tile_size = TILE_SIZE;
 
 //player create
-if (( (room!= rm_init) and (room != rm_menu) ) and (!instance_exists(o_player) ) ) {
+if (( (room!= rm_init) and (room != rm_menu) and (room != rm_main_menu) ) and (!instance_exists(o_player) ) ) {
 	instance_create_layer(x,y, LAYER_INSTANCES, o_player);
 }
 

@@ -76,12 +76,6 @@ function init()
 	
 	root_menu = new MenuNode("Menu Principal");
 	
-	// Back to the Game
-	root_menu.add_child(new MenuButton("Reiniciar Partida", function () 
-	{
-		game_restart();
-	}));
-	
 	// Options	
 	var _options_node = root_menu.add_child(new MenuNode("Opções"))
 	fullscreen_button = _options_node.add_child(new MenuCheckbox("Tela Cheia", function ()
@@ -149,14 +143,26 @@ function init()
 	
 	// Key Mapping
 	var _controls_node = root_menu.add_child(new MenuNode("Controles"))
-	var _gamepad_node = _controls_node.add_child(new MenuNode("Gamepad"))
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.JUMP));
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.ATTACK));
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.DODGE));
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.BOW_SHOT));
-	_gamepad_node.add_child(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
+	var _gamepad_node = _controls_node.add_child(new MenuTwoColumnsNode("Gamepad"))
+	_gamepad_node.add_child(new MenuButton("Resetar", function ()
+	{
+		global.input_manager.gamepad_keymap = new OptionsModel().gamepad_keymap;
+		
+		global.options_controller.set_option(OPTIONS_GAMEPAD_KEYMAP, global.input_manager.gamepad_keymap);
+	}));
+	_gamepad_node.add_child_2(new MenuInputGamepad(INPUT_IN_GAME_ACTION.JUMP));
+	_gamepad_node.add_child_2(new MenuInputGamepad(INPUT_IN_GAME_ACTION.ATTACK));
+	_gamepad_node.add_child_2(new MenuInputGamepad(INPUT_IN_GAME_ACTION.DODGE));
+	_gamepad_node.add_child_2(new MenuInputGamepad(INPUT_IN_GAME_ACTION.BOW_SHOT));
+	_gamepad_node.add_child_2(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
 	
 	var _keyboard_node = _controls_node.add_child(new MenuTwoColumnsNode("Teclado"))
+	_keyboard_node.add_child(new MenuButton("Resetar", function ()
+	{
+		global.input_manager.keyboard_keymap = new OptionsModel().keyboard_keymap;
+		
+		global.options_controller.set_option(OPTIONS_GAMEPAD_KEYMAP, global.input_manager.keyboard_keymap);
+	}));
 	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.UP));
 	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.LEFT));
 	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.DOWN));
@@ -168,15 +174,10 @@ function init()
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
 	
-	
 	// Quit Game	
-	root_menu.add_child(new MenuButton("Encerrar Partida", function() 
+	root_menu.add_child(new MenuButton("Menu Inicial", function() 
 	{ 
-		global.options_controller.set_option(OPTIONS_LAST_PLAYER_X, global.player.x);
-		global.options_controller.set_option(OPTIONS_LAST_PLAYER_Y, global.player.y);
-		global.options_controller.set_option(OPTIONS_LAST_ROOM, room);
-		
-		var _ = call_later(1, time_source_units_frames, function () { room_goto(rm_main_menu) })
+		game_restart();
 	}));
 	
 	selected_item = root_menu.children[0];

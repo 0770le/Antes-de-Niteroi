@@ -1,17 +1,18 @@
-#macro OPTIONS_FULLSCREEN		"fullscreen"
-#macro OPTIONS_MASTER_ENABLED	"master_enabled"
-#macro OPTIONS_MASTER_VOLUME	"master_volume"
-#macro OPTIONS_MUSIC_ENABLED	"music_enabled"
-#macro OPTIONS_MUSIC_VOLUME		"music_volume"
-#macro OPTIONS_SFX_ENABLED		"sfx_enabled"
-#macro OPTIONS_SFX_VOLUME		"sfx_volume"
+#macro OPTIONS_FULLSCREEN				"fullscreen"
+#macro OPTIONS_MASTER_ENABLED			"master_enabled"
+#macro OPTIONS_MASTER_VOLUME			"master_volume"
+#macro OPTIONS_MUSIC_ENABLED			"music_enabled"
+#macro OPTIONS_MUSIC_VOLUME				"music_volume"
+#macro OPTIONS_SFX_ENABLED				"sfx_enabled"
+#macro OPTIONS_SFX_VOLUME				"sfx_volume"
 
-#macro OPTIONS_GAMEPAD_KEYMAP	"gamepad_keymap"
-#macro OPTIONS_KEYBOARD_KEYMAP	"keyboard_keymap"
+#macro OPTIONS_GAMEPAD_KEYMAP			"gamepad_keymap"
+#macro OPTIONS_KEYBOARD_KEYMAP			"keyboard_keymap"
 
-#macro OPTIONS_LAST_ROOM		"last_room"
-#macro OPTIONS_LAST_PLAYER_X	"last_player_x"
-#macro OPTIONS_LAST_PLAYER_Y	"last_player_y"
+#macro OPTIONS_LAST_ROOM				"last_room"
+#macro OPTIONS_SPAWN_X					"spawn_x"
+#macro OPTIONS_SPAWN_Y					"spawn_y"
+#macro OPTIONS_QUEST_SAVED_KUNUMIUASU	"quest_saved_kunumiuasu"
 
 // saveables
 
@@ -50,13 +51,22 @@ function notify_listeners()
 
 function write_all()
 {
-	var _json = json_stringify(options);
+	global.logger.debug("writing save file");
 	
-	var _savefile = file_text_open_write(savefile);
+	try
+	{
+		var _json = json_stringify(options);
 	
-	file_text_write_string(_savefile, _json);
+		var _savefile = file_text_open_write(savefile);
 	
-	file_text_close(_savefile);
+		file_text_write_string(_savefile, _json);
+	
+		file_text_close(_savefile);
+	}
+	catch (_e)
+	{
+		global.logger.error($"writing options file {_e}");	
+	}
 }
 
 function read_all()
@@ -75,20 +85,18 @@ function read_all()
 		
 		file_text_close(_savefile);
 		
-		if (array_length(options.gamepad_keymap) > 0)
-		{
-			global.input_manager.gamepad_keymap = options.gamepad_keymap;
-		}
+		global.input_manager.gamepad_keymap = options.gamepad_keymap;
 		
-		if (array_length(options.keyboard_keymap) > 0)
-		{
-			global.input_manager.keyboard_keymap = options.keyboard_keymap;
-		}
+		global.input_manager.keyboard_keymap = options.keyboard_keymap;
 	} catch (_e) {
 		
-		global.logger.error($"failed to load options file: {_e}");
+		global.logger.error($"failed to load options file in room {room}: {_e}");
 		
 		options = new OptionsModel();
+		
+		global.input_manager.gamepad_keymap = options.gamepad_keymap;
+		
+		global.input_manager.keyboard_keymap = options.keyboard_keymap;
 		
 		write_all();
 	}

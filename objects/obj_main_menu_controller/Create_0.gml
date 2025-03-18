@@ -62,38 +62,45 @@ function draw()
 
 function init()
 {
+	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_input_manager);
 	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_options_controller);
 	
 	root_menu = new MenuNode("");
 	
-	var _aux = {
-		last_room: global.options_controller.options.last_room,
-		last_player_x: global.options_controller.options.last_player_x,
-		last_player_y: global.options_controller.options.last_player_y,
-		callback: function ()
-		{
-			room_goto(rm_init);
-			
-			call_later(1, time_source_units_frames, function () 
-			{ 
-				room_goto(self.last_room);
-			});
-			
-			call_later(2, time_source_units_frames, function () 
+	root_menu.add_child(new MenuButton("Continuar", function () 
+	{
+		var _aux = {
+			last_room: global.options_controller.get_option(OPTIONS_LAST_ROOM),		
+			spawn_x: global.options_controller.get_option(OPTIONS_SPAWN_X),		
+			spawn_y: global.options_controller.get_option(OPTIONS_SPAWN_Y),	
+			callback: function ()
 			{
-				global.player.x = self.last_player_x;
-				global.player.y = self.last_player_y;
-			});
+				if (!instance_exists(o_player))
+				{
+					instance_create_layer(0, 0, LAYER_INSTANCES, o_player);
+				}					
+					
+				with(o_player)
+				{
+					fade_to_room(other.last_room, other.spawn_x, other.spawn_y, 1);
+				}
+			}
 		}
-	}
-	
-	root_menu.add_child(new MenuButton("Continuar", _aux.callback));
+		
+		call_later(1, time_source_units_frames, _aux.callback);
+	}));
 	
 	root_menu.add_child(new MenuButton("Novo Jogo", function() 
 	{ 
-		room_goto(rm_init);
-		
-		var _ = call_later(1, time_source_units_frames, function () { room_goto(rm_cidade_velha) });
+		if (!instance_exists(o_player))
+		{
+			instance_create_layer(0, 0, LAYER_INSTANCES, o_player);
+		}
+					
+		with(o_player)
+		{
+			fade_to_room(rm_cidade_velha, 150, 390, 1);
+		}
 	}));
 	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 
@@ -102,8 +109,6 @@ function init()
 	}));
 	
 	selected_item = root_menu.children[0];
-	
-	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_input_manager);
 	
 	global.input_manager.subscribe(self, INPUT_TYPE.MENU);
 }

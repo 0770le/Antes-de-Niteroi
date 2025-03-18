@@ -12,7 +12,8 @@ enum CATALOG_ITEM_TYPE
 	CIDADE_VELHA,
 	MORUBIXABA,
 	KUNUMIUASU,
-	MUCURANA
+	MUCURANA,
+	ENTRADA_NOVA
 }
 
 layer_text		= LAYER_GUI_CATALOG_BUTTONS;
@@ -26,6 +27,7 @@ locked			= true;
 
 // text
 font			= fnt_arial_medium;
+font_desc		= fnt_arial_medium_to_small;
 label			= "Label";
 text			= "Placeholder";
 image			= spr_catalog_image;
@@ -44,7 +46,7 @@ frame_color     = make_color_rgb(109, 89, 68);
 
 // scroll text
 line_separation = 30;
-height_max		= 360;
+height_max		= 420;
 line_width		= 480;
 text_parts		= [];
 text_shown		= "";
@@ -155,6 +157,8 @@ function draw()
 	{
 		draw_sprite_ext(spr_catalog_new_item, 0, bbox_right - 10, _yy, 0.35, 0.35, 0, c_white, 1);
 	}
+	
+	draw_set_font(font_desc);
 	
 	// image
 	if (image_index == 1) return; // not active

@@ -67,28 +67,31 @@ function init()
 	
 	root_menu = new MenuNode("");
 	
-	root_menu.add_child(new MenuButton("Continuar", function () 
+	if (global.options_controller.get_option(OPTIONS_SPAWN_X) > 0)
 	{
-		var _aux = {
-			last_room: global.options_controller.get_option(OPTIONS_LAST_ROOM),		
-			spawn_x: global.options_controller.get_option(OPTIONS_SPAWN_X),		
-			spawn_y: global.options_controller.get_option(OPTIONS_SPAWN_Y),	
-			callback: function ()
-			{
-				if (!instance_exists(o_player))
+		root_menu.add_child(new MenuButton("Continuar", function () 
+		{
+			var _aux = {
+				last_room: global.options_controller.get_option(OPTIONS_LAST_ROOM),		
+				spawn_x: global.options_controller.get_option(OPTIONS_SPAWN_X),		
+				spawn_y: global.options_controller.get_option(OPTIONS_SPAWN_Y),	
+				callback: function ()
 				{
-					instance_create_layer(0, 0, LAYER_INSTANCES, o_player);
-				}					
+					if (!instance_exists(o_player))
+					{
+						instance_create_layer(0, 0, LAYER_INSTANCES, o_player);
+					}					
 					
-				with(o_player)
-				{
-					fade_to_room(other.last_room, other.spawn_x, other.spawn_y, 1);
+					with(o_player)
+					{
+						fade_to_room(other.last_room, other.spawn_x, other.spawn_y, 1);
+					}
 				}
 			}
-		}
 		
-		call_later(1, time_source_units_frames, _aux.callback);
-	}));
+			call_later(1, time_source_units_frames, _aux.callback);
+		}));
+	}
 	
 	root_menu.add_child(new MenuButton("Novo Jogo", function() 
 	{ 

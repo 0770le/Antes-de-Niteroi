@@ -83,11 +83,11 @@ states_array[iaguara_states.HANGING] = iaguara_hanging_state;
 
 sprites_array[iaguara_states.IDLE] = s_iaguara_idle;
 sprites_array[iaguara_states.HURTING] =  s_iaguara_idle;
-sprites_array[iaguara_states.CHASE] =  s_iaguara_idle;
+sprites_array[iaguara_states.CHASE] =  s_iaguara_run;
 sprites_array[iaguara_states.FALL] =  s_iaguara_fall;
 sprites_array[iaguara_states.LANDING] =  s_iaguara_landing;
 sprites_array[iaguara_states.ATTACK] =  s_iaguara_attack;
-sprites_array[iaguara_states.JUMP] =  s_iaguara_idle;
+sprites_array[iaguara_states.JUMP] =  s_iaguara_lunge;
 sprites_array[iaguara_states.HANGING] =  s_iaguara_hanging;
 //
 
@@ -98,7 +98,7 @@ mask_array[iaguara_states.CHASE] = s_iaguara_idle;
 mask_array[iaguara_states.FALL] = s_iaguara_idle;
 mask_array[iaguara_states.LANDING] = s_iaguara_idle;
 mask_array[iaguara_states.ATTACK] = s_iaguara_idle;
-mask_array[iaguara_states.JUMP] = s_iaguara_idle;
+mask_array[iaguara_states.JUMP] = s_iaguara_lunge;
 mask_array[iaguara_states.HANGING] = s_iaguara_idle;
 //
 

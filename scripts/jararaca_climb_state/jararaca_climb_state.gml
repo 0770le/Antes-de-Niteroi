@@ -26,7 +26,7 @@ function jararaca_climb_state(){
 			var t1_2 = tilemap_get_at_pixel(global.map, side() +1*facing + (TILE_SIZE)*2*facing, bbox_top);	//3º bloco a frente
 			var t2_2 = tilemap_get_at_pixel(global.map, side() +1*facing + (TILE_SIZE)*3*facing, bbox_top);	//4º bloco a frente
 		
-			if(t0 == SOLID and t1 == SOLID and t2 == SOLID and t3 == SOLID and t0_2 == VOID and t1_2 == VOID and t2_2 == VOID) {
+			if(t0 == SOLID and t1 == SOLID and t2 == SOLID and t3 == SOLID and (t0_2 == VOID or t0_2 == DEATH) and t1_2 == (VOID or t1_2 == DEATH) and (t2_2 == VOID or t2_2 == DEATH)) {
 				state = jararaca_states.STOP_CLIMB;
 				image_index = 0;
 				var _pos = find_ground( side() +1*facing ,y, -1);

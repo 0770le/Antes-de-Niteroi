@@ -11,7 +11,7 @@ function player_die_2_state(){
 			o_game.game_over_lose = true;
 		} else {// continue game
 			//restart msg
-			show_msg("Aperte Pulo ou ataque para continuar",1);
+			show_msg("Aperte Pular ou atacar para continuar",1);
 				//get input
 			get_input();
 			if (jump or attack) {

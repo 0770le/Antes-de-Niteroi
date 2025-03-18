@@ -9,9 +9,10 @@ function tupinamba_anim(){
 		var _dir = point_direction(x,y,o_player.x, o_player.y);
 		var _angle = 25;
 		
-	//nao mudar depois q mirou
-		if(image_index > 3 and image_index < 5) {
-			return;
+	//nao seguir/mudar depois q mirou
+		
+		if(sprite_stoped) {			
+			sprite_index = sprite_aux;
 		} else {	
 			//up
 			if (_dir > _angle and _dir < 180 - _angle) {

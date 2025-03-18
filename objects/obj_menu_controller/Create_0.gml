@@ -144,7 +144,7 @@ function init()
 	// Key Mapping
 	var _controls_node = root_menu.add_child(new MenuNode("Controles"))
 	var _gamepad_node = _controls_node.add_child(new MenuTwoColumnsNode("Gamepad"))
-	_gamepad_node.add_child(new MenuButton("Resetar", function ()
+	_gamepad_node.add_child(new MenuButton("Usar o Padrão", function ()
 	{
 		global.input_manager.gamepad_keymap = new OptionsModel().gamepad_keymap;
 		
@@ -157,11 +157,11 @@ function init()
 	_gamepad_node.add_child_2(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
 	
 	var _keyboard_node = _controls_node.add_child(new MenuTwoColumnsNode("Teclado"))
-	_keyboard_node.add_child(new MenuButton("Resetar", function ()
+	_keyboard_node.add_child(new MenuButton("Usar o Padrão", function ()
 	{
 		global.input_manager.keyboard_keymap = new OptionsModel().keyboard_keymap;
 		
-		global.options_controller.set_option(OPTIONS_GAMEPAD_KEYMAP, global.input_manager.keyboard_keymap);
+		global.options_controller.set_option(OPTIONS_KEYBOARD_KEYMAP, global.input_manager.keyboard_keymap);
 	}));
 	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.UP));
 	_keyboard_node.add_child(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.LEFT));
@@ -175,9 +175,9 @@ function init()
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
 	
 	// Quit Game	
-	root_menu.add_child(new MenuButton("Menu Inicial", function() 
+	root_menu.add_child(new MenuButton("Sair do Jogo", function() 
 	{ 
-		game_restart();
+		game_end(0);
 	}));
 	
 	selected_item = root_menu.children[0];

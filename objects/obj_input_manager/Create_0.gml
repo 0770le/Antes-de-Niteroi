@@ -334,6 +334,8 @@ function start_capture(_menu_item = new MenuInput(INPUT_IN_GAME_ACTION.JUMP))
 	is_capturing = true;
 	
 	data_sets[INPUT_TYPE.KEY_MAP].menu_item = _menu_item;
+	
+	propagation_prevented = false;
 }
 
 function stop_capture()
@@ -473,55 +475,63 @@ function step_not_capturing(_should_notify = true)
 	var _input_menu				= data_sets[INPUT_TYPE.MENU].input;
 	var _input_in_game			= data_sets[INPUT_TYPE.IN_GAME].input;
 	
-	// menu 
-	_input_menu.confirm			= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(last_gamepad_index, gp_face1) > 0; // A
-	_input_menu.cancel			= keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(last_gamepad_index, gp_face2) > 0; // B
-	
-	_input_menu.up				= keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(last_gamepad_index, gp_padu) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) < -axis_deadzone && !_input_in_game.up);  // D-UP
-	_input_menu.down			= keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(last_gamepad_index, gp_padd) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) > axis_deadzone && !_input_in_game.down);  // D-DOWN
-	_input_menu.left			= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) < -axis_deadzone && !_input_in_game.left);  // D-LEFT
-	_input_menu.right			= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) > axis_deadzone && !_input_in_game.right);  // D-DOWN
-	
 	_input_menu.toggle_menu		= keyboard_check_pressed(vk_f10) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(last_gamepad_index, gp_start) > 0;	// START
-	_input_menu.toggle_catalog	= keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(last_gamepad_index, gp_select) > 0;	// SELECT
 	
-	_input_menu.page_up			= keyboard_check_pressed(vk_pageup) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderl) > 0;	// D-left
-	_input_menu.page_down 		= keyboard_check_pressed(vk_pagedown) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderr) > 0;	// D-right
+	if (obj_initializer.is_open()) 
+	{
+		// menu 
+		_input_menu.confirm			= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(last_gamepad_index, gp_face1) > 0; // A
+		_input_menu.cancel			= keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(last_gamepad_index, gp_face2) > 0; // B
 	
-	_input_menu.tab_left		= keyboard_check_pressed(vk_left) ||  gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0;  // LB
-	_input_menu.tab_right 		= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0;	// RB
+		_input_menu.up				= keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(last_gamepad_index, gp_padu) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) < -axis_deadzone && !_input_in_game.up);  // D-UP
+		_input_menu.down			= keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(last_gamepad_index, gp_padd) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) > axis_deadzone && !_input_in_game.down);  // D-DOWN
+		_input_menu.left			= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) < -axis_deadzone && !_input_in_game.left);  // D-LEFT
+		_input_menu.right			= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) > axis_deadzone && !_input_in_game.right);  // D-DOWN
 	
-	_input_menu.debug_unlock	= keyboard_check_pressed(ord("O"));
-	_input_menu.debug_clear 	= keyboard_check_pressed(ord("P"));
+		
+		_input_menu.toggle_catalog	= keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(last_gamepad_index, gp_select) > 0;	// SELECT
 	
-	// in game
-	_input_in_game.up			= gamepad_button_check(last_gamepad_index, gp_padu) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislv) < -axis_deadzone	|| keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.UP]);
-	_input_in_game.down			= gamepad_button_check(last_gamepad_index, gp_padd) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislv) > axis_deadzone	|| keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.DOWN]);
-	_input_in_game.left			= gamepad_button_check(last_gamepad_index, gp_padl) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislh) < -axis_deadzone || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.LEFT]);
-	_input_in_game.right		= gamepad_button_check(last_gamepad_index, gp_padr) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislh) > axis_deadzone  || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.RIGHT]);	
+		_input_menu.page_up			= keyboard_check_pressed(vk_pageup) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderl) > 0;	// D-left
+		_input_menu.page_down 		= keyboard_check_pressed(vk_pagedown) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderr) > 0;	// D-right
 	
-	_input_in_game.attack       = gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0   || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.ATTACK]);
-	_input_in_game.jump			= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0	 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.JUMP]);
-	_input_in_game.dodge		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0	 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.DODGE]);
-	_input_in_game.bow_shot		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]);
-	_input_in_game.interact		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.INTERACT])
-									|| gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]);
+		_input_menu.tab_left		= keyboard_check_pressed(vk_left) ||  gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0;  // LB
+		_input_menu.tab_right 		= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0;	// RB
 	
-	_input_in_game.attack_held  = gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.ATTACK]);
-	_input_in_game.jump_held	= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.JUMP]);
-	_input_in_game.dodge_held	= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.DODGE]);
-	_input_in_game.bow_shot_held= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0		 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]);
-	_input_in_game.interact_held= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0		 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.INTERACT]);
+		_input_menu.debug_unlock	= keyboard_check_pressed(ord("O"));
+		_input_menu.debug_clear 	= keyboard_check_pressed(ord("P"));
+	}
+	else 
+	{
+		// in game
+		_input_in_game.up			= gamepad_button_check(last_gamepad_index, gp_padu) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislv) < -axis_deadzone	|| keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.UP]);
+		_input_in_game.down			= gamepad_button_check(last_gamepad_index, gp_padd) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislv) > axis_deadzone	|| keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.DOWN]);
+		_input_in_game.left			= gamepad_button_check(last_gamepad_index, gp_padl) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislh) < -axis_deadzone || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.LEFT]);
+		_input_in_game.right		= gamepad_button_check(last_gamepad_index, gp_padr) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislh) > axis_deadzone  || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.RIGHT]);	
+	
+		_input_in_game.attack       = gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0   || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.ATTACK]);
+		_input_in_game.jump			= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0	 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.JUMP]);
+		_input_in_game.dodge		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0	 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.DODGE]);
+		_input_in_game.bow_shot		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]);
+		_input_in_game.interact		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.INTERACT])
+										|| gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]);
+	
+		_input_in_game.attack_held  = gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.ATTACK]);
+		_input_in_game.jump_held	= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.JUMP]);
+		_input_in_game.dodge_held	= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.DODGE]);
+		_input_in_game.bow_shot_held= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0		 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]);
+		_input_in_game.interact_held= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0		 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.INTERACT]);
+	
+		// notify
+		if (_input_in_game.any()) 
+		{
+			if (_should_notify) data_sets[INPUT_TYPE.IN_GAME].notify();
+		}
+	}
 	
 	// notify
 	if (_input_menu.any()) 
 	{
 		if (_should_notify) data_sets[INPUT_TYPE.MENU].notify();
-	}
-	
-	if (_input_in_game.any()) 
-	{
-		if (_should_notify) data_sets[INPUT_TYPE.IN_GAME].notify()
 	}
 }
 

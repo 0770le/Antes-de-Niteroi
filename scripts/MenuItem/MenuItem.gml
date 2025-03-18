@@ -148,7 +148,18 @@ constructor
 {
 	on_click = function () 
 	{
-		global.input_manager.start_capture(self);
+		var _that = self;
+		
+		var _aux = 
+		{
+			that: _that,
+			callback: function ()
+			{
+				global.input_manager.start_capture(self.that);
+			}
+		}
+		
+		var _ = call_later(1, time_source_units_frames, _aux.callback);
 		
 		sprite = spr_gamepad_choose;
 		

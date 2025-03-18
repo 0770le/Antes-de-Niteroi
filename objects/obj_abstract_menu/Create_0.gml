@@ -124,7 +124,7 @@ function draw_controller_buttons()
 		var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TOGGLE_MENU);
 		
 		draw_text(right - (sprite_get_width(_cancel_sprite)*_scale) - margin_right - 10, bottom - margin_bottom, "Cancelar Captura");
-		draw_sprite_ext(_cancel_sprite, 0, right - margin_right, bottom - margin_bottom, _scale, _scale, 0, accent_color, 1.0);
+		draw_sprite_ext(_cancel_sprite, 0, right - margin_right, bottom - margin_bottom, _scale, _scale, 0, c_white, 1.0);
 	}
 	else 
 	{

@@ -46,7 +46,7 @@ frame_color     = make_color_rgb(109, 89, 68);
 
 // scroll text
 line_separation = 30;
-height_max		= 420;
+height_max		= 580;
 line_width		= 480;
 text_parts		= [];
 text_shown		= "";
@@ -158,8 +158,6 @@ function draw()
 		draw_sprite_ext(spr_catalog_new_item, 0, bbox_right - 10, _yy, 0.35, 0.35, 0, c_white, 1);
 	}
 	
-	draw_set_font(font_desc);
-	
 	// image
 	if (image_index == 1) return; // not active
 	
@@ -186,7 +184,7 @@ function draw()
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_left);
 	draw_set_color(c_black);
-	draw_set_font(font);
+	draw_set_font(font_desc);
 	
 	if (locked)
 	{
@@ -200,7 +198,5 @@ function draw()
 
 function draw_description(_xx, _yy)
 {
-	draw_set_font(font);
-	
 	draw_text_ext(_xx, _yy, text_parts[cursor], line_separation, line_width);
 }

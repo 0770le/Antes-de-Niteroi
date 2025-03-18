@@ -9,15 +9,20 @@ sub_layers =
 
 animate = false;
 animation_frame = 0;
+is_open = false;
 
 function open()
 {
 	window.open();
+	
+	is_open = true;
 }
 
 function close()
 {
 	window.close();
+	
+	is_open = false;
 }
 
 function has_new_item()

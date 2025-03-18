@@ -1,21 +1,11 @@
 creation_order = [ obj_input_manager, obj_options_controller, obj_menu_controller, obj_catalog_controller ]	
 always_actives = [ obj_input_manager, obj_options_controller, o_sound_controller ]
 mutually_exclusives = [	obj_menu_controller, obj_catalog_controller	]
+is_initialized = false;
 
 function is_open()
 {
-	for (var _i = 0; _i < array_length(mutually_exclusives); _i++)
-	{
-		with (mutually_exclusives[_i]) 
-		{
-			if (is_open)
-			{
-				return true;
-			}
-		}
-	}
-	
-	return false;
+	return is_initialized && (global.menu_controller.is_open || global.catalog_controller.is_open);
 }
 	
 function focus(_object_index = obj_menu_controller)
@@ -76,6 +66,8 @@ function init()
 	{			
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, creation_order[_i]);
 	}
+	
+	is_initialized = true;
 }
 	
 init();

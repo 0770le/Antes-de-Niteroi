@@ -475,7 +475,7 @@ function step_not_capturing(_should_notify = true)
 	var _input_menu				= data_sets[INPUT_TYPE.MENU].input;
 	var _input_in_game			= data_sets[INPUT_TYPE.IN_GAME].input;
 	
-	_input_menu.toggle_menu		= keyboard_check_pressed(vk_f10) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(last_gamepad_index, gp_start) > 0;	// START
+	_input_menu.toggle_menu		= keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(last_gamepad_index, gp_start) > 0;	// START
 	
 	if (obj_initializer.is_open()) 
 	{
@@ -483,19 +483,23 @@ function step_not_capturing(_should_notify = true)
 		_input_menu.confirm			= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(last_gamepad_index, gp_face1) > 0; // A
 		_input_menu.cancel			= keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(last_gamepad_index, gp_face2) > 0; // B
 	
-		_input_menu.up				= keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(last_gamepad_index, gp_padu) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) < -axis_deadzone && !_input_in_game.up);  // D-UP
-		_input_menu.down			= keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(last_gamepad_index, gp_padd) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) > axis_deadzone && !_input_in_game.down);  // D-DOWN
-		_input_menu.left			= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) < -axis_deadzone && !_input_in_game.left);  // D-LEFT
-		_input_menu.right			= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) > axis_deadzone && !_input_in_game.right);  // D-DOWN
-	
+		_input_menu.up				= keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(last_gamepad_index, gp_padu) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) < -axis_deadzone && !_input_menu.up_held);  // D-UP
+		_input_menu.down			= keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(last_gamepad_index, gp_padd) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) > axis_deadzone && !_input_menu.down_held);  // D-DOWN
+		_input_menu.left			= keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) < -axis_deadzone && !_input_menu.left_held);  // D-LEFT
+		_input_menu.right			= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) > axis_deadzone && !_input_menu.right_held);  // D-DOWN
+		
+		_input_menu.up_held			= keyboard_check(vk_up) || gamepad_button_check(last_gamepad_index, gp_padu) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) < -axis_deadzone);
+		_input_menu.down_held		= keyboard_check(vk_down) || gamepad_button_check(last_gamepad_index, gp_padd) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislv) > axis_deadzone);
+		_input_menu.left_held		= keyboard_check(vk_left) || gamepad_button_check(last_gamepad_index, gp_padl) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) < -axis_deadzone);
+		_input_menu.right_held		= keyboard_check(vk_right) || gamepad_button_check(last_gamepad_index, gp_padr) > 0 || (gamepad_axis_value(last_gamepad_index, gp_axislh) > axis_deadzone);
 		
 		_input_menu.toggle_catalog	= keyboard_check_pressed(vk_f9) || gamepad_button_check_pressed(last_gamepad_index, gp_select) > 0;	// SELECT
 	
 		_input_menu.page_up			= keyboard_check_pressed(vk_pageup) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderl) > 0;	// D-left
 		_input_menu.page_down 		= keyboard_check_pressed(vk_pagedown) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderr) > 0;	// D-right
 	
-		_input_menu.tab_left		= keyboard_check_pressed(vk_left) ||  gamepad_button_check_pressed(last_gamepad_index, gp_padl) > 0;  // LB
-		_input_menu.tab_right 		= keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(last_gamepad_index, gp_padr) > 0;	// RB
+		_input_menu.tab_left		= _input_menu.left  // LB
+		_input_menu.tab_right 		= _input_menu.right	// RB
 	
 		_input_menu.debug_unlock	= keyboard_check_pressed(ord("O"));
 		_input_menu.debug_clear 	= keyboard_check_pressed(ord("P"));

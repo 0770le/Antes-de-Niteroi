@@ -85,9 +85,13 @@ function MenuInputModel () : InputModel ()
 constructor
 {
 	up				= false;
+	up_held			= false;
 	down			= false;
+	down_held		= false;
 	left			= false;
+	left_held		= false;
 	right			= false;
+	right_held		= false;
 	
 	toggle_menu		= false;
 	toggle_catalog  = false;

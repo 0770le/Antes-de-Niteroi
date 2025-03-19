@@ -1,7 +1,7 @@
 function iaguara_chase_state() {
 	
 	//calculate target movement
-	
+	image_speed = 1;
 	target_x = o_player.xprevious;
 	target_y = o_player.yprevious;
 	stare();
@@ -18,10 +18,8 @@ function iaguara_chase_state() {
 		var buffer = attack_range; 
 		if ((abs(x - target_x) > buffer) ){
 			hsp =xx;
-		}else{
-		//dont move
-			state = iaguara_states.IDLE;
-			image_index = 0;
+		}else if(o_player.hp > 0){
+			iaguara_attack();
 		}
 	} else {
 		//enemy hurt
@@ -37,14 +35,14 @@ function iaguara_chase_state() {
 	//}
 	
 	//go to idle if not mooving
-	if hsp == 0 {
+	if (hsp == 0 and !alert) {
 		state = iaguara_states.IDLE;
 		image_index = 0;
 	}
 	
 	if (o_player.hp > 0) {
 		descend();
-		iaguara_attack();
+		
 	}
 
 	calc_entity_movement();

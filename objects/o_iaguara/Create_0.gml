@@ -98,8 +98,8 @@ mask_array[iaguara_states.CHASE] = s_iaguara_idle;
 mask_array[iaguara_states.FALL] = s_iaguara_idle;
 mask_array[iaguara_states.LANDING] = s_iaguara_idle;
 mask_array[iaguara_states.ATTACK] = s_iaguara_idle;
-mask_array[iaguara_states.JUMP] = s_iaguara_lunge;
-mask_array[iaguara_states.HANGING] = s_iaguara_idle;
+mask_array[iaguara_states.JUMP] = s_iaguara_idle;
+mask_array[iaguara_states.HANGING] = s_iaguara_hanging;
 //
 
 can_descend = true;

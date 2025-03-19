@@ -177,16 +177,36 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.REGIONS] = instance_create_layer(bbox_right - 20, bbox_top + 10, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.REGIONS].label	= "Regiões";
 	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Cidade-Velha";
-	_last_item.set_text("Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.");
+	_last_item.label = "Guajupiá";
+	_last_item.set_text("Baía de Guanabara (RJ). Guajupiá, 'morada dos ancestrais', era para os tupinambás uma espécie de paraíso, onde descansavam os antepassados mais valorosos e memoráveis. Ao chegarem à região, após descerem pelo litoral brasileiro e conquistarem territórios de outras tribos, passaram a chamá-la assim em razão de sua abundância em frutos, peixes e recursos naturais.");
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.GUAJUPIA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Cidade Velha";
+	_last_item.set_text("Atual Praia de Fora (RJ). Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.CIDADE_VELHA;
 	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Nheteróia";
+	_last_item.set_text("Para os tupinambás, o nome original do Rio de Janeiro seria Niterói. Há indícios de que esse nome também serviria para designavar toda a costa da baía e uma aldeia na margem direita da mesma. Sua etimologia pode significar tanto 'costa toda sinuosa' quanto 'rio escondido'.");
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.NHETEROIA;	
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Akaray";
+	_last_item.set_text("Atual bairro de Icaraí, Niterói (RJ). A região formava um enorme areal com vegetação típica de restinga. Seu nome deriva do peixe de água doce acará ou cará, significando algo como 'Rio dos Acarás'");
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.AKARAY;	
+	
+	// modelo
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Entrada Nova";
 	_last_item.set_text("Texto da entrada nova");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.ENTRADA_NOVA;	
+	
 	catalog_tabs[CATALOG_TAB.REGIONS].set_selected(false);
 	
 	//// history items
@@ -194,15 +214,22 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Morubixaba";
-	_last_item.set_text("Apesar do uso do termo cacique pelos colonizadores europeus em toda a América, cada grupo indígena de diferentes regiões do continente possuía uma denominação e concepção próprias para suas lideranças.\nMburovixá é a denominação que os povos guaranis deram para seus líderes.\nJá para os tupis, as denominações eram morubixaba, murumuxaua, muruxaua, tubixaba e tuxaua.\nO termo curaca era usado para uma espécie de prefeito entre os povos incas de terras andinas no tempo da invasão promovida pela colonização europeia.");
+	_last_item.set_text("Título conferido ao grande chefe, o 'principal' de uma taba. Esse posto era reservado a indígenas com mais de 40 anos, que haviam acumulado vasta experiência em batalhas e conquistado prestígio por seus feitos em combate. Eram escolhidos como líderes de expedições militares e participavam de conselhos líderes de outros agrupamentos.");
 	_last_item.image = spr_catalog_morubixaba;
 	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Kunumĩuasu";
-	_last_item.set_text("palavra de origem tupi-guarani que significa 'grande menino' ou 'grande jovem'. 'Kunumĩ' refere-se a menino, jovem ou rapaz, enquanto 'uasu' (ou 'guasu') significa grande. Além disso, também designa uma posição militar iniciante, atribuída a jovens guerreiros responsáveis por remar nas embarcações durante deslocamentos estratégicos. Essa função era essencial na organização e mobilidade dos grupos indígenas.");
+	_last_item.set_text("Palavra de origem tupi-guarani que significa 'grande menino' ou 'grande jovem'. 'Kunumĩ' refere-se a menino, jovem ou rapaz, enquanto 'uasu' (ou 'guasu') significa grande. Além disso, também designa uma posição militar iniciante, atribuída a jovens guerreiros responsáveis por remar as canoas durante deslocamentos estratégicos. Essa função era essencial na organização e mobilidade dos grupos indígenas.");
 	_last_item.image = spr_catalog_image;
 	_last_item.type = CATALOG_ITEM_TYPE.KUNUMIUASU;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Muçurana";
+	_last_item.set_text("Corda tecida com que se amarrava pela cintura o prisioneiro num sacrifício ritual. Os tupinambás do Rio de Janeiro a fabricavam de embira. Já os tupinambás da Bahia utilizavam algodão.");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
 	catalog_tabs[CATALOG_TAB.HISTORY].set_selected(false);
 	
 	//// biodiversity items
@@ -229,11 +256,7 @@ function create_content()
 	_last_item.image = spr_catalog_armadeira;
 	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Muçurana";
-	_last_item.set_text("Pertence a família Dipsadidae. Seu porte vai de pequeno a médio,podendo chegar a medir 2,40 metros de comprimento quando alcançar a vida adulta.\nA sua coloração varia de acordo com a idade, possuindo uma coloração rosada com cabeça escura, quando jovem, e quando adultos são preto azuladas com uma faixa branca na parte ventral.\nApresenta veneno na sua peçonha mas não apresenta risco ao ser humano.");
-	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
 	
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].set_selected(true);
 	

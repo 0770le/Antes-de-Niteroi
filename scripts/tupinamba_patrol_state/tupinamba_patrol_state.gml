@@ -32,11 +32,16 @@ if vsp != 0 and !on_ground() {
 
 //sees player
 if alert {
-//shoot
-	if ((o_player.hp > 0) and (can_attack) and line_of_sight()) {
-	state = tupinamba_states.SHOOT;
-	can_fire = true;
-	image_index=0;
+
+// turn to shoot if runnig and ready
+	if ((o_player.hp > 0) and (can_attack)) {
+		stare();
+		//shoot
+		if (line_of_sight()) {
+			state = tupinamba_states.SHOOT;
+			can_fire = true;
+			image_index=0;
+		}
 	} //else {//skirmish	
 }
 

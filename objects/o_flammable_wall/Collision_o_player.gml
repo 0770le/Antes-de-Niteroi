@@ -1,14 +1,4 @@
 with(o_player){
-	//apply carried over decimals
-	hsp += hsp_decimal;
-	vsp += vsp_decimal;
-	
-	//floor decimals
-	//save and subtracting decimals (making sure collisions use hole numbers)
-	hsp_decimal = hsp - (floor(abs(hsp)) * sign(hsp));
-	hsp -= hsp_decimal;
-	vsp_decimal = vsp - (floor(abs(vsp)) * sign(vsp));
-	vsp -= vsp_decimal;
 
 	//horizontal collision
 
@@ -28,4 +18,6 @@ with(o_player){
 	
 		hsp=0;
 	}
+	
+	
 }

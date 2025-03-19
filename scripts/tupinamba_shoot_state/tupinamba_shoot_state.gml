@@ -1,8 +1,6 @@
 
 function tupinamba_shoot_state() {
 	
-	stare();
-	
 	//paradinha
 	var _pause = random_range(0.5,0.9)* room_speed;
 	if (floor(image_index) == 3) and !runned_once {	

@@ -58,6 +58,16 @@ constructor
 		
 		return false;
 	}
+	
+	static clear = function ()
+	{
+		var _properties = variable_struct_get_names(self);
+		
+		for (var _i = 0; _i < array_length(_properties); ++_i) 
+		{
+			self[$ _properties[_i]] = false;
+		}
+	}
 }
 
 function InGameInputModel () : InputModel ()

@@ -116,4 +116,4 @@ function init()
 	global.input_manager.subscribe(self, INPUT_TYPE.MENU);
 }
 
-// init();
+init();

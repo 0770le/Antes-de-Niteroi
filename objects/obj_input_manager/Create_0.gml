@@ -477,8 +477,10 @@ function step_not_capturing(_should_notify = true)
 	
 	_input_menu.toggle_menu		= keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(last_gamepad_index, gp_start) > 0;	// START
 	
-	if (obj_initializer.is_open()) 
+	if (!instance_exists(obj_initializer) || obj_initializer.is_open()) 
 	{
+		_input_in_game.clear();
+		
 		// menu 
 		_input_menu.confirm			= keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(last_gamepad_index, gp_face1) > 0; // A
 		_input_menu.cancel			= keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(last_gamepad_index, gp_face2) > 0; // B

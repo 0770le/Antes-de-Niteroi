@@ -175,9 +175,9 @@ function init()
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
 	
 	// Quit Game	
-	root_menu.add_child(new MenuButton("Sair do Jogo", function() 
+	root_menu.add_child(new MenuButton("Menu Inicial", function() 
 	{ 
-		game_end(0);
+		game_restart();
 	}));
 	
 	selected_item = root_menu.children[0];

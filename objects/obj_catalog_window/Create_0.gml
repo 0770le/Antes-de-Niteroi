@@ -200,7 +200,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Kunumĩuasu";
-	_last_item.set_text("Lorem Ipsum...");
+	_last_item.set_text("palavra de origem tupi-guarani que significa 'grande menino' ou 'grande jovem'. 'Kunumĩ' refere-se a menino, jovem ou rapaz, enquanto 'uasu' (ou 'guasu') significa grande. Além disso, também designa uma posição militar iniciante, atribuída a jovens guerreiros responsáveis por remar nas embarcações durante deslocamentos estratégicos. Essa função era essencial na organização e mobilidade dos grupos indígenas.");
 	_last_item.image = spr_catalog_image;
 	_last_item.type = CATALOG_ITEM_TYPE.KUNUMIUASU;
 	catalog_tabs[CATALOG_TAB.HISTORY].set_selected(false);

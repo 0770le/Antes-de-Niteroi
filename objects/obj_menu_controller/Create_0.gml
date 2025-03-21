@@ -179,9 +179,7 @@ function init()
 	{ 
 		global.initializer.focus(noone);
 		
-		instance_destroy(global.camera);
 		instance_destroy(global.player);
-		instance_destroy(global.game);
 		
 		room_goto(rm_main_menu);
 	}));

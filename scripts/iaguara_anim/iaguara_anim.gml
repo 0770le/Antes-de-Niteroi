@@ -12,7 +12,7 @@ function iaguara_anim(){
 			}
 			break;
 		case iaguara_states.CHASE:
-			if( sign(hsp) != sign(facing)) {
+			if( hsp != 0 and sign(hsp) != sign(facing)) {
 				sprite_index = s_iaguara_turn;	
 			}
 	}

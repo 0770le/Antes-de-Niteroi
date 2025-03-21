@@ -1,6 +1,8 @@
 ///@desc criar Parent
 
 //taking dmg
+
+knockback_multiplier = 1;
 unstoppable = false; 
 hurt = false;
 hurt_time = room_speed * 1.5;

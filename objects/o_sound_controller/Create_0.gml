@@ -16,17 +16,12 @@ sfx_volume					= 100;
 
 function play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, _stop = true)
 {
-	if(!is_undefined(_event_enum)) {
-		if(_stop) event_per_enum[? _event_enum].stop();
-		event_per_enum[? _event_enum].play();
-	}
+	event_per_enum[? _event_enum].play();
 }
 
 function stop(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE)
 {
-	if(!is_undefined(_event_enum)) {
-		event_per_enum[? _event_enum].stop();
-	}
+	event_per_enum[? _event_enum].stop();
 }
 
 function update_event_position(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
@@ -97,7 +92,9 @@ function load_events()
 {
 	#region loops
 		
-			
+	event_per_enum[? FMOD_EVENT.MUSIC_MENU] = new FmodEvent("event:/MUSIC/mus_gameplay_01", []);
+	event_per_enum[? FMOD_EVENT.MUSIC_GAMEPLAY] = new FmodEvent("event:/MUSIC/mus_gameplay_01", []);
+	
 	#endregion
 	
 	#region PLAYER
@@ -315,14 +312,14 @@ function on_options_change(_options = instance_create_layer(0, 0, LAYER_CONTROLL
 	music_enabled	= _options.music_enabled;
 	sfx_enabled		= _options.sfx_enabled;
 	
-	master_volume	= floor(_options.master_volume / 10);
-	music_volume	= floor(_options.music_volume / 10);
-	sfx_volume		= floor(_options.sfx_volume / 10);
+	master_volume	= _options.master_volume / 10;
+	music_volume	= _options.music_volume / 10;
+	sfx_volume		= _options.sfx_volume / 10;
 	
-	fmod_studio_bus_set_volume(busses_per_enum[? FMOD_BUS.MASTER], master_enabled ? (master_volume / 100) : 0);
+	fmod_studio_bus_set_volume(busses_per_enum[? FMOD_BUS.MASTER], master_enabled ? master_volume : 0);
 	
-	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.MUSIC], music_enabled ? (music_volume / 100) : 0);
-	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX],   sfx_enabled ?   (sfx_volume   / 100) : 0);
+	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.MUSIC], music_enabled ? music_volume : 0);
+	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX], sfx_enabled ? sfx_volume : 0);
 }
 
 function init() 
@@ -334,15 +331,6 @@ function init()
 	load_vcas();
 	
 	load_busses();
-	
-	//obj_options_controller.register_options_listener(self);
-	
-	//on_options_change(obj_options_controller.options);
-	//fmod_studio_bus_set_volume(busses_per_enum[? FMOD_BUS.MASTER], 1);//master_enabled ? (master_volume / 100) : 0);
-	
-	//fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.MUSIC], 1);// music_enabled ? (music_volume / 100) : 0);
-	//fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX],   1);// sfx_enabled ?   (sfx_volume   / 100) : 0);
-	
 }
 
 function set_listener_position(_x, _y){

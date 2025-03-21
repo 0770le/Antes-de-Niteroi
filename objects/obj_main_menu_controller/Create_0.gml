@@ -62,10 +62,6 @@ function draw()
 
 function init_dependencies()
 {
-	// non-persistants
-	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_input_manager);
-	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_options_controller);
-	
 	// persistants
 	if (!instance_exists(o_sound_controller))
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_sound_controller);
@@ -73,11 +69,17 @@ function init_dependencies()
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_game);
 	if (!instance_exists(o_camera))
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_camera);
+		
+	// non-persistants
+	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_input_manager);
+	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_options_controller);
 }
 
 function init()
 {
 	init_dependencies();
+	
+	global.sound_controller.play(FMOD_EVENT.MUSIC_MENU);
 	
 	window_set_fullscreen(global.options_controller.options.fullscreen);
 	
@@ -99,6 +101,12 @@ function init()
 				spawn_y: _spawn_y,
 				callback: function ()
 				{
+					with(o_camera)
+					{
+						x = other.spawn_x;
+						y = other.spawn_y;
+					}
+					
 					with(o_player)
 					{
 						room_start_pos_x = other.spawn_x;
@@ -108,12 +116,6 @@ function init()
 						y = other.spawn_y;
 						
 						room_goto(other.last_room);
-					}
-					
-					with(o_camera)
-					{
-						x = other.spawn_x;
-						y = other.spawn_y;
 					}
 				}
 			}

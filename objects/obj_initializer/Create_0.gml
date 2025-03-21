@@ -52,6 +52,11 @@ function focus(_object_index = obj_menu_controller)
 		instance_activate_object(_object_index);
 	}
 }
+
+function clean_up()
+{
+	
+}
 	
 function init() 
 {

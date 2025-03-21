@@ -1,3 +1,5 @@
+global.sound_controller = self;
+
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 fmod						= noone;

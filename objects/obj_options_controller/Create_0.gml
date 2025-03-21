@@ -9,6 +9,7 @@
 #macro OPTIONS_GAMEPAD_KEYMAP			"gamepad_keymap"
 #macro OPTIONS_KEYBOARD_KEYMAP			"keyboard_keymap"
 
+#macro OPTIONS_IS_NEW_GAME				"is_new_game"
 #macro OPTIONS_LAST_ROOM				"last_room"
 #macro OPTIONS_SPAWN_X					"spawn_x"
 #macro OPTIONS_SPAWN_Y					"spawn_y"

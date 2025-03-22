@@ -195,17 +195,84 @@ function create_content()
 	_last_item.type = CATALOG_ITEM_TYPE.NHETEROIA;	
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Keriy";
+	_last_item.set_text("Atual Saco de São Francisco, Niterói (RJ). O nome dessa taba é referência as ostras que se reproduziam nas águas idealmente calmas desse vale. Ainda nos dias de hoje a região produz ostras como atividade econômica." );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.KERIY;	
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Akaray";
 	_last_item.set_text("Atual bairro de Icaraí, Niterói (RJ). A região formava um enorme areal com vegetação típica de restinga. Seu nome deriva do peixe de água doce acará ou cará, significando algo como 'Rio dos Acarás'");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.AKARAY;	
 	
-	// modelo
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Entrada Nova";
-	_last_item.set_text("Texto da entrada nova");
+	_last_item.label = "Morgujá-uausú";
+	_last_item.set_text("Atual Centro de Niterói (RJ). A taba de nome 'Maracujá Grande' se devia ao fato da região ter apresentado grande fartura da fruta cítrica e doce que curava o escorbuto dos marinheiros recém chegados das longas viagens pelo oceano.");
 	_last_item.image = spr_catalog_cidade_velha;
-	_last_item.type = CATALOG_ITEM_TYPE.ENTRADA_NOVA;	
+	_last_item.type = CATALOG_ITEM_TYPE.MORGUJA_UASU;	
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Kurumuré";
+	_last_item.set_text("Atual área entre o rio Maruí e o bairro de Neves, em Niterói(RJ). A 'taba das Taínhas' atestava a grande importancia desse peixe para a comunidade tupinambá. Eles as pescavam usando flechas e usavam sua carne para preparar uma 'farinha de guerra' altamente durável e nutritiva, que servia como sustento aos guerreiros durante missões em busca de inimigos distantes." );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.KURUMURE;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Itaóka";
+	_last_item.set_text("Atual bairro de Itaoca, São Gonçado (RJ). A aldeia da 'Casa de Pedra' provavelmente levou esse nome devio a referência alguma pedra grande ou ao fato de que suas malocas estariam enconstadas em relevos de granito. O litoral de Itaóka era chamado de Suaçuna, referência ao sûasu, cervo para os tupinambás." );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.ITAOKA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Itaóka - Último Bastião";
+	_last_item.set_text("Porto dos franceses" );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.ITAOKA_FORT;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Ilha de Seregipe";
+	_last_item.set_text("" );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.SEREGIPE;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Karióca";
+	_last_item.set_text("" );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.KARIOCA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Karióca - Reri’pê";
+	_last_item.set_text("" );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.RERI_PE;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Gûyragûasu’unaê";
+	_last_item.set_text("" );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.GUYRAGUASU_UNAE;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Jabebiracica";
+	_last_item.set_text("" );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.JABEBIRACICA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Paranãpuã";
+	_last_item.set_text("" );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.PARANAPUA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Paranãpuã - Paranacupu";
+	_last_item.set_text("" );
+	_last_item.image = spr_catalog_cidade_velha;
+	_last_item.type = CATALOG_ITEM_TYPE.PARANACUPU;
+	
+	
 	
 	catalog_tabs[CATALOG_TAB.REGIONS].set_selected(false);
 	

@@ -1,6 +1,6 @@
 enum MENU_TYPE 
 {
-	UNSET, NODE, LEAF, BUTTON, CHECKBOX, SELECTOR, INTEGER, CATALOG, INPUT, TWO_COLUMNS_NODE
+	UNSET, NODE, LEAF, BUTTON, CHECKBOX, SELECTOR, INTEGER, CATALOG, INPUT, TWO_COLUMNS_NODE, CREDITS
 }
 
 function MenuItem(_type = MENU_TYPE.UNSET, _title = "MenuItem") 
@@ -14,6 +14,13 @@ constructor
 	
 	left = self;
 	right = self;
+}
+
+function MenuCredits(_title = "MenuCredits", _content = "") 
+	: MenuItem(MENU_TYPE.CREDITS, _title) 
+constructor
+{
+	content = _content;
 }
 
 function MenuNode(_title = "MenuNode", _children = []) 

@@ -56,8 +56,19 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 	}
 	
 	var _yy = _yyy + (_index * 70);
+	
+	if (_menu_item.type == MENU_TYPE.CREDITS)
+	{
+		draw_set_color(c_black);
 		
-	draw_sprite_ext(spr_menu_button, _menu_item == selected_item ? 0 : 1, _xx, _yy, 1.2, 1.2, 0, c_white, 1);
+		draw_text_ext(x, y, _menu_item.content, 50, 800);
+		
+		draw_set_color(c_white);
+	}
+	else
+	{	
+		draw_sprite_ext(spr_menu_button, _menu_item == selected_item ? 0 : 1, _xx, _yy, 1.2, 1.2, 0, c_white, 1);
+	}
 		
 	if (_menu_item.type == MENU_TYPE.CHECKBOX || _menu_item.type == MENU_TYPE.INTEGER || _menu_item.type == MENU_TYPE.INPUT)
 	{
@@ -65,7 +76,7 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 		
 		draw_text(_xx - 115, _yy, _menu_item.title);
 	}
-	else 
+	else if (_menu_item.type != MENU_TYPE.CREDITS)
 	{
 		draw_text(_xx, _yy, _menu_item.title);
 	}	

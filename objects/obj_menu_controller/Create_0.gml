@@ -174,6 +174,16 @@ function init()
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
 	
+	// Créditos
+	var _credits_node = root_menu.add_child(new MenuNode("Créditos"))
+	_credits_node.add_child(new MenuCredits(
+		"Créditos", 
+		"Projetista e Desenvolvedor: Otto Lehmann\n" + 
+		"Artista Gráfico: Leonardo Marques\n" + 
+		"Artista de Som: André Rente\n" +
+		"Quebra-Galho: Augusto Escobar"
+	));
+	
 	// Quit Game	
 	root_menu.add_child(new MenuButton("Menu Inicial", function() 
 	{ 

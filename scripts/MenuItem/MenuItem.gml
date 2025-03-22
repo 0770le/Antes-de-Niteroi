@@ -16,11 +16,12 @@ constructor
 	right = self;
 }
 
-function MenuCredits(_title = "MenuCredits", _content = "") 
+function MenuCredits(_title = "MenuCredits", _content = "", _references = "") 
 	: MenuItem(MENU_TYPE.CREDITS, _title) 
 constructor
 {
 	content = _content;
+	references = _references;
 }
 
 function MenuNode(_title = "MenuNode", _children = []) 

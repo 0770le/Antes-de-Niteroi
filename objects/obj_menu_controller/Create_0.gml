@@ -178,10 +178,15 @@ function init()
 	var _credits_node = root_menu.add_child(new MenuNode("Créditos"))
 	_credits_node.add_child(new MenuCredits(
 		"Créditos", 
+		
 		"Projetista e Desenvolvedor: Otto Lehmann\n" + 
 		"Artista Gráfico: Leonardo Marques\n" + 
 		"Artista de Som: André Rente\n" +
-		"Quebra-Galho: Augusto Escobar"
+		"Desenvolvedor: Augusto Escobar\n" +
+		"Historiador: Fulano de Tal\n",
+		
+		"Referencias:\n" + 
+		"O Rio antes do Rio, por Rafael Freitas da Silva"
 	));
 	
 	// Quit Game	

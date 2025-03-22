@@ -61,9 +61,18 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 	{
 		draw_set_color(c_black);
 		
-		draw_text_ext(x, y, _menu_item.content, 50, 800);
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);
+		
+		draw_text_ext(bbox_left + 100, bbox_top + 170, _menu_item.content, 35, 800);
+		
+		draw_set_halign(fa_center);
+		
+		draw_text_ext(x, bbox_top + 220 + string_height_ext(_menu_item.content, 35, 800), _menu_item.references, 40, 800);
 		
 		draw_set_color(c_white);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
 	}
 	else
 	{	

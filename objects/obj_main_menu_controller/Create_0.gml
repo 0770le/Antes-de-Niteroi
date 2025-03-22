@@ -60,31 +60,62 @@ function draw()
 	draw_menu_items();
 }
 
-function init()
+function init_dependencies()
 {
+	// persistants
+	if (!instance_exists(o_sound_controller))
+		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_sound_controller);
+	if (!instance_exists(o_game))
+		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_game);
+	if (!instance_exists(o_camera))
+		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_camera);
+		
+	// non-persistants
 	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_input_manager);
 	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_options_controller);
+}
+
+function init()
+{
+	init_dependencies();
+	
+	global.sound_controller.play(FMOD_EVENT.MUSIC_MENU);
+	
+	window_set_fullscreen(global.options_controller.options.fullscreen);
 	
 	root_menu = new MenuNode("");
 	
-	if (global.options_controller.get_option(OPTIONS_SPAWN_X) > 0)
+	if (!global.options_controller.get_option(OPTIONS_IS_NEW_GAME))
 	{
 		root_menu.add_child(new MenuButton("Continuar", function () 
 		{
+			var _last_room = global.options_controller.get_option(OPTIONS_LAST_ROOM);
+			var _spawn_x = global.options_controller.get_option(OPTIONS_SPAWN_X);
+			var _spawn_y = global.options_controller.get_option(OPTIONS_SPAWN_Y);
+			
+			room_goto(rm_cidade_velha);
+			
 			var _aux = {
-				last_room: global.options_controller.get_option(OPTIONS_LAST_ROOM),		
-				spawn_x: global.options_controller.get_option(OPTIONS_SPAWN_X),		
-				spawn_y: global.options_controller.get_option(OPTIONS_SPAWN_Y),	
+				last_room: _last_room,
+				spawn_x: _spawn_x,	
+				spawn_y: _spawn_y,
 				callback: function ()
 				{
-					if (!instance_exists(o_player))
+					with(o_camera)
 					{
-						instance_create_layer(0, 0, LAYER_INSTANCES, o_player);
-					}					
+						x = other.spawn_x;
+						y = other.spawn_y;
+					}
 					
 					with(o_player)
 					{
-						fade_to_room(other.last_room, other.spawn_x, other.spawn_y, 1);
+						room_start_pos_x = other.spawn_x;
+						room_start_pos_y = other.spawn_y;
+						
+						x = other.spawn_x;
+						y = other.spawn_y;
+						
+						room_goto(other.last_room);
 					}
 				}
 			}
@@ -95,15 +126,9 @@ function init()
 	
 	root_menu.add_child(new MenuButton("Novo Jogo", function() 
 	{ 
-		if (!instance_exists(o_player))
-		{
-			instance_create_layer(0, 0, LAYER_INSTANCES, o_player);
-		}
-					
-		with(o_player)
-		{
-			fade_to_room(rm_cidade_velha, 150, 390, 1);
-		}
+		global.options_controller.set_option(OPTIONS_IS_NEW_GAME);
+		
+		room_goto_next();
 	}));
 	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 

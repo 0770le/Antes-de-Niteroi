@@ -1,9 +1,9 @@
 
 function iaguara_idle_state() {
 	
+	stare();
 	//sees player
 	if alert  {//combat
-		stare();
 		state = iaguara_states.CHASE;
 		image_index = 0;
 				

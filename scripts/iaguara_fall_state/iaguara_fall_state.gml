@@ -3,7 +3,8 @@ function iaguara_fall_state(){
 	
 
 	//landing
-	if on_ground() {
+	if (on_ground() and vsp >= 0) {
+		vsp = 0;
 		state = iaguara_states.LANDING;
 		image_index = 0;
 		//create dust if landing

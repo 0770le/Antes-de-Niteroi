@@ -174,10 +174,29 @@ function init()
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.BOW_SHOT));
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
 	
+	// Créditos
+	var _credits_node = root_menu.add_child(new MenuNode("Créditos"))
+	_credits_node.add_child(new MenuCredits(
+		"Créditos", 
+		
+		"Projetista e Desenvolvedor: Otto Lehmann\n" + 
+		"Artista Gráfico: Leonardo Marques\n" + 
+		"Artista de Som: André Rente\n" +
+		"Desenvolvedor: Augusto Escobar\n" +
+		"Historiador: Fulano de Tal\n",
+		
+		"Referencias:\n" + 
+		"O Rio antes do Rio, por Rafael Freitas da Silva"
+	));
+	
 	// Quit Game	
 	root_menu.add_child(new MenuButton("Menu Inicial", function() 
 	{ 
-		game_restart();
+		global.initializer.focus(noone);
+		
+		instance_destroy(global.player);
+		
+		room_goto(rm_main_menu);
 	}));
 	
 	selected_item = root_menu.children[0];

@@ -4,11 +4,13 @@ function iaguara_hanging_state(){
 	hsp = 0;
 	vsp = 0;
 	
-	var _wall = false;
+	var _wall = true;
 	while(_wall){
 		var _tile  = tilemap_get_at_pixel(global.map, side(false)-facing, y-sprite_height/2);
 		_wall = _tile != SOLID;
-		x -= facing;
+		if(_wall) {
+			x -= facing;
+		}
 	}	
 	
 	//make dust
@@ -33,12 +35,7 @@ function iaguara_hanging_state(){
 		sprite_index = sprites_array[iaguara_states.JUMP];
 		mask_index = mask_array[iaguara_states.JUMP];
 		
-		_wall = true;
-		while(_wall){
-		var _tile  = tilemap_get_at_pixel(global.map, side(false)-facing, y-sprite_height/2);
-		_wall = _tile == SOLID;
-		x += facing;
-	}	
+		x += facing * 20;
 		
 		image_index=0;
 		audio_play_sound(snd_jump, 15, false, global.volume);

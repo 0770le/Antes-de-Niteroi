@@ -33,6 +33,7 @@ function OptionsModel (
 			vk_right,
 		],
 		
+		is_new_game: true,
 		last_room: int64(rm_cidade_velha),
 		spawn_x: 0,
 		spawn_y: 0,
@@ -61,6 +62,7 @@ constructor
 	keyboard_keymap = _options_model.keyboard_keymap;
 	
 	// position progress
+	is_new_game = _options_model.is_new_game;
 	last_room = _options_model.last_room;
 	spawn_x = _options_model.spawn_x;
 	spawn_y = _options_model.spawn_y;

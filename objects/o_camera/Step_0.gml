@@ -4,22 +4,27 @@ y = lerp(y, move_to_y, camera_pan_speed);
 
 camera_set_view_pos(camera, x- camera_get_view_width(camera)/2, y - camera_get_view_height(camera)/2);
 
-if (follow != noone) {
+if (instance_exists(follow)) {
 	move_to_x = follow.x;
 	move_to_y = follow.y + y_offset;  
-}
-
-var xx = clamp(camera_get_view_x(camera), 0 , room_width - camera_get_view_width(camera)); //mantem a camera na tela
-var yy = clamp(camera_get_view_y(camera), 0 , room_height - camera_get_view_height(camera)); //mantem a camera na tela
-
-//screen_shake
-if (screen_shake == true) {
-	xx += random_range(-screen_shake_amount, screen_shake_amount);
-	yy += random_range(-screen_shake_amount, screen_shake_amount);
 	
-}
+	var xx = clamp(camera_get_view_x(camera), 0 , room_width - camera_get_view_width(camera)); //mantem a camera na tela
+	var yy = clamp(camera_get_view_y(camera), 0 , room_height - camera_get_view_height(camera)); //mantem a camera na tela
 
-camera_set_view_pos(camera, xx, yy);
+	//screen_shake
+	if (screen_shake == true) {
+		xx += random_range(-screen_shake_amount, screen_shake_amount);
+		yy += random_range(-screen_shake_amount, screen_shake_amount);
+	
+	}
+
+	camera_set_view_pos(camera, xx, yy);
+} else {
+	x = 0;
+	y = 0;
+	
+	camera_set_view_pos(camera, x, y);
+}
 
 //camera variables
 global.cx = camera_get_view_x(camera);

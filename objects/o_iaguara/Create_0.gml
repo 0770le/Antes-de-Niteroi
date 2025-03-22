@@ -1,10 +1,11 @@
 event_inherited();
 
 unstoppable = true;
+knockback_multiplier = 0;
 
 //taking dmg
 hurt_time = room_speed * 0.5;
-hp = 3; 
+hp = 1; 
 flash_counter = 0;
 //CASE check_enemy_hp flash dead generico
 o_enemy = object_index;
@@ -20,12 +21,14 @@ alert_cooling = room_speed * random_range(6, 8);
 spd = 6;		
 hsp = 0;
 
-max_hsp =  PLAYER_MAX_HSP*1.2;
+acc = 0.08;
+max_hsp =  PLAYER_MAX_HSP*2;
 hsp_decimal = 0;
 chase_spd = max_hsp;
 vsp = 0;
 vsp_decimal = 0;
 drag =0;
+
 
 //pounce
 
@@ -67,7 +70,8 @@ enum iaguara_states {
 	LANDING,		//4
 	ATTACK,			//5
 	JUMP,			//6
-	HANGING			//7
+	HANGING,		//7
+	SLEEP			//8
 }
 
 //enemy_states
@@ -80,6 +84,7 @@ states_array[iaguara_states.LANDING] = iaguara_landing_state;
 states_array[iaguara_states.ATTACK] = iaguara_attack_state;
 states_array[iaguara_states.JUMP] = iaguara_jump_state;
 states_array[iaguara_states.HANGING] = iaguara_hanging_state;
+states_array[iaguara_states.SLEEP] = iaguara_sleep_state;
 
 sprites_array[iaguara_states.IDLE] = s_iaguara_idle;
 sprites_array[iaguara_states.HURTING] =  s_iaguara_idle;
@@ -89,6 +94,7 @@ sprites_array[iaguara_states.LANDING] =  s_iaguara_landing;
 sprites_array[iaguara_states.ATTACK] =  s_iaguara_attack;
 sprites_array[iaguara_states.JUMP] =  s_iaguara_lunge;
 sprites_array[iaguara_states.HANGING] =  s_iaguara_hanging;
+sprites_array[iaguara_states.SLEEP] = s_iaguara_sleep;
 //
 
 
@@ -100,8 +106,10 @@ mask_array[iaguara_states.LANDING] = s_iaguara_idle;
 mask_array[iaguara_states.ATTACK] = s_iaguara_idle;
 mask_array[iaguara_states.JUMP] = s_iaguara_idle;
 mask_array[iaguara_states.HANGING] = s_iaguara_hanging;
+mask_array[iaguara_states.SLEEP] = s_iaguara_idle;
 //
 
+state = iaguara_states.SLEEP;
 can_descend = true;
 descend_cd = 1*room_speed;
 
@@ -132,7 +140,7 @@ attack_delay = room_speed *6;
 attack = false;
 
 function iaguara_attack() {
-	if ((distance_to_object(o_player) < attack_range) //no alcance
+	if ((abs(x - o_player.x) <= attack_range) //no alcance
 	 and alert
 	 and can_attack						//pode atacar
 	 and (sign(o_player.x - x) == sign(facing))  //olhando pro player

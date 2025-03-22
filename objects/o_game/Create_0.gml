@@ -1,3 +1,4 @@
+global.game = self;
 //global.timer = 0;
 
 //macros

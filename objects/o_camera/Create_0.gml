@@ -1,3 +1,4 @@
+global.camera = self;
 //get dimensions. modifica a info pega no camera
 
 var _w		= 480;
@@ -41,9 +42,3 @@ function on_options_change(_options = new OptionsModel())
 }
 
 display_set_gui_size(_w * _scale, _h * _scale);
-
-//move to main room
-room_goto_next();
-
-
-

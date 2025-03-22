@@ -7,10 +7,6 @@ function player_attack_state(){
 			jumped();
 			return;
 		}
-		if down {
-			crouched();
-			return;
-		}
 	}
 	
 	//caculate movement

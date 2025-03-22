@@ -1,14 +1,16 @@
-function collision() {
+function collision(_remove_decimal = true) {
 	//apply carried over decimals
-	hsp += hsp_decimal;
-	vsp += vsp_decimal;
+	if(_remove_decimal) {
+		hsp += hsp_decimal;
+		vsp += vsp_decimal;
 	
-	//floor decimals
-	//save and subtracting decimals (making sure collisions use hole numbers)
-	hsp_decimal = hsp - (floor(abs(hsp)) * sign(hsp));
-	hsp -= hsp_decimal;
-	vsp_decimal = vsp - (floor(abs(vsp)) * sign(vsp));
-	vsp -= vsp_decimal;
+		//floor decimals
+		//save and subtracting decimals (making sure collisions use hole numbers)
+		hsp_decimal = hsp - (floor(abs(hsp)) * sign(hsp));
+		hsp -= hsp_decimal;
+		vsp_decimal = vsp - (floor(abs(vsp)) * sign(vsp));
+		vsp -= vsp_decimal;
+	}
 	
 	//horizontal collision
 	var _side;

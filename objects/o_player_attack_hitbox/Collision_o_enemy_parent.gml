@@ -10,16 +10,15 @@ with(other) {
 		}
 		
 					
-		if (!unstoppable) {
+		if (!unstoppable or other.pierce_unstoppable) {
 			//change state
 			state = enemy_states.HURTING;
 			image_index = 0;
 			
 			o_sound_controller.update_event_position_and_play(hurt_sound_event,x,y);
 				
-			var knockback_dis = 8;
 			//move away from the hitbox
-			hsp = _dir * knockback_dis;
+			hsp = _dir * other.knockback_dis * knockback_multiplier;
 		} 
 		
 		//face the hitbox if on ground

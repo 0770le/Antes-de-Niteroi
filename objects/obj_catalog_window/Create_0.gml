@@ -214,7 +214,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Kurumuré";
-	_last_item.set_text("Atual área entre o rio Maruí e o bairro de Neves, em Niterói(RJ). A 'taba das Taínhas' atestava a grande importancia desse peixe para a comunidade tupinambá. Eles as pescavam usando flechas e usavam sua carne para preparar uma 'farinha de guerra' altamente durável e nutritiva, que servia como sustento aos guerreiros durante missões em busca de inimigos distantes." );
+	_last_item.set_text("Atual área entre o rio Maruí e o bairro de Neves, Niterói(RJ). A 'taba das Taínhas' atestava a grande importancia desse peixe para a comunidade tupinambá. Eles as pescavam usando flechas e usavam sua carne para preparar uma 'farinha de guerra' altamente durável e nutritiva, que servia como sustento aos guerreiros durante missões em busca de inimigos distantes." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.KURUMURE;
 	
@@ -226,49 +226,49 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Itaóka - Último Bastião";
-	_last_item.set_text("Porto dos franceses" );
+	_last_item.set_text("A terceira e última fortaleza dos tamoios na baía de Guanabara. Foi para a costa de suaçuna, área conhecida como 'porto dos franceses', que franceses e tupinambas recuaram após a derrota na batalha de Paranapucu. Na aldeia de Itaóka se erguia três cercas fortissímas com muitos baluartes e casas fortes. Essa fortaleza servia estrategicamente para guardar uma rota de retirada para a reorganização dos efetivos nativos no Cabo Frio." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.ITAOKA_FORT;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Ilha de Seregipe";
-	_last_item.set_text("" );
+	_last_item.set_text("Atual Ilha de Villegagnon (RJ), anexada ao Aeroporto Santos Dumont. Na Ilha de Serigipe ficava localizado o Forte Coligny, centro do assentamento colonial francês chamado França Antártica (1555-1560), liderado por Nicolas Durand de Villegagnon (1510-1571). " );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.SEREGIPE;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Karióca";
-	_last_item.set_text("" );
+	_last_item.set_text("Atualmente o que conhecemos como Flamengo, Laranjeiras, Largo do Machado, Catete e Glória (RJ). O rio carioca herdou o nome da taba: 'casa dos (indígenas) cariós'. Os cariós eram uma tribo rival que compartilhava língua e costumes com tupinambas. Em Karióca viviam cativos até que se realizassem os rituais antropofágicos. Era uma comunidade tupi enorme com muitas malocas e foi a comunidade que mais interagiu e auxiliou os franceses do forte Coligny." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.KARIOCA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Karióca - Reri’pê";
-	_last_item.set_text("" );
+	_last_item.set_text("Alto do atual Morro da Glória (RJ). Com o apoio e a orientação de alguns franceses, os tupinambás construíram uma grande cerca de madeira, equipada com torres para armas de fogo, além de possuírem diversas espingardas. Na praia, haviam cavado fossos armados com estrepes como armadilhas. Chamado pelos nativos de rery-pê, lugar das ostras, ali se encontrava a primeira fortaleza tupinambá enfrentada pelos temiminós e portugueses na grande batalha de Uruçumirim. Durante essa batalha Estácio de Sá, mesmo usando sua armadura completa, foi mortalmente ferido por uma flecha inimiga." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.RERI_PE;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Gûyragûasu’unaê";
-	_last_item.set_text("" );
+	_last_item.set_text("Atual Centro da cidade do Rio de Janeiro (RJ). Gûyragûasu’unaê é a Harpia, 'o grande passaro negro'. Nome do seu lider, e por extensão sua aldeia, é como chamavam uma ave de rapina gigantesca que habitava a Guanabara." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.GUYRAGUASU_UNAE;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Jabebiracica";
-	_last_item.set_text("" );
+	_last_item.set_text("Atual Rio Comprido e São Cristovão (RJ).  A taba da 'Arraia Cortada', possivelmente se referenciando ao peixe-viola. Estava em posição estratégica pois por ela passavam diversas rotas indígenas." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.JABEBIRACICA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Paranãpuã";
-	_last_item.set_text("" );
+	_last_item.set_text("Atual Ilha do Governador (RJ). Seu nome se traduz por 'Ilha do Mar'. Era um local priveligiado dentro da Guanabara pela fartura em água doce e por seus mares calmos, por isso era um território disputado apesar de ser conhecidamente território de onças. Era conhecida como 'Ilha do gato' pois era ocupada pelos marakaîás, 'gatos-do-mato', na época que os portugueses chegaram pela primeira vez na baía. Era a tribo a qual pertencia Arariboia e de identificariam como Temiminós. O território foi tomado pelos Tamoios que lá ergueram uma fortaleza." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.PARANAPUA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Paranãpuã - Paranacupu";
-	_last_item.set_text("" );
+	_last_item.set_text("O assalto a fortaleza localizada na taba de Paranacupu,'Mar Comprido', durou três dias e envolveu milhares de guerreiros e muita artilharia. Lá foi construida uma fortaleza dos tamoios ainda maior que a de Reri-pê. Quando foi tomada por temiminós e portugueses, os indígenas recuaram para Itaóka." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.PARANACUPU;
 	

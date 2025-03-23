@@ -72,6 +72,16 @@ page_length     = 0;
 is_new			= false;
 parent_tab		= noone;
 
+function is_first()
+{
+	return previous == self;
+}
+
+function is_last()
+{
+	return next == self;
+}
+
 function clear_new()
 {
 	if (is_new)

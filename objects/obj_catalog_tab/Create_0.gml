@@ -10,6 +10,49 @@ next			= self;
 items			= [];
 selected_item   = noone;
 
+max_display_items = 7;
+min_display_index = 0;
+max_display_index = 0;
+
+first_item_x	= 209.5;
+first_item_y	= 173.5;
+
+item_margin_x	= 0;
+item_margin_y	= 30;
+
+function update_cursor(_previous_index, _current_index)
+{
+	if (_current_index < _previous_index)
+	{
+		if (_current_index < min_display_index)
+		{
+			var _delta = min_display_index - _current_index;
+			
+			min_display_index = _current_index;
+			max_display_index -= _delta;
+			
+			toggle_items(true);
+		}
+	}
+	else if (_current_index > _previous_index)
+	{
+		if (_current_index > max_display_index)
+		{
+			var _delta = _current_index - max_display_index;
+			
+			min_display_index += _delta;
+			max_display_index = _current_index;
+			
+			toggle_items(true);
+		}
+	}
+}
+
+function update_items_position()
+{
+	
+}
+
 function set_selected(_selected = false) 
 {
 	image_index	= _selected ? 0 : 1;
@@ -47,6 +90,8 @@ function draw()
 
 function add_item(_item = noone)
 {
+	_item.index = array_length(items);
+	
 	if (array_length(items) == 0)
 	{
 		selected_item = _item;
@@ -65,6 +110,11 @@ function add_item(_item = noone)
 	
 	array_push(items, _item);
 	
+	max_display_index = min(max_display_items - 1, _item.index);
+	
+	_item.x = first_item_x;
+	_item.y = first_item_y + ((sprite_get_height(_item.sprite_index) + item_margin_y) * _item.index);
+	
 	return _item;
 }
 
@@ -74,14 +124,21 @@ function add_items(_items = [])
 	{
 		add_item(_items[_i]);
 	}
-
 }
 
 function toggle_items(_visible = false)
 {
 	for (var _i = 0; _i < array_length(items); _i++)
 	{
-		items[_i].visible = _visible; 
+		if (_i >= min_display_index && _i <= max_display_index)
+		{
+			items[_i].visible = _visible;
+			
+			items[_i].y = first_item_y + ((sprite_get_height(items[_i].sprite_index) + item_margin_y) * (_i-min_display_index));
+		}
+		else 
+		{
+			items[_i].visible = false;
+		}
 	}
-
 }

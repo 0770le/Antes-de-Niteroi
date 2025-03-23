@@ -552,6 +552,8 @@
     {"name":"s_view_block","order":11,"path":"sprites/s_view_block/s_view_block.yy",},
     {"name":"s_white_cloud","order":9,"path":"sprites/s_white_cloud/s_white_cloud.yy",},
     {"name":"spr_catalog_armadeira","order":1,"path":"sprites/spr_catalog_armadeira/spr_catalog_armadeira.yy",},
+    {"name":"spr_catalog_arrow_down","order":8,"path":"sprites/spr_catalog_arrow_down/spr_catalog_arrow_down.yy",},
+    {"name":"spr_catalog_arrow_up","order":9,"path":"sprites/spr_catalog_arrow_up/spr_catalog_arrow_up.yy",},
     {"name":"spr_catalog_boatman","order":6,"path":"sprites/spr_catalog_boatman/spr_catalog_boatman.yy",},
     {"name":"spr_catalog_caninde","order":2,"path":"sprites/spr_catalog_caninde/spr_catalog_caninde.yy",},
     {"name":"spr_catalog_cidade_velha","order":3,"path":"sprites/spr_catalog_cidade_velha/spr_catalog_cidade_velha.yy",},

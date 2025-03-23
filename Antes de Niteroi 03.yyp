@@ -672,6 +672,8 @@
     {"id":{"name":"spr_big_smoke","path":"sprites/spr_big_smoke/spr_big_smoke.yy",},},
     {"id":{"name":"spr_catalog_arariboia","path":"sprites/spr_catalog_arariboia/spr_catalog_arariboia.yy",},},
     {"id":{"name":"spr_catalog_armadeira","path":"sprites/spr_catalog_armadeira/spr_catalog_armadeira.yy",},},
+    {"id":{"name":"spr_catalog_arrow_down","path":"sprites/spr_catalog_arrow_down/spr_catalog_arrow_down.yy",},},
+    {"id":{"name":"spr_catalog_arrow_up","path":"sprites/spr_catalog_arrow_up/spr_catalog_arrow_up.yy",},},
     {"id":{"name":"spr_catalog_boatman","path":"sprites/spr_catalog_boatman/spr_catalog_boatman.yy",},},
     {"id":{"name":"spr_catalog_caninde","path":"sprites/spr_catalog_caninde/spr_catalog_caninde.yy",},},
     {"id":{"name":"spr_catalog_cidade_velha","path":"sprites/spr_catalog_cidade_velha/spr_catalog_cidade_velha.yy",},},

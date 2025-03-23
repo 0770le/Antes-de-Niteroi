@@ -137,9 +137,11 @@ function on_input_menu(_input = new MenuInputModel())
 		{
 			_previous.selected_item.set_hover(false);
 			
-			selected_tab.selected_item = selected_tab.items[0];
+			//selected_tab.selected_item = selected_tab.items[0];
 			
 			selected_tab.selected_item.set_hover(true);
+			
+			selected_tab.toggle_items(true);
 			
 			selected_tab.selected_item.clear_new();
 		}
@@ -149,7 +151,13 @@ function on_input_menu(_input = new MenuInputModel())
 	{
 		selected_tab.selected_item.set_hover(false);
 		
+		var _previous_index = selected_tab.selected_item.index;
+		
 		selected_tab.selected_item = _input.up ? selected_tab.selected_item.previous : selected_tab.selected_item.next;
+		
+		var _current_index = selected_tab.selected_item.index;
+		
+		selected_tab.update_cursor(_previous_index, _current_index);
 		
 		selected_tab.selected_item.set_hover(true);
 		
@@ -170,103 +178,122 @@ function draw_selected_item()
 	selected_tab.selected_item.draw();
 }
 
+function draw_item_cursor_arrows()
+{
+	if (selected_tab.min_display_index > 0)
+	{
+		var _xx = selected_tab.selected_item.bbox_left + ((sprite_get_width(selected_tab.selected_item.sprite_index) * selected_tab.selected_item.image_xscale)/2);
+		var _yy = bbox_top + 50;
+		
+		draw_sprite_ext(spr_catalog_arrow_up, 0, _xx, _yy, 1.5, 1.5, 0, c_white, 1);
+	}
+	
+	if (selected_tab.max_display_index < array_length(selected_tab.items) - 1)
+	{
+		var _xx = selected_tab.selected_item.bbox_left + ((sprite_get_width(selected_tab.selected_item.sprite_index) * selected_tab.selected_item.image_xscale)/2);
+		var _yy = bbox_bottom - 50;
+		
+		draw_sprite_ext(spr_catalog_arrow_down, 0, _xx, _yy, 1.5, 1.5, 0, c_white, 1);
+	}
+}
+
 function create_content()
 {
 	//tabs
 	//// regions items
 	catalog_tabs[CATALOG_TAB.REGIONS] = instance_create_layer(bbox_right - 20, bbox_top + 10, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.REGIONS].label	= "Regiões";
-	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Guajupiá";
 	_last_item.set_text("Baía de Guanabara (RJ). Guajupiá, 'morada dos ancestrais', era para os tupinambás uma espécie de paraíso, onde descansavam os antepassados mais valorosos e memoráveis. Ao chegarem à região, após descerem pelo litoral brasileiro e conquistarem territórios de outras tribos, passaram a chamá-la assim em razão de sua abundância em frutos, peixes e recursos naturais.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.GUAJUPIA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Cidade Velha";
 	_last_item.set_text("Atual Praia de Fora (RJ). Situada entre a Pedra da Urca e a Cara de Cão, foi escolhida em 1567 como o ponto inicial de ocupação para a retomada da Baía dos Franceses. A topografia da região, com suas colinas e enseadas, oferecia um local ideal para a construção de fortificações.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.CIDADE_VELHA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Nheteróia";
 	_last_item.set_text("Para os tupinambás, o nome original do Rio de Janeiro seria Niterói. Há indícios de que esse nome também serviria para designavar toda a costa da baía e uma aldeia na margem direita da mesma. Sua etimologia pode significar tanto 'costa toda sinuosa' quanto 'rio escondido'.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.NHETEROIA;	
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Keriy";
 	_last_item.set_text("Atual Saco de São Francisco, Niterói (RJ). O nome dessa taba é referência as ostras que se reproduziam nas águas idealmente calmas desse vale. Ainda nos dias de hoje a região produz ostras como atividade econômica." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.KERIY;	
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Akaray";
 	_last_item.set_text("Atual bairro de Icaraí, Niterói (RJ). A região formava um enorme areal com vegetação típica de restinga. Seu nome deriva do peixe de água doce acará ou cará, significando algo como 'Rio dos Acarás'");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.AKARAY;	
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Morgujá-uausú";
 	_last_item.set_text("Atual Centro de Niterói (RJ). A taba de nome 'Maracujá Grande' se devia ao fato da região ter apresentado grande fartura da fruta cítrica e doce que curava o escorbuto dos marinheiros recém chegados das longas viagens pelo oceano.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.MORGUJA_UASU;	
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Kurumuré";
 	_last_item.set_text("Atual área entre o rio Maruí e o bairro de Neves, Niterói(RJ). A 'taba das Taínhas' atestava a grande importancia desse peixe para a comunidade tupinambá. Eles as pescavam usando flechas e usavam sua carne para preparar uma 'farinha de guerra' altamente durável e nutritiva, que servia como sustento aos guerreiros durante missões em busca de inimigos distantes." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.KURUMURE;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Itaóka";
 	_last_item.set_text("Atual bairro de Itaoca, São Gonçado (RJ). A aldeia da 'Casa de Pedra' provavelmente levou esse nome devio a referência alguma pedra grande ou ao fato de que suas malocas estariam enconstadas em relevos de granito. O litoral de Itaóka era chamado de Suaçuna, referência ao sûasu, cervo para os tupinambás." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.ITAOKA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Itaóka - Último Bastião";
 	_last_item.set_text("A terceira e última fortaleza dos tamoios na baía de Guanabara. Foi para a costa de suaçuna, área conhecida como 'porto dos franceses', que franceses e tupinambas recuaram após a derrota na batalha de Paranapucu. Na aldeia de Itaóka se erguia três cercas fortissímas com muitos baluartes e casas fortes. Essa fortaleza servia estrategicamente para guardar uma rota de retirada para a reorganização dos efetivos nativos no Cabo Frio." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.ITAOKA_FORT;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Ilha de Seregipe";
 	_last_item.set_text("Atual Ilha de Villegagnon (RJ), anexada ao Aeroporto Santos Dumont. Na Ilha de Serigipe ficava localizado o Forte Coligny, centro do assentamento colonial francês chamado França Antártica (1555-1560), liderado por Nicolas Durand de Villegagnon (1510-1571). " );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.SEREGIPE;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Karióca";
 	_last_item.set_text("Atualmente o que conhecemos como Flamengo, Laranjeiras, Largo do Machado, Catete e Glória (RJ). O rio carioca herdou o nome da taba: 'casa dos (indígenas) cariós'. Os cariós eram uma tribo rival que compartilhava língua e costumes com tupinambas. Em Karióca viviam cativos até que se realizassem os rituais antropofágicos. Era uma comunidade tupi enorme com muitas malocas e foi a comunidade que mais interagiu e auxiliou os franceses do forte Coligny." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.KARIOCA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Karióca - Reri’pê";
 	_last_item.set_text("Alto do atual Morro da Glória (RJ). Com o apoio e a orientação de alguns franceses, os tupinambás construíram uma grande cerca de madeira, equipada com torres para armas de fogo, além de possuírem diversas espingardas. Na praia, haviam cavado fossos armados com estrepes como armadilhas. Chamado pelos nativos de rery-pê, lugar das ostras, ali se encontrava a primeira fortaleza tupinambá enfrentada pelos temiminós e portugueses na grande batalha de Uruçumirim. Durante essa batalha Estácio de Sá, mesmo usando sua armadura completa, foi mortalmente ferido por uma flecha inimiga." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.RERI_PE;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Gûyragûasu’unaê";
 	_last_item.set_text("Atual Centro da cidade do Rio de Janeiro (RJ). Gûyragûasu’unaê é a Harpia, 'o grande passaro negro'. Nome do seu lider, e por extensão sua aldeia, é como chamavam uma ave de rapina gigantesca que habitava a Guanabara." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.GUYRAGUASU_UNAE;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Jabebiracica";
 	_last_item.set_text("Atual Rio Comprido e São Cristovão (RJ).  A taba da 'Arraia Cortada', possivelmente se referenciando ao peixe-viola. Estava em posição estratégica pois por ela passavam diversas rotas indígenas." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.JABEBIRACICA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Paranãpuã";
 	_last_item.set_text("Atual Ilha do Governador (RJ). Seu nome se traduz por 'Ilha do Mar'. Era um local priveligiado dentro da Guanabara pela fartura em água doce e por seus mares calmos, por isso era um território disputado apesar de ser conhecidamente território de onças. Era conhecida como 'Ilha do gato' pois era ocupada pelos marakaîás, 'gatos-do-mato', na época que os portugueses chegaram pela primeira vez na baía. Era a tribo a qual pertencia Arariboia e de identificariam como Temiminós. O território foi tomado pelos Tamoios que lá ergueram uma fortaleza." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.PARANAPUA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Paranãpuã - Paranacupu";
 	_last_item.set_text("O assalto a fortaleza localizada na taba de Paranacupu,'Mar Comprido', durou três dias e envolveu milhares de guerreiros e muita artilharia. Lá foi construida uma fortaleza dos tamoios ainda maior que a de Reri-pê. Quando foi tomada por temiminós e portugueses, os indígenas recuaram para Itaóka." );
 	_last_item.image = spr_catalog_cidade_velha;
@@ -279,19 +306,19 @@ function create_content()
 	//// history items
 	catalog_tabs[CATALOG_TAB.HISTORY] = instance_create_layer(catalog_tabs[CATALOG_TAB.REGIONS].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
-	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Morubixaba";
 	_last_item.set_text("Título conferido ao grande chefe, o 'principal' de uma taba. Esse posto era reservado a indígenas com mais de 40 anos, que haviam acumulado vasta experiência em batalhas e conquistado prestígio por seus feitos em combate. Eram escolhidos como líderes de expedições militares e participavam de conselhos líderes de outros agrupamentos.");
 	_last_item.image = spr_catalog_morubixaba;
 	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Kunumĩuasu";
 	_last_item.set_text("Palavra de origem tupi-guarani que significa 'grande menino' ou 'grande jovem'. 'Kunumĩ' refere-se a menino, jovem ou rapaz, enquanto 'uasu' (ou 'guasu') significa grande. Além disso, também designa uma posição militar iniciante, atribuída a jovens guerreiros responsáveis por remar as canoas durante deslocamentos estratégicos. Essa função era essencial na organização e mobilidade dos grupos indígenas.");
 	_last_item.image = spr_catalog_image;
 	_last_item.type = CATALOG_ITEM_TYPE.KUNUMIUASU;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Muçurana";
 	_last_item.set_text("Corda tecida com que se amarrava pela cintura o prisioneiro num sacrifício ritual. Os tupinambás do Rio de Janeiro a fabricavam de embira. Já os tupinambás da Bahia utilizavam algodão.");
 	_last_item.image = spr_catalog_mucurana;
@@ -302,7 +329,7 @@ function create_content()
 	//// biodiversity items
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY] = instance_create_layer(catalog_tabs[CATALOG_TAB.HISTORY].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "Biodiversidade";
-	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(bbox_left + 30, bbox_top + 48, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Arariboia";
 	_last_item.set_text("Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi, que habitava o litoral brasileiro no século XVI. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa, em homenagem ao donatário da Capitania de São Vicente, Martim Afonso de Sousa.\n"
 		+ "Ficou conhecido na história devido à sua aliança com os portugueses, fundamental para a conquista da baía de Guanabara frente aos tamoios e franceses, em 1567.\n"
@@ -311,13 +338,13 @@ function create_content()
 	_last_item.image = spr_catalog_arariboia;
 	_last_item.type = CATALOG_ITEM_TYPE.ARARIBOIA;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Arara-canindé";
 	_last_item.set_text("A arara-canindé (Ara ararauna) é uma ave impressionante, famosa por sua plumagem azul e amarela. Os tupinambás a adoravam, capturando-a viva para usar suas penas em rituais importantes, mas sem causar danos, soltando-a em seguida. Social e inteligente, essa arara tem um bico forte para quebrar sementes e desempenha um papel crucial na dispersão de sementes nas florestas tropicais.");
 	_last_item.image = spr_catalog_caninde;
 	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
 	
-	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(_last_item.x, _last_item.bbox_bottom + 20, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Armadeira";
 	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
 	_last_item.image = spr_catalog_armadeira;

@@ -48,8 +48,7 @@ wait_time = wait_time_initial;
 //chase start position
 start_x = x;
 start_y = y;
-//minimum distance to start chasing
-chase_distance = alert_distance;	
+
 //target to move to
 target_x = 0;
 target_y = 0;

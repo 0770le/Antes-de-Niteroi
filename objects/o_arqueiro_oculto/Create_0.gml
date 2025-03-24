@@ -13,10 +13,8 @@ fire_delay_initial = room_speed * 2;
 fire_delay = fire_delay_initial;
 //animation
 attack = false;
-anim_duration = room_speed *.3;
-//randon start to avoic sinc enemies
-anim_start_initial = room_speed * random_range( 1.75, 2.25);
-anim_start = anim_start_initial;
+
+
 image_speed=0;
 facing = -1;
 

@@ -31,13 +31,13 @@ function tupinamba_melee_chase_state() {
 	}
 	
 	//stop if player leaves limited area
-	if (x < patrol_left_limit or x > patrol_right_limit) 
-	and (o_player.x < patrol_left_limit or o_player.x > patrol_right_limit) {
+	if (x < chase_left_limit or x > chase_right_limit) 
+	and (o_player.x < chase_left_limit or o_player.x > chase_right_limit) {
 		state = tupinamba_melee_states.IDLE;
 	}
 	
 	//go to idle if not mooving
-	if hsp == 0 {
+	if (hsp == 0) {
 		state = tupinamba_melee_states.IDLE;
 	}
 	

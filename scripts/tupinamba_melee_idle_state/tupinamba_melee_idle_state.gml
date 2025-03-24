@@ -1,6 +1,7 @@
 
 function tupinamba_melee_idle_state() {
 	
+	descend();
 	//enter state,set wait time
 
 	if !in_idle_state {

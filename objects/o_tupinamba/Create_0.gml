@@ -26,14 +26,14 @@ sprite_stoped = false;
 sprite_aux = noone;
 
 //alert
-alert_distance = TILE_SIZE * 16;
+alert_distance = TILE_SIZE * 9;
 alert_cooling = room_speed * random_range(3, 4);
 
 //movement 
 spd =  1;		//"aceleração";
 hsp = 0;
 
-max_hsp =  PLAYER_MAX_HSP;
+max_hsp =  random_range(PLAYER_MAX_HSP, PLAYER_MAX_HSP*1.2);
 hsp_decimal = 0;
 chase_spd = max_hsp;
 
@@ -65,8 +65,8 @@ image_speed=0;
 
 //patrol 
 patrol = true;
-patrol_left_limit = x - 250;
-patrol_right_limit = x + 250;
+patrol_left_limit = x - 16;
+patrol_right_limit = x + 16;
 patrol_destination = choose(-1,1);
 
 //how long to wait before patrolling

@@ -51,6 +51,11 @@ function tupinamba_melee_chase_state() {
 		launch(jump_vsp, jump_hsp);
 	}
 
+	if ((o_player.hp > 0) and has_descend) {
+		descend();
+		
+	}
+
 	//fall	
 	if vsp != 0 and !on_ground() {
 		state = tupinamba_melee_states.JUMP;

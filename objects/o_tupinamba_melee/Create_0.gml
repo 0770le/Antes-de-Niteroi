@@ -15,14 +15,14 @@ o_enemy = object_index;
 enemy_animation = tupinamba_melee_anim;
 
 //alert
-alert_distance = (TILE_SIZE*2) * 7;
-alert_cooling = room_speed * random_range(6, 8);
+alert_distance = TILE_SIZE * 7;
+alert_cooling = room_speed * random_range(5, 8);
 
 //movement 
 spd = 1;		//"aceleração";
 hsp = 0;
 
-max_hsp =  PLAYER_MAX_HSP*0.9;
+max_hsp =  random_range(PLAYER_MAX_HSP*0.85, PLAYER_MAX_HSP*0.95 );
 hsp_decimal = 0;
 chase_spd = max_hsp;
 vsp = 0;
@@ -198,11 +198,12 @@ function tupinamba_melee_attack() {
 	} 
 }
 
+has_descend = true; //if it will try to
 can_descend = true;
 descend_cd = 1*room_speed;
 
 function descend() {
-	if (alarm[7] = -1 and on_ground()){ 
+	if (!can_descend and alarm[7] = -1 and on_ground()){ 
 		can_descend = true; //poderia ser no landing state
 	} 
 	

@@ -114,7 +114,7 @@ can_descend = true;
 descend_cd = 1*room_speed;
 
 function descend() {
-	if (alarm[7] = -1 and on_ground()){ 
+	if (!can_descend and alarm[7] = -1 and on_ground()){ 
 		can_descend = true; //poderia ser no landing state
 	} 
 	

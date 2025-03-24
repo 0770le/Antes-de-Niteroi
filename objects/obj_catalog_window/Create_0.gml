@@ -23,9 +23,8 @@ function open()
 	
 	selected_tab.toggle_items(true);
 	
-	global.catalog_controller.show_all();
+	global.catalog_controller.show_all();	
 	
-	selected_tab.selected_item.clear_new();
 }
 
 function has_new_item()
@@ -43,6 +42,8 @@ function close()
 	is_open = false;
 	
 	selected_tab.toggle_items(false);
+	
+	selected_tab.selected_item.clear_new();
 	
 	global.initializer.focus(noone);
 	
@@ -129,6 +130,8 @@ function on_input_menu(_input = new MenuInputModel())
 		
 		selected_tab.set_selected(false);
 		
+		selected_tab.selected_item.clear_new();
+		
 		selected_tab = _input.tab_left ? selected_tab.previous : selected_tab.next;
 		
 		selected_tab.set_selected(true);
@@ -142,8 +145,6 @@ function on_input_menu(_input = new MenuInputModel())
 			selected_tab.selected_item.set_hover(true);
 			
 			selected_tab.toggle_items(true);
-			
-			selected_tab.selected_item.clear_new();
 		}
 	}
 	
@@ -153,6 +154,8 @@ function on_input_menu(_input = new MenuInputModel())
 		
 		var _previous_index = selected_tab.selected_item.index;
 		
+		selected_tab.selected_item.clear_new();
+		
 		selected_tab.selected_item = _input.up ? selected_tab.selected_item.previous : selected_tab.selected_item.next;
 		
 		var _current_index = selected_tab.selected_item.index;
@@ -160,8 +163,6 @@ function on_input_menu(_input = new MenuInputModel())
 		selected_tab.update_cursor(_previous_index, _current_index);
 		
 		selected_tab.selected_item.set_hover(true);
-		
-		selected_tab.selected_item.clear_new();
 	}
 	
 	if (_input.page_up) selected_tab.selected_item.previous_page();
@@ -180,12 +181,16 @@ function draw_selected_item()
 
 function draw_item_cursor_arrows()
 {
+	var _input = global.input_manager.get_menu_input();
+	
 	if (selected_tab.min_display_index > 0)
 	{
 		var _xx = selected_tab.selected_item.bbox_left + ((sprite_get_width(selected_tab.selected_item.sprite_index) * selected_tab.selected_item.image_xscale)/2);
 		var _yy = bbox_top + 50;
 		
-		draw_sprite_ext(spr_catalog_arrow_up, 0, _xx, _yy, 1.5, 1.5, 0, c_white, 1);
+		var _up_arrow_frame = _input.up_held ? 1 : 0;
+		
+		draw_sprite_ext(spr_catalog_arrow_up, _up_arrow_frame, _xx, _yy, 1.5, 1.5, 0, c_white, 1);
 	}
 	
 	if (selected_tab.max_display_index < array_length(selected_tab.items) - 1)
@@ -193,7 +198,9 @@ function draw_item_cursor_arrows()
 		var _xx = selected_tab.selected_item.bbox_left + ((sprite_get_width(selected_tab.selected_item.sprite_index) * selected_tab.selected_item.image_xscale)/2);
 		var _yy = bbox_bottom - 50;
 		
-		draw_sprite_ext(spr_catalog_arrow_down, 0, _xx, _yy, 1.5, 1.5, 0, c_white, 1);
+		var _down_arrow_frame = _input.down_held ? 1 : 0;
+		
+		draw_sprite_ext(spr_catalog_arrow_down, _down_arrow_frame, _xx, _yy, 1.5, 1.5, 0, c_white, 1);
 	}
 }
 

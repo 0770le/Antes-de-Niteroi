@@ -647,6 +647,11 @@ function get_in_game_input()
 	return data_sets[INPUT_TYPE.IN_GAME].input;
 }
 
+function get_menu_input()
+{
+	return data_sets[INPUT_TYPE.MENU].input;
+}
+
 #region events
 function subscribe(_object = noone, _input_type = INPUT_TYPE.MENU) 
 {

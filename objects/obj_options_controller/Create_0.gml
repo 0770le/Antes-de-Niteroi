@@ -8,11 +8,14 @@
 
 #macro OPTIONS_GAMEPAD_KEYMAP			"gamepad_keymap"
 #macro OPTIONS_KEYBOARD_KEYMAP			"keyboard_keymap"
+#macro OPTIONS_LAST_INPUT_SOURCE_TYPE	"last_input_source_type"
 
 #macro OPTIONS_IS_NEW_GAME				"is_new_game"
 #macro OPTIONS_LAST_ROOM				"last_room"
 #macro OPTIONS_SPAWN_X					"spawn_x"
 #macro OPTIONS_SPAWN_Y					"spawn_y"
+#macro OPTIONS_PLAYER_LIVES				"player_lives"
+
 #macro OPTIONS_QUEST_SAVED_KUNUMIUASU	"quest_saved_kunumiuasu"
 
 // saveables
@@ -87,8 +90,8 @@ function read_all()
 		file_text_close(_savefile);
 		
 		global.input_manager.gamepad_keymap = options.gamepad_keymap;
-		
 		global.input_manager.keyboard_keymap = options.keyboard_keymap;
+		global.input_manager.last_input_source_type = options.last_input_source_type;
 	} catch (_e) {
 		
 		global.logger.error($"failed to load options file in room {room}: {_e}");
@@ -96,8 +99,8 @@ function read_all()
 		options = new OptionsModel();
 		
 		global.input_manager.gamepad_keymap = options.gamepad_keymap;
-		
 		global.input_manager.keyboard_keymap = options.keyboard_keymap;
+		global.input_manager.last_input_source_type = options.last_input_source_type;
 		
 		write_all();
 	}

@@ -334,6 +334,7 @@
     {"name":"player_jump_state","order":16,"path":"scripts/player_jump_state/player_jump_state.yy",},
     {"name":"player_shoot_state","order":8,"path":"scripts/player_shoot_state/player_shoot_state.yy",},
     {"name":"player_shoot_up_state","order":14,"path":"scripts/player_shoot_up_state/player_shoot_up_state.yy",},
+    {"name":"player_utils","order":25,"path":"scripts/player_utils/player_utils.yy",},
     {"name":"player_walk_state","order":9,"path":"scripts/player_walk_state/player_walk_state.yy",},
     {"name":"process_enemy_attack","order":20,"path":"scripts/process_enemy_attack/process_enemy_attack.yy",},
     {"name":"quest_complete_kunumiuasu_seregipe","order":1,"path":"scripts/quest_complete_kunumiuasu_seregipe/quest_complete_kunumiuasu_seregipe.yy",},

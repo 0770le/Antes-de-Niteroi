@@ -7,6 +7,4 @@ function player_die_state(){
 		x = corpse.x;
 		y = corpse.y;
 	}
-	
-
 }

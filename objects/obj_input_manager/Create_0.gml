@@ -543,6 +543,8 @@ function step_not_capturing(_should_notify = true)
 
 function update_input_source()
 {
+	var _previous_input_source_type = last_input_source_type;
+	
 	if (keyboard_check(vk_anykey))
 	{
 		last_input_source_type = INPUT_SOURCE_TYPE.KEYBOARD;
@@ -550,6 +552,11 @@ function update_input_source()
 	else if (gamepad_check_any())
 	{
 		last_input_source_type = INPUT_SOURCE_TYPE.GAMEPAD;
+	}
+	
+	if (_previous_input_source_type != last_input_source_type)
+	{
+		global.options_controller.set_option(OPTIONS_LAST_INPUT_SOURCE_TYPE, last_input_source_type);
 	}
 }
 

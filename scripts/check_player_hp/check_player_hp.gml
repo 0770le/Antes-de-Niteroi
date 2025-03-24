@@ -2,7 +2,36 @@ function check_player_hp() {
 	if hp <= 0 {
 		
 		o_sound_controller.update_event_position_and_play(FMOD_EVENT.DIE,x,y);
+		
+		var _previous_state = state;
+		
 		state = states.DIE;
+		
+		if (_previous_state != state) {
+			if (o_player.lives2 >= 1)
+			{
+				var _ = call_later(3, time_source_units_seconds, function () {
+				
+					global.options_controller.set_option(OPTIONS_PLAYER_LIVES, max(0, o_player.lives2 - 1));
+				
+					instance_destroy(o_player);
+				
+					player_respawn();
+				});
+			}
+			else 
+			{
+				global.logger.info("YOU DIED");
+				
+				global.options_controller.set_option(OPTIONS_IS_NEW_GAME, true);
+				
+				var _ = call_later(5, time_source_units_seconds, function () {
+					instance_destroy(global.player); 
+		
+					room_goto(rm_main_menu);	
+				});
+			}
+		}
 		
 		visible = false;
 		lives --;

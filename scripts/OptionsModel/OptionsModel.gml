@@ -11,6 +11,7 @@ function OptionsModel (
 		
 		unlocked_catalog_items: [],
 		checked_catalog_items: [],
+		last_input_source_type: INPUT_SOURCE_TYPE.GAMEPAD,
 		
 		gamepad_keymap: 
 		[
@@ -37,8 +38,9 @@ function OptionsModel (
 		last_room: int64(rm_cidade_velha),
 		spawn_x: 0,
 		spawn_y: 0,
+		player_lives: 3,
 		
-		quest_saved_kunumiuasu: false
+		quest_saved_kunumiuasu: false,
 	}) 
 constructor 
 {
@@ -60,12 +62,14 @@ constructor
 	// keymaps 
 	gamepad_keymap = _options_model.gamepad_keymap;
 	keyboard_keymap = _options_model.keyboard_keymap;
+	last_input_source_type = _options_model.last_input_source_type;
 	
 	// position progress
 	is_new_game = _options_model.is_new_game;
 	last_room = _options_model.last_room;
 	spawn_x = _options_model.spawn_x;
 	spawn_y = _options_model.spawn_y;
+	player_lives = _options_model.player_lives;
 	
 	// quest progress
 	quest_saved_kunumiuasu = _options_model.quest_saved_kunumiuasu;

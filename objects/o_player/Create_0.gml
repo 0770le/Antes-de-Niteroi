@@ -94,6 +94,7 @@ hp_losing = hp;
 //lives
 lives_initial = 3;
 lives = lives_initial;
+lives2 = lives_initial;
 
 //lives_value = 1000;
 
@@ -218,6 +219,28 @@ function acquire_bow() {
 	sprites_array[states.DIE]			 = s_player_bow_die;
 	sprites_array[states.DIE_2]			 = s_player_bow_die_2;
 	sprites_array[states.GAME_END]		 = s_player_bow_die_2;
+}
+
+function draw_lives() {
+	var _xx = 10;
+	var _yy = 150;
+	var _lives_label = $"x{lives2}";
+
+	draw_set_valign(fa_top);
+	draw_set_halign(fa_left);
+	draw_set_font(fnt_arial_medium);
+
+	// draw shadow
+	draw_set_color(c_black);
+
+	draw_text(_xx - 1, _yy - 1, _lives_label);
+	draw_text(_xx - 1, _yy + 1, _lives_label);
+	draw_text(_xx + 1, _yy - 1, _lives_label);
+	draw_text(_xx + 1, _yy + 1, _lives_label);
+
+	// draw text
+	draw_set_color(c_orange);
+	draw_text(_xx, _yy, _lives_label);
 }
 
 if (o_game.has_bow) {

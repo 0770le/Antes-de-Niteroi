@@ -11,7 +11,7 @@ has_bow = true;
 
 max_lives = 3;
 max_arrows =  5;
-max_hp = 10;
+max_hp = 2;
 
 //has_collectable_nome = false;
 collectable_count = 0;

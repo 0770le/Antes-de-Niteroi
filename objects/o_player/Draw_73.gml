@@ -17,4 +17,6 @@ draw_sprite_stretched(s_HUD_hp_bar_loss,0,_x,_y,_bar_width,_bar_height);
 
 _bar_width = (sprite_get_width(s_HUD_hp_bar)/2) * hp;
 draw_sprite_stretched(s_HUD_hp_bar,0,_x,_y,_bar_width,_bar_height);
+
+
   

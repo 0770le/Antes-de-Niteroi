@@ -21,7 +21,7 @@ if other.interact {
 		case rm_cidade_velha:
 			target_rm = rm_akaray_1;
 			target_x = 2920;
-			target_y = 751;
+			target_y = 830;
 			break;
 		case rm_akaray_1:
 			target_rm = rm_cidade_velha;

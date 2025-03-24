@@ -13,7 +13,7 @@ hsp_decimal = 0;
 vsp_decimal =0;
 jump_spd = PLAYER_JUMP_SPEED;
 jump_dampner = 2.5; //'amortecedor' diminuidor do pulo
-jumps = 0;
+jumps = 10;
 corpse = undefined;
 death_protection = false;
 

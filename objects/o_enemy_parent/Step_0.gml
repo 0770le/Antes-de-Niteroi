@@ -1,5 +1,7 @@
 if (!instance_exists(o_fade)) {
-	script_execute (states_array[state]);
+	if(!place_meeting(x,y,o_vision_blocker_2)){
+		script_execute (states_array[state]);
+	}
 	
 	check_enemy_hp();
 	

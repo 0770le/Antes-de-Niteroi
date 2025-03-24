@@ -11,4 +11,4 @@ layer_x(LAYER_BACKGROUND_5, (_cam_x * 0.90) + 1050);
 layer_x(LAYER_BACKGROUND_6, _cam_x * 0.95);
 
 
-layer_y(LAYER_BACKGROUND_6, (_cam_y * 0.8)- 50);
+layer_y(LAYER_BACKGROUND_6, (_cam_y * 0.2) + 50);

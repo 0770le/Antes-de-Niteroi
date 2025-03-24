@@ -5,7 +5,7 @@ knockback_multiplier = 0;
 
 //taking dmg
 hurt_time = room_speed * 0.5;
-hp = 1; 
+hp = 8; 
 flash_counter = 0;
 //CASE check_enemy_hp flash dead generico
 o_enemy = object_index;

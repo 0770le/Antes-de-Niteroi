@@ -18,7 +18,20 @@ layer_y(LAYER_BACKGROUND_3, (_cam_y * 0.6) + 450);
 layer_x(LAYER_BACKGROUND_6, _cam_x * 0.8);
 layer_y(LAYER_BACKGROUND_6, (_cam_y * 0.8)-200);
 
-layer_x(LAYER_BACKGROUND_7, (_cam_x * 0.95) + 200);
-layer_y(LAYER_BACKGROUND_7, (_cam_y * 0.95) + 100);
+layer_x(LAYER_BACKGROUND_7, (_cam_x * 0.95) + 200  + 13);
+layer_y(LAYER_BACKGROUND_7, (_cam_y * 0.95) + 100 + 13);
+
+layer_x("Backgrounds_sun", (_cam_x * 0.95)	-39);
+layer_y("Backgrounds_sun", (_cam_y * 0.95) -140);
+layer_background_alpha(sun_light_id, sun_alpha);
+
+sun_x = _cam_x * 0.95 + 310;
+sun_y = _cam_y * 0.95 + 210;
 
 layer_y(LAYER_BACKGROUND_9, (_cam_y * 0.5));
+
+if(collision_point(sun_x,sun_y,o_sun_blocker,false,false)!= noone and sun_alpha > 0) {
+	sun_alpha -= 0.02;
+} else if (sun_alpha < 0.3) {
+	sun_alpha += 0.02;	
+}

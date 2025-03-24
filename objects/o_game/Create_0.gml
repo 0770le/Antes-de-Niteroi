@@ -11,7 +11,7 @@ has_bow = true;
 
 max_lives = 3;
 max_arrows =  5;
-max_hp = 5;
+max_hp = 10;
 
 //has_collectable_nome = false;
 collectable_count = 0;
@@ -82,6 +82,8 @@ msg = "";
 //GAME PROGRESS
 
 quest_saved_kunumiuasu = false;
+quest_saved_kunumiuasu_seregipe = false;
+quest_saved_kunumiuasu_morguja = false;
 
 
 //collecibles acquired

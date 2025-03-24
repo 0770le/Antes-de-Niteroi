@@ -1,8 +1,8 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_reri_pe",
-  "creationCodeFile":"rooms/rm_parent/RoomCreationCode.gml",
-  "inheritCode":true,
+  "creationCodeFile":"rooms/rm_reri_pe/RoomCreationCode.gml",
+  "inheritCode":false,
   "inheritCreationOrder":true,
   "inheritLayers":true,
   "instanceCreationOrder":[
@@ -34,8 +34,8 @@
     {"name":"inst_35EFF92F","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},
     {"name":"inst_557181BA","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},
     {"name":"inst_D5651C3","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},
-    {"name":"inst_2D751736","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},
     {"name":"inst_2DF9CC79","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},
+    {"name":"inst_29B50D57","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -95,8 +95,8 @@
         {"$GMRInstance":"v1","%Name":"inst_35EFF92F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_35EFF92F","objectId":{"name":"o_stake","path":"objects/o_stake/o_stake.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":720.0,},
         {"$GMRInstance":"v1","%Name":"inst_557181BA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_557181BA","objectId":{"name":"o_transition","path":"objects/o_transition/o_transition.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":12.0,"x":-25.0,"y":528.0,},
         {"$GMRInstance":"v1","%Name":"inst_D5651C3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_D5651C3","objectId":{"name":"o_urapaca","path":"objects/o_urapaca/o_urapaca.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1532.0,"y":451.0,},
-        {"$GMRInstance":"v1","%Name":"inst_2D751736","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2D751736","objectId":{"name":"o_kunumiuasu","path":"objects/o_kunumiuasu/o_kunumiuasu.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2082.0,"y":912.0,},
         {"$GMRInstance":"v1","%Name":"inst_2DF9CC79","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2DF9CC79","objectId":{"name":"o_fire_lighter","path":"objects/o_fire_lighter/o_fire_lighter.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":2.0,"x":1165.0,"y":432.0,},
+        {"$GMRInstance":"v1","%Name":"inst_29B50D57","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_29B50D57","objectId":{"name":"o_kunumiuasu_seregipe","path":"objects/o_kunumiuasu_seregipe/o_kunumiuasu_seregipe.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2096.0,"y":911.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Collisions","depth":1600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":144,"TileCompressedData":[
           -32,0,-112,-2147483648,-32,0,-112,-2147483648,-32,0,-112,-2147483648,-32,0,-112,-2147483648,-32,0,-112,

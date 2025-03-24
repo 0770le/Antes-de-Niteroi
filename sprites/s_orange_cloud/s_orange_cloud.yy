@@ -12,21 +12,21 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6de39544-1c85-4569-965b-0f37bbcc143b","name":"6de39544-1c85-4569-965b-0f37bbcc143b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"be9f3acb-cf9a-476c-86fb-4a8acb8424e5","name":"be9f3acb-cf9a-476c-86fb-4a8acb8424e5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":589,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"0aae9f00-7c8f-4841-ac2f-36f47203b724","blendMode":0,"displayName":"default","isLocked":false,"name":"0aae9f00-7c8f-4841-ac2f-36f47203b724","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"12eb3874-dc9a-403a-8135-8f201725499a","blendMode":0,"displayName":"default","isLocked":false,"name":"12eb3874-dc9a-403a-8135-8f201725499a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"s_orange_cloud",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Backgrounds",
-    "path":"folders/Sprites/Backgrounds.yy",
+    "name":"morguja_uasu",
+    "path":"folders/Sprites/Backgrounds/morguja_uasu.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6de39544-1c85-4569-965b-0f37bbcc143b","path":"sprites/s_orange_cloud/s_orange_cloud.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3a05bdb8-4e30-4806-b2ee-073ae7fcca11","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"be9f3acb-cf9a-476c-86fb-4a8acb8424e5","path":"sprites/s_orange_cloud/s_orange_cloud.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"65041d7a-2156-4cd7-8833-7ad3c4ac5cc5","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

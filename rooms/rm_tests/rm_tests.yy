@@ -7,7 +7,7 @@
   "inheritLayers":true,
   "instanceCreationOrder":[
     {"name":"inst_4D637F45","path":"rooms/rm_tests/rm_tests.yy",},
-    {"name":"inst_2032628C","path":"rooms/rm_tests/rm_tests.yy",},
+    {"name":"inst_63F87DDA","path":"rooms/rm_tests/rm_tests.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -41,7 +41,7 @@
     {"$GMRTileLayer":"","%Name":"Tiles_water","depth":1000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_water","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":44,"TileCompressedData":[-1408,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"t_tiles_water","path":"tilesets/t_tiles_water/t_tiles_water.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Projectiles","depth":1400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Projectiles","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":1500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":false,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_2032628C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2032628C","objectId":{"name":"o_iaguara","path":"objects/o_iaguara/o_iaguara.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":384.0,},
+        {"$GMRInstance":"v1","%Name":"inst_63F87DDA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_63F87DDA","objectId":{"name":"o_iaguara","path":"objects/o_iaguara/o_iaguara.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":384.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Collisions","depth":1600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":57,"TileCompressedData":[
           -39,1,-18,-2147483648,1,1,-31,0,-6,-2147483648,1,1,-18,-2147483648,1,1,-31,0,-6,-2147483648,1,1,-18,

@@ -118,6 +118,14 @@ function load_events()
 			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.ARROW_GROUND,
 			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.ARROW_HIT]),
 		]);
+		
+	event_per_enum[? FMOD_EVENT.ATTACK_BOW] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_bow",
+		[
+			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
+			FMOD_PARAMETER_ATTACK_BOW_VALUE.PREPARE,
+			FMOD_PARAMETER_ATTACK_BOW_VALUE.RELEASE]),
+		]);
 			
 	event_per_enum[? FMOD_EVENT.WALK] = new FmodEvent(
 		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_run",
@@ -130,12 +138,7 @@ function load_events()
 		]);
 			
 	event_per_enum[? FMOD_EVENT.CROUCH] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_crouch",
-		[
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_MOVE_CROUCH.CROUCH,
-			FMOD_PARAMETER_MOVE_CROUCH.STAND]),
-		]);
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_crouch", []);
 			
 	event_per_enum[? FMOD_EVENT.EVADE] = new FmodEvent(
 		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_evade",

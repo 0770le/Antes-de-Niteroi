@@ -1,7 +1,6 @@
 
 function crouched(){
 	state = states.CROUCH;
-	o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.CROUCH, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_CROUCH.CROUCH, x, y)
 	o_camera.y_offset = 0;
 	hsp=0;
 	image_index = 0;

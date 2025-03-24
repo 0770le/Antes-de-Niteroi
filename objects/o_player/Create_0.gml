@@ -243,6 +243,38 @@ function draw_lives() {
 	draw_text(_xx, _yy, _lives_label);
 }
 
+function play_state_change_sounds(_previous_state, _current_state)
+{
+	if (_previous_state == _current_state) return;
+	
+	// on enter state
+	switch (state) {
+		case states.SHOOT:
+		case states.SHOOT_UP:
+			global.sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_BOW, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_ATTACK_BOW_VALUE.PREPARE);
+		case states.CROUCH:
+			global.sound_controller.play(FMOD_EVENT.CROUCH);
+		case states.JUMP:
+			global.sound_controller.update_event_parameter_and_play(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.JUMP);
+		default:
+	}
+	
+	// on leave state
+	switch (_previous_state) {
+		case states.SHOOT:
+		case states.SHOOT_UP:
+			global.sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_BOW, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_ATTACK_BOW_VALUE.RELEASE);
+		case states.CROUCH:
+			// do nothing
+		case states.JUMP:
+			global.sound_controller.update_event_parameter_and_play(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.LAND);
+		default:
+	}
+	
+	// both states
+		
+}
+
 if (o_game.has_bow) {
 	acquire_bow();
 }

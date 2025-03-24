@@ -11,7 +11,11 @@ if(o_game.has_cloak and on_ground()) {
 
 //execute state
 if (!instance_exists(o_fade)) {
+	var _previous_state = state;
+	
 	script_execute(states_array[state]);
+	
+	play_state_change_sounds(_previous_state, state);
 	
 	//ensure facing is never 0
 	if facing == 0 {facing=1;}

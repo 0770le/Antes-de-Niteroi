@@ -253,6 +253,8 @@ function on_input_menu(_input = new MenuInputModel())
 			case MENU_TYPE.INTEGER:
 				if (_input.left) selected_item.on_left();
 				if (_input.right) selected_item.on_right();
+				
+				global.sound_controller.play(FMOD_EVENT.BUTTON_TALK);
 			
 				break;
 			default:
@@ -280,7 +282,7 @@ function on_input_menu(_input = new MenuInputModel())
 	// play sounds	
 	if (_previously_selected_item != selected_item) 
 	{
-		o_sound_controller.play(FMOD_EVENT.BUTTON_TALK);
+		global.sound_controller.play(FMOD_EVENT.BUTTON_TALK);
 	}
 }
 

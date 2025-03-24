@@ -1,6 +1,7 @@
+event_inherited();
 
 //movement 
-calc_entity_movement();
+//calc_entity_movement();
 
 if (on_fire) {
 	if ( sprite_index != s_flammable_wall_burning) {

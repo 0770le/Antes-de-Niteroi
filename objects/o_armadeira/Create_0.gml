@@ -26,6 +26,8 @@ hide_delay = room_speed * 1;
 attack_cd = room_speed * random_range(0, 0); //emprestado como CD
 damage = 1;
 
+//PATROL
+patrol_dis = 100;
 patrol_min_dis =20;
 patrol_max_dis =120;
 

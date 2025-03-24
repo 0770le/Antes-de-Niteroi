@@ -60,12 +60,8 @@ alarm[CAN_ATTACK] = room_speed* random_range(3,5);
 
 //animation
 attack = false;
-//anim_duration = room_speed *.3;
-//randon start to avoic sinc enemies
-anim_start_initial = room_speed * random_range( 1.75, 2.25);
-anim_start = anim_start_initial;
-image_speed=0;
 
+image_speed=0;
 
 //patrol 
 patrol = true;
@@ -77,8 +73,6 @@ patrol_destination = choose(-1,1);
 wait_time_initial = random_range(4, 6) * room_speed;
 wait_time = wait_time_initial;
 
-//minimum distance to start chasing
-chase_distance = alert_distance;
 
 //states
 enum tupinamba_states {

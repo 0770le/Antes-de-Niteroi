@@ -60,8 +60,7 @@ wait_time = wait_time_initial;
 //chase start position
 start_x = x;
 start_y = y;
-//minimum distance to start chasing
-chase_distance = alert_distance;	
+
 //target to move to
 target_x = 0;
 target_y = 0;
@@ -165,7 +164,7 @@ function tupinamba_melee_evade(){
 			 //chance
 				if (_evade < evade_chance) {			
 					tupinamba_melee_evaded();		
-				} 
+				} 				
 				
 				has_evade = false;			
 				evade_delay = evade_delay_initial;
@@ -199,3 +198,21 @@ function tupinamba_melee_attack() {
 	} 
 }
 
+can_descend = true;
+descend_cd = 1*room_speed;
+
+function descend() {
+	if (alarm[7] = -1 and on_ground()){ 
+		can_descend = true; //poderia ser no landing state
+	} 
+	
+	if (instance_exists(o_player) and can_descend and alert) {
+		if (o_player.y > y ) {
+			var t1 = tilemap_get_at_pixel(global.map, side(), bbox_bottom +1);
+			if (t1 == PLATAFORM) {
+				can_descend = false;
+				alarm[7] = descend_cd;
+			}
+		}
+	}	
+}

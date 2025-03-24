@@ -56,11 +56,6 @@ can_attack = true;
 attack_delay = room_speed;
 //animation
 attack = false;
-anim_duration = room_speed *.3;
-//randon start to avoic sinc enemies
-anim_start_initial = room_speed * random_range( 1.75, 2.25);
-anim_start = anim_start_initial;
-
 
 //patrol 
 patrol = true;
@@ -72,8 +67,6 @@ patrol_destination = choose(-1,1);
 wait_time_initial = random_range(4, 6) * room_speed;
 wait_time = wait_time_initial;
 
-//minimum distance to start chasing
-chase_distance = alert_distance;	
 
 die_sound_event = FMOD_EVENT.FRENCH_SHOOTER_DIE;
 hurt_sound_event = FMOD_EVENT.FRENCH_SHOOTER_HURT;
@@ -122,10 +115,6 @@ mask_array[frances_states.DUCK] = s_frances_duck;
 mask_array[frances_states.RUN] = s_frances_idle;
 
 
-
-
-
-
 function create_bullet() {
 	if(line_of_sight() and collision_line(x, y-10, x + facing * GAME_W, y-10,o_player, false, true)) {
 		with(o_player) {
@@ -134,13 +123,3 @@ function create_bullet() {
 	}
 }
 
-//puff of smoke on spawn
-//if (room == rm_02) {
-//	alarm[SPAWN]=1;
-//}
-
-			
-//			//sound
-//			audio_play_sound(snd_player_hit, 40, false, global.volume);
-//	}	
-//}

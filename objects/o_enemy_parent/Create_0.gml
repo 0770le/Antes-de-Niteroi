@@ -29,18 +29,13 @@ alert_cooling = room_speed * random_range( 1.5, 3);
 
 //movement 
 grav = global.grav;
-spd = 1		//aceleraçao?;
-
+spd = 1;
 hsp = 0;
-
 max_hsp = 1;
 hsp_decimal = 0;
 chase_spd = max_hsp*1.3;
-
 vsp = 0;
-
 vsp_decimal = 0;
-
 
 facing = -1;
 drag = 0.12;
@@ -52,7 +47,6 @@ hurt_sound_event = FMOD_EVENT.SNAKE_HURT;
 hp_drop_chance = 0.3;
 death_gem_value =0;// 3;
 
-
 //attack
 collision_dmg = true;
 damage = 1;
@@ -62,22 +56,18 @@ attack_delay = room_speed;
 
 //animation
 attack = false;
-anim_duration = room_speed *.3;
-//randon start to avoic sinc enemies
-anim_start_initial = room_speed * random_range( 1.75, 2.25);
-anim_start = anim_start_initial;
 
 
-//will he jump this chance
-//jump_chance = 0.5;
-//how often to check for a jump chance
-//jump_timer_initial = random_range(1, 1.5) * room_speed;
-//jump_timer = jump_timer_initial;
-	//CHANGE STATE -PATROL
-patrol_dis = 100;
+	//CHANGE STATE 
+//PATROL
+
 //patrol start position
 start_x = x;
 start_y = y;
+
+patrol_left_limit = x - 16;
+patrol_right_limit = x + 16; 
+
 //how long to wait before patrolling
 wait_time_initial = 0;//random_range(0, 0) * room_speed;
 wait_time = wait_time_initial;
@@ -85,8 +75,10 @@ wait_time = wait_time_initial;
 //target to move to
 target_x = 0;
 target_y = 0;
-//minimum distance to start chasing
-chase_distance = alert_distance;	
+
+chase_right_limit = 1000;
+chase_left_limit = 1000;
+
 	//HIDING
 hidden= false;
 hide_delay = 1.5 * room_speed;
@@ -106,6 +98,18 @@ state = enemy_states.IDLE;
 
 function death(){
 	
+}
+
+
+//warden will be static enemies that when alerted within a small distance will never drop alert and will chase long distances 
+function warden(_chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit, _alert_distance = TILE_SIZE * 3) {
+	patrol = false;
+	chase_right_limit = _chase_right_limit;
+	chase_left_limit = _chase_left_limit;
+	
+	alert_distance = _alert_distance; 
+	alert_cooling = room_speed *90;
+
 }
 
 //puff of smoke on spawn

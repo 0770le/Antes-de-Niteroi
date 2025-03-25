@@ -232,7 +232,8 @@ function update_save() {
 		OPTIONS_SPAWN_X: x,
 		OPTIONS_SPAWN_Y: y,
 		OPTIONS_PLAYER_LIVES: lives2,
-		OPTIONS_PLAYER_HP: hp
+		OPTIONS_PLAYER_HP: hp,
+		OPTIONS_PLAYER_DIED: false
 	});
 }
 

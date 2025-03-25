@@ -40,6 +40,7 @@ function OptionsModel (
 		spawn_y: 0,
 		player_lives: 3,
 		player_hp: 10,
+		player_died: false,
 		
 		quest_saved_kunumiuasu: false,
 	}) 
@@ -72,6 +73,7 @@ constructor
 	spawn_y = _options_model.spawn_y;
 	player_lives = _options_model.player_lives;
 	player_hp = _options_model.player_hp;
+	player_died = _options_model.player_died;
 	
 	// quest progress
 	quest_saved_kunumiuasu = _options_model.quest_saved_kunumiuasu;

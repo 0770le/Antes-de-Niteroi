@@ -12,7 +12,10 @@ function check_player_hp() {
 			{
 				var _ = call_later(3, time_source_units_seconds, function () {
 				
-					global.options_controller.set_option(OPTIONS_PLAYER_LIVES, max(0, o_player.lives2 - 1));
+					global.options_controller.set_options({
+						OPTIONS_PLAYER_LIVES: max(0, o_player.lives2 - 1),
+						OPTIONS_PLAYER_DIED: true
+					});
 				
 					instance_destroy(o_player);
 				
@@ -23,7 +26,10 @@ function check_player_hp() {
 			{
 				global.logger.info("YOU DIED");
 				
-				global.options_controller.set_option(OPTIONS_IS_NEW_GAME, true);
+				global.options_controller.set_options({
+					OPTIONS_IS_NEW_GAME: true,
+					OPTIONS_PLAYER_DIED: true
+				});
 				
 				var _ = call_later(5, time_source_units_seconds, function () {
 					instance_destroy(global.player); 

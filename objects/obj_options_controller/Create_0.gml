@@ -16,6 +16,7 @@
 #macro OPTIONS_SPAWN_Y					"spawn_y"
 #macro OPTIONS_PLAYER_LIVES				"player_lives"
 #macro OPTIONS_PLAYER_HP				"player_hp"
+#macro OPTIONS_PLAYER_DIED				"player_died"
 
 // saveables
 

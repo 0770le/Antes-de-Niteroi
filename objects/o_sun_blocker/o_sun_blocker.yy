@@ -37,5 +37,5 @@
     "path":"sprites/s_sun_blocker/s_sun_blocker.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

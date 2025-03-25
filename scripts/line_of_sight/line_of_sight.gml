@@ -11,3 +11,15 @@ function line_of_sight(ignore_hidden = false, ignore_facing = false) {
 	}
 	return false;
 }
+
+
+function line_of_sight2() { 
+// retorna true se (jogador nao esta escondido E vendo player na esquerda OU direita, sem solido na frente
+
+	var _x_enemy = o_player.x < x ? bbox_left : bbox_right;
+	
+	var _blocked_view = collision_line(_x_enemy,bbox_top, o_player.x, o_player.y - (o_player.bbox_bottom-o_player.bbox_top)/2, o_view_block ,false ,false);
+		
+	return _blocked_view == noone;
+	
+}

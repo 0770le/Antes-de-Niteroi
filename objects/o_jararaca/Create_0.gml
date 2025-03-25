@@ -29,12 +29,12 @@ idle_move_timer = room_speed * random_range(5, 9);
 //movement 
 
 
-spd = 0.1;
+spd = 0.8;
 drag = 0.12;
 
-spd_array[jararaca_spds.TOP]	=	0.1;
-spd_array[jararaca_spds.FAST]	=	0.1;
-spd_array[jararaca_spds.MID]	=	0.1;
+spd_array[jararaca_spds.TOP]	=	5;
+ spd_array[jararaca_spds.FAST]	=	2;
+ spd_array[jararaca_spds.MID]	=	1;
 spd_array[jararaca_spds.SLOW]	=	0.2;
 
 img_spd_array[jararaca_spds.TOP]	=	2;

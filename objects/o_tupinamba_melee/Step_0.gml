@@ -2,6 +2,11 @@ event_inherited();
 
 mask_index = mask_array[state];
 
+if (!chase_init) {
+	set_chase_dis();
+	chase_init = true;	
+}
+
 //show_debug_message("state = " + string(state));
 
 if state !=  tupinamba_melee_states.IDLE {

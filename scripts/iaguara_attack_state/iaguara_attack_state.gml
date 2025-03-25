@@ -10,10 +10,13 @@ function iaguara_attack_state(){
 		//jump
 		state = iaguara_states.JUMP;
 		image_index= 0;
+		
+		y-=1;
+		//player above
 		if(o_player.y < y-TILE_SIZE*5) {
 			launch(8,2);
-		} else {
-			launch(5,7);
+		} else {//player under
+			launch(4.8,7);
 		}
 	}
 	

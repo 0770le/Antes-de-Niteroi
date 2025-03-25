@@ -1,4 +1,4 @@
-{
+*4{
   "$GMProject":"",
   "%Name":"Antes de Niteroi 03",
   "AudioGroups":[
@@ -292,6 +292,7 @@
     {"id":{"name":"Object78","path":"objects/Object78/Object78.yy",},},
     {"id":{"name":"ParticlesParent","path":"objects/ParticlesParent/ParticlesParent.yy",},},
     {"id":{"name":"rm_akaray_1","path":"rooms/rm_akaray_1/rm_akaray_1.yy",},},
+    {"id":{"name":"rm_akaray_2","path":"rooms/rm_akaray_2/rm_akaray_2.yy",},},
     {"id":{"name":"rm_cidade_velha","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},},
     {"id":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
@@ -386,6 +387,7 @@
     {"id":{"name":"iaguara_jump_state","path":"scripts/iaguara_jump_state/iaguara_jump_state.yy",},},
     {"id":{"name":"iaguara_landing_state","path":"scripts/iaguara_landing_state/iaguara_landing_state.yy",},},
     {"id":{"name":"iaguara_sleep_state","path":"scripts/iaguara_sleep_state/iaguara_sleep_state.yy",},},
+    {"id":{"name":"iaguara_stair_up_state","path":"scripts/iaguara_stair_up_state/iaguara_stair_up_state.yy",},},
     {"id":{"name":"Initializer","path":"scripts/Initializer/Initializer.yy",},},
     {"id":{"name":"InputModel","path":"scripts/InputModel/InputModel.yy",},},
     {"id":{"name":"intern_alerted_state","path":"scripts/intern_alerted_state/intern_alerted_state.yy",},},
@@ -872,9 +874,10 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
+    {"roomId":{"name":"rm_tests_1","path":"rooms/rm_tests_1/rm_tests_1.yy",},},
+    {"roomId":{"name":"rm_akaray_1","path":"rooms/rm_akaray_1/rm_akaray_1.yy",},},
     {"roomId":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
     {"roomId":{"name":"rm_cidade_velha","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},},
-    {"roomId":{"name":"rm_akaray_1","path":"rooms/rm_akaray_1/rm_akaray_1.yy",},},
     {"roomId":{"name":"rm_seregipe","path":"rooms/rm_seregipe/rm_seregipe.yy",},},
     {"roomId":{"name":"rm_tests_1","path":"rooms/rm_tests_1/rm_tests_1.yy",},},
     {"roomId":{"name":"rm_morguja_uasu","path":"rooms/rm_morguja_uasu/rm_morguja_uasu.yy",},},
@@ -885,6 +888,7 @@
     {"roomId":{"name":"rm_reri_pe","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},},
     {"roomId":{"name":"rm_tests","path":"rooms/rm_tests/rm_tests.yy",},},
     {"roomId":{"name":"rm_tests_menu","path":"rooms/rm_tests_menu/rm_tests_menu.yy",},},
+    {"roomId":{"name":"rm_akaray_2","path":"rooms/rm_akaray_2/rm_akaray_2.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

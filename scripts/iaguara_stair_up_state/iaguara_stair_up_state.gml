@@ -1,4 +1,6 @@
-function iaguara_chase_state() {
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function iaguara_stair_up_state(){
 	
 	//calculate target movement
 	image_speed = 1;
@@ -12,6 +14,7 @@ function iaguara_chase_state() {
 	var _dir = point_direction(x, y, target_x, target_y);
 	
 	hsp = clamp(hsp + (facing*acc), -max_hsp, max_hsp);
+	vsp = abs(hsp)*-1;
 
 	//if knock back, don´t advance
 	if ((!hurt) and (alarm[KNOCKEDBACK] < 0 )) {
@@ -20,33 +23,19 @@ function iaguara_chase_state() {
 		}
 	}
 	
-	//go to idle if not mooving
-	if (hsp == 0 and !alert) {
-		state = iaguara_states.IDLE;
-		image_index = 0;
-	}
 	
-	
-	var face = tilemap_get_at_pixel(global.map, side()+hsp + 20*facing, y);
+	var face = tilemap_get_at_pixel(global.map, side()+hsp, y);
 	var _step_up = tilemap_get_at_pixel(global.map, side()+hsp, y- TILE_SIZE-1);
 		
-	if (o_player.hp > 0) {
-		descend();
-		
-		
+
+	if (face == SOLID){////up
+		if (_step_up != SOLID) {//low
+			state = iaguara_states.STAIR_UP;
+	
+				
+		}	
 	}
-	//if (face == SOLID){////up
-		
-	//	if (_step_up != SOLID) {//low
-	//		state = iaguara_states.STAIR_UP;
-	//			call_later(TILE_SIZE/spd, time_source_units_frames,function() {if(state ==  iaguara_states.STAIR_UP){ state = iaguara_states.CHASE;} } ,false);
-	//	}	
-		
-	//	//state = iaguara_states.ATTACK;
-	//	//image_index =0;
-	//}
 
 	calc_entity_movement(global.grav, 0);
 	collision(false);
-
 }

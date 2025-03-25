@@ -49,8 +49,8 @@ attack = false;
 
 //patrol 
 patrol = true;
-patrol_left_limit = x - (TILE_SIZE*2) * 30;
-patrol_right_limit = x + (TILE_SIZE*2) * 30;
+patrol_left_limit = x - TILE_SIZE * 10;
+patrol_right_limit = x + TILE_SIZE * 10;
 patrol_destination = choose(-1,1);
 //how long to wait before patrolling
 wait_time_initial = random_range(2, 4) * room_speed;
@@ -216,4 +216,11 @@ function descend() {
 			}
 		}
 	}	
+}
+
+chase_init = false;
+function set_chase_dis(_chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit){
+	chase_left_limit = _chase_left_limit;
+	chase_right_limit = _chase_right_limit;
+
 }

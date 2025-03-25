@@ -109,7 +109,6 @@ function warden(_chase_left_limit = patrol_left_limit, _chase_right_limit = patr
 	
 	alert_distance = _alert_distance; 
 	alert_cooling = room_speed *90;
-
 }
 
 //puff of smoke on spawn

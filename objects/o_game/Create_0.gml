@@ -6,12 +6,12 @@ macros();
 
 
 //PLAYER upgrades
-has_cloak = true;
-has_bow = true;
+has_cloak = false;
+has_bow = false;
 
 max_lives = 3;
 max_arrows =  5;
-max_hp = 10;
+max_hp = 5;
 
 //has_collectable_nome = false;
 collectable_count = 0;

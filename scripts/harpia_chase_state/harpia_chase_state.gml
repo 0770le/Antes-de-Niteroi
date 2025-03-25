@@ -1,6 +1,6 @@
 function harpia_chase_state(){
-	
-	if(o_player.hp <= 0) {
+
+	if(point_distance(x,y,origin_x,origin_y) > 1000 or o_player.hp <= 0) {
 		facing = sign(o_player.x-x);
 		hsp = lerp(hsp,0,0.05);
 		x += hsp;

@@ -1,2 +1,0 @@
-warden();
-facing= -1;

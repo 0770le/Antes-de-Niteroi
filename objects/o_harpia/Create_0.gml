@@ -1,6 +1,6 @@
 event_inherited();
 
-can_alert = false;
+can_alert = true;
 enemy_animation = harpia_anim;
 
 hp = 5;

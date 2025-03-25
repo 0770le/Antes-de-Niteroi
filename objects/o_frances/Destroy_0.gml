@@ -10,7 +10,7 @@ with(instance_create_layer (side()+4*facing, y - 22, LAYER_INSTANCES, o_drop)) {
 }
 
 with(instance_create_layer (side()+4*facing, y - 22, LAYER_INSTANCES, o_drop)) {
-	sprite_index = s_france_arma;
+	sprite_index = s_frances_arma;
 	bounce = 2;
 	facing = other.facing;
 }

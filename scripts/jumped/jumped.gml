@@ -9,6 +9,13 @@ function jumped(can_jump = false) {
 			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.DOUBLE_JUMP,x,y);
 			can_jump = true;
 			jumps--;
+			with(instance_create_depth(x,y,depth-1,o_generic_animation)) {
+				attached_to = other.id;
+				attach_y_off = -33;
+				attach_x_off = -5;
+				sprite_index = s_player_wing;
+				destroy = true;
+			}
 		}
 	}
 	

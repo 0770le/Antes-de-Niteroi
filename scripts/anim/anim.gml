@@ -18,14 +18,9 @@ function anim() {
 		case states.HURTING:
 				if (!on_ground()) {
 					if(o_game.has_bow) {
-						sprite_index = s_player_bow_jump;
+						sprite_index = s_player_bow_hurting_air;
 					} else {
-						sprite_index = s_player_jump;
-					}
-					if (vsp < 0) {
-						image_index = 0;
-					} else {
-						image_index = 1;
+						sprite_index = s_player_hurting_air;
 					}
 				}
 		break;

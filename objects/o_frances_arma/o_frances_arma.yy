@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_france_arma",
-    "path":"sprites/s_france_arma/s_france_arma.yy",
+    "name":"s_frances_arma",
+    "path":"sprites/s_frances_arma/s_frances_arma.yy",
   },
   "spriteMaskId":null,
   "visible":true,

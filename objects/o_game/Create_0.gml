@@ -37,6 +37,8 @@ global.volume = 0.1;
 global.timer = 0;
 
 global.fontSmall = font_add_sprite_ext(spr_font_small, "AÁÀÃÂaáàãâBbCÇcçDdEÉÊeéêFfGgHhIÍiíJjKkLlMmNnOÓÕÔoóõôPpQqRrSsTtUÚuúVvWwXxYyZz1234567890()',.%+-/:?!<>°•", true, 1);
+global.fontArrow = font_add_sprite_ext(s_font_arrows, "0123456789", true, 1);
+global.fontLives = font_add_sprite_ext(s_font_lives, "0123456789", true, 1);
 
 //set GUI size
 display_set_gui_size(640,360);  //(720, 360);

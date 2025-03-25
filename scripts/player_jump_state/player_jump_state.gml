@@ -21,8 +21,13 @@ function player_jump_state(){
 			state = states.IDLE;
 		}
 		
-		var _water_tile = tilemap_get_at_pixel(layer_tilemap_get_id(LAYER_WATER), bbox_left, bbox_bottom-1);
-		if(_water_tile > 0) {
+		var _water = false;
+		if(layer_exists(LAYER_WATER)) {
+			var _water_tile = tilemap_get_at_pixel(layer_tilemap_get_id(LAYER_WATER), bbox_left, bbox_bottom-1);
+			_water = _water_tile > 0;
+		}
+		
+		if(_water) {
 			emit_water(x,y-4,irandom_range(20,25));
 		} else if (vsp > 2) {
 			instance_create_layer(x,y, LAYER_EFFECTS, o_player_dust_land);

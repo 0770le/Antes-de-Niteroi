@@ -7,6 +7,10 @@ function player_attack_state(){
 			jumped();
 			return;
 		}
+		if evade {
+			evaded();
+			return;
+		}
 	}
 	
 	//caculate movement

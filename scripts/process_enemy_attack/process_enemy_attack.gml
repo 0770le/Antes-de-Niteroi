@@ -7,12 +7,12 @@ function process_enemy_attack() { // (hk, bk) {
 			hurt = true;
 
 			//facing the enemy
-			facing = sign(other.xprevious - x);
+			//facing = sign(other.xprevious - x);
 		
-			//ensure facing can nerver be 0
-			if (facing == 0) {
-				facing = 1;
-			}
+			////ensure facing can nerver be 0
+			//if (facing == 0) {
+			//	facing = 1;
+			//}
 	
 			//ensure enemy faces player
 			other.facing = - facing;

@@ -1,1 +1,1 @@
-die=true;
+instance_destroy();

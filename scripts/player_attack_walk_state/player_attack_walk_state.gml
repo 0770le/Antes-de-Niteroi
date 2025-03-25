@@ -11,6 +11,10 @@ function player_attack_walk_state(){
 			crouched();
 			return;
 		}
+		if evade {
+			evaded();
+			return;
+		}
 	}
 	
 	//caculate movement

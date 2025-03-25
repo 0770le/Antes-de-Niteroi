@@ -15,8 +15,7 @@
 #macro OPTIONS_SPAWN_X					"spawn_x"
 #macro OPTIONS_SPAWN_Y					"spawn_y"
 #macro OPTIONS_PLAYER_LIVES				"player_lives"
-
-#macro OPTIONS_QUEST_SAVED_KUNUMIUASU	"quest_saved_kunumiuasu"
+#macro OPTIONS_PLAYER_HP				"player_hp"
 
 // saveables
 
@@ -73,6 +72,23 @@ function write_all()
 	}
 }
 
+function get_merged_options(_persisted_options = {})
+{
+	var _new_options = new OptionsModel();
+	
+	var _keys = variable_struct_get_names(_new_options);
+	
+	for (var _i = 0; _i < array_length(_keys); _i++)
+	{
+		if (variable_struct_exists(_persisted_options, _keys[_i])) 
+		{
+			_new_options[$ _keys[_i]] = _persisted_options[$ _keys[_i]];
+		}
+	}
+	
+	return _new_options;
+}
+
 function read_all()
 {
 	global.logger.debug($"reading log file {filename_path(savefile)}{savefile}");
@@ -85,7 +101,7 @@ function read_all()
 	
 		var _options_model = json_parse(_json);
 	
-		options = new OptionsModel(_options_model);	
+		options = get_merged_options(_options_model);	
 		
 		file_text_close(_savefile);
 		
@@ -118,6 +134,20 @@ function save_and_notify()
 function get_option(_option_macro = OPTIONS_FULLSCREEN)
 {
 	return options[$ _option_macro];
+}
+
+function set_options(_options = {})
+{
+	var _keys = variable_struct_get_names(_options);
+	
+	for (var _i = 0; _i < array_length(_keys); _i++)
+	{
+		var _key = _keys[_i];
+		
+		options[$ _key] = _options[$ _key];
+	}
+	
+	save_and_notify();
 }
 
 function set_option(_option_macro = OPTIONS_FULLSCREEN, _new_value = 0)

@@ -90,11 +90,16 @@ hp = o_game.max_hp;
 //max_hp = hp;
 hp_losing = hp;
 
-
 //lives
 lives_initial = 3;
 lives = lives_initial;
-lives2 = lives_initial;
+
+// ********* Atenção ! ********* 
+//
+// coloquei essa variavel lives2 porque o GM nao estava deixando 
+// eu pegar o_player.lives de jeito nenhum
+// 
+lives2 = lives_initial; 
 
 //lives_value = 1000;
 
@@ -221,9 +226,25 @@ function acquire_bow() {
 	sprites_array[states.GAME_END]		 = s_player_bow_die_2;
 }
 
+function update_save() {
+	global.options_controller.set_options({
+		OPTIONS_LAST_ROOM: int64(room),
+		OPTIONS_SPAWN_X: x,
+		OPTIONS_SPAWN_Y: y,
+		OPTIONS_PLAYER_LIVES: lives2,
+		OPTIONS_PLAYER_HP: hp
+	});
+}
+
+function update_saved_hp() {
+	if (global.options_controller.get_option(OPTIONS_PLAYER_HP) != hp) {
+		global.options_controller.set_option(OPTIONS_PLAYER_HP, hp);
+	}
+}
+
 function draw_lives() {
 	var _xx = 10;
-	var _yy = 150;
+	var _yy = 400;
 	var _lives_label = $"x{lives2}";
 
 	draw_set_valign(fa_top);

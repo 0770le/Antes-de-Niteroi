@@ -20,7 +20,7 @@ draw_sprite_stretched(s_HUD_hp_bar,0,_x,_y,_bar_width,_bar_height);
 draw_set_color(c_white);
 draw_sprite(s_HUD_lives, 0, _cam_x + global.cw - 70, _y-20);
 draw_set_font(global.fontLives);
-draw_text(_cam_x + global.cw - 15, _y+2, string(lives));
+draw_text(_cam_x + global.cw - 15, _y+2, string(lives2));
 
 if(o_game.has_bow) {
 	draw_sprite(s_HUD_arrows, 0, _cam_x + 10, _y+40);

@@ -102,7 +102,7 @@ function death(){
 
 
 //warden will be static enemies that when alerted within a small distance will never drop alert and will chase long distances 
-function warden(_chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit, _alert_distance = TILE_SIZE * 3) {
+function warden(_alert_distance = TILE_SIZE * 3, _chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit ) {
 	patrol = false;
 	chase_right_limit = _chase_right_limit;
 	chase_left_limit = _chase_left_limit;

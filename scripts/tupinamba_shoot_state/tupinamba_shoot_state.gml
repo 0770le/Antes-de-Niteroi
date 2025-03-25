@@ -22,6 +22,8 @@ function tupinamba_shoot_state() {
 		
 		//shot round		
 		number_of_shots -= choose(1,2,3);	
+		//remirar
+		stare();
 	}
 	 
 		

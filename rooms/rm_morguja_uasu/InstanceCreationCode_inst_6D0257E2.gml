@@ -1,10 +1,8 @@
-//patrol 
-facing = -1;
-patrol = true;
-patrol_left_limit = 3030;
-patrol_right_limit = 3900;
-patrol_destination = choose(-1,1);
+
+patrol_left_limit = 2985;
+patrol_right_limit = 3906;
+
 
 //how long to wait before patrolling
-wait_time_initial = random_range(4, 6) * room_speed;
+wait_time_initial = 0.1 * room_speed;
 wait_time = wait_time_initial;

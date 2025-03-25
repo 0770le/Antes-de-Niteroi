@@ -12,7 +12,7 @@ dir = 0;
 
 collision_dmg = false;
 
-alert_distance = 300;
+alert_distance = TILE_SIZE*7;
 alert_initial_timer = room_speed * 2;
 alert_timer = alert_initial_timer;
 

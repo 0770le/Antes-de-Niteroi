@@ -199,7 +199,7 @@ function tupinamba_melee_attack() {
 }
 
 has_descend = true; //if it will try to
-can_descend = true;
+can_descend = true;//due cd
 descend_cd = 1*room_speed;
 
 function descend() {
@@ -218,9 +218,10 @@ function descend() {
 	}	
 }
 
-chase_init = false;
-function set_chase_dis(_chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit){
+//used in in creation os the instance in the room. Wil set chase var after you give the patrol
+function set_chase(_chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit){
 	chase_left_limit = _chase_left_limit;
 	chase_right_limit = _chase_right_limit;
-
 }
+//
+call_later(2,time_source_units_frames,function(){if(patrol){set_chase();}},false);

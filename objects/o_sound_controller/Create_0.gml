@@ -14,7 +14,35 @@ sfx_enabled					= true;
 music_volume				= 100;
 sfx_volume					= 100;
 
-function play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, _stop = true)
+music_parameter				= FMOD_PARAMETER_MUSIC_VALUE.INTRO;
+is_playing_music			= false;
+
+function play_music()
+{
+	if (!is_playing_music)
+	{
+		update_event_parameter_and_play(
+			FMOD_EVENT.MUSIC_GAMEPLAY, 
+			FMOD_PARAMETER_NAME_MUSIC,
+			global.options_controller.get_option(OPTIONS_MUSIC_PARAMETER),
+			false
+		);
+		
+		is_playing_music = true;
+	}
+}
+
+function stop_music()
+{
+	if (is_playing_music)
+	{
+		stop(FMOD_EVENT.MUSIC_GAMEPLAY);
+		
+		is_playing_music = false;
+	}
+}
+
+function play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE)
 {
 	event_per_enum[? _event_enum].play();
 }
@@ -92,8 +120,17 @@ function load_events()
 {
 	#region loops
 		
-	event_per_enum[? FMOD_EVENT.MUSIC_MENU] = new FmodEvent("event:/MUSIC/mus_gameplay_01", []);
-	event_per_enum[? FMOD_EVENT.MUSIC_GAMEPLAY] = new FmodEvent("event:/MUSIC/mus_gameplay_01", []);
+	event_per_enum[? FMOD_EVENT.MUSIC_GAMEPLAY] = new FmodEvent(
+		"event:/MUSIC/mus_gameplay_01", 
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MUSIC, 
+				[
+					FMOD_PARAMETER_MUSIC_VALUE.INTRO,
+					FMOD_PARAMETER_MUSIC_VALUE.ENGAGE_FIRST_ENEMY,
+					FMOD_PARAMETER_MUSIC_VALUE.SIDE_ROOMS,
+				])
+		]);
 	
 	#endregion
 	

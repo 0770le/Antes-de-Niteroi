@@ -8,6 +8,7 @@ function OptionsModel (
 		music_volume: 10,
 		sfx_enabled: true,
 		sfx_volume: 10,
+		music_parameter: FMOD_PARAMETER_MUSIC_VALUE.INTRO,
 		
 		unlocked_catalog_items: [],
 		checked_catalog_items: [],
@@ -56,6 +57,7 @@ constructor
 	music_volume = _options_model.music_volume;
 	sfx_enabled = _options_model.sfx_enabled;
 	sfx_volume = _options_model.sfx_volume;
+	music_parameter = _options_model.music_parameter;
 	
 	// catalog items
 	unlocked_catalog_items = _options_model.unlocked_catalog_items;

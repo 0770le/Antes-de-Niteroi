@@ -5,6 +5,7 @@
 #macro OPTIONS_MUSIC_VOLUME				"music_volume"
 #macro OPTIONS_SFX_ENABLED				"sfx_enabled"
 #macro OPTIONS_SFX_VOLUME				"sfx_volume"
+#macro OPTIONS_MUSIC_PARAMETER          "music_parameter"
 
 #macro OPTIONS_GAMEPAD_KEYMAP			"gamepad_keymap"
 #macro OPTIONS_KEYBOARD_KEYMAP			"keyboard_keymap"

@@ -21,7 +21,6 @@ if (on_screen(TILE_SIZE)) { // global.tile_size)) {
 		}
 		
 		//sound
-		audio_play_sound(snd_arrow_firing,10, false, global.volume);
 		
 	} else {
 		fire_delay --;

@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_trigger_text",
-    "path":"sprites/s_trigger_text/s_trigger_text.yy",
+    "name":"s_fire_lighter",
+    "path":"sprites/s_fire_lighter/s_fire_lighter.yy",
   },
   "spriteMaskId":null,
   "visible":true,

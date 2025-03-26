@@ -11,12 +11,10 @@ if (other.stage != 999) { //stage999 is final door in final room
 	instance_destroy(other);
 
 //play spawn sound
-audio_play_sound(snd_enemies_spawn, 30, false, global.volume);
 
 	//close door
 	if ((other.stage == 5) and (!o_chest.open)) {
 		if (layer_get_visible(layer_get_id("Door"))) {
-			audio_play_sound(snd_door_opening_closing, 50, false, global.volume);
 		}
 		layer_set_visible(layer_get_id("Door"), false);
 		

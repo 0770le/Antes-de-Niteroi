@@ -20,6 +20,7 @@ fullscreen_button   = noone;
 volume_master       = noone;
 volume_music		= noone;
 volume_sfx          = noone;
+deaf_assistance		= noone;
 
 title				= noone;
 
@@ -68,6 +69,7 @@ function on_options_change(_options = new OptionsModel())
 	volume_sfx.set_value(_options.sfx_volume);
 	
 	fullscreen_button.set_checked(_options.fullscreen);
+	deaf_assistance.set_checked(_options.deaf_assistance);
 }
 
 function init()
@@ -134,6 +136,13 @@ function init()
 		global.options_controller.set_option(OPTIONS_SFX_VOLUME, volume_sfx.value);
 	}));
 	volume_sfx.set_value(global.options_controller.options.sfx_volume);
+	deaf_assistance = _options_node.add_child(new MenuCheckbox("Ajuda para Surdos", function ()
+	{
+		var _is_deaf_assistance = global.options_controller.get_option(OPTIONS_DEAF_ASSISTANCE);
+		
+		global.options_controller.set_option(OPTIONS_DEAF_ASSISTANCE, !_is_deaf_assistance);
+	}));
+	deaf_assistance.set_checked(global.options_controller.options.deaf_assistance);
 	
 	// Catalog	
 	root_menu.add_child(new MenuCatalog("Catálogo", function () 

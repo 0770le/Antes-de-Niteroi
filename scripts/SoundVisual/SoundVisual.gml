@@ -16,11 +16,6 @@ constructor
 	{
 		if (array_length(sound_visuals) > 0)
 		{
-			array_sort(sound_visuals, function (_s1, _s2) 
-			{
-				return _s1.timeout - _s2.timeout;
-			});
-	
 			array_foreach(sound_visuals, function (_s1) 
 			{
 				_s1.timeout -= 1;
@@ -41,6 +36,11 @@ constructor
 		}
 	
 		array_push(sound_visuals, _sound_visuals);
+		
+		array_sort(sound_visuals, function (_s1, _s2) 
+		{
+			return _s1.timeout - _s2.timeout;
+		});
 	}
 }
 

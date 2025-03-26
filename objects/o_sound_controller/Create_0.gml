@@ -1,7 +1,5 @@
 global.sound_controller = self;
 
-/// @description Inserir descrição aqui
-// Você pode escrever seu código neste editor
 fmod						= noone;
 master_bank_index			= noone;
 master_strings_bank_index	= noone;
@@ -18,15 +16,15 @@ fmod_3d_att					= undefined;
 sound_visuals				= undefined;
 music_parameter				= FMOD_PARAMETER_MUSIC_VALUE.INTRO;
 is_playing_music			= false;
+deaf_assistance				= false;
 
 function on_camera_update(_x, _y) 
 {
 	fmod_3d_att.position.x = _x;
 	fmod_3d_att.position.y = _y;
 
-	fmod_studio_system_set_listener_attributes(0,fmod_3d_att);
+	fmod_studio_system_set_listener_attributes(0, fmod_3d_att);
 }
-
 
 function play_music()
 {
@@ -116,7 +114,7 @@ function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AM
 		event_per_enum[? _event_enum].update_position(_x, _y);
 		event_per_enum[? _event_enum].play();
 		
-		sound_visuals.add(new SoundVisual(_x, _y));
+		if (deaf_assistance) sound_visuals.add(new SoundVisual(_x, _y));
 	}
 }
 
@@ -359,11 +357,12 @@ function load_vcas()
 	vcas_per_enum[? FMOD_VCA.SFX]	= fmod_studio_system_get_vca("vca:/SFX");
 }
 
-function on_options_change(_options = instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_options_instance))
+function on_options_change(_options = new OptionsModel())
 {
 	master_enabled	= _options.master_enabled;
 	music_enabled	= _options.music_enabled;
 	sfx_enabled		= _options.sfx_enabled;
+	deaf_assistance = _options.deaf_assistance;
 	
 	master_volume	= _options.master_volume / 10;
 	music_volume	= _options.music_volume / 10;

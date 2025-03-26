@@ -26,6 +26,9 @@ if (instance_exists(follow)) {
 	camera_set_view_pos(camera, x, y);
 }
 
+//OVERRIDE CAMERA
+//camera_set_view_pos(camera, 1053, 406);
+	
 //camera variables
 global.cx = camera_get_view_x(camera);
 global.cy = camera_get_view_y(camera);

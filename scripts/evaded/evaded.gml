@@ -1,6 +1,11 @@
 ///standar evade leap off the ground
 function evaded() {
 	if (((jumps > 0) or on_ground()) and has_evade) {
+		if(left) {
+			facing = -1;	
+		}if(right) {
+			facing = 1;	
+		}
 		image_index = 0;
 		image_speed = 1;
 		scale_x = scale_min;

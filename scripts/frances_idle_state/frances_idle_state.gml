@@ -11,7 +11,7 @@ function frances_idle_state() {
 		//}
 		
 		
-		if (line_of_sight(true) and abs(y-o_player.y)< 30) {
+		if (line_of_sight(true) and abs(y-o_player.y)< 30 and on_screen(-20)) {
 			//reload
 			if !can_fire {
 				state = frances_states.RELOAD;

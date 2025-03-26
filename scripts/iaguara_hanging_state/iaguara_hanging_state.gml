@@ -6,7 +6,7 @@ function iaguara_hanging_state(){
 	
 	var _wall = true;
 	while(_wall){
-		var _tile  = tilemap_get_at_pixel(global.map, side(false)-facing, y);
+		var _tile  = tilemap_get_at_pixel(global.map, side(false)-facing, bbox_bottom);
 		_wall = _tile != SOLID;
 		if(_wall) {
 			x -= facing;

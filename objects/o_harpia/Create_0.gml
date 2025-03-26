@@ -3,7 +3,7 @@ event_inherited();
 can_alert = false;
 enemy_animation = harpia_anim;
 
-hp = 5;
+hp = 4;
 
 max_spd = 5;
 acc = 0.2;

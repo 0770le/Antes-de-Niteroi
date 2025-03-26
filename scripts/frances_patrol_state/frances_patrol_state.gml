@@ -30,7 +30,7 @@ if (t4 == SOLID) {//turn back
 //sees player
 if alert {
 //shoot
-	if (line_of_sight(true) and abs(y-o_player.y)< 30) {
+	if (line_of_sight(true) and abs(y-o_player.y)< 30 and on_screen(-20)) {
 		//reload
 		if !can_fire {
 			state = frances_states.RELOAD;

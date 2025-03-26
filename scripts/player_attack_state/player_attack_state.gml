@@ -64,8 +64,8 @@ function player_attack_state(){
 	
 	//club
 	if image_index >= 3 and image_index < 8 {
-		var inst= instance_create_layer(x +10*facing,y+5, LAYER_INSTANCES, o_player_attack_hitbox);
-		inst.image_xscale = facing*1.3;	
+		var inst= instance_create_layer(x,y+5, LAYER_INSTANCES, o_player_attack_hitbox);
+		inst.image_xscale = facing*1.7;	
 		
 		//hit ground	
 		if 	image_index > 4	and !runned_once {	

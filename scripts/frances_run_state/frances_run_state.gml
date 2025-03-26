@@ -1,7 +1,7 @@
 
 function frances_run_state() {
 	stare();
-	if(line_of_sight() and abs(y-o_player.y)< 30){
+	if(line_of_sight() and abs(y-o_player.y)< 30 and on_screen(-20)){
 		if !can_fire {
 			state = frances_states.RELOAD;
 			image_index = 0;

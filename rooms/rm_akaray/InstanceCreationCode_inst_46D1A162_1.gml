@@ -1,4 +1,4 @@
-patrol_left_limit = 1030;
+patrol_left_limit = 1130;
 patrol_right_limit = 1400;
 
 has_descend = false;		

@@ -202,7 +202,7 @@ has_descend = true; //if it will try to
 can_descend = true;//due cd
 descend_cd = 1*room_speed;
 
-function descend() {
+function tupi_descend() {
 	if (!can_descend and alarm[7] = -1 and on_ground()){ 
 		can_descend = true; //poderia ser no landing state
 	} 

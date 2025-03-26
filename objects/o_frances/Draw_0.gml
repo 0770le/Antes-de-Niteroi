@@ -18,6 +18,12 @@ if (hurt == true) {
 	draw_self();
 }
 
+if(state == frances_states.SHOOT and (floor(image_index) == 10)) {
+	draw_set_alpha(11-image_index);
+	draw_line_color(side()+11*facing, y-20, x + facing * GAME_W, y-20 + random(12)-6, c_white, c_white)	
+	draw_set_alpha(1);
+}
+
 
 //DESENHAR HITBOX
 

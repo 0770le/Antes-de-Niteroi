@@ -52,7 +52,7 @@ function tupinamba_melee_chase_state() {
 	}
 
 	if ((o_player.hp > 0) and has_descend) {
-		descend();
+		tupi_descend();
 		
 	}
 

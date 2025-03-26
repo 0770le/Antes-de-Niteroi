@@ -49,8 +49,8 @@ attack = false;
 
 //patrol 
 patrol = true;
-patrol_left_limit = x - TILE_SIZE * 10;
-patrol_right_limit = x + TILE_SIZE * 10;
+patrol_left_limit = x - TILE_SIZE;
+patrol_right_limit = x + TILE_SIZE;
 patrol_destination = choose(-1,1);
 //how long to wait before patrolling
 wait_time_initial = random_range(2, 4) * room_speed;
@@ -66,7 +66,7 @@ target_x = 0;
 target_y = 0;
 
 //how long to wait before patrolling
-wait_time_initial = random_range(4, 6) * room_speed;
+wait_time_initial = random_range(6, 9) * room_speed;
 wait_time = wait_time_initial;
 
 //states
@@ -202,7 +202,7 @@ has_descend = true; //if it will try to
 can_descend = true;//due cd
 descend_cd = 1*room_speed;
 
-function descend() {
+function tupi_descend() {
 	if (!can_descend and alarm[7] = -1 and on_ground()){ 
 		can_descend = true; //poderia ser no landing state
 	} 

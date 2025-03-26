@@ -1,1 +1,1 @@
-alert_distance = 
+alert_distance = 6;

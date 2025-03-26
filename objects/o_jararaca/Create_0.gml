@@ -9,7 +9,7 @@ can_zoomie = true; //alarm agitação
 drag = 0;
 
 hurt_time = room_speed * 1;
-hp = 1;
+hp = 2;
 
 alert_distance = 80;
 

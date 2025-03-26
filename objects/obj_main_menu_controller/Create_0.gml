@@ -81,7 +81,7 @@ function init()
 {
 	init_dependencies();
 	
-	global.sound_controller.play(FMOD_EVENT.MUSIC_MENU);
+	// global.sound_controller.play(FMOD_EVENT.MUSIC_MENU);
 	
 	window_set_fullscreen(global.options_controller.options.fullscreen);
 	
@@ -98,6 +98,7 @@ function init()
 	root_menu.add_child(new MenuButton("Novo Jogo", function() 
 	{ 
 		global.options_controller.set_option(OPTIONS_IS_NEW_GAME);
+		global.options_controller.set_option(OPTIONS_MUSIC_PARAMETER, FMOD_PARAMETER_MUSIC_VALUE.INTRO);
 		
 		room_goto_next();
 	}));

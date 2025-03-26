@@ -71,7 +71,8 @@ enum iaguara_states {
 	ATTACK,			//5
 	JUMP,			//6
 	HANGING,		//7
-	SLEEP			//8
+	SLEEP,			//8
+	STAIR_UP
 }
 
 //enemy_states
@@ -85,6 +86,7 @@ states_array[iaguara_states.ATTACK] = iaguara_attack_state;
 states_array[iaguara_states.JUMP] = iaguara_jump_state;
 states_array[iaguara_states.HANGING] = iaguara_hanging_state;
 states_array[iaguara_states.SLEEP] = iaguara_sleep_state;
+states_array[iaguara_states.STAIR_UP] = iaguara_stair_up_state;
 
 sprites_array[iaguara_states.IDLE] = s_iaguara_idle;
 sprites_array[iaguara_states.HURTING] =  s_iaguara_idle;
@@ -95,6 +97,7 @@ sprites_array[iaguara_states.ATTACK] =  s_iaguara_attack;
 sprites_array[iaguara_states.JUMP] =  s_iaguara_lunge;
 sprites_array[iaguara_states.HANGING] =  s_iaguara_hanging;
 sprites_array[iaguara_states.SLEEP] = s_iaguara_sleep;
+sprites_array[iaguara_states.STAIR_UP] = s_iaguara_run;
 //
 
 
@@ -105,8 +108,9 @@ mask_array[iaguara_states.FALL] = s_iaguara_idle;
 mask_array[iaguara_states.LANDING] = s_iaguara_idle;
 mask_array[iaguara_states.ATTACK] = s_iaguara_idle;
 mask_array[iaguara_states.JUMP] = s_iaguara_idle;
-mask_array[iaguara_states.HANGING] = s_iaguara_hanging;
+mask_array[iaguara_states.HANGING] =  s_iaguara_hanging;
 mask_array[iaguara_states.SLEEP] = s_iaguara_idle;
+mask_array[iaguara_states.STAIR_UP] = s_iaguara_idle;
 //
 
 state = iaguara_states.SLEEP;

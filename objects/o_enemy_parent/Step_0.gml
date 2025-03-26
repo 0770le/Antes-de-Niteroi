@@ -25,7 +25,7 @@ if (!instance_exists(o_fade)) {
 	//seta a visibilidade o oposto de hidden
 	//visible = !hidden;
 	if (hidden) {
-		image_alpha = lerp (image_alpha, 0.2, 0.02);
+		image_alpha = lerp (image_alpha, 0.8, 0.02);
 	} else {
 		image_alpha = lerp (image_alpha, 1, 0.1);
 	}

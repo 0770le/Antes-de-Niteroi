@@ -19,8 +19,6 @@ if (on_screen(TILE_SIZE)) { // global.tile_size)) {
 		if (facing) {
 			_side = bbox_right; 
 		}
-		inst = instance_create_layer (_side, y + ypos, LAYER_PROJECTILES, o_arrow_spark);
-		inst.image_xscale = facing;
 		
 		//sound
 		audio_play_sound(snd_arrow_firing,10, false, global.volume);

@@ -12,6 +12,28 @@ function collision(_remove_decimal = true) {
 		vsp -= vsp_decimal;
 	}
 	
+	//removing inside all for safety
+	//esquerda
+	
+	var t1 = tilemap_get_at_pixel(global.map, bbox_left, y-5);
+	var t2 = tilemap_get_at_pixel(global.map, x, y-5);	
+	if(t1 == SOLID and t2 != SOLID) {
+		while(t1 == SOLID) {
+			x = bbox_left + global.tile_size - (bbox_left mod global.tile_size) + (x - bbox_left);
+			t1 = tilemap_get_at_pixel(global.map, bbox_left, y-5);
+		}
+	}
+	
+	//direita
+	t1 = tilemap_get_at_pixel(global.map, bbox_right, y-5);
+	t2 = tilemap_get_at_pixel(global.map, x, y-5);	
+	if(t1 == SOLID and t2 != SOLID) {
+		while(t1 == SOLID) {
+			x = bbox_right - (bbox_right mod global.tile_size) - 1 - (bbox_right - x);	
+			t1 = tilemap_get_at_pixel(global.map, bbox_right, y-5);
+		}
+	}
+	
 	//horizontal collision
 	var _side;
 	//determine wich side to test
@@ -22,8 +44,8 @@ function collision(_remove_decimal = true) {
 	}
 
 	//check top and bottom of side
-	var t1 = tilemap_get_at_pixel(global.map, _side + hsp, bbox_top);
-	var t2 = tilemap_get_at_pixel(global.map, _side + hsp, bbox_bottom);	
+	t1 = tilemap_get_at_pixel(global.map, _side + hsp, bbox_top);
+	t2 = tilemap_get_at_pixel(global.map, _side + hsp, bbox_bottom);	
 
 	if (t1 == SOLID or t2 == SOLID) {
 		//collision found

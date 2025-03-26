@@ -2,7 +2,7 @@ function iaguara_jump_state(){
 	
 	//check state after anim	
 	//tocando a parede no ar
-	var face = tilemap_get_at_pixel(global.map, side()+hsp, y-sprite_height/2);
+	var face = tilemap_get_at_pixel(global.map, side()+hsp, y);
 	
 	if (face == SOLID) {
 		state = iaguara_states.HANGING;

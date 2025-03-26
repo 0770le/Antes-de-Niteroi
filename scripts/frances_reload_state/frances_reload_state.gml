@@ -1,5 +1,6 @@
 
 function frances_reload_state(){
+	runned_once = false;
 	if anim_end(){
 		if(line_of_sight() and abs(y-o_player.y)< 30) {
 			state = frances_states.SHOOT;

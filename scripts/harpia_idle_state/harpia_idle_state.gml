@@ -13,7 +13,9 @@ function harpia_idle_state(){
 		image_index = 4;
 	}
 	
-	if(o_player.hp > 0 and distance_to_object(o_player) < alert_distance and line_of_sight()) {
+	//Se o player estiver vivo, perto e tiver line of sight
+	if(o_player.hp > 0 and distance_to_object(o_player) < alert_distance) {
+		//se te olhar ininterruptamente por 2 segundos, ativa
 		if(alert_timer-- <= 0) {
 			alert = true;
 			o_player.engaged = true;

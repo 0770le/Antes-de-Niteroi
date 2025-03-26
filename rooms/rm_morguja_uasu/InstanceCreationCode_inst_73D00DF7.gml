@@ -1,4 +1,2 @@
-patrol_left_limit = 293;
-patrol_right_limit = 630;
-patrol_destination = 1;
- 
+warden(TILE_SIZE*11);
+facing= -1;

@@ -49,8 +49,8 @@ attack = false;
 
 //patrol 
 patrol = true;
-patrol_left_limit = x - (TILE_SIZE*2) * 30;
-patrol_right_limit = x + (TILE_SIZE*2) * 30;
+patrol_left_limit = x - TILE_SIZE;
+patrol_right_limit = x + TILE_SIZE;
 patrol_destination = choose(-1,1);
 //how long to wait before patrolling
 wait_time_initial = random_range(2, 4) * room_speed;
@@ -66,7 +66,7 @@ target_x = 0;
 target_y = 0;
 
 //how long to wait before patrolling
-wait_time_initial = random_range(4, 6) * room_speed;
+wait_time_initial = random_range(6, 9) * room_speed;
 wait_time = wait_time_initial;
 
 //states
@@ -199,10 +199,10 @@ function tupinamba_melee_attack() {
 }
 
 has_descend = true; //if it will try to
-can_descend = true;
+can_descend = true;//due cd
 descend_cd = 1*room_speed;
 
-function descend() {
+function tupi_descend() {
 	if (!can_descend and alarm[7] = -1 and on_ground()){ 
 		can_descend = true; //poderia ser no landing state
 	} 
@@ -217,3 +217,11 @@ function descend() {
 		}
 	}	
 }
+
+//used in in creation os the instance in the room. Wil set chase var after you give the patrol
+function set_chase(_chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit){
+	chase_left_limit = _chase_left_limit;
+	chase_right_limit = _chase_right_limit;
+}
+//
+call_later(2,time_source_units_frames,function(){if(patrol){set_chase();}},false);

@@ -5,39 +5,22 @@ gravity= grav;
 //direction image
 image_angle = (direction) ;
 
-image_xscale =1;// sign(hsp);
-var t1 = 0;
-var t2 = 0;
-
+image_xscale =1;
 
 var t2 = tilemap_get_at_pixel(global.map, side() , bbox_bottom);
-if t2 == SOLID{die=true}
-
-
+if t2 == SOLID{
+	instance_destroy();
 	
-//play animation
-if (die) {
-	speed = 0;
-	with(tail_id) {
-		instance_destroy();
-	}
-	//jump to image 1 the first time we run die
-	if (image_speed != 1) {
-		image_index = 1;
-	} 
-	image_speed = 1;
-	if (image_index == 1){
-		audio_play_sound(snd_arrow_die, 20, false, global.volume);
-	}
-	//play arrow die sound only if arrow is on screen
-	if (on_screen(400)) {
-		if (image_index == 1){
-			audio_play_sound(snd_arrow_die, 20, false, global.volume);
-		}
-	}
+	var _stuck_arrow  = instance_create_depth(x,y,other.depth +1,o_generic_animation);
+	_stuck_arrow.sprite_index = s_arrow_stuck;
+	_stuck_arrow.image_xscale = image_xscale;
+	_stuck_arrow.image_angle = image_angle;
+	_stuck_arrow.duration = room_speed * 5;
+	_stuck_arrow.fade = true;
 }
 
+
 //destroy if leaving room
-if (( t1 == -1) or (t2 == -1)) {
+if (t2 == -1) {
 	instance_destroy();
 }

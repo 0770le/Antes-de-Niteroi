@@ -29,9 +29,13 @@ function jumped(can_jump = false) {
 		state = states.JUMP;
 		launch(jump_spd,0); 
 		
-		var _water_tile = tilemap_get_at_pixel(layer_tilemap_get_id(LAYER_WATER), bbox_left, bbox_bottom-1);
-	
-		if(_water_tile > 0) {
+		var _water = false;
+		if(layer_exists(LAYER_WATER)) {
+			var _water_tile = tilemap_get_at_pixel(layer_tilemap_get_id(LAYER_WATER), bbox_left, bbox_bottom-1);
+			_water = _water_tile > 0;
+		}
+		
+		if(_water) {
 			emit_water(x,y+2,irandom_range(20,25));
 		} else {
 			evade_dust();

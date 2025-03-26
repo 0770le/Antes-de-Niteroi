@@ -7,6 +7,10 @@ function player_attack_state(){
 			jumped();
 			return;
 		}
+		if evade {
+			evaded();
+			return;
+		}
 	}
 	
 	//caculate movement
@@ -25,23 +29,29 @@ function player_attack_state(){
 		state = states.EVADE;		
 	}	
 	
-	//paradinha
+	//power attack
+	var _power_time = room_speed * 1.5;
 	var _pause = 0.1* room_speed;
-	if (floor(image_index) == 2) and !runned_once {	
+	if ((floor(image_index) == 2) and !runned_once) {	
 		runned_once = true;
 		alarm[ONCE] = _pause;
 		anim_paused(_pause);
-		
-		//atacando direto se segurou mais q a pausa
+		//holding
 		if attack_held {
 			runned_once = false;
 			attack_held_time += 1/room_speed;
-			
-			if attack_held_time > _pause*room_speed {
+		//reach power	
+			if (attack_held_time > _power_time) {
+				charged_attack = true;
+				charged_aura = instance_create_layer(side(false),bbox_top, LAYER_INSTANCES, o_light);
+			}
+		//allow retake the paused anim
+			if (attack_held_time > _pause*room_speed) {
 				alarm[ANIM_PAUSE] = 1;
 				attack_held_time = 0;
 				runned_once=true;
 			} 	
+			
 		} else{
 			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_MELEE, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND,x,y);
 			attack_held_time = 0;
@@ -53,18 +63,18 @@ function player_attack_state(){
 	//create hitboxes during hits index
 	
 	//above
-	if image_index >= 3 and image_index <=5  {
+	if (image_index >= 3 and image_index <=5)  {
 		var inst= instance_create_layer(x -30*facing,y-35, LAYER_INSTANCES, o_player_attack_hitbox);
 		inst.image_xscale = facing*2;	
 	}
 	
 	//club
-	if image_index >= 3 and image_index < 8 {
-		var inst= instance_create_layer(x +10*facing,y+5, LAYER_INSTANCES, o_player_attack_hitbox);
-		inst.image_xscale = facing*1.3;	
+	if (image_index >= 3 and image_index < 8) {
+		var inst= instance_create_layer(x,y+5, LAYER_INSTANCES, o_player_attack_hitbox);
+		inst.image_xscale = facing*1.7;	
 		
 		//hit ground	
-		if 	image_index > 4	and !runned_once {	
+		if 	(image_index > 4	and !runned_once) {	
 				runned_once = true;
 				alarm[ONCE] = 20;
 				

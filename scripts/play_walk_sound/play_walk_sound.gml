@@ -22,9 +22,13 @@ function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y){
 			param = FMOD_PARAMETER_MOVE_WALK.TREE
 		}
 		
-		var _water_tile = tilemap_get_at_pixel(layer_tilemap_get_id(LAYER_WATER), bbox_left, bbox_bottom-1);
+		var _water = false;
+		if(layer_exists(LAYER_WATER)) {
+			var _water_tile = tilemap_get_at_pixel(layer_tilemap_get_id(LAYER_WATER), bbox_left, bbox_bottom-1);
+			_water = _water_tile > 0;
+		}
 	
-		if(_water_tile > 0) {
+		if(_water) {
 			emit_water(x,y-5,irandom_range(2,4));
 		} else if(param == FMOD_PARAMETER_MOVE_WALK.DIRT) {
 			emit_smoke(x + (5*facing),bbox_bottom,0.1,0.3,1,1);	

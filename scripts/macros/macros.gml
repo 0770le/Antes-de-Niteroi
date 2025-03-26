@@ -123,6 +123,8 @@ function macros(){
 #macro COLLECTIBLE_MUCURANA			7
 
 #macro COLOR_DK_GRAY		make_color_rgb(89,86,82)
+#macro COLOR_YELLOW			make_color_rgb(213,172,81)
+#macro COLOR_RED			make_color_rgb(172,50,50)
 
 #macro TEXT_Y_HEIGHT_1l				1.75
 #macro TEXT_Y_HEIGHT_2l				2.5

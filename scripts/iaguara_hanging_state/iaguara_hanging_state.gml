@@ -6,7 +6,7 @@ function iaguara_hanging_state(){
 	
 	var _wall = true;
 	while(_wall){
-		var _tile  = tilemap_get_at_pixel(global.map, side(false)-facing, y-sprite_height/2);
+		var _tile  = tilemap_get_at_pixel(global.map, side(false)-facing, bbox_bottom);
 		_wall = _tile != SOLID;
 		if(_wall) {
 			x -= facing;
@@ -21,23 +21,35 @@ function iaguara_hanging_state(){
 	
 	//wall jump 
 	if (anim_end()) { 
-		x+= 1*facing;
+	
+		x += facing * 20; //20
 		
 		//player abaixo
-		if (o_player.bbox_top > bbox_bottom + 42) {
-			launch(0,1);
+		if ((o_player.bbox_top > bbox_bottom + 4) and (point_distance(x, y, o_player.x, o_player.y) < attack_range*2)) {
+		
+		launch(2,3);
 			state= iaguara_states.FALL;
 			image_index = 0;
+		//acima	
+		} else if(o_player.y < y-TILE_SIZE*5) {
+			
+			launch(8,3);
+			state = iaguara_states.JUMP;
+			sprite_index = sprites_array[iaguara_states.JUMP];
+			mask_index = mask_array[iaguara_states.JUMP];
+			image_index=0;
+		} else {		
+			
+			launch(4.5,7);
+			state = iaguara_states.JUMP;
+			sprite_index = sprites_array[iaguara_states.JUMP];
+			mask_index = mask_array[iaguara_states.JUMP];
+			image_index=0;
+	
 		}
 		
-		launch(4.5,7);
-		state = iaguara_states.JUMP;
-		sprite_index = sprites_array[iaguara_states.JUMP];
-		mask_index = mask_array[iaguara_states.JUMP];
 		
-		x += facing * 20;
 		
-		image_index=0;
 		audio_play_sound(snd_jump, 15, false, global.volume);
 	}
 

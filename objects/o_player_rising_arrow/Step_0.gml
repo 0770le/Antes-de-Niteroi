@@ -6,51 +6,28 @@ if !launched {
 calc_entity_movement();
 hsp = spd * facing;
 y += vsp;
+	x += hsp; 
 
 //direction image
 image_angle = radtodeg(arctan2(-vsp,hsp));
 
-image_xscale = 1;//sign(hsp);
-var t1 = 0;
+image_xscale = 1;
 var t2 = 0;
-
-
-
-t2 = tilemap_get_at_pixel(global.map, side() , bbox_bottom);	
-if t2 == SOLID {
-	die=true;
-	//collision();	
-} else { //pela parede
-	x += hsp; 	
-}
-
-//stop if dead
-if (die) {
-	hsp = 0;
-	instance_destroy(tail_id);
-	instance_destroy(tail_id2);
-}
+t2 = tilemap_get_at_pixel(global.map, side() , y);	
+if (t2 == SOLID) {
+	instance_destroy();
 	
-//play animation
-if (die) {
-	//jump to image 1 the first time we run die
-	if (image_speed != 1) {
-		image_index = 1;
-	} 
-	image_speed = 1;
-	if (image_index == 1){
-		audio_play_sound(snd_arrow_die, 20, false, global.volume);
-	}
-	//play arrow die sound only if arrow is on screen
-	if (on_screen(400)) {
-		if (image_index == 1){
-			audio_play_sound(snd_arrow_die, 20, false, global.volume);
-		}
-	}
-}
+	var _stuck_arrow  = instance_create_depth(x,y,other.depth +1,o_generic_animation);
+	_stuck_arrow.sprite_index = s_player_arrow_stuck;
+	_stuck_arrow.image_xscale = image_xscale;
+	_stuck_arrow.image_angle = image_angle;
+	_stuck_arrow.duration = room_speed * 5;
+	_stuck_arrow.fade = true;
+}	
+
 
 //destroy if leaving room
-if (( t1 == -1) or (t2 == -1)) {
+if (t2 == -1) {
 	instance_destroy();
 }
 

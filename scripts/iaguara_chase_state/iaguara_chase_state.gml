@@ -11,7 +11,6 @@ function iaguara_chase_state() {
 	//calculate movement
 	var _dir = point_direction(x, y, target_x, target_y);
 	
-	
 	hsp = clamp(hsp + (facing*acc), -max_hsp, max_hsp);
 
 	//if knock back, don´t advance
@@ -27,10 +26,25 @@ function iaguara_chase_state() {
 		image_index = 0;
 	}
 	
+	
+	var face = tilemap_get_at_pixel(global.map, side()+hsp + 20*facing, y);
+	var _step_up = tilemap_get_at_pixel(global.map, side()+hsp, y- TILE_SIZE-1);
+		
 	if (o_player.hp > 0) {
 		descend();
 		
+		
 	}
+	//if (face == SOLID){////up
+		
+	//	if (_step_up != SOLID) {//low
+	//		state = iaguara_states.STAIR_UP;
+	//			call_later(TILE_SIZE/spd, time_source_units_frames,function() {if(state ==  iaguara_states.STAIR_UP){ state = iaguara_states.CHASE;} } ,false);
+	//	}	
+		
+	//	//state = iaguara_states.ATTACK;
+	//	//image_index =0;
+	//}
 
 	calc_entity_movement(global.grav, 0);
 	collision(false);

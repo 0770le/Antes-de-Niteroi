@@ -13,7 +13,7 @@ hsp_decimal = 0;
 vsp_decimal =0;
 jump_spd = PLAYER_JUMP_SPEED;
 jump_dampner = 2.5; //'amortecedor' diminuidor do pulo
-jumps = 10;
+jumps = 0;
 corpse = undefined;
 death_protection = false;
 
@@ -43,16 +43,16 @@ hide_delay = 0.6;
 // stealth
 hidden = false;
 
-//curupira
-curupira_count_max = 10;
-curupira_count_initial = 0;
-curupira_count = curupira_count_initial;
-vines_max = 3;
-vines_initial =0;
-vines = vines_initial;
-vine_ball_max = 1;
-vine_ball_initial = 0;
-vine_ball = vine_ball_initial;
+////curupira
+//curupira_count_max = 10;
+//curupira_count_initial = 0;
+//curupira_count = curupira_count_initial;
+//vines_max = 3;
+//vines_initial =0;
+//vines = vines_initial;
+//vine_ball_max = 1;
+//vine_ball_initial = 0;
+//vine_ball = vine_ball_initial;
 
 //attack
 dmg = 0;
@@ -61,6 +61,8 @@ can_attack = true;
 knockback_time = room_speed /2;
 knockback_dis = 4; //1.5;
 attack_held_time = 0;
+charged_attack = false;
+charged_aura = noone;
 
 //bow
 can_fire = true;

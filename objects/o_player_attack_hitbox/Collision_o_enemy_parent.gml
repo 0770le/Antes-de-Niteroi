@@ -1,5 +1,5 @@
 with(other) {
-	if (can_take_dmg and !hurt) and line_of_sight(true, true) {
+	if (can_take_dmg and !hurt) and line_of_sight2() {
 		hurt = true;
 		//get sign direction from hitbox to enemy
 		var _dir = sign(x - other.x);

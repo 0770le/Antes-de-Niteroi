@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SoundVisual",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SoundVisual",
+  "parent":{
+    "name":"Model",
+    "path":"folders/Objects/Sound/Model.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

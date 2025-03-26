@@ -41,4 +41,39 @@ function on_options_change(_options = new OptionsModel())
 	window_set_fullscreen(_options.fullscreen);
 }
 
+#region events
+listeners = ds_map_create();
+last_x = 0;
+last_y = 0;
+tolerance = 10;
+
+function notify() 
+{
+	var _x = floor(x);
+	var _y = floor(y);
+	
+	if (point_distance(_x, _y, last_x, last_y) > tolerance)
+	{
+		var _values = ds_map_values_to_array(listeners, []);
+	
+		for (var _i = 0; _i < array_length(_values); _i++) 
+		{
+			_values[_i].on_camera_update(_x, _y);
+		}
+		
+		last_x = _x;
+		last_y = _y;
+	}
+}
+
+function subscribe(_listener)
+{
+	listeners[? _listener.id] = _listener;
+}
+
+function clear()
+{
+	ds_map_clear(listeners);
+}
+
 display_set_gui_size(_w * _scale, _h * _scale);

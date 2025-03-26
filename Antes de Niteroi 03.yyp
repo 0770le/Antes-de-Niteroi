@@ -77,6 +77,7 @@
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Objects/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sound","folderPath":"folders/Objects/Sound.yy","name":"Sound","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Controller","folderPath":"folders/Objects/Sound/Controller.yy","name":"Controller","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Objects/Sound/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Model","folderPath":"folders/Objects/Sound/Model.yy","name":"Model","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -151,7 +152,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.0.157",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"Antes de Niteroi 03",
   "resources":[
@@ -435,6 +436,7 @@
     {"id":{"name":"show_interact_key_and_clear","path":"scripts/show_interact_key_and_clear/show_interact_key_and_clear.yy",},},
     {"id":{"name":"show_msg","path":"scripts/show_msg/show_msg.yy",},},
     {"id":{"name":"side","path":"scripts/side/side.yy",},},
+    {"id":{"name":"SoundVisual","path":"scripts/SoundVisual/SoundVisual.yy",},},
     {"id":{"name":"stare","path":"scripts/stare/stare.yy",},},
     {"id":{"name":"struck_by_arrow","path":"scripts/struck_by_arrow/struck_by_arrow.yy",},},
     {"id":{"name":"text_bubble2","path":"scripts/text_bubble2/text_bubble2.yy",},},
@@ -857,6 +859,7 @@
     {"id":{"name":"spr_menu_background","path":"sprites/spr_menu_background/spr_menu_background.yy",},},
     {"id":{"name":"spr_menu_button","path":"sprites/spr_menu_button/spr_menu_button.yy",},},
     {"id":{"name":"spr_menu_title","path":"sprites/spr_menu_title/spr_menu_title.yy",},},
+    {"id":{"name":"spr_sound_basic_icon","path":"sprites/spr_sound_basic_icon/spr_sound_basic_icon.yy",},},
     {"id":{"name":"spr_window_middle_center","path":"sprites/spr_window_middle_center/spr_window_middle_center.yy",},},
     {"id":{"name":"t_collisions_1","path":"tilesets/t_collisions_1/t_collisions_1.yy",},},
     {"id":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},},

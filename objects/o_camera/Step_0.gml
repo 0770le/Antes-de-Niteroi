@@ -33,9 +33,11 @@ global.cw = camera_get_view_width(camera);
 global.ch = camera_get_view_height(camera);
 
 
-if(global.timer mod 10 == 0) {
-	o_sound_controller.set_listener_position(global.cx + global.cw/2, global.cy + global.ch/2);
-}
+//if(global.timer mod 10 == 0) {
+//	o_sound_controller.set_listener_position(global.cx + global.cw/2, global.cy + global.ch/2);
+//}
+
+notify();
 
 //background scrolling
 //var layer_id = layer_get_id("Background");

@@ -14,6 +14,17 @@ sfx_enabled					= true;
 music_volume				= 100;
 sfx_volume					= 100;
 
+fmod_3d_att					= undefined;
+sound_visuals				= undefined;
+
+function on_camera_update(_x, _y) 
+{
+	fmod_3d_att.position.x = _x;
+	fmod_3d_att.position.y = _y;
+
+	fmod_studio_system_set_listener_attributes(0,fmod_3d_att);
+}
+
 function play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, _stop = true)
 {
 	event_per_enum[? _event_enum].play();
@@ -76,6 +87,8 @@ function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AM
 		event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
 		event_per_enum[? _event_enum].update_position(_x, _y);
 		event_per_enum[? _event_enum].play();
+		
+		sound_visuals.add(new SoundVisual(_x, _y));
 	}
 }
 
@@ -325,6 +338,23 @@ function on_options_change(_options = instance_create_layer(0, 0, LAYER_CONTROLL
 	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX], sfx_enabled ? sfx_volume : 0);
 }
 
+function create_3d_attributes()
+{
+	fmod_3d_att = new Fmod3DAttributes();
+	fmod_3d_att.forward.z = -1;
+	fmod_3d_att.up.y = -1;
+	
+	fmod_3d_att.position.x = 0;
+	fmod_3d_att.position.y = 0;
+
+	fmod_studio_system_set_listener_attributes(0, fmod_3d_att);
+}
+
+function create_sound_visuals()
+{
+	sound_visuals = new SoundVisuals();
+}
+
 function init() 
 {
 	load_fmod();
@@ -334,18 +364,10 @@ function init()
 	load_vcas();
 	
 	load_busses();
-}
-
-function set_listener_position(_x, _y){
-	var fmod_3d_att = new Fmod3DAttributes();
-
-	fmod_3d_att.position.x = _x;
-	fmod_3d_att.position.y = _y;
-
-	fmod_3d_att.forward.z = -1;
-	fmod_3d_att.up.y = -1;
-
-	fmod_studio_system_set_listener_attributes(0,fmod_3d_att);
+	
+	create_3d_attributes();
+	
+	create_sound_visuals();
 }
 
 init();

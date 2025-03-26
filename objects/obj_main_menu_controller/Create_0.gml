@@ -67,12 +67,14 @@ function init_dependencies()
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_sound_controller);
 	if (!instance_exists(o_game))
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_game);
-	if (!instance_exists(o_camera))
+	if (!instance_exists(o_camera)) 
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_camera);
 		
 	// non-persistants
 	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_input_manager);
 	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_options_controller);
+	
+	with (o_sound_controller) global.camera.subscribe(self);
 }
 
 function init()

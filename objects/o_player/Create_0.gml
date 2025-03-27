@@ -61,8 +61,8 @@ can_attack = true;
 knockback_time = room_speed /2;
 knockback_dis = 4; //1.5;
 attack_held_time = 0;
-charged_attack = false;
-charged_aura = noone;
+power_attack = false;
+attack_aura = noone;
 
 //bow
 can_fire = true;
@@ -103,7 +103,6 @@ lives = lives_initial;
 // 
 lives2 = lives_initial; 
 
-//lives_value = 1000;
 
 //contrl movement
 left = 0;

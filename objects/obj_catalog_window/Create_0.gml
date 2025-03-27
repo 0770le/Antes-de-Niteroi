@@ -207,7 +207,9 @@ function draw_item_cursor_arrows()
 function create_content()
 {
 	//tabs
-	//// regions items
+
+#region //// regions items
+	
 	catalog_tabs[CATALOG_TAB.REGIONS] = instance_create_layer(bbox_right - 20, bbox_top + 10, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.REGIONS].label	= "Regiões";
 	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
@@ -305,17 +307,23 @@ function create_content()
 	_last_item.set_text("O assalto a fortaleza localizada na taba de Paranacupu,'Mar Comprido', durou três dias e envolveu milhares de guerreiros e muita artilharia. Lá foi construida uma fortaleza dos tamoios ainda maior que a de Reri-pê. Quando foi tomada por temiminós e portugueses, os indígenas recuaram para Itaóka." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.PARANACUPU;
-	
-	
+
+#endregion	
 	
 	catalog_tabs[CATALOG_TAB.REGIONS].set_selected(false);
 	
-	//// history items
+#region //// history items
 	catalog_tabs[CATALOG_TAB.HISTORY] = instance_create_layer(catalog_tabs[CATALOG_TAB.REGIONS].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Tupinambá";
+	_last_item.set_text("Os Tupinambás eram um povo indígena do grupo tupi-guarani que habitava principalmente o litoral brasileiro, com presença notável nos estados da Bahia, Rio de Janeiro, Espírito Santo e até São Paulo, na época do descobrimento. Eles tinham uma sociedade complexa, organizada em tribos e aldeias, com uma hierarquia bem definida entre as lideranças.\n A agricultura era baseada principalmente no cultivo de mandioca, milho e batata-doce, com técnicas de roça, que permitiam uma produção eficiente. \n Utilizavam as penas vermelhas do guará na guerra");
+	_last_item.image = spr_catalog_morubixaba;
+	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Morubixaba";
-	_last_item.set_text("Título conferido ao grande chefe, o 'principal' de uma taba. Esse posto era reservado a indígenas com mais de 40 anos, que haviam acumulado vasta experiência em batalhas e conquistado prestígio por seus feitos em combate. Eram escolhidos como líderes de expedições militares e participavam de conselhos líderes de outros agrupamentos.");
+	_last_item.set_text("Título conferido ao grande chefe, o 'principal' de uma taba. Esse posto era reservado a indígenas com mais de 40 anos, que haviam acumulado vasta experiência em batalhas e conquistado prestígio por seus feitos em combate. Eram líderes de expedições militares e participavam de conselhos que ocorriam entre os líderes das Tabas.");
 	_last_item.image = spr_catalog_morubixaba;
 	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
 	
@@ -326,19 +334,75 @@ function create_content()
 	_last_item.type = CATALOG_ITEM_TYPE.KUNUMIUASU;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Taba";
+	_last_item.set_text("A taba era uma aldeia típica dos tupinambás. As tabas eram organizadas de forma circular ou oval, com as malocas dispostas ao redor de uma área central, onde ocorriam rituais, reuniões e atividades comunitárias. Essa organização favorecia a segurança e a interação social. Cada uma tinha seus domínios territoriais. Elas recebiam o mesmo nome que seu Principal escolheu para sí, frequentemente valorizando algo marcante da natureza ao seu redor");
+	_last_item.image = spr_catalog_image;
+	_last_item.type = CATALOG_ITEM_TYPE.KUNUMIUASU;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Maloca";
+	_last_item.set_text("As malocas eram grandes habitações coletivas típicas de diversos povos indígenas do Brasil, incluindo os tupinambás. Construídas com madeira, cipó e palha, abrigavam várias famílias de uma mesma comunidade");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Tamoios";
+	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Temininós";
+	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Marãna-uasú";
+	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Truchement";
+	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Manuel da Nóbrega e José de Anchieta";
+	_last_item.set_text("Os doi religiosos mais respeitados pelos indígenas");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+
+	_last_item.label = "Ibirapema";
+	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+
+	_last_item.label = "Urapaçã";
+	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Muçurana";
 	_last_item.set_text("Corda tecida com que se amarrava pela cintura o prisioneiro num sacrifício ritual. Os tupinambás do Rio de Janeiro a fabricavam de embira. Já os tupinambás da Bahia utilizavam algodão.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	
+#endregion
+	
 	catalog_tabs[CATALOG_TAB.HISTORY].set_selected(false);
 	
-	//// biodiversity items
+#region //// biodiversity items
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY] = instance_create_layer(catalog_tabs[CATALOG_TAB.HISTORY].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "Biodiversidade";
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Arariboia";
-	_last_item.set_text("Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi, que habitava o litoral brasileiro no século XVI. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa, em homenagem ao donatário da Capitania de São Vicente, Martim Afonso de Sousa.\n"
+	_last_item.label = "Araryboîa";
+	_last_item.set_text("Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa em homenagem ao donatário da Capitania de São Vicente.\n"
 		+ "Ficou conhecido na história devido à sua aliança com os portugueses, fundamental para a conquista da baía de Guanabara frente aos tamoios e franceses, em 1567.\n"
 		+ "Como recompensa, recebeu da coroa portuguesa a propriedade de terras localizadas na entrada da baía de Guanabara.\n"
 		+ "Ali foi estabelecida a aldeia de São Lourenço, que futuramente daria origem à cidade de Niterói, da qual é considerado o fundador.");
@@ -352,7 +416,37 @@ function create_content()
 	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Arara-azul";
+	_last_item.set_text("A arara-azul (Anodorhynchus hyacinthinus) é a maior espécie de arara, podendo atingir até 1 metro de comprimento e pesar cerca de 1,5 kg. Com penas de um azul vibrante e manchas amarelas ao redor dos olhos e na base do bico, destaca-se pela beleza e inteligência. A arara-azul não está extinta no estado do Rio de Janeiro, mas suas populações são extremamente raras na região. Essa espécie é mais comum no Pantanal e em algumas áreas da Amazônia. No Rio de Janeiro, avistamentos são incomuns e geralmente associados a indivíduos mantidos em cativeiro ou a projetos de reintrodução. A perda de habitat e o tráfico de animais são as principais ameaças à espécie.");
+	_last_item.image = spr_catalog_caninde;
+	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Arara-vermelha";
+	_last_item.set_text("A arara-vermelha (Ara chloropterus) é uma ave de plumagem vibrante, predominantemente vermelha, com detalhes verdes e azuis nas asas. Pode atingir até 90 cm de comprimento e pesar cerca de 1,5 kg. É conhecida por sua inteligência e forte vínculo social. No Rio de Janeiro, é encontrada principalmente em áreas de Mata Atlântica preservada, embora sua população esteja reduzida devido ao desmatamento e ao tráfico de animais silvestres.");
+	_last_item.image = spr_catalog_caninde;
+	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Guará";
+	_last_item.set_text("O guará (Eudocimus ruber) é uma ave de plumagem vermelho-vivo, resultado de sua alimentação rica em carotenoides. Possue pernas e bicos longos, o bico sendo curvo. Pode atingir até 60 cm de comprimento e é conhecido por formar grandes bandos. No Brasil, é encontrado principalmente em manguezais e áreas costeiras, incluindo o estado do Rio de Janeiro, onde sua presença indica a boa saúde ambiental desses ecossistemas.");
+	_last_item.image = spr_catalog_caninde;
+	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Armadeira";
+	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a aranha mais venenosa do mundo. Seu veneno é neurotóxico e pode causar sintomas como dor intensa, suor excessivo, taquicardia, aumento da pressão arterial e, em casos mais graves, choque e edema pulmonar.  Podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.image = spr_catalog_armadeira;
+	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Jararaca";
+	_last_item.set_text("A jararaca (Bothrops jararaca) é uma serpente venenosa encontrada principalmente no Brasil, especialmente na Mata Atlântica. Pode atingir até 1,6 metro de comprimento e apresenta corpo robusto com coloração que varia entre tons de marrom e cinza, com padrões que favorecem a camuflagem. por seu um animal agressivo é responsável por grande parte dos acidentes ofídicos no país, e seu veneno pode causar dor intensa, inchaço e, em casos graves, necrose tecidual.");
+	_last_item.image = spr_catalog_armadeira;
+	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Onça-pintada";
 	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
 	_last_item.image = spr_catalog_armadeira;
 	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
@@ -360,6 +454,8 @@ function create_content()
 	
 	
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].set_selected(true);
+	
+#endregion
 	
 	// tabs chaining
 	catalog_tabs[CATALOG_TAB.REGIONS].previous = catalog_tabs[CATALOG_TAB.HISTORY];

@@ -49,8 +49,8 @@ attack = false;
 
 //patrol 
 patrol = true;
-patrol_left_limit = x - TILE_SIZE;
-patrol_right_limit = x + TILE_SIZE;
+//patrol_left_limit = x - TILE_SIZE;
+//patrol_right_limit = x + TILE_SIZE;
 patrol_destination = choose(-1,1);
 //how long to wait before patrolling
 wait_time_initial = random_range(2, 4) * room_speed;

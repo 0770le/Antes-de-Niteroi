@@ -16,7 +16,7 @@ alert_distance = TILE_SIZE*7;
 alert_initial_timer = room_speed * 2;
 alert_timer = alert_initial_timer;
 
-attack_cooldown = room_speed * 3;
+attack_cooldown = random_range(room_speed * 2.5 ,room_speed * 3.5);
 attack_delay = attack_cooldown/2;
 
 attack_prepare_initial_timer = room_speed * 0.6;
@@ -65,5 +65,11 @@ mask_array[harpia_states.CHASE] = s_harpia_move_back;
 mask_array[harpia_states.ATTACK] = s_harpia_move_back;
 mask_array[harpia_states.ATTACK_RECOVER] = s_harpia_move_back;
 mask_array[harpia_states.RETURN] = s_harpia_move_back;
+
+//to use on creation code in room
+function set_harpia( _alert_distance = alert_distance/TILE_SIZE , _alert_initial_timer = alert_initial_timer/room_speed ) {		
+	alert_distance = _alert_distance * TILE_SIZE;
+	alert_initial_timer = _alert_initial_timer * room_speed;
+}
 
 layer = layer_get_id(LAYER_EFFECTS);

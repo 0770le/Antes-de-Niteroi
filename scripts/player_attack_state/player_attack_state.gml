@@ -31,7 +31,7 @@ function player_attack_state(){
 	
 	//power attack
 	var _power_time = room_speed * 1.5;
-	var _pause = 0.1* room_speed;
+	var _pause = 0.09* room_speed;
 	if ((floor(image_index) == 2) and !runned_once) {	
 		runned_once = true;
 		alarm[ONCE] = _pause;
@@ -42,8 +42,8 @@ function player_attack_state(){
 			attack_held_time += 1/room_speed;
 		//reach power	
 			if (attack_held_time > _power_time) {
-				charged_attack = true;
-				charged_aura = instance_create_layer(side(false),bbox_top, LAYER_INSTANCES, o_light);
+				power_attack = true;
+				attack_aura = instance_create_layer(side(false),bbox_top, LAYER_INSTANCES, o_light);
 			}
 		//allow retake the paused anim
 			if (attack_held_time > _pause*room_speed) {

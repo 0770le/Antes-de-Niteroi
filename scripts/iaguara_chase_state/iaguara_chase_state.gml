@@ -21,7 +21,7 @@ function iaguara_chase_state() {
 	}
 	
 	//go to idle if not mooving
-	if (hsp == 0 and !alert) {
+	if (hsp ==  0) {// (hsp == 0 and !alert) {
 		state = iaguara_states.IDLE;
 		image_index = 0;
 	}
@@ -34,7 +34,7 @@ function iaguara_chase_state() {
 		descend();
 		
 		
-	}
+	} 
 	//if (face == SOLID){////up
 		
 	//	if (_step_up != SOLID) {//low

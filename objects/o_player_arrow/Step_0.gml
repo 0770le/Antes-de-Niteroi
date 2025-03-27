@@ -2,6 +2,8 @@
 hsp = spd * facing;
 image_xscale = sign(hsp);
 
+fire.visible = on_fire;
+
 var t1 = tilemap_get_at_pixel(global.map, side() + sign(hsp), y);
 
 if (t1 == SOLID) {

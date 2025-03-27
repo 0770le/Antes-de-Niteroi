@@ -1,7 +1,7 @@
 //init variables
 image_speed = 0;
 
-hp = 6;
+hp = 3;
 facing = -1;
 vsp_initial  = 0;
 vsp = vsp_initial;

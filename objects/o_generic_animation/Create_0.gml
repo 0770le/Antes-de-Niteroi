@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 attached_to = noone;
+stop_animation = true;
 
 attach_flip = true;
 attach_flip_rotation = false;

@@ -1,0 +1,1 @@
+alert_distance = TILE_SIZE *3;

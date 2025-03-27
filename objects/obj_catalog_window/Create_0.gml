@@ -317,13 +317,22 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Tupinambá";
-	_last_item.set_text("Os Tupinambás eram um povo indígena do grupo tupi-guarani que habitava principalmente o litoral brasileiro, com presença notável nos estados da Bahia, Rio de Janeiro, Espírito Santo e até São Paulo, na época do descobrimento. Eles tinham uma sociedade complexa, organizada em tribos e aldeias, com uma hierarquia bem definida entre as lideranças.\n A agricultura era baseada principalmente no cultivo de mandioca, milho e batata-doce, com técnicas de roça, que permitiam uma produção eficiente. \n Utilizavam as penas vermelhas do guará na guerra");
+	_last_item.set_text("Os Tupinambás eram um povo indígena do grupo tupi-guarani que habitava principalmente o litoral brasileiro, com presença notável nos estados da Bahia, Rio de Janeiro, Espírito Santo e até São Paulo, na época do descobrimento. Eles tinham uma sociedade complexa, organizada em tribos e aldeias, com uma hierarquia bem definida entre as lideranças.\n A agricultura era baseada principalmente no cultivo de mandioca, milho e batata-doce, com técnicas de roça, que permitiam uma produção eficiente. \n Os guerreiros se pintavam de urucum e genipapo e se ornavam com as penas vermelhas do guará. \nOs Tupinambás praticavam a antropofagia em contexto ritualístico e simbólico, especialmente como parte de guerras intertribais. O ato representava a incorporação da força e bravura do inimigo, sendo um elemento cultural ligado à espiritualidade e crenças desse povo.");
 	_last_item.image = spr_catalog_morubixaba;
 	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Morubixaba";
 	_last_item.set_text("Título conferido ao grande chefe, o 'principal' de uma taba. Esse posto era reservado a indígenas com mais de 40 anos, que haviam acumulado vasta experiência em batalhas e conquistado prestígio por seus feitos em combate. Eram líderes de expedições militares e participavam de conselhos que ocorriam entre os líderes das Tabas.");
+	_last_item.image = spr_catalog_morubixaba;
+	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Araryboîa";
+	_last_item.set_text("Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa em homenagem ao donatário da Capitania de São Vicente.\n"
+		+ "Ficou conhecido na história devido à sua aliança com os portugueses, fundamental para a conquista da baía de Guanabara frente aos tamoios e franceses, em 1567.\n"
+		+ "Como recompensa, recebeu da coroa portuguesa a propriedade de terras localizadas na entrada da baía de Guanabara.\n"
+		+ "Ali foi estabelecida a aldeia de São Lourenço, que futuramente daria origem à cidade de Niterói, da qual é considerado o fundador.");
 	_last_item.image = spr_catalog_morubixaba;
 	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
 	
@@ -347,43 +356,43 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Tamoios";
-	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.set_text("Se identificavam como 'Os avós' ou 'os mais velhos' da terra. a Confederação dos Tamoios(1554-1567) foi a confederação indígena formada principalmente por grupos Tupinambás que habitavam o litoral do Sudeste do Brasil. \n Eles se uniram para resistir à colonização portuguesa e contavam com o apoio de franceses, que disputavam território com os portugueses .");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Temininós";
-	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.set_text("O termo (t)emiminõ também podia ser usado para neto ou tupiminó, que queria dizer tupi+emiminõ, ou seja, os 'descendentes dos tupis.\n Assim eram chamados os inimigos dos tamoios, a tribo dos maracajás(gato-do-mato). Liderados por Marakaîágûaçu, 'o grande gato', foram expulsos pelos tupinambás de seu território na ilha do goverdador e se aliaram aos portugueses. Arariboia se tornou líder dos temiminós e participou da 'grande guerra'.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Marãna-uasú";
-	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.set_text("A 'grande guerra'. Faz referência aos conflitos pelo controle do sudeste brasileiro. Os tamoios e os franceses combateram temiminós e portugueses. Depois da Destruição do forte frances Coligny, ainda ocorreram três grandes batalhas para tomar fortalezas tupinambás. \nOs tamoios tinham um plano elaborado e asseguravam pontos importantes para o controle da baía. A primeira era a fortaleza de Uruçumirim, próxima à taba Karióca. A segunda era Parnacupu, na ilha do governador. O último ponto de defesa foi a fortaleza da taba de Itaoka, litoral de São Gonçalo. De lá recuaram para a região de Cabo Frio. \n A baía de Guanabara foi conquistada pelos Temiminós e seus aliados portugueses.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Truchement";
-	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.set_text("Franceses que eram deixados com os indígenas, muitos sendo jovens, para aprender a língua com o objetivo de fazer negócios posteriormente. Eles adotaram completamente os costumes dos tupinambás, costituindo família e participando de todos os costumes e rituais. \nServiam como tradutores para os franceses, mas quando tinham de escolher, optavam por se rebelar contra os europeus em vez de trair ou abandonar sua taba e seus costumes");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Manuel da Nóbrega e José de Anchieta";
-	_last_item.set_text("Os doi religiosos mais respeitados pelos indígenas");
+	_last_item.set_text("Os doi religiosos mais respeitados pelos indígenas. Manuel da Nóbrega e José de Anchieta foram jesuítas que tiveram papel crucial na catequização indígena e na colonização do Brasil. Nóbrega foi líder da missão jesuíta e atuou na fundação de São Paulo. Anchieta destacou-se como educador e escritor.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 
 	_last_item.label = "Ibirapema";
-	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.set_text("Tipo de tacape usado pelos povos indígenas, especialmente os Tupinambás. Pesado e feito de madeira muito dura, seu impacto podia matar um homem com apenas um golpe na cabeça. Eram utilizada em combates e também em rituais, incluindo práticas ligadas à antropofagia cerimonial, era adornados com penas.'. ");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 
 	_last_item.label = "Urapaçã";
-	_last_item.set_text("A 'grande guerra'. ");
+	_last_item.set_text("O conjunto arco e flecha eram a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos. \nA medida que cresciam suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo da agua, pássaros em voo e até as finas viseiras dos elmos das armaduras europeias.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	
@@ -447,6 +456,36 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Onça-pintada";
+	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.image = spr_catalog_armadeira;
+	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Harpia";
+	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.image = spr_catalog_armadeira;
+	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Urucum e Genipapo";
+	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.image = spr_catalog_armadeira;
+	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Pau-brasil";
+	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.image = spr_catalog_armadeira;
+	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Bromélias";
+	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.image = spr_catalog_armadeira;
+	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Orquídeas";
 	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
 	_last_item.image = spr_catalog_armadeira;
 	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;

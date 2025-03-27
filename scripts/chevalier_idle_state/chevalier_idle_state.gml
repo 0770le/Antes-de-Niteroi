@@ -12,6 +12,11 @@ function chevalier_idle_state() {
 	if(aerial_riposte()) {
 		return;	
 	}
+	
+	if(attack_up()) {
+		return;
+	}
+	
 	turn();
 	
 	//physics

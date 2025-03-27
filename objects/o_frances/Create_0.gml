@@ -1,5 +1,7 @@
 event_inherited();
 
+turret = false;
+
 duck_time_initial = room_speed * 0.8;
 duck_time = duck_time_initial;
 
@@ -123,3 +125,4 @@ function create_bullet() {
 	}
 }
 
+state = frances_states.IDLE;

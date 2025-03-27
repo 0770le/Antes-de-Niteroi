@@ -9,7 +9,7 @@ function frances_reload_state(){
 		} else {
 			image_index = 0;
 			can_fire = true;
-			state = frances_states.RUN;
+			state = frances_states.IDLE;
 		}
 	}
 	

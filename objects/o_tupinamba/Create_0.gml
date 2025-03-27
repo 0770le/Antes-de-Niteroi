@@ -1,5 +1,7 @@
 event_inherited();
 
+turret = false;
+
 //hanging
 hanging_time_initial = room_speed * 0.2;
 hanging_time = hanging_time_initial;
@@ -118,7 +120,7 @@ mask_array[tupinamba_states.EVADE] = s_tupinamba_idle;
 
 
 function can_evade() {	
-	if (o_player.hp > 0 and has_evade and alert) {
+	if (o_player.hp > 0 and has_evade and alert and !turret) {
 		if (distance_to_object(o_player) < 60) {
 			stare();	
 			has_evade = false;
@@ -189,3 +191,6 @@ function create_arrow_1(target_data) {
 	    start_direction = dir;// direction;
 	}
 }
+
+
+state = tupinamba_states.IDLE;

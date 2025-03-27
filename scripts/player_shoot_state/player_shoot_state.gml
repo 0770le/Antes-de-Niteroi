@@ -13,7 +13,7 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 	}	
 	
 	// sprite do tiro
-	if (floor(image_index) == 5) {
+	if (floor(image_index) == 3) {
 		if shoot_held  { //segura
 			image_speed = 0;
 		} else {	//solta
@@ -53,8 +53,9 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 		}
 	}
 	//repeating shots
-	if((image_index >= 11 and shoot) and arrows > 0) {
-		image_index = 3;
+	if((image_index >= 7 and shoot) and arrows > 0) {
+		image_index = 1;
+		can_fire= true;
 	}
 	//check state
 

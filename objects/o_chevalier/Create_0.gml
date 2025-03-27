@@ -148,7 +148,7 @@ function aerial_riposte() {
 }
 
 function attack_up() {
-	if(attack_up_delay <= 0 and o_player.hp>0 and point_distance(x+(facing * 40),y-130,o_player.x,o_player.y) < 20) {
+	if(attack_up_delay <= 0 and o_player.hp>0 and point_distance(x+(facing * 40),y-130,o_player.x,o_player.y) < 40) {
 		state = chevalier_states.ATTACK_UP;
 		image_index = 0;
 		return true;

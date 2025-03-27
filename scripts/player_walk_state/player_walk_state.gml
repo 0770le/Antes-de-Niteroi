@@ -16,6 +16,18 @@ function player_walk_state(){
 		state = states.IDLE;
 	}
 	
+	if (shoot and o_game.has_bow and arrows >0) {
+		can_fire=true;
+		if on_ground() and up {
+			state = states.SHOOT_UP;
+			image_index = 0;
+		} else {
+			state = states.SHOOT;
+			image_index = 0;
+		}
+		return;
+	}
+	
 	play_walk_sound(image_index, image_speed,[2,7], x, y);
 	
 	

@@ -7,7 +7,7 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 	hsp = 0;
 	
 	// sprite do tiro
-	if (image_index == 5 ) {
+	if (image_index == 3 ) {
 		if shoot_held { //segura
 			image_speed = 0;
 		} else {	//solta
@@ -15,7 +15,6 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 			if can_fire {
 				
 				can_fire=false;
-				alarm[SHOOTING] = fire_delay;
 				
 				//tem flecha
 				if (arrows > 0) {
@@ -41,8 +40,9 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 			}
 		}
 	}	//repeating shots
-	if(image_index >= 9 and shoot) {
-		image_index = 3;
+	if(image_index >= 7 and shoot) {
+		can_fire= true;
+		image_index = 1;
 	}
 			
 	//check state

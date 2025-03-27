@@ -1,5 +1,6 @@
 //draw_text(x,y,hp);
-//draw_text(x+(facing * 40),y-130, state);
+
+//draw_circle(x+(facing * 40),y-130, 20, false);
 
 //flash red when taking damage
 if (hurt == true) {

@@ -9,6 +9,7 @@ function tupinamba_hurting_state(){
 		if on_ground() {
 			state = tupinamba_states.IDLE;
 		} else {
+			turret = false;
 			state = tupinamba_states.JUMP;
 		}
 	}

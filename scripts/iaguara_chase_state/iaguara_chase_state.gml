@@ -26,27 +26,30 @@ function iaguara_chase_state() {
 		image_index = 0;
 	}
 	
-	
-	
-	
-	
 	//leap over a 4 solid block wall (checa pelo 2º solido acima do chao e checa pelo vazio na altura do quinto espaço acima do chao) 
-	
 	var _face = tilemap_get_at_pixel(global.map, side()+1*facing, bbox_top-1);
 	var _step_up = tilemap_get_at_pixel(global.map, side()+1*facing, bbox_top - (TILE_SIZE* 3)-1);
-	//solido 2º de cima e void 5º de cima e player na frente da onça
-	if(((_face == SOLID)and(_step_up == VOID)) and ((facing == 1 and o_player.x > x) or (facing == -1 and o_player.x < x))) {
-	
-		state = iaguara_states.LEAP_CLIFF;
-		image_index = 0;
-		image_speed=1;
-	}	
-	
-	
-	
 	if (o_player.hp > 0) {
-		descend();	
+			//primeiro ver se segue player pra baixo
+			descend();
+		//solido 2º de cima e void 5º de cima e player na frente da onça
+			if (((_face == SOLID)and(_step_up == VOID)) and ((facing == 1 and o_player.x > x) or (facing == -1 and o_player.x < x))) {
+				state = iaguara_states.LEAP_CLIFF;
+				image_index = 0;
+				image_speed=1;
+				hsp=0;
+				vsp=0;
+			}	
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	//if (face == SOLID){////up

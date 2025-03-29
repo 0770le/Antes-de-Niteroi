@@ -270,15 +270,20 @@ function play_state_change_sounds(_previous_state, _current_state)
 {
 	if (_previous_state == _current_state) return;
 	
+	global.logger.debug($"play_state_change_sounds _previous_state: {get_state_as_string(_previous_state)}, _current_state: {get_state_as_string(_current_state)}")
+	
 	// on enter state
-	switch (state) {
+	switch (_current_state) {
 		case states.SHOOT:
 		case states.SHOOT_UP:
-			global.sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_BOW, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_ATTACK_BOW_VALUE.PREPARE);
+			global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_BOW, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_ATTACK_BOW_VALUE.PREPARE, x, y);
+			break;
 		case states.CROUCH:
-			global.sound_controller.play(FMOD_EVENT.CROUCH);
+			global.sound_controller.play_pos(FMOD_EVENT.CROUCH, x, y);
+			break;
 		case states.JUMP:
-			global.sound_controller.update_event_parameter_and_play(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.JUMP);
+			global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.JUMP, x, y);
+			break;
 		default:
 	}
 	
@@ -286,16 +291,48 @@ function play_state_change_sounds(_previous_state, _current_state)
 	switch (_previous_state) {
 		case states.SHOOT:
 		case states.SHOOT_UP:
-			global.sound_controller.update_event_parameter_and_play(FMOD_EVENT.ATTACK_BOW, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_ATTACK_BOW_VALUE.RELEASE);
+			global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_BOW, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_ATTACK_BOW_VALUE.RELEASE, x, y);
+			break;
 		case states.CROUCH:
 			// do nothing
+			break;
 		case states.JUMP:
-			global.sound_controller.update_event_parameter_and_play(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.LAND);
+			global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.LAND, x, y);
+			break;
+		case states.AIR_ATTACK:
+		case states.ATTACK:
+			global.sound_controller.stop(FMOD_EVENT.ATTACK_MELEE);
+			break;
 		default:
 	}
 	
 	// both states
-		
+	
+}
+
+function get_state_as_string(_state)
+{
+	switch (_state)
+	{
+		case states.IDLE: return "IDLE";
+		case states.WALK: return "WALK";
+		case states.JUMP: return "JUMP";
+		case states.ATTACK: return "ATTACK";
+		case states.ATTACK_WALK: return "ATTACK_WALK";
+		case states.AIR_ATTACK: return "AIR_ATTACK";
+		case states.AIR_ATTACK_END: return "AIR_ATTACK_END";
+		case states.EVADE: return "EVADE";
+		case states.CROUCH: return "CROUCH";
+		case states.HIDE: return "HIDE";
+		case states.SHOOT: return "SHOOT";
+		case states.SHOOT_UP: return "SHOOT_UP";
+		case states.HURTING: return "HURTING";
+		case states.HANGING: return "HANGING";
+		case states.DIE: return "DIE";
+		case states.DIE_2: return "DIE_2";
+		case states.GAME_END: return "GAME_END";
+		default: return "UNKNOWN";
+	}
 }
 
 if (o_game.has_bow) {

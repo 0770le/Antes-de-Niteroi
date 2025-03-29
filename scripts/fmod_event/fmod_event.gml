@@ -64,7 +64,11 @@ enum FMOD_VCA
 		BUTTON_TALK,
 		COLLECT_LIFE,
 		COLLECT_REGISTER,
-		TRANSITION_BOAT
+		TRANSITION_BOAT,
+		
+		// wood barrier
+		WOOD_BARRIER_BREAK,
+		WOOD_BARRIER_DEBRIS
 	}
 
 #endregion
@@ -120,7 +124,12 @@ enum FMOD_VCA
 		{
 			PLACE_HOLDER, PREPARE, SWING
 		}
-	
+		
+		enum FMOD_PARAMETER_MOVE_VALUE_WOOD_BREAK
+		{
+			PLACE_HOLDER, HIT, BREAK
+		}
+		
 	#endregion
 
 #endregion

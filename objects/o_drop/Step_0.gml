@@ -1,7 +1,6 @@
 if(!stop_movement) {
 	image_angle += angle_speed;
 	
-	
 	var _side = bbox_left;
 	if (sign(hsp) == 1) {
 		_side = bbox_right;
@@ -14,6 +13,14 @@ if(!stop_movement) {
 	
 	t1 = tilemap_get_at_pixel(global.map, x, bbox_bottom + vsp);
 	if(t1 == SOLID) {
+		if (!hit_ground) { // play sound when ground is hit for the first time
+			hit_ground = true;
+			global.sound_controller.play_pos(
+				FMOD_EVENT.WOOD_BARRIER_DEBRIS,
+				x, y
+			);
+		}
+		
 		if(vsp < 0) {
 			vsp *= -1;
 		} else {

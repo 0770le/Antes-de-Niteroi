@@ -1,5 +1,5 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"t_tiles_water",
   "autoTileSets":[],
   "macroPageTiles":{
@@ -26,23 +26,31 @@
     "name":"Default",
     "path":"texturegroups/Default",
   },
-  "tileAnimation":{
-    "FrameData":[
-      0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,8,9,10,8,9,10,7,9,10,7,8,10,7,8,9,11,11,11,
-      11,12,12,12,12,13,13,13,13,14,15,16,17,15,16,17,14,16,17,14,15,17,14,15,16,18,18,18,18,19,19,19,19,20,
-      20,20,20,21,22,23,24,22,23,24,21,23,24,21,22,24,21,22,23,25,25,25,25,26,26,26,26,27,27,27,27,28,29,30,
-      31,29,30,31,28,30,31,28,29,31,28,29,30,32,32,32,32,33,33,33,33,34,34,34,34,35,35,35,35,36,36,36,36,37,
-      37,37,37,38,38,38,38,39,39,39,39,40,40,40,40,41,41,41,41,42,42,42,42,43,43,43,43,44,44,44,44,45,45,45,
-      45,46,46,46,46,47,47,47,47,48,48,48,48,49,49,49,49,50,50,50,50,51,51,51,51,52,52,52,52,53,53,53,53,54,
-      54,54,54,55,55,55,55,
-    ],
-    "SerialiseFrameCount":4,
-  },
   "tileAnimationFrames":[
-    {"$GMTileAnimation":"","%Name":"animation_1","frames":[7,8,9,10,],"name":"animation_1","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
-    {"$GMTileAnimation":"","%Name":"animation_2","frames":[14,15,16,17,],"name":"animation_2","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
-    {"$GMTileAnimation":"","%Name":"animation_3","frames":[21,22,23,24,],"name":"animation_3","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
-    {"$GMTileAnimation":"","%Name":"animation_4","frames":[28,29,30,31,],"name":"animation_4","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
+    {"$GMTileAnimation":"","%Name":"animation_1","frames":[
+        7,
+        8,
+        9,
+        10,
+      ],"name":"animation_1","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
+    {"$GMTileAnimation":"","%Name":"animation_2","frames":[
+        14,
+        15,
+        16,
+        17,
+      ],"name":"animation_2","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
+    {"$GMTileAnimation":"","%Name":"animation_3","frames":[
+        21,
+        22,
+        23,
+        24,
+      ],"name":"animation_3","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
+    {"$GMTileAnimation":"","%Name":"animation_4","frames":[
+        28,
+        29,
+        30,
+        31,
+      ],"name":"animation_4","resourceType":"GMTileAnimation","resourceVersion":"2.0",},
   ],
   "tileAnimationSpeed":6.0,
   "tileHeight":16,

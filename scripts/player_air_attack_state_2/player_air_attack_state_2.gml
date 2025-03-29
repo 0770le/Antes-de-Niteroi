@@ -37,7 +37,7 @@ function player_air_attack_state_2(){
 		if (image_index >= 4 and image_index < 7 ) {//stomp shake. move back
 			var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
 				if t1 != VOID { 
-					o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_HIT, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_GROUND);
+					o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_HIT, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_GROUND, x, y);
 					scr_screen_shake(0.3,1);
 					instance_create_layer(x+ 35*facing,y, LAYER_EFFECTS, o_player_dust_land);
 				}

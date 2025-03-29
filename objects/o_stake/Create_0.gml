@@ -16,3 +16,5 @@ die = false;
 hurt = false;
 debris_number = random_range(5,10);
 hurt_time = room_speed * 0.5;
+
+previous_hp = hp;

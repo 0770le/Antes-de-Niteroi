@@ -20,6 +20,8 @@ deaf_assistance				= false;
 
 function on_camera_update(_x, _y) 
 {
+	global.logger.trace($"on_camera_update: listener position updated x: {_x}, y: {_y}");
+	
 	fmod_3d_att.position.x = _x;
 	fmod_3d_att.position.y = _y;
 
@@ -56,37 +58,36 @@ function play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE)
 	event_per_enum[? _event_enum].play();
 }
 
+function play_pos(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, _x = other.x, _y = other.y)
+{
+	event_per_enum[? _event_enum].play();
+}
+
 function stop(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE)
 {
 	event_per_enum[? _event_enum].stop();
 }
 
 function update_event_position(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
-								_x, 
-								_y )
+								_x = other.x, 
+								_y = other.y)
 {
-	if(!is_undefined(_event_enum)) {
-		event_per_enum[? _event_enum].update_position(_x, _y);
-	}
+	event_per_enum[? _event_enum].update_position(_x, _y);
 }
 
 function update_event_position_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
-								_x, 
-								_y )
+								_x = other.x, 
+								_y = other.y)
 {
-	if(!is_undefined(_event_enum)) {
-		event_per_enum[? _event_enum].update_position(_x, _y);
-		event_per_enum[? _event_enum].play();
-	}
+	event_per_enum[? _event_enum].update_position(_x, _y);
+	event_per_enum[? _event_enum].play();
 }
 
 function update_event_parameter(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
 								_parameter_name = undefined, 
 								_parameter_value = undefined)
 {
-	if(!is_undefined(_event_enum)) {
-		event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
-	}
+	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
 }
 
 function update_event_parameter_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
@@ -94,11 +95,9 @@ function update_event_parameter_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIEN
 										 _parameter_value = undefined,
 										 _stop = true)
 {
-	if(!is_undefined(_event_enum)) {
-		if(_stop) event_per_enum[? _event_enum].stop();
-		event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
-		event_per_enum[? _event_enum].play();
-	}
+	if(_stop) event_per_enum[? _event_enum].stop();
+	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
+	event_per_enum[? _event_enum].play();
 }
 
 function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
@@ -108,14 +107,12 @@ function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AM
 										 _y = 0,
 										 _stop = true)
 {
-	if(!is_undefined(_event_enum)) {
-		if(_stop) event_per_enum[? _event_enum].stop();
-		event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
-		event_per_enum[? _event_enum].update_position(_x, _y);
-		event_per_enum[? _event_enum].play();
+	if(_stop) event_per_enum[? _event_enum].stop();
+	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
+	event_per_enum[? _event_enum].update_position(_x, _y);
+	event_per_enum[? _event_enum].play();
 		
-		if (deaf_assistance) sound_visuals.add(new SoundVisual(_x, _y));
-	}
+	if (deaf_assistance) sound_visuals.add(new SoundVisual(_x, _y));
 }
 
 function load_fmod()
@@ -226,6 +223,23 @@ function load_events()
 		
 	#endregion
 	
+	#region WOOD_BARRIER
+	
+	event_per_enum[? FMOD_EVENT.WOOD_BARRIER_BREAK] = new FmodEvent(
+		"event:/SFX/OBJECTS/WOOD_BARRIER/sfx_object_wood_barrier_break",
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, 
+				[
+					FMOD_PARAMETER_MOVE_VALUE_WOOD_BREAK.HIT,
+					FMOD_PARAMETER_MOVE_VALUE_WOOD_BREAK.BREAK
+				])
+		]);
+		
+	event_per_enum[? FMOD_EVENT.WOOD_BARRIER_DEBRIS] = new FmodEvent(
+		"event:/SFX/OBJECTS/WOOD_BARRIER/sfx_object_wood_barrier_debris", []);	
+	
+	#endregion
 	
 	#region MELEE_TUPI
 		

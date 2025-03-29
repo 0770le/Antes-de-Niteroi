@@ -15,3 +15,5 @@ image_index = irandom(image_number -1); //começa em zero
 bounce = 0;
 angle_speed = random_range(20,-20);
 death_protection = true;
+
+hit_ground = false;

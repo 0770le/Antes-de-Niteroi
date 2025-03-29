@@ -1,9 +1,9 @@
 
 function jararaca_idle_state(){
-	//change state
+	//smooth stop
 	hsp = lerp(hsp, 0, 0.3)*facing;
 	
-	// move due time
+	//change state move due time
 	if (idle_move_timer-- <= 0 ) {
 		
 		state = jararaca_states.MOVING;

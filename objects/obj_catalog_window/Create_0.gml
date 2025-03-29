@@ -410,7 +410,7 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY] = instance_create_layer(catalog_tabs[CATALOG_TAB.HISTORY].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "Biodiversidade";
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Araryboîa";
+	_last_item.label = "Cobra-Arara";
 	_last_item.set_text("Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa em homenagem ao donatário da Capitania de São Vicente.\n"
 		+ "Ficou conhecido na história devido à sua aliança com os portugueses, fundamental para a conquista da baía de Guanabara frente aos tamoios e franceses, em 1567.\n"
 		+ "Como recompensa, recebeu da coroa portuguesa a propriedade de terras localizadas na entrada da baía de Guanabara.\n"

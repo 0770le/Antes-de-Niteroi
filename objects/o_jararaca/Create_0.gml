@@ -32,7 +32,7 @@ idle_move_timer = room_speed * random_range(5, 9);
 spd = 0.8;
 drag = 0.12;
 
-spd_array[jararaca_spds.TOP]	=	5;
+spd_array[jararaca_spds.TOP]	=	4.5;
  spd_array[jararaca_spds.FAST]	=	2;
  spd_array[jararaca_spds.MID]	=	1;
 spd_array[jararaca_spds.SLOW]	=	0.2;
@@ -106,7 +106,7 @@ function snake_gear() {
 }
 
 function snake_hide() {
-	if (distance_to_object(o_player) < alert_distance * 6) {
+	if (distance_to_object(o_player) < TILE_SIZE * 7) {
 		//player para de ver se estiver longe
 		hidden = false;
 	} else {

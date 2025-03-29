@@ -30,7 +30,7 @@ function iaguara_stair_up_state(){
 
 	if (face == SOLID){////up
 		if (_step_up != SOLID) {//low
-			state = iaguara_states.STAIR_UP;
+			state = iaguara_states.LEAP_CLIFF;
 	
 				
 		}	

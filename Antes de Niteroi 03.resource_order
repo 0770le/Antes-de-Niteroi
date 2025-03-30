@@ -242,6 +242,7 @@
     {"name":"rm_reri_pe","order":15,"path":"rooms/rm_reri_pe/rm_reri_pe.yy",},
     {"name":"rm_seregipe","order":12,"path":"rooms/rm_seregipe/rm_seregipe.yy",},
     {"name":"rm_tests_1","order":16,"path":"rooms/rm_tests_1/rm_tests_1.yy",},
+    {"name":"rm_tests_augusto","order":19,"path":"rooms/rm_tests_augusto/rm_tests_augusto.yy",},
     {"name":"rm_tests_menu","order":17,"path":"rooms/rm_tests_menu/rm_tests_menu.yy",},
     {"name":"rm_tests","order":13,"path":"rooms/rm_tests/rm_tests.yy",},
     {"name":"anim_end","order":6,"path":"scripts/anim_end/anim_end.yy",},

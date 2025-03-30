@@ -309,6 +309,7 @@
     {"id":{"name":"rm_reri_pe","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},},
     {"id":{"name":"rm_seregipe","path":"rooms/rm_seregipe/rm_seregipe.yy",},},
     {"id":{"name":"rm_tests_1","path":"rooms/rm_tests_1/rm_tests_1.yy",},},
+    {"id":{"name":"rm_tests_augusto","path":"rooms/rm_tests_augusto/rm_tests_augusto.yy",},},
     {"id":{"name":"rm_tests_menu","path":"rooms/rm_tests_menu/rm_tests_menu.yy",},},
     {"id":{"name":"rm_tests","path":"rooms/rm_tests/rm_tests.yy",},},
     {"id":{"name":"anim_end","path":"scripts/anim_end/anim_end.yy",},},
@@ -906,6 +907,7 @@
     {"roomId":{"name":"rm_reri_pe","path":"rooms/rm_reri_pe/rm_reri_pe.yy",},},
     {"roomId":{"name":"rm_tests","path":"rooms/rm_tests/rm_tests.yy",},},
     {"roomId":{"name":"rm_tests_menu","path":"rooms/rm_tests_menu/rm_tests_menu.yy",},},
+    {"roomId":{"name":"rm_tests_augusto","path":"rooms/rm_tests_augusto/rm_tests_augusto.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -58,6 +58,9 @@ if(keyboard_check_pressed(vk_f5) and room != rm_morguja_uasu) {
 if(keyboard_check_pressed(vk_f6) and room != rm_main_menu) {
 	fade_to_room(rm_main_menu, 3762, 415, other.facing);	
 }
+if(keyboard_check_pressed(vk_f7) and room != rm_tests_augusto) {
+	fade_to_room(rm_tests_augusto, 200, 200, other.facing);	
+}
 
 if(keyboard_check_pressed(vk_f10) and room != rm_tests) {
 	fade_to_room(rm_tests, 71, 395, other.facing);	

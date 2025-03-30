@@ -202,7 +202,7 @@ function play_state_update_sounds(_previous_state, _new_state) {
 				FMOD_PARAMETER_NAME_MOVE, 
 				FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.PREPARE,
 				x, y
-			);
+			);			
 			break;
 	}
 }

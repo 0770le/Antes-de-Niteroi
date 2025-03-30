@@ -30,17 +30,13 @@ function on_camera_update(_x, _y)
 
 function play_music()
 {
-	if (!is_playing_music)
-	{
-		update_event_parameter_and_play(
-			FMOD_EVENT.MUSIC_GAMEPLAY, 
-			FMOD_PARAMETER_NAME_MUSIC,
-			global.options_controller.get_option(OPTIONS_MUSIC_PARAMETER),
-			false
-		);
+	update_event_parameter_and_play(
+		FMOD_EVENT.MUSIC_GAMEPLAY, 
+		FMOD_PARAMETER_NAME_MUSIC,
+		global.options_controller.get_option(OPTIONS_MUSIC_PARAMETER)
+	);
 		
-		is_playing_music = true;
-	}
+	is_playing_music = true;
 }
 
 function stop_music()
@@ -92,10 +88,8 @@ function update_event_parameter(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY,
 
 function update_event_parameter_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
 										 _parameter_name = undefined, 
-										 _parameter_value = undefined,
-										 _stop = true)
+										 _parameter_value = undefined)
 {
-	if(_stop) event_per_enum[? _event_enum].stop();
 	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
 	event_per_enum[? _event_enum].play();
 }
@@ -104,10 +98,8 @@ function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.MUSIC_GAME
 										 _parameter_name = undefined, 
 										 _parameter_value = undefined,
 										 _x = 0,
-										 _y = 0,
-										 _stop = true)
+										 _y = 0)
 {
-	if(_stop) event_per_enum[? _event_enum].stop();
 	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
 	event_per_enum[? _event_enum].update_position(_x, _y);
 	event_per_enum[? _event_enum].play();

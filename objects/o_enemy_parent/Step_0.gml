@@ -35,5 +35,5 @@ if (!instance_exists(o_fade)) {
 	image_index = 0;
 }
 
-
+process_state_update(previous_state, state);
 

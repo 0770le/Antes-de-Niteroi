@@ -273,14 +273,21 @@ function load_events()
 			
 	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_DIE] = new FmodEvent(
 		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_die",
-		[
-			
-		]);
+		[ ]);
 			
 	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_HURT] = new FmodEvent(
 		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_hurt",
-		[
-			
+		[ ]);
+		
+	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_ATTACK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_atk",
+		[ 
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE,
+				[
+					FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.PREPARE,
+					FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.RELEASE
+				])
 		]);
 	
 	#endregion

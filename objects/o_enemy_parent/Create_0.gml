@@ -91,6 +91,7 @@ enum enemy_states {
 }
 
 state = enemy_states.IDLE;
+previous_state = state;
 
 //states_array[enemy_states.IDLE] = intern_idle_state;
 
@@ -110,6 +111,36 @@ function warden(_alert_distance = TILE_SIZE * 3, _chase_left_limit = x - TILE_SI
 	alert_distance = _alert_distance; 
 	alert_cooling = room_speed *60;
 }
+
+#region state change updates
+function process_state_update(_previous_state, _new_state) {
+	if (_previous_state != _new_state) {
+		play_state_update_sounds(_previous_state, _new_state);
+		
+		previous_state = _new_state;
+		
+		//global.logger.debug($"process_state_update _previous_state: {get_state_as_string(_previous_state)}, _new_state: {get_state_as_string(_new_state)}");
+	}
+}
+
+function get_state_as_string(_state) {
+	switch (_state)
+	{
+		case tupinamba_states.IDLE: return "IDLE";
+		case tupinamba_states.HURTING: return "HURTING";
+		case tupinamba_states.SHOOT: return "SHOOT";
+		case tupinamba_states.PATROL: return "PATROL";
+		case tupinamba_states.JUMP: return "JUMP";
+		case tupinamba_states.HANGING: return "HANGING";
+		case tupinamba_states.EVADE: return "EVADE";
+		default: return "Unknown";
+	}
+}
+
+function play_state_update_sounds(_previous_state, _new_state) {
+
+}
+#endregion
 
 //puff of smoke on spawn
 //if (room == rm_02) {

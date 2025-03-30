@@ -47,6 +47,7 @@ enum FMOD_VCA
 		//tupi archer
 		TUPI_ARCHER_DIE,
 		TUPI_ARCHER_HURT,
+		TUPI_ARCHER_ATTACK,
 		
 		//frances shooter
 		FRENCH_SHOOTER_DIE,
@@ -128,6 +129,11 @@ enum FMOD_VCA
 		enum FMOD_PARAMETER_MOVE_VALUE_WOOD_BREAK
 		{
 			PLACE_HOLDER, HIT, BREAK
+		}
+		
+		enum FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK
+		{
+			PLACE_HOLDER, PREPARE, RELEASE
 		}
 		
 	#endregion

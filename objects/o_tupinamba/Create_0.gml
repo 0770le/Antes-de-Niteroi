@@ -192,5 +192,20 @@ function create_arrow_1(target_data) {
 	}
 }
 
+function play_state_update_sounds(_previous_state, _new_state) {
+	// on enter
+	switch (_new_state)
+	{
+		case tupinamba_states.SHOOT: 
+			global.sound_controller.update_event_parameter_and_play_pos(
+				FMOD_EVENT.TUPI_ARCHER_ATTACK, 
+				FMOD_PARAMETER_NAME_MOVE, 
+				FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.PREPARE,
+				x, y
+			);
+			break;
+	}
+}
+
 
 state = tupinamba_states.IDLE;

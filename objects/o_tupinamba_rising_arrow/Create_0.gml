@@ -17,3 +17,10 @@ max_spd =7.5;
 start_speed = spd;
 start_v_spd = v_spd;
 start_direction = direction;
+
+global.sound_controller.update_event_parameter_and_play_pos(
+	FMOD_EVENT.TUPI_ARCHER_ATTACK, 
+	FMOD_PARAMETER_NAME_MOVE, 
+	FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.RELEASE,
+	x, y
+);

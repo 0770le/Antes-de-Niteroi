@@ -20,12 +20,14 @@ deaf_assistance				= false;
 
 function on_camera_update(_x, _y) 
 {
-	global.logger.trace($"on_camera_update: listener position updated x: {_x}, y: {_y}");
+	global.logger.trace($"on_camera_update: listener position updated x: {_x}, y: {_y}"); 
 	
 	fmod_3d_att.position.x = _x;
 	fmod_3d_att.position.y = _y;
 
 	fmod_studio_system_set_listener_attributes(0, fmod_3d_att);
+	
+	update_event_position(FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE, _x, _y);
 }
 
 function play_music()

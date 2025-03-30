@@ -165,12 +165,9 @@ constructor
 	
 	static play = function ()
 	{
-		//if (!is_spacial || point_distance(fmod_3d_att.position.x, fmod_3d_att.position.y, global.sound_controller.fmod_3d_att.position.x, global.sound_controller.fmod_3d_att.position.y) < listening_radius)
-		//{
-			fmod_studio_event_instance_start(event_instance);
+		fmod_studio_event_instance_start(event_instance);
 			
-			global.logger.debug($"FmodEvent playing: {event_path} source.x:{fmod_3d_att.position.x}, source.y:{fmod_3d_att.position.y}, listener.x:{global.sound_controller.fmod_3d_att.position.x}, listener.y:{global.sound_controller.fmod_3d_att.position.y}, number_of_listeners: {fmod_studio_system_get_num_listeners()}, distance: {point_distance(fmod_3d_att.position.x, fmod_3d_att.position.y, global.sound_controller.fmod_3d_att.position.x, global.sound_controller.fmod_3d_att.position.y)}");
-		//} 
+		global.logger.debug($"FmodEvent playing: {event_path} source.x:{fmod_3d_att.position.x}, source.y:{fmod_3d_att.position.y}, listener.x:{global.sound_controller.fmod_3d_att.position.x}, listener.y:{global.sound_controller.fmod_3d_att.position.y}, number_of_listeners: {fmod_studio_system_get_num_listeners()}, distance: {point_distance(fmod_3d_att.position.x, fmod_3d_att.position.y, global.sound_controller.fmod_3d_att.position.x, global.sound_controller.fmod_3d_att.position.y)}");
 	}
 	
 	static stop = function ()
@@ -188,7 +185,7 @@ constructor
 		fmod_studio_event_instance_set_volume(event_instance, _volume);
 	}
 	
-	static update_parameter = function (_name = "time lapse", _label = FMOD_PARAMETER_TIME_LAPSE.NORMAL)
+	static update_parameter = function (_name = "time lapse", _label = FMOD_PARAMETER_MOVE_JUMP.JUMP)
 	{
 		parameters_by_name[? _name].update(_label);
 	}
@@ -214,8 +211,6 @@ constructor
 		fmod_3d_att.up.y = -1;
 	
 		fmod_studio_event_instance_set_3d_attributes(event_instance, fmod_3d_att);
-		
-		// var att = new Fmod3DAttributes()fmod_studio_event_instance_get_3d_attributes(event_instance)
 	}
 	
 	static init = function () 
@@ -235,7 +230,6 @@ constructor
 			_parameter.set_parameter_description(_parameter_description);
 			_parameter.init();
 		}
-
 	}
 	
 	init();

@@ -1,9 +1,9 @@
 function chevalier_chase_state() {
 	
 	turn();
-	if(aerial_riposte()) {
-		return;	
-	}
+	//if(aerial_riposte()) {
+	//	return;	
+	//}
 	
 	if(attack_up()) {
 		return;

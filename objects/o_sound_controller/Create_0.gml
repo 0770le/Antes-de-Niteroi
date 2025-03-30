@@ -53,29 +53,29 @@ function stop_music()
 	}
 }
 
-function play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE)
+function play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY)
 {
 	event_per_enum[? _event_enum].play();
 }
 
-function play_pos(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, _x = other.x, _y = other.y)
+function play_pos(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, _x = other.x, _y = other.y)
 {
 	event_per_enum[? _event_enum].play();
 }
 
-function stop(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE)
+function stop(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY)
 {
 	event_per_enum[? _event_enum].stop();
 }
 
-function update_event_position(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
+function update_event_position(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
 								_x = other.x, 
 								_y = other.y)
 {
 	event_per_enum[? _event_enum].update_position(_x, _y);
 }
 
-function update_event_position_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
+function update_event_position_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
 								_x = other.x, 
 								_y = other.y)
 {
@@ -83,14 +83,14 @@ function update_event_position_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIENC
 	event_per_enum[? _event_enum].play();
 }
 
-function update_event_parameter(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
+function update_event_parameter(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
 								_parameter_name = undefined, 
 								_parameter_value = undefined)
 {
 	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
 }
 
-function update_event_parameter_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
+function update_event_parameter_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
 										 _parameter_name = undefined, 
 										 _parameter_value = undefined,
 										 _stop = true)
@@ -100,7 +100,7 @@ function update_event_parameter_and_play(_event_enum = FMOD_EVENT.WEATHER_AMBIEN
 	event_per_enum[? _event_enum].play();
 }
 
-function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.WEATHER_AMBIENCE, 
+function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
 										 _parameter_name = undefined, 
 										 _parameter_value = undefined,
 										 _x = 0,
@@ -139,6 +139,9 @@ function load_events()
 					FMOD_PARAMETER_MUSIC_VALUE.SIDE_ROOMS,
 				])
 		]);
+		
+	event_per_enum[? FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_01_CIDADEVELHA/sfx_amb_room_01", [ ]);
 	
 	#endregion
 	

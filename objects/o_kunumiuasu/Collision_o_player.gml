@@ -17,6 +17,7 @@ text_bubble2(id, _text, -1, 6, TEXT_Y_HEIGHT_2l);
 
 
 if other.interact {
+	global.sound_controller.play_pos(FMOD_EVENT.TRANSITION_BOAT, x, y);
 	switch(room) {
 		case rm_cidade_velha:
 			target_rm = rm_akaray;
@@ -29,6 +30,14 @@ if other.interact {
 			target_y = 415;
 			break;
 	}
-	
-	fade_to_room(target_rm, target_x, target_y, other.facing, c_black);
+	var _aux = {
+		rm: target_rm,
+		x: target_x,
+		y: target_y,
+		facing: other.facing,
+		callback: function () {
+			fade_to_room(self.rm, self.x, self.y, self.facing, c_black);		
+		}
+	}
+	var _ = call_later(2, time_source_units_seconds, _aux.callback);
 }

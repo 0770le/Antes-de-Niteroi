@@ -4,7 +4,7 @@ if (can_pickup) {
 		if (hp < o_game.max_hp) {
 			hp++;
 		}
-		audio_play_sound(snd_pickup_hp, 15, false, global.volume);
+		global.sound_controller.play_pos(FMOD_EVENT.COLLECT_LIFE, x, y);
 	}
 	instance_destroy();
 }

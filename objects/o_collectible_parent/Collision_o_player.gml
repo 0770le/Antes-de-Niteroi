@@ -1,6 +1,7 @@
 /// @description collect
 
-audio_play_sound(snd_pickup_gem, 5, false, global.volume);
+global.sound_controller.play_pos(FMOD_EVENT.COLLECT_REGISTER, x, y);
+
 show_msg("Novo registro adquirido: " + string(log_title),5);
 o_game.collectible[collectible_index] = true;
 

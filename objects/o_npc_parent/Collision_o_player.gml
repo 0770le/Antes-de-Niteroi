@@ -18,4 +18,6 @@ if(talk and other.interact) {
 	
 	text_bubble2(id, _text, _text_len * 10, _text_x_scale, _text_y_scale, text_x_offset, text_y_offset);
 	quest = false;
+	
+	global.sound_controller.play_pos(FMOD_EVENT.BUTTON_TALK, x, y);
 }

@@ -32,7 +32,7 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 				arrows--;
 	
 				//sound
-				audio_play_sound(snd_arrow_firing,10, false, global.volume);
+				//audio_play_sound(snd_arrow_firing,10, false, global.volume);
 		
 				}else {//sem flecha
 					//sound fail			audio_play_sound(snd_arrow_firing,10, false);

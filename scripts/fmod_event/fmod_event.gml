@@ -43,6 +43,9 @@ enum FMOD_VCA
 		TUPI_MELEE_ATK,
 		TUPI_MELEE_DIE,
 		TUPI_MELEE_HURT,
+		TUPI_MELEE_JUMP,
+		TUPI_MELEE_EVADE,
+		TUPI_MELEE_WALK,
 		
 		//tupi archer
 		TUPI_ARCHER_DIE,
@@ -103,7 +106,7 @@ enum FMOD_VCA
 		
 		enum FMOD_PARAMETER_MOVE_WALK
 		{
-			PLACE_HOLDER, STONE, GRASS, SAND, WOOD, DIRT, TREE, WATER
+			PLACE_HOLDER, STONE, GRASS, SAND, WOOD, DIRT, WATER
 		}
 		
 		enum FMOD_PARAMETER_MOVE_CROUCH
@@ -136,18 +139,17 @@ enum FMOD_VCA
 			PLACE_HOLDER, PREPARE, RELEASE
 		}
 		
+		enum FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP
+		{
+			PLACE_HOLDER, JUMP, LAND
+		}
+		
 	#endregion
 
 #endregion
 
 function FmodEvent(_event_path = "event:/SFX/AMBIENCE WEATHER/ambience weather",
-				   _parameters = 
-					[
-						new FmodParameter("time lapse", [FMOD_PARAMETER_TIME_LAPSE.NORMAL, FMOD_PARAMETER_TIME_LAPSE.FASTER, FMOD_PARAMETER_TIME_LAPSE.FASTEST]),
-						new FmodParameter("rain", [FMOD_PARAMETER_RAIN.NOT_RAINING, FMOD_PARAMETER_RAIN.RAINING]),
-						new FmodParameter("day - night", [FMOD_PARAMETER_DAY_NIGHT.DAY, FMOD_PARAMETER_DAY_NIGHT.NIGHT]),
-						new FmodParameter("stop time", [FMOD_PARAMETER_STOP_TIME.NORMAL, FMOD_PARAMETER_STOP_TIME.PAUSED])
-					]) 
+				   _parameters = []) 
 constructor 
 {
 	event_path			= _event_path;
@@ -155,13 +157,20 @@ constructor
 	event_description	= noone;
 	parameters			= _parameters;
 	sound_group			= noone;
+	fmod_3d_att			= new Fmod3DAttributes();
+	is_spacial			= false;
+	listening_radius    = 200;
 	
 	parameters_by_name	= ds_map_create();
 	
 	static play = function ()
 	{
-		fmod_studio_event_instance_start(event_instance);
-		fmod_studio_system_get_num_listeners()
+		//if (!is_spacial || point_distance(fmod_3d_att.position.x, fmod_3d_att.position.y, global.sound_controller.fmod_3d_att.position.x, global.sound_controller.fmod_3d_att.position.y) < listening_radius)
+		//{
+			fmod_studio_event_instance_start(event_instance);
+			
+			global.logger.debug($"FmodEvent playing: {event_path} source.x:{fmod_3d_att.position.x}, source.y:{fmod_3d_att.position.y}, listener.x:{global.sound_controller.fmod_3d_att.position.x}, listener.y:{global.sound_controller.fmod_3d_att.position.y}, number_of_listeners: {fmod_studio_system_get_num_listeners()}, distance: {point_distance(fmod_3d_att.position.x, fmod_3d_att.position.y, global.sound_controller.fmod_3d_att.position.x, global.sound_controller.fmod_3d_att.position.y)}");
+		//} 
 	}
 	
 	static stop = function ()
@@ -196,8 +205,8 @@ constructor
 
 	static update_position = function(_x,_y) {
 	
-		var fmod_3d_att = new Fmod3DAttributes();
-
+		is_spacial = true;
+	
 		fmod_3d_att.position.x = _x;
 		fmod_3d_att.position.y = _y;
 		
@@ -206,7 +215,7 @@ constructor
 	
 		fmod_studio_event_instance_set_3d_attributes(event_instance, fmod_3d_att);
 		
-		var att = fmod_studio_event_instance_get_3d_attributes(event_instance)
+		// var att = new Fmod3DAttributes()fmod_studio_event_instance_get_3d_attributes(event_instance)
 	}
 	
 	static init = function () 

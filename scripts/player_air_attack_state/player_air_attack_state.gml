@@ -15,7 +15,7 @@ function player_air_attack_state(){
 		runned_once=true;
 		alarm[ONCE] = image_speed*room_speed;
 		launch(-4,0);
-		audio_play_sound(snd_sword_swing, 20, false, global.volume);	
+		//audio_play_sound(snd_sword_swing, 20, false, global.volume);	
 		var inst= instance_create_layer(x -30*facing,y-25, LAYER_INSTANCES, o_player_attack_hitbox);
 		inst.image_xscale = facing*2;	
 
@@ -36,7 +36,7 @@ function player_air_attack_state(){
 		if (image_index >= 3 and image_index < 7 ) {//stomp shake. move back
 			var t1 = tilemap_get_at_pixel(global.map, x+ 65*facing,y+1);
 				if t1 != VOID { 
-					audio_play_sound(snd_enemy_dying, 10, false, global.volume);
+					//audio_play_sound(snd_enemy_dying, 10, false, global.volume);
 					scr_screen_shake(0.3,1)	
 					instance_create_layer(x+ 65*facing,y, LAYER_EFFECTS, o_player_dust_land);
 				}

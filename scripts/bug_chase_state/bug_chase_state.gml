@@ -45,7 +45,7 @@ function bug_chase_state(){
 
 	//sound
 	if (!audio_is_playing(snd_bug_chase)) {
-		audio_play_sound(snd_bug_chase, 40, false, global.volume);
+		//audio_play_sound(snd_bug_chase, 40, false, global.volume);
 	}
 
 	//apply movement

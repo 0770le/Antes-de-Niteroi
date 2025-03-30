@@ -23,7 +23,7 @@ function frog_attack_state(){
 			//ensure hitbox faces the way the froh that created it is facing
 			inst.image_xscale= facing;
 			if (image_index == 5) {
-				audio_play_sound(snd_frog_attack, 15, false, global.volume);
+				//audio_play_sound(snd_frog_attack, 15, false, global.volume);
 			}
 		}
 		

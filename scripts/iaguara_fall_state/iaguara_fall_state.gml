@@ -10,7 +10,7 @@ function iaguara_fall_state(){
 		//create dust if landing
 		if (vsp > 0) {//caiu
 			instance_create_layer(x,y, LAYER_EFFECTS, o_player_dust_land);
-			audio_play_sound(snd_landing, 20, false, global.volume);
+			//audio_play_sound(snd_landing, 20, false, global.volume);
 		}	
 	}
 

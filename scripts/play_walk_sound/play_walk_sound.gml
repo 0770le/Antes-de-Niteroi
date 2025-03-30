@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y){
+function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y, _fmod_event = FMOD_EVENT.WALK){
 	if(last_walk_index != floor(_image_index) and (((_image_index >= _sound_indexes[0]) and (_image_index < (_sound_indexes[0]+1)) and ((_image_index - _image_speed) < _sound_indexes[0])) or
 	((_image_index >= _sound_indexes[1]) and (_image_index < (_sound_indexes[1]+1)) and ((_image_index - _image_speed) < _sound_indexes[1])))) {
 		
@@ -19,7 +19,7 @@ function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y){
 		} else if (t >= 275 and t < 375) { //pedra
 			param = FMOD_PARAMETER_MOVE_WALK.STONE
 		} else { // se nao for nada, arvore
-			param = FMOD_PARAMETER_MOVE_WALK.TREE
+			param = FMOD_PARAMETER_MOVE_WALK.WOOD
 		}
 		
 		var _water = false;
@@ -29,12 +29,12 @@ function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y){
 		}
 	
 		if(_water) {
-			emit_water(x,y-5,irandom_range(2,4));
+			emit_water(_x,_y-5,irandom_range(2,4));
 		} else if(param == FMOD_PARAMETER_MOVE_WALK.DIRT) {
-			emit_smoke(x + (5*facing),bbox_bottom,0.1,0.3,1,1);	
+			emit_smoke(_x + (5*facing),bbox_bottom,0.1,0.3,1,1);	
 		}
 		
-		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.WALK, FMOD_PARAMETER_NAME_MOVE, param, _x, _y)
+		o_sound_controller.update_event_parameter_and_play_pos(_fmod_event, FMOD_PARAMETER_NAME_MOVE, param, _x, _y)
 		
 	}
 }

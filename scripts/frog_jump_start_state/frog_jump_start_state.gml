@@ -13,7 +13,7 @@ function frog_jump_start_state() {
 		state = frog_states.JUMP;
 		vsp = jump_spd;
 		if(on_screen(40)) {
-			audio_play_sound(snd_frog_jump, 40, false, global.volume);
+			//audio_play_sound(snd_frog_jump, 40, false, global.volume);
 		}
 	}
 

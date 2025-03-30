@@ -1,0 +1,3 @@
+warden();
+
+facing = -1;

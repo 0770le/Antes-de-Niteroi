@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"s_tiles_back_1",
   "bboxMode":0,
-  "bbox_bottom":399,
+  "bbox_bottom":479,
   "bbox_left":0,
   "bbox_right":361,
   "bbox_top":4,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ac790c53-376e-4ab3-a219-f24c0a2e888a","name":"ac790c53-376e-4ab3-a219-f24c0a2e888a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"923c71bc-4ec9-4325-adbd-6a80eb2ad2a0","name":"923c71bc-4ec9-4325-adbd-6a80eb2ad2a0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":512,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"18e12acd-971e-4d54-a9e1-117b5265b538","blendMode":0,"displayName":"default","isLocked":false,"name":"18e12acd-971e-4d54-a9e1-117b5265b538","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"eebf76cf-fad8-4f74-863a-bed96b43ae83","blendMode":0,"displayName":"default","isLocked":false,"name":"eebf76cf-fad8-4f74-863a-bed96b43ae83","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"s_tiles_back_1",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ac790c53-376e-4ab3-a219-f24c0a2e888a","path":"sprites/s_tiles_back_1/s_tiles_back_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e54a623c-da83-4915-bad5-ba6461097353","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"923c71bc-4ec9-4325-adbd-6a80eb2ad2a0","path":"sprites/s_tiles_back_1/s_tiles_back_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f031a20b-740a-43a8-9401-c9b8b9535c30","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

@@ -47,7 +47,7 @@ if alert {
 	}
 }
 
-//calc_entity_movement();
+calc_entity_movement();
 
 collision();
 	

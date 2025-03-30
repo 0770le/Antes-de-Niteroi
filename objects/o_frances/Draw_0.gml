@@ -18,10 +18,17 @@ if (hurt == true) {
 	draw_self();
 }
 
-if(state == frances_states.SHOOT and (floor(image_index) == 10)) {
-	draw_set_alpha(11-image_index);
-	draw_line_color(side()+11*facing, y-20, x + facing * GAME_W, y-20 + random(12)-6, c_white, c_white)	
-	draw_set_alpha(1);
+if(state == frances_states.SHOOT) {
+	
+	if(image_index > 2 and image_index < 10) {
+		draw_set_alpha(image_index/10);
+		draw_line_width_color(side()+11*facing, y-20, x + facing * GAME_W, y-20,2, COLOR_YELLOW, COLOR_YELLOW);
+		draw_set_alpha(1);
+	} else if (floor(image_index) == 10) {
+		draw_set_alpha(11-image_index);
+		draw_line_color(side()+11*facing, y-20, x + facing * GAME_W, y-20 + random(12)-6, c_white, c_white);	
+		draw_set_alpha(1);
+	}
 }
 
 

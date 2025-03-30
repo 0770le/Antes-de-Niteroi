@@ -9,4 +9,11 @@ layer_y(LAYER_BACKGROUND_5, (_cam_y * 0.8)+250);
 layer_x(LAYER_BACKGROUND_6, _cam_x * 0.9);
 layer_y(LAYER_BACKGROUND_6, (_cam_y * 0.9)+50);
 
-layer_y(LAYER_BACKGROUND_7, (_cam_y * 0.9)-200);
+layer_y(LAYER_BACKGROUND_7, (_cam_y * 0.8)-50);
+
+
+
+var ground = layer_get_depth(layer_get_id(LAYER_GROUND));
+
+
+var water = layer_get_depth(layer_get_id(LAYER_GROUND));

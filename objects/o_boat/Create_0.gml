@@ -1,0 +1,1 @@
+layer =  layer_get_id(LAYER_BACKGROUND_1);

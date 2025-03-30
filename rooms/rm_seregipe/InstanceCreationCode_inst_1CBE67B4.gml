@@ -1,2 +1,1 @@
-sprite_index = s_vision_blocker_fade;
-image_yscale *= -1;
+sprite_index = s_vision_blocker_fade_down

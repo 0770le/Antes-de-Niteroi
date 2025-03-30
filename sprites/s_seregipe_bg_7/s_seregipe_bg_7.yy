@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"s_seregipe_bg_7",
   "bboxMode":0,
-  "bbox_bottom":791,
+  "bbox_bottom":899,
   "bbox_left":0,
   "bbox_right":3,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":792,
+  "height":900,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"e86f01c3-9620-4f90-a006-bfcbcc6d5d08","blendMode":0,"displayName":"default","isLocked":false,"name":"e86f01c3-9620-4f90-a006-bfcbcc6d5d08","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

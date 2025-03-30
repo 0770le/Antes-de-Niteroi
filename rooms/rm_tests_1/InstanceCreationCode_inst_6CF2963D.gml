@@ -1,0 +1,1 @@
+alert_cooling= room_speed *90;

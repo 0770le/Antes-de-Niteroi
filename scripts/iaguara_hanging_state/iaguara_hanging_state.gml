@@ -50,7 +50,7 @@ function iaguara_hanging_state(){
 		
 		
 		
-		audio_play_sound(snd_jump, 15, false, global.volume);
+		//audio_play_sound(snd_jump, 15, false, global.volume);
 	}
 
 }

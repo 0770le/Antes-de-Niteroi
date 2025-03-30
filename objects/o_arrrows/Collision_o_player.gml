@@ -4,7 +4,7 @@ if (can_pickup) {
 		if (arrows < o_game.max_arrows) {
 			arrows++;
 		}
-		audio_play_sound(snd_pickup_hp, 15, false, global.volume);
+		//audio_play_sound(snd_pickup_hp, 15, false, global.volume);
 	}
 	instance_destroy();
 }

@@ -204,13 +204,14 @@ function load_events()
 		]);
 			
 	event_per_enum[? FMOD_EVENT.JUMP] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_jump",
-		[
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_jump", [
 			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_MOVE_JUMP.JUMP,
-			FMOD_PARAMETER_MOVE_JUMP.DOUBLE_JUMP,
-			FMOD_PARAMETER_MOVE_JUMP.LAND]),
-		]);
+				FMOD_PARAMETER_MOVE_WALK.STONE,
+				FMOD_PARAMETER_MOVE_WALK.GRASS,
+				FMOD_PARAMETER_MOVE_WALK.SAND,
+				FMOD_PARAMETER_MOVE_WALK.WOOD,
+				FMOD_PARAMETER_MOVE_WALK.DIRT,
+				FMOD_PARAMETER_MOVE_WALK.WATER])]);
 			
 	event_per_enum[? FMOD_EVENT.HANG] = new FmodEvent(
 		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hanging",
@@ -265,6 +266,31 @@ function load_events()
 		[
 			
 		]);
+		
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_JUMP] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_jump",
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, [
+					FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP.JUMP,
+					FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP.LAND
+				])
+		]);
+		
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_EVADE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_evade", [ ]);
+		
+		
+		
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_WALK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_run", [ 
+			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
+				FMOD_PARAMETER_MOVE_WALK.STONE,
+				FMOD_PARAMETER_MOVE_WALK.GRASS,
+				FMOD_PARAMETER_MOVE_WALK.SAND,
+				FMOD_PARAMETER_MOVE_WALK.WOOD,
+				FMOD_PARAMETER_MOVE_WALK.DIRT,
+				FMOD_PARAMETER_MOVE_WALK.WATER])]);
 	
 	#endregion
 	

@@ -282,7 +282,9 @@ function play_state_change_sounds(_previous_state, _current_state)
 			global.sound_controller.play_pos(FMOD_EVENT.CROUCH, x, y);
 			break;
 		case states.JUMP:
-			global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.JUMP, x, y);
+			if (vsp < 0) {
+				global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.JUMP, x, y);
+			}
 			break;
 		default:
 	}

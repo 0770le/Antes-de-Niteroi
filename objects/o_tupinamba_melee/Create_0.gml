@@ -69,6 +69,8 @@ target_y = 0;
 wait_time_initial = random_range(6, 9) * room_speed;
 wait_time = wait_time_initial;
 
+last_walk_index = 0;
+
 //states
 enum tupinamba_melee_states {
 	IDLE,			//0
@@ -136,7 +138,7 @@ function tupinamba_melee_evaded() {
 	image_speed=1;		
 	//dust
 	jump_dust();
-	audio_play_sound(snd_jump, 15, false, global.volume)		
+	//audio_play_sound(snd_jump, 15, false, global.volume)		
 	
 }
 
@@ -218,6 +220,40 @@ function tupi_descend() {
 	}	
 }
 
+function play_state_update_sounds(_previous_state, _new_state) {	
+	// on enter
+	switch (_new_state)
+	{
+		case tupinamba_states.JUMP: 
+			if (vsp < 0)
+			{
+				global.sound_controller.update_event_parameter_and_play_pos(
+					FMOD_EVENT.TUPI_MELEE_JUMP, 
+					FMOD_PARAMETER_NAME_MOVE, 
+					FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP.JUMP,
+					x, y
+				);
+			}
+			break;
+		case tupinamba_states.EVADE: 
+			global.sound_controller.play_pos(FMOD_EVENT.TUPI_MELEE_EVADE, x, y);
+			break;
+	}
+	
+	// on leave
+	switch (_new_state)
+	{
+		case tupinamba_states.JUMP: 
+			global.sound_controller.update_event_parameter_and_play_pos(
+				FMOD_EVENT.TUPI_MELEE_JUMP, 
+				FMOD_PARAMETER_NAME_MOVE, 
+				FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP.LAND,
+				x, y
+			);
+			break;
+	}
+}
+
 //used in in creation os the instance in the room. Wil set chase var after you give the patrol
 function set_chase(_chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit){
 	chase_left_limit = _chase_left_limit;
@@ -225,3 +261,4 @@ function set_chase(_chase_left_limit = patrol_left_limit, _chase_right_limit = p
 }
 //
 call_later(2,time_source_units_frames,function(){if(patrol){set_chase();}},false);
+

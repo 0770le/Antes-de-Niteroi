@@ -34,7 +34,7 @@ function struck_by_arrow(_dir = facing){
 				image_index = 0;
 				//screen shake
 				scr_screen_shake(.125, -1);
-				audio_play_sound(snd_player_hit, 20, false, global.volume);
+				//audio_play_sound(snd_player_hit, 20, false, global.volume);
 				other.die = true;
 			} else {
 				other.die = true;

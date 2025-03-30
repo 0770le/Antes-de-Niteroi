@@ -26,7 +26,7 @@ function tupinamba_hanging_state(){
 		launch(jump_vsp,jump_hsp, facing*-1);
 		state = tupinamba_states.JUMP;
 		evade_dust();
-		audio_play_sound(snd_jump, 15, false, global.volume);
+		//audio_play_sound(snd_jump, 15, false, global.volume);
 	}
 	
 	//apply movement

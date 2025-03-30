@@ -5,7 +5,7 @@ function check_enemy_hp(){
 		var _chance = random(1);
 		if (_chance <= hp_drop_chance) {
 			instance_create_layer(x,bbox_top, LAYER_INSTANCES, o_hp);
-			audio_play_sound(snd_hp_spawning, 15, false, global.volume);
+			//audio_play_sound(snd_hp_spawning, 15, false, global.volume);
 		}
 		
 		o_sound_controller.update_event_position_and_play(die_sound_event,x,y);

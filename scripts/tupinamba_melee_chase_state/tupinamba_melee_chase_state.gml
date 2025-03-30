@@ -64,5 +64,7 @@ function tupinamba_melee_chase_state() {
 
 	calc_entity_movement();
 	collision();
+	
+	play_walk_sound(image_index, image_speed,[2,7], x, y, FMOD_EVENT.TUPI_MELEE_WALK);
 
 }

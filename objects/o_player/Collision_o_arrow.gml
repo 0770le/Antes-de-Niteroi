@@ -42,6 +42,6 @@ if player_take_damage {
 
 		//screen shake
 		scr_screen_shake(.125, -1);
-		audio_play_sound(snd_player_hit, 20, false, global.volume);
+		//audio_play_sound(snd_player_hit, 20, false, global.volume);
 	}
 }

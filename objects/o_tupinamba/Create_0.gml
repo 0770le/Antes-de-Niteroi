@@ -132,7 +132,7 @@ function can_evade() {
 			
 			//dust
 			jump_dust();
-			audio_play_sound(snd_jump, 15, false, global.volume);
+			//audio_play_sound(snd_jump, 15, false, global.volume);
 		}
 	} else {
 		evade_delay--

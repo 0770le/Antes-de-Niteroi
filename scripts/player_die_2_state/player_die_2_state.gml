@@ -33,7 +33,7 @@ function player_die_2_state(){
 		
 	//once
 	if on_ground() and image_index == 1 {
-		audio_play_sound(snd_enemy_dying, 5, false, global.volume);
+		//audio_play_sound(snd_enemy_dying, 5, false, global.volume);
 		instance_create_layer(x,y, LAYER_EFFECTS, o_player_dust_land);
 	
 		//finish animation

@@ -49,6 +49,7 @@ function player_jump_state(){
 	
  
 	if (o_game.has_bow and shoot and arrows > 0) {
+		can_fire=true;
 		state = states.SHOOT;
 		image_index = 0;
 	}

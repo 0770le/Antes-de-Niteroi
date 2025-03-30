@@ -7,7 +7,7 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 	hsp = 0;
 	
 	// sprite do tiro
-	if (image_index == 3 ) {
+	if (floor(image_index) == 3 ) {
 		if shoot_held { //segura
 			image_speed = 0;
 		} else {	//solta
@@ -18,18 +18,13 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 				
 				//tem flecha
 				if (arrows > 0) {
-				//Shoot Arrow	
-				//set spawn pos (lado facing e altura)
-				var ypos = ((sprite_get_height(sprite_index) /2) -2) * spawn_pos;
-				ypos = -28;
-				//create arrow
-				var inst =0;
-				//rising arrow
-				inst = instance_create_layer(x+32*facing,y + ypos, LAYER_PROJECTILES, o_player_rising_arrow);
-				inst.facing = facing;
+					
+					//rising arrow
+					var inst = instance_create_layer(x+20*facing,y - 28, LAYER_PROJECTILES, o_player_rising_arrow);
+					inst.facing = facing;
 		
-				//muniçao
-				arrows--;
+					//muniçao
+					arrows--;
 	
 				//sound
 				//audio_play_sound(snd_arrow_firing,10, false, global.volume);
@@ -52,6 +47,7 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 	}
 	
 	if jump {
+		image_speed = 1;
 		jumped();
 	}	
 	//enable smaller jumps

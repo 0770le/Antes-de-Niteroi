@@ -1,1 +1,1 @@
-set_harpia(7*TILE_SIZE,room_speed*3 );
+set_harpia(7*TILE_SIZE,3 );

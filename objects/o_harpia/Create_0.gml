@@ -67,8 +67,8 @@ mask_array[harpia_states.ATTACK_RECOVER] = s_harpia_move_back;
 mask_array[harpia_states.RETURN] = s_harpia_move_back;
 
 //to use on creation code in room
-function set_harpia( _alert_distance = alert_distance/TILE_SIZE , _alert_initial_timer = alert_initial_timer/room_speed ) {		
-	alert_distance = _alert_distance * TILE_SIZE;
+function set_harpia( _alert_distance = alert_distance, _alert_initial_timer = alert_initial_timer/room_speed ) {		
+	alert_distance = _alert_distance;
 	alert_initial_timer = _alert_initial_timer * room_speed;
 }
 

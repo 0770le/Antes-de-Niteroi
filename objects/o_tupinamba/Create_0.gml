@@ -189,6 +189,23 @@ function create_arrow_1(target_data) {
 		start_speed = target_data.spd;
 	    start_v_spd = target_data.v_spd;
 	    start_direction = dir;// direction;
+		
+		//rastro de ambas as penas
+		call_later(follow_moment, time_source_units_frames, function () {	//cria o rastro
+			var inst = instance_create_depth(follow_x+3*facing, follow_y-2 , depth, o_projectil_tail);
+			tail_id = inst.id;
+			with(tail_id) {
+		
+				min_spd = other.min_spd;
+				max_spd = other.max_spd;
+				speed = clamp(speed, min_spd , max_spd);
+				direction = other.start_direction;
+				//player direction
+				motion_add(90,  other.start_v_spd);
+				motion_add(other.x >= x ? 0 : 180,  other.start_speed);
+				grav= other.grav;
+			} 
+		});
 	}
 }
 

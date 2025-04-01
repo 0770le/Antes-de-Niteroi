@@ -21,8 +21,8 @@ if (hurt == true) {
 if(state == frances_states.SHOOT) {
 	
 	if(image_index > 2 and image_index < 10) {
-		draw_set_alpha(image_index/10);
-		draw_line_width_color(side()+11*facing, y-20, x + facing * GAME_W, y-20,2, COLOR_YELLOW, COLOR_YELLOW);
+		draw_set_alpha((image_index/10) - 0.3);
+		draw_line_width_color(side()+11*facing, y-20, x + facing * GAME_W, y-20,1, COLOR_YELLOW, COLOR_YELLOW);
 		draw_set_alpha(1);
 	} else if (floor(image_index) == 10) {
 		draw_set_alpha(11-image_index);

@@ -69,3 +69,7 @@ if(keyboard_check_pressed(vk_f10) and room != rm_tests) {
 if(keyboard_check_pressed(vk_f11) and room != rm_tests_1) {
 	fade_to_room(rm_tests_1, 213, 476, other.facing);	
 }
+
+if(keyboard_check_pressed(vk_f12) and room != rm_keryi) {
+	fade_to_room(rm_keryi,8900, 566, other.facing);	
+}

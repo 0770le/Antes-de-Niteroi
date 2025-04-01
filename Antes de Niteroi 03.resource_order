@@ -755,6 +755,7 @@
     {"name":"spr_menu_background","order":3,"path":"sprites/spr_menu_background/spr_menu_background.yy",},
     {"name":"spr_menu_button","order":5,"path":"sprites/spr_menu_button/spr_menu_button.yy",},
     {"name":"spr_menu_title","order":4,"path":"sprites/spr_menu_title/spr_menu_title.yy",},
+    {"name":"spr_player_hit","order":25,"path":"sprites/spr_player_hit/spr_player_hit.yy",},
     {"name":"spr_window_middle_center","order":2,"path":"sprites/spr_window_middle_center/spr_window_middle_center.yy",},
     {"name":"t_collisions_1","order":1,"path":"tilesets/t_collisions_1/t_collisions_1.yy",},
     {"name":"t_tiles_back_1","order":5,"path":"tilesets/t_tiles_back_1/t_tiles_back_1.yy",},

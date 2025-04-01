@@ -11,6 +11,9 @@ function player_hanging_state(){
 	//nova gravidade
 	vsp +=  0.06;
 	
+	if (vsp > 1.8){ vsp =1.8;}
+	
+	
 	//make dust
 	if (!instance_exists( o_player_dust_jump)) {
 		evade_dust();

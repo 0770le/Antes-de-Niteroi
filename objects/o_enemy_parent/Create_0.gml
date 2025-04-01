@@ -76,7 +76,7 @@ wait_time = wait_time_initial;
 target_x = 0;
 target_y = 0;
 
-chase_right_limit = 6000;
+chase_right_limit = 10000;
 chase_left_limit =  10;
 
 	//HIDING

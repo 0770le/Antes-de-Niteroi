@@ -1,0 +1,2 @@
+turret();
+facing= 1;

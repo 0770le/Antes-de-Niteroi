@@ -53,5 +53,10 @@ function jararaca_moving_state(){
 		} else {
 			facing = facing * -1;
 		}
+		
+		if (x < patrol_left_limit or x > patrol_right_limit) {
+			facing = facing * -1;
+		}
+		
 	}
 }

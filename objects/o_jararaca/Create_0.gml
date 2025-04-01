@@ -24,6 +24,9 @@ wall_y = 0;
 //how long to wait before patrolling
 wait_time_initial = room_speed * random_range(4, 6);
 
+patrol_left_limit = 10;
+patrol_right_limit = 10000; 
+
 idle_move_timer = room_speed * random_range(5, 9);
 
 //movement 

@@ -258,6 +258,7 @@ function play_state_update_sounds(_previous_state, _new_state) {
 function set_chase(_chase_left_limit = patrol_left_limit, _chase_right_limit = patrol_right_limit){
 	chase_left_limit = _chase_left_limit;
 	chase_right_limit = _chase_right_limit;
+	
 }
 //
 call_later(2,time_source_units_frames,function(){if(patrol){set_chase();}},false);

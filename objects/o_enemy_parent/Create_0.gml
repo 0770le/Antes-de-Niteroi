@@ -110,6 +110,10 @@ function warden(_alert_distance = TILE_SIZE * 3, _chase_left_limit = x - TILE_SI
 	
 	alert_distance = _alert_distance; 
 	alert_cooling = room_speed *60;
+	
+	//fixing tupinamba_melee idle to chase
+	patrol_left_limit = chase_left_limit;
+	patrol_right_limit = chase_right_limit;
 }
 
 #region state change updates

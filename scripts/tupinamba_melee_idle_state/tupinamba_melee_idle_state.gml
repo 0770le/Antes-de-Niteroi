@@ -16,8 +16,14 @@ function tupinamba_melee_idle_state() {
 	if alert  {//combat
 		stare();
 		//player e tupi fora do limite do patrol 
-		if (x < patrol_left_limit or x > patrol_right_limit) 
-		and (o_player.x < patrol_left_limit or o_player.x > patrol_right_limit) {	
+		if 
+		
+		((x < patrol_left_limit or x > patrol_right_limit) 
+		and (o_player.x < patrol_left_limit or o_player.x > patrol_right_limit))
+		
+		//((x < chase_left_limit or x >chase_right_limit) 
+		//and (o_player.x < chase_left_limit or o_player.x > chase_right_limit)))
+		{	
 			
 			//if wait_time-- < 0 {
 				//taunt

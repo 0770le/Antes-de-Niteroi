@@ -1,14 +1,11 @@
 global.camera = self;
 //get dimensions. modifica a info pega no camera
 
-var _w		= 480;
-var _h		= 270;
+var _w		= GAME_W;
+var _h		= GAME_H;
 var _scale	= 3;
 
 //create camera.(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])
-camera = camera_create_view(0,0,_w,_h,0,-1,-1,-1,128,128 ) 
-view_set_camera(0, camera);
-
 window_set_size(_w * _scale, _h * _scale);
 
 // declarando posiçao da camera
@@ -23,6 +20,8 @@ move_to_x = x;
 move_to_y = y;
 
 y_offset = 0;
+
+camera_created = false;
 
 // how fast the camera pans
 camera_pan_speed_initial = 0.15; //lower = slowed pan
@@ -77,3 +76,9 @@ function clear()
 }
 
 display_set_gui_size(_w * _scale, _h * _scale);
+
+function create_camera() {
+	camera = camera_create_view(0,0,GAME_W,GAME_H,0,-1,-1,-1,128,128 ) 
+	view_set_camera(0, camera);
+	camera_created = true;
+}

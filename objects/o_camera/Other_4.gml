@@ -1,8 +1,10 @@
 /// @desc init camera
-view_camera[0] = camera;
-view_enabled = true;
-view_visible[1] = false;
-view_visible[0] = true;
-
+if(room != rm_paulo_gustavo and room != rm_studio_logo) {
+	create_camera();
+	view_camera[0] = camera;
+	view_enabled = true;
+	view_visible[1] = false;
+	view_visible[0] = true;
+}
 
 

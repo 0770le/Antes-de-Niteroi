@@ -1,8 +1,8 @@
 
 function macros(){
 
-#macro GAME_W 640
-#macro GAME_H 360
+#macro GAME_W 480
+#macro GAME_H 270
 	
 	
 #macro VOID						0

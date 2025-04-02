@@ -118,10 +118,52 @@ mask_array[frances_states.RUN] = s_frances_idle;
 
 
 function create_bullet() {
+	global.sound_controller.play_pos(
+		FMOD_EVENT.FRENCH_SHOOTER_SHOOT,
+		x, y
+	);
 	if(line_of_sight() and collision_line(x, y-10, x + facing * GAME_W, y-10,o_player, false, true)) {
 		with(o_player) {
 			process_enemy_attack();	
 		}
+	}
+}
+
+function play_state_update_sounds(_previous_state, _new_state) {	
+	// on enter
+	switch (_new_state)
+	{
+		case frances_states.JUMP: 
+			if (vsp < 0)
+			{
+				global.sound_controller.update_event_parameter_and_play_pos(
+					FMOD_EVENT.FRENCH_SHOOTER_JUMP, 
+					FMOD_PARAMETER_NAME_MOVE, 
+					FMOD_PARAMETER_VALUE_FRENCH_SHOOTER_JUMP.JUMP,
+					x, y
+				);
+			}
+			break;
+		case frances_states.RELOAD: 
+			global.sound_controller.play_pos(
+				FMOD_EVENT.FRENCH_SHOOTER_COUCH,
+				x, y
+			);
+			global.sound_controller.play_pos(
+				FMOD_EVENT.FRENCH_SHOOTER_RELOAD,
+				x, y
+			);
+			break;
+	}
+	
+	// on leave
+	switch (_previous_state)
+	{
+		case frances_states.RELOAD: 
+			global.sound_controller.stop(
+				FMOD_EVENT.FRENCH_SHOOTER_RELOAD
+			);
+			break;
 	}
 }
 

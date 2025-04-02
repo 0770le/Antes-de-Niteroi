@@ -326,6 +326,28 @@ function load_events()
 		[
 			
 		]);
+		
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_COUCH] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_couch",
+		[]);
+		
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_JUMP] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_jump",
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, [
+					FMOD_PARAMETER_VALUE_FRENCH_SHOOTER_JUMP.JUMP,
+					FMOD_PARAMETER_VALUE_FRENCH_SHOOTER_JUMP.LAND
+				])
+		]);
+	
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_RELOAD] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_reload",
+		[]);
+	
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_SHOOT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_shoot",
+		[]);
 	
 	#endregion
 	
@@ -339,6 +361,12 @@ function load_events()
 			
 	event_per_enum[? FMOD_EVENT.SPIDER_HURT] = new FmodEvent(
 		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_hurt",
+		[
+			
+		]);
+		
+	event_per_enum[? FMOD_EVENT.SPIDER_ATTACK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_atk",
 		[
 			
 		]);
@@ -387,6 +415,92 @@ function load_events()
 		
 		]);
 	
+	#endregion
+	
+	#region CHEVALIER
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_ATTACK_SHIELD] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_atk_shield", 
+		[
+		
+		]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_PIERCE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_atk_spear_pierce", 
+		[
+		
+		]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_SLASH] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_atk_spear_slash", 
+		[
+		
+		]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_DEATH] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_death", 
+		[
+		
+		]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_GUARD] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_guard", 
+		[
+		
+		]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_hurt", 
+		[
+		
+		]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_TURN] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_turn", 
+		[
+		
+		]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_WALK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_walk", 
+		[
+		
+		]);
+	
+	#endregion
+	
+	#region HARPIA
+	
+	event_per_enum[? FMOD_EVENT.HARPIA_ATTACK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_atk", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.HARPIA_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_die", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.HARPIA_FLAP] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_flap", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.HARPIA_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_hurt", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.HARPIA_IDLE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_idle", 
+		[
+		
+		]);
+
 	#endregion
 }
 

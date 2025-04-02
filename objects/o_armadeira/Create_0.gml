@@ -78,3 +78,16 @@ function on_ceeling(){
 		return true else return false;
 		
 }
+
+function play_state_update_sounds(_previous_state, _new_state) {	
+	// on enter
+	switch (_previous_state)
+	{
+		case armadeira_states.ATTACK: 
+			global.sound_controller.play_pos(
+				FMOD_EVENT.SPIDER_ATTACK,
+				x, y
+			);
+			break;
+	}
+}

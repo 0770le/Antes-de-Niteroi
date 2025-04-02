@@ -1,10 +1,11 @@
 if (col == c_black) {
 	switch(type) {
 		case 0:
-			//wall torch
-			intensity = 0.4;
+			//candle
+			intensity = 0.3;
 			radius = 34;
-			col = make_color_rgb(220,134,59);
+			col = make_color_rgb(220,130,50);
+		
 		break;
 		
 		case 1:
@@ -51,6 +52,19 @@ if (col == c_black) {
 			col = c_white;
 			flickering = false;
 		break;
+	
+		case 6:
+			//flame torch
+			intensity = 0.4;
+			radius = 34;
+			col = make_color_rgb(250,134,59);
+		break;
+	
+	
+	
+	
 	}
+	
+	
 }
 

@@ -18,11 +18,11 @@ function player_attack_walk_state(){
 	}
 	
 	//caculate movement
-	if (image_index <= 2 ) {
+//	if (image_index <= 2 ) {
 		calc_movement();
-	} else {//others attacks cant change direction
-		calc_entity_movement();
-	}
+//	} else {//others attacks cant change direction
+//		calc_entity_movement();
+//	}
 	
 	//check state after anim
 	if anim_end() {

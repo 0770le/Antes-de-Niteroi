@@ -34,6 +34,9 @@ origin_y = 0;
 
 alarm[0] = 1;
 
+die_sound_event = FMOD_EVENT.HARPIA_DIE;
+hurt_sound_event = FMOD_EVENT.HARPIA_HURT;
+
 //states
 enum harpia_states {
 	IDLE,
@@ -73,3 +76,49 @@ function set_harpia( _alert_distance = alert_distance, _alert_initial_timer = al
 }
 
 layer = layer_get_id(LAYER_EFFECTS);
+
+global.sound_controller.play_pos(
+	FMOD_EVENT.HARPIA_IDLE,
+	x, y
+);
+
+function play_state_update_sounds(_previous_state, _new_state) {
+	
+	// on enter
+	switch (_new_state)
+	{
+		case harpia_states.IDLE: 
+			global.sound_controller.play_pos(
+				FMOD_EVENT.HARPIA_IDLE,
+				x, y
+			);
+			break;
+	}
+	
+	// on leave
+	switch (_previous_state)
+	{
+		case harpia_states.IDLE: 
+			global.sound_controller.stop(
+				FMOD_EVENT.HARPIA_IDLE
+			);
+			break;
+	}
+	
+	global.logger.info($"previous state: {get_state_as_string(_previous_state)}, new state: {get_state_as_string(_new_state)}");
+}
+
+function get_state_as_string(_state)
+{
+	switch (_state)
+	{
+		case harpia_states.IDLE: return "IDLE";
+		case harpia_states.HURTING: return "HURTING";
+		case harpia_states.CHASE: return "CHASE";
+		case harpia_states.ATTACK: return "ATTACK";
+		case harpia_states.ATTACK_RECOVER: return "ATTACK_RECOVER";
+		case harpia_states.RETURN: return "RETURN";
+		case harpia_states.OUT_OF_SCREEN: return "OUT_OF_SCREEN";
+		default: return "UNKNOWN";
+	}
+}

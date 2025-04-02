@@ -235,22 +235,6 @@ function play_state_update_sounds(_previous_state, _new_state) {
 				);
 			}
 			break;
-		case tupinamba_states.EVADE: 
-			global.sound_controller.play_pos(FMOD_EVENT.TUPI_MELEE_EVADE, x, y);
-			break;
-	}
-	
-	// on leave
-	switch (_new_state)
-	{
-		case tupinamba_states.JUMP: 
-			global.sound_controller.update_event_parameter_and_play_pos(
-				FMOD_EVENT.TUPI_MELEE_JUMP, 
-				FMOD_PARAMETER_NAME_MOVE, 
-				FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP.LAND,
-				x, y
-			);
-			break;
 	}
 }
 

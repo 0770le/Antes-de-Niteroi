@@ -60,6 +60,9 @@ attack_up_cooldown = room_speed * 2;
 wait_time_initial = random_range(4, 6) * room_speed;
 wait_time = wait_time_initial;
 
+die_sound_event = FMOD_EVENT.CHEVALIER_DEATH;
+hurt_sound_event = FMOD_EVENT.CHEVALIER_HURT;
+
 //states
 enum chevalier_states {
 	IDLE,			//0
@@ -162,3 +165,75 @@ function blocking() {
 	}	
 }
 
+function play_state_update_sounds(_previous_state, _new_state) {
+	
+	// on enter
+	switch (_new_state)
+	{
+		case chevalier_states.CHASE: 
+			global.sound_controller.play_pos(
+				FMOD_EVENT.CHEVALIER_WALK,
+				x, y
+			);
+			break;
+		case chevalier_states.TURNING:
+			global.sound_controller.play_pos(
+				FMOD_EVENT.CHEVALIER_TURN,
+				x, y
+			);
+			break;
+		case chevalier_states.BLOCKING:
+			global.sound_controller.play_pos(
+				FMOD_EVENT.CHEVALIER_GUARD,
+				x, y
+			);
+			break;
+		case chevalier_states.ATTACK:
+			global.sound_controller.play_pos(
+				FMOD_EVENT.CHEVALIER_ATTACK_SHIELD,
+				x, y
+			);
+			break;
+		case chevalier_states.ATTACK_UP:
+			global.sound_controller.play_pos(
+				FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_PIERCE,
+				x, y
+			);
+			break;
+		case chevalier_states.AERIAL_RIPOSTE:
+			global.sound_controller.play_pos(
+				FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_SLASH,
+				x, y
+			);
+			break;
+	}
+	
+	// on leave
+	switch (_previous_state)
+	{
+		case chevalier_states.CHASE: 
+			global.sound_controller.stop(
+				FMOD_EVENT.CHEVALIER_WALK
+			);
+			break;
+	}
+	
+	// global.logger.info($"previous state: {get_state_as_string(_previous_state)}, new state: {get_state_as_string(_new_state)}");
+}
+
+function get_state_as_string(_state)
+{
+	switch (_state)
+	{
+		case chevalier_states.IDLE: return "IDLE";
+		case chevalier_states.HURTING: return "HURTING";
+		case chevalier_states.ENGAGED: return "ENGAGED";
+		case chevalier_states.TURNING: return "TURNING";
+		case chevalier_states.ATTACK: return "ATTACK";
+		case chevalier_states.CHASE: return "CHASE";
+		case chevalier_states.AERIAL_RIPOSTE: return "AERIAL_RIPOSTE";
+		case chevalier_states.ATTACK_UP: return "ATTACK_UP";
+		case chevalier_states.BLOCKING: return "BLOCKING";
+		default: return "UNKNOWN";
+	}
+}

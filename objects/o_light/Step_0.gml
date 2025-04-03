@@ -3,7 +3,7 @@ if (col == c_black) {
 		case 0:
 			//candle
 			intensity = 0.3;
-			radius = 34;
+			radius = 26;
 			col = make_color_rgb(220,130,50);
 		
 		break;
@@ -26,7 +26,7 @@ if (col == c_black) {
 		
 		case 3:
 			//water
-			intensity = 0.3;
+			intensity = 0.1;
 			radius = 20;
 			col = c_aqua;
 		break;

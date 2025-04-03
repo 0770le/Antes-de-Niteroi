@@ -7,7 +7,7 @@ function process_enemy_attack() { // (hk, bk) {
 			hurt = true;
 
 			//facing the enemy
-			//facing = sign(other.xprevious - x);
+			facing = sign(other.xprevious - x);
 		
 
 		

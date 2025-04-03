@@ -87,7 +87,7 @@ facing =- room_start_facing;
 //hurt
 flash_counter = 0;
 hurt = false;
-hurt_time = room_speed*0.8;
+hurt_time = room_speed*1.5;
 hp = o_game.max_hp;
 //max_hp = hp;
 hp_losing = hp;

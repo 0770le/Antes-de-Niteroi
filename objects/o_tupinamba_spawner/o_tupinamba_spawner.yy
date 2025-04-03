@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_flammable_wall",
-    "path":"sprites/s_flammable_wall/s_flammable_wall.yy",
+    "name":"s_chest",
+    "path":"sprites/s_chest/s_chest.yy",
   },
   "spriteMaskId":null,
   "visible":true,

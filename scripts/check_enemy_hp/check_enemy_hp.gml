@@ -63,12 +63,12 @@ function check_enemy_hp(){
 		}
 		
 		
-		//curupira
-		switch(object_index) {
-			case o_enemy:
-			//o_player.curupira_count+=1;
-			break;
-		}
+		////curupira
+		//switch(object_index) {
+		//	case o_enemy:
+		//	//o_player.curupira_count+=1;
+		//	break;
+		//}
 		
 		o_player.engaged = false;
 		

@@ -890,6 +890,7 @@
     {"id":{"name":"spr_sound_basic_icon","path":"sprites/spr_sound_basic_icon/spr_sound_basic_icon.yy",},},
     {"id":{"name":"spr_sound_transparent","path":"sprites/spr_sound_transparent/spr_sound_transparent.yy",},},
     {"id":{"name":"spr_window_middle_center","path":"sprites/spr_window_middle_center/spr_window_middle_center.yy",},},
+    {"id":{"name":"Sprite392","path":"sprites/Sprite392/Sprite392.yy",},},
     {"id":{"name":"t_collisions_1","path":"tilesets/t_collisions_1/t_collisions_1.yy",},},
     {"id":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},},
     {"id":{"name":"t_tiles_back_1","path":"tilesets/t_tiles_back_1/t_tiles_back_1.yy",},},

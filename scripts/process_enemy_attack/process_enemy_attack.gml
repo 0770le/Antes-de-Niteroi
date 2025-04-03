@@ -22,8 +22,7 @@ function process_enemy_attack() { // (hk, bk) {
 			
 			//damage no  hp do player
 			repeat(other.damage) {
-				hp--; 
-				instance_create_layer(0,0,LAYER_INSTANCES,o_hp_lost_effect);
+				hp--;
 			}
 				
 			//set hurt timer

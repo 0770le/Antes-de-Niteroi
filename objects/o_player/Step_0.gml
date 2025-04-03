@@ -73,3 +73,12 @@ if(keyboard_check_pressed(vk_f11) and room != rm_tests_1) {
 if(keyboard_check_pressed(vk_f12) and room != rm_keryi) {
 	fade_to_room(rm_keryi,8900, 566, other.facing);	
 }
+
+if(keyboard_check_pressed(ord("O"))) {
+	o_game.max_hp++;
+	hp++;
+}
+
+if(keyboard_check_pressed(ord("P"))) {
+	hp--;
+}

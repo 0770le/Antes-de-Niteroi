@@ -1,1 +1,2 @@
-turret=true;
+turret = true;
+facing=-1;

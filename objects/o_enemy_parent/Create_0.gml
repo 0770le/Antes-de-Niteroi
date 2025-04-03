@@ -65,8 +65,8 @@ attack = false;
 start_x = x;
 start_y = y;
 
-patrol_left_limit = x - 16;
-patrol_right_limit = x + 16; 
+patrol_left_limit = x - 2;
+patrol_right_limit = x + 2; 
 
 //how long to wait before patrolling
 wait_time_initial = 0;//random_range(0, 0) * room_speed;

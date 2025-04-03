@@ -11,9 +11,9 @@ macros();
 has_cloak = false;
 has_bow = true;
 
-max_lives = 3;
+max_lives = 10;
 max_arrows =  5;
-max_hp = 5;
+max_hp = 10;
 
 //has_collectable_nome = false;
 collectable_count = 0;

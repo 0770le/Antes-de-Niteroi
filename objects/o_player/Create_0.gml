@@ -93,7 +93,7 @@ hp = o_game.max_hp;
 hp_losing = hp;
 
 //lives
-lives_initial = 3;
+lives_initial = 10;
 lives = lives_initial;
 
 // ********* Atenção ! ********* 

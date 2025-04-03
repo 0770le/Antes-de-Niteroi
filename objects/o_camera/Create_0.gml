@@ -48,8 +48,8 @@ tolerance = 10;
 
 function notify() 
 {
-	var _x = floor(x);
-	var _y = floor(y);
+	var _x = floor(global.cx+(global.cw/2));
+	var _y = floor(global.cy+(global.ch/2));
 	
 	if (point_distance(_x, _y, last_x, last_y) > tolerance)
 	{

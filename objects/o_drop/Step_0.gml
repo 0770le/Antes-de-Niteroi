@@ -15,7 +15,7 @@ if(!stop_movement) {
 	if(t1 == SOLID) {
 		if (!hit_ground) { // play sound when ground is hit for the first time
 			hit_ground = true;
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.WOOD_BARRIER_DEBRIS,
 				x, y
 			);

@@ -118,7 +118,7 @@ mask_array[frances_states.RUN] = s_frances_idle;
 
 
 function create_bullet() {
-	global.sound_controller.play_pos(
+	global.sound_controller.update_position_and_play(
 		FMOD_EVENT.FRENCH_SHOOTER_SHOOT,
 		x, y
 	);
@@ -145,11 +145,11 @@ function play_state_update_sounds(_previous_state, _new_state) {
 			}
 			break;
 		case frances_states.RELOAD: 
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.FRENCH_SHOOTER_COUCH,
 				x, y
 			);
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.FRENCH_SHOOTER_RELOAD,
 				x, y
 			);

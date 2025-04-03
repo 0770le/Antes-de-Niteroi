@@ -24,6 +24,9 @@ function on_camera_update(_x, _y)
 	
 	fmod_3d_att.position.x = _x;
 	fmod_3d_att.position.y = _y;
+	
+	fmod_3d_att.forward.z = -1;
+ 	fmod_3d_att.up.y = -1;
 
 	fmod_studio_system_set_listener_attributes(0, fmod_3d_att);
 	
@@ -56,11 +59,6 @@ function play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY)
 	event_per_enum[? _event_enum].play();
 }
 
-function play_pos(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, _x = other.x, _y = other.y)
-{
-	event_per_enum[? _event_enum].play();
-}
-
 function stop(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY)
 {
 	event_per_enum[? _event_enum].stop();
@@ -73,7 +71,7 @@ function update_event_position(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY,
 	event_per_enum[? _event_enum].update_position(_x, _y);
 }
 
-function update_event_position_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
+function update_position_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
 								_x = other.x, 
 								_y = other.y)
 {

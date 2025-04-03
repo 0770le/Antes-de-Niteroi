@@ -84,7 +84,7 @@ function play_state_update_sounds(_previous_state, _new_state) {
 	switch (_previous_state)
 	{
 		case armadeira_states.ATTACK: 
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.SPIDER_ATTACK,
 				x, y
 			);

@@ -1,7 +1,7 @@
 function check_player_hp() {
 	if hp <= 0 {
 		
-		o_sound_controller.update_event_position_and_play(FMOD_EVENT.DIE,x,y);
+		o_sound_controller.update_position_and_play(FMOD_EVENT.DIE,x,y);
 		
 		var _previous_state = state;
 		

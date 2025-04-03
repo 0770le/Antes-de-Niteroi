@@ -15,7 +15,7 @@ with(other) {
 			state = enemy_states.HURTING;
 			image_index = 0;
 			
-			o_sound_controller.update_event_position_and_play(hurt_sound_event,x,y);
+			o_sound_controller.update_position_and_play(hurt_sound_event,x,y);
 				
 			//move away from the hitbox
 			hsp = _dir * other.knockback_dis * knockback_multiplier;

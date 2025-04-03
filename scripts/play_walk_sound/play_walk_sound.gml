@@ -5,6 +5,7 @@ function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y, _fm
 	((_image_index >= _sound_indexes[1]) and (_image_index < (_sound_indexes[1]+1)) and ((_image_index - _image_speed) < _sound_indexes[1])))) {
 		
 		last_walk_index = floor(_image_index);
+	
 		
 		var t = tilemap_get_at_pixel(global.ground_map, x, bbox_bottom + 10);
 		var param;
@@ -16,10 +17,12 @@ function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y, _fm
 			param = FMOD_PARAMETER_MOVE_WALK.GRASS
 		} else if (t >= 200 and t < 275) { //areia
 			param = FMOD_PARAMETER_MOVE_WALK.SAND
-		} else if (t >= 275 and t < 375) { //pedra
+		} else if (t >= 275 and t < 500) { //pedra
 			param = FMOD_PARAMETER_MOVE_WALK.STONE
-		} else { // se nao for nada, arvore
+		} else if (t >= 500 and t < 1100) { // arvore
 			param = FMOD_PARAMETER_MOVE_WALK.WOOD
+		} else { // pedra do indio
+			param = FMOD_PARAMETER_MOVE_WALK.STONE
 		}
 		
 		var _water = false;
@@ -30,11 +33,10 @@ function play_walk_sound(_image_index, _image_speed, _sound_indexes, _x, _y, _fm
 	
 		if(_water) {
 			emit_water(_x,_y-5,irandom_range(2,4));
+			param = FMOD_PARAMETER_MOVE_WALK.WATER
 		} else if(param == FMOD_PARAMETER_MOVE_WALK.DIRT) {
 			emit_smoke(_x + (5*facing),bbox_bottom,0.1,0.3,1,1);	
 		}
-		
-		o_sound_controller.update_event_parameter_and_play_pos(_fmod_event, FMOD_PARAMETER_NAME_MOVE, param, _x, _y)
-		
+		o_sound_controller.update_event_parameter_and_play_pos(_fmod_event, FMOD_PARAMETER_NAME_MOVE, param, _x, _y);
 	}
 }

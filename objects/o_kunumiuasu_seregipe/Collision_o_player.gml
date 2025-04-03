@@ -17,7 +17,7 @@ text_bubble2(id, _text, -1, 6, TEXT_Y_HEIGHT_2l);
 
 
 if other.interact {
-	global.sound_controller.play_pos(FMOD_EVENT.TRANSITION_BOAT, x, y);
+	global.sound_controller.update_position_and_play(FMOD_EVENT.TRANSITION_BOAT, x, y);
 	switch(room) {
 		case rm_seregipe:
 			target_rm = rm_reri_pe;

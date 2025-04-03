@@ -32,7 +32,7 @@ function process_enemy_attack() { // (hk, bk) {
 			state = states.HURTING;
 			image_index = 0;
 			
-			o_sound_controller.update_event_position_and_play(FMOD_EVENT.HURT, x, y);
+			o_sound_controller.update_position_and_play(FMOD_EVENT.HURT, x, y);
 			
 			//screnn shake
 			scr_screen_shake(.125,1);

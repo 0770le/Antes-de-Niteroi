@@ -284,7 +284,7 @@ function play_state_change_sounds(_previous_state, _current_state)
 			}
 			break;
 		case states.HANGING:
-			global.sound_controller.play_pos(FMOD_EVENT.HANG, x, y);
+			global.sound_controller.update_position_and_play(FMOD_EVENT.HANG, x, y);
 			break;
 		default:
 	}

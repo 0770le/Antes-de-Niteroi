@@ -77,7 +77,7 @@ function set_harpia( _alert_distance = alert_distance, _alert_initial_timer = al
 
 layer = layer_get_id(LAYER_EFFECTS);
 
-global.sound_controller.play_pos(
+global.sound_controller.update_position_and_play(
 	FMOD_EVENT.HARPIA_IDLE,
 	x, y
 );
@@ -88,20 +88,20 @@ function play_state_update_sounds(_previous_state, _new_state) {
 	switch (_new_state)
 	{
 		case harpia_states.IDLE: 
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.HARPIA_IDLE,
 				x, y
 			);
 			break;
 		case harpia_states.ATTACK: 
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.HARPIA_ATTACK,
 				x, y
 			);
 			break;
 		case harpia_states.CHASE:
 		case harpia_states.ATTACK_RECOVER:
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.HARPIA_FLAP,
 				x, y
 			);

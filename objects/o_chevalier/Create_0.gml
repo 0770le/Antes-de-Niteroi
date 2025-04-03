@@ -171,37 +171,37 @@ function play_state_update_sounds(_previous_state, _new_state) {
 	switch (_new_state)
 	{
 		case chevalier_states.CHASE: 
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.CHEVALIER_WALK,
 				x, y
 			);
 			break;
 		case chevalier_states.TURNING:
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.CHEVALIER_TURN,
 				x, y
 			);
 			break;
 		case chevalier_states.BLOCKING:
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.CHEVALIER_GUARD,
 				x, y
 			);
 			break;
 		case chevalier_states.ATTACK:
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.CHEVALIER_ATTACK_SHIELD,
 				x, y
 			);
 			break;
 		case chevalier_states.ATTACK_UP:
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_PIERCE,
 				x, y
 			);
 			break;
 		case chevalier_states.AERIAL_RIPOSTE:
-			global.sound_controller.play_pos(
+			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_SLASH,
 				x, y
 			);

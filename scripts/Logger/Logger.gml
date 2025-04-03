@@ -45,5 +45,5 @@ constructor
 	}
 }
 
-global.LOG_LEVEL = LOG_LEVEL.DEBUG;
+global.LOG_LEVEL = LOG_LEVEL.TRACE;
 global.logger = new Logger();

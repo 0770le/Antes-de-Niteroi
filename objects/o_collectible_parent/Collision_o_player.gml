@@ -1,6 +1,6 @@
 /// @description collect
 
-global.sound_controller.play_pos(FMOD_EVENT.COLLECT_REGISTER, x, y);
+global.sound_controller.update_position_and_play(FMOD_EVENT.COLLECT_REGISTER, x, y);
 
 show_msg("Novo registro adquirido: " + string(log_title),5);
 o_game.collectible[collectible_index] = true;

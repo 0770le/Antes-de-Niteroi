@@ -93,6 +93,19 @@ function play_state_update_sounds(_previous_state, _new_state) {
 				x, y
 			);
 			break;
+		case harpia_states.ATTACK: 
+			global.sound_controller.play_pos(
+				FMOD_EVENT.HARPIA_ATTACK,
+				x, y
+			);
+			break;
+		case harpia_states.CHASE:
+		case harpia_states.ATTACK_RECOVER:
+			global.sound_controller.play_pos(
+				FMOD_EVENT.HARPIA_FLAP,
+				x, y
+			);
+			break;
 	}
 	
 	// on leave
@@ -105,7 +118,7 @@ function play_state_update_sounds(_previous_state, _new_state) {
 			break;
 	}
 	
-	global.logger.info($"previous state: {get_state_as_string(_previous_state)}, new state: {get_state_as_string(_new_state)}");
+	global.logger.debug($"Harpia previous state: {get_state_as_string(_previous_state)}, new state: {get_state_as_string(_new_state)}");
 }
 
 function get_state_as_string(_state)

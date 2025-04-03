@@ -91,12 +91,16 @@ function init()
 	{
 		root_menu.add_child(new MenuButton("Continuar", function () 
 		{
+			global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
+			
 			player_respawn();
 		}));
 	}
 	
 	root_menu.add_child(new MenuButton("Novo Jogo", function() 
 	{ 
+		global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
+		
 		global.options_controller.set_option(OPTIONS_IS_NEW_GAME);
 		global.options_controller.set_option(OPTIONS_MUSIC_PARAMETER, FMOD_PARAMETER_MUSIC_VALUE.INTRO);
 		

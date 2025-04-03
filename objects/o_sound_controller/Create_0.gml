@@ -414,6 +414,30 @@ function load_events()
 		[
 		
 		]);
+		
+	event_per_enum[? FMOD_EVENT.MENU_CONFIRM_RETURN] = new FmodEvent(
+		"event:/SFX/UI/BUTTONS/sfx_ui_menu_confirm_return", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.MENU_GENERAL] = new FmodEvent(
+		"event:/SFX/UI/BUTTONS/sfx_ui_menu_general", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.MENU_NEWGAME_LOADGAME] = new FmodEvent(
+		"event:/SFX/UI/BUTTONS/sfx_ui_menu_newgame_loadgame", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.MENU_PAUSE] = new FmodEvent(
+		"event:/SFX/UI/BUTTONS/sfx_ui_menu_pause", 
+		[
+		
+		]);
 	
 	#endregion
 	
@@ -471,7 +495,7 @@ function load_events()
 	
 	#region HARPIA
 	
-	event_per_enum[? FMOD_EVENT.HARPIA_ATTACK] = new FmodEvent(
+	event_per_enum[? FMOD_EVENT.HARPIA_ATTACK] = new FmodEvent( 
 		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_atk", 
 		[
 		

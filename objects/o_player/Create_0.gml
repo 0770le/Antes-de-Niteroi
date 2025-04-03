@@ -270,7 +270,7 @@ function play_state_change_sounds(_previous_state, _current_state)
 {
 	if (_previous_state == _current_state) return;
 	
-	global.logger.debug($"play_state_change_sounds _previous_state: {get_state_as_string(_previous_state)}, _current_state: {get_state_as_string(_current_state)}")
+	//global.logger.debug($"play_state_change_sounds _previous_state: {get_state_as_string(_previous_state)}, _current_state: {get_state_as_string(_current_state)}")
 	
 	// on enter state
 	switch (_current_state) {
@@ -282,6 +282,9 @@ function play_state_change_sounds(_previous_state, _current_state)
 			if (vsp < 0) {
 				global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.JUMP, x, y);
 			}
+			break;
+		case states.HANGING:
+			global.sound_controller.play_pos(FMOD_EVENT.HANG, x, y);
 			break;
 		default:
 	}
@@ -301,6 +304,9 @@ function play_state_change_sounds(_previous_state, _current_state)
 		case states.AIR_ATTACK:
 		case states.ATTACK:
 			global.sound_controller.stop(FMOD_EVENT.ATTACK_MELEE);
+			break;
+		case states.HANGING:
+			global.sound_controller.stop(FMOD_EVENT.HANG);
 			break;
 		default:
 	}

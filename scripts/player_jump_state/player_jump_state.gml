@@ -36,7 +36,7 @@ function player_jump_state(){
 		//tocando a parede no ar
 	} else if (face == SOLID) and (vsp > 0.24) { // vsp caindo q entra no sliding
 			state = states.HANGING;
-			o_sound_controller.update_event_position_and_play(FMOD_EVENT.HANG,x,y);
+			//o_sound_controller.update_event_position_and_play(FMOD_EVENT.HANG,x,y);
 			//pro começo do arrastar nao ficar truncado
 			vsp += 1; 
 	}

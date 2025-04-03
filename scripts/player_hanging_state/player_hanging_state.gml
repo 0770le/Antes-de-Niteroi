@@ -26,13 +26,13 @@ function player_hanging_state(){
 
 	//chegou no chão
 	if on_ground(){
-		o_sound_controller.stop(FMOD_EVENT.HANG);
+		//o_sound_controller.stop(FMOD_EVENT.HANG);
 		state = states.IDLE;
 	}
 	
 	//saiu da parede
 	if (face != SOLID) { 
-		o_sound_controller.stop(FMOD_EVENT.HANG);
+		//o_sound_controller.stop(FMOD_EVENT.HANG);
 		state = states.JUMP;
 	}
 
@@ -41,13 +41,13 @@ function player_hanging_state(){
 		
 		facing*=-1;
 		hsp = max_hsp *facing;
-		o_sound_controller.stop(FMOD_EVENT.HANG);
+		//o_sound_controller.stop(FMOD_EVENT.HANG);
 		jumped(true);
 	}
 
 	if evade {
 		
-		o_sound_controller.stop(FMOD_EVENT.HANG);
+		//o_sound_controller.stop(FMOD_EVENT.HANG);
 		evaded();
 		image_index = 0;
 	}

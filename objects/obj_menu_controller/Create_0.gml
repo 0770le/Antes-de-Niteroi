@@ -49,6 +49,8 @@ function on_input_key_map(_menu_item = new MenuInput(INPUT_IN_GAME_ACTION.JUMP),
 {
 	if (!_keymap_input_model.cancel)
 	{
+		global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
+		
 		if (_menu_item.input_source_type == INPUT_SOURCE_TYPE.GAMEPAD)
 		{
 			global.input_manager.set_gamepad_key_for_action(_menu_item.input_in_game_action, _keymap_input_model.key_pressed);

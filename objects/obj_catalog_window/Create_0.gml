@@ -118,8 +118,15 @@ function on_input_menu(_input = new MenuInputModel())
 		
 		var _input_2 = new MenuInputModel();
 		_input_2.toggle_menu = true;
-			
-		global.menu_controller.on_input_menu(_input_2);
+		
+		var _aux = {
+			input: _input_2,
+			callback: function () {
+				global.menu_controller.on_input_menu(self.input);
+			}
+		}
+		
+		var _ = call_later(1, time_source_units_frames, _aux.callback);
 		
 		return;
 	}
@@ -146,6 +153,11 @@ function on_input_menu(_input = new MenuInputModel())
 			
 			selected_tab.toggle_items(true);
 		}
+		
+		if (_previous != selected_tab) 
+		{
+			global.sound_controller.play(FMOD_EVENT.MENU_GENERAL);
+		}
 	}
 	
 	if (_input.up || _input.down)
@@ -163,6 +175,11 @@ function on_input_menu(_input = new MenuInputModel())
 		selected_tab.update_cursor(_previous_index, _current_index);
 		
 		selected_tab.selected_item.set_hover(true);
+		
+		if (_previous_index != _current_index) 
+		{
+			global.sound_controller.play(FMOD_EVENT.MENU_GENERAL);
+		}
 	}
 	
 	if (_input.page_up) selected_tab.selected_item.previous_page();

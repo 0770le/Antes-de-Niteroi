@@ -208,6 +208,8 @@ function on_input_menu(_input = new MenuInputModel())
 	{
 		if (_input.toggle_menu)
 		{
+			global.sound_controller.play(FMOD_EVENT.MENU_PAUSE);
+			
 			open();
 		}
 	
@@ -217,6 +219,8 @@ function on_input_menu(_input = new MenuInputModel())
 	if (_input.toggle_menu && is_closeable)
 	{
 		selected_item = root_menu;
+		
+		global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
 		
 		close();
 	}
@@ -228,6 +232,8 @@ function on_input_menu(_input = new MenuInputModel())
 			case MENU_TYPE.NODE:
 			case MENU_TYPE.TWO_COLUMNS_NODE:
 				selected_item = selected_item.children[0];
+				
+				global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
 			
 				break;
 			case MENU_TYPE.LEAF:
@@ -239,6 +245,8 @@ function on_input_menu(_input = new MenuInputModel())
 			case MENU_TYPE.CATALOG:
 			case MENU_TYPE.INPUT:
 				selected_item.on_click();
+				
+				global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
 			
 				break;
 		}
@@ -254,36 +262,45 @@ function on_input_menu(_input = new MenuInputModel())
 				if (_input.left) selected_item.on_left();
 				if (_input.right) selected_item.on_right();
 				
-				global.sound_controller.play(FMOD_EVENT.BUTTON_TALK);
+				global.sound_controller.play(FMOD_EVENT.MENU_GENERAL);
 			
 				break;
 			default:
 				if (_input.left) selected_item = selected_item.left;
 				if (_input.right) selected_item = selected_item.right;
+				
+				global.sound_controller.play(FMOD_EVENT.MENU_GENERAL);
 			
 				break;
 		}
 	}
 	if (_input.up) selected_item = selected_item.previous; 
 	if (_input.down) selected_item = selected_item.next;
+	
+	if (_input.up || _input.down) 
+	{
+		if (_previously_selected_item != selected_item) 
+		{
+			global.sound_controller.play(FMOD_EVENT.MENU_GENERAL);
+		}
+	}
 
 	if (_input.cancel) 
 	{
 		if (selected_item.parent != selected_item.parent.parent)
 		{
 			selected_item = selected_item.parent;
+			
+			global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
 		}
 		else if (is_closeable)
 		{
+			global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
+			
 			close();
 		}
 	}
 
-	// play sounds	
-	if (_previously_selected_item != selected_item) 
-	{
-		global.sound_controller.play(FMOD_EVENT.BUTTON_TALK);
-	}
 }
 
 function init()

@@ -116,18 +116,6 @@ function on_input_menu(_input = new MenuInputModel())
 	{
 		close();
 		
-		var _input_2 = new MenuInputModel();
-		_input_2.toggle_menu = true;
-		
-		var _aux = {
-			input: _input_2,
-			callback: function () {
-				global.menu_controller.on_input_menu(self.input);
-			}
-		}
-		
-		var _ = call_later(1, time_source_units_frames, _aux.callback);
-		
 		return;
 	}
 	
@@ -154,7 +142,7 @@ function on_input_menu(_input = new MenuInputModel())
 			selected_tab.toggle_items(true);
 		}
 		
-		if (_previous != selected_tab) 
+		if (_previous.label != selected_tab.label) 
 		{
 			global.sound_controller.play(FMOD_EVENT.MENU_GENERAL);
 		}

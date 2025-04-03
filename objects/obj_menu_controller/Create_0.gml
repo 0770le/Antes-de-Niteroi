@@ -149,6 +149,8 @@ function init()
 	// Catalog	
 	root_menu.add_child(new MenuCatalog("Catálogo", function () 
 	{
+		global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
+		
 		global.menu_controller.close();
 		
 		global.catalog_controller.open();	

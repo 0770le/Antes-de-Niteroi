@@ -246,7 +246,9 @@ function on_input_menu(_input = new MenuInputModel())
 			case MENU_TYPE.INPUT:
 				selected_item.on_click();
 				
-				global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
+				global.logger.debug($"{room_get_name(room)}")
+				
+				if (room_get_name(room) != "rm_main_menu") global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
 			
 				break;
 		}

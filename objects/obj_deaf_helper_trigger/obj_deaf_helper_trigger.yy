@@ -1,19 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"obj_sound_music_parameter_updater_engage",
+  "%Name":"obj_deaf_helper_trigger",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"o_player","path":"objects/o_player/o_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_sound_music_parameter_updater_engage",
+  "name":"obj_deaf_helper_trigger",
   "overriddenProperties":[],
   "parent":{
-    "name":"MusicParameterUpdater",
-    "path":"folders/Objects/Sound/Model/MusicParameterUpdater.yy",
+    "name":"DeafHelper",
+    "path":"folders/Objects/Sound/Model/DeafHelper.yy",
   },
   "parentObjectId":{
-    "name":"obj_sound_music_parameter_updater",
-    "path":"objects/obj_sound_music_parameter_updater/obj_sound_music_parameter_updater.yy",
+    "name":"obj_shared_window",
+    "path":"objects/obj_shared_window/obj_shared_window.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -37,5 +40,5 @@
     "path":"sprites/spr_sound_transparent/spr_sound_transparent.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

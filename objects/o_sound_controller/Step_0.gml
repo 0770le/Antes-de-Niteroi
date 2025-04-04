@@ -1,1 +1,0 @@
-sound_visuals.step();

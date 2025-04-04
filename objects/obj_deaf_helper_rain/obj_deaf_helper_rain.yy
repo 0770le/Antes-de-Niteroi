@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_sound_music_parameter_updater_engage",
+  "%Name":"obj_deaf_helper_rain",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_sound_music_parameter_updater_engage",
+  "name":"obj_deaf_helper_rain",
   "overriddenProperties":[],
   "parent":{
-    "name":"MusicParameterUpdater",
-    "path":"folders/Objects/Sound/Model/MusicParameterUpdater.yy",
+    "name":"DeafHelper",
+    "path":"folders/Objects/Sound/Model/DeafHelper.yy",
   },
   "parentObjectId":{
-    "name":"obj_sound_music_parameter_updater",
-    "path":"objects/obj_sound_music_parameter_updater/obj_sound_music_parameter_updater.yy",
+    "name":"obj_deaf_helper_trigger",
+    "path":"objects/obj_deaf_helper_trigger/obj_deaf_helper_trigger.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -37,5 +37,5 @@
     "path":"sprites/spr_sound_transparent/spr_sound_transparent.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

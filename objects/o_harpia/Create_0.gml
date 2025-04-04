@@ -135,3 +135,22 @@ function get_state_as_string(_state)
 		default: return "UNKNOWN";
 	}
 }
+
+function process_wing_flap_sound()
+{
+	if (sprite_index == s_harpia_move_forward) {
+		if (image_index == 2 || image_index == 4) {
+			global.sound_controller.update_position_and_play(
+				FMOD_EVENT.HARPIA_FLAP,
+				x, y
+			)
+		}
+	} else if (sprite_index == s_harpia_move_back) {
+		if (image_index == 3) {
+			global.sound_controller.update_position_and_play(
+				FMOD_EVENT.HARPIA_FLAP,
+				x, y
+			)
+		}
+	}
+}

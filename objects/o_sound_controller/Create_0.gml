@@ -18,6 +18,14 @@ music_parameter				= FMOD_PARAMETER_MUSIC_VALUE.INTRO;
 is_playing_music			= false;
 deaf_assistance				= false;
 
+ambience_sounds	= [
+	FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE, 
+	FMOD_EVENT.AMBIENCE_AKARAY, 
+	FMOD_EVENT.AMBIENCE_KERYL, 
+	FMOD_EVENT.AMBIENCE_MORGUJA, 
+	FMOD_EVENT.AMBIENCE_SEREGIPE
+];
+
 function on_camera_update(_x, _y) 
 {
 	global.logger.trace($"on_camera_update: listener position updated x: {_x}, y: {_y}"); 
@@ -33,13 +41,28 @@ function on_camera_update(_x, _y)
 	update_event_position(FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE, _x, _y);
 }
 
+function update_ambience_sounds(_ambience_sound = -1) 
+{
+	array_foreach(ambience_sounds, function (_ambience_sound) 
+	{
+		global.sound_controller.stop(_ambience_sound);
+	});	
+	
+	if (_ambience_sound >= 0)
+	{
+		global.sound_controller.play(_ambience_sound);
+	}
+}
+
 function play_music()
 {
-	update_event_parameter_and_play(
-		FMOD_EVENT.MUSIC_GAMEPLAY, 
-		FMOD_PARAMETER_NAME_MUSIC,
-		global.options_controller.get_option(OPTIONS_MUSIC_PARAMETER)
-	);
+	if (!is_playing_music) {
+		update_event_parameter_and_play(
+			FMOD_EVENT.MUSIC_GAMEPLAY, 
+			FMOD_PARAMETER_NAME_MUSIC,
+			global.options_controller.get_option(OPTIONS_MUSIC_PARAMETER)
+		);
+	}
 		
 	is_playing_music = true;
 }
@@ -132,8 +155,26 @@ function load_events()
 				])
 		]);
 		
+	event_per_enum[? FMOD_EVENT.MUSIC_MAIN_MENU] = new FmodEvent(
+		"event:/MUSIC/mus_menu", 
+		[
+			
+		]);
+		
 	event_per_enum[? FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_01_CIDADEVELHA/sfx_amb_room_01", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.AMBIENCE_AKARAY] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_02_AKARAY/sfx_amb_room_02_akaray", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.AMBIENCE_KERYL] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_03_KERYI/sfx_amb_room_03_keryi", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.AMBIENCE_MORGUJA] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_04_MORGUJA/sfx_amb_room_04_morguja", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_05_SEREGIPE/sfx_amb_room_05_seregipe", [ ]);
 	
 	#endregion
 	
@@ -524,6 +565,38 @@ function load_events()
 		]);
 
 	#endregion
+	
+	#region OUNCE
+	
+	event_per_enum[? FMOD_EVENT.OUNCE_ATTACK] = new FmodEvent( 
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_atk", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.OUNCE_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_die", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.OUNCE_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_hurt", 
+		[
+		
+		]);
+
+	#endregion
+	
+	#region OBJECTS
+	
+	event_per_enum[? FMOD_EVENT.OBJECTS_FIRE] = new FmodEvent(
+		"event:/SFX/OBJECTS/FIRE/sfx_objects_fire", 
+		[
+		
+		]);
+	
+	#endregion
 }
 
 function load_busses()
@@ -534,8 +607,15 @@ function load_busses()
 function load_vcas()
 {
 	vcas_per_enum[? FMOD_VCA.MUSIC]	= fmod_studio_system_get_vca("vca:/MUSIC");
-	vcas_per_enum[? FMOD_VCA.SFX]	= fmod_studio_system_get_vca("vca:/SFX");
+	vcas_per_enum[? FMOD_VCA.SFX] = fmod_studio_system_get_vca("vca:/SFX");
+	vcas_per_enum[? FMOD_VCA.SFX_GAMEPLAY] = fmod_studio_system_get_vca("vca:/SFX GAMEPLAY");
+	vcas_per_enum[? FMOD_VCA.SFX_UI] = fmod_studio_system_get_vca("vca:/SFX UI");
 }
+
+function set_volume(_vca = FMOD_VCA.SFX_GAMEPLAY, _volume = 1) 
+{
+	fmod_studio_vca_set_volume(vcas_per_enum[? _vca], _volume);
+} 
 
 function on_options_change(_options = new OptionsModel())
 {
@@ -552,6 +632,9 @@ function on_options_change(_options = new OptionsModel())
 	
 	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.MUSIC], music_enabled ? music_volume : 0);
 	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX], sfx_enabled ? sfx_volume : 0);
+	
+	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX_GAMEPLAY], 1);
+	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX_UI], 1);
 }
 
 function create_3d_attributes()

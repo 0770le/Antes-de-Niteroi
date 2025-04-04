@@ -12,6 +12,8 @@ function focus(_object_index = obj_menu_controller)
 {
 	if (_object_index == noone) 
 	{
+		global.sound_controller.set_volume(FMOD_VCA.SFX_GAMEPLAY, 1);
+		
 		instance_activate_all();
 			
 		for (var _i = 0; _i < array_length(mutually_exclusives); _i++)
@@ -26,6 +28,8 @@ function focus(_object_index = obj_menu_controller)
 	}
 	else 
 	{
+		global.sound_controller.set_volume(FMOD_VCA.SFX_GAMEPLAY, 0);
+		
 		instance_deactivate_all(true);
 			
 		// deactivate mutually exclusive		

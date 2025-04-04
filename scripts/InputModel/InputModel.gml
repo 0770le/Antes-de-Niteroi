@@ -22,6 +22,7 @@ constructor
 	static notify = function ()
 	{
 		var _array = ds_map_values_to_array(listeners, []);
+		var _all_closed = true;
 	
 		for (var _i = 0; _i < array_length(_array); ++_i) 
 		{
@@ -31,12 +32,24 @@ constructor
 			}
 			else if (input_type == INPUT_TYPE.MENU)
 			{
-				_array[_i].on_input_menu(input);	
+				if (_array[_i].is_open)
+				{
+					_array[_i].on_input_menu(input);	
+					
+					_all_closed = false;
+					
+					break;
+				}
 			}
 			else if (input_type == INPUT_TYPE.KEY_MAP)
 			{
 				_array[_i].on_input_key_map(menu_item, input);	
 			}
+		}
+		
+		if (_all_closed && input_type == INPUT_TYPE.MENU) 
+		{
+			global.menu_controller.on_input_menu(input);
 		}
 	}
 }

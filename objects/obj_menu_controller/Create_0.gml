@@ -78,8 +78,6 @@ function init()
 {
 	global.menu_controller = self;
 	
-	global.sound_controller.stop(FMOD_EVENT.MUSIC_GAMEPLAY);
-	
 	root_menu = new MenuNode("Menu Principal");
 	
 	// Options	

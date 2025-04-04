@@ -81,7 +81,7 @@ function init()
 {
 	init_dependencies();
 	
-	// global.sound_controller.play(FMOD_EVENT.MUSIC_MENU);
+	global.sound_controller.play(FMOD_EVENT.MUSIC_MAIN_MENU);
 	
 	window_set_fullscreen(global.options_controller.options.fullscreen);
 	
@@ -91,6 +91,8 @@ function init()
 	{
 		root_menu.add_child(new MenuButton("Continuar", function () 
 		{
+			global.sound_controller.stop(FMOD_EVENT.MUSIC_MAIN_MENU);
+			
 			global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
 			
 			player_respawn();
@@ -99,6 +101,8 @@ function init()
 	
 	root_menu.add_child(new MenuButton("Novo Jogo", function() 
 	{ 
+		global.sound_controller.stop(FMOD_EVENT.MUSIC_MAIN_MENU);
+		
 		global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
 		
 		global.options_controller.set_option(OPTIONS_IS_NEW_GAME);

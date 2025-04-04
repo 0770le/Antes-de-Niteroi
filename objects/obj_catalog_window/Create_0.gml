@@ -39,8 +39,6 @@ function has_new_item()
 
 function close()
 {
-	is_open = false;
-	
 	selected_tab.toggle_items(false);
 	
 	selected_tab.selected_item.clear_new();
@@ -48,6 +46,8 @@ function close()
 	global.initializer.focus(noone);
 	
 	global.catalog_controller.hide_all();
+	
+	is_open = false;
 }
 
 function draw_second_background() 
@@ -112,9 +112,20 @@ function on_input_menu(_input = new MenuInputModel())
 		return;
 	}
 	
+	if (_input.toggle_catalog || _input.toggle_menu) {
+		global.catalog_controller.close();
+		
+		return;
+	}
+	
 	if (_input.cancel) 
 	{
-		close();
+		global.catalog_controller.close();
+		
+		_input = new MenuInputModel();
+		_input.toggle_menu = true;
+		
+		global.menu_controller.on_input_menu(_input);
 		
 		return;
 	}

@@ -534,8 +534,15 @@ function load_busses()
 function load_vcas()
 {
 	vcas_per_enum[? FMOD_VCA.MUSIC]	= fmod_studio_system_get_vca("vca:/MUSIC");
-	vcas_per_enum[? FMOD_VCA.SFX]	= fmod_studio_system_get_vca("vca:/SFX");
+	vcas_per_enum[? FMOD_VCA.SFX] = fmod_studio_system_get_vca("vca:/SFX");
+	vcas_per_enum[? FMOD_VCA.SFX_GAMEPLAY] = fmod_studio_system_get_vca("vca:/SFX GAMEPLAY");
+	vcas_per_enum[? FMOD_VCA.SFX_UI] = fmod_studio_system_get_vca("vca:/SFX UI");
 }
+
+function set_volume(_vca = FMOD_VCA.SFX_GAMEPLAY, _volume = 1) 
+{
+	fmod_studio_vca_set_volume(vcas_per_enum[? _vca], _volume);
+} 
 
 function on_options_change(_options = new OptionsModel())
 {
@@ -552,6 +559,9 @@ function on_options_change(_options = new OptionsModel())
 	
 	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.MUSIC], music_enabled ? music_volume : 0);
 	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX], sfx_enabled ? sfx_volume : 0);
+	
+	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX_GAMEPLAY], 1);
+	fmod_studio_vca_set_volume(vcas_per_enum[? FMOD_VCA.SFX_UI], 1);
 }
 
 function create_3d_attributes()

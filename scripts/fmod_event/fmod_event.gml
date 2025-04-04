@@ -12,7 +12,9 @@ enum FMOD_BUS
 enum FMOD_VCA
 {
 	MUSIC, 
-	SFX
+	SFX,
+	SFX_GAMEPLAY,
+	SFX_UI
 }
 
 #endregion

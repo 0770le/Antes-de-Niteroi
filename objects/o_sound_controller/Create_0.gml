@@ -56,11 +56,13 @@ function update_ambience_sounds(_ambience_sound = -1)
 
 function play_music()
 {
-	update_event_parameter_and_play(
-		FMOD_EVENT.MUSIC_GAMEPLAY, 
-		FMOD_PARAMETER_NAME_MUSIC,
-		global.options_controller.get_option(OPTIONS_MUSIC_PARAMETER)
-	);
+	if (!is_playing_music) {
+		update_event_parameter_and_play(
+			FMOD_EVENT.MUSIC_GAMEPLAY, 
+			FMOD_PARAMETER_NAME_MUSIC,
+			global.options_controller.get_option(OPTIONS_MUSIC_PARAMETER)
+		);
+	}
 		
 	is_playing_music = true;
 }

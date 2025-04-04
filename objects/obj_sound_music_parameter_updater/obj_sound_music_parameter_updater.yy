@@ -35,5 +35,5 @@
     "path":"sprites/spr_sound_transparent/spr_sound_transparent.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

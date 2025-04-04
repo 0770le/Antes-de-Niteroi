@@ -62,6 +62,9 @@ target_y = 0;
 
 cliff_first_jump = false;
 
+die_sound_event = FMOD_EVENT.OUNCE_DIE;
+hurt_sound_event = FMOD_EVENT.OUNCE_HURT;
+
 //states
 enum iaguara_states {
 	IDLE,			//0
@@ -172,3 +175,17 @@ function iaguara_attack() {
 		
 //	launch(jump_y, jump_x);	
 //}
+
+function play_state_update_sounds(_previous_state, _new_state) {
+	
+	// on enter
+	switch (_new_state)
+	{
+		case iaguara_states.ATTACK: 
+			global.sound_controller.update_position_and_play(
+				FMOD_EVENT.OUNCE_ATTACK,
+				x, y
+			);
+			break;
+	}
+}

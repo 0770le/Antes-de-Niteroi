@@ -563,6 +563,38 @@ function load_events()
 		]);
 
 	#endregion
+	
+	#region OUNCE
+	
+	event_per_enum[? FMOD_EVENT.OUNCE_ATTACK] = new FmodEvent( 
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_atk", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.OUNCE_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_die", 
+		[
+		
+		]);
+		
+	event_per_enum[? FMOD_EVENT.OUNCE_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_hurt", 
+		[
+		
+		]);
+
+	#endregion
+	
+	#region OBJECTS
+	
+	event_per_enum[? FMOD_EVENT.OBJECTS_FIRE] = new FmodEvent(
+		"event:/SFX/OBJECTS/FIRE/sfx_objects_fire", 
+		[
+		
+		]);
+	
+	#endregion
 }
 
 function load_busses()

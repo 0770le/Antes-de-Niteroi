@@ -8,8 +8,8 @@
   "name":"obj_sound_music_parameter_updater_side_rooms",
   "overriddenProperties":[],
   "parent":{
-    "name":"Model",
-    "path":"folders/Objects/Sound/Model.yy",
+    "name":"MusicParameterUpdater",
+    "path":"folders/Objects/Sound/Model/MusicParameterUpdater.yy",
   },
   "parentObjectId":{
     "name":"obj_sound_music_parameter_updater",

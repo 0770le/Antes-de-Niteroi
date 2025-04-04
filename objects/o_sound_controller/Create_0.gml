@@ -13,7 +13,6 @@ music_volume				= 100;
 sfx_volume					= 100;
 
 fmod_3d_att					= undefined;
-sound_visuals				= undefined;
 music_parameter				= FMOD_PARAMETER_MUSIC_VALUE.INTRO;
 is_playing_music			= false;
 deaf_assistance				= false;
@@ -126,8 +125,6 @@ function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.MUSIC_GAME
 	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
 	event_per_enum[? _event_enum].update_position(_x, _y);
 	event_per_enum[? _event_enum].play();
-		
-	if (deaf_assistance) sound_visuals.add(new SoundVisual(_x, _y));
 }
 
 function load_fmod()
@@ -649,11 +646,6 @@ function create_3d_attributes()
 	fmod_studio_system_set_listener_attributes(0, fmod_3d_att);
 }
 
-function create_sound_visuals()
-{
-	sound_visuals = new SoundVisuals();
-}
-
 function init() 
 {
 	load_fmod();
@@ -665,8 +657,6 @@ function init()
 	load_busses();
 	
 	create_3d_attributes();
-	
-	create_sound_visuals();
 }
 
 init();

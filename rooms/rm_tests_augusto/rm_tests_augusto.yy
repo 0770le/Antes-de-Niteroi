@@ -14,6 +14,7 @@
     {"name":"inst_40C6FE74","path":"rooms/rm_tests_augusto/rm_tests_augusto.yy",},
     {"name":"inst_18DBA513","path":"rooms/rm_tests_augusto/rm_tests_augusto.yy",},
     {"name":"inst_40F1C382","path":"rooms/rm_tests_augusto/rm_tests_augusto.yy",},
+    {"name":"inst_A38E51A","path":"rooms/rm_tests_augusto/rm_tests_augusto.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -53,6 +54,7 @@
         {"$GMRInstance":"v1","%Name":"inst_40C6FE74","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_40C6FE74","objectId":{"name":"o_jararaca","path":"objects/o_jararaca/o_jararaca.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":432.0,"y":240.0,},
         {"$GMRInstance":"v1","%Name":"inst_18DBA513","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_18DBA513","objectId":{"name":"o_harpia","path":"objects/o_harpia/o_harpia.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":496.0,"y":224.0,},
         {"$GMRInstance":"v1","%Name":"inst_40F1C382","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_40F1C382","objectId":{"name":"o_iaguara","path":"objects/o_iaguara/o_iaguara.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":464.0,"y":240.0,},
+        {"$GMRInstance":"v1","%Name":"inst_A38E51A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_A38E51A","objectId":{"name":"obj_deaf_helper_rain","path":"objects/obj_deaf_helper_rain/obj_deaf_helper_rain.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":80.0,"y":240.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Collisions","depth":1600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":57,"TileCompressedData":[
           -37,1,-20,-2147483648,1,1,-31,0,-4,-2147483648,1,1,-20,-2147483648,1,1,-31,0,-4,-2147483648,1,1,-20,

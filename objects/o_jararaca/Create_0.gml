@@ -1,5 +1,7 @@
 event_inherited();
 
+layer = layer_get_id(LAYER_EFFECTS);
+
 can_alert = false;
 enemy_animation = jararaca_anim;
 tongue = false;//alarme intervalo entre linguinhas

@@ -117,6 +117,9 @@ jump_held = 0;
 shoot = 0;
 shoot_held = 0;
 
+//respawn
+respawn_coldown_max = 3*60;
+respawn_coldown = 0;
 
 
 //camera 
@@ -313,6 +316,34 @@ function play_state_change_sounds(_previous_state, _current_state)
 	
 	// both states
 	
+}
+
+function apply_state_change_triggers(_previous_state, _new_state) 
+{
+	if (_previous_state == _new_state) return;
+	
+	switch (_new_state) 
+	{
+		case states.DIE:
+			if (lives2 >= 1)
+			{
+				global.options_controller.set_options({
+					OPTIONS_PLAYER_LIVES: max(0, lives2 - 1),
+					OPTIONS_PLAYER_DIED: true
+				});
+			}
+			else 
+			{
+				global.options_controller.set_options({
+					OPTIONS_IS_NEW_GAME: true,
+					OPTIONS_PLAYER_DIED: true
+				});
+			}
+		
+			respawn_coldown = respawn_coldown_max;
+		
+			break;
+	}
 }
 
 function get_state_as_string(_state)

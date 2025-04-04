@@ -7,38 +7,6 @@ function check_player_hp() {
 		
 		state = states.DIE;
 		
-		if (_previous_state != state) {
-			if (o_player.lives2 >= 1)
-			{
-				var _ = call_later(3, time_source_units_seconds, function () {
-				
-					global.options_controller.set_options({
-						OPTIONS_PLAYER_LIVES: max(0, o_player.lives2 - 1),
-						OPTIONS_PLAYER_DIED: true
-					});
-				
-					instance_destroy(o_player);
-				
-					player_respawn();
-				});
-			}
-			else 
-			{
-				global.logger.info("YOU DIED");
-				
-				global.options_controller.set_options({
-					OPTIONS_IS_NEW_GAME: true,
-					OPTIONS_PLAYER_DIED: true
-				});
-				
-				var _ = call_later(5, time_source_units_seconds, function () {
-					instance_destroy(global.player); 
-		
-					room_goto(rm_main_menu);	
-				});
-			}
-		}
-		
 		visible = false;
 		lives --;
 		

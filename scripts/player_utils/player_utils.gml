@@ -21,7 +21,7 @@ function player_respawn() {
 				x = other.spawn_x;
 				y = other.spawn_y;
 			}
-					
+			
 			with(o_player) {
 				room_start_pos_x = other.spawn_x;
 				room_start_pos_y = other.spawn_y;

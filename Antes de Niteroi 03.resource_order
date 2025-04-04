@@ -239,6 +239,8 @@
     {"name":"rm_cidade_velha","order":4,"path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"rm_game_end","order":3,"path":"rooms/rm_game_end/rm_game_end.yy",},
     {"name":"rm_init","order":2,"path":"rooms/rm_init/rm_init.yy",},
+    {"name":"rm_keryi_correcao","order":23,"path":"rooms/rm_keryi_correcao/rm_keryi_correcao.yy",},
+    {"name":"rm_keryi_original","order":22,"path":"rooms/rm_keryi_original/rm_keryi_original.yy",},
     {"name":"rm_keryi","order":11,"path":"rooms/rm_keryi/rm_keryi.yy",},
     {"name":"rm_main_menu","order":18,"path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"rm_morguja_uasu","order":9,"path":"rooms/rm_morguja_uasu/rm_morguja_uasu.yy",},

@@ -306,6 +306,8 @@
     {"id":{"name":"rm_cidade_velha","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},},
     {"id":{"name":"rm_game_end","path":"rooms/rm_game_end/rm_game_end.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
+    {"id":{"name":"rm_keryi_correcao","path":"rooms/rm_keryi_correcao/rm_keryi_correcao.yy",},},
+    {"id":{"name":"rm_keryi_original","path":"rooms/rm_keryi_original/rm_keryi_original.yy",},},
     {"id":{"name":"rm_keryi","path":"rooms/rm_keryi/rm_keryi.yy",},},
     {"id":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
@@ -922,6 +924,8 @@
     {"roomId":{"name":"rm_tests","path":"rooms/rm_tests/rm_tests.yy",},},
     {"roomId":{"name":"rm_tests_menu","path":"rooms/rm_tests_menu/rm_tests_menu.yy",},},
     {"roomId":{"name":"rm_tests_augusto","path":"rooms/rm_tests_augusto/rm_tests_augusto.yy",},},
+    {"roomId":{"name":"rm_keryi_original","path":"rooms/rm_keryi_original/rm_keryi_original.yy",},},
+    {"roomId":{"name":"rm_keryi_correcao","path":"rooms/rm_keryi_correcao/rm_keryi_correcao.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -51,7 +51,7 @@ if(keyboard_check_pressed(vk_f3) and room != rm_seregipe) {
 	global.fader.to_room(rm_seregipe, 3730, 2900);
 }
 if(keyboard_check_pressed(vk_f4) and room != rm_morguja_uasu) {
-	global.fader.to_room(rm_morguja_uasu, 3730, 2900);
+	global.fader.to_room(rm_morguja_uasu, 3730, 0);
 }
 if(keyboard_check_pressed(vk_f5) and room != rm_morguja_uasu) {
 	global.fader.to_room(rm_morguja_uasu, 6900, 750);

@@ -2,9 +2,9 @@ global.fader = self;
 
 // settings
 
-transition_period_max = 160;
-pivot_balance = 0.4;
-alpha_max = 1.2;
+transition_period_max = 120;
+pivot_balance = 0.9;
+alpha_max = 1.4;
 
 // controls
 

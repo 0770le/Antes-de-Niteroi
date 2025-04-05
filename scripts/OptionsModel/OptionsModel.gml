@@ -42,7 +42,11 @@ function OptionsModel (
 		spawn_y: 0,
 		player_lives: 3,
 		player_hp: 10,
-		player_died: false,
+		player_died: false,		
+		player_has_bow: false,
+		player_has_cape: false,
+		player_arrows: 0,
+		player_facing: 1,
 		
 		quest_saved_kunumiuasu: false,
 	}) 
@@ -78,6 +82,10 @@ constructor
 	player_lives = _options_model.player_lives;
 	player_hp = _options_model.player_hp;
 	player_died = _options_model.player_died;
+	player_has_bow = _options_model.player_has_bow;
+	player_has_cape = _options_model.player_has_cape;
+	player_arrows = _options_model.player_arrows;
+	player_facing = _options_model.player_facing;
 	
 	// quest progress
 	quest_saved_kunumiuasu = _options_model.quest_saved_kunumiuasu;

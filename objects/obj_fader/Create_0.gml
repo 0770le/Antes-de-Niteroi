@@ -10,11 +10,13 @@ alpha_max = 1.2;
 transition_period = 0;
 alpha = 0;
 is_active = false;
+will_be_consumed = false;
 
 // others 
 
 spawn_x = 0;
 spawn_y = 0;
+facing = 0;
 spawn_room = rm_cidade_velha;
 
 function to_room(
@@ -29,11 +31,12 @@ function to_room(
 		spawn_room = _spawn_room;
 	
 		transition_period = transition_period_max;
+		will_be_consumed = true;
 	}
 }
 
 function load_respawn_data() { // the player will call it during creation
-	if (spawn_x > 0 && spawn_y > 0)
+	if (spawn_x > 0 && spawn_y > 0 && will_be_consumed)
 	{
 		global.player.room_start_pos_x = spawn_x;
 		global.player.room_start_pos_y = spawn_y;
@@ -44,9 +47,15 @@ function load_respawn_data() { // the player will call it during creation
 		var _lives = global.options_controller.get_option(OPTIONS_PLAYER_LIVES);
 		var _hp = global.options_controller.get_option(OPTIONS_PLAYER_HP);
 		var _died = global.options_controller.get_option(OPTIONS_PLAYER_DIED);
+		var _arrows = global.options_controller.get_option(OPTIONS_PLAYER_ARROWS);
+		var _facing = global.options_controller.get_option(OPTIONS_PLAYER_FACING);
 		
 		global.player.lives2 = _lives;
 		global.player.hp = _died ? o_game.max_hp : _hp;
+		global.player.arrows = _arrows;
+		global.player.facing = _facing;
+		
+		will_be_consumed = false;
 	}
 }
 

@@ -19,6 +19,10 @@
 #macro OPTIONS_PLAYER_LIVES				"player_lives"
 #macro OPTIONS_PLAYER_HP				"player_hp"
 #macro OPTIONS_PLAYER_DIED				"player_died"
+#macro OPTIONS_PLAYER_HAS_BOW			"player_has_bow"
+#macro OPTIONS_PLAYER_HAS_CAPE			"player_has_cape"
+#macro OPTIONS_PLAYER_ARROWS			"player_arrows"
+#macro OPTIONS_PLAYER_FACING			"player_facing"
 
 // saveables
 
@@ -111,6 +115,11 @@ function read_all()
 		global.input_manager.gamepad_keymap = options.gamepad_keymap;
 		global.input_manager.keyboard_keymap = options.keyboard_keymap;
 		global.input_manager.last_input_source_type = options.last_input_source_type;
+		
+		global.game.has_bow = options.player_has_bow;
+		global.game.has_cape = options.player_has_cape;
+		global.game.has_cloak = options.player_has_cape;
+		
 	} catch (_e) {
 		
 		global.logger.error($"failed to load options file in room {room}: {_e}");
@@ -120,6 +129,10 @@ function read_all()
 		global.input_manager.gamepad_keymap = options.gamepad_keymap;
 		global.input_manager.keyboard_keymap = options.keyboard_keymap;
 		global.input_manager.last_input_source_type = options.last_input_source_type;
+		
+		global.game.has_bow = options.player_has_bow;
+		global.game.has_cape = options.player_has_cape;
+		global.game.has_cloak = options.player_has_cape;
 		
 		write_all();
 	}

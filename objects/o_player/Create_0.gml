@@ -231,15 +231,17 @@ function acquire_bow() {
 }
 
 function update_save() {
-	global.logger.debug($"player update_save({x},{y});");
-	
 	global.options_controller.set_options({
 		OPTIONS_LAST_ROOM: int64(room),
 		OPTIONS_SPAWN_X: x,
 		OPTIONS_SPAWN_Y: y,
 		OPTIONS_PLAYER_LIVES: lives2,
 		OPTIONS_PLAYER_HP: hp,
-		OPTIONS_PLAYER_DIED: false
+		OPTIONS_PLAYER_DIED: false,
+		OPTIONS_PLAYER_HAS_CAPE: o_game.has_cloak || o_game.has_cape,
+		OPTIONS_PLAYER_HAS_BOW: o_game.has_bow,
+		OPTIONS_PLAYER_ARROWS: arrows,
+		OPTIONS_PLAYER_FACING: facing
 	});
 }
 
@@ -343,6 +345,17 @@ function apply_state_change_triggers(_previous_state, _new_state)
 			}
 		
 			respawn_coldown = respawn_coldown_max;
+		
+			break;
+	}
+	
+	switch (_previous_state)
+	{
+		case states.SHOOT:
+		case states.SHOOT_UP:
+			global.options_controller.set_options({
+				OPTIONS_PLAYER_ARROWS: arrows
+			});
 		
 			break;
 	}

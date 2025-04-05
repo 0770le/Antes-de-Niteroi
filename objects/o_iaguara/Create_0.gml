@@ -29,6 +29,8 @@ vsp = 0;
 vsp_decimal = 0;
 drag =0;
 
+number = 0;
+
 
 //pounce
 

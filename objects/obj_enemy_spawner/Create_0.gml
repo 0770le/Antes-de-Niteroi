@@ -28,6 +28,7 @@ last_spawn_attempt = 0;
 spawn_radius = 50; // pixels
 full_hp = 3;
 current_hp = full_hp;
+image_speed = 0;
 
 function step()
 {

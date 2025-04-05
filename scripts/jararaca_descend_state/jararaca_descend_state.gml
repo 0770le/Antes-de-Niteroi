@@ -7,8 +7,8 @@ function jararaca_descend_state(){
 	//apply movement
 	collision();
 
-	var step = tilemap_get_at_pixel(global.map, x-facing, bbox_bottom+1);
-	if (step == SOLID) {
+	var _step = tilemap_get_at_pixel(global.map, x-facing, bbox_bottom+1);
+	if (_step == SOLID or _step == PLATAFORM) {
 		
 		var t0 = tilemap_get_at_pixel(global.map, x - (TILE_SIZE)*facing, bbox_bottom+1);	//2º bloco a frente
 		var t1 = tilemap_get_at_pixel(global.map, x - (TILE_SIZE)*2*facing, bbox_bottom+1);	//3º bloco a frente
@@ -19,7 +19,7 @@ function jararaca_descend_state(){
 		var t2_2 = tilemap_get_at_pixel(global.map, x - (TILE_SIZE)*3*facing, bbox_bottom+1-TILE_SIZE);	//3º bloco a frente
 		var t3_2 = tilemap_get_at_pixel(global.map, x - (TILE_SIZE)*4*facing, bbox_bottom+1-TILE_SIZE);	//4º bloco a frente
 		
-		if(t0 == SOLID and t1 == SOLID and t2 == SOLID and (t0_2 == VOID or t0_2 == DEATH) and (t1_2 == VOID or t1_2 == DEATH) and (t2_2 == VOID or t2_2 == DEATH) and (t3_2 == VOID or t3_2 == DEATH)) {
+		if(t0 != VOID and t1 != VOID and t2 != VOID and (t0_2 == VOID or t0_2 == DEATH) and (t1_2 == VOID or t1_2 == DEATH) and (t2_2 == VOID or t2_2 == DEATH) and (t3_2 == VOID or t3_2 == DEATH)) {
 			wall_y = bbox_bottom;
 			state = jararaca_states.STOP_DESCEND;
 			image_index = 0;
@@ -29,8 +29,8 @@ function jararaca_descend_state(){
 			vsp = -vsp;
 		}
 	} else {
-		step = tilemap_get_at_pixel(global.map, side() + 1*facing, y);
-		if (step == VOID) {
+		_step = tilemap_get_at_pixel(global.map, side() + 1*facing, y);
+		if (_step == VOID) {
 			state = jararaca_states.CLIMB;
 			image_index = 0;
 			vsp = -vsp;

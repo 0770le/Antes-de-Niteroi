@@ -483,6 +483,7 @@
     {"name":"s_gray_cloud_1","order":19,"path":"sprites/s_gray_cloud_1/s_gray_cloud_1.yy",},
     {"name":"s_gray_cloud_2","order":20,"path":"sprites/s_gray_cloud_2/s_gray_cloud_2.yy",},
     {"name":"s_harpia_attack","order":3,"path":"sprites/s_harpia_attack/s_harpia_attack.yy",},
+    {"name":"s_harpia_die","order":4,"path":"sprites/s_harpia_die/s_harpia_die.yy",},
     {"name":"s_harpia_move_back","order":1,"path":"sprites/s_harpia_move_back/s_harpia_move_back.yy",},
     {"name":"s_harpia_move_forward","order":2,"path":"sprites/s_harpia_move_forward/s_harpia_move_forward.yy",},
     {"name":"s_hide_spot","order":10,"path":"sprites/s_hide_spot/s_hide_spot.yy",},

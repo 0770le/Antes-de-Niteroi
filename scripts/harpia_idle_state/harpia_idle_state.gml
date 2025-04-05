@@ -1,6 +1,9 @@
 function harpia_idle_state(){
 	image_speed = 0;
 	
+	hsp = 0;
+	dir = facing;	
+	
 	if(o_player .x < x-150) {
 		image_index = 0;
 	} else if(o_player .x < x - 50) {
@@ -14,7 +17,7 @@ function harpia_idle_state(){
 	}
 	
 	//Se o player estiver vivo, perto e tiver line of sight
-	if(o_player.hp > 0 and distance_to_object(o_player) < alert_distance) {
+	if(o_player.hp > 0 and distance_to_object(o_player) < alert_distance and (true_sight or line_of_sight(true,true))) {
 		//se te olhar ininterruptamente por 2 segundos, ativa
 		if(alert_timer-- <= 0) {
 			alert = true;
@@ -23,7 +26,6 @@ function harpia_idle_state(){
 			attack_delay = attack_cooldown;
 			state = harpia_states.CHASE;
 			facing = sign(o_player.x-x);
-			dir = facing;
 		}
 	} else {
 		alert_timer = alert_initial_timer;

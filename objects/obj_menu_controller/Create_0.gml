@@ -205,11 +205,9 @@ function init()
 	// Quit Game	
 	root_menu.add_child(new MenuButton("Menu Inicial", function() 
 	{ 
-		global.initializer.focus(noone);
+		//global.initializer.focus(noone);
 		
-		instance_destroy(global.player);
-		
-		room_goto(rm_main_menu);
+		global.fader.to_room(rm_main_menu);
 	}));
 	
 	selected_item = root_menu.children[0];

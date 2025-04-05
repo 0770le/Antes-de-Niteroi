@@ -5,18 +5,26 @@ function player_die_state(){
 	{
 		respawn_coldown--;
 	}
-	else 
+	else if (respawn_coldown == 0)
 	{
-		instance_destroy();
-		
 		if (lives2 > 0)
 		{
-			player_respawn();
+			var _respawn_room = global.options_controller.get_option(OPTIONS_LAST_ROOM);
+			var _respawn_x = global.options_controller.get_option(OPTIONS_SPAWN_X);
+			var _respawn_y = global.options_controller.get_option(OPTIONS_SPAWN_Y);
+			
+			global.fader.to_room(
+				_respawn_room,
+				_respawn_x,
+				_respawn_y
+			);
 		}
 		else 
 		{
-			room_goto(rm_main_menu);
+			global.fader.to_room(rm_main_menu);
 		}	
+		
+		respawn_coldown--;
 	}
 	
 	if(instance_exists(corpse)){

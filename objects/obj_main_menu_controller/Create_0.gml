@@ -69,6 +69,8 @@ function init_dependencies()
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_game);
 	if (!instance_exists(o_camera)) 
 		instance_create_layer(0, 0, LAYER_CONTROLLERS, o_camera);
+	if (!instance_exists(obj_fader))
+		instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_fader);
 		
 	// non-persistants
 	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_input_manager);
@@ -92,23 +94,32 @@ function init()
 		root_menu.add_child(new MenuButton("Continuar", function () 
 		{
 			global.sound_controller.stop(FMOD_EVENT.MUSIC_MAIN_MENU);
-			
 			global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
 			
-			player_respawn();
+			var _last_room = global.options_controller.get_option(OPTIONS_LAST_ROOM);
+			var _spawn_x = global.options_controller.get_option(OPTIONS_SPAWN_X);
+			var _spawn_y = global.options_controller.get_option(OPTIONS_SPAWN_Y);
+			var _lives = global.options_controller.get_option(OPTIONS_PLAYER_LIVES);
+			var _hp = global.options_controller.get_option(OPTIONS_PLAYER_HP);
+			var _died = global.options_controller.get_option(OPTIONS_PLAYER_DIED);
+			
+			global.fader.to_room(
+				_last_room,
+				_spawn_x,
+				_spawn_y
+			);
 		}));
 	}
 	
 	root_menu.add_child(new MenuButton("Novo Jogo", function() 
 	{ 
 		global.sound_controller.stop(FMOD_EVENT.MUSIC_MAIN_MENU);
-		
 		global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
 		
 		global.options_controller.set_option(OPTIONS_IS_NEW_GAME);
 		global.options_controller.set_option(OPTIONS_MUSIC_PARAMETER, FMOD_PARAMETER_MUSIC_VALUE.INTRO);
 		
-		room_goto_next();
+		global.fader.to_room(rm_cidade_velha);
 	}));
 	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 

@@ -120,7 +120,7 @@ function play_state_update_sounds(_previous_state, _new_state) {
 			break;
 	}
 	
-	global.logger.debug($"Harpia previous state: {get_state_as_string(_previous_state)}, new state: {get_state_as_string(_new_state)}");
+	//global.logger.debug($"Harpia previous state: {get_state_as_string(_previous_state)}, new state: {get_state_as_string(_new_state)}");
 }
 
 function get_state_as_string(_state)

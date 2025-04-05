@@ -231,6 +231,8 @@ function acquire_bow() {
 }
 
 function update_save() {
+	global.logger.debug($"player update_save({x},{y});");
+	
 	global.options_controller.set_options({
 		OPTIONS_LAST_ROOM: int64(room),
 		OPTIONS_SPAWN_X: x,
@@ -371,6 +373,10 @@ function get_state_as_string(_state)
 	}
 }
 
+global.fader.load_respawn_data();
+
 if (o_game.has_bow) {
 	acquire_bow();
 }
+
+global.logger.debug($"player created x:{x}, y:{y}");

@@ -542,7 +542,7 @@ function unlock_saved_items()
 	
 	with (obj_catalog_item)
 	{
-		global.logger.debug($"unlock_saved_items type: {self.type}");
+		global.logger.trace($"unlock_saved_items type: {self.type}");
 		
 		if (array_contains(global.options_controller.options.unlocked_catalog_items, type))
 		{

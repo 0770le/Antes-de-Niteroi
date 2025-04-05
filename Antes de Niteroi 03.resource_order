@@ -13,6 +13,8 @@
     {"name":"EnemySpawner","order":15,"path":"folders/Objects/EnemySpawner.yy",},
     {"name":"Controller","order":1,"path":"folders/Objects/EnemySpawner/Controller.yy",},
     {"name":"Sprites","order":2,"path":"folders/Objects/EnemySpawner/Sprites.yy",},
+    {"name":"Fader","order":17,"path":"folders/Objects/Fader.yy",},
+    {"name":"Controller","order":1,"path":"folders/Objects/Fader/Controller.yy",},
     {"name":"Fauna","order":11,"path":"folders/Objects/Fauna.yy",},
     {"name":"General","order":4,"path":"folders/Objects/General.yy",},
     {"name":"Projectil","order":10,"path":"folders/Objects/General/Projectil.yy",},

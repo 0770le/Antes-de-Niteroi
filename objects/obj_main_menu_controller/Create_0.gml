@@ -99,9 +99,6 @@ function init()
 			var _last_room = global.options_controller.get_option(OPTIONS_LAST_ROOM);
 			var _spawn_x = global.options_controller.get_option(OPTIONS_SPAWN_X);
 			var _spawn_y = global.options_controller.get_option(OPTIONS_SPAWN_Y);
-			var _lives = global.options_controller.get_option(OPTIONS_PLAYER_LIVES);
-			var _hp = global.options_controller.get_option(OPTIONS_PLAYER_HP);
-			var _died = global.options_controller.get_option(OPTIONS_PLAYER_DIED);
 			
 			global.fader.to_room(
 				_last_room,
@@ -116,8 +113,8 @@ function init()
 		global.sound_controller.stop(FMOD_EVENT.MUSIC_MAIN_MENU);
 		global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
 		
-		global.options_controller.set_option(OPTIONS_IS_NEW_GAME);
-		global.options_controller.set_option(OPTIONS_MUSIC_PARAMETER, FMOD_PARAMETER_MUSIC_VALUE.INTRO);
+		global.options_controller.clear_game_data();
+		global.options_controller.set_option(OPTIONS_IS_NEW_GAME, false);
 		
 		global.fader.to_room(rm_cidade_velha);
 	}));

@@ -3,6 +3,7 @@ global.fader = self;
 // settings
 
 transition_period_max = 160;
+pivot_balance = 0.4;
 alpha_max = 1.2;
 
 // controls
@@ -36,14 +37,8 @@ function to_room(
 }
 
 function load_respawn_data() { // the player will call it during creation
-	if (spawn_x > 0 && spawn_y > 0 && will_be_consumed)
+	if (will_be_consumed)
 	{
-		global.player.room_start_pos_x = spawn_x;
-		global.player.room_start_pos_y = spawn_y;
-	
-		global.player.x = spawn_x;
-		global.player.y = spawn_y;
-		
 		var _lives = global.options_controller.get_option(OPTIONS_PLAYER_LIVES);
 		var _hp = global.options_controller.get_option(OPTIONS_PLAYER_HP);
 		var _died = global.options_controller.get_option(OPTIONS_PLAYER_DIED);
@@ -55,8 +50,17 @@ function load_respawn_data() { // the player will call it during creation
 		global.player.arrows = _arrows;
 		global.player.facing = _facing;
 		
-		will_be_consumed = false;
+		if (spawn_x > 0 && spawn_y > 0)
+		{
+			global.player.room_start_pos_x = spawn_x;
+			global.player.room_start_pos_y = spawn_y;
+	
+			global.player.x = spawn_x;
+			global.player.y = spawn_y;
+		}
 	}
+	
+	will_be_consumed = false;
 }
 
 function __prepare_room() {
@@ -74,7 +78,7 @@ function __prepare_room() {
 }
 
 function __step() {
-	var _pivot = transition_period_max / 2;
+	var _pivot = transition_period_max * pivot_balance;
 	
 	if (transition_period > _pivot) {
 		alpha = ((transition_period_max - transition_period) / _pivot)*alpha_max;

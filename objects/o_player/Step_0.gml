@@ -42,37 +42,37 @@ if (!instance_exists(o_fade)) {
 }
 
 if(keyboard_check_pressed(vk_f1) and room != rm_cidade_velha) {
-	fade_to_room(rm_cidade_velha, 3762, 415, other.facing);	
+	global.fader.to_room(rm_cidade_velha, 3762, 415);
 }
 if(keyboard_check_pressed(vk_f2) and room != rm_akaray) {
-	fade_to_room(rm_akaray, 2920, 751, other.facing);
+	global.fader.to_room(rm_akaray, 2920, 751);
 }
 if(keyboard_check_pressed(vk_f3) and room != rm_seregipe) {
-	fade_to_room(rm_seregipe, 3730, 2900, other.facing);	
+	global.fader.to_room(rm_seregipe, 3730, 2900);
 }
 if(keyboard_check_pressed(vk_f4) and room != rm_morguja_uasu) {
-	fade_to_room(rm_morguja_uasu, 4188, 1234, other.facing);	
+	global.fader.to_room(rm_morguja_uasu, 3730, 2900);
 }
 if(keyboard_check_pressed(vk_f5) and room != rm_morguja_uasu) {
-	fade_to_room(rm_morguja_uasu, 6900, 750, other.facing);	
+	global.fader.to_room(rm_morguja_uasu, 6900, 750);
 }
 if(keyboard_check_pressed(vk_f6) and room != rm_main_menu) {
-	fade_to_room(rm_main_menu, 3762, 415, other.facing);	
+	global.fader.to_room(rm_main_menu);	
 }
 if(keyboard_check_pressed(vk_f7) and room != rm_tests_augusto) {
-	fade_to_room(rm_tests_augusto, 200, 200, other.facing);	
+	global.fader.to_room(rm_tests_augusto, 200, 200);	
 }
 
 if(keyboard_check_pressed(vk_f10) and room != rm_tests) {
-	fade_to_room(rm_tests, 71, 395, other.facing);	
+	global.fader.to_room(rm_tests, 71, 395);
 }
 
 if(keyboard_check_pressed(vk_f11) and room != rm_tests_1) {
-	fade_to_room(rm_tests_1, 213, 476, other.facing);	
+	global.fader.to_room(rm_tests_1, 213, 476);
 }
 
 if(keyboard_check_pressed(vk_f12) and room != rm_keryi) {
-	fade_to_room(rm_keryi,5412, 566, other.facing);	
+	global.fader.to_room(rm_keryi,5412, 566);
 }
 
 if(keyboard_check_pressed(ord("O"))) {

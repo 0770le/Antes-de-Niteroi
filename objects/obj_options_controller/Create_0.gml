@@ -28,6 +28,12 @@
 
 options = new OptionsModel();
 
+new_game_properties = [
+	OPTIONS_LAST_ROOM, OPTIONS_SPAWN_X, OPTIONS_SPAWN_Y, 
+	OPTIONS_PLAYER_LIVES, OPTIONS_PLAYER_HP, OPTIONS_PLAYER_DIED, OPTIONS_PLAYER_HAS_BOW, 
+	OPTIONS_PLAYER_HAS_CAPE, OPTIONS_PLAYER_ARROWS, OPTIONS_PLAYER_FACING, OPTIONS_MUSIC_PARAMETER
+]
+
 // transients
 
 listeners	= ds_map_create();
@@ -53,6 +59,17 @@ function notify_listeners()
 	{
 		_listeners[_i].on_options_change(self.options); 
 	}
+}
+
+function clear_game_data()
+{
+	var _new_game_options = new OptionsModel();
+	
+	for (var _i = 0; _i < array_length(new_game_properties); _i++) {
+		options[$ new_game_properties[_i]] = _new_game_options[$ new_game_properties[_i]];
+	}
+	
+	save_and_notify();
 }
 
 #endregion

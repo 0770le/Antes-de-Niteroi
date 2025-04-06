@@ -2,7 +2,7 @@ global.fader = self;
 
 // settings
 
-transition_period_max = 120;
+transition_period_max = 90;
 pivot_balance = 0.9;
 alpha_max = 1.4;
 
@@ -11,7 +11,6 @@ alpha_max = 1.4;
 transition_period = 0;
 alpha = 0;
 is_active = false;
-will_be_consumed = false;
 
 // others 
 
@@ -32,35 +31,29 @@ function to_room(
 		spawn_room = _spawn_room;
 	
 		transition_period = transition_period_max;
-		will_be_consumed = true;
 	}
 }
 
 function load_respawn_data() { // the player will call it during creation
-	if (will_be_consumed)
+	var _lives = global.options_controller.get_option(OPTIONS_PLAYER_LIVES);
+	var _hp = global.options_controller.get_option(OPTIONS_PLAYER_HP);
+	var _died = global.options_controller.get_option(OPTIONS_PLAYER_DIED);
+	var _arrows = global.options_controller.get_option(OPTIONS_PLAYER_ARROWS);
+	var _facing = global.options_controller.get_option(OPTIONS_PLAYER_FACING);
+		
+	global.player.lives2 = _lives;
+	global.player.hp = _died ? o_game.max_hp : _hp;
+	global.player.arrows = _arrows;
+	global.player.facing = _facing;
+		
+	if (spawn_x > 0 && spawn_y > 0)
 	{
-		var _lives = global.options_controller.get_option(OPTIONS_PLAYER_LIVES);
-		var _hp = global.options_controller.get_option(OPTIONS_PLAYER_HP);
-		var _died = global.options_controller.get_option(OPTIONS_PLAYER_DIED);
-		var _arrows = global.options_controller.get_option(OPTIONS_PLAYER_ARROWS);
-		var _facing = global.options_controller.get_option(OPTIONS_PLAYER_FACING);
-		
-		global.player.lives2 = _lives;
-		global.player.hp = _died ? o_game.max_hp : _hp;
-		global.player.arrows = _arrows;
-		global.player.facing = _facing;
-		
-		if (spawn_x > 0 && spawn_y > 0)
-		{
-			global.player.room_start_pos_x = spawn_x;
-			global.player.room_start_pos_y = spawn_y;
+		global.player.room_start_pos_x = spawn_x;
+		global.player.room_start_pos_y = spawn_y;
 	
-			global.player.x = spawn_x;
-			global.player.y = spawn_y;
-		}
+		global.player.x = spawn_x;
+		global.player.y = spawn_y;
 	}
-	
-	will_be_consumed = false;
 }
 
 function __prepare_room() {
@@ -69,11 +62,6 @@ function __prepare_room() {
 	if (spawn_x > 0 && spawn_y > 0) {
 		global.camera.x = spawn_x;
 		global.camera.y = spawn_y;
-	}
-	
-	if (spawn_room == rm_main_menu)
-	{
-		instance_destroy(global.player);
 	}
 }
 

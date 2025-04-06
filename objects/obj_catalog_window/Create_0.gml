@@ -295,13 +295,13 @@ function create_content()
 	_last_item.type = CATALOG_ITEM_TYPE.KARIOCA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Karióca - Reri’pê";
+	_last_item.label = "Karióca - Reri'pê";
 	_last_item.set_text("Alto do atual Morro da Glória (RJ). Com o apoio e a orientação de alguns franceses, os tupinambás construíram uma grande cerca de madeira, equipada com torres para armas de fogo, além de possuírem diversas espingardas.\nNa praia, haviam cavado fossos armados com estrepes como armadilhas. Chamado pelos nativos de rery-pê, lugar das ostras, ali se encontrava a primeira fortaleza tupinambá enfrentada pelos temiminós e portugueses na grande batalha de Uruçumirim.\nDurante essa batalha Estácio de Sá, mesmo usando sua armadura completa, foi mortalmente ferido por uma flecha inimiga." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.RERI_PE;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Gûyragûasu’unaê";
+	_last_item.label = "Gûyragûasu'unaê";
 	_last_item.set_text("Atual Centro da cidade do Rio de Janeiro (RJ). Gûyragûasu’unaê é a Harpia, 'o grande passaro negro'. Nome do seu lider, e por extensão sua aldeia, é como chamavam uma ave de rapina gigantesca que habitava a Guanabara." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.GUYRAGUASU_UNAE;
@@ -335,11 +335,11 @@ function create_content()
 	_last_item.label = "Tupinambá";
 	_last_item.set_text("Os Tupinambás eram um povo indígena do grupo tupi-guarani que habitava principalmente o litoral brasileiro, com presença notável nos estados da Bahia, Rio de Janeiro, Espírito Santo e até São Paulo, na época do descobrimento. Eles tinham uma sociedade complexa, organizada em tribos e aldeias, com uma hierarquia bem definida entre as lideranças.\n A agricultura era baseada principalmente no cultivo de mandioca, milho e batata-doce, com técnicas de roça, que permitiam uma produção eficiente. \n Os guerreiros se pintavam de urucum e genipapo e se ornavam com as penas vermelhas do guará. \nOs Tupinambás praticavam a antropofagia em contexto ritualístico e simbólico, especialmente como parte de guerras intertribais. O ato representava a incorporação da força e bravura do inimigo, sendo um elemento cultural ligado à espiritualidade e crenças desse povo.");
 	_last_item.image = spr_catalog_morubixaba;
-	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
+	_last_item.type = CATALOG_ITEM_TYPE.TUPINAMBA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Morubixaba";
-	_last_item.set_text("Título conferido ao grande chefe, o 'principal' de uma taba. Esse posto era reservado a indígenas com mais de 40 anos, que haviam acumulado vasta experiência em batalhas e conquistado prestígio por seus feitos em combate. Eram líderes de expedições militares e participavam de conselhos que ocorriam entre os líderes das Tabas.");
+	_last_item.set_text("Título conferido ao grande chefe, o 'principal' de uma taba.\nEsse posto era reservado a indígenas com mais de 40 anos, que haviam acumulado vasta experiência em batalhas e conquistado prestígio por seus feitos em combate.\nEram líderes de expedições militares e participavam de conselhos que ocorriam entre os líderes das Tabas.");
 	_last_item.image = spr_catalog_morubixaba;
 	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
 	
@@ -347,74 +347,74 @@ function create_content()
 	_last_item.label = "Araryboîa";
 	_last_item.set_text("Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa em homenagem ao donatário da Capitania de São Vicente.\n"
 		+ "Ficou conhecido na história devido à sua aliança com os portugueses, fundamental para a conquista da baía de Guanabara frente aos tamoios e franceses, em 1567.\n"
-		+ "Como recompensa, recebeu da coroa portuguesa a propriedade de terras localizadas na entrada da baía de Guanabara.\n"
+		+ "Como recompensa, recebeu da coroa portuguesa a propriedade de terras localizadas na entrada da baía de Guanabara. "
 		+ "Ali foi estabelecida a aldeia de São Lourenço, que futuramente daria origem à cidade de Niterói, da qual é considerado o fundador.");
 	_last_item.image = spr_catalog_morubixaba;
-	_last_item.type = CATALOG_ITEM_TYPE.MORUBIXABA;
+	_last_item.type = CATALOG_ITEM_TYPE.ARARYBOIA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Kunumĩuasu";
-	_last_item.set_text("Palavra de origem tupi-guarani que significa 'grande menino' ou 'grande jovem'. 'Kunumĩ' refere-se a menino, jovem ou rapaz, enquanto 'uasu' (ou 'guasu') significa grande. Além disso, também designa uma posição militar iniciante, atribuída a jovens guerreiros responsáveis por remar as canoas durante deslocamentos estratégicos. Essa função era essencial na organização e mobilidade dos grupos indígenas.");
+	_last_item.set_text("Palavra de origem tupi-guarani que significa 'grande menino' ou 'grande jovem'. 'Kunumĩ' refere-se a menino, jovem ou rapaz, enquanto 'uasu' (ou 'guasu') significa grande.\nAlém disso, também designa uma posição militar iniciante, atribuída a jovens guerreiros responsáveis por remar as canoas durante deslocamentos estratégicos. Essa função era essencial na organização e mobilidade dos grupos indígenas.");
 	_last_item.image = spr_catalog_image;
 	_last_item.type = CATALOG_ITEM_TYPE.KUNUMIUASU;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Taba";
-	_last_item.set_text("A taba era uma aldeia típica dos tupinambás. As tabas eram organizadas de forma circular ou oval, com as malocas dispostas ao redor de uma área central, onde ocorriam rituais, reuniões e atividades comunitárias. Essa organização favorecia a segurança e a interação social. Cada uma tinha seus domínios territoriais. Elas recebiam o mesmo nome que seu Principal escolheu para sí, frequentemente valorizando algo marcante da natureza ao seu redor");
+	_last_item.set_text("A taba era uma aldeia típica dos tupinambás. As tabas eram organizadas de forma circular ou oval, com as malocas dispostas ao redor de uma área central, onde ocorriam rituais, reuniões e atividades comunitárias.\nEssa organização favorecia a segurança e a interação social. Cada uma tinha seus domínios territoriais. Elas recebiam o mesmo nome que seu Principal escolheu para sí, frequentemente valorizando algo marcante da natureza ao seu redor");
 	_last_item.image = spr_catalog_image;
-	_last_item.type = CATALOG_ITEM_TYPE.KUNUMIUASU;
+	_last_item.type = CATALOG_ITEM_TYPE.TABA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Maloca";
-	_last_item.set_text("As malocas eram grandes habitações coletivas típicas de diversos povos indígenas do Brasil, incluindo os tupinambás. Construídas com madeira, cipó e palha, abrigavam várias famílias de uma mesma comunidade");
+	_last_item.set_text("As malocas eram grandes habitações coletivas típicas de diversos povos indígenas do Brasil, incluindo os tupinambás.\nConstruídas com madeira, cipó e palha, abrigavam várias famílias de uma mesma comunidade");
 	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item.type = CATALOG_ITEM_TYPE.MALOCA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Tamoios";
-	_last_item.set_text("Se identificavam como 'Os avós' ou 'os mais velhos' da terra. a Confederação dos Tamoios(1554-1567) foi a confederação indígena formada principalmente por grupos Tupinambás que habitavam o litoral do Sudeste do Brasil. \n Eles se uniram para resistir à colonização portuguesa e contavam com o apoio de franceses, que disputavam território com os portugueses .");
+	_last_item.set_text("Se identificavam como 'Os avós' ou 'os mais velhos' da terra. a Confederação dos Tamoios(1554-1567) foi a confederação indígena formada principalmente por grupos tupinambás que habitavam o litoral do sudeste do Brasil.\nEles se uniram para resistir à colonização portuguesa e contavam com o apoio de franceses, que disputavam território com os portugueses .");
 	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item.type = CATALOG_ITEM_TYPE.TAMOIOS;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Temininós";
-	_last_item.set_text("O termo (t)emiminõ também podia ser usado para neto ou tupiminó, que queria dizer tupi+emiminõ, ou seja, os 'descendentes dos tupis.\n Assim eram chamados os inimigos dos tamoios, a tribo dos maracajás(gato-do-mato). Liderados por Marakaîágûaçu, 'o grande gato', foram expulsos pelos tupinambás de seu território na ilha do goverdador e se aliaram aos portugueses. Arariboia se tornou líder dos temiminós e participou da 'grande guerra'.");
+	_last_item.set_text("O termo (t)emiminõ também podia ser usado para neto ou tupiminó, que queria dizer tupi+emiminõ, ou seja, os descendentes dos tupis.\nAssim eram chamados os inimigos dos tamoios, a tribo dos maracajás (gato-do-mato). Liderados por Marakaîágûaçu, 'o grande gato', foram expulsos pelos tupinambás de seu território na ilha do goverdador e se aliaram aos portugueses. Arariboia se tornou líder dos temiminós e participou da 'grande guerra'.");
 	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item.type = CATALOG_ITEM_TYPE.TEMININOS;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Marãna-uasú";
-	_last_item.set_text("A 'grande guerra'. Faz referência aos conflitos pelo controle do sudeste brasileiro. Os tamoios e os franceses combateram temiminós e portugueses. Depois da Destruição do forte frances Coligny, ainda ocorreram três grandes batalhas para tomar fortalezas tupinambás. \nOs tamoios tinham um plano elaborado e asseguravam pontos importantes para o controle da baía. A primeira era a fortaleza de Uruçumirim, próxima à taba Karióca. A segunda era Parnacupu, na ilha do governador. O último ponto de defesa foi a fortaleza da taba de Itaoka, litoral de São Gonçalo. De lá recuaram para a região de Cabo Frio. \n A baía de Guanabara foi conquistada pelos Temiminós e seus aliados portugueses.");
+	_last_item.set_text("A 'grande guerra'. Faz referência aos conflitos pelo controle do sudeste brasileiro. Os tamoios e os franceses combateram temiminós e portugueses. Depois da destruição do forte frances Coligny, ainda ocorreram três grandes batalhas para tomar fortalezas tupinambás.\nOs tamoios tinham um plano elaborado e asseguravam pontos importantes para o controle da baía. A primeira era a fortaleza de Uruçumirim, próxima à taba Karióca. A segunda era Parnacupu, na ilha do governador. O último ponto de defesa foi a fortaleza da taba de Itaoka, litoral de São Gonçalo. De lá recuaram para a região de Cabo Frio. A baía de Guanabara foi conquistada pelos Temiminós e seus aliados portugueses.");
 	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item.type = CATALOG_ITEM_TYPE.MARANA_UASU;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Truchement";
 	_last_item.set_text("Franceses que eram deixados com os indígenas, muitos sendo jovens, para aprender a língua com o objetivo de fazer negócios posteriormente. Eles adotaram completamente os costumes dos tupinambás, costituindo família e participando de todos os costumes e rituais. \nServiam como tradutores para os franceses, mas quando tinham de escolher, optavam por se rebelar contra os europeus em vez de trair ou abandonar sua taba e seus costumes");
 	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item.type = CATALOG_ITEM_TYPE.TRUCHEMENT;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Manuel da Nóbrega e José de Anchieta";
-	_last_item.set_text("Os doi religiosos mais respeitados pelos indígenas. Manuel da Nóbrega e José de Anchieta foram jesuítas que tiveram papel crucial na catequização indígena e na colonização do Brasil. Nóbrega foi líder da missão jesuíta e atuou na fundação de São Paulo. Anchieta destacou-se como educador e escritor.");
+	_last_item.label = "Cristãos";
+	_last_item.set_text("Os dois religiosos mais respeitados pelos indígenas. Manuel da Nóbrega e José de Anchieta foram jesuítas que tiveram papel crucial na catequização indígena e na colonização do Brasil.\nNóbrega foi líder da missão jesuíta e atuou na fundação de São Paulo. Anchieta destacou-se como educador e escritor.");
 	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item.type = CATALOG_ITEM_TYPE.CRISTAOS;
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 
 	_last_item.label = "Ibirapema";
-	_last_item.set_text("Tipo de tacape usado pelos povos indígenas, especialmente os Tupinambás. Pesado e feito de madeira muito dura, seu impacto podia matar um homem com apenas um golpe na cabeça. Eram utilizada em combates e também em rituais, incluindo práticas ligadas à antropofagia cerimonial, era adornados com penas.'. ");
+	_last_item.set_text("Tipo de tacape usado pelos povos indígenas, especialmente os Tupinambás. Pesado e feito de madeira muito dura, seu impacto podia matar um homem com apenas um golpe na cabeça.\nEram utilizada em combates e também em rituais, incluindo práticas ligadas à antropofagia cerimonial, era adornados com penas.");
 	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item.type = CATALOG_ITEM_TYPE.IBIRAPEMA;
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 
 	_last_item.label = "Urapaçã";
-	_last_item.set_text("O conjunto arco e flecha eram a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos. \nA medida que cresciam suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo da agua, pássaros em voo e até as finas viseiras dos elmos das armaduras europeias.");
+	_last_item.set_text("O conjunto arco e flecha eram a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos.\nA medida que cresciam, suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo da água, pássaros em vôo e até as finas viseiras dos elmos das armaduras europeias.");
 	_last_item.image = spr_catalog_mucurana;
-	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	_last_item.type = CATALOG_ITEM_TYPE.URAPACA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Muçurana";
-	_last_item.set_text("Corda tecida com que se amarrava pela cintura o prisioneiro num sacrifício ritual. Os tupinambás do Rio de Janeiro a fabricavam de embira. Já os tupinambás da Bahia utilizavam algodão.");
+	_last_item.set_text("Corda tecida com que se amarrava pela cintura o prisioneiro num sacrifício ritual.\nOs tupinambás do Rio de Janeiro a fabricavam de embira. Já os tupinambás da Bahia utilizavam algodão.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
 	

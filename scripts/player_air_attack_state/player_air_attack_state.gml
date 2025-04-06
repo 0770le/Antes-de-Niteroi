@@ -46,6 +46,7 @@ function player_air_attack_state(){
 			launch(2,3,-1*facing);
 			//FAZER UM ESTADO pra recuar como evade mas com o sprite do bastao pra traz
 			state = states.AIR_ATTACK_END;
+			recover_time = 0;
 		}else { //anim ended. leave state
 			state = states.IDLE;
 		}

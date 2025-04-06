@@ -6,6 +6,7 @@ function evaded() {
 		}if(right) {
 			facing = 1;	
 		}
+		recover_time = 0;
 		image_index = 0;
 		image_speed = 1;
 		scale_x = scale_min;

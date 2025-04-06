@@ -1,5 +1,7 @@
 event_inherited();
 
+layer = layer_get_id(LAYER_MESSAGES);
+
 enemy_animation = armadeira_anim;
 
 //movement 

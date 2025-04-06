@@ -43,6 +43,8 @@ hide_delay = 0.6;
 // stealth
 hidden = false;
 
+recover_time = 0;
+
 ////curupira
 //curupira_count_max = 10;
 //curupira_count_initial = 0;

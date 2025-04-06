@@ -281,7 +281,7 @@
           1,-2,-2147483648,-2,0,-11,-2147483648,4,0,1,0,0,-115,1,-5,0,-84,1,-10,-2147483648,-2,1,-139,0,3,1,-2147483648,
           -2147483648,-3,0,-9,-2147483648,-2,0,1,1,-205,0,-3,1,-7,-2147483648,-2,1,-140,0,-2,1,-4,0,-5,-2147483648,
           -5,0,2,-2147483648,1,-207,0,-9,1,-142,0,-8,1,1,-2147483648,-7,0,1,1,-365,0,-10,1,-688,0,
-        ],"TileDataFormat":1,},"tilesetId":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+        ],"TileDataFormat":1,},"tilesetId":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Tiles_back","depth":1600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"$GMRTileLayer":"","%Name":"Tiles_back_1","depth":1700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_back_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":375,"TileCompressedData":[
               -6391,-2147483648,2,350,351,-68,-2147483648,1,233,-305,-2147483648,2,251,252,-372,-2147483648,3,250,

@@ -22,7 +22,7 @@ with(other) {
 		} 
 		
 		//face the hitbox if on ground
-		if (on_ground()){
+		if (on_ground() and turn_on_damage){
 			facing = -_dir;
 		}
 				

@@ -28,6 +28,7 @@ global.sound_controller.update_event_parameter_and_play_pos(
 	FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.RELEASE,
 	x, y
 );
+tail_id = noone;
 
 //rastro de ambas as penas
 call_later(follow_moment, time_source_units_frames, function () {	//cria o rastro

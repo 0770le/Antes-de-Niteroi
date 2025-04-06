@@ -9,7 +9,7 @@ function player_air_attack_end_state(){
 	
 	//check state
 	//change state after touching ground
-	if on_ground() {
+	if (recover_time++ >= 60 or on_ground()) {
 		//change state
 		hsp=0;
 		state = states.IDLE;

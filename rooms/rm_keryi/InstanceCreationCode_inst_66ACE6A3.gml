@@ -1,5 +1,5 @@
 if (o_game.has_cloak){
-	alert_distance = TILE_SIZE * 9;
+	alert_distance = TILE_SIZE * 12;
 }else {
 	alert_distance = TILE_SIZE * 2;
 }

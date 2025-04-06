@@ -2,6 +2,8 @@
 
 //taking dmg
 
+turn_on_damage = true;
+
 knockback_multiplier = 1;
 unstoppable = false; 
 hurt = false;

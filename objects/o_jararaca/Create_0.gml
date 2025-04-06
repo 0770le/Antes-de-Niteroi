@@ -1,6 +1,8 @@
 event_inherited();
 
-layer = layer_get_id(LAYER_EFFECTS);
+turn_on_damage = false;
+
+layer = layer_get_id(LAYER_MESSAGES);
 
 can_alert = false;
 enemy_animation = jararaca_anim;

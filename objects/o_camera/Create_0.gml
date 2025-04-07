@@ -3,10 +3,10 @@ global.camera = self;
 
 var _w		= GAME_W;
 var _h		= GAME_H;
-var _scale	= 3;
+scale	= 3;
 
 //create camera.(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])
-window_set_size(_w * _scale, _h * _scale);
+window_set_size(_w * scale, _h * scale);
 
 // declarando posiçao da camera
 global.cx = 0;
@@ -75,7 +75,7 @@ function clear()
 	ds_map_clear(listeners);
 }
 
-display_set_gui_size(_w * _scale, _h * _scale);
+display_set_gui_size(_w * scale, _h * scale);
 
 function create_camera() {
 	camera = camera_create_view(0,0,GAME_W,GAME_H,0,-1,-1,-1,128,128 ) 

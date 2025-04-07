@@ -49,6 +49,9 @@ function OptionsModel (
 		player_facing: 1,
 		
 		quest_saved_kunumiuasu: false,
+		
+		hp_upgrades: [],
+		arrow_upgrades: [],
 	}) 
 constructor 
 {
@@ -89,4 +92,8 @@ constructor
 	
 	// quest progress
 	quest_saved_kunumiuasu = _options_model.quest_saved_kunumiuasu;
+	
+	//game upgrades
+	hp_upgrades = _options_model.hp_upgrades;
+	arrow_upgrades = _options_model.arrow_upgrades;
 }

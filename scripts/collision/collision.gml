@@ -117,4 +117,12 @@ function collision(_remove_decimal = true) {
 	
 	y+= vsp;
 	
+	while(bbox_left < 0) {
+		x++;	
+	}
+	
+	while(bbox_right > room_width) {
+		x--;	
+	}
+	
 }

@@ -30,6 +30,7 @@ function player_crouch_state(){
 	if (o_game.has_bow and shoot and arrows > 0) {
 		state = states.SHOOT;
 		image_index = 0;
+		can_fire=true;
 	}
 	
 	if evade {

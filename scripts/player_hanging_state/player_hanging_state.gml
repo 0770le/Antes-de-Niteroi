@@ -13,7 +13,7 @@ function player_hanging_state(){
 	
 	if (vsp > 1.8){ vsp =1.8;}
 	
-	
+		
 	//make dust
 	if (!instance_exists( o_player_dust_jump)) {
 		evade_dust();

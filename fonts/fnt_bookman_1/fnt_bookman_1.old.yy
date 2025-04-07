@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_bookman",
+  "%Name":"fnt_bookman_1",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":19,
@@ -213,7 +213,7 @@
   "last":0,
   "lineHeight":25,
   "maintainGms1Font":false,
-  "name":"fnt_bookman",
+  "name":"fnt_bookman_1",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",

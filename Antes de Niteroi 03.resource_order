@@ -142,6 +142,7 @@
     {"name":"fnt_arial_small","order":7,"path":"fonts/fnt_arial_small/fnt_arial_small.yy",},
     {"name":"fnt_arial_very_large","order":9,"path":"fonts/fnt_arial_very_large/fnt_arial_very_large.yy",},
     {"name":"fnt_arial_very_small","order":6,"path":"fonts/fnt_arial_very_small/fnt_arial_very_small.yy",},
+    {"name":"fnt_bookman_3","order":10,"path":"fonts/fnt_bookman_3/fnt_bookman_3.yy",},
     {"name":"fnt_bookman_title","order":2,"path":"fonts/fnt_bookman_title/fnt_bookman_title.yy",},
     {"name":"fnt_stats","order":1,"path":"fonts/fnt_stats/fnt_stats.yy",},
     {"name":"logs","order":1,"path":"notes/logs/logs.yy",},

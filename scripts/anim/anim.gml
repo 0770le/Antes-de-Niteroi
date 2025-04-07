@@ -16,25 +16,27 @@ function anim() {
 		break;
 			
 		case states.HURTING:
-				if (!on_ground()) {
-					if(o_game.has_bow) {
-						sprite_index = s_player_bow_hurting_air;
-					} else {
-						sprite_index = s_player_hurting_air;
-					}
+			if (!on_ground()) {
+				if(o_game.has_bow) {
+					sprite_index = s_player_bow_hurting_air;
+				} else {
+					sprite_index = s_player_hurting_air;
 				}
+			}
 		break;
 		
 		case states.SHOOT:
-				if (!on_ground()) {
-					sprite_index = s_player_bow_air_shoot;
-				} else { //on ground
-					if down {//atirar abaixado
-						sprite_index = s_player_bow_crouched_shoot;
-					} else {//normal
-						sprite_index= s_player_bow_shoot;
-					}
+			if (!on_ground()) {
+				sprite_index = s_player_bow_air_shoot;
+			} else { //on ground
+				if down {//atirar abaixado
+					sprite_index = s_player_bow_crouched_shoot;
+					mask_index = mask_array[states.CROUCH];
+				} else {//normal
+					sprite_index= s_player_bow_shoot;
+					mask_index = mask_array[states.IDLE];
 				}
+			}
 		break;
 		
 	}

@@ -57,16 +57,6 @@ function player_shoot_state() {//o tempo pra dar o tiro é o tempo do sprite
 		image_index = 1;
 		can_fire= true;
 	}
-	//check state
-
-	if (down and arrows > 0) { //allow continuing shooting fluidity 
-		var _index_holder = image_index;
-		var _speed_holder = image_speed;
-		crouched();
-		state = states.SHOOT;
-		image_index = _index_holder;
-		image_speed = _speed_holder;
-	}
 	
 	if (jump and arrows > 0) {
 		jumped();

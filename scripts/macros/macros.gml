@@ -122,6 +122,9 @@ function macros(){
 #macro COLLECTIBLE_MORUBIXABA		6
 #macro COLLECTIBLE_MUCURANA			7
 
+#macro MAX_HP_AKARAY_1				0
+#macro MAX_HP_AKARAY_2				1
+
 #macro COLOR_DK_GRAY		make_color_rgb(89,86,82)
 #macro COLOR_YELLOW			make_color_rgb(213,172,81)
 #macro COLOR_RED			make_color_rgb(172,50,50)

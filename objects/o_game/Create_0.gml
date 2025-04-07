@@ -12,8 +12,10 @@ has_cloak = false;
 has_bow = true;
 
 max_lives = 10;
-max_arrows =  10;
-max_hp = 10;
+max_arrows_initial =  10;
+max_arrows =  max_arrows_initial;
+max_hp_initial = 10;
+max_hp = max_hp_initial;
 
 //has_collectable_nome = false;
 collectable_count = 0;
@@ -99,6 +101,9 @@ collectible[COLLECTIBLE_CIDADE_VELHA] = false;
 collectible[COLLECTIBLE_KUNUMIUASU] = false;
 collectible[COLLECTIBLE_MORUBIXABA] = false;
 collectible[COLLECTIBLE_MUCURANA] = false;
+
+upgrades[MAX_HP_AKARAY_1] = false;
+upgrades[MAX_HP_AKARAY_2] = false;
 
 //tooltip messages
 //msg#, properties

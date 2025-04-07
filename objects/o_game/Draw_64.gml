@@ -187,7 +187,7 @@ if (room != rm_menu) {
 	//draw highscore
 	if (current_frame == max_frames) {
 		draw_set_halign(fa_right);
-		draw_set_font(fnt_bookman);
+		draw_set_font(fnt_bookman_1);
 		draw_text_ext_colour(gw - 10, 28, highscore, 5, 100, c_aqua, c_aqua, c_gray, c_gray,1);
 	}
 }
@@ -203,7 +203,18 @@ if (fade_in) {
 //display msg
 if (alarm[DISPLAY_MSG] > 0) {
 	draw_set_halign(fa_center);
-	draw_set_font(fnt_bookman);
+	
+	var _font = fnt_bookman_1;
+	
+	switch(o_camera.scale) {
+		case 3:
+			_font = fnt_bookman_3;
+			break;
+		default: 
+			_font = fnt_bookman_1;
+			break;
+	}
+	draw_set_font(_font);
 	//sombra da msg
 	draw_set_color(c_black);
 	draw_text(gw/2 + 1, gh *.35 +1, msg); //.85, msg);

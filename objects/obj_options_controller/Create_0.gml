@@ -24,6 +24,9 @@
 #macro OPTIONS_PLAYER_ARROWS			"player_arrows"
 #macro OPTIONS_PLAYER_FACING			"player_facing"
 
+#macro OPTIONS_HP_UPGRADES				"hp_upgrades"
+#macro OPTIONS_ARROW_UPGRADES			"arrow_upgrades"
+
 // saveables
 
 options = new OptionsModel();
@@ -31,7 +34,8 @@ options = new OptionsModel();
 new_game_properties = [
 	OPTIONS_LAST_ROOM, OPTIONS_SPAWN_X, OPTIONS_SPAWN_Y, 
 	OPTIONS_PLAYER_LIVES, OPTIONS_PLAYER_HP, OPTIONS_PLAYER_DIED, OPTIONS_PLAYER_HAS_BOW, 
-	OPTIONS_PLAYER_HAS_CAPE, OPTIONS_PLAYER_ARROWS, OPTIONS_PLAYER_FACING, OPTIONS_MUSIC_PARAMETER
+	OPTIONS_PLAYER_HAS_CAPE, OPTIONS_PLAYER_ARROWS, OPTIONS_PLAYER_FACING, OPTIONS_MUSIC_PARAMETER,
+	OPTIONS_HP_UPGRADES,OPTIONS_ARROW_UPGRADES
 ]
 
 // transients
@@ -137,6 +141,9 @@ function read_all()
 		global.game.has_cape = options.player_has_cape;
 		global.game.has_cloak = options.player_has_cape;
 		
+		global.game.max_hp = global.game.max_hp_initial + array_length(options.hp_upgrades);
+		global.game.max_arrows = global.game.max_arrows_initial + (array_length(options.arrow_upgrades)*10);
+		
 	} catch (_e) {
 		
 		global.logger.error($"failed to load options file in room {room}: {_e}");
@@ -151,11 +158,22 @@ function read_all()
 		global.game.has_cape = options.player_has_cape;
 		global.game.has_cloak = options.player_has_cape;
 		
+		
+		global.game.max_hp = global.game.max_hp_initial;
+		
 		write_all();
 	}
 }
 
 #endregion
+
+function add_to_array(_option = OPTIONS_HP_UPGRADES, _value = max_hp_location.UPGRADE_AKARAY_1)
+{
+	if(!array_contains(options[$ _option], _value)){
+		array_push(options[$ _option], _value);	
+		save_and_notify();
+	}
+}
 
 function save_and_notify()
 {

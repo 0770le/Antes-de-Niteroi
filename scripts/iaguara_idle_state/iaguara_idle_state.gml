@@ -1,6 +1,9 @@
 
 function iaguara_idle_state() {
 	
+	
+	layer = layer_get_id(LAYER_INSTANCES);
+	
 	stare();
 	//sees player
 	if alert  {//combat

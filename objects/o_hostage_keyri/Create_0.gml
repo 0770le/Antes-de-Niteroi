@@ -16,6 +16,6 @@ saved = false;
 saving = false;
 released = false;
 
-msgs = ["Me encontre na praia de Morguja Uasu"];
-text_x_scale = [4.3]
-text_y_scale = [TEXT_Y_HEIGHT_1l];
+msgs = ["Me encontre na praia\nde Morguja Uasu"];
+text_x_scale = [5]
+text_y_scale = [TEXT_Y_HEIGHT_2l];

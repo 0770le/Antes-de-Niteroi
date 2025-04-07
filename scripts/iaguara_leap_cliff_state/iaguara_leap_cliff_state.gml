@@ -31,6 +31,7 @@ function iaguara_leap_cliff_state(){
 		}
 			
 		launch(2,2.5);
+		hsp_override = hsp;
 		state = iaguara_states.FALL;
 		sprite_index = 0;
 		image_speed = 1;
@@ -43,6 +44,7 @@ function iaguara_leap_cliff_state(){
 		hsp =0;
 		vsp =0;
 		launch(5,1);
+		hsp_override = hsp;
 		state = iaguara_states.FALL;
 		image_index=0;
 	}

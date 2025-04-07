@@ -69,9 +69,7 @@ attack_aura = noone;
 //bow
 can_fire = true;
 fire_delay = 0.1 * room_speed; //charging time -> sprites
-arrows_max = 30;
-arrows_initial = 30;
-arrows = arrows_initial;
+arrows = 10;
 	//arrow spawning dir pos
 spawn_pos = -1;
 	
@@ -334,7 +332,7 @@ function apply_state_change_triggers(_previous_state, _new_state)
 			if (lives2 >= 1)
 			{
 				global.options_controller.set_options({
-					OPTIONS_PLAYER_LIVES: max(0, lives2 - 1),
+					//OPTIONS_PLAYER_LIVES: max(0, lives2 - 1),
 					OPTIONS_PLAYER_DIED: true
 				});
 			}

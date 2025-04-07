@@ -1,5 +1,7 @@
 depth += 10;
 
+drop_hp = false;
+
 enum ENEMY_TYPE {
 	ARMADEIRA,
 	CHEVALIER,

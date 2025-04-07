@@ -16,6 +16,6 @@ saved = false;
 saving = false;
 released = false;
 
-msgs = ["Me encontre ao\n oeste do forte"];
+msgs = ["Me encontre ao\noeste do forte"];
 text_x_scale = [4.3]
 text_y_scale = [TEXT_Y_HEIGHT_2l];

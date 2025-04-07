@@ -12,7 +12,7 @@ has_cloak = false;
 has_bow = true;
 
 max_lives = 10;
-max_arrows =  5;
+max_arrows =  10;
 max_hp = 10;
 
 //has_collectable_nome = false;

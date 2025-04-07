@@ -1,6 +1,6 @@
 show_interact_key = true;
 
-var _text = "Deseja viajar para ";
+var _text = "Deseja viajar para\n";
 
 switch(room) {
 	case rm_seregipe:
@@ -11,7 +11,7 @@ switch(room) {
 		break;
 }
 	
-text_bubble2(id, _text, -1, 6, TEXT_Y_HEIGHT_2l);
+text_bubble2(id, _text, -1, 5, TEXT_Y_HEIGHT_2l);
 
 
 if other.interact {
@@ -19,8 +19,8 @@ if other.interact {
 	switch(room) {
 		case rm_seregipe:
 			target_rm = rm_reri_pe;
-			target_x = 2055;
-			target_y = 911;
+			target_x = 3815;
+			target_y = 1183;
 			break;
 		case rm_reri_pe:
 			target_rm = rm_seregipe;

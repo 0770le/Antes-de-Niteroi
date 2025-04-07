@@ -2,7 +2,7 @@
 
 show_interact_key = true;
 
-var _text = "Deseja viajar para ";
+var _text = "Deseja viajar para\n";
 
 switch(room) {
 	case rm_seregipe:
@@ -13,7 +13,7 @@ switch(room) {
 		break;
 }
 	
-text_bubble2(id, _text, -1, 6, TEXT_Y_HEIGHT_2l);
+text_bubble2(id, _text, -1, 5, TEXT_Y_HEIGHT_2l);
 
 
 if other.interact {

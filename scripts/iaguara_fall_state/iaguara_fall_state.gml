@@ -1,9 +1,12 @@
 
 function iaguara_fall_state(){
-	
+	if(hsp_override != 0) {
+		hsp = hsp_override;
+	}
 
 	//landing
 	if (on_ground() and vsp >= 0) {
+		hsp_override = 0;
 		vsp = 0;
 		state = iaguara_states.LANDING;
 		image_index = 0;
@@ -16,7 +19,7 @@ function iaguara_fall_state(){
 
 	
 	
-	calc_entity_movement();
+	calc_entity_movement(global.grav,0);
 	//apply movement
 	collision();
 	

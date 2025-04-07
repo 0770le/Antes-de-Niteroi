@@ -16,6 +16,6 @@ saved = false;
 saving = false;
 released = false;
 
-msgs = ["Avise ao Português"];
-text_x_scale = [4.3]
-text_y_scale = [TEXT_Y_HEIGHT_1l];
+msgs = ["Agradeça ao velho Anchieta\ne me encontre na praia"];
+text_x_scale = [6];
+text_y_scale = [TEXT_Y_HEIGHT_2l];

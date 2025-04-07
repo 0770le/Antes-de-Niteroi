@@ -1,15 +1,13 @@
-//show_msg("Aperte o direcional para cima para viajar:\nother.destination", 2);
-
 show_interact_key = true;
 
-var _text = "Aperte para cima para viajar\npara ";
+var _text = "Deseja viajar para ";
 
 switch(room) {
 	case rm_seregipe:
-		_text+= "Reri'pê";
+		_text+= "Reri'pê?";
 		break;
 	case rm_reri_pe:
-		_text+= "Seregipe";
+		_text+= "Seregipe?";
 		break;
 }
 	

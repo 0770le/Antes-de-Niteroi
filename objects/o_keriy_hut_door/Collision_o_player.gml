@@ -25,5 +25,5 @@ if other.interact {
 			fade_to_room(self.rm, self.x, self.y, self.facing, c_black);		
 		}
 	}
-	var _ = call_later(2, time_source_units_seconds, _aux.callback);
+	_aux.callback();
 }

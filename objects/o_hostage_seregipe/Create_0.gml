@@ -16,6 +16,6 @@ saved = false;
 saving = false;
 released = false;
 
-msgs = ["Me encontre ao oeste do Seregipe"];
+msgs = ["Me encontre ao\n oeste do forte"];
 text_x_scale = [4.3]
-text_y_scale = [TEXT_Y_HEIGHT_1l];
+text_y_scale = [TEXT_Y_HEIGHT_2l];

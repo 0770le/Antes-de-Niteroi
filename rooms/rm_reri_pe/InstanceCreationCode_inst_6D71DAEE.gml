@@ -1,0 +1,5 @@
+patrol_left = 300;
+patrol_right = 200;
+
+
+possible_enemies = [ENEMY_TYPE.TUPINAMBA_RANGED,ENEMY_TYPE.TUPINAMBA_MEELE,ENEMY_TYPE.FRANCES];

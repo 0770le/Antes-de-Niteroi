@@ -4,6 +4,7 @@ with(o_game) {
 
 with(o_player) {
 	acquire_bow();
+	arrows = 30;
 }
 
 global.options_controller.set_option(OPTIONS_PLAYER_HAS_BOW, true);

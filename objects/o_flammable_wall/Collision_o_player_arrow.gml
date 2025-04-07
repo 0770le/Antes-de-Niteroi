@@ -1,4 +1,4 @@
-if (other.on_fire == true) {
+if (other.on_fire) {
 	on_fire = true;
 }
 

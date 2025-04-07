@@ -15,6 +15,12 @@ drag = 0.1;
 
 on_fire=false;
 
+fire = instance_create_depth(x,y,depth-1,o_generic_animation);
+fire.sprite_index = s_arrow_flame;
+fire.attached_to = id;
+fire.attach_flip_rotation = true;
+fire.stop_animation = false;
+
 grav = global.grav;
 follow_x = x;
 follow_y = y;

@@ -2,14 +2,14 @@
 
 show_interact_key = true;
 
-var _text = "Aperte para cima para viajar\npara ";
+var _text = "Deseja viajar para ";
 
 switch(room) {
 	case rm_cidade_velha:
-		_text+= "Akaray";
+		_text+= "Akaray?";
 		break;
 	case rm_akaray:
-		_text+= "Cidade Velha";
+		_text+= "Cidade Velha?";
 		break;
 }
 	

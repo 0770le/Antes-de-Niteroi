@@ -11,11 +11,11 @@ if(saving and !saved) {
 	}
 }
 
-if(saved and !released){
+if(saved){
 	sprite_index = s_barqueiro_liberto;
 	talk = true;
 }
 
-if(quest and !on_screen(20)) {
+if((saved or saving) and !on_screen(20)) {
 	quest_complete_kunumiuasu_seregipe();
 }

@@ -62,6 +62,9 @@ if(keyboard_check_pressed(vk_f6) and room != rm_main_menu) {
 if(keyboard_check_pressed(vk_f7) and room != rm_tests_augusto) {
 	global.fader.to_room(rm_tests_augusto, 200, 200);	
 }
+if(keyboard_check_pressed(vk_f8) and room != rm_reri_pe) {
+	global.fader.to_room(rm_reri_pe,3822,1163);	
+}
 
 if(keyboard_check_pressed(vk_f10) and room != rm_tests) {
 	global.fader.to_room(rm_tests, 71, 395);

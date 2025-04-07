@@ -7,6 +7,9 @@ calc_entity_movement();
 hsp = spd * facing;
 y += vsp;
 	x += hsp; 
+	
+	
+fire.visible = on_fire;
 
 //direction image
 image_angle = radtodeg(arctan2(-vsp,hsp));

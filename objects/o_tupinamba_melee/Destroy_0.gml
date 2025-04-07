@@ -11,3 +11,7 @@ with(instance_create_layer (side()+4*facing, y - 22, LAYER_INSTANCES, o_drop)) {
 	bounce = 2;
 	facing = other.facing;
 }
+
+if(o_game.has_bow and irandom(1)>0) {
+	instance_create_layer(x,bbox_top, LAYER_INSTANCES, o_arrows);
+}

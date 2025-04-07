@@ -2,14 +2,14 @@
 
 show_interact_key = true;
 
-var _text = "Aperte para cima para viajar\npara ";
+var _text = "Deseja viajar para ";
 
 switch(room) {
 	case rm_seregipe:
-		_text+= "Morguja Uasu";
+		_text+= "Morguja Uasu?";
 		break;
 	case rm_morguja_uasu:
-		_text+= "Seregipe";
+		_text+= "Seregipe?";
 		break;
 }
 	

@@ -26,6 +26,7 @@ starting_y		= 300;
 button_sprite   = spr_menu_button;
 text_color		= c_white;
 text_hover_color= c_white;
+items_margin    = 70;
 
 function draw_parent()
 {
@@ -61,7 +62,7 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 		_xx += 300;
 	}
 	
-	var _yy = _yyy + (_index * 70);
+	var _yy = _yyy + (_index * items_margin);
 	
 	if (_menu_item.type == MENU_TYPE.CREDITS)
 	{

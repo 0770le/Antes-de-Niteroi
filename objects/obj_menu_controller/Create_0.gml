@@ -89,8 +89,6 @@ function init()
 	{
 		var _is_fullscreen = global.options_controller.get_option(OPTIONS_FULLSCREEN);
 		
-		// self.fullscreen_button.set_checked(!_is_fullscreen);
-		
 		global.options_controller.set_option(OPTIONS_FULLSCREEN, !_is_fullscreen);
 	}));
 	fullscreen_button.set_checked(global.options_controller.options.fullscreen);

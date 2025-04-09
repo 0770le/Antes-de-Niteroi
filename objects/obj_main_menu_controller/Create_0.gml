@@ -2,16 +2,13 @@ event_inherited();
 
 // settings
 
-starting_x		= 300;
-starting_y		= 400;
+starting_x		= 400;
+starting_y		= 490;
+items_margin    = 80;
 button_sprite   = spr_menu_button_transparent;
 text_color		= c_white;
 text_hover_color= c_orange;
-font_description= fnt_arial_medium_to_large;
-margin_left		= 20;
-margin_right	= 20;
-margin_bottom	= 40;
-margin_top		= 40;
+font_description= fnt_arial_very_large;
 
 // controls
 
@@ -31,16 +28,20 @@ right			= width;
 top				= 0;
 bottom			= height;
 
+margin_left		= 20;
+margin_right	= 20;
+margin_bottom	= 30;
+margin_top		= 30;
+
+fullscreen_button   = noone;
+volume_master       = noone;
+volume_music		= noone;
+volume_sfx          = noone;
+deaf_assistance		= noone;
+
 function draw_title()
 {
-	draw_set_color(c_white);
-	draw_set_font(fnt_arial_very_large);
-	draw_set_valign(fa_middle);
-	draw_set_halign(fa_center);
 	
-	draw_sprite_ext(spr_main_menu_title, 0, width / 2, 150, 2, 2, 0, c_white, 1);
-
-	draw_text(width / 2, 150, "A Lenda de Niterói");
 }
 
 function draw_controller_buttons()
@@ -50,10 +51,13 @@ function draw_controller_buttons()
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_right);
 	
-	var _scale = global.input_manager.get_input_sprite_scale();
+	var _scale = global.input_manager.get_input_sprite_scale();	
 	
-	var _confirm_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CONFIRM);
+	//var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CANCEL);
+	//draw_text(right - (sprite_get_width(_cancel_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 36, "Voltar");
+	//draw_sprite_ext(_cancel_sprite, 0, right - margin_right, bottom - margin_bottom - 36, _scale, _scale, 0, c_white, 1.0);
 			
+	var _confirm_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CONFIRM);
 	draw_text(right - (sprite_get_width(_confirm_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 1, "Confirmar");
 	draw_sprite_ext(_confirm_sprite, 0, right - margin_right, bottom - margin_bottom - 1, _scale, _scale, 0, c_white, 1.0);
 }
@@ -65,9 +69,83 @@ function draw_parent()
 
 function draw()
 {
-	//draw_title();
+	draw_title();
 	
 	draw_menu_items();
+}
+
+function add_options_button()
+{
+	var _options_node = root_menu.add_child(new MenuNode("Opções"))
+	fullscreen_button = _options_node.add_child(new MenuCheckbox("Tela Cheia", function ()
+	{
+		var _is_fullscreen = global.options_controller.get_option(OPTIONS_FULLSCREEN);
+		
+		global.options_controller.set_option(OPTIONS_FULLSCREEN, !_is_fullscreen);
+	}));
+	fullscreen_button.set_checked(global.options_controller.options.fullscreen);
+	
+	volume_master = _options_node.add_child(new MenuInteger("Volume Geral", 
+	function ()
+	{
+		volume_master.set_value(volume_master.value - 1);
+		
+		global.options_controller.set_option(OPTIONS_MASTER_VOLUME, volume_master.value);
+	}, 
+	function () 
+	{
+		volume_master.set_value(volume_master.value + 1);
+		
+		global.options_controller.set_option(OPTIONS_MASTER_VOLUME, volume_master.value);
+	}));
+	volume_master.set_value(global.options_controller.options.master_volume);
+	
+	volume_music = _options_node.add_child(new MenuInteger("Música", 
+	function ()
+	{
+		volume_music.set_value(volume_music.value - 1);
+		
+		global.options_controller.set_option(OPTIONS_MUSIC_VOLUME, volume_music.value);
+	}, 
+	function () 
+	{
+		volume_music.set_value(volume_music.value + 1);
+		
+		global.options_controller.set_option(OPTIONS_MUSIC_VOLUME, volume_music.value);
+	}));
+	volume_music .set_value(global.options_controller.options.music_volume);
+	
+	volume_sfx = _options_node.add_child(new MenuInteger("Efeitos", 
+	function ()
+	{
+		volume_sfx.set_value(volume_sfx.value - 1);
+		
+		global.options_controller.set_option(OPTIONS_SFX_VOLUME, volume_sfx.value);
+	}, 
+	function () 
+	{
+		volume_sfx.set_value(volume_sfx.value + 1);
+		
+		global.options_controller.set_option(OPTIONS_SFX_VOLUME, volume_sfx.value);
+	}));
+	volume_sfx.set_value(global.options_controller.options.sfx_volume);
+	deaf_assistance = _options_node.add_child(new MenuCheckbox("Ajuda para Surdos", function ()
+	{
+		var _is_deaf_assistance = global.options_controller.get_option(OPTIONS_DEAF_ASSISTANCE);
+		
+		global.options_controller.set_option(OPTIONS_DEAF_ASSISTANCE, !_is_deaf_assistance);
+	}));
+	deaf_assistance.set_checked(global.options_controller.options.deaf_assistance);
+}
+
+function on_options_change(_options = new OptionsModel())
+{
+	volume_master.set_value(_options.master_volume);
+	volume_music.set_value(_options.music_volume);
+	volume_sfx.set_value(_options.sfx_volume);
+	
+	fullscreen_button.set_checked(_options.fullscreen);
+	deaf_assistance.set_checked(_options.deaf_assistance);
 }
 
 function init_dependencies()
@@ -103,6 +181,8 @@ function init()
 	{
 		root_menu.add_child(new MenuButton("Continuar", function () 
 		{
+			global.options_controller.unregister_listener(self);
+			
 			global.sound_controller.stop(FMOD_EVENT.MUSIC_MAIN_MENU);
 			global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
 			
@@ -116,10 +196,15 @@ function init()
 				_spawn_y
 			);
 		}));
+	} else {
+		starting_y += 35;
+		items_margin += 35;
 	}
 	
 	root_menu.add_child(new MenuButton("Novo Jogo", function() 
 	{ 
+		global.options_controller.unregister_listener(self);
+		
 		global.sound_controller.stop(FMOD_EVENT.MUSIC_MAIN_MENU);
 		global.sound_controller.play(FMOD_EVENT.MENU_NEWGAME_LOADGAME);
 		
@@ -129,6 +214,8 @@ function init()
 		global.fader.to_room(rm_cidade_velha);
 	}));
 	
+	// add_options_button();
+	
 	root_menu.add_child(new MenuButton("Sair do Jogo", function() 
 	{ 
 		game_end(0); 
@@ -137,6 +224,7 @@ function init()
 	selected_item = root_menu.children[0];
 	
 	global.input_manager.subscribe(self, INPUT_TYPE.MENU);
+	global.options_controller.register_listener(self);
 }
 
 init();

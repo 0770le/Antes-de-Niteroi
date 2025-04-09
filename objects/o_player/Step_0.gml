@@ -6,8 +6,8 @@ if(mouse_check_button_pressed(mb_middle)) {
 	instance_create_layer(mouse_x,mouse_y,LAYER_INSTANCES,o_corpse);	
 }
 
-if(o_game.has_cloak or on_ground()) {
-	jumps = 100;	
+if(o_game.has_cloak and on_ground()) {
+	jumps = 1;	
 }
 
 if(up) {

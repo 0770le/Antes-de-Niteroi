@@ -78,6 +78,9 @@ function init()
 {
 	global.menu_controller = self;
 	
+	starting_x		= get_sprite_center_x();
+	starting_y		= 300;
+	
 	root_menu = new MenuNode("Menu Principal");
 	
 	// Options	

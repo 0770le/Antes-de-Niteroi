@@ -912,6 +912,7 @@
     {"id":{"name":"spr_main_menu_background","path":"sprites/spr_main_menu_background/spr_main_menu_background.yy",},},
     {"id":{"name":"spr_main_menu_title","path":"sprites/spr_main_menu_title/spr_main_menu_title.yy",},},
     {"id":{"name":"spr_menu_background","path":"sprites/spr_menu_background/spr_menu_background.yy",},},
+    {"id":{"name":"spr_menu_button_transparent","path":"sprites/spr_menu_button_transparent/spr_menu_button_transparent.yy",},},
     {"id":{"name":"spr_menu_button","path":"sprites/spr_menu_button/spr_menu_button.yy",},},
     {"id":{"name":"spr_menu_title","path":"sprites/spr_menu_title/spr_menu_title.yy",},},
     {"id":{"name":"spr_rain_thick","path":"sprites/spr_rain_thick/spr_rain_thick.yy",},},

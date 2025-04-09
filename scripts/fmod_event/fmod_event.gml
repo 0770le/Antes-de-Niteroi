@@ -237,9 +237,9 @@ constructor
 		fmod_studio_event_instance_set_volume(event_instance, _volume);
 	}
 	
-	static update_parameter = function (_name = "time lapse", _label = FMOD_PARAMETER_MOVE_JUMP.JUMP)
+	static update_parameter = function (_name = "time lapse", _value = FMOD_PARAMETER_MOVE_JUMP.JUMP)
 	{
-		parameters_by_name[? _name].update(_label);
+		parameters_by_name[? _name].update(_value);
 	}
 	
 	static fill_parameters_by_name = function ()
@@ -288,7 +288,7 @@ constructor
 }
 
 function FmodParameter(_name	= "time lapse",
-					   _labels	= [FMOD_PARAMETER_TIME_LAPSE.NORMAL, FMOD_PARAMETER_TIME_LAPSE.FASTER, FMOD_PARAMETER_TIME_LAPSE.FASTEST])
+					   _labels	= [FMOD_PARAMETER_MOVE_JUMP.JUMP])
 constructor
 {
 	name					= _name;
@@ -297,13 +297,17 @@ constructor
 	parameter_description	= noone;
 	current_label			= 1;
 	
-	static update = function (_label = FMOD_PARAMETER_TIME_LAPSE.NORMAL)
+	static update = function (_value = FMOD_PARAMETER_MOVE_JUMP.JUMP)
 	{
-		if (current_label != _label)
-		{
-			fmod_studio_event_instance_set_parameter_by_name(event_instance, name, _label, true);
+		if (name == "music") {
+			global.logger.debug("music");
+		}
 		
-			current_label = _label;
+		if (current_label != _value)
+		{
+			fmod_studio_event_instance_set_parameter_by_name(event_instance, name, _value, true);
+		
+			current_label = _value;
 		}
 	}
 	

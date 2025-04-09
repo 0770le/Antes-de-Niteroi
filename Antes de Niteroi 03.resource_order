@@ -777,6 +777,7 @@
     {"name":"spr_keyboard_z","order":81,"path":"sprites/spr_keyboard_z/spr_keyboard_z.yy",},
     {"name":"spr_main_menu_title","order":1,"path":"sprites/spr_main_menu_title/spr_main_menu_title.yy",},
     {"name":"spr_menu_background","order":3,"path":"sprites/spr_menu_background/spr_menu_background.yy",},
+    {"name":"spr_menu_button_transparent","order":8,"path":"sprites/spr_menu_button_transparent/spr_menu_button_transparent.yy",},
     {"name":"spr_menu_button","order":5,"path":"sprites/spr_menu_button/spr_menu_button.yy",},
     {"name":"spr_menu_title","order":4,"path":"sprites/spr_menu_title/spr_menu_title.yy",},
     {"name":"spr_rain_thick","order":27,"path":"sprites/spr_rain_thick/spr_rain_thick.yy",},

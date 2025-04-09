@@ -55,7 +55,7 @@ function draw_parent()
 
 function draw()
 {
-	draw_title();
+	//draw_title();
 	
 	draw_menu_items();
 }

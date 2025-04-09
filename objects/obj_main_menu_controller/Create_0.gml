@@ -1,5 +1,20 @@
 event_inherited();
 
+// settings
+
+starting_x		= 300;
+starting_y		= 400;
+button_sprite   = spr_menu_button_transparent;
+text_color		= c_white;
+text_hover_color= c_orange;
+font_description= fnt_arial_medium_to_large;
+margin_left		= 20;
+margin_right	= 20;
+margin_bottom	= 40;
+margin_top		= 40;
+
+// controls
+
 scale			= 3;
 width			= 480 * scale;
 height			= 270 * scale;
@@ -16,11 +31,6 @@ right			= width;
 top				= 0;
 bottom			= height;
 
-margin_left		= 20;
-margin_right	= 20;
-margin_bottom	= 40;
-margin_top		= 40;
-
 function draw_title()
 {
 	draw_set_color(c_white);
@@ -30,7 +40,7 @@ function draw_title()
 	
 	draw_sprite_ext(spr_main_menu_title, 0, width / 2, 150, 2, 2, 0, c_white, 1);
 
-	draw_text(width / 2, 150, "Antes de Niterói");
+	draw_text(width / 2, 150, "A Lenda de Niterói");
 }
 
 function draw_controller_buttons()

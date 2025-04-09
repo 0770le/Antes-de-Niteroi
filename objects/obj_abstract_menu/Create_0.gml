@@ -21,6 +21,12 @@ has_new_items	= false;
 
 game_version	= "v0.0.1";
 
+starting_x		= get_sprite_center_x();
+starting_y		= 300;
+button_sprite   = spr_menu_button;
+text_color		= c_white;
+text_hover_color= c_white;
+
 function draw_parent()
 {
 	var _xx = get_sprite_center_x();
@@ -37,15 +43,15 @@ function draw_parent()
 
 function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false, _second_column = false)
 {
-	var _yyy = 300;
+	var _yyy = starting_y;
 	
 	draw_set_font(font_description);
-	draw_set_color(c_white);
+	draw_set_color(_menu_item == selected_item ? text_hover_color : text_color);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	
 	// any node
-	var _xx = get_sprite_center_x();
+	var _xx = starting_x;
 	if (_dual_column)
 	{
 		_xx -= 150;
@@ -74,11 +80,15 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
 	}
-	else
+	else 
 	{	
-		draw_sprite_ext(spr_menu_button, _menu_item == selected_item ? 0 : 1, _xx, _yy, 1.2, 1.2, 0, c_white, 1);
+		draw_sprite_ext(button_sprite, _menu_item == selected_item ? 0 : 1, _xx, _yy, 1.2, 1.2, 0, c_white, 1);
 	}
-		
+	
+	
+	
+	
+	
 	if (_menu_item.type == MENU_TYPE.CHECKBOX || _menu_item.type == MENU_TYPE.INTEGER || _menu_item.type == MENU_TYPE.INPUT)
 	{
 		draw_set_halign(fa_left);
@@ -89,6 +99,8 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 	{
 		draw_text(_xx, _yy, _menu_item.title);
 	}	
+	
+	
 	
 	// specific nodes
 	if (_menu_item.type == MENU_TYPE.CATALOG)

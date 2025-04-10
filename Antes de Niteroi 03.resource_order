@@ -70,6 +70,7 @@
     {"name":"Controller","order":1,"path":"folders/Objects/Sound/Controller.yy",},
     {"name":"Model","order":2,"path":"folders/Objects/Sound/Model.yy",},
     {"name":"DeafHelper","order":5,"path":"folders/Objects/Sound/Model/DeafHelper.yy",},
+    {"name":"AmbienceParameterUpdater","order":6,"path":"folders/Objects/Sound/Model/AmbienceParameterUpdater.yy",},
     {"name":"MusicParameterUpdater","order":4,"path":"folders/Objects/Sound/Model/MusicParameterUpdater.yy",},
     {"name":"Sprites","order":3,"path":"folders/Objects/Sound/Sprites.yy",},
     {"name":"Rooms","order":6,"path":"folders/Rooms.yy",},

@@ -281,10 +281,15 @@ function on_input_menu(_input = new MenuInputModel())
 			
 				break;
 			default:
+				var _selected_item = selected_item;
+			
 				if (_input.left) selected_item = selected_item.left;
 				if (_input.right) selected_item = selected_item.right;
 				
-				global.sound_controller.play(FMOD_EVENT.MENU_GENERAL);
+				if (_selected_item != selected_item)
+				{
+					global.sound_controller.play(FMOD_EVENT.MENU_GENERAL);
+				}
 			
 				break;
 		}

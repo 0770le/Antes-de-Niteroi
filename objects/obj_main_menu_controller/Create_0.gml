@@ -2,12 +2,12 @@ event_inherited();
 
 // settings
 
-starting_x		= 400;
+starting_x		= 420;
 starting_y		= 490;
 items_margin    = 80;
 button_sprite   = spr_menu_button_transparent;
 text_color		= c_white;
-text_hover_color= c_orange;
+text_hover_color= make_color_rgb(172, 50, 50);
 font_description= fnt_arial_very_large;
 
 // controls
@@ -216,7 +216,7 @@ function init()
 	
 	// add_options_button();
 	
-	root_menu.add_child(new MenuButton("Sair do Jogo", function() 
+	root_menu.add_child(new MenuButton("Sair", function() 
 	{ 
 		game_end(0); 
 	}));

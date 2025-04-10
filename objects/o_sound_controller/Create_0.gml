@@ -1,29 +1,30 @@
 global.sound_controller = self;
 
-fmod						= noone;
-master_bank_index			= noone;
-master_strings_bank_index	= noone;
-event_per_enum				= ds_map_create();
-vcas_per_enum				= ds_map_create();
-busses_per_enum				= ds_map_create();
+fmod										= noone;
+master_bank_index							= noone;
+master_strings_bank_index					= noone;
+event_per_enum								= ds_map_create();
+vcas_per_enum								= ds_map_create();
+busses_per_enum								= ds_map_create();
+											
+music_enabled								= true;
+sfx_enabled									= true;
+music_volume								= 100;
+sfx_volume									= 100;
+											
+fmod_3d_att									= undefined;
+music_parameter								= FMOD_PARAMETER_MUSIC_VALUE.INTRO;
+is_playing_music							= false;
+deaf_assistance								= false;
 
-music_enabled				= true;
-sfx_enabled					= true;
-music_volume				= 100;
-sfx_volume					= 100;
+current_room								= undefined;
 
-fmod_3d_att					= undefined;
-music_parameter				= FMOD_PARAMETER_MUSIC_VALUE.INTRO;
-is_playing_music			= false;
-deaf_assistance				= false;
-
-ambience_sounds	= [
-	FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE, 
-	FMOD_EVENT.AMBIENCE_AKARAY, 
-	FMOD_EVENT.AMBIENCE_KERYL, 
-	FMOD_EVENT.AMBIENCE_MORGUJA, 
-	FMOD_EVENT.AMBIENCE_SEREGIPE
-];
+ambience_sounds_by_room						= ds_map_create();
+ambience_sounds_by_room[? rm_cidade_velha]	= FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE;
+ambience_sounds_by_room[? rm_akaray]		= FMOD_EVENT.AMBIENCE_AKARAY;
+ambience_sounds_by_room[? rm_keryi]			= FMOD_EVENT.AMBIENCE_KERYL;
+ambience_sounds_by_room[? rm_morguja_uasu]	= FMOD_EVENT.AMBIENCE_MORGUJA;
+ambience_sounds_by_room[? rm_seregipe]		= FMOD_EVENT.AMBIENCE_SEREGIPE;
 
 function on_camera_update(_x, _y) 
 {
@@ -37,19 +38,37 @@ function on_camera_update(_x, _y)
 
 	fmod_studio_system_set_listener_attributes(0, fmod_3d_att);
 	
-	update_event_position(FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE, _x, _y);
+	update_ambience_sound_positions(_x, _y);
 }
 
-function update_ambience_sounds(_ambience_sound = -1) 
+function update_ambience_sound_positions(_x = 0, _y = 0)
 {
-	array_foreach(ambience_sounds, function (_ambience_sound) 
-	{
-		global.sound_controller.stop(_ambience_sound);
-	});	
+	if (is_undefined(global.sound_controller.current_room)) return;
 	
-	if (_ambience_sound >= 0)
+	var _fmod_events = ds_map_values_to_array(ambience_sounds_by_room, []); 
+	
+	for (var _i = 0; _i < array_length(_fmod_events); _i++)
 	{
-		global.sound_controller.play(_ambience_sound);
+		update_event_position(_fmod_events[_i], _x, _y);
+	}
+}
+
+function stop_ambience_sounds()
+{
+	array_foreach(
+		ds_map_values_to_array(ambience_sounds_by_room, []), 
+		function (_fmod_event) {
+			global.sound_controller.stop(_fmod_event);
+	});
+}
+
+function start_ambience_sounds_with_room(_room = rm_cidade_velha) 
+{
+	if (array_contains(ds_map_keys_to_array(ambience_sounds_by_room, []), _room)) {
+		global.sound_controller.play(ambience_sounds_by_room[? _room]);
+		global.sound_controller.current_room = _room;
+	} else {
+		global.sound_controller.current_room = undefined;
 	}
 }
 
@@ -84,6 +103,16 @@ function play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY)
 function stop(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY)
 {
 	event_per_enum[? _event_enum].stop();
+}
+
+function stop_all()
+{
+	array_foreach(
+		ds_map_values_to_array(event_per_enum, []), 
+		function (_fmod_event) {
+			_fmod_event.stop();
+		}
+	);
 }
 
 function update_event_position(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
@@ -157,15 +186,31 @@ function load_events()
 		[
 			
 		]);
-		
+	
 	event_per_enum[? FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE] = new FmodEvent(
-		"event:/SFX/AMBIENCE/ROOM_01_CIDADEVELHA/sfx_amb_room_01", [ ]);
+		"event:/SFX/AMBIENCE/ROOM_01_CIDADEVELHA/sfx_amb_room_01_cidadevelha", [
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_AMBIENCE, [
+					FMOD_PARAMETER_VALUE_AMBIENCE_CIDADE_VELHA.FAR,
+					FMOD_PARAMETER_VALUE_AMBIENCE_CIDADE_VELHA.NEAR
+				]
+			)
+		]);
 		
 	event_per_enum[? FMOD_EVENT.AMBIENCE_AKARAY] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_02_AKARAY/sfx_amb_room_02_akaray", [ ]);
 		
 	event_per_enum[? FMOD_EVENT.AMBIENCE_KERYL] = new FmodEvent(
-		"event:/SFX/AMBIENCE/ROOM_03_KERYI/sfx_amb_room_03_keryi", [ ]);
+		"event:/SFX/AMBIENCE/ROOM_03_KERYI/sfx_amb_room_03_keryi", [ 
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_AMBIENCE, [
+					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.NO_RAIN,
+					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.LIGHT_RAIN,
+					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.MEDIUM_RAIN,
+					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.HEAVY_RAIN
+				]
+			)
+		]);
 		
 	event_per_enum[? FMOD_EVENT.AMBIENCE_MORGUJA] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_04_MORGUJA/sfx_amb_room_04_morguja", [ ]);

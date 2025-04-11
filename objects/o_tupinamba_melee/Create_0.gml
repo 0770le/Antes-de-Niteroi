@@ -221,21 +221,7 @@ function tupi_descend() {
 }
 
 function play_state_update_sounds(_previous_state, _new_state) {	
-	// on enter
-	switch (_new_state)
-	{
-		case tupinamba_states.JUMP: 
-			if (vsp < 0)
-			{
-				global.sound_controller.update_event_parameter_and_play_pos(
-					FMOD_EVENT.TUPI_MELEE_JUMP, 
-					FMOD_PARAMETER_NAME_MOVE, 
-					FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP.JUMP,
-					x, y
-				);
-			}
-			break;
-	}
+	
 }
 
 //used in in creation os the instance in the room. Wil set chase var after you give the patrol

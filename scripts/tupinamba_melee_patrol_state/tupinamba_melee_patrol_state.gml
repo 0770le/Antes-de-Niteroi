@@ -37,9 +37,6 @@ if alert {
 }
 
 calc_entity_movement(global.grav, 0);
-collision();
-
-//play_walk_sound(image_index, image_speed,[2,7], x, y, FMOD_EVENT.TUPI_MELEE_WALK);
-	
+collision();	
 }
 	

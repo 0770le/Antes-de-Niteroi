@@ -133,17 +133,6 @@ function play_state_update_sounds(_previous_state, _new_state) {
 	// on enter
 	switch (_new_state)
 	{
-		case frances_states.JUMP: 
-			if (vsp < 0)
-			{
-				global.sound_controller.update_event_parameter_and_play_pos(
-					FMOD_EVENT.FRENCH_SHOOTER_JUMP, 
-					FMOD_PARAMETER_NAME_MOVE, 
-					FMOD_PARAMETER_VALUE_FRENCH_SHOOTER_JUMP.JUMP,
-					x, y
-				);
-			}
-			break;
 		case frances_states.RELOAD: 
 			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.FRENCH_SHOOTER_COUCH,

@@ -195,14 +195,9 @@ function play_state_update_sounds(_previous_state, _new_state) {
 			);
 			break;
 		case chevalier_states.ATTACK_UP:
-			global.sound_controller.update_position_and_play(
-				FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_PIERCE,
-				x, y
-			);
-			break;
 		case chevalier_states.AERIAL_RIPOSTE:
 			global.sound_controller.update_position_and_play(
-				FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_SLASH,
+				FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_PIERCE,
 				x, y
 			);
 			break;

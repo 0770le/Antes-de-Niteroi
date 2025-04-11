@@ -138,16 +138,6 @@ function add_options_button()
 	deaf_assistance.set_checked(global.options_controller.options.deaf_assistance);
 }
 
-function on_options_change(_options = new OptionsModel())
-{
-	volume_master.set_value(_options.master_volume);
-	volume_music.set_value(_options.music_volume);
-	volume_sfx.set_value(_options.sfx_volume);
-	
-	fullscreen_button.set_checked(_options.fullscreen);
-	deaf_assistance.set_checked(_options.deaf_assistance);
-}
-
 function init_dependencies()
 {
 	// persistants
@@ -224,7 +214,6 @@ function init()
 	selected_item = root_menu.children[0];
 	
 	global.input_manager.subscribe(self, INPUT_TYPE.MENU);
-	global.options_controller.register_listener(self);
 }
 
 init();

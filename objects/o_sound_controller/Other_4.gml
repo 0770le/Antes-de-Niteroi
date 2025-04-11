@@ -7,8 +7,8 @@ if(room != rm_paulo_gustavo and room != rm_studio_logo) {
 	}
 	else 
 	{
-		play_music();
-		
 		start_ambience_sounds_with_room(room);
 	}
+	
+	update_sound_stage(room);
 }

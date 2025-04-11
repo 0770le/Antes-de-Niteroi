@@ -26,6 +26,7 @@
 
 #macro OPTIONS_HP_UPGRADES				"hp_upgrades"
 #macro OPTIONS_ARROW_UPGRADES			"arrow_upgrades"
+#macro OPTIONS_SOUND_STAGES				"sound_stages"
 
 // saveables
 
@@ -35,7 +36,7 @@ new_game_properties = [
 	OPTIONS_LAST_ROOM, OPTIONS_SPAWN_X, OPTIONS_SPAWN_Y, 
 	OPTIONS_PLAYER_LIVES, OPTIONS_PLAYER_HP, OPTIONS_PLAYER_DIED, OPTIONS_PLAYER_HAS_BOW, 
 	OPTIONS_PLAYER_HAS_CAPE, OPTIONS_PLAYER_ARROWS, OPTIONS_PLAYER_FACING, OPTIONS_MUSIC_PARAMETER,
-	OPTIONS_HP_UPGRADES,OPTIONS_ARROW_UPGRADES
+	OPTIONS_HP_UPGRADES, OPTIONS_ARROW_UPGRADES, OPTIONS_SOUND_STAGES
 ]
 
 // transients
@@ -61,7 +62,7 @@ function notify_listeners()
 	
 	for (var _i = 0; _i < array_length(_listeners); _i++)
 	{
-		_listeners[_i].on_options_change(self.options); 
+		_listeners[_i].on_options_change(options); 
 	}
 }
 
@@ -204,6 +205,41 @@ function set_options(_options = {})
 function set_option(_option_macro = OPTIONS_FULLSCREEN, _new_value = 0)
 {
 	options[$ _option_macro] = _new_value;
+	
+	save_and_notify();
+}
+
+function get_sound_stage(
+	_sound_stage = SOUND_STAGE_GENERAL)
+{
+	return options.sound_stages[$ _sound_stage];
+}
+
+function set_sound_stage(
+	_sound_stage = SOUND_STAGE_GENERAL, 
+	_event = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
+	_parameter_value = FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO)
+{
+	options.sound_stages[$ _sound_stage].event = _event;
+	options.sound_stages[$ _sound_stage].parameter_value = _parameter_value;
+	
+	save_and_notify();
+}
+
+function set_sound_stage_event(
+	_sound_stage = SOUND_STAGE_GENERAL, 
+	_event = FMOD_EVENT.MUSIC_GAMEPLAY_01)
+{
+	options.sound_stages[$ _sound_stage].event = _event;
+	
+	save_and_notify();
+}
+
+function set_sound_stage_parameter(
+	_sound_stage = SOUND_STAGE_GENERAL, 
+	_parameter_value = FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO)
+{
+	options.sound_stages[$ _sound_stage].parameter_value = _parameter_value;
 	
 	save_and_notify();
 }

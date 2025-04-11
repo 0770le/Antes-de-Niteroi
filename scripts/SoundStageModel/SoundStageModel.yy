@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SoundStageModel",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SoundStageModel",
+  "parent":{
+    "name":"Model",
+    "path":"folders/Objects/Options/Model.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

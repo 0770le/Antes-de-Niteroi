@@ -13,18 +13,20 @@ music_volume								= 100;
 sfx_volume									= 100;
 											
 fmod_3d_att									= undefined;
-music_parameter								= FMOD_PARAMETER_MUSIC_VALUE.INTRO;
+music_parameter								= FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO;
 is_playing_music							= false;
 deaf_assistance								= false;
 
 current_room								= undefined;
 
 ambience_sounds_by_room						= ds_map_create();
-ambience_sounds_by_room[? rm_cidade_velha]	= FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE;
+ambience_sounds_by_room[? rm_cidade_velha]	= FMOD_EVENT.AMBIENCE_CIDADE_VELHA;
 ambience_sounds_by_room[? rm_akaray]		= FMOD_EVENT.AMBIENCE_AKARAY;
 ambience_sounds_by_room[? rm_keryi]			= FMOD_EVENT.AMBIENCE_KERYL;
 ambience_sounds_by_room[? rm_morguja_uasu]	= FMOD_EVENT.AMBIENCE_MORGUJA;
 ambience_sounds_by_room[? rm_seregipe]		= FMOD_EVENT.AMBIENCE_SEREGIPE;
+
+current_sound_stage_name					= undefined;
 
 function on_camera_update(_x, _y) 
 {
@@ -64,43 +66,76 @@ function stop_ambience_sounds()
 
 function start_ambience_sounds_with_room(_room = rm_cidade_velha) 
 {
-	if (array_contains(ds_map_keys_to_array(ambience_sounds_by_room, []), _room)) {
+	if (array_contains(ds_map_keys_to_array(ambience_sounds_by_room, []), _room))
+	{
 		global.sound_controller.play(ambience_sounds_by_room[? _room]);
 		global.sound_controller.current_room = _room;
-	} else {
+	} 
+	else 
+	{
 		global.sound_controller.current_room = undefined;
 	}
 }
 
-function play_music()
+function update_sound_stage(_room = rm_cidade_velha) 
 {
-	if (!is_playing_music) {
-		update_event_parameter_and_play(
-			FMOD_EVENT.MUSIC_GAMEPLAY, 
-			FMOD_PARAMETER_NAME_MUSIC,
-			global.options_controller.get_option(OPTIONS_MUSIC_PARAMETER)
-		);
-	}
-		
-	is_playing_music = true;
-}
-
-function stop_music()
-{
-	if (is_playing_music)
+	var _new_sound_stage_name = get_sound_stage(_room);
+	
+	// skips if already on the right stage
+	if (current_sound_stage_name == _new_sound_stage_name) return;
+	
+	// stops the music if the stage changes
+	if (current_sound_stage_name != undefined) 
 	{
-		stop(FMOD_EVENT.MUSIC_GAMEPLAY);
+		var _current_sound_stage = global.options_controller.get_sound_stage(current_sound_stage_name);
 		
-		is_playing_music = false;
+		stop(_current_sound_stage.event);
+	}	
+	
+	// plays the music if the stage changes
+	if (_new_sound_stage_name != undefined)
+	{
+		var _new_sound_stage = global.options_controller.get_sound_stage(_new_sound_stage_name);
+		
+		if (_new_sound_stage.parameter_name == "")
+		{
+			play(_new_sound_stage.event);
+		}
+		else 
+		{
+			update_event_parameter_and_play(
+				_new_sound_stage.event,
+				_new_sound_stage.parameter_name,
+				_new_sound_stage.parameter_value,
+			);
+		}
+	}
+	
+	// updates the current stage reference
+	current_sound_stage_name = _new_sound_stage_name;
+}
+
+function get_sound_stage(_room = rm_cidade_velha)
+{
+	switch(_room)
+	{
+		case rm_main_menu:
+			return SOUND_STAGE_MAIN_MENU;
+		case rm_seregipe:
+			return SOUND_STAGE_SEREGIPE;
+		case rm_reri_pe:
+			return SOUND_STAGE_RERIPE;
+		default: 
+			return SOUND_STAGE_GENERAL;
 	}
 }
 
-function play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY)
+function play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01)
 {
 	event_per_enum[? _event_enum].play();
 }
 
-function stop(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY)
+function stop(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01)
 {
 	event_per_enum[? _event_enum].stop();
 }
@@ -115,14 +150,14 @@ function stop_all()
 	);
 }
 
-function update_event_position(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
+function update_event_position(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
 								_x = other.x, 
 								_y = other.y)
 {
 	event_per_enum[? _event_enum].update_position(_x, _y);
 }
 
-function update_position_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
+function update_position_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
 								_x = other.x, 
 								_y = other.y)
 {
@@ -130,14 +165,14 @@ function update_position_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY,
 	event_per_enum[? _event_enum].play();
 }
 
-function update_event_parameter(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
+function update_event_parameter(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
 								_parameter_name = undefined, 
 								_parameter_value = undefined)
 {
 	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
 }
 
-function update_event_parameter_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
+function update_event_parameter_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
 										 _parameter_name = undefined, 
 										 _parameter_value = undefined)
 {
@@ -145,7 +180,7 @@ function update_event_parameter_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY
 	event_per_enum[? _event_enum].play();
 }
 
-function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY, 
+function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
 										 _parameter_name = undefined, 
 										 _parameter_value = undefined,
 										 _x = 0,
@@ -167,27 +202,56 @@ function load_fmod()
 
 function load_events()
 {
-	#region loops
-		
-	event_per_enum[? FMOD_EVENT.MUSIC_GAMEPLAY] = new FmodEvent(
+	#region musics
+	
+	event_per_enum[? FMOD_EVENT.MUSIC_MAIN_MENU] = new FmodEvent(
+		"event:/MUSIC/mus_menu", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.MUSIC_GAMEPLAY_01] = new FmodEvent(
 		"event:/MUSIC/mus_gameplay_01", 
 		[
 			new FmodParameter(
 				FMOD_PARAMETER_NAME_MUSIC, 
 				[
-					FMOD_PARAMETER_MUSIC_VALUE.INTRO,
-					FMOD_PARAMETER_MUSIC_VALUE.ENGAGE_FIRST_ENEMY,
-					FMOD_PARAMETER_MUSIC_VALUE.SIDE_ROOMS,
+					FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO,
+					FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.ENGAGE_FIRST_ENEMY,
+					FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.SIDE_ROOMS,
 				])
 		]);
 		
-	event_per_enum[? FMOD_EVENT.MUSIC_MAIN_MENU] = new FmodEvent(
-		"event:/MUSIC/mus_menu", 
+	event_per_enum[? FMOD_EVENT.MUSIC_GAMEPLAY_02] = new FmodEvent(
+		"event:/MUSIC/mus_gameplay_02", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.MUSIC_SEREGIPE] = new FmodEvent(
+		"event:/MUSIC/mus_seregipe", 
 		[
-			
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MUSIC,
+				[
+					FMOD_PARAMETER_MUSIC_STAGE_SEREGIPE_VALUE.INTRO,
+					FMOD_PARAMETER_MUSIC_STAGE_SEREGIPE_VALUE.INSIDE
+				])
 		]);
+		
+	event_per_enum[? FMOD_EVENT.MUSIC_RERIPE] = new FmodEvent(
+		"event:/MUSIC/mus_reripe",
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MUSIC,
+				[
+					FMOD_PARAMETER_MUSIC_STAGE_RERIPE_VALUE.INTRO,
+					FMOD_PARAMETER_MUSIC_STAGE_RERIPE_VALUE.ON_TOP
+				])
+		]);
+		
+	event_per_enum[? FMOD_EVENT.MUSIC_CREDITS] = new FmodEvent(
+		"event:/MUSIC/mus_credits", [ ]);
 	
-	event_per_enum[? FMOD_EVENT.CIDADE_VELHA_ROOM_AMBIENCE] = new FmodEvent(
+	#endregion
+	
+	#region ambience
+	
+	event_per_enum[? FMOD_EVENT.AMBIENCE_CIDADE_VELHA] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_01_CIDADEVELHA/sfx_amb_room_01_cidadevelha", [
 			new FmodParameter(
 				FMOD_PARAMETER_NAME_AMBIENCE, [
@@ -196,6 +260,9 @@ function load_events()
 				]
 			)
 		]);
+		
+	event_per_enum[? FMOD_EVENT.AMBIENCE_CIDADE_VELHA_SEA] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_01_CIDADEVELHA/sfx_amb_sea", [ ]);
 		
 	event_per_enum[? FMOD_EVENT.AMBIENCE_AKARAY] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_02_AKARAY/sfx_amb_room_02_akaray", [ ]);
@@ -217,89 +284,253 @@ function load_events()
 	
 	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_05_SEREGIPE/sfx_amb_room_05_seregipe", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.AMBIENCE_RERIPE] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_06_RERIPE/sfx_amb_room_06_reripe", [ ]);
 	
+	#endregion
+	
+	#region ARCHER_TUPI
+			
+	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_ATTACK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_atk",
+		[ 
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE,
+				[
+					FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.PREPARE,
+					FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.RELEASE
+				])
+		]);
+			
+	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_die", [ ]);
+			
+	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_hurt", [ ]);
+	
+	#endregion
+	
+	#region CHEVALIER
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_ATTACK_SHIELD] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_atk_shield", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_PIERCE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_atk_spear_pierce", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_DEATH] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_death", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_GUARD] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_guard", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_hurt", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_TURN] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_turn", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.CHEVALIER_WALK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_walk", [ ]);
+	
+	#endregion
+	
+	#region HARPIA
+	
+	event_per_enum[? FMOD_EVENT.HARPIA_ATTACK] = new FmodEvent( 
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_atk", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.HARPIA_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_die", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.HARPIA_FLAP] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_flap", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.HARPIA_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_hurt", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.HARPIA_IDLE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_idle", [ ]);
+
+	#endregion
+	
+	#region MELEE_TUPI
+		
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_ATK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_atk",
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, 
+				[
+					FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.PREPARE,
+					FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.SWING
+				])
+		]);
+			
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_die", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_HIT_GROUND] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_hit_ground", [ ]);
+			
+	event_per_enum[? FMOD_EVENT.TUPI_MELEE_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_hurt", [ ]);
+	
+	#endregion	
+	
+	#region OUNCE
+	
+	event_per_enum[? FMOD_EVENT.OUNCE_ATTACK] = new FmodEvent( 
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_atk", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.OUNCE_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_die", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.OUNCE_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_hurt", [	]);
+
+	#endregion
+	
+	#region FRENCH_SHOOTER
+	
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_COUCH] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_couch", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_die", [ ]);
+			
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_hurt", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_RELOAD] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_reload", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_SHOOT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_shoot", [ ]);
+	
+	#endregion
+	
+	#region JARARACA
+			
+	event_per_enum[? FMOD_EVENT.SNAKE_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SNAKE/sfx_enem_snake_die", [ ]);
+			
+	event_per_enum[? FMOD_EVENT.SNAKE_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SNAKE/sfx_enem_snake_hurt", [ ]);
+	
+	#endregion
+	
+	#region ARMADEIRA
+	
+	event_per_enum[? FMOD_EVENT.SPIDER_ATTACK] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_atk", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.SPIDER_DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_die", [ ]);
+			
+	event_per_enum[? FMOD_EVENT.SPIDER_HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_hurt", [ ]);
+		
 	#endregion
 	
 	#region PLAYER
 	
-	event_per_enum[? FMOD_EVENT.ATTACK_MELEE] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_melee",
-		[
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE,
-			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND,
-			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.MOVING,
-			FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.AIR]),
-		]);
-		
-	event_per_enum[? FMOD_EVENT.ATTACK_HIT] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_hit",
-		[
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_HIT,
-			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_GROUND,
-			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.ARROW_GROUND,
-			FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.ARROW_HIT]),
-		]);
-		
 	event_per_enum[? FMOD_EVENT.ATTACK_BOW] = new FmodEvent(
 		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_bow",
 		[
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_ATTACK_BOW_VALUE.PREPARE,
-			FMOD_PARAMETER_ATTACK_BOW_VALUE.RELEASE]),
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, 
+				[
+					FMOD_PARAMETER_ATTACK_BOW_VALUE.PREPARE,
+					FMOD_PARAMETER_ATTACK_BOW_VALUE.RELEASE
+				]),
 		]);
-			
-	event_per_enum[? FMOD_EVENT.WALK] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_run",
+	
+	event_per_enum[? FMOD_EVENT.ATTACK_HIT] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_hit",
 		[
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_MOVE_WALK.DIRT,
-			FMOD_PARAMETER_MOVE_WALK.GRASS,
-			FMOD_PARAMETER_MOVE_WALK.STONE,
-			FMOD_PARAMETER_MOVE_WALK.SAND]),
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, 
+				[
+					FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_HIT,
+					FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.MELEE_GROUND,
+					FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.ARROW_GROUND,
+					FMOD_PARAMETER_MOVE_VALUE_ATTACK_HIT.ARROW_HIT
+				])
 		]);
-			
-	event_per_enum[? FMOD_EVENT.CROUCH] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_crouch", []);
-			
+	
+	event_per_enum[? FMOD_EVENT.ATTACK_MELEE] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/ATTACK_MOVES/sfx_main_atk_melee",
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, 
+				[
+					FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND_PREPARE,
+					FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.GROUND,
+					FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.MOVING,
+					FMOD_PARAMETER_MOVE_VALUE_MELEE_ATTACK.AIR
+				])
+		]);
+		
+	event_per_enum[? FMOD_EVENT.DIE] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_die", [ ]);
+		
 	event_per_enum[? FMOD_EVENT.EVADE] = new FmodEvent(
 		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_evade",
 		[
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_MOVE_EVADE.SHORT,
-			FMOD_PARAMETER_MOVE_EVADE.LONG,
-			FMOD_PARAMETER_MOVE_EVADE.LAND]),
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, 
+				[
+					FMOD_PARAMETER_MOVE_EVADE.SHORT,
+					FMOD_PARAMETER_MOVE_EVADE.LONG,
+					FMOD_PARAMETER_MOVE_EVADE.LAND
+				])
 		]);
-			
-	event_per_enum[? FMOD_EVENT.HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hurt",
-		[
-			
-		]);
-			
-	event_per_enum[? FMOD_EVENT.JUMP] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_jump", [
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-				FMOD_PARAMETER_MOVE_WALK.STONE,
-				FMOD_PARAMETER_MOVE_WALK.GRASS,
-				FMOD_PARAMETER_MOVE_WALK.SAND,
-				FMOD_PARAMETER_MOVE_WALK.WOOD,
-				FMOD_PARAMETER_MOVE_WALK.DIRT,
-				FMOD_PARAMETER_MOVE_WALK.WATER])]);
-			
+
 	event_per_enum[? FMOD_EVENT.HANG] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hanging",
-		[
-			
-		]);
-			
-	event_per_enum[? FMOD_EVENT.DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_die",
-		[
-			
-		]);
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hanging", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.HIT_GROUND] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hit_ground", []);
 		
+	event_per_enum[? FMOD_EVENT.HURT] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_hurt", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.JUMP] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_jump", 
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, 
+				[
+					FMOD_PARAMETER_MOVE_JUMP.JUMP,
+					FMOD_PARAMETER_MOVE_JUMP.DOUBLE_JUMP,
+					FMOD_PARAMETER_MOVE_JUMP.LAND
+				])
+		]);
+	
+	event_per_enum[? FMOD_EVENT.WALK] = new FmodEvent(
+		"event:/SFX/CHARACTER/MAIN_ARARIBOIA/BASIC_MOVES/sfx_main_run",
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MOVE, 
+				[
+					FMOD_PARAMETER_MOVE_WALK.STONE,
+					FMOD_PARAMETER_MOVE_WALK.GRASS,
+					FMOD_PARAMETER_MOVE_WALK.SAND,
+					FMOD_PARAMETER_MOVE_WALK.WOOD,
+					FMOD_PARAMETER_MOVE_WALK.DIRT,
+					FMOD_PARAMETER_MOVE_WALK.WATER,
+				])
+		]);	
+		
+	#endregion
+	
+	#region OBJECTS
+	
+	event_per_enum[? FMOD_EVENT.OBJECTS_FIRE] = new FmodEvent(
+		"event:/SFX/OBJECTS/FIRE/sfx_objects_fire", [ ]);
+	
 	#endregion
 	
 	#region WOOD_BARRIER
@@ -320,323 +551,31 @@ function load_events()
 	
 	#endregion
 	
-	#region MELEE_TUPI
-		
-	event_per_enum[? FMOD_EVENT.TUPI_MELEE_ATK] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_atk",
-		[
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-			FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.PREPARE,
-			FMOD_PARAMETER_MOVE_VALUE_TUPI_MELEE_ATK.SWING]),
-		]);
-			
-	event_per_enum[? FMOD_EVENT.TUPI_MELEE_DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_die",
-		[
-			
-		]);
-			
-	event_per_enum[? FMOD_EVENT.TUPI_MELEE_HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_hurt",
-		[
-			
-		]);
-		
-	event_per_enum[? FMOD_EVENT.TUPI_MELEE_JUMP] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_jump",
-		[
-			new FmodParameter(
-				FMOD_PARAMETER_NAME_MOVE, [
-					FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP.JUMP,
-					FMOD_PARAMETER_VALUE_TUPI_MELEE_JUMP.LAND
-				])
-		]);
-		
-	event_per_enum[? FMOD_EVENT.TUPI_MELEE_EVADE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_evade", [ ]);
-		
-		
-		
-	event_per_enum[? FMOD_EVENT.TUPI_MELEE_WALK] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/MELEE_TUPINAMBA/sfx_enem_tupi_melee_run", [ 
-			new FmodParameter(FMOD_PARAMETER_NAME_MOVE, [
-				FMOD_PARAMETER_MOVE_WALK.STONE,
-				FMOD_PARAMETER_MOVE_WALK.GRASS,
-				FMOD_PARAMETER_MOVE_WALK.SAND,
-				FMOD_PARAMETER_MOVE_WALK.WOOD,
-				FMOD_PARAMETER_MOVE_WALK.DIRT,
-				FMOD_PARAMETER_MOVE_WALK.WATER])]);
-	
-	#endregion
-	
-	
-	#region ARCHER_TUPI
-			
-	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_die",
-		[ ]);
-			
-	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_hurt",
-		[ ]);
-		
-	event_per_enum[? FMOD_EVENT.TUPI_ARCHER_ATTACK] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/ARCHER_TUPINAMBA/sfx_enem_tupi_archer_atk",
-		[ 
-			new FmodParameter(
-				FMOD_PARAMETER_NAME_MOVE,
-				[
-					FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.PREPARE,
-					FMOD_PARAMETER_VALUE_TUPI_ARCHER_ATTACK.RELEASE
-				])
-		]);
-	
-	#endregion
-	
-	
-	#region FRENCH_SHOOTER
-			
-	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_die",
-		[
-			
-		]);
-			
-	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_hurt",
-		[
-			
-		]);
-		
-	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_COUCH] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_couch",
-		[]);
-		
-	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_JUMP] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_jump",
-		[
-			new FmodParameter(
-				FMOD_PARAMETER_NAME_MOVE, [
-					FMOD_PARAMETER_VALUE_FRENCH_SHOOTER_JUMP.JUMP,
-					FMOD_PARAMETER_VALUE_FRENCH_SHOOTER_JUMP.LAND
-				])
-		]);
-	
-	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_RELOAD] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_reload",
-		[]);
-	
-	event_per_enum[? FMOD_EVENT.FRENCH_SHOOTER_SHOOT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SHOOTER_FRENCH/sfx_enem_french_shooter_shoot",
-		[]);
-	
-	#endregion
-	
-	#region ARMADEIRA
-			
-	event_per_enum[? FMOD_EVENT.SPIDER_DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_die",
-		[
-			
-		]);
-			
-	event_per_enum[? FMOD_EVENT.SPIDER_HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_hurt",
-		[
-			
-		]);
-		
-	event_per_enum[? FMOD_EVENT.SPIDER_ATTACK] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SPIDER/sfx_enem_spider_atk",
-		[
-			
-		]);
-	
-	#endregion
-	
-	#region JARARACA
-			
-	event_per_enum[? FMOD_EVENT.SNAKE_DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SNAKE/sfx_enem_snake_die",
-		[
-			
-		]);
-			
-	event_per_enum[? FMOD_EVENT.SNAKE_HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/SNAKE/sfx_enem_snake_hurt",
-		[
-			
-		]);
-	
-	#endregion
-	
 	#region UI
 	
 	event_per_enum[? FMOD_EVENT.BUTTON_TALK] = new FmodEvent(
-		"event:/SFX/UI/BUTTONS/sfx_ui_buttons_talk", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.COLLECT_LIFE] = new FmodEvent(
-		"event:/SFX/UI/COLECTABLES/sfx_colect_life", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.COLLECT_REGISTER] = new FmodEvent(
-		"event:/SFX/UI/COLECTABLES/sfx_colect_register", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.TRANSITION_BOAT] = new FmodEvent(
-		"event:/SFX/UI/TRANSITIONS/sfx_ui_transition_boat", 
-		[
-		
-		]);
+		"event:/SFX/UI/BUTTONS/sfx_ui_buttons_talk", [ ]);
 		
 	event_per_enum[? FMOD_EVENT.MENU_CONFIRM_RETURN] = new FmodEvent(
-		"event:/SFX/UI/BUTTONS/sfx_ui_menu_confirm_return", 
-		[
-		
-		]);
+		"event:/SFX/UI/BUTTONS/sfx_ui_menu_confirm_return", [ ]);
 		
 	event_per_enum[? FMOD_EVENT.MENU_GENERAL] = new FmodEvent(
-		"event:/SFX/UI/BUTTONS/sfx_ui_menu_general", 
-		[
-		
-		]);
+		"event:/SFX/UI/BUTTONS/sfx_ui_menu_general", [ ]);
 		
 	event_per_enum[? FMOD_EVENT.MENU_NEWGAME_LOADGAME] = new FmodEvent(
-		"event:/SFX/UI/BUTTONS/sfx_ui_menu_newgame_loadgame", 
-		[
-		
-		]);
+		"event:/SFX/UI/BUTTONS/sfx_ui_menu_newgame_loadgame", [ ]);
 		
 	event_per_enum[? FMOD_EVENT.MENU_PAUSE] = new FmodEvent(
-		"event:/SFX/UI/BUTTONS/sfx_ui_menu_pause", 
-		[
+		"event:/SFX/UI/BUTTONS/sfx_ui_menu_pause", [ ]);
 		
-		]);
-	
-	#endregion
-	
-	#region CHEVALIER
-	
-	event_per_enum[? FMOD_EVENT.CHEVALIER_ATTACK_SHIELD] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_atk_shield", 
-		[
+	event_per_enum[? FMOD_EVENT.COLLECT_LIFE] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_life", [ ]);
 		
-		]);
-	
-	event_per_enum[? FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_PIERCE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_atk_spear_pierce", 
-		[
+	event_per_enum[? FMOD_EVENT.COLLECT_REGISTER] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_register", [ ]);
 		
-		]);
-	
-	event_per_enum[? FMOD_EVENT.CHEVALIER_ATTACK_SPEAR_SLASH] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_atk_spear_slash", 
-		[
-		
-		]);
-	
-	event_per_enum[? FMOD_EVENT.CHEVALIER_DEATH] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_death", 
-		[
-		
-		]);
-	
-	event_per_enum[? FMOD_EVENT.CHEVALIER_GUARD] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_guard", 
-		[
-		
-		]);
-	
-	event_per_enum[? FMOD_EVENT.CHEVALIER_HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_hurt", 
-		[
-		
-		]);
-	
-	event_per_enum[? FMOD_EVENT.CHEVALIER_TURN] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_turn", 
-		[
-		
-		]);
-	
-	event_per_enum[? FMOD_EVENT.CHEVALIER_WALK] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/CHEVALIER/sfx_enem_chev_walk", 
-		[
-		
-		]);
-	
-	#endregion
-	
-	#region HARPIA
-	
-	event_per_enum[? FMOD_EVENT.HARPIA_ATTACK] = new FmodEvent( 
-		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_atk", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.HARPIA_DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_die", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.HARPIA_FLAP] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_flap", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.HARPIA_HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_hurt", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.HARPIA_IDLE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/HARPIA/sfx_enem_harpia_idle", 
-		[
-		
-		]);
-
-	#endregion
-	
-	#region OUNCE
-	
-	event_per_enum[? FMOD_EVENT.OUNCE_ATTACK] = new FmodEvent( 
-		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_atk", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.OUNCE_DIE] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_die", 
-		[
-		
-		]);
-		
-	event_per_enum[? FMOD_EVENT.OUNCE_HURT] = new FmodEvent(
-		"event:/SFX/CHARACTER/ENEMIES/OUNCE/sfx_enem_ounce_hurt", 
-		[
-		
-		]);
-
-	#endregion
-	
-	#region OBJECTS
-	
-	event_per_enum[? FMOD_EVENT.OBJECTS_FIRE] = new FmodEvent(
-		"event:/SFX/OBJECTS/FIRE/sfx_objects_fire", 
-		[
-		
-		]);
+	event_per_enum[? FMOD_EVENT.TRANSITION_BOAT] = new FmodEvent(
+		"event:/SFX/UI/TRANSITIONS/sfx_ui_transition_boat", [ ]);
 	
 	#endregion
 }

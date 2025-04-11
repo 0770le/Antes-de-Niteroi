@@ -8,7 +8,7 @@ function OptionsModel (
 		music_volume: 10,
 		sfx_enabled: true,
 		sfx_volume: 10,
-		music_parameter: FMOD_PARAMETER_MUSIC_VALUE.INTRO,
+		music_parameter: FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO,
 		deaf_assistance: false,
 		
 		unlocked_catalog_items: [],
@@ -52,6 +52,39 @@ function OptionsModel (
 		
 		hp_upgrades: [],
 		arrow_upgrades: [],
+		
+		sound_stages: new SoundStagesModel([
+			new SoundStageModel(
+				SOUND_STAGE_MAIN_MENU,
+				FMOD_EVENT.MUSIC_MAIN_MENU,
+				"",
+				0
+			),
+			new SoundStageModel(
+				SOUND_STAGE_GENERAL,
+				FMOD_EVENT.MUSIC_GAMEPLAY_01,
+				FMOD_PARAMETER_NAME_MUSIC,
+				FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO
+			),
+			new SoundStageModel(
+				SOUND_STAGE_SEREGIPE,
+				FMOD_EVENT.MUSIC_SEREGIPE,
+				FMOD_PARAMETER_NAME_MUSIC,
+				FMOD_PARAMETER_MUSIC_STAGE_SEREGIPE_VALUE.INTRO
+			),
+			new SoundStageModel(
+				SOUND_STAGE_RERIPE,
+				FMOD_EVENT.MUSIC_RERIPE,
+				FMOD_PARAMETER_NAME_MUSIC,
+				FMOD_PARAMETER_MUSIC_STAGE_RERIPE_VALUE.INTRO
+			),
+			new SoundStageModel(
+				SOUND_STAGE_CREDITS,
+				FMOD_EVENT.MUSIC_CREDITS,
+				"",
+				0
+			)
+		])
 	}) 
 constructor 
 {
@@ -96,4 +129,7 @@ constructor
 	//game upgrades
 	hp_upgrades = _options_model.hp_upgrades;
 	arrow_upgrades = _options_model.arrow_upgrades;
+	
+	//sounds
+	sound_stages = _options_model.sound_stages;
 }

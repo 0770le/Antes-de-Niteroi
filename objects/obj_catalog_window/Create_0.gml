@@ -506,8 +506,6 @@ function create_content()
 	_last_item.image = spr_catalog_armadeira;
 	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
 	
-	
-	
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].set_selected(true);
 	
 #endregion

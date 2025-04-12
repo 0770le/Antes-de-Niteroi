@@ -1,5 +1,5 @@
 
-function struck_by_arrow(_dir = facing){
+function struck_by_arrow(_dir = facing, _on_fire){
 	var take_damage = false;
 
 	//only do if arrow is not set to die
@@ -22,13 +22,20 @@ function struck_by_arrow(_dir = facing){
 				hurt = true;
 				//damage
 				hp -=1;
+				if(_on_fire) {
+					hp -=1;
+				}
+					
 				//move away from the hit
 				
-				var knockback_dis = 3;
-				hsp = _dir * knockback_dis;
-				//set hurt time
 				alarm[ALARM_HURTING] = hurt_time;
-				state= enemy_states.HURTING;
+				
+				if(arrow_knockback) {
+					var knockback_dis = 3;
+					hsp = _dir * knockback_dis;
+					//set hurt time
+					state= enemy_states.HURTING;
+				}
 				
 				o_sound_controller.update_position_and_play(hurt_sound_event,x,y);
 				image_index = 0;

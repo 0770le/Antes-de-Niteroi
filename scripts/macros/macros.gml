@@ -128,8 +128,10 @@ function macros(){
 #macro COLOR_DK_GRAY		make_color_rgb(89,86,82)
 #macro COLOR_YELLOW			make_color_rgb(213,172,81)
 #macro COLOR_RED			make_color_rgb(172,50,50)
+#macro COLOR_BLUE			make_color_rgb(91,110,225)
 
 #macro TEXT_Y_HEIGHT_1l				1.75
 #macro TEXT_Y_HEIGHT_2l				2.5
+#macro TEXT_Y_HEIGHT_3l				3.5
 	
 }

@@ -2,9 +2,9 @@ event_inherited();
 
 // settings
 
-starting_x		= 420;
-starting_y		= 490;
-items_margin    = 80;
+starting_x		= 140;
+starting_y		= 165;
+items_margin    = 25;
 button_sprite   = spr_menu_button_transparent;
 text_color		= c_white;
 text_hover_color= make_color_rgb(172, 50, 50);
@@ -46,6 +46,11 @@ function draw_title()
 
 function draw_controller_buttons()
 {
+	
+}
+
+function draw_controller_buttons2()
+{
 	draw_set_color(accent_color);
 	draw_set_font(fnt_arial_medium_to_small);
 	draw_set_valign(fa_middle);
@@ -65,6 +70,12 @@ function draw_controller_buttons()
 function draw_parent()
 {
 	
+}
+
+function draw_gui()
+{
+	draw_controller_buttons2();
+	draw_version();
 }
 
 function draw()
@@ -169,7 +180,7 @@ function init()
 	
 	if (!global.options_controller.get_option(OPTIONS_IS_NEW_GAME))
 	{
-		root_menu.add_child(new MenuButton("Continuar", function () 
+		root_menu.add_child(new MenuButton("CONTINUAR", function () 
 		{
 			global.options_controller.unregister_listener(self);
 			
@@ -191,7 +202,7 @@ function init()
 		items_margin += 35;
 	}
 	
-	root_menu.add_child(new MenuButton("Novo Jogo", function() 
+	root_menu.add_child(new MenuButton("NOVO JOGO", function() 
 	{ 
 		global.options_controller.unregister_listener(self);
 		
@@ -206,7 +217,7 @@ function init()
 	
 	// add_options_button();
 	
-	root_menu.add_child(new MenuButton("Sair", function() 
+	root_menu.add_child(new MenuButton("SAIR", function() 
 	{ 
 		game_end(0); 
 	}));

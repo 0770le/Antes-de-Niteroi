@@ -2,4 +2,6 @@ patrol_left = 0;
 patrol_right = 500;
 
 possible_enemies = [ENEMY_TYPE.TUPINAMBA_RANGED];
-max_enemies = 1;
+max_enemies = 2;
+
+spawn_interval = 1_000_000;

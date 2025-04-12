@@ -3,6 +3,5 @@
 event_inherited();
 
 if(o_hostage_cidade_velha.saved and quest_step == 1 and other.interact) {
-	quest_step++;
 	quest_complete_kunumiuasu();
 }

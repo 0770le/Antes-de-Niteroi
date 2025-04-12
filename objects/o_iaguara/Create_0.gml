@@ -3,6 +3,8 @@ event_inherited();
 unstoppable = true;
 knockback_multiplier = 0;
 
+arrow_knockback = false;
+
 //taking dmg
 hurt_time = room_speed * 0.5;
 hp = 8; 

@@ -1,1 +1,0 @@
-set_harpia(7*TILE_SIZE,3 );

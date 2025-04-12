@@ -1,6 +1,7 @@
 depth += 10;
 
 drop_hp = false;
+drop_heal = false;
 
 enum ENEMY_TYPE {
 	ARMADEIRA,

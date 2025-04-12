@@ -4,7 +4,10 @@ function quest_complete_kunumiuasu(){
 	instance_create_layer(3630,390,LAYER_INSTANCES,o_kunumiuasu);
 	o_game.quest_saved_kunumiuasu = true;
 
-	o_portugues.quest_step = 2;
+	if(global.game.quest_step_portugues <1) {
+		o_portugues.quest_step = 1;
+		global.game.quest_step_portugues = 1;
+	}
 	o_portugues.quest = false;
 	
 	o_hostage_cidade_velha.talk = false;

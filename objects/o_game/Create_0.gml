@@ -91,6 +91,8 @@ quest_saved_kunumiuasu = false;
 quest_saved_kunumiuasu_seregipe = false;
 quest_saved_kunumiuasu_morguja = false;
 
+quest_step_portugues = 0;
+
 
 //collecibles acquired
 

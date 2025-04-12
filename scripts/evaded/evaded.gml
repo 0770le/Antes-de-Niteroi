@@ -1,6 +1,9 @@
 ///standar evade leap off the ground
 function evaded() {
 	if (((jumps > 0) or on_ground()) and has_evade) {
+		
+		jumpTimer = 0;
+		
 		if(left) {
 			facing = -1;	
 		}if(right) {

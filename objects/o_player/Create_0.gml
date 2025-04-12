@@ -2,12 +2,15 @@ global.player = self;
 
 o_camera.y_offset = -80;
 
+jumpTimerInitial = 15;
+jumpTimer = 0;
+
 // speeds
 hsp =0; //horizontal
 vsp = 0; //vertical
 //I want the enemy to be able to see this var
-max_hsp = PLAYER_MAX_HSP;// = 2.3;
-walk_spd = PLAYER_WALK_SPEED;// =0.3;   
+max_hsp = PLAYER_MAX_HSP*2;// = 2.3;
+walk_spd = PLAYER_WALK_SPEED*2;// =0.3;   
 
 hsp_decimal = 0;
 vsp_decimal =0;

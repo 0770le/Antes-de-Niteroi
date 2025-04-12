@@ -188,7 +188,6 @@ function draw_version()
 
 function draw_menu_items() 
 {
-	draw_version();
 	draw_controller_buttons();
 	
 	draw_set_halign(fa_left);

@@ -2,7 +2,8 @@
 function jumped(can_jump = false) {
 	
 	if(!can_jump) {
-		if (on_ground()) {
+		if (on_ground() or jumpTimer > 0) {
+			jumpTimer = 0;
 			can_jump = true;
 			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.JUMP,x,y);
 		}else if(jumps > 0) {

@@ -34,6 +34,11 @@ function player_hanging_state(){
 	if (face != SOLID) { 
 		//o_sound_controller.stop(FMOD_EVENT.HANG);
 		state = states.JUMP;
+	} else {
+		jumpTimer = jumpTimerInitial;
+		if(o_game.has_cloak) {
+			jumps = 1;	
+		}	
 	}
 
 	//pular na parede: walljump

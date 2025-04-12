@@ -14,8 +14,8 @@ dir = 0;
 
 collision_dmg = false;
 
-alert_distance = TILE_SIZE*7;
-alert_initial_timer = room_speed * 2;
+alert_distance = TILE_SIZE*10;
+alert_initial_timer = room_speed * 1;
 alert_timer = alert_initial_timer;
 
 attack_cooldown = random_range(room_speed * 2.5 ,room_speed * 3.5);

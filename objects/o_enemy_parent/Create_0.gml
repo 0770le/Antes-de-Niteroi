@@ -2,7 +2,10 @@
 
 //taking dmg
 
+stuck_arrow = true;
 turn_on_damage = true;
+
+arrow_knockback = true;
 
 knockback_multiplier = 1;
 unstoppable = false; 

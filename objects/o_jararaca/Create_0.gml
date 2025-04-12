@@ -1,6 +1,9 @@
 event_inherited();
 
 turn_on_damage = false;
+unstoppable = true;
+arrow_knockback = false;
+stuck_arrow = false;
 
 layer = layer_get_id(LAYER_MESSAGES);
 

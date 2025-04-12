@@ -4,3 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
+global.game.quest_step_portugues = max(global.game.quest_step_portugues,2);

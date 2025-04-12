@@ -2,7 +2,7 @@ function player_attack_state(){
 	//get input
 	get_input();
 	
-	if(image_index < 2 or image_index > 7) {
+	if(image_index < 2 or image_index > 5) {
 		if jump {
 			jumped();
 			return;
@@ -33,7 +33,7 @@ function player_attack_state(){
 	//power attack
 	var _power_time = room_speed * 1.5;
 	var _pause = 0.09* room_speed;
-	if ((floor(image_index) == 2) and !runned_once) {	
+	if ((floor(image_index) == 1) and !runned_once) {	
 		runned_once = true;
 		alarm[ONCE] = _pause;
 		anim_paused(_pause);
@@ -64,13 +64,13 @@ function player_attack_state(){
 	//create hitboxes during hits index
 	
 	//above
-	if (image_index >= 3 and image_index <=4)  {
+	if (image_index >= 2 and image_index <=4)  {
 		var inst= instance_create_layer(x -30*facing,y-35, LAYER_INSTANCES, o_player_attack_hitbox);
 		inst.image_xscale = facing*2;	
 	}
 	
 	//club
-	if (image_index >= 3 and image_index < 6) {
+	if (image_index >= 2 and image_index < 6) {
 		var inst= instance_create_layer(x,y+5, LAYER_INSTANCES, o_player_attack_hitbox);
 		inst.image_xscale = facing*1.7;	
 		

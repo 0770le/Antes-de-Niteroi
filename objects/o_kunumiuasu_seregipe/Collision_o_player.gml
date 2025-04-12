@@ -11,10 +11,10 @@ switch(room) {
 		break;
 }
 	
-text_bubble2(id, _text, -1, 5, TEXT_Y_HEIGHT_2l);
+text_bubble2(id, _text, -1, 4, TEXT_Y_HEIGHT_2l);
 
 
-if other.interact {
+if other.interact and interact{
 	global.sound_controller.update_position_and_play(FMOD_EVENT.TRANSITION_BOAT, x, y);
 	switch(room) {
 		case rm_seregipe:
@@ -28,14 +28,8 @@ if other.interact {
 			target_y = 2991;
 			break;
 	}
-	var _aux = {
-		rm: target_rm,
-		x: target_x,
-		y: target_y,
-		facing: other.facing,
-		callback: function () {
-			fade_to_room(self.rm, self.x, self.y, self.facing, c_black);		
-		}
-	}
-	var _ = call_later(2, time_source_units_seconds, _aux.callback);
+	
+	global.fader.to_room(target_rm, target_x, target_y);
+	
+	interact = false;
 }

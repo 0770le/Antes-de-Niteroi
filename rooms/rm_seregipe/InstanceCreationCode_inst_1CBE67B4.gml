@@ -1,1 +1,1 @@
-sprite_index = s_vision_blocker_fade_down
+sprite_index = s_vision_blocker_fade_down;

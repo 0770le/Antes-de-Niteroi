@@ -230,7 +230,7 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.REGIONS].label	= "Regiões";
 	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Guajupiá";
-	_last_item.set_text("Baía de Guanabara (RJ). Guajupiá, 'morada dos ancestrais', era para os tupinambás uma espécie de paraíso, onde descansavam os antepassados mais valorosos e memoráveis.\nAo chegarem à região, após descerem pelo litoral brasileiro e conquistarem territórios de outras tribos, passaram a chamá-la assim devido a sua abundância em frutos, peixes e recursos naturais.");
+	_last_item.set_text("Baía de Guanabara (RJ). Guajupiá, 'morada dos ancestrais', era para os tupinambás uma espécie de paraíso, onde descansavam os antepassados mais valorosos e memoráveis.\nAo chegarem à região, após descerem pelo litoral brasileiro e conquistarem territórios de outras tribos, passaram a chamá-la assim devido à sua abundância em frutos, peixes e recursos naturais.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.GUAJUPIA;
 	
@@ -242,7 +242,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Nheteróia";
-	_last_item.set_text("Para os tupinambás, o nome original do Rio de Janeiro seria Niterói.\nHá indícios de que esse nome também serviria para designavar toda a costa da baía e uma aldeia na margem direita da mesma.\nSua etimologia pode significar tanto 'costa toda sinuosa' quanto 'rio escondido'.");
+	_last_item.set_text("Para os tupinambás, o nome original do Rio de Janeiro seria Niterói.\nHá indícios de que esse nome também serviria para designar toda a costa da baía e uma aldeia na margem direita da mesma.\nSua etimologia pode significar tanto 'costa toda sinuosa' quanto 'rio escondido'.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.NHETEROIA;	
 	
@@ -254,7 +254,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Akaray";
-	_last_item.set_text("Atual bairro de Icaraí, Niterói (RJ). A região formava um enorme areal com vegetação típica de restinga.\nSeu nome deriva do peixe de água doce acará ou cará, significando algo como 'Rio dos Acarás'");
+	_last_item.set_text("Atual bairro de Icaraí, Niterói (RJ). A região formava um enorme areal com vegetação típica de restinga, pitangueiras, cajueiros e cactos.\nSeu nome deriva do peixe de água doce acará ou cará, significando algo como 'Rio dos Acarás'.");
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.AKARAY;	
 	
@@ -272,7 +272,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Itaóka";
-	_last_item.set_text("Atual bairro de Itaoca, São Gonçado (RJ). A aldeia da 'Casa de Pedra' provavelmente levou esse nome devio a referência alguma pedra grande ou ao fato de que suas malocas estariam enconstadas em relevos de granito.\nO litoral de Itaóka era chamado de Suaçuna, referência ao sûasu, cervo para os tupinambás." );
+	_last_item.set_text("Atual bairro de Itaoca, São Gonçado (RJ). A aldeia da 'Casa de Pedra' provavelmente levou esse nome devio à referência alguma pedra grande ou ao fato de que suas malocas estariam encostadas em relevos de granito.\nO litoral de Itaóka era chamado de Suaçuna, referência ao sûasu, cervo para os tupinambás." );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.ITAOKA;
 	
@@ -347,8 +347,7 @@ function create_content()
 	_last_item.label = "Araryboîa";
 	_last_item.set_text("Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa em homenagem ao donatário da Capitania de São Vicente.\n"
 		+ "Ficou conhecido na história devido à sua aliança com os portugueses, fundamental para a conquista da baía de Guanabara frente aos tamoios e franceses, em 1567.\n"
-		+ "Como recompensa, recebeu da coroa portuguesa a propriedade de terras localizadas na entrada da baía de Guanabara. "
-		+ "Ali foi estabelecida a aldeia de São Lourenço, que futuramente daria origem à cidade de Niterói, da qual é considerado o fundador.");
+		+ "Como recompensa, recebeu da coroa portuguesa a propriedade de terras localizadas na entrada da baía de Guanabara. Ali foi estabelecida a aldeia de São Lourenço, que futuramente daria origem à cidade de Niterói, da qual é considerado o fundador.");
 	_last_item.image = spr_catalog_morubixaba;
 	_last_item.type = CATALOG_ITEM_TYPE.ARARYBOIA;
 	
@@ -360,7 +359,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Taba";
-	_last_item.set_text("A taba era uma aldeia típica dos tupinambás. As tabas eram organizadas de forma circular ou oval, com as malocas dispostas ao redor de uma área central, onde ocorriam rituais, reuniões e atividades comunitárias.\nEssa organização favorecia a segurança e a interação social. Cada uma tinha seus domínios territoriais. Elas recebiam o mesmo nome que seu Principal escolheu para sí, frequentemente valorizando algo marcante da natureza ao seu redor");
+	_last_item.set_text("A taba era uma aldeia típica dos tupinambás. As tabas eram organizadas de forma circular ou oval, com as malocas dispostas ao redor de uma área central, onde ocorriam rituais, reuniões e atividades comunitárias.\nEssa organização favorecia a segurança e a interação social. Cada uma tinha seus domínios territoriais. Elas recebiam o mesmo nome que seu Principal escolheu para si, frequentemente valorizando algo marcante da natureza ao seu redor");
 	_last_item.image = spr_catalog_image;
 	_last_item.type = CATALOG_ITEM_TYPE.TABA;
 	
@@ -372,25 +371,25 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Tamoios";
-	_last_item.set_text("Se identificavam como 'Os avós' ou 'os mais velhos' da terra. a Confederação dos Tamoios(1554-1567) foi a confederação indígena formada principalmente por grupos tupinambás que habitavam o litoral do sudeste do Brasil.\nEles se uniram para resistir à colonização portuguesa e contavam com o apoio de franceses, que disputavam território com os portugueses .");
+	_last_item.set_text("Se identificavam como 'Os avós' ou 'os mais velhos' da terra. a Confederação dos Tamoios(1554-1567) foi a confederação indígena formada principalmente por grupos tupinambás que habitavam o litoral do sudeste do Brasil. \nEles se uniram para resistir à colonização portuguesa e contavam com o apoio de franceses, que disputavam território com os portugueses .");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.TAMOIOS;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Temininós";
-	_last_item.set_text("O termo (t)emiminõ também podia ser usado para neto ou tupiminó, que queria dizer tupi+emiminõ, ou seja, os descendentes dos tupis.\nAssim eram chamados os inimigos dos tamoios, a tribo dos maracajás (gato-do-mato). Liderados por Marakaîágûaçu, 'o grande gato', foram expulsos pelos tupinambás de seu território na ilha do goverdador e se aliaram aos portugueses. Arariboia se tornou líder dos temiminós e participou da 'grande guerra'.");
+	_last_item.set_text("O termo (t)emiminõ também podia ser usado para neto ou tupiminó, que queria dizer tupi + emiminõ, ou seja, os descendentes dos tupis.\nAssim eram chamados os inimigos dos tamoios, a tribo dos maracajás (gato-do-mato). Liderados por Marakaîágûaçu, 'o grande gato', foram expulsos pelos tupinambás de seu território na ilha do Governador e se aliaram aos portugueses. Arariboia se tornou líder dos temiminós e participou da 'grande guerra'.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.TEMININOS;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Marãna-uasú";
-	_last_item.set_text("A 'grande guerra'. Faz referência aos conflitos pelo controle do sudeste brasileiro. Os tamoios e os franceses combateram temiminós e portugueses. Depois da destruição do forte frances Coligny, ainda ocorreram três grandes batalhas para tomar fortalezas tupinambás.\nOs tamoios tinham um plano elaborado e asseguravam pontos importantes para o controle da baía. A primeira era a fortaleza de Uruçumirim, próxima à taba Karióca. A segunda era Parnacupu, na ilha do governador. O último ponto de defesa foi a fortaleza da taba de Itaoka, litoral de São Gonçalo. De lá recuaram para a região de Cabo Frio. A baía de Guanabara foi conquistada pelos Temiminós e seus aliados portugueses.");
+	_last_item.set_text("A 'grande guerra'. Faz referência aos conflitos pelo controle do sudeste brasileiro. Os tamoios e os franceses combateram temiminós e portugueses. Depois da destruição do forte francês Coligny, ainda ocorreram três grandes batalhas para tomar fortalezas tupinambás.\nOs tamoios tinham um plano elaborado e asseguravam pontos importantes para o controle da baía. A primeira era a fortaleza de Uruçumirim, próxima à taba Karióca. A segunda era Parnacupu, na ilha do governador. O último ponto de defesa foi a fortaleza da taba de Itaoka, litoral de São Gonçalo. De lá, recuaram para a região de Cabo Frio. A baía de Guanabara foi conquistada pelos Temiminós e seus aliados portugueses.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MARANA_UASU;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Truchement";
-	_last_item.set_text("Franceses que eram deixados com os indígenas, muitos sendo jovens, para aprender a língua com o objetivo de fazer negócios posteriormente. Eles adotaram completamente os costumes dos tupinambás, costituindo família e participando de todos os costumes e rituais. \nServiam como tradutores para os franceses, mas quando tinham de escolher, optavam por se rebelar contra os europeus em vez de trair ou abandonar sua taba e seus costumes");
+	_last_item.set_text("Palavra francesa que significa 'intermediário' ou 'representante'. Franceses que eram deixados com os indígenas, muitos sendo jovens, para aprender a língua com o objetivo de fazer negócios posteriormente. Eles adotaram completamente os costumes dos tupinambás, costituindo família e participando de todos os costumes e rituais. \nServiam como tradutores para os franceses, mas, quando tinham de escolher, optavam por se rebelar contra os europeus em vez de trair ou abandonar sua taba e seus costumes");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.TRUCHEMENT;
 	
@@ -402,13 +401,13 @@ function create_content()
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 
 	_last_item.label = "Ibirapema";
-	_last_item.set_text("Tipo de tacape usado pelos povos indígenas, especialmente os Tupinambás. Pesado e feito de madeira muito dura, seu impacto podia matar um homem com apenas um golpe na cabeça.\nEram utilizada em combates e também em rituais, incluindo práticas ligadas à antropofagia cerimonial, era adornados com penas.");
+	_last_item.set_text("Tipo de tacape usado pelos povos indígenas, especialmente os Tupinambás. Pesado e feito de madeira muito dura, seu impacto podia matar um homem com apenas um golpe na cabeça.\nEra utilizada em combates e também em rituais, incluindo práticas ligadas à antropofagia cerimonial e era adornados com penas.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.IBIRAPEMA;
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 
 	_last_item.label = "Urapaçã";
-	_last_item.set_text("O conjunto arco e flecha eram a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos.\nA medida que cresciam, suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo da água, pássaros em vôo e até as finas viseiras dos elmos das armaduras europeias.");
+	_last_item.set_text("O conjunto arco e flecha era a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos.\nÀ medida que cresciam, suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo d'água, pássaros em voo e até as finas viseiras dos elmos das armaduras europeias.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.URAPACA;
 	
@@ -417,6 +416,12 @@ function create_content()
 	_last_item.set_text("Corda tecida com que se amarrava pela cintura o prisioneiro num sacrifício ritual.\nOs tupinambás do Rio de Janeiro a fabricavam de embira. Já os tupinambás da Bahia utilizavam algodão.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.MUCURANA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Tráfico";
+	_last_item.set_text("Por volta de 1500, com a chegada dos portugueses ao Brasil, iniciou-se uma exploração dos recursos naturais que incluía o comércio de peles de animais e aves nativas. Embora o foco inicial fosse o pau-brasil, o fascínio europeu pela fauna exótica do Novo Mundo logo impulsionou a busca por outros produtos. Peles de animais como onças, araras e outros mamíferos e aves coloridas eram apreciadas na Europa como itens de curiosidade, decoração e vestuário. Os indígenas, que possuíam profundo conhecimento da fauna local e técnicas de caça, frequentemente eram envolvidos nesse comércio, seja por escambo ou sob coerção. Esse tráfico inicial, embora em menor escala que a exploração de madeira, já representava uma pressão sobre as populações de animais e aves da Mata Atlântica e de outros biomas brasileiros.");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.TRAFICO;
 	
 #endregion
 	
@@ -427,12 +432,15 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "Biodiversidade";
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Cobra-Arara";
-	_last_item.set_text("Arariboia (Niterói, 1520-1589) foi um chefe do povo temiminó, pertencente à etnia tupi. Ao ser batizado pelos jesuítas, recebeu o nome cristão de Martim Afonso de Sousa em homenagem ao donatário da Capitania de São Vicente.\n"
-		+ "Ficou conhecido na história devido à sua aliança com os portugueses, fundamental para a conquista da baía de Guanabara frente aos tamoios e franceses, em 1567.\n"
-		+ "Como recompensa, recebeu da coroa portuguesa a propriedade de terras localizadas na entrada da baía de Guanabara.\n"
-		+ "Ali foi estabelecida a aldeia de São Lourenço, que futuramente daria origem à cidade de Niterói, da qual é considerado o fundador.");
+	_last_item.set_text("Conhecida cientificamente como Corallus caninus (família Boidae) e também chamada de periquitamboia, jiboia-esmeralda e cobra-papagaio, deve seu nome em tupi, 'araramboia' ('cobra arara'), à sua coloração vibrante, com tons de verde que lembram as penas de araras e papagaios. Essa serpente arborícola pode atingir até dois metros de comprimento e possui uma mordida famosa por ser a mais dolorosa entre cobras não peçonhentas, graças às suas maiores presas em relação ao corpo nesse grupo e à sua arcada dentária com várias fileiras de dentes numerosos, afiados e curvados para trás, ideais para fixar a presa. Frequentemente encontrada em galhos altos, seus botes podiam atingir o rosto e o pescoço de uma pessoa andando na mata. Acredita-se que a característica de ser uma especialista em emboscada rápida foi a inspiração para que o líder da tribo Temiminó escolhesse para si o nome Arariboia.");
 	_last_item.image = spr_catalog_arariboia;
-	_last_item.type = CATALOG_ITEM_TYPE.ARARIBOIA;
+	_last_item.type = CATALOG_ITEM_TYPE.COBRA_ARARA;
+	
+	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
+	_last_item.label = "Maracajá";
+	_last_item.set_text("O maracajá (Leopardus wiedii), também conhecido como gato-do-mato-pequeno ou gato-do-mato-pintado, é um felino de pequeno porte encontrado em diversas regiões da América Latina, incluindo o Brasil e a Mata Atlântica. Geralmente, pesa entre 3 e 5 kg e possui um comprimento de corpo que varia de 42 a 80 cm, com uma cauda longa, entre 30 e 51 cm. Possui hábitos principalmente noturnos e altamente arborícolas, sendo um escalador excepcionalmente ágil. Uma de suas habilidades notáveis é a capacidade de girar os tornozelos em até 180 graus, permitindo que desça de árvores de cabeça para baixo com a mesma destreza de um esquilo. Sua pelagem exibe um padrão de manchas escuras alongadas e irregulares sobre um fundo que varia de amarelado a acinzentado, oferecendo camuflagem nas alturas. O maracajá se alimenta principalmente de pequenos mamíferos, aves, répteis e anfíbios que encontra em seu ambiente florestal. Apesar de suas adaptações especializadas, enfrenta ameaças significativas como a perda de habitat, a fragmentação florestal e a caça ilegal.");
+	_last_item.image = spr_catalog_caninde;
+	_last_item.type = CATALOG_ITEM_TYPE.MACARAJA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Arara-canindé";
@@ -444,67 +452,67 @@ function create_content()
 	_last_item.label = "Arara-azul";
 	_last_item.set_text("A arara-azul (Anodorhynchus hyacinthinus) é a maior espécie de arara, podendo atingir até 1 metro de comprimento e pesar cerca de 1,5 kg. Com penas de um azul vibrante e manchas amarelas ao redor dos olhos e na base do bico, destaca-se pela beleza e inteligência. A arara-azul não está extinta no estado do Rio de Janeiro, mas suas populações são extremamente raras na região. Essa espécie é mais comum no Pantanal e em algumas áreas da Amazônia. No Rio de Janeiro, avistamentos são incomuns e geralmente associados a indivíduos mantidos em cativeiro ou a projetos de reintrodução. A perda de habitat e o tráfico de animais são as principais ameaças à espécie.");
 	_last_item.image = spr_catalog_caninde;
-	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
+	_last_item.type = CATALOG_ITEM_TYPE.ARARA_AZUL;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Arara-vermelha";
 	_last_item.set_text("A arara-vermelha (Ara chloropterus) é uma ave de plumagem vibrante, predominantemente vermelha, com detalhes verdes e azuis nas asas. Pode atingir até 90 cm de comprimento e pesar cerca de 1,5 kg. É conhecida por sua inteligência e forte vínculo social. No Rio de Janeiro, é encontrada principalmente em áreas de Mata Atlântica preservada, embora sua população esteja reduzida devido ao desmatamento e ao tráfico de animais silvestres.");
 	_last_item.image = spr_catalog_caninde;
-	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
+	_last_item.type = CATALOG_ITEM_TYPE.ARARA_VERMELHA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Guará";
-	_last_item.set_text("O guará (Eudocimus ruber) é uma ave de plumagem vermelho-vivo, resultado de sua alimentação rica em carotenoides. Possue pernas e bicos longos, o bico sendo curvo. Pode atingir até 60 cm de comprimento e é conhecido por formar grandes bandos. No Brasil, é encontrado principalmente em manguezais e áreas costeiras, incluindo o estado do Rio de Janeiro, onde sua presença indica a boa saúde ambiental desses ecossistemas.");
+	_last_item.set_text("O guará (Eudocimus ruber) é uma ave de plumagem vermelho-vivo, resultado de sua alimentação rica em carotenoides. Possui pernas e bicos longos, sendo o bico curvo. Pode atingir até 60 cm de comprimento e é conhecido por formar grandes bandos. No Brasil, é encontrado principalmente em manguezais e áreas costeiras, incluindo o estado do Rio de Janeiro, onde sua presença indica a boa saúde ambiental desses ecossistemas.");
 	_last_item.image = spr_catalog_caninde;
-	_last_item.type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
+	_last_item.type = CATALOG_ITEM_TYPE.GUARA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Armadeira";
-	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a aranha mais venenosa do mundo. Seu veneno é neurotóxico e pode causar sintomas como dor intensa, suor excessivo, taquicardia, aumento da pressão arterial e, em casos mais graves, choque e edema pulmonar.  Podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a aranha mais venenosa do mundo. Seu veneno é neurotóxico e pode causar sintomas como dor intensa, suor excessivo, taquicardia, aumento da pressão arterial e, em casos mais graves, choque e edema pulmonar.  Podendo atingir até 17 cm de comprimento, é conhecida por seu comportamento agressivo. É extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
 	_last_item.image = spr_catalog_armadeira;
 	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Jararaca";
-	_last_item.set_text("A jararaca (Bothrops jararaca) é uma serpente venenosa encontrada principalmente no Brasil, especialmente na Mata Atlântica. Pode atingir até 1,6 metro de comprimento e apresenta corpo robusto com coloração que varia entre tons de marrom e cinza, com padrões que favorecem a camuflagem. por seu um animal agressivo é responsável por grande parte dos acidentes ofídicos no país, e seu veneno pode causar dor intensa, inchaço e, em casos graves, necrose tecidual.");
+	_last_item.set_text("A jararaca (Bothrops jararaca) é uma serpente venenosa encontrada principalmente no Brasil, especialmente na Mata Atlântica. Pode atingir até 1,6 metro de comprimento e apresenta corpo robusto com coloração que varia entre tons de marrom e cinza, com padrões que favorecem a camuflagem. Por ser um animal agressivo é responsável por grande parte dos acidentes ofídicos no país, e seu veneno pode causar dor intensa, inchaço e, em casos graves, necrose tecidual.");
 	_last_item.image = spr_catalog_armadeira;
-	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	_last_item.type = CATALOG_ITEM_TYPE.JARARACA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Onça-pintada";
-	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.label = "Îagûara";
+	_last_item.set_text("A onça-pintada(Panthera onca) é um predador de ápice formidável capaz de abater presas significativamente maiores que ela, como capivaras, veados, jacarés e até mesmo antas. Caçadora astuta e versátil, ela emprega diversas técnicas de caça, incluindo emboscadas silenciosas, perseguições rápidas em curtas distâncias e até mesmo a natação para capturar presas aquáticas. Sua pelagem manchada oferece excelente camuflagem na densa vegetação da Mata Atlântica.\nSua mordida é considerada a mais potente entre todos os felinos em relação ao seu tamanho, capaz de perfurar cascos de tartarugas e até mesmo o couro de jacarés com facilidade. Essa força mandibular permite que a onça mate suas presas rapidamente com uma única mordida precisa, frequentemente direcionada para partir o crânio ou pescoço.\n Há registros de onças pesando até 160kg, com 2,5 metros do comprimento sem contar a cauda e quase 1m de altura do chão até o topo de seu dorso, sem contar pescoço e cabeça./nHavia uma população numerosa de onças na baía de guanabara e não era raro que uma pessoa fosse atacada e devorada por uma. Os tupinambás presenteavam seus recém nascidos com suas presas.");
 	_last_item.image = spr_catalog_armadeira;
-	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	_last_item.type = CATALOG_ITEM_TYPE.IAGUARA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Harpia";
-	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.label = "Gûyragûasu'unaê";
+	_last_item.set_text("A harpia, Harpia harpyja, é uma das maiores e mais poderosas aves de rapina do mundo, habitando as florestas tropicais. Conhecida por sua força impressionante e garras enormes, a harpia é capaz de capturar presas grandes como macacos-prego e preguiças. Sua visão aguçada permite que ela localize suas vítimas de alturas elevadas, realizando mergulhos rápidos e precisos.\n O céu da Mata Atlântica da baía de Guanabara era território das harpias. Os tupinambás presenteavam seus recém nascidos com suas garras.");	
 	_last_item.image = spr_catalog_armadeira;
-	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	_last_item.type = CATALOG_ITEM_TYPE.HARPIA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Urucum e Genipapo";
-	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.set_text("O urucum (Bixa orellana) e o genipapo (Genipa americana) são plantas nativas importantes para os tupinambás. O urucum, com suas sementes vermelhas, era amplamente utilizado para a pintura corporal, tingindo a pele em rituais de guerra e celebrações. Essa pintura possuía significados culturais profundos, identificando guerreiros e marcando momentos importantes. Já o genipapo, com seus frutos que produzem um suco escuro, era usado para pinturas corporais de cor preta ou azul escura, também com funções rituais e sociais. A combinação dessas tinturas permitia aos tupinambás criar uma rica variedade de padrões geométricos e representações simbólicas em seus corpos, expressando sua identidade, status social e participação em rituais.");
 	_last_item.image = spr_catalog_armadeira;
-	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	_last_item.type = CATALOG_ITEM_TYPE.URUCUM_GENIPAPO;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Pau-brasil";
-	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.set_text("O pau-brasil (Paubrasilia echinata) foi uma das primeiras riquezas naturais do Brasil a despertar o interesse dos colonizadores portugueses, por volta de 1500, incluindo a região que hoje conhecemos como o estado do Rio de Janeiro. Essa árvore nativa da Mata Atlântica, com seu tronco de cor vermelha intensa, como brasa (origem do nome do país), rendia um corante de alta qualidade muito valorizado na Europa para tingir tecidos de luxo. A exploração do pau-brasil no Rio de Janeiro e em outras áreas do litoral foi intensa e predatória desde os primeiros anos da colonização. Os portugueses estabeleceram um sistema de escambo com os indígenas, trocando ferramentas e armas de metal por toras da madeira. Essa exploração inicial teve um impacto significativo na flora local e nas relações entre colonizadores e povos originários.");
 	_last_item.image = spr_catalog_armadeira;
-	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	_last_item.type = CATALOG_ITEM_TYPE.PAU_BRASIL;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Bromélias";
-	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.set_text("A Mata Atlântica tem muitas bromélias diferentes (família Bromeliaceae). Essas plantas, que vivem em cima de outras árvores sem machucá-las (são epífitas), são encontradas por toda a floresta, presas nos troncos e nos galhos. As bromélias da região têm vários formatos, cores e tamanhos. Suas folhas formam pequenos depósitos de água da chuva. Essa água é muito importante para bichinhos pequenos, como larvas de mosquitos, sapinhos coloridos e pequenos crustáceos, criando uma cadeia alimentar dentro da floresta. A grande quantidade de bromélias ajuda a manter a umidade e a variedade de vida na Mata Atlântica, influenciando muitos outros animais e plantas.");
 	_last_item.image = spr_catalog_armadeira;
-	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	_last_item.type = CATALOG_ITEM_TYPE.BROMELIAS;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Orquídeas";
-	_last_item.set_text("A aranha-armadeira (Phoneutria) é considerada a mais venenosa do mundo, podendo atingir até 17 cm de comprimento. Conhecida por seu comportamento agressivo, é extremamente veloz e capaz de saltar até 40 cm. Quando ameaçada, adota uma postura defensiva característica,'se armando' ao levantar as patas dianteiras em posição de ataque.");
+	_last_item.set_text( "A Mata Atlântica também tem muitas orquídeas diferentes (família Orchidaceae). Essas plantas, conhecidas por suas flores bonitas e variadas, são encontradas em diversos lugares da floresta, muitas vezes vivendo em cima de árvores (são epífitas). As orquídeas da região apresentam uma grande diversidade de formas, cores e tamanhos de flores. Algumas têm flores grandes e chamativas, enquanto outras possuem flores pequenas e delicadas. As orquídeas dependem de insetos e outros animais para levar o pólen de uma flor para outra, garantindo a produção de sementes. A preservação da Mata Atlântica é muito importante para a sobrevivência dessas plantas.");
 	_last_item.image = spr_catalog_armadeira;
-	_last_item.type = CATALOG_ITEM_TYPE.ARMADEIRA;
+	_last_item.type = CATALOG_ITEM_TYPE.ORQUIDEAS;
 	
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].set_selected(true);
 	

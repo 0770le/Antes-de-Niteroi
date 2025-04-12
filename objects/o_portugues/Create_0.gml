@@ -20,12 +20,17 @@ target_rm = rm_cidade_velha;
 target_x = 167;
 target_y = 309;
 
-msgs = ["Liberte o jovem maracajas prisioneiro\nperto da praia.",
-		"Navegue para Nitcheroy e destrua\no forte de Seregipe.\nRetorne caso fique perdido.",
-		"Para ir para Seregipe voce precisa pegar\na balsa em Morguja Uasu, mas\nhá boatos que o barqueiro foi sequestrado.",
-		"Você precisa achar o arco e flexa, encontre o barqueiro preso no forte e navegue para Reri'pe",
-		"Para adentrar o forte voce precisa do manto sagerado, ele se encontra adentro da floresta em Keryi",
-		"Você ja tem tudo que precisa para completar a sua missao, vá para seregipe e derrube o forte"]
+msgs = ["Araryboîa! Soltai o maracajá que está cativo perto da praia.",
+		// depois de salvar primeiro kunu
+		"Havemos de botar abaixo o forte dos franceses. Passai para Nheteróia e livrai os temiminós remeiros.\nSe não souberes pra onde ir, dize-me.",
+		//depois de sair da primeira sala
+		"Vai para a ilha de Seregipe! A canoa está em Morgujá-uausú.\nSe o canoeiro foi levado, procura-o noutro lugar." ,
+		//depois de ir pra seregipe
+		"Tens de reaver teu arco. Encontra o canoeiro cativo no forte e dali segue para Reri'pe." ,
+		//depois de pegar o arco
+		"Para poderdes vencer o forte, careces do manto sagrado dos tupinambás; ele se acha mato adentro em Keryi.",
+		//depois do manto
+		"É agora que havemos de atacar, retorna para Seregipe e bota abaixo o forte dos adversários!"]
 
 text_x_scale = [7.5,7,7,7,7,7];
 text_y_scale = [TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_3l,TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_2l];

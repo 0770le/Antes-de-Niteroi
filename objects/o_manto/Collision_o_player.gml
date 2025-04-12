@@ -13,4 +13,5 @@ if(!o_game.has_cloak) {
 	
 	
 	global.game.quest_step_portugues = max(global.game.quest_step_portugues,5);
+	global.options_controller.set_option(OPTIONS_QUEST_STEP_PORTUGUES, global.game.quest_step_portugues);
 }

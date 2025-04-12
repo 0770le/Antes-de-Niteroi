@@ -49,6 +49,9 @@ function OptionsModel (
 		player_facing: 1,
 		
 		quest_saved_kunumiuasu: false,
+		quest_saved_kunumiuasu_seregipe: false,
+		quest_saved_kunumiuasu_morguja: false,
+		quest_step_portugues: 0,
 		
 		hp_upgrades: [],
 		arrow_upgrades: [],
@@ -124,7 +127,11 @@ constructor
 	player_facing = _options_model.player_facing;
 	
 	// quest progress
+	
 	quest_saved_kunumiuasu = _options_model.quest_saved_kunumiuasu;
+	quest_saved_kunumiuasu_seregipe = _options_model.quest_saved_kunumiuasu_seregipe;
+	quest_saved_kunumiuasu_morguja = _options_model.quest_saved_kunumiuasu_morguja;
+	quest_step_portugues = _options_model.quest_step_portugues;
 	
 	//game upgrades
 	hp_upgrades = _options_model.hp_upgrades;

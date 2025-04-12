@@ -21,3 +21,4 @@ instance_create_layer(_x_pos[_oncapos], _y_pos[_oncapos], LAYER_INSTANCES, o_iag
 
 
 global.game.quest_step_portugues = max(global.game.quest_step_portugues,3);
+global.options_controller.set_option(OPTIONS_QUEST_STEP_PORTUGUES, global.game.quest_step_portugues);

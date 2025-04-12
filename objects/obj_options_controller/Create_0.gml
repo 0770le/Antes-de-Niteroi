@@ -1,32 +1,37 @@
-#macro OPTIONS_FULLSCREEN				"fullscreen"
-#macro OPTIONS_MASTER_ENABLED			"master_enabled"
-#macro OPTIONS_MASTER_VOLUME			"master_volume"
-#macro OPTIONS_MUSIC_ENABLED			"music_enabled"
-#macro OPTIONS_MUSIC_VOLUME				"music_volume"
-#macro OPTIONS_SFX_ENABLED				"sfx_enabled"
-#macro OPTIONS_SFX_VOLUME				"sfx_volume"
-#macro OPTIONS_MUSIC_PARAMETER          "music_parameter"
-#macro OPTIONS_DEAF_ASSISTANCE          "deaf_assistance"
+#macro OPTIONS_FULLSCREEN						"fullscreen"
+#macro OPTIONS_MASTER_ENABLED					"master_enabled"
+#macro OPTIONS_MASTER_VOLUME					"master_volume"
+#macro OPTIONS_MUSIC_ENABLED					"music_enabled"
+#macro OPTIONS_MUSIC_VOLUME						"music_volume"
+#macro OPTIONS_SFX_ENABLED						"sfx_enabled"
+#macro OPTIONS_SFX_VOLUME						"sfx_volume"
+#macro OPTIONS_MUSIC_PARAMETER					"music_parameter"
+#macro OPTIONS_DEAF_ASSISTANCE					"deaf_assistance"
+												
+#macro OPTIONS_GAMEPAD_KEYMAP					"gamepad_keymap"
+#macro OPTIONS_KEYBOARD_KEYMAP					"keyboard_keymap"
+#macro OPTIONS_LAST_INPUT_SOURCE_TYPE			"last_input_source_type"
+												
+#macro OPTIONS_IS_NEW_GAME						"is_new_game"
+#macro OPTIONS_LAST_ROOM						"last_room"
+#macro OPTIONS_SPAWN_X							"spawn_x"
+#macro OPTIONS_SPAWN_Y							"spawn_y"
+#macro OPTIONS_PLAYER_LIVES						"player_lives"
+#macro OPTIONS_PLAYER_HP						"player_hp"
+#macro OPTIONS_PLAYER_DIED						"player_died"
+#macro OPTIONS_PLAYER_HAS_BOW					"player_has_bow"
+#macro OPTIONS_PLAYER_HAS_CAPE					"player_has_cape"
+#macro OPTIONS_PLAYER_ARROWS					"player_arrows"
+#macro OPTIONS_PLAYER_FACING					"player_facing"
+												
+#macro OPTIONS_HP_UPGRADES						"hp_upgrades"
+#macro OPTIONS_ARROW_UPGRADES					"arrow_upgrades"
+#macro OPTIONS_SOUND_STAGES						"sound_stages"
 
-#macro OPTIONS_GAMEPAD_KEYMAP			"gamepad_keymap"
-#macro OPTIONS_KEYBOARD_KEYMAP			"keyboard_keymap"
-#macro OPTIONS_LAST_INPUT_SOURCE_TYPE	"last_input_source_type"
-
-#macro OPTIONS_IS_NEW_GAME				"is_new_game"
-#macro OPTIONS_LAST_ROOM				"last_room"
-#macro OPTIONS_SPAWN_X					"spawn_x"
-#macro OPTIONS_SPAWN_Y					"spawn_y"
-#macro OPTIONS_PLAYER_LIVES				"player_lives"
-#macro OPTIONS_PLAYER_HP				"player_hp"
-#macro OPTIONS_PLAYER_DIED				"player_died"
-#macro OPTIONS_PLAYER_HAS_BOW			"player_has_bow"
-#macro OPTIONS_PLAYER_HAS_CAPE			"player_has_cape"
-#macro OPTIONS_PLAYER_ARROWS			"player_arrows"
-#macro OPTIONS_PLAYER_FACING			"player_facing"
-
-#macro OPTIONS_HP_UPGRADES				"hp_upgrades"
-#macro OPTIONS_ARROW_UPGRADES			"arrow_upgrades"
-#macro OPTIONS_SOUND_STAGES				"sound_stages"
+#macro OPTIONS_QUEST_SAVED_KUNUMIASU			"quest_saved_kunumiuasu"
+#macro OPTIONS_QUEST_SAVED_KUNUMIASU_SEREGIPE	"quest_saved_kunumiuasu_seregipe"
+#macro OPTIONS_QUEST_SAVED_KUNUMIASU_MORGUJA	"quest_saved_kunumiuasu_morguja"
+#macro OPTIONS_QUEST_STEP_PORTUGUES				"quest_step_portugues"
 
 // saveables
 
@@ -36,7 +41,8 @@ new_game_properties = [
 	OPTIONS_LAST_ROOM, OPTIONS_SPAWN_X, OPTIONS_SPAWN_Y, 
 	OPTIONS_PLAYER_LIVES, OPTIONS_PLAYER_HP, OPTIONS_PLAYER_DIED, OPTIONS_PLAYER_HAS_BOW, 
 	OPTIONS_PLAYER_HAS_CAPE, OPTIONS_PLAYER_ARROWS, OPTIONS_PLAYER_FACING, OPTIONS_MUSIC_PARAMETER,
-	OPTIONS_HP_UPGRADES, OPTIONS_ARROW_UPGRADES, OPTIONS_SOUND_STAGES
+	OPTIONS_HP_UPGRADES, OPTIONS_ARROW_UPGRADES, OPTIONS_SOUND_STAGES,	OPTIONS_QUEST_SAVED_KUNUMIASU, 
+	OPTIONS_QUEST_SAVED_KUNUMIASU_SEREGIPE, OPTIONS_QUEST_SAVED_KUNUMIASU_MORGUJA, OPTIONS_QUEST_STEP_PORTUGUES
 ]
 
 // transients
@@ -145,6 +151,11 @@ function read_all()
 		global.game.max_hp = global.game.max_hp_initial + array_length(options.hp_upgrades);
 		global.game.max_arrows = global.game.max_arrows_initial + (array_length(options.arrow_upgrades)*10);
 		
+		global.game.quest_saved_kunumiuasu = options.quest_saved_kunumiuasu;
+		global.game.quest_saved_kunumiuasu_seregipe = options.quest_saved_kunumiuasu_seregipe;
+		global.game.quest_saved_kunumiuasu_morguja = options.quest_saved_kunumiuasu_morguja;
+		global.game.quest_step_portugues = options.quest_step_portugues;
+		
 	} catch (_e) {
 		
 		global.logger.error($"failed to load options file in room {room}: {_e}");
@@ -157,10 +168,14 @@ function read_all()
 		
 		global.game.has_bow = options.player_has_bow;
 		global.game.has_cape = options.player_has_cape;
-		global.game.has_cloak = options.player_has_cape;
-		
+		global.game.has_cloak = options.player_has_cape;		
 		
 		global.game.max_hp = global.game.max_hp_initial;
+		
+		global.game.quest_saved_kunumiuasu = options.quest_saved_kunumiuasu;
+		global.game.quest_saved_kunumiuasu_seregipe = options.quest_saved_kunumiuasu_seregipe;
+		global.game.quest_saved_kunumiuasu_morguja = options.quest_saved_kunumiuasu_morguja;
+		global.game.quest_step_portugues = options.quest_step_portugues;
 		
 		write_all();
 	}

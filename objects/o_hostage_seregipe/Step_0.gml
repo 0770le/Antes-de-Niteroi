@@ -7,6 +7,8 @@ if(saving and !saved) {
 			saved = true;
 			quest = true;
 			o_game.quest_saved_kunumiuasu_seregipe = true;
+			
+			global.options_controller.set_option(OPTIONS_QUEST_SAVED_KUNUMIASU_SEREGIPE, true);
 		}
 	}
 }

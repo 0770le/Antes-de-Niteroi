@@ -3,10 +3,13 @@
 function quest_complete_kunumiuasu(){
 	instance_create_layer(3630,390,LAYER_INSTANCES,o_kunumiuasu);
 	o_game.quest_saved_kunumiuasu = true;
+	
+	global.options_controller.set_option(OPTIONS_QUEST_SAVED_KUNUMIASU, true);
 
 	if(global.game.quest_step_portugues <1) {
 		o_portugues.quest_step = 1;
 		global.game.quest_step_portugues = 1;
+		global.options_controller.set_option(OPTIONS_QUEST_STEP_PORTUGUES, global.game.quest_step_portugues);
 	}
 	o_portugues.quest = false;
 	

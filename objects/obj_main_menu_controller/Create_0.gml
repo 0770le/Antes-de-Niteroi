@@ -3,7 +3,7 @@ event_inherited();
 // settings
 
 starting_x		= 140;
-starting_y		= 165;
+starting_y		= 168;
 items_margin    = 25;
 button_sprite   = spr_menu_button_transparent;
 text_color		= c_white;

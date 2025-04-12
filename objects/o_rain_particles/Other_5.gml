@@ -9,3 +9,5 @@ part_type_destroy(particle_type1);
 part_type_destroy(particle_type2);
 
 part_system_destroy(particle_system);
+
+global.sound_controller.stop(FMOD_EVENT.AMBIENCE_KERYL);

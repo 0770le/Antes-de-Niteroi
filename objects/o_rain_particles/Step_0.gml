@@ -8,23 +8,36 @@ if(!is_on and o_player.x <= 4020) {
 
 if(is_on and global.timer mod 5 == 0) {
 	
-	if(o_player.x < 2100) {
+	var _parameter_value = FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.NO_RAIN;
+	
+	if(global.player.x < 2100) {
 		part_emitter_stream(particle_system, particle_emitter1, particle_type1, 15);
 		part_emitter_stream(particle_system, particle_emitter2, particle_type2, 30);
-	} else if (o_player.x < 2300) {
+		_parameter_value = FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.HEAVY_RAIN;
+	} else if (global.player.x < 2300) {
 		part_emitter_stream(particle_system, particle_emitter1, particle_type1, 12);
 		part_emitter_stream(particle_system, particle_emitter2, particle_type2, 25);
-	} else if (o_player.x < 2600) {
+		_parameter_value = FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.MEDIUM_RAIN;
+	} else if (global.player.x < 2600) {
 		part_emitter_stream(particle_system, particle_emitter1, particle_type1, 9);
 		part_emitter_stream(particle_system, particle_emitter2, particle_type2, 18);
-	} else if (o_player.x < 2900) {
+		_parameter_value = FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.LIGHT_RAIN;
+	} else if (global.player.x < 2900) {
 		part_emitter_stream(particle_system, particle_emitter1, particle_type1, 4);
 		part_emitter_stream(particle_system, particle_emitter2, particle_type2, 9);
-	} else if (o_player.x < 3520) {
+		_parameter_value = FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.LIGHT_RAIN;
+	} else if (global.player.x < 3520) {
 		part_emitter_stream(particle_system, particle_emitter1, particle_type1, 1);
 		part_emitter_stream(particle_system, particle_emitter2, particle_type2, 2);
+		_parameter_value = FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.NO_RAIN;
 	}
 	
+	global.sound_controller.update_event_parameter_and_play_pos(
+		FMOD_EVENT.AMBIENCE_KERYL, 
+		FMOD_PARAMETER_NAME_AMBIENCE,
+		_parameter_value,
+		global.player.x, global.player.y
+	);	
 	
 	x_start = global.cx - 50;	
 	x_end = global.cx + 50 + global.cw; 

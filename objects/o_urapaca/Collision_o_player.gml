@@ -19,6 +19,7 @@ global.options_controller.set_sound_stage(
 );
 
 global.game.quest_step_portugues = max(global.game.quest_step_portugues,4);
+global.options_controller.set_option(OPTIONS_QUEST_STEP_PORTUGUES, global.game.quest_step_portugues);
 
 repeat(15) {
 		var inst = instance_create_depth(x,y, depth, o_spark);

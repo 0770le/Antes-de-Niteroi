@@ -1,0 +1,2 @@
+sound_stage_name = SOUND_STAGE_RERIPE;
+parameter_value = FMOD_PARAMETER_MUSIC_STAGE_RERIPE_VALUE.ON_TOP;

@@ -11,6 +11,13 @@ with(o_player) {
 
 global.options_controller.set_option(OPTIONS_PLAYER_HAS_BOW, true);
 
+global.options_controller.set_sound_stage(
+	SOUND_STAGE_GENERAL, 
+	FMOD_EVENT.MUSIC_GAMEPLAY_02,
+	"",
+	0
+);
+
 global.game.quest_step_portugues = max(global.game.quest_step_portugues,4);
 
 repeat(15) {

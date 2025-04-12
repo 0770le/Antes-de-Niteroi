@@ -198,8 +198,7 @@ function init()
 			);
 		}));
 	} else {
-		starting_y += 35;
-		items_margin += 35;
+		starting_y += 15;
 	}
 	
 	root_menu.add_child(new MenuButton("NOVO JOGO", function() 

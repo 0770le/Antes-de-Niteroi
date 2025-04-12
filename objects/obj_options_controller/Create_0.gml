@@ -218,9 +218,11 @@ function get_sound_stage(
 function set_sound_stage(
 	_sound_stage = SOUND_STAGE_GENERAL, 
 	_event = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
+	_parameter_name = FMOD_PARAMETER_NAME_MUSIC,
 	_parameter_value = FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO)
 {
 	options.sound_stages[$ _sound_stage].event = _event;
+	options.sound_stages[$ _sound_stage].parameter_name = _parameter_name;
 	options.sound_stages[$ _sound_stage].parameter_value = _parameter_value;
 	
 	save_and_notify();

@@ -5,7 +5,7 @@ function update_parameter()
 {
 	var _sound_stage = global.options_controller.get_sound_stage(sound_stage_name);
 	
-	if (_sound_stage.parameter_value < parameter_value)
+	if (_sound_stage.parameter_name != "" && _sound_stage.parameter_value < parameter_value)
 	{
 		global.options_controller.set_sound_stage_parameter(sound_stage_name, parameter_value);	
 	

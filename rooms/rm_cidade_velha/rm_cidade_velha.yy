@@ -29,6 +29,7 @@
     {"name":"inst_6485F839","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_7B2C311A","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_4A778DEB","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
+    {"name":"inst_5903B7CB","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -219,6 +220,7 @@
         {"$GMRInstance":"v1","%Name":"inst_6485F839","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6485F839","objectId":{"name":"o_arara_azul_spawner","path":"objects/o_arara_azul_spawner/o_arara_azul_spawner.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2353.0,"y":242.0,},
         {"$GMRInstance":"v1","%Name":"inst_7B2C311A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7B2C311A","objectId":{"name":"o_fire_lighter","path":"objects/o_fire_lighter/o_fire_lighter.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":416.0,"y":352.0,},
         {"$GMRInstance":"v1","%Name":"inst_4A778DEB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4A778DEB","objectId":{"name":"obj_sound_music_parameter_updater_progress","path":"objects/obj_sound_music_parameter_updater_progress/obj_sound_music_parameter_updater_progress.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":6.0,"x":4496.0,"y":384.0,},
+        {"$GMRInstance":"v1","%Name":"inst_5903B7CB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5903B7CB","objectId":{"name":"obj_deaf_helper_trigger","path":"objects/obj_deaf_helper_trigger/obj_deaf_helper_trigger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":19.5,"scaleY":5.5,"x":3616.0,"y":416.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Collisions","depth":1500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Collisions","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":375,"TileCompressedData":[
           -2,0,1,1,-17,0,-6,-2147483648,-7,0,-17,-2147483648,-4,0,-61,-2147483648,-24,0,-2,-2147483648,-2,0,-87,

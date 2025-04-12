@@ -1,9 +1,23 @@
+// settings
+
 captions			= "PlaceHolder";
+display_period_max	= 180;
+fading_period       = 60;
+
+// controls
+
 show				= false;
 display_period_max	= 180;
 display_period		= 0;
 fading_period       = 60;
 already_shown		= false;
+
+function show_captions_forced()
+{
+	already_shown = false;
+	
+	show_captions();
+}
 
 function show_captions() 
 {

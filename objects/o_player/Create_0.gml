@@ -9,8 +9,8 @@ jumpTimer = 0;
 hsp =0; //horizontal
 vsp = 0; //vertical
 //I want the enemy to be able to see this var
-max_hsp = PLAYER_MAX_HSP*2;// = 2.3;
-walk_spd = PLAYER_WALK_SPEED*2;// =0.3;   
+max_hsp = PLAYER_MAX_HSP;// = 2.3;
+walk_spd = PLAYER_WALK_SPEED;// =0.3;   
 
 hsp_decimal = 0;
 vsp_decimal =0;
@@ -90,7 +90,7 @@ facing =- room_start_facing;
 //hurt
 flash_counter = 0;
 hurt = false;
-hurt_time = room_speed*1.5;
+hurt_time = room_speed*1.0;
 hp = o_game.max_hp;
 //max_hp = hp;
 hp_losing = hp;

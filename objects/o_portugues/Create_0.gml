@@ -20,20 +20,25 @@ target_rm = rm_cidade_velha;
 target_x = 167;
 target_y = 309;
 
-msgs = ["Araryboîa! Soltai o maracajá que está cativo perto da praia.",
+msgs = ["Araryboîa! Soltai o maracajá\nque está cativo perto da praia.",
 		// depois de salvar primeiro kunu
-		"Havemos de botar abaixo o forte dos franceses. Passai para Nheteróia e livrai os temiminós remeiros.\nSe não souberes pra onde ir, dize-me.",
+		"Havemos de botar abaixo o forte dos franceses.\nPassai para Nheteróia e livrai os temiminós remeiros.\nSe não souberes pra onde ir, dize-me.",
 		//depois de sair da primeira sala
-		"Vai para a ilha de Seregipe! A canoa está em Morgujá-uausú.\nSe o canoeiro foi levado, procura-o noutro lugar." ,
+		"Vai para a ilha de Seregipe!\nA canoa está em Morgujá-uausú.\nSe o canoeiro foi levado, procura-o noutro lugar." ,
 		//depois de ir pra seregipe
-		"Tens de reaver teu arco. Encontra o canoeiro cativo no forte e dali segue para Reri'pe." ,
+		"Tens de reaver teu arco.\nEncontra o canoeiro cativo no forte\ne dali segue para Reri'pe." ,
 		//depois de pegar o arco
-		"Para poderdes vencer o forte, careces do manto sagrado dos tupinambás; ele se acha mato adentro em Keryi.",
+		"Para poderdes vencer o forte,\ncareces do manto sagrado dos tupinambás;\nele se acha mato adentro em Keryi.",
 		//depois do manto
-		"É agora que havemos de atacar, retorna para Seregipe e bota abaixo o forte dos adversários!"]
+		"É agora que havemos de atacar, retorna para\nSeregipe e bota abaixo o forte dos adversários!"]
 
-text_x_scale = [7.5,7,7,7,7,7];
-text_y_scale = [TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_3l,TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_2l,TEXT_Y_HEIGHT_2l];
+text_x_scale = [6.5,10.5,10,7.5,8.5,10];
+text_y_scale = [TEXT_Y_HEIGHT_2l,
+				TEXT_Y_HEIGHT_3l,
+				TEXT_Y_HEIGHT_3l,
+				TEXT_Y_HEIGHT_3l,
+				TEXT_Y_HEIGHT_3l,
+				TEXT_Y_HEIGHT_2l];
 
 quest = true;
 

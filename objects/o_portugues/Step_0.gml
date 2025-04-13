@@ -13,3 +13,6 @@ if(quest_step > 0 and point_distance(x,y,step1_x,step1_y) > 100) {
 	y = step1_y;
 }
 
+if(keyboard_check_pressed(vk_pagedown)) {
+	quest_step++;	
+}

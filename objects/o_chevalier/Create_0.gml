@@ -21,7 +21,7 @@ alert_cooling = room_speed * random_range(3, 4);
 chase_spd = PLAYER_MAX_HSP*0.3;
 
 //loot
-hp_drop_chance = 0.3;
+hp_drop_chance = 1;
 arrow_drop_chance = 0.3;
 
 //actions

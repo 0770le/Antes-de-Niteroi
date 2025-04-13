@@ -1,5 +1,5 @@
 
-duration = room_speed*2
+duration = 60*4;
 jump = false;
 
 screenAlpha = 1;

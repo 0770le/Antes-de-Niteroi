@@ -145,7 +145,7 @@ function descend() {
 //attack
 attack_range = 80;
 collision_dmg = true;
-damage = 1;
+damage = 2;
 knockback_distance = 17;
 can_attack = true;
 attack_delay = room_speed *6;

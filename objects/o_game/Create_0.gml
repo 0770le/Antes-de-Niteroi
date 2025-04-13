@@ -94,7 +94,7 @@ quest_step_portugues = 0;
 
 //collecibles acquired
 
-collectible[COLLECTIBLE_ARARA] = false;
+collectible[COLLECTIBLE_ARARA_AZUL] = false;
 collectible[COLLECTIBLE_ARARIBOIA] = false;
 collectible[COLLECTIBLE_ARMADEIRA] = false;
 collectible[COLLECTIBLE_CIDADE_VELHA] = false;

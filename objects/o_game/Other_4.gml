@@ -10,6 +10,7 @@ var _control_rooms = [
 	rm_menu,
 	rm_main_menu,
 	rm_paulo_gustavo,
+	rm_ending,
 	rm_studio_logo,
 ];
 

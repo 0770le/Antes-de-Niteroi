@@ -1,4 +1,4 @@
-if(room != rm_paulo_gustavo and room != rm_studio_logo) {
+if(room != rm_paulo_gustavo and room != rm_studio_logo and room != rm_ending) {
 	stop_ambience_sounds();
 	
 	if (room == rm_main_menu)

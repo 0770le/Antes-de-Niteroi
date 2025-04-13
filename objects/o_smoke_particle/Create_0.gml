@@ -11,11 +11,12 @@ maxSize = 0;
 partSmoke = part_type_create();
 //part_type_blend(partSmoke,true);
 part_type_sprite(partSmoke,spr_big_smoke,0,0,1);
-part_type_alpha2(partSmoke,0.15,0);
+part_type_alpha3(partSmoke,0.,0.3,0);
 part_type_speed(partSmoke,0,0.2,0,0);
-part_type_direction(partSmoke,0,359,0,0);
-part_type_orientation(partSmoke,0,359,0,0,0);
+part_type_direction(partSmoke,0,359,1,0);
+part_type_orientation(partSmoke,0,359,0.2,0,0);
 part_type_life(partSmoke,80,140);
+
 //part_type_gravity(partSmoke,0.015,180);
 
 

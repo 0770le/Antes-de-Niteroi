@@ -2,12 +2,12 @@
 // You can write your code in this editor
 
 //get_menu_input_all();
-if(keyboard_check(vk_escape))
-	jump = true;
-	
-if((screenAlpha <= 0 and duration > 0) or jump) {
+if(keyboard_check(vk_escape) or keyboard_check(vk_space) or keyboard_check(vk_enter))
 	duration = 0;
-}
+	
+//if((screenAlpha <= 0 and duration > 0) or jump) {
+//	duration = 0;
+//}
 	
 
 if(duration-- <= 0){

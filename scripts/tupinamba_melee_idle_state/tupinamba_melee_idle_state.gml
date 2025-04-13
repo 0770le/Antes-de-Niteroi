@@ -6,7 +6,7 @@ function tupinamba_melee_idle_state() {
 
 	if !in_idle_state {
 		//next patrol 
-		wait_time = random_range(2, 4) * room_speed;
+		wait_time = wait_time_initial;//random_range(2, 4) * room_speed;
 		image_speed=1;
 		image_index = 0;
 		in_idle_state = true;

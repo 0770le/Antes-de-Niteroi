@@ -58,13 +58,16 @@ if(explode and explosion_time > 2*60 and global.timer mod 4 == 0) {
 #region credits
 
 if(credits and !end_credits) {
-	if(credits_alpha < 0.5) {
-		credits_alpha += 0.01;	
-	}
 	
 	var _spd = keyboard_check(vk_escape)? credits_y_spd*10 : credits_y_spd;
 	
-	credits_y -= _spd;
+	if(credits_alpha < 0.5) {
+		credits_alpha += 0.01;	
+	} else {
+		credits_y -= _spd;
+	}
+	
+	
 	
 	if(credits_y + (array_length(credits_name)*credits_y_height) + sprite_get_height(s_realizacao) < 0) {
 		end_credits = true;

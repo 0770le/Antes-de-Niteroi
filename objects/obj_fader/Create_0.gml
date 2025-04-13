@@ -19,16 +19,21 @@ spawn_y = 0;
 facing = 0;
 spawn_room = rm_cidade_velha;
 
+end_game = false;
+
 function to_room(
 	_spawn_room = rm_cidade_velha, 
 	_spawn_x = 0, 
-	_spawn_y = 0
+	_spawn_y = 0,
+	_end_game = false
 ) {
 	if (!is_active)
 	{
 		spawn_x = _spawn_x;
 		spawn_y = _spawn_y;
 		spawn_room = _spawn_room;
+		
+		end_game = _end_game;
 	
 		transition_period = transition_period_max;
 	}
@@ -71,7 +76,12 @@ function __step() {
 	if (transition_period > _pivot) {
 		alpha = ((transition_period_max - transition_period) / _pivot)*alpha_max;
 	} else if (transition_period == _pivot) {
-		__prepare_room();
+		if(!end_game) {
+			__prepare_room();
+		} else {
+			room_goto(rm_ending);
+			end_game = false;
+		}
 	} else if (transition_period < _pivot) {
 		alpha = (transition_period / _pivot)*alpha_max;
 	}

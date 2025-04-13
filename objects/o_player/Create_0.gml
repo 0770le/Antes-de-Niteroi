@@ -301,10 +301,6 @@ function play_state_change_sounds(_previous_state, _current_state)
 	
 	// on leave state
 	switch (_previous_state) {
-		case states.SHOOT:
-		case states.SHOOT_UP:
-			global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_BOW, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_ATTACK_BOW_VALUE.RELEASE, x, y);
-			break;
 		case states.CROUCH:
 			// do nothing
 			break;

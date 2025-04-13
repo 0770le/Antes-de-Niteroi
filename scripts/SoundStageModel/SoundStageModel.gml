@@ -1,5 +1,6 @@
 #macro SOUND_STAGE_GENERAL		"general"
 #macro SOUND_STAGE_SEREGIPE		"seregipe"
+#macro SOUND_STAGE_SEREGIPE_2	"seregipe_2"
 #macro SOUND_STAGE_RERIPE		"reripe"
 #macro SOUND_STAGE_MAIN_MENU	"main_menu"
 #macro SOUND_STAGE_CREDITS		"credits"
@@ -43,7 +44,8 @@ constructor
 		for (var _i = 0; _i < array_length(_stages); _i++)
 		{
 			add(_stages[_i]);
-		}
+		}
+
 	}
 	
 	init(_stages);

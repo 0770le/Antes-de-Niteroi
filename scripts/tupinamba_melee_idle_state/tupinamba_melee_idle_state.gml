@@ -31,7 +31,7 @@ function tupinamba_melee_idle_state() {
 			
 		} else { //inside patrol area
 			//next to player
-			if ((abs(x - o_player.x) < attack_range) ){
+			if ((abs(x - o_player.x) < attack_range)){
 				state = tupinamba_melee_states.IDLE;
 				
 				////if player is in other y, evade to follow 

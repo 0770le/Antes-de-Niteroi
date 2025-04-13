@@ -23,6 +23,14 @@ instance_create_layer(0,0,LAYER_EFFECTS, o_explosion_particle);
 
 camera_set_view_pos(view_camera[0], 0, 10);
 
+global.options_controller.set_options({
+		OPTIONS_LAST_ROOM: int64(rm_cidade_velha),
+		OPTIONS_SPAWN_X: 1588,
+		OPTIONS_SPAWN_Y: 415,
+		OPTIONS_PLAYER_HP: global.game.max_hp,
+		OPTIONS_PLAYER_ARROWS: global.game.max_arrows,
+	});
+
 credits_title = [
 "Direção",
 "",
@@ -33,6 +41,9 @@ credits_title = [
 "",
 "",
 "Efeitos Sonoros",
+"",
+"",
+"Música",
 "",
 "",
 "Arte",
@@ -55,6 +66,9 @@ credits_name = [
 "Otto Lehmann",
 "Leonardo Marques",
 "Augusto Escobar",
+"",
+"",
+"André Rente",
 "",
 "",
 "André Rente",

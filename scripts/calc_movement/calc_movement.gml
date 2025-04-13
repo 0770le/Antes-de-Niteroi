@@ -3,6 +3,10 @@ function calc_movement(){
 	hsp += (right - left) *walk_spd;
 	vsp += global.grav;
 	
+	if(vsp > 10) {
+		vsp = 10;	
+	}
+	
 	//drag
 	hsp = lerp(hsp,0, drag);
 

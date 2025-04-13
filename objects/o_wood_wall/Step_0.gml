@@ -1,6 +1,4 @@
 
-//movement 
-calc_entity_movement();
 
 if hp <= 0 {
 	die = true;

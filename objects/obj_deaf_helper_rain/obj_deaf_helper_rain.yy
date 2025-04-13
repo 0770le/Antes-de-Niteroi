@@ -12,8 +12,8 @@
     "path":"folders/Objects/Sound/Model/DeafHelper.yy",
   },
   "parentObjectId":{
-    "name":"obj_deaf_helper_trigger",
-    "path":"objects/obj_deaf_helper_trigger/obj_deaf_helper_trigger.yy",
+    "name":"obj_deaf_assistant_trigger",
+    "path":"objects/obj_deaf_assistant_trigger/obj_deaf_assistant_trigger.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -12,7 +12,7 @@ sfx_enabled									= true;
 music_volume								= 100;
 sfx_volume									= 100;
 											
-fmod_3d_att									= undefined;
+fmod_3d_att								= undefined;
 music_parameter								= FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO;
 is_playing_music							= false;
 deaf_assistance								= false;
@@ -27,6 +27,11 @@ ambience_sounds_by_room[? rm_morguja_uasu]	= FMOD_EVENT.AMBIENCE_MORGUJA;
 ambience_sounds_by_room[? rm_seregipe]		= FMOD_EVENT.AMBIENCE_SEREGIPE;
 
 current_sound_stage_name					= undefined;
+
+function get_listener()
+{
+	return fmod_3d_att;
+}
 
 function on_camera_update(_x, _y) 
 {
@@ -106,7 +111,7 @@ function update_sound_stage(_room = rm_cidade_velha)
 			update_event_parameter_and_play(
 				_new_sound_stage.event,
 				_new_sound_stage.parameter_name,
-				_new_sound_stage.parameter_value,
+				_new_sound_stage.parameter_value
 			);
 		}
 	}
@@ -125,6 +130,8 @@ function get_sound_stage(_room = rm_cidade_velha)
 			return SOUND_STAGE_SEREGIPE;
 		case rm_reri_pe:
 			return SOUND_STAGE_RERIPE;
+		case rm_ending:
+			return SOUND_STAGE_CREDITS;
 		default: 
 			return SOUND_STAGE_GENERAL;
 	}
@@ -151,15 +158,15 @@ function stop_all()
 }
 
 function update_event_position(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
-								_x = other.x, 
-								_y = other.y)
+							   _x = other.x, 
+							   _y = other.y)
 {
 	event_per_enum[? _event_enum].update_position(_x, _y);
 }
 
 function update_position_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
-								_x = other.x, 
-								_y = other.y)
+								  _x = other.x, 
+							      _y = other.y)
 {
 	event_per_enum[? _event_enum].update_position(_x, _y);
 	event_per_enum[? _event_enum].play();
@@ -181,10 +188,10 @@ function update_event_parameter_and_play(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY
 }
 
 function update_event_parameter_and_play_pos(_event_enum = FMOD_EVENT.MUSIC_GAMEPLAY_01, 
-										 _parameter_name = undefined, 
-										 _parameter_value = undefined,
-										 _x = 0,
-										 _y = 0)
+										     _parameter_name = undefined, 
+											 _parameter_value = undefined,
+											 _x = 0,
+											 _y = 0)
 {
 	event_per_enum[? _event_enum].update_parameter(_parameter_name, _parameter_value);
 	event_per_enum[? _event_enum].update_position(_x, _y);
@@ -274,7 +281,8 @@ function load_events()
 					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.NO_RAIN,
 					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.LIGHT_RAIN,
 					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.MEDIUM_RAIN,
-					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.HEAVY_RAIN
+					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.HEAVY_RAIN,
+					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.RIO_DE_JANEIRO_RAIN
 				]
 			)
 		]);

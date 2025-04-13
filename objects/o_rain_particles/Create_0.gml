@@ -1,3 +1,14 @@
+enum RAIN_STATE 
+{
+	NONE,
+	LIGHT,
+	MEDIUM,
+	HEAVY,
+	RIO_DE_JANEIRO
+}
+
+state = RAIN_STATE.NONE;
+
 s_greayx_start = 0;
 x_end = 0;
 y_start = 0;
@@ -39,4 +50,21 @@ function stop()
 	is_on = false;
 	part_emitter_stream(particle_system, particle_emitter1, particle_type1, 0);
 	part_emitter_stream(particle_system, particle_emitter2, particle_type2, 0);
+}
+
+function get_fmod_parameter_by_state(_state) 
+{
+	switch (_state)
+	{
+		case RAIN_STATE.NONE: 
+			return FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.NO_RAIN;
+		case RAIN_STATE.LIGHT: 
+			return FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.LIGHT_RAIN;
+		case RAIN_STATE.MEDIUM:
+			return FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.MEDIUM_RAIN;
+		case RAIN_STATE.HEAVY: 
+			return FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.HEAVY_RAIN;
+		case RAIN_STATE.RIO_DE_JANEIRO: 
+			return FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.RIO_DE_JANEIRO_RAIN;
+	}
 }

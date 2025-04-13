@@ -1,1 +1,1 @@
-captions = "Som de praia se intensifica";
+captions = "Som de praia";

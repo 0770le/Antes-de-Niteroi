@@ -8,6 +8,8 @@
     {"name":"Collectible","order":8,"path":"folders/Objects/Collectible.yy",},
     {"name":"Controllers","order":16,"path":"folders/Objects/Controllers.yy",},
     {"name":"Screens","order":1,"path":"folders/Objects/Controllers/Screens.yy",},
+    {"name":"DeafAssistant","order":18,"path":"folders/Objects/DeafAssistant.yy",},
+    {"name":"Controller","order":1,"path":"folders/Objects/DeafAssistant/Controller.yy",},
     {"name":"Enemy","order":2,"path":"folders/Objects/Enemy.yy",},
     {"name":"Curso","order":5,"path":"folders/Objects/Enemy/Curso.yy",},
     {"name":"EnemySpawner","order":15,"path":"folders/Objects/EnemySpawner.yy",},

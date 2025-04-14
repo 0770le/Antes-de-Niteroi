@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+draw_set_color(c_white);
 if(explosion_time> explosion_time_final-10 and explode) {
 	draw_set_alpha(0.5);
 	var _height = (explosion_time - (explosion_time_final-10))*10;

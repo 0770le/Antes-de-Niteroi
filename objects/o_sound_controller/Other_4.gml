@@ -1,7 +1,7 @@
-if(room != rm_paulo_gustavo and room != rm_studio_logo and room != rm_ending) {
+if(room != rm_paulo_gustavo and room != rm_studio_logo) {
 	stop_ambience_sounds();
 	
-	if (room == rm_main_menu)
+	if (room == rm_main_menu or room == rm_ending)
 	{
 		stop_all();
 	}
@@ -16,6 +16,13 @@ if(room != rm_paulo_gustavo and room != rm_studio_logo and room != rm_ending) {
 				FMOD_PARAMETER_MUSIC_STAGE_SEREGIPE_VALUE.INTRO
 			);
 		} 
+		if (room == rm_seregipe_exploding)
+		{
+			global.options_controller.set_sound_stage_parameter(
+				SOUND_STAGE_SEREGIPE_2, 
+				FMOD_PARAMETER_MUSIC_STAGE_SEREGIPE_2_VALUE.INTRO
+			);
+		}
 		else if (room == rm_reri_pe) 
 		{
 			global.options_controller.set_sound_stage_parameter(

@@ -128,6 +128,8 @@ function get_sound_stage(_room = rm_cidade_velha)
 			return SOUND_STAGE_MAIN_MENU;
 		case rm_seregipe:
 			return SOUND_STAGE_SEREGIPE;
+		case rm_seregipe_exploding:
+			return SOUND_STAGE_SEREGIPE_2;
 		case rm_reri_pe:
 			return SOUND_STAGE_RERIPE;
 		case rm_ending:
@@ -237,6 +239,16 @@ function load_events()
 				[
 					FMOD_PARAMETER_MUSIC_STAGE_SEREGIPE_VALUE.INTRO,
 					FMOD_PARAMETER_MUSIC_STAGE_SEREGIPE_VALUE.INSIDE
+				])
+		]);
+	
+	event_per_enum[? FMOD_EVENT.MUSIC_SEREGIPE_2] = new FmodEvent(
+		"event:/MUSIC/mus_seregipe_02", 
+		[
+			new FmodParameter(
+				FMOD_PARAMETER_NAME_MUSIC,
+				[
+					FMOD_PARAMETER_MUSIC_STAGE_SEREGIPE_2_VALUE.INTRO
 				])
 		]);
 		

@@ -24,8 +24,6 @@
     {"name":"inst_98B0B92","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_3EED07F4","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_29658FA0","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
-    {"name":"inst_219120D","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
-    {"name":"inst_6485F839","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_7B2C311A","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_4A778DEB","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_5903B7CB","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
@@ -36,6 +34,7 @@
     {"name":"inst_3047D990","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_3B7357DA","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
     {"name":"inst_615C1891","path":"rooms/rm_cidade_velha/rm_cidade_velha.yy",},
+
   ],
   "isDnd":false,
   "layers":[

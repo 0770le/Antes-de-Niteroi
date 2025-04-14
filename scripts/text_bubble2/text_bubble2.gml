@@ -12,7 +12,7 @@ function text_bubble2(_inst, _text, _duration = -1, _x_scale = -1, _y_scale = -1
 	
 	if(_create and instance_exists(_inst)) {
 		if(_y_off == -100) {
-			_y_off = -(y - _inst.bbox_top) - 5;
+			_y_off = -(_inst.y - _inst.bbox_top) - 5;
 		}
 		if(_x_scale == -1 or _y_scale == -1) {
 			_x_scale = floor(_text_len/7);

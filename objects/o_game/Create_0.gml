@@ -1,4 +1,5 @@
 global.game = self;
+global.debug = true;
 //global.timer = 0;
 
  randomise();
@@ -9,7 +10,7 @@ macros();
 
 //PLAYER upgrades
 has_cloak = false;
-has_bow = true;
+has_bow = false;
 
 max_lives = 10;
 max_arrows_initial =  10;
@@ -40,8 +41,8 @@ global.volume = 0.1;
 
 global.timer = 0;
 
-global.fontSmall = font_add_sprite_ext(spr_font_small, "AÁÀÃÂaáàãâBbCÇcçDdEÉÊeéêFfGgHhIÍiíJjKkLlMmNnOÓÕÔoóõôPpQqRrSsTtUÚuúVvWwXxYyZz1234567890()',.%+-/:?!<>°•", true, 1);
-global.fontArrow = font_add_sprite_ext(s_font_arrows, "0123456789", true, 1);
+global.fontSmall = font_add_sprite_ext(spr_font_small, "AÁÀÃÂaáàãâBbCÇcçDdEÉÊeéêFfGgHhIÍiîíJjKkLlMmNnOÓÕÔoóõôPpQqRrSsTtUÚuúVvWwXxYyZz1234567890()',.%+-/:?!<>°•", true, 1);
+global.fontArrow = font_add_sprite_ext(s_font_arrows, "0123456789/", true, 1);
 global.fontLives = font_add_sprite_ext(s_font_lives, "0123456789", true, 1);
 
 //set GUI size

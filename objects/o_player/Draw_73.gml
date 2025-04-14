@@ -26,8 +26,13 @@ draw_sprite_stretched(s_HUD_hp_bar,0,_x,_y,_bar_width,_bar_height);
 //draw_set_font(global.fontLives);
 //draw_text(_cam_x + global.cw - 15, _y+2, string(lives2));
 
+draw_set_color(c_white)
 if(o_game.has_bow) {
+	draw_set_halign(fa_left);
 	draw_sprite(s_HUD_arrows, 0, _cam_x + 10, _y+40);
 	draw_set_font(global.fontArrow);
-	draw_text(_cam_x + 30, _y+55, string(arrows));
+	var _s = arrows < 10? "0"+string(arrows) : string(arrows);
+	draw_text(_cam_x + 30, _y+55, string(arrows) + "/" + string(global.game.max_arrows));
 }
+
+

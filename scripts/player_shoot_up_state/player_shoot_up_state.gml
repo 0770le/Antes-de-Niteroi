@@ -25,9 +25,8 @@ function player_shoot_up_state() {//o tempo pra dar o tiro é o tempo do sprite
 		
 					//muniçao
 					arrows--;
-	
-				//sound
-				//audio_play_sound(snd_arrow_firing,10, false, global.volume);
+				
+					global.sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.ATTACK_BOW, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_ATTACK_BOW_VALUE.RELEASE, x, y);
 		
 				}else {//sem flecha
 					//sound fail			audio_play_sound(snd_arrow_firing,10, false);

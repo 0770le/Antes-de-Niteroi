@@ -10,4 +10,8 @@ part_type_destroy(particle_type2);
 
 part_system_destroy(particle_system);
 
-global.sound_controller.stop(FMOD_EVENT.AMBIENCE_KERYL);
+global.sound_controller.update_event_parameter_and_play(
+	FMOD_EVENT.AMBIENCE_KERYL, 
+	FMOD_PARAMETER_NAME_AMBIENCE,
+	FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.NO_RAIN
+)

@@ -12,7 +12,7 @@ sfx_enabled									= true;
 music_volume								= 100;
 sfx_volume									= 100;
 											
-fmod_3d_att								= undefined;
+fmod_3d_att									= undefined;
 music_parameter								= FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO;
 is_playing_music							= false;
 deaf_assistance								= false;
@@ -293,8 +293,7 @@ function load_events()
 					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.NO_RAIN,
 					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.LIGHT_RAIN,
 					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.MEDIUM_RAIN,
-					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.HEAVY_RAIN,
-					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.RIO_DE_JANEIRO_RAIN
+					FMOD_PARAMETER_VALUE_AMBIENCE_KERYL.HEAVY_RAIN
 				]
 			)
 		]);

@@ -211,7 +211,7 @@ enum FMOD_VCA
 		
 		enum FMOD_PARAMETER_VALUE_AMBIENCE_KERYL
 		{
-			PLACE_HOLDER, NO_RAIN, LIGHT_RAIN, MEDIUM_RAIN, HEAVY_RAIN, RIO_DE_JANEIRO_RAIN
+			PLACE_HOLDER, NO_RAIN, LIGHT_RAIN, MEDIUM_RAIN, HEAVY_RAIN
 		}
 		
 	#endregion
@@ -262,6 +262,11 @@ constructor
 	
 	static update_parameter = function (_name = "time lapse", _value = FMOD_PARAMETER_MOVE_JUMP.JUMP)
 	{
+		//if (string_pos("ARARIBOIA", event_path) == 0)
+		//{
+		//	global.logger.debug($"FmodEvent playing: {event_path}, name: {_name}, value: {_value}");
+		//}
+		
 		parameters_by_name[? _name].update(_value);
 	}
 	
@@ -328,7 +333,7 @@ constructor
 		
 		if (current_label != _value)
 		{
-			fmod_studio_event_instance_set_parameter_by_name(event_instance, name, _value, true);
+			fmod_studio_event_instance_set_parameter_by_name(event_instance, name, _value, false);
 		
 			current_label = _value;
 		}

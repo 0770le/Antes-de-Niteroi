@@ -283,7 +283,7 @@ function create_content()
 	_last_item.type = CATALOG_ITEM_TYPE.ITAOKA_FORT;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Ilha de Seregipe";
+	_last_item.label = "Ilha de Serigipe";
 	_last_item.set_text("Atual Ilha de Villegagnon (RJ), anexada ao Aeroporto Santos Dumont. Na Ilha de Serigipe ficava localizado o Forte Coligny, centro do assentamento colonial francês chamado França Antártica (1555-1560), liderado por Nicolas Durand de Villegagnon (1510-1571). " );
 	_last_item.image = spr_catalog_cidade_velha;
 	_last_item.type = CATALOG_ITEM_TYPE.SEREGIPE;

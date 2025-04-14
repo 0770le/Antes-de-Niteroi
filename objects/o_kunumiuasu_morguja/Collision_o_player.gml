@@ -9,7 +9,7 @@ switch(room) {
 		_text+= "Morguja Uasu?";
 		break;
 	case rm_morguja_uasu:
-		_text+= "Seregipe?";
+		_text+= "Serigipe?";
 		break;
 }
 	

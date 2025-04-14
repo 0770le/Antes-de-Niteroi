@@ -7,7 +7,7 @@ switch(room) {
 		_text+= "Reri'pê?";
 		break;
 	case rm_reri_pe:
-		_text+= "Seregipe?";
+		_text+= "Serigipe?";
 		break;
 }
 	

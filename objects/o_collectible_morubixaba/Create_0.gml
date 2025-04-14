@@ -2,4 +2,4 @@ event_inherited();
 catalog_item_type = CATALOG_ITEM_TYPE.MORUBIXABA;
 collectible_index = COLLECTIBLE_MORUBIXABA;
 
-log_title = "Morubixaba"; //A muçurana é uma corda tupinambá sacrificial, utilizada para amarrar prisioneiros, e é considerada um objeto de culto e profundo respeito religioso. Esta corda era elaborada com um intrincado entrelaçamento que demandava um trabalho meticuloso, algumas alcançavam mais de 60 metros de comprimento.
+log_title = "Morubixaba"; 

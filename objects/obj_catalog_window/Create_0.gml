@@ -410,6 +410,11 @@ function create_content()
 	_last_item.set_text("O conjunto arco e flecha era a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos.\nÀ medida que cresciam, suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo d'água, pássaros em voo e até as finas viseiras dos elmos das armaduras europeias.");
 	_last_item.image = spr_catalog_mucurana;
 	_last_item.type = CATALOG_ITEM_TYPE.URAPACA;
+
+	_last_item.label = "Assojaba";
+	_last_item.set_text("Os mantos Tupinambá, conhecidos como assojaba, eram vestimentas sagradas de grande importância espiritual e simbólica para os Tupinambás. Confeccionados com penas de aves nativas, principalmente do guará (de cor vermelha intensa), fixadas em uma trama de fibras naturais através de técnicas ancestrais de costura, esses mantos eram utilizados em ocasiões formais e rituais significativos, como assembleias, enterros e as cerimônias antropofágicas, que eram as mais solenes.O ato de vestir o manto representava uma profunda conexão com os ancestrais e o mundo espiritual, sendo um símbolo de poder, liderança e prestígio.");
+	_last_item.image = spr_catalog_mucurana;
+	_last_item.type = CATALOG_ITEM_TYPE.ASSOJABA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Muçurana";
@@ -432,13 +437,13 @@ function create_content()
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "Biodiversidade";
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Cobra-Arara";
-	_last_item.set_text("Conhecida cientificamente como Corallus caninus (família Boidae) e também chamada de periquitamboia, jiboia-esmeralda e cobra-papagaio, deve seu nome em tupi, 'araramboia' ('cobra arara'), à sua coloração vibrante, com tons de verde que lembram as penas de araras e papagaios. Essa serpente arborícola pode atingir até dois metros de comprimento e possui uma mordida famosa por ser a mais dolorosa entre cobras não peçonhentas, graças às suas maiores presas em relação ao corpo nesse grupo e à sua arcada dentária com várias fileiras de dentes numerosos, afiados e curvados para trás, ideais para fixar a presa. Frequentemente encontrada em galhos altos, seus botes podiam atingir o rosto e o pescoço de uma pessoa andando na mata. Acredita-se que a característica de ser uma especialista em emboscada rápida foi a inspiração para que o líder da tribo Temiminó escolhesse para si o nome Arariboia.");
+	_last_item.set_text("A cobra-papagaio (Corallus caninus - família Boidae), periquitamboia, jiboia-esmeralda, deve seu nome em tupi, 'araramboia' ('cobra arara'), à sua coloração vibrante, com tons de verde que lembram as penas papagaios. Essa serpente arborícola pode atingir até dois metros de comprimento e possui uma mordida famosa por ser a mais dolorosa entre cobras não peçonhentas, graças às suas presas enormes, proporcionalmente as maiores dentro desse grupo, e à sua arcada dentária com várias fileiras de dentes numerosos, afiados e curvados para trás, ideais para fixar a presa. Frequentemente encontrada em galhos altos, seus botes podiam atingir o rosto e o pescoço de uma pessoa andando na mata. A característica de ser uma especialista em emboscadas provavelmente foi a inspiração para que o líder da tribo Temiminó escolhesse para si o nome Arariboia.");
 	_last_item.image = spr_catalog_arariboia;
 	_last_item.type = CATALOG_ITEM_TYPE.COBRA_ARARA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Maracajá";
-	_last_item.set_text("O maracajá (Leopardus wiedii), também conhecido como gato-do-mato-pequeno ou gato-do-mato-pintado, é um felino de pequeno porte encontrado em diversas regiões da América Latina, incluindo o Brasil e a Mata Atlântica. Geralmente, pesa entre 3 e 5 kg e possui um comprimento de corpo que varia de 42 a 80 cm, com uma cauda longa, entre 30 e 51 cm. Possui hábitos principalmente noturnos e altamente arborícolas, sendo um escalador excepcionalmente ágil. Uma de suas habilidades notáveis é a capacidade de girar os tornozelos em até 180 graus, permitindo que desça de árvores de cabeça para baixo com a mesma destreza de um esquilo. Sua pelagem exibe um padrão de manchas escuras alongadas e irregulares sobre um fundo que varia de amarelado a acinzentado, oferecendo camuflagem nas alturas. O maracajá se alimenta principalmente de pequenos mamíferos, aves, répteis e anfíbios que encontra em seu ambiente florestal. Apesar de suas adaptações especializadas, enfrenta ameaças significativas como a perda de habitat, a fragmentação florestal e a caça ilegal.");
+	_last_item.set_text("O maracajá (Leopardus wiedii), ou gato-do-mato-pequeno, é um felino de 3 a 5 kg encontrado na América Latina, incluindo o Brasil. Com corpo de até 80 cm e cauda longa, é noturno, arborícola e ágil, capaz de girar os tornozelos em 180° para descer árvores de cabeça para baixo. Sua pelagem manchada o camufla na mata. Alimenta-se de pequenos animais e sofre com a perda de habitat e a caça ilegal.");
 	_last_item.image = spr_catalog_caninde;
 	_last_item.type = CATALOG_ITEM_TYPE.MACARAJA;
 	

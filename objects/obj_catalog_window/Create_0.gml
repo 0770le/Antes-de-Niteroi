@@ -445,7 +445,7 @@ function create_content()
 	_last_item.label = "Maracajá";
 	_last_item.set_text("O maracajá (Leopardus wiedii), ou gato-do-mato-pequeno, é um felino de 3 a 5 kg encontrado na América Latina, incluindo o Brasil. Com corpo de até 80 cm e cauda longa, é noturno, arborícola e ágil, capaz de girar os tornozelos em 180° para descer árvores de cabeça para baixo. Sua pelagem manchada o camufla na mata. Alimenta-se de pequenos animais e sofre com a perda de habitat e a caça ilegal.");
 	_last_item.image = spr_catalog_caninde;
-	_last_item.type = CATALOG_ITEM_TYPE.MACARAJA;
+	_last_item.type = CATALOG_ITEM_TYPE.MARACAJA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Arara-canindé";

@@ -1,5 +1,5 @@
 event_inherited();
-catalog_item_type = CATALOG_ITEM_TYPE.ARARA_CANINDE;
-collectible_index = COLLECTIBLE_ARARA;
+catalog_item_type = CATALOG_ITEM_TYPE.ARARA_VERMELHA;
+collectible_index = COLLECTIBLE_ARARA_VERMELHA;
 
-log_title = "Arara"; 
+log_title = "Arara-vermelha"; 

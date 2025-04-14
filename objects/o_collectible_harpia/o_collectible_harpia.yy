@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"o_collectible_armadeira",
+  "%Name":"o_collectible_harpia",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_collectible_armadeira",
+  "name":"o_collectible_harpia",
   "overriddenProperties":[],
   "parent":{
     "name":"Collectible",

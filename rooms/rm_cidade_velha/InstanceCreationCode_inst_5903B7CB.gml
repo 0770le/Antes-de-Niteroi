@@ -1,1 +1,0 @@
-captions = "Som de praia";

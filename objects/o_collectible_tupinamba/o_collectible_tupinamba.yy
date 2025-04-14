@@ -8,8 +8,8 @@
   "name":"o_collectible_tupinamba",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectible",
-    "path":"folders/Objects/Collectible.yy",
+    "name":"cidade velha",
+    "path":"folders/Objects/Collectible/cidade velha.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

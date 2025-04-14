@@ -17,6 +17,7 @@
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Collectible","folderPath":"folders/Objects/Collectible.yy","name":"Collectible","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"cidade velha","folderPath":"folders/Objects/Collectible/cidade velha.yy","name":"cidade velha","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Akaray","folderPath":"folders/Objects/Collectible/Akaray.yy","name":"Akaray","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Control","folderPath":"folders/Objects/Control.yy","name":"Control","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Controllers","folderPath":"folders/Objects/Controllers.yy","name":"Controllers","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Screens","folderPath":"folders/Objects/Controllers/Screens.yy","name":"Screens","resourceType":"GMFolder","resourceVersion":"2.0",},

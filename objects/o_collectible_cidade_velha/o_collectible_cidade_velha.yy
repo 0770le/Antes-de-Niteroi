@@ -8,8 +8,8 @@
   "name":"o_collectible_cidade_velha",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectible",
-    "path":"folders/Objects/Collectible.yy",
+    "name":"cidade velha",
+    "path":"folders/Objects/Collectible/cidade velha.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

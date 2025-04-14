@@ -19,7 +19,7 @@ root_menu		= undefined;
 selected_item	= undefined;
 has_new_items	= false;
 
-game_version	= "v0.0.1";
+game_version	= "v0.9.0";
 
 starting_x		= get_sprite_center_x();
 starting_y		= 300;
@@ -183,7 +183,7 @@ function draw_version()
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_left);
 	
-	draw_text(left + margin_left, bottom - margin_bottom, $"Antes de Niterói {game_version}");
+	draw_text(left + margin_left, bottom - margin_bottom, $"A lenda de Niterói {game_version}");
 }
 
 function draw_menu_items() 

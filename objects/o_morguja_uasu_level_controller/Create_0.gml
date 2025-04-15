@@ -4,6 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
+disable_sun = 0;
+sun_disabled = false;
+
 sun_x = 0;
 sun_y = 0;
 

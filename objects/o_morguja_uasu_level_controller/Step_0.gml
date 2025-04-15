@@ -1,5 +1,19 @@
 /// @description move BG
 
+if(!sun_disabled and keyboard_check(vk_pagedown)) {
+	if(disable_sun++ > 240) {
+		sun_disabled = true;
+		with(o_sun_blocker) {
+			instance_destroy();	
+		}
+		var lay_id = layer_get_id("Backgrounds_sun");
+	    layer_set_visible(lay_id, false);
+	}
+} else {
+	disable_sun = 0;
+}
+
+
 var _cam_x = camera_get_view_x(view_camera[0]);
 var _cam_y = camera_get_view_y(view_camera[0]);
 
@@ -13,6 +27,9 @@ layer_y(LAYER_BACKGROUND_2, (_cam_y * 0.6) + 200);
 layer_x(LAYER_BACKGROUND_3, (_cam_x * 0.7) + 1700);
 layer_y(LAYER_BACKGROUND_3, (_cam_y * 0.6) + 450);
 
+
+layer_x("LAYER_BARCO", (_cam_x * 0.5) + 2350);
+layer_y("LAYER_BARCO", (_cam_y * 0.5) + 690);
 
 
 layer_x(LAYER_BACKGROUND_6, _cam_x * 0.8);

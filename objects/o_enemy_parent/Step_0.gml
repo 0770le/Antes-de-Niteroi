@@ -1,3 +1,7 @@
+if(distance_to_object(global.player) > 1100) {
+	return;	
+}
+
 if (!instance_exists(o_fade)) {
 	if(!place_meeting(x,y,o_vision_blocker_2)){
 		script_execute (states_array[state]);

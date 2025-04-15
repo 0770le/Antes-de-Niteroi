@@ -8,8 +8,8 @@
   "name":"o_collectible_mucurana",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectible",
-    "path":"folders/Objects/Collectible.yy",
+    "name":"Serigipe",
+    "path":"folders/Objects/Collectible/Serigipe.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

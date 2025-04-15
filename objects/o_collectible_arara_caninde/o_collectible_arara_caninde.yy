@@ -8,8 +8,8 @@
   "name":"o_collectible_arara_caninde",
   "overriddenProperties":[],
   "parent":{
-    "name":"cidade velha",
-    "path":"folders/Objects/Collectible/cidade velha.yy",
+    "name":"Cidade Velha",
+    "path":"folders/Objects/Collectible/Cidade Velha.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

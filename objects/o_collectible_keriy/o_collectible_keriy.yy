@@ -8,8 +8,8 @@
   "name":"o_collectible_keriy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectible",
-    "path":"folders/Objects/Collectible.yy",
+    "name":"Keryi",
+    "path":"folders/Objects/Collectible/Keryi.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

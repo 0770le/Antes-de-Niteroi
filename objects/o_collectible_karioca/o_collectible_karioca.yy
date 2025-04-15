@@ -8,8 +8,8 @@
   "name":"o_collectible_karioca",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectible",
-    "path":"folders/Objects/Collectible.yy",
+    "name":"Reri'pe",
+    "path":"folders/Objects/Collectible/Reri'pe.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

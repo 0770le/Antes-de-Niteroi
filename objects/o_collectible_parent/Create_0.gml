@@ -19,5 +19,3 @@ light_id = instance_create_layer(x,y, "Instances", o_light);
 light_id.type = 4;
 //get the gem colour
 light_id.col_index = image_index;
-
-alarm[0]=2;

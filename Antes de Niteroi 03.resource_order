@@ -199,7 +199,7 @@
     {"name":"o_collectible_maloca","order":5,"path":"objects/o_collectible_maloca/o_collectible_maloca.yy",},
     {"name":"o_collectible_maracaja","order":6,"path":"objects/o_collectible_maracaja/o_collectible_maracaja.yy",},
     {"name":"o_collectible_morguja_ausu","order":2,"path":"objects/o_collectible_morguja_ausu/o_collectible_morguja_ausu.yy",},
-    {"name":"o_collectible_morubixaba","order":4,"path":"objects/o_collectible_morubixaba/o_collectible_morubixaba.yy",},
+    {"name":"o_collectible_morubixaba","order":3,"path":"objects/o_collectible_morubixaba/o_collectible_morubixaba.yy",},
     {"name":"o_collectible_mucurana","order":2,"path":"objects/o_collectible_mucurana/o_collectible_mucurana.yy",},
     {"name":"o_collectible_nheteroia","order":2,"path":"objects/o_collectible_nheteroia/o_collectible_nheteroia.yy",},
     {"name":"o_collectible_orquideas","order":6,"path":"objects/o_collectible_orquideas/o_collectible_orquideas.yy",},

@@ -8,8 +8,8 @@
   "name":"o_collectible_morubixaba",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectible",
-    "path":"folders/Objects/Collectible.yy",
+    "name":"Serigipe explodindo",
+    "path":"folders/Objects/Collectible/Serigipe explodindo.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

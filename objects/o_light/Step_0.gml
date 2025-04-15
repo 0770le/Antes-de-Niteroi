@@ -9,10 +9,10 @@ if (col == c_black) {
 		break;
 		
 		case 1:
-			//window
-			intensity = 0.2;
-			radius = 27;
-			col = make_color_rgb(220,134,59);
+			//leaf hole
+			intensity = 0.12;
+			radius = 10;
+			col = make_color_rgb(240, 240, 230);
 			flickering = false;
 		break;
 		
@@ -67,7 +67,13 @@ if (col == c_black) {
 			flickering = false;
 			col = make_color_rgb(255,215,0);
 	
-	
+		case 8:
+			//window
+			intensity = 0.1;
+			radius = 20;
+			col = make_color_rgb(220,134,59);
+			flickering = false;
+		break;
 	}
 	
 	

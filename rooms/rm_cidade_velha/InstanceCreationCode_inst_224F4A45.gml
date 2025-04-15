@@ -1,0 +1,1 @@
+range = random_range(20,25);

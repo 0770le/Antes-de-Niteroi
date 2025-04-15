@@ -9,7 +9,7 @@ macros();
 
 
 //PLAYER upgrades
-has_cloak = true;
+has_cloak = false;
 has_bow = false;
 
 max_lives = 10;

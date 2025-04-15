@@ -8,8 +8,8 @@
   "name":"o_collectible_arara_vermelha",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectible",
-    "path":"folders/Objects/Collectible.yy",
+    "name":"Akaray",
+    "path":"folders/Objects/Collectible/Akaray.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

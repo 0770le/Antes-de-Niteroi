@@ -119,10 +119,13 @@
     {"name":"inst_1A28F317","path":"rooms/rm_keryi/rm_keryi.yy",},
     {"name":"inst_331EA7AE","path":"rooms/rm_keryi/rm_keryi.yy",},
     {"name":"inst_140A7C01","path":"rooms/rm_keryi/rm_keryi.yy",},
+    {"name":"inst_5F970AA6","path":"rooms/rm_keryi/rm_keryi.yy",},
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRInstanceLayer":"","%Name":"GUI","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"instances":[],"layers":[
+    {"$GMRInstanceLayer":"","%Name":"GUI","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"instances":[
+        {"$GMRInstance":"v1","%Name":"inst_5F970AA6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5F970AA6","objectId":{"name":"o_collectible_paranapua","path":"objects/o_collectible_paranapua/o_collectible_paranapua.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":258.0,"y":155.0,},
+      ],"layers":[
         {"$GMRInstanceLayer":"","%Name":"GUI_Catalog","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"instances":[],"layers":[
             {"$GMRInstanceLayer":"","%Name":"GUI_Catalog_Buttons","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"instances":[],"layers":[],"name":"GUI_Catalog_Buttons","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
             {"$GMRInstanceLayer":"","%Name":"GUI_Catalog_Window","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"instances":[],"layers":[],"name":"GUI_Catalog_Window","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

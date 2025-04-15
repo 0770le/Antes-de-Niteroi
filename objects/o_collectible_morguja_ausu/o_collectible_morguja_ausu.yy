@@ -8,8 +8,8 @@
   "name":"o_collectible_morguja_ausu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Collectible",
-    "path":"folders/Objects/Collectible.yy",
+    "name":"Morguja",
+    "path":"folders/Objects/Collectible/Morguja.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

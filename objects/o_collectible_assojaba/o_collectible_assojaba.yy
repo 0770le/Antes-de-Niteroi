@@ -8,8 +8,8 @@
   "name":"o_collectible_assojaba",
   "overriddenProperties":[],
   "parent":{
-    "name":"keryi_hut",
-    "path":"folders/Objects/Collectible/keryi_hut.yy",
+    "name":"keryi hut",
+    "path":"folders/Objects/Collectible/keryi hut.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

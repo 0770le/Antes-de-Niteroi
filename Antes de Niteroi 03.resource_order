@@ -297,6 +297,7 @@
     {"name":"obj_catalog_tab","order":1,"path":"objects/obj_catalog_tab/obj_catalog_tab.yy",},
     {"name":"obj_catalog_window","order":2,"path":"objects/obj_catalog_window/obj_catalog_window.yy",},
     {"name":"obj_deaf_helper_rain","order":1,"path":"objects/obj_deaf_helper_rain/obj_deaf_helper_rain.yy",},
+    {"name":"obj_sea_sound_emitter","order":7,"path":"objects/obj_sea_sound_emitter/obj_sea_sound_emitter.yy",},
     {"name":"obj_sound_music_parameter_updater_forced","order":1,"path":"objects/obj_sound_music_parameter_updater_forced/obj_sound_music_parameter_updater_forced.yy",},
     {"name":"obj_text_basic","order":1,"path":"objects/obj_text_basic/obj_text_basic.yy",},
     {"name":"Object78","order":12,"path":"objects/Object78/Object78.yy",},

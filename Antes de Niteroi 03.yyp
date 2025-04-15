@@ -367,6 +367,7 @@
     {"id":{"name":"obj_main_menu_controller","path":"objects/obj_main_menu_controller/obj_main_menu_controller.yy",},},
     {"id":{"name":"obj_menu_controller","path":"objects/obj_menu_controller/obj_menu_controller.yy",},},
     {"id":{"name":"obj_options_controller","path":"objects/obj_options_controller/obj_options_controller.yy",},},
+    {"id":{"name":"obj_sea_sound_emitter","path":"objects/obj_sea_sound_emitter/obj_sea_sound_emitter.yy",},},
     {"id":{"name":"obj_shared_window","path":"objects/obj_shared_window/obj_shared_window.yy",},},
     {"id":{"name":"obj_sound_ambience_parameter_updater","path":"objects/obj_sound_ambience_parameter_updater/obj_sound_ambience_parameter_updater.yy",},},
     {"id":{"name":"obj_sound_music_parameter_updater_forced","path":"objects/obj_sound_music_parameter_updater_forced/obj_sound_music_parameter_updater_forced.yy",},},

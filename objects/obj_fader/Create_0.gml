@@ -98,8 +98,9 @@ function __draw() {
 	draw_set_color(c_black);
 	draw_set_alpha(alpha);
 	
-	var _xx = window_get_width();
-	var _yy = window_get_height();
+	//multiplying by 2 due to some bug
+	var _xx = window_get_width()*2;
+	var _yy = window_get_height()*2;
 	
 	draw_rectangle(0, 0, _xx, _yy, false);
 	

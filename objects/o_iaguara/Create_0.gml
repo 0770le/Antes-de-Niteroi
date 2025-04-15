@@ -7,7 +7,7 @@ arrow_knockback = false;
 
 //taking dmg
 hurt_time = room_speed * 0.5;
-hp = 8; 
+hp = 12; 
 flash_counter = 0;
 //CASE check_enemy_hp flash dead generico
 o_enemy = object_index;

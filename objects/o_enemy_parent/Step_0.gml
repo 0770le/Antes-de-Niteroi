@@ -1,3 +1,7 @@
+if(distance_to_object(global.player) > 1100 and !object_is_ancestor(object_index, o_iaguara)) {
+	return;	
+}
+
 if (!instance_exists(o_fade)) {
 	if(!place_meeting(x,y,o_vision_blocker_2)){
 		script_execute (states_array[state]);

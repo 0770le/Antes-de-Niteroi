@@ -1,3 +1,3 @@
 warden();
 facing=-1;
-hp = 5;
+hp = 6;

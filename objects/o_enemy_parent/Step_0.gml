@@ -1,4 +1,4 @@
-if(distance_to_object(global.player) > 1100) {
+if(distance_to_object(global.player) > 1100 and !object_is_ancestor(object_index, o_iaguara)) {
 	return;	
 }
 

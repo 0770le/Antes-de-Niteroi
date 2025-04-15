@@ -60,7 +60,12 @@ if (col == c_black) {
 			col = make_color_rgb(250,134,59);
 		break;
 	
-	
+		case 7:
+			//collectible
+			intensity= 0.9;
+			radius = 15;
+			flickering = false;
+			col = make_color_rgb(255,215,0);
 	
 	
 	}

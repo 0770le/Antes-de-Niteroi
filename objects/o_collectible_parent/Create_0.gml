@@ -16,6 +16,12 @@ image_index = irandom(image_number -1); //começa em zero
 
 //enable light
 light_id = instance_create_layer(x,y, "Instances", o_light);
-light_id.type = 4;
+light_id.type = 7;
 //get the gem colour
 light_id.col_index = image_index;
+
+//flutuar
+anchorY = y;
+frequency = 0.03;
+amplitude = 6;
+timer = 0;

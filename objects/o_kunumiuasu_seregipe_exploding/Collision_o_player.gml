@@ -11,6 +11,16 @@ if other.interact and interact{
 	target_rm = rm_cidade_velha;
 	target_x = 1619;
 	target_y = 415;
+	
+	
+	var _catalog_item_type = CATALOG_ITEM_TYPE.ITAOKA_FORT;
+	global.catalog_controller.unlock_item(_catalog_item_type);
+
+	_catalog_item_type = CATALOG_ITEM_TYPE.MARANA_UASU;
+	global.catalog_controller.unlock_item(_catalog_item_type);
+
+	_catalog_item_type = CATALOG_ITEM_TYPE.PARANACUPU;
+	global.catalog_controller.unlock_item(_catalog_item_type);
 		
 	
 	global.fader.to_room(target_rm, target_x, target_y,true);

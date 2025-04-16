@@ -220,6 +220,33 @@ function draw_item_cursor_arrows()
 	}
 }
 
+function draw_total_entries()
+{
+	draw_set_font(fnt_arial_medium_to_small);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_set_color(make_color_rgb(230, 230, 230));
+	
+	var _background_x = bbox_right - 30;
+	var _background_y = bbox_bottom;
+	
+	var _background = spr_catalog_total;
+	
+	var _total_items = array_length(catalog_items);
+	var _unlocked_items = array_length(
+		array_filter(catalog_items, function (_item) { return !_item.locked })
+	);
+	
+	var _text = $"Debloqueados: {_unlocked_items} de {_total_items}";
+	
+	draw_sprite(spr_catalog_total, 0, _background_x, _background_y);
+	
+	var _xx = sprite_get_width(spr_catalog_total) / 2;
+	var _yy = sprite_get_height(spr_catalog_total) / 2;
+	
+	draw_text(_background_x - _xx, _background_y + _yy, _text);
+}
+
 function create_content()
 {
 	//tabs
@@ -231,7 +258,7 @@ function create_content()
 	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Guajupiá";
 	_last_item.set_text("Baía de Guanabara (RJ). Guajupiá, 'morada dos ancestrais', era para os tupinambás uma espécie de paraíso, onde descansavam os antepassados mais valorosos e memoráveis.\nAo chegarem à região, após descerem pelo litoral brasileiro e conquistarem territórios de outras tribos, passaram a chamá-la assim devido à sua abundância em frutos, peixes e recursos naturais.");
-	_last_item.image = spr_catalog_empty;
+	_last_item.image = undefined;
 	_last_item.type = CATALOG_ITEM_TYPE.GUAJUPIA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));

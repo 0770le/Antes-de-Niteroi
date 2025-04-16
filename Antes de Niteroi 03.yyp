@@ -867,6 +867,7 @@
     {"id":{"name":"spr_catalog_new_item","path":"sprites/spr_catalog_new_item/spr_catalog_new_item.yy",},},
     {"id":{"name":"spr_catalog_question_mark","path":"sprites/spr_catalog_question_mark/spr_catalog_question_mark.yy",},},
     {"id":{"name":"spr_catalog_tab_2","path":"sprites/spr_catalog_tab_2/spr_catalog_tab_2.yy",},},
+    {"id":{"name":"spr_catalog_total","path":"sprites/spr_catalog_total/spr_catalog_total.yy",},},
     {"id":{"name":"spr_catalog_window_2","path":"sprites/spr_catalog_window_2/spr_catalog_window_2.yy",},},
     {"id":{"name":"spr_catalog_window_3","path":"sprites/spr_catalog_window_3/spr_catalog_window_3.yy",},},
     {"id":{"name":"spr_checkbox_checked","path":"sprites/spr_checkbox_checked/spr_checkbox_checked.yy",},},

@@ -3,22 +3,22 @@ event_inherited();
 
 enum CATALOG_ITEM_TYPE
 {
-	UNSET,
+	UNSET,			// nao usado
 	AKARAY,
 	ARARA_AZUL,
 	ARARA_CANINDE,
 	ARARA_VERMELHA,
-	ARARIBOIA,
+	ARARIBOIA,		// nao usado
 	ARARYBOIA,
 	ARMADEIRA,
 	ASSOJABA,
-	BARQUEIRO,
+	BARQUEIRO,		// nao usado
 	BROMELIAS,
 	CIDADE_VELHA,
 	COBRA_ARARA,
 	CRISTAOS,
-	ENTRADA_NOVA,
-	FRANCES,
+	ENTRADA_NOVA,	// nao usado
+	FRANCES,		// nao usado
 	GUAJUPIA,
 	GUARA,
 	GUYRAGUASU_UNAE,
@@ -54,8 +54,6 @@ enum CATALOG_ITEM_TYPE
 	TUPINAMBA,
 	URAPACA,
 	URUCUM_GENIPAPO
-	
-	
 }
 
 layer_text		= LAYER_GUI_CATALOG_BUTTONS;
@@ -90,7 +88,7 @@ frame_color     = make_color_rgb(109, 89, 68);
 // scroll text
 line_separation = 30;
 height_max		= 50000; // 580;
-line_width		= 732; // without sprite
+line_width		= 1012; // without sprite
 text_parts		= [];
 text_shown		= "";
 cursor			= 0;
@@ -231,7 +229,7 @@ function draw()
 	
 	var _image = locked ? image_locked : image;
 	var _xx = bbox_right + 30;
-	_yy = top_y + 44;
+	_yy = top_y + 57;
 	
 	if (_image != undefined)
 	{

@@ -5,15 +5,17 @@ enum CATALOG_TAB
 	REGIONS
 }
 
-x					= 480 * 1.5;
-y					= 270 * 1.5;
-image_xscale		= 1.5;
-image_yscale		= 1.1;
-is_open				= false;
+x							= 480 * 1.5;
+y							= 270 * 1.5;
+image_xscale				= 1.9;
+image_yscale				= 1.3;
+is_open						= false;
 
-catalog_tabs		= [];
-catalog_items		= [];
-selected_tab		= noone;
+catalog_tabs				= [];
+catalog_items				= [];
+selected_tab				= noone;
+total_entries_text_color	= make_color_rgb(230, 230, 230);
+total_entries_background	= spr_catalog_total;
 
 function open()
 {
@@ -52,7 +54,7 @@ function close()
 
 function draw_second_background() 
 {
-	draw_sprite_ext(spr_catalog_window_3, 0, bbox_right - 10, y, 0.95, 1, 0, c_white, 1.0);
+	draw_sprite_ext(spr_catalog_window_3, 0, bbox_right - 10, y, 1.3, 1.18, 0, c_white, 1.0);
 	
 	draw_controller_buttons();
 	
@@ -72,21 +74,21 @@ function draw_controller_buttons()
 	var _scale = global.input_manager.get_input_sprite_scale();
 	
 	// fechar e voltar
-	draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 60, bbox_bottom - 64, "Fechar");
-	draw_sprite_ext(_toggle_sprite, 0, bbox_right - 50, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 80, bbox_bottom - 64, "Fechar");
+	draw_sprite_ext(_toggle_sprite, 0, bbox_right - 70, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
-	draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 170, bbox_bottom - 64, "Voltar");
-	draw_sprite_ext(_cancel_sprite, 0, bbox_right - 160, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 190, bbox_bottom - 64, "Voltar");
+	draw_sprite_ext(_cancel_sprite, 0, bbox_right - 180, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
 	// anterior e próxima aba
 	var _tab_left_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TAB_LEFT);
 	var _tab_right_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TAB_RIGHT);
 	
-	draw_text(bbox_right - (sprite_get_width(_tab_left_sprite)*_scale) - 420, bbox_bottom - 64, "Aba Anterior");
-	draw_sprite_ext(_tab_left_sprite, 0, bbox_right - 410, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_tab_left_sprite)*_scale) - 440, bbox_bottom - 64, "Aba Anterior");
+	draw_sprite_ext(_tab_left_sprite, 0, bbox_right - 430, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
-	draw_text(bbox_right - (sprite_get_width(_tab_right_sprite)*_scale) - 270, bbox_bottom - 64, "Próxima Aba");
-	draw_sprite_ext(_tab_right_sprite, 0, bbox_right - 260, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	draw_text(bbox_right - (sprite_get_width(_tab_right_sprite)*_scale) - 290, bbox_bottom - 64, "Próxima Aba");
+	draw_sprite_ext(_tab_right_sprite, 0, bbox_right - 280, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 }
 
 function draw_page_number()
@@ -225,12 +227,10 @@ function draw_total_entries()
 	draw_set_font(fnt_arial_medium_to_small);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
-	draw_set_color(make_color_rgb(230, 230, 230));
+	draw_set_color(total_entries_text_color);
 	
 	var _background_x = bbox_right - 30;
 	var _background_y = bbox_bottom;
-	
-	var _background = spr_catalog_total;
 	
 	var _total_items = array_length(catalog_items);
 	var _unlocked_items = array_length(
@@ -239,10 +239,10 @@ function draw_total_entries()
 	
 	var _text = $"Debloqueados: {_unlocked_items} de {_total_items}";
 	
-	draw_sprite(spr_catalog_total, 0, _background_x, _background_y);
+	draw_sprite(total_entries_background, 0, _background_x, _background_y);
 	
-	var _xx = sprite_get_width(spr_catalog_total) / 2;
-	var _yy = sprite_get_height(spr_catalog_total) / 2;
+	var _xx = sprite_get_width(total_entries_background) / 2;
+	var _yy = sprite_get_height(total_entries_background) / 2;
 	
 	draw_text(_background_x - _xx, _background_y + _yy, _text);
 }
@@ -425,19 +425,20 @@ function create_content()
 	_last_item.set_text("Os dois religiosos mais respeitados pelos indígenas. Manuel da Nóbrega e José de Anchieta foram jesuítas que tiveram papel crucial na catequização indígena e na colonização do Brasil.\nNóbrega foi líder da missão jesuíta e atuou na fundação de São Paulo. Anchieta destacou-se como educador e escritor.");
 	_last_item.image = spr_catalog_empty;
 	_last_item.type = CATALOG_ITEM_TYPE.CRISTAOS;
+	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-
 	_last_item.label = "Ibirapema";
 	_last_item.set_text("Tipo de tacape usado pelos povos indígenas, especialmente os Tupinambás. Pesado e feito de madeira muito dura, seu impacto podia matar um homem com apenas um golpe na cabeça.\nEra utilizada em combates e também em rituais, incluindo práticas ligadas à antropofagia cerimonial e era adornados com penas.");
 	_last_item.image = spr_catalog_empty;
 	_last_item.type = CATALOG_ITEM_TYPE.IBIRAPEMA;
+	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-
 	_last_item.label = "Urapaçã";
 	_last_item.set_text("O conjunto arco e flecha era a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos.\nÀ medida que cresciam, suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo d'água, pássaros em voo e até as finas viseiras dos elmos das armaduras europeias.");
 	_last_item.image = spr_catalog_empty;
 	_last_item.type = CATALOG_ITEM_TYPE.URAPACA;
 
+	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Assojaba";
 	_last_item.set_text("Os mantos Tupinambá, conhecidos como assojaba, eram vestimentas sagradas de grande importância espiritual e simbólica para os Tupinambás. Confeccionados com penas de aves nativas, principalmente do guará (de cor vermelha intensa), fixadas em uma trama de fibras naturais através de técnicas ancestrais de costura, esses mantos eram utilizados em ocasiões formais e rituais significativos, como assembleias, enterros e as cerimônias antropofágicas, que eram as mais solenes.O ato de vestir o manto representava uma profunda conexão com os ancestrais e o mundo espiritual, sendo um símbolo de poder, liderança e prestígio.");
 	_last_item.image = spr_catalog_empty;
@@ -567,9 +568,13 @@ function fill_catalog_items()
 {
 	for (var _i = 0; _i < array_length(catalog_tabs); _i++)
 	{
+		global.logger.debug($"item length: {array_length(catalog_tabs[_i].items)}");
+		
 		for (var _j = 0; _j < array_length(catalog_tabs[_i].items); _j++)
 		{
 			array_push(catalog_items, catalog_tabs[_i].items[_j]);
+			
+			global.logger.debug($"item created: {catalog_tabs[_i].items[_j].type}");
 		}
 	}
 }

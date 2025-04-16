@@ -10,12 +10,12 @@ next			= self;
 items			= [];
 selected_item   = noone;
 
-max_display_items = 7;
+max_display_items = 8;
 min_display_index = 0;
 max_display_index = 0;
 
-first_item_x	= 209.5;
-first_item_y	= 173.5;
+first_item_x	= 54.5;
+first_item_y	= 138.5;
 
 item_margin_x	= 0;
 item_margin_y	= 30;

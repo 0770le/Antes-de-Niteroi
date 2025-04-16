@@ -210,6 +210,7 @@ function init()
 		
 		global.options_controller.clear_game_data();
 		global.options_controller.set_option(OPTIONS_IS_NEW_GAME, false);
+		global.options_controller.clear_unlocks();
 		
 		global.fader.to_room(rm_cidade_velha);
 	}));

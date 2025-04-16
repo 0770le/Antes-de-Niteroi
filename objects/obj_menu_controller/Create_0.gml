@@ -197,10 +197,12 @@ function init()
 		"Artista Gráfico: Leonardo Marques\n" + 
 		"Artista de Som: André Rente\n" +
 		"Desenvolvedor: Augusto Escobar\n" +
-		"Historiador: Fulano de Tal\n",
+		"Historiador: Diego Nogueira Xavier\n",
 		
 		"Referencias:\n" + 
-		"O Rio antes do Rio, por Rafael Freitas da Silva"
+		"O Rio antes do Rio, por Rafael Freitas\n"+
+		"Arariboia, por Rafael Freitas\n" +
+		"1565, por Pedro Doria"
 	));
 	
 	// Quit Game	

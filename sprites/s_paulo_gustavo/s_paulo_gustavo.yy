@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"s_paulo_gustavo",
   "bboxMode":0,
-  "bbox_bottom":424,
+  "bbox_bottom":608,
   "bbox_left":0,
   "bbox_right":2080,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":425,
+  "height":609,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"3a6fabba-129a-4a87-a2d0-c64d0609d72a","blendMode":0,"displayName":"default","isLocked":false,"name":"3a6fabba-129a-4a87-a2d0-c64d0609d72a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

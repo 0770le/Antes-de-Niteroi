@@ -90,7 +90,7 @@ frame_color     = make_color_rgb(109, 89, 68);
 // scroll text
 line_separation = 30;
 height_max		= 50000; // 580;
-line_width		= 672; // without sprite
+line_width		= 732; // without sprite
 text_parts		= [];
 text_shown		= "";
 cursor			= 0;
@@ -150,15 +150,15 @@ function set_text(_text = "Placeholder")
 function get_line_width()
 {
 	if (locked) {
-		return line_width - sprite_get_width(image_locked);
+		return line_width - sprite_get_width(image_locked) - 60;
 	}
 	else if (image == undefined)
 	{
-		return line_width;
+		return line_width - 30;
 	}
 	else 
 	{
-		return line_width - sprite_get_width(image);
+		return line_width - sprite_get_width(image) - 60;
 	}
 }
 
@@ -252,7 +252,7 @@ function draw()
 	}
 	else 
 	{
-		_xx = bbox_right + 60;
+		_xx = bbox_right + 30;
 	}
 	
 	// description

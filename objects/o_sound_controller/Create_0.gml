@@ -1,32 +1,35 @@
 global.sound_controller = self;
 
-fmod										= noone;
-master_bank_index							= noone;
-master_strings_bank_index					= noone;
-event_per_enum								= ds_map_create();
-vcas_per_enum								= ds_map_create();
-busses_per_enum								= ds_map_create();
-											
-music_enabled								= true;
-sfx_enabled									= true;
-music_volume								= 100;
-sfx_volume									= 100;
-											
-fmod_3d_att									= undefined;
-music_parameter								= FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO;
-is_playing_music							= false;
-deaf_assistance								= false;
+fmod												= noone;
+master_bank_index									= noone;
+master_strings_bank_index							= noone;
+event_per_enum										= ds_map_create();
+vcas_per_enum										= ds_map_create();
+busses_per_enum										= ds_map_create();
+													
+music_enabled										= true;
+sfx_enabled											= true;
+music_volume										= 100;
+sfx_volume											= 100;
+													
+fmod_3d_att											= undefined;
+music_parameter										= FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO;
+is_playing_music									= false;
+deaf_assistance										= false;
+													
+current_room										= undefined;
+													
+ambience_sounds_by_room								= ds_map_create();
+ambience_sounds_by_room[? rm_cidade_velha]			= FMOD_EVENT.AMBIENCE_CIDADE_VELHA;
+ambience_sounds_by_room[? rm_akaray]				= FMOD_EVENT.AMBIENCE_AKARAY;
+ambience_sounds_by_room[? rm_keryi]					= FMOD_EVENT.AMBIENCE_KERYL;
+ambience_sounds_by_room[? rm_morguja_uasu]			= FMOD_EVENT.AMBIENCE_MORGUJA;
+ambience_sounds_by_room[? rm_seregipe]				= FMOD_EVENT.AMBIENCE_SEREGIPE;
+ambience_sounds_by_room[? rm_seregipe_exploding]	= FMOD_EVENT.AMBIENCE_SEREGIPE_2;
+ambience_sounds_by_room[? rm_reri_pe]				= FMOD_EVENT.AMBIENCE_RERIPE;
+ambience_sounds_by_room[? rm_keryi_hut]				= FMOD_EVENT.AMBIENCE_KERYL_HUT;
 
-current_room								= undefined;
-
-ambience_sounds_by_room						= ds_map_create();
-ambience_sounds_by_room[? rm_cidade_velha]	= FMOD_EVENT.AMBIENCE_CIDADE_VELHA;
-ambience_sounds_by_room[? rm_akaray]		= FMOD_EVENT.AMBIENCE_AKARAY;
-ambience_sounds_by_room[? rm_keryi]			= FMOD_EVENT.AMBIENCE_KERYL;
-ambience_sounds_by_room[? rm_morguja_uasu]	= FMOD_EVENT.AMBIENCE_MORGUJA;
-ambience_sounds_by_room[? rm_seregipe]		= FMOD_EVENT.AMBIENCE_SEREGIPE;
-
-current_sound_stage_name					= undefined;
+current_sound_stage_name							= undefined;
 
 function get_listener()
 {
@@ -298,12 +301,24 @@ function load_events()
 			)
 		]);
 		
+	event_per_enum[? FMOD_EVENT.AMBIENCE_KERYL_HUT] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_08_CABANA/sfx_amb_room_08_cabana", [ ]);
+		
 	event_per_enum[? FMOD_EVENT.AMBIENCE_MORGUJA] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_04_MORGUJA/sfx_amb_room_04_morguja", [ ]);
 	
 	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_05_SEREGIPE/sfx_amb_room_05_seregipe", [ ]);
 		
+	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE_2] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_07_SEREGIPE_02/sfx_amb_room_07_seregipe_02", [ ]);	
+
+	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE_2_EXPLOSION_1] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_07_SEREGIPE_02/sfx_explosions_01", [ ]);	
+		
+	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE_2_EXPLOSION_2] = new FmodEvent(
+		"event:/SFX/AMBIENCE/ROOM_07_SEREGIPE_02/sfx_explosions_02", [ ]);	
+
 	event_per_enum[? FMOD_EVENT.AMBIENCE_RERIPE] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_06_RERIPE/sfx_amb_room_06_reripe", [ ]);
 	
@@ -586,12 +601,30 @@ function load_events()
 		
 	event_per_enum[? FMOD_EVENT.MENU_PAUSE] = new FmodEvent(
 		"event:/SFX/UI/BUTTONS/sfx_ui_menu_pause", [ ]);
+	
+	event_per_enum[? FMOD_EVENT.COLLECT_ARROW] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_arrow", [ ]);
 		
+	event_per_enum[? FMOD_EVENT.COLLECT_ARROW_MAX] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_max_arrow", [ ]);
+	
 	event_per_enum[? FMOD_EVENT.COLLECT_LIFE] = new FmodEvent(
 		"event:/SFX/UI/COLECTABLES/sfx_colect_life", [ ]);
 		
+	event_per_enum[? FMOD_EVENT.COLLECT_LIFE_MAX] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_max_life", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.COLLECT_LIFE_FULL] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_full_life", [ ]);
+		
 	event_per_enum[? FMOD_EVENT.COLLECT_REGISTER] = new FmodEvent(
 		"event:/SFX/UI/COLECTABLES/sfx_colect_register", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.COLLECT_BOW] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_bow", [ ]);
+		
+	event_per_enum[? FMOD_EVENT.COLLECT_CAPE] = new FmodEvent(
+		"event:/SFX/UI/COLECTABLES/sfx_colect_cape", [ ]);
 		
 	event_per_enum[? FMOD_EVENT.TRANSITION_BOAT] = new FmodEvent(
 		"event:/SFX/UI/TRANSITIONS/sfx_ui_transition_boat", [ ]);

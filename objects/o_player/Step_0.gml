@@ -93,6 +93,10 @@ if(global.debug) {
 	if(keyboard_check_pressed(vk_f12) and room != rm_keryi) {
 		global.fader.to_room(rm_keryi,2540, 1160);
 	}
+	
+	if(keyboard_check_pressed(vk_home) and room != rm_keryi_hut) {
+		global.fader.to_room(rm_keryi_hut, 200, 180);
+	}
 
 	if(keyboard_check_pressed(ord("O"))) {
 		o_game.max_hp++;

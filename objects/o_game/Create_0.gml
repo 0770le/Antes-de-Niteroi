@@ -85,6 +85,7 @@ ini_close();
 
 //final room 
 msg = "";
+msg2 = "";
 
 //GAME PROGRESS
 

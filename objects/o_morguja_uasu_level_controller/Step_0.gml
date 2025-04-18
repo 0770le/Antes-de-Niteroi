@@ -27,6 +27,9 @@ layer_y(LAYER_BACKGROUND_2, (_cam_y * 0.6) + 200);
 layer_x(LAYER_BACKGROUND_3, (_cam_x * 0.7) + 1700);
 layer_y(LAYER_BACKGROUND_3, (_cam_y * 0.6) + 450);
 
+layer_x(LAYER_BACKGROUND_3_REFLEX, (_cam_x * 0.7) + 1700);
+layer_y(LAYER_BACKGROUND_3_REFLEX, (_cam_y * 0.6) + 450 + 150);
+
 
 layer_x("LAYER_BARCO", (_cam_x * 0.5) + 2350);
 layer_y("LAYER_BARCO", (_cam_y * 0.5) + 690);

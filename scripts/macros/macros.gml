@@ -105,8 +105,11 @@ function macros(){
 #macro LAYER_INSTANCES				"Instances"
 
 #macro LAYER_BACKGROUND_1			"Backgrounds_1"
+#macro LAYER_BACKGROUND_1_REFLEX	"Backgrounds_1_reflex"
 #macro LAYER_BACKGROUND_2			"Backgrounds_2"
+#macro LAYER_BACKGROUND_2_REFLEX	"Backgrounds_2_reflex"
 #macro LAYER_BACKGROUND_3			"Backgrounds_3"
+#macro LAYER_BACKGROUND_3_REFLEX	"Backgrounds_3_reflex"
 #macro LAYER_BACKGROUND_4			"Backgrounds_4"
 #macro LAYER_BACKGROUND_5			"Backgrounds_5"
 #macro LAYER_BACKGROUND_6			"Backgrounds_6"

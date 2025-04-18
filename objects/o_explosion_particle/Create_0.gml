@@ -18,3 +18,8 @@ part_type_direction(partSmExpDon,180,180,0,0);
 //Particle Emitter
 partExplosion_emit = part_emitter_create(particleSystem);
 
+global.sound_controller.play(
+	FMOD_EVENT.AMBIENCE_SEREGIPE_2_EXPLOSION_1
+);
+
+alarm[0] = 1;

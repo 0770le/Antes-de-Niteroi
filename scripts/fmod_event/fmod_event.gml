@@ -239,19 +239,18 @@ constructor
 	sound_group			= noone;
 	fmod_3d_att			= new Fmod3DAttributes();
 	is_spacial			= false;
+	ignore_distance		= false;
 	listening_radius    = 200;
 	
 	parameters_by_name	= ds_map_create();
 	
 	static play = function ()
 	{
-		if (!is_spacial || point_distance(fmod_3d_att.position.x, fmod_3d_att.position.y, global.sound_controller.fmod_3d_att.position.x, global.sound_controller.fmod_3d_att.position.y) < 200) {
+		if (ignore_distance 
+			|| !is_spacial 
+			|| point_distance(fmod_3d_att.position.x, fmod_3d_att.position.y, global.sound_controller.fmod_3d_att.position.x, global.sound_controller.fmod_3d_att.position.y) < 200) 
+		{
 			fmod_studio_event_instance_start(event_instance);
-			
-			//if (string_pos("ARARIBOIA", event_path) == 0)
-			//{
-			//	global.logger.debug($"FmodEvent playing: {event_path} source.x:{fmod_3d_att.position.x}, source.y:{fmod_3d_att.position.y}, listener.x:{global.sound_controller.fmod_3d_att.position.x}, listener.y:{global.sound_controller.fmod_3d_att.position.y}, number_of_listeners: {fmod_studio_system_get_num_listeners()}, distance: {point_distance(fmod_3d_att.position.x, fmod_3d_att.position.y, global.sound_controller.fmod_3d_att.position.x, global.sound_controller.fmod_3d_att.position.y)}");
-			//}
 		}
 	}
 	

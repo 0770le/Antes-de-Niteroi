@@ -568,25 +568,17 @@ function fill_catalog_items()
 {
 	for (var _i = 0; _i < array_length(catalog_tabs); _i++)
 	{
-		global.logger.debug($"item length: {array_length(catalog_tabs[_i].items)}");
-		
 		for (var _j = 0; _j < array_length(catalog_tabs[_i].items); _j++)
 		{
 			array_push(catalog_items, catalog_tabs[_i].items[_j]);
-			
-			global.logger.debug($"item created: {catalog_tabs[_i].items[_j].type}");
 		}
 	}
 }
 
 function unlock_saved_items()
 {
-	global.logger.debug($"unlock_saved_items length {array_length(global.options_controller.options.unlocked_catalog_items)}");
-	
 	with (obj_catalog_item)
-	{
-		global.logger.trace($"unlock_saved_items type: {self.type}");
-		
+	{	
 		if (array_contains(global.options_controller.options.unlocked_catalog_items, type))
 		{
 			locked = false;	

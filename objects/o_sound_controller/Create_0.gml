@@ -285,6 +285,7 @@ function load_events()
 		
 	event_per_enum[? FMOD_EVENT.AMBIENCE_CIDADE_VELHA_SEA] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_01_CIDADEVELHA/sfx_amb_sea", [ ]);
+	event_per_enum[? FMOD_EVENT.AMBIENCE_CIDADE_VELHA_SEA].ignore_distance = true;
 		
 	event_per_enum[? FMOD_EVENT.AMBIENCE_AKARAY] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_02_AKARAY/sfx_amb_room_02_akaray", [ ]);
@@ -315,9 +316,11 @@ function load_events()
 
 	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE_2_EXPLOSION_1] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_07_SEREGIPE_02/sfx_explosions_01", [ ]);	
+	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE_2_EXPLOSION_1].ignore_distance = true;
 		
 	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE_2_EXPLOSION_2] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_07_SEREGIPE_02/sfx_explosions_02", [ ]);	
+	event_per_enum[? FMOD_EVENT.AMBIENCE_SEREGIPE_2_EXPLOSION_2].ignore_distance = true;
 
 	event_per_enum[? FMOD_EVENT.AMBIENCE_RERIPE] = new FmodEvent(
 		"event:/SFX/AMBIENCE/ROOM_06_RERIPE/sfx_amb_room_06_reripe", [ ]);

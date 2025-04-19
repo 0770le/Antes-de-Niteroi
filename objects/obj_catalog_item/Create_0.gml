@@ -8,17 +8,13 @@ enum CATALOG_ITEM_TYPE
 	ARARA_AZUL,
 	ARARA_CANINDE,
 	ARARA_VERMELHA,
-	ARARIBOIA,		// nao usado
 	ARARYBOIA,
 	ARMADEIRA,
 	ASSOJABA,
-	BARQUEIRO,		// nao usado
 	BROMELIAS,
 	CIDADE_VELHA,
 	COBRA_ARARA,
 	CRISTAOS,
-	ENTRADA_NOVA,	// nao usado
-	FRANCES,		// nao usado
 	GUAJUPIA,
 	GUARA,
 	GUYRAGUASU_UNAE,
@@ -57,7 +53,7 @@ enum CATALOG_ITEM_TYPE
 }
 
 layer_text		= LAYER_GUI_CATALOG_BUTTONS;
-type			= CATALOG_ITEM_TYPE.ARARIBOIA;
+type			= CATALOG_ITEM_TYPE.ARARYBOIA;
 
 catalog_text	= noone;
 image_xscale	= 1.2;
@@ -70,7 +66,7 @@ font			= fnt_arial_medium;
 font_desc		= fnt_arial_medium_to_small;
 label			= "Label";
 text			= "Placeholder";
-image			= spr_catalog_empty;
+image			= s_catalog_items;
 image_locked	= spr_catalog_question_mark;
 valign			= fa_middle;
 halign			= fa_left;
@@ -227,13 +223,13 @@ function draw()
 	// image
 	if (image_index == 1) return; // not active
 	
-	var _image = locked ? image_locked : image;
+	var _image = locked ? image_locked : s_catalog_items;
 	var _xx = bbox_right + 30;
 	_yy = top_y + 57;
 	
 	if (_image != undefined)
 	{
-		draw_sprite(_image, 0, _xx, _yy);
+		draw_sprite(_image, type, _xx, _yy);
 	
 		// image frame
 		var _sprite_width = sprite_get_width(_image);

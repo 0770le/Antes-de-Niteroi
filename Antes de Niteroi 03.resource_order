@@ -507,6 +507,7 @@
     {"name":"s_bug_idle","order":1,"path":"sprites/s_bug_idle/s_bug_idle.yy",},
     {"name":"s_bullet","order":14,"path":"sprites/s_bullet/s_bullet.yy",},
     {"name":"s_button","order":7,"path":"sprites/s_button/s_button.yy",},
+    {"name":"s_catalog_items","order":6,"path":"sprites/s_catalog_items/s_catalog_items.yy",},
     {"name":"s_chest","order":3,"path":"sprites/s_chest/s_chest.yy",},
     {"name":"s_chevalier_aerial_riposte","order":8,"path":"sprites/s_chevalier_aerial_riposte/s_chevalier_aerial_riposte.yy",},
     {"name":"s_chevalier_attack_up","order":11,"path":"sprites/s_chevalier_attack_up/s_chevalier_attack_up.yy",},

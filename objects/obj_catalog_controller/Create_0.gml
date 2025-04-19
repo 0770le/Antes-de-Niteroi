@@ -30,7 +30,7 @@ function has_new_item()
 	return window.has_new_item();
 }
 
-function unlock_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
+function unlock_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARYBOIA)
 {
 	for (var _i = 0; _i < array_length(window.catalog_items); _i++)
 	{
@@ -45,7 +45,7 @@ function unlock_item(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
 	global.options_controller.add_unlocked_item(_catalog_item_type);
 }
 
-function is_unlocked(_catalog_item_type = CATALOG_ITEM_TYPE.ARARIBOIA)
+function is_unlocked(_catalog_item_type = CATALOG_ITEM_TYPE.ARARYBOIA)
 {
 	for (var _i = 0; _i < array_length(window.catalog_items); _i++)
 	{

@@ -622,6 +622,7 @@
     {"id":{"name":"s_bug_idle","path":"sprites/s_bug_idle/s_bug_idle.yy",},},
     {"id":{"name":"s_bullet","path":"sprites/s_bullet/s_bullet.yy",},},
     {"id":{"name":"s_button","path":"sprites/s_button/s_button.yy",},},
+    {"id":{"name":"s_catalog_items","path":"sprites/s_catalog_items/s_catalog_items.yy",},},
     {"id":{"name":"s_chest","path":"sprites/s_chest/s_chest.yy",},},
     {"id":{"name":"s_chevalier_aerial_riposte","path":"sprites/s_chevalier_aerial_riposte/s_chevalier_aerial_riposte.yy",},},
     {"id":{"name":"s_chevalier_attack_up","path":"sprites/s_chevalier_attack_up/s_chevalier_attack_up.yy",},},

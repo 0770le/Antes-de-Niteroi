@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_cloak_display_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_cloak_display_state",
+  "parent":{
+    "name":"States",
+    "path":"folders/Scripts/Player/States.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

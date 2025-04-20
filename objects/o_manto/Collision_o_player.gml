@@ -18,4 +18,10 @@ if(!o_game.has_cloak) {
 		FMOD_EVENT.COLLECT_CAPE,
 		x, y
 	);
+	
+	//mostrando mecanica
+	with(o_player) {
+		state = states.CLOAK_DISPLAY;
+		image_index=0;
+	}
 }

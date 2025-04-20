@@ -802,6 +802,7 @@
     {"id":{"name":"s_player_jump","path":"sprites/s_player_jump/s_player_jump.yy",},},
     {"id":{"name":"s_player_walk","path":"sprites/s_player_walk/s_player_walk.yy",},},
     {"id":{"name":"s_player_weapon","path":"sprites/s_player_weapon/s_player_weapon.yy",},},
+    {"id":{"name":"s_player_wing_evade","path":"sprites/s_player_wing_evade/s_player_wing_evade.yy",},},
     {"id":{"name":"s_player_wing","path":"sprites/s_player_wing/s_player_wing.yy",},},
     {"id":{"name":"s_pointer","path":"sprites/s_pointer/s_pointer.yy",},},
     {"id":{"name":"s_poste_barqueiro","path":"sprites/s_poste_barqueiro/s_poste_barqueiro.yy",},},

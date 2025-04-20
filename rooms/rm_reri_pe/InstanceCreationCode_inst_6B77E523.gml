@@ -2,5 +2,3 @@ patrol_left = 400;
 patrol_right = 800;
 
 possible_enemies = [ENEMY_TYPE.TUPINAMBA_RANGED,ENEMY_TYPE.TUPINAMBA_MEELE,ENEMY_TYPE.FRANCES];
-
-drop_heal = true;

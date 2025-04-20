@@ -5,8 +5,8 @@ if(drop_hp and !array_contains(global.options_controller.options.hp_upgrades, ma
 	with(instance_create_layer(x,y,LAYER_INSTANCES,o_max_hp)) {
 		location = 	max_hp_location.UPGRADE_RERI_PE;
 	}
-}
-
-if(drop_heal) {
+} else if(drop_heal) {
 	instance_create_layer(x,y,LAYER_INSTANCES,o_hp_full);
+} else {
+	instance_create_layer(x,y,LAYER_INSTANCES,o_hp);
 }

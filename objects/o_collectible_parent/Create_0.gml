@@ -25,3 +25,5 @@ anchorY = y;
 frequency = 0.03;
 amplitude = 6;
 timer = 0;
+
+alarm[0] = 2;

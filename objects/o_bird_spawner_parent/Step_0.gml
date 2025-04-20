@@ -11,6 +11,6 @@ if(create) {
 	create = false;
 }
 
-if(!instance_exists(passaro) and point_distance(x,y,o_player.x,o_player.y) > GAME_W/2 + TILE_SIZE * 4) { // GAME_W*2
+if(!instance_exists(passaro) and point_distance(x,y,o_player.x,o_player.y) > GAME_W + TILE_SIZE * 4) { // GAME_W*2
 	create = true;	
 }

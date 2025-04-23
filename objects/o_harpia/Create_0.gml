@@ -96,6 +96,7 @@ function play_state_update_sounds(_previous_state, _new_state) {
 			);
 			break;
 		case harpia_states.ATTACK: 
+			global.deaf_assistant.show_captions_pos("Hárpia ataca", x);
 			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.HARPIA_ATTACK,
 				x, y

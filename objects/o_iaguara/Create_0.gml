@@ -187,6 +187,7 @@ function play_state_update_sounds(_previous_state, _new_state) {
 	switch (_new_state)
 	{
 		case iaguara_states.ATTACK: 
+			global.deaf_assistant.show_captions_pos("Onça ataca", x);
 			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.OUNCE_ATTACK,
 				x, y

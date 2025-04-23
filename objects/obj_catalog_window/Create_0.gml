@@ -74,21 +74,30 @@ function draw_controller_buttons()
 	var _scale = global.input_manager.get_input_sprite_scale();
 	
 	// fechar e voltar
-	draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 80, bbox_bottom - 64, "Fechar");
+	draw_text(bbox_right - (sprite_get_width(_toggle_sprite)*_scale) - 80, bbox_bottom - 64, global.i18n.get_message("menu-catalog-controls-close"));
 	draw_sprite_ext(_toggle_sprite, 0, bbox_right - 70, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
-	draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 190, bbox_bottom - 64, "Voltar");
+	draw_text(bbox_right - (sprite_get_width(_cancel_sprite)*_scale) - 190, bbox_bottom - 64, global.i18n.get_message("menu-catalog-controls-back"));
 	draw_sprite_ext(_cancel_sprite, 0, bbox_right - 180, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
 	// anterior e próxima aba
 	var _tab_left_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TAB_LEFT);
 	var _tab_right_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TAB_RIGHT);
 	
-	draw_text(bbox_right - (sprite_get_width(_tab_left_sprite)*_scale) - 440, bbox_bottom - 64, "Aba Anterior");
+	draw_text(bbox_right - (sprite_get_width(_tab_left_sprite)*_scale) - 440, bbox_bottom - 64, global.i18n.get_message("menu-catalog-controls-tab-previous"));
 	draw_sprite_ext(_tab_left_sprite, 0, bbox_right - 430, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
 	
-	draw_text(bbox_right - (sprite_get_width(_tab_right_sprite)*_scale) - 290, bbox_bottom - 64, "Próxima Aba");
+	draw_text(bbox_right - (sprite_get_width(_tab_right_sprite)*_scale) - 290, bbox_bottom - 64, global.i18n.get_message("menu-catalog-controls-tab-next"));
 	draw_sprite_ext(_tab_right_sprite, 0, bbox_right - 280, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	
+	// change language
+	if (global.i18n.enable)
+	{
+		var _change_language_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CHANGE_LANGUAGE);
+		
+		draw_text(bbox_right - (sprite_get_width(_change_language_sprite)*_scale) - 600, bbox_bottom - 64, global.i18n.get_message("menu-main-change-language"));
+		draw_sprite_ext(_change_language_sprite, 0, bbox_right - 590, bbox_bottom - 65, _scale, _scale, 0, c_white, 1.0);
+	}
 }
 
 function draw_page_number()
@@ -130,6 +139,13 @@ function on_input_menu(_input = new MenuInputModel())
 		global.menu_controller.on_input_menu(_input);
 		
 		return;
+	}
+	
+	if (_input.change_language && global.i18n.enable)
+	{
+		global.i18n.change_language(global.i18n.get_next_language());
+		
+		global.options_controller.set_option(global.i18n.language);
 	}
 	
 	if (_input.tab_left || _input.tab_right)
@@ -237,7 +253,13 @@ function draw_total_entries()
 		array_filter(catalog_items, function (_item) { return !_item.locked })
 	);
 	
-	var _text = $"Debloqueados: {_unlocked_items} de {_total_items}";
+	var _text = global.i18n.get_message(
+		"menu-catalog-total-unlocks", 
+		{
+			unlocked: string(_unlocked_items), 
+			total: string(_total_items)
+		}
+	);
 	
 	draw_sprite(total_entries_background, 0, _background_x, _background_y);
 	
@@ -254,7 +276,7 @@ function create_content()
 #region //// regions items
 	
 	catalog_tabs[CATALOG_TAB.REGIONS] = instance_create_layer(bbox_right - 20, bbox_top + 10, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
-	catalog_tabs[CATALOG_TAB.REGIONS].label	= "Regiões";
+	catalog_tabs[CATALOG_TAB.REGIONS].label	= "menu-catalog-tab-regions";
 	var _last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Guajupiá";
 	_last_item.set_text("Baía de Guanabara (RJ). Guajupiá, 'morada dos ancestrais', era para os tupinambás uma espécie de paraíso, onde descansavam os antepassados mais valorosos e memoráveis.\nAo chegarem à região, após descerem pelo litoral brasileiro e conquistarem territórios de outras tribos, passaram a chamá-la assim devido à sua abundância em frutos, peixes e recursos naturais.");
@@ -341,7 +363,7 @@ function create_content()
 	
 #region //// history items
 	catalog_tabs[CATALOG_TAB.HISTORY] = instance_create_layer(catalog_tabs[CATALOG_TAB.REGIONS].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
-	catalog_tabs[CATALOG_TAB.HISTORY].label	= "História";
+	catalog_tabs[CATALOG_TAB.HISTORY].label	= "menu-catalog-tab-history";
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Tupinambá";
 	_last_item.set_text("Os Tupinambás eram um povo indígena do grupo tupi-guarani que habitava principalmente o litoral brasileiro. Eles tinham uma sociedade complexa, organizada em tribos e aldeias, com uma hierarquia bem definida entre as lideranças.\n A agricultura era baseada principalmente no cultivo de mandioca, milho e batata-doce, com técnicas de roça. Os guerreiros se pintavam e se ornavam com as penas vermelhas do guará. \nOs Tupinambás praticavam a antropofagia em contexto ritualístico e simbólico, especialmente como parte de guerras intertribais. O ato representava a incorporação da força e bravura do inimigo, sendo um elemento cultural ligado à espiritualidade e crenças desse povo.");
@@ -430,7 +452,7 @@ function create_content()
 	
 #region //// biodiversity items
 	catalog_tabs[CATALOG_TAB.BIODIVERSITY] = instance_create_layer(catalog_tabs[CATALOG_TAB.HISTORY].bbox_left, catalog_tabs[CATALOG_TAB.REGIONS].y, LAYER_GUI_CATALOG_WINDOW, obj_catalog_tab);
-	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "Biodiversidade";
+	catalog_tabs[CATALOG_TAB.BIODIVERSITY].label = "menu-catalog-tab-biodiversity";
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Cobra-Arara";
 	_last_item.set_text("A cobra-papagaio (Corallus caninus), também chamada de periquitamboia ou jiboia-esmeralda, recebe o nome tupi 'araramboia'(cobra arara) devido à sua coloração verde vibrante. \nEssa serpente arborícola, que pode atingir dois metros, possui a mordida mais dolorosa entre cobras não peçonhentas, devido a suas presas grandes e fileiras de dentes afiados e curvados. Frequentemente em galhos altos, seus botes podiam atingir o rosto ou pescoço. Sua especialidade em emboscadas pode ter inspirado a escolha o nome do líder Temiminó, Arariboia.");

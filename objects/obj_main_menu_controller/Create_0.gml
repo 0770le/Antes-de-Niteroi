@@ -58,12 +58,15 @@ function draw_controller_buttons2()
 	
 	var _scale = global.input_manager.get_input_sprite_scale();	
 	
-	//var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CANCEL);
-	//draw_text(right - (sprite_get_width(_cancel_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 36, "Voltar");
-	//draw_sprite_ext(_cancel_sprite, 0, right - margin_right, bottom - margin_bottom - 36, _scale, _scale, 0, c_white, 1.0);
-			
+	if (global.i18n.enable)
+	{	
+		var _change_language_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CHANGE_LANGUAGE);
+		draw_text(right - (sprite_get_width(_change_language_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 36, global.i18n.get_message("menu-main-change-language"));
+		draw_sprite_ext(_change_language_sprite, 0, right - margin_right, bottom - margin_bottom - 36, _scale, _scale, 0, c_white, 1.0);
+	}
+		
 	var _confirm_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CONFIRM);
-	draw_text(right - (sprite_get_width(_confirm_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 1, "Confirmar");
+	draw_text(right - (sprite_get_width(_confirm_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 1, global.i18n.get_message("main-menu-confirm"));
 	draw_sprite_ext(_confirm_sprite, 0, right - margin_right, bottom - margin_bottom - 1, _scale, _scale, 0, c_white, 1.0);
 }
 
@@ -85,70 +88,6 @@ function draw()
 	draw_menu_items();
 }
 
-function add_options_button()
-{
-	var _options_node = root_menu.add_child(new MenuNode("Opções"))
-	fullscreen_button = _options_node.add_child(new MenuCheckbox("Tela Cheia", function ()
-	{
-		var _is_fullscreen = global.options_controller.get_option(OPTIONS_FULLSCREEN);
-		
-		global.options_controller.set_option(OPTIONS_FULLSCREEN, !_is_fullscreen);
-	}));
-	fullscreen_button.set_checked(global.options_controller.options.fullscreen);
-	
-	volume_master = _options_node.add_child(new MenuInteger("Volume Geral", 
-	function ()
-	{
-		volume_master.set_value(volume_master.value - 1);
-		
-		global.options_controller.set_option(OPTIONS_MASTER_VOLUME, volume_master.value);
-	}, 
-	function () 
-	{
-		volume_master.set_value(volume_master.value + 1);
-		
-		global.options_controller.set_option(OPTIONS_MASTER_VOLUME, volume_master.value);
-	}));
-	volume_master.set_value(global.options_controller.options.master_volume);
-	
-	volume_music = _options_node.add_child(new MenuInteger("Música", 
-	function ()
-	{
-		volume_music.set_value(volume_music.value - 1);
-		
-		global.options_controller.set_option(OPTIONS_MUSIC_VOLUME, volume_music.value);
-	}, 
-	function () 
-	{
-		volume_music.set_value(volume_music.value + 1);
-		
-		global.options_controller.set_option(OPTIONS_MUSIC_VOLUME, volume_music.value);
-	}));
-	volume_music .set_value(global.options_controller.options.music_volume);
-	
-	volume_sfx = _options_node.add_child(new MenuInteger("Efeitos", 
-	function ()
-	{
-		volume_sfx.set_value(volume_sfx.value - 1);
-		
-		global.options_controller.set_option(OPTIONS_SFX_VOLUME, volume_sfx.value);
-	}, 
-	function () 
-	{
-		volume_sfx.set_value(volume_sfx.value + 1);
-		
-		global.options_controller.set_option(OPTIONS_SFX_VOLUME, volume_sfx.value);
-	}));
-	volume_sfx.set_value(global.options_controller.options.sfx_volume);
-	deaf_assistance = _options_node.add_child(new MenuCheckbox("Ajuda para Surdos", function ()
-	{
-		var _is_deaf_assistance = global.options_controller.get_option(OPTIONS_DEAF_ASSISTANCE);
-		
-		global.options_controller.set_option(OPTIONS_DEAF_ASSISTANCE, !_is_deaf_assistance);
-	}));
-	deaf_assistance.set_checked(global.options_controller.options.deaf_assistance);
-}
-
 function init_dependencies()
 {
 	// persistants
@@ -166,6 +105,10 @@ function init_dependencies()
 	instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_options_controller);
 	
 	with (o_sound_controller) global.camera.subscribe(self);
+	
+	// persistants
+	if (!instance_exists(obj_i18n))
+		instance_create_layer(0, 0, LAYER_CONTROLLERS, obj_i18n);
 }
 
 function init()
@@ -180,7 +123,7 @@ function init()
 	
 	if (!global.options_controller.get_option(OPTIONS_IS_NEW_GAME))
 	{
-		root_menu.add_child(new MenuButton("CONTINUAR", function () 
+		root_menu.add_child(new MenuButton("main-menu-continue", function () 
 		{
 			global.options_controller.unregister_listener(self);
 			
@@ -201,7 +144,7 @@ function init()
 		starting_y += 15;
 	}
 	
-	root_menu.add_child(new MenuButton("NOVO JOGO", function() 
+	root_menu.add_child(new MenuButton("main-menu-new-game", function() 
 	{ 
 		global.options_controller.unregister_listener(self);
 		
@@ -215,9 +158,7 @@ function init()
 		global.fader.to_room(rm_cidade_velha);
 	}));
 	
-	// add_options_button();
-	
-	root_menu.add_child(new MenuButton("SAIR", function() 
+	root_menu.add_child(new MenuButton("main-menu-quit", function() 
 	{ 
 		game_end(0); 
 	}));

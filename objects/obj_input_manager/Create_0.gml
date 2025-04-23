@@ -10,7 +10,7 @@ enum INPUT_SOURCE_TYPE
 
 enum INPUT_MENU_ACTION 
 {
-	CONFIRM, CANCEL, TOGGLE_MENU, PAGE_UP, PAGE_DOWN, TAB_LEFT, TAB_RIGHT
+	CONFIRM, CANCEL, TOGGLE_MENU, PAGE_UP, PAGE_DOWN, TAB_LEFT, TAB_RIGHT, CHANGE_LANGUAGE
 }
 
 enum INPUT_IN_GAME_ACTION
@@ -209,6 +209,19 @@ keyboard_button_sprites[? vk_down] = spr_keyboard_down;
 keyboard_button_sprites[? vk_right] = spr_keyboard_right;
 #endregion
 
+input_in_game_action_name_keys = 
+[
+	"menu-controls-action-jump",
+	"menu-controls-action-attack",
+	"menu-controls-action-dodge",
+	"menu-controls-action-shoot",
+	"menu-controls-action-interact",
+	"menu-controls-action-up",
+	"menu-controls-action-left",
+	"menu-controls-action-down",
+	"menu-controls-action-right"
+]
+
 input_in_game_action_names = // INPUT_IN_GAME_ACTION
 [
 	"Pular", "Atacar", "Esquivar", "Tiro de Arco", "Interagir", "Cima", "Esquerda", "Baixo", "Direita"
@@ -230,6 +243,7 @@ input_menu_action_sprites[INPUT_SOURCE_TYPE.GAMEPAD] =
 		spr_gamepad_xbox_r,		// INPUT_MENU_ACTION.TAB_RIGHT,
 		spr_gamepad_xbox_dleft,	// INPUT_MENU_ACTION.PAGE_UP,
 		spr_gamepad_xbox_dright,// INPUT_MENU_ACTION.PAGE_DOWN,
+		spr_gamepad_xbox_y,		// INPUT_MENU_ACTION.CHANGE_LANGUAGE,
 	],
 	[
 		spr_gamepad_playstation_x,
@@ -239,6 +253,7 @@ input_menu_action_sprites[INPUT_SOURCE_TYPE.GAMEPAD] =
 		spr_gamepad_playstation_r1,
 		spr_gamepad_playstation_dleft,
 		spr_gamepad_playstation_dright,
+		spr_gamepad_playstation_triangle,
 	],
 	[
 		spr_gamepad_switch_b,
@@ -248,6 +263,7 @@ input_menu_action_sprites[INPUT_SOURCE_TYPE.GAMEPAD] =
 		spr_gamepad_switch_r,
 		spr_gamepad_switch_dleft,
 		spr_gamepad_switch_dright,
+		spr_gamepad_switch_x,
 	]
 ]
 
@@ -260,6 +276,7 @@ input_menu_action_sprites[INPUT_SOURCE_TYPE.KEYBOARD] =
 	spr_keyboard_page_down,	// INPUT_MENU_ACTION.PAGE_DOWN,
 	spr_keyboard_left,		// INPUT_MENU_ACTION.TAB_LEFT,
 	spr_keyboard_right,		// INPUT_MENU_ACTION.TAB_RIGHT,
+	spr_keyboard_x			// INPUT_MENU_ACTION.CHANGE_LANGUAGE,
 ]
 
 
@@ -276,6 +293,7 @@ gamepad_button_sprites_alt =
 		spr_gamepad_choose, 
 		spr_gamepad_choose, 
 		spr_gamepad_choose, 			
+		spr_gamepad_choose, 			
 	],
 	[
 		spr_gamepad_choose, 
@@ -283,6 +301,7 @@ gamepad_button_sprites_alt =
 		spr_gamepad_choose, 
 		spr_gamepad_choose, 
 		spr_gamepad_playstation_dup, // INPUT_IN_GAME_ACTION_ALT.INTERACT
+		spr_gamepad_choose, 
 		spr_gamepad_choose, 
 		spr_gamepad_choose, 
 		spr_gamepad_choose, 
@@ -298,6 +317,7 @@ gamepad_button_sprites_alt =
 		spr_gamepad_choose, 
 		spr_gamepad_choose, 
 		spr_gamepad_choose, 
+		spr_gamepad_choose, 
 	],
 ]
 
@@ -309,6 +329,7 @@ keyboard_button_sprites_alt =
 	spr_keyboard_choose,
 	spr_keyboard_choose,
 	spr_keyboard_up, // INPUT_IN_GAME_ACTION_ALT.INTERACT
+	spr_keyboard_choose,
 	spr_keyboard_choose,
 	spr_keyboard_choose,
 	spr_keyboard_choose,
@@ -357,7 +378,7 @@ function get_menu_action_sprite(_input_menu_action = INPUT_MENU_ACTION.CONFIRM)
 
 function get_input_in_game_action_name(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP)
 {
-	return input_in_game_action_names[_input_in_game_action];
+	return input_in_game_action_name_keys[_input_in_game_action];
 }
 
 function get_input_in_game_action_sprite(_input_in_game_action = INPUT_IN_GAME_ACTION.JUMP, _input_source_type = last_input_source_type)
@@ -499,6 +520,8 @@ function step_not_capturing(_should_notify = true)
 	
 		_input_menu.page_up			= keyboard_check_pressed(vk_pageup) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderl) > 0;	// D-left
 		_input_menu.page_down 		= keyboard_check_pressed(vk_pagedown) || gamepad_button_check_pressed(last_gamepad_index, gp_shoulderr) > 0;	// D-right
+		
+		_input_menu.change_language	= keyboard_check_pressed(ord("X")) || gamepad_button_check_pressed(last_gamepad_index, gp_face4) > 0;	// D-right
 	
 		_input_menu.tab_left		= _input_menu.left  // LB
 		_input_menu.tab_right 		= _input_menu.right	// RB

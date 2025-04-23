@@ -143,8 +143,7 @@ function set_text(_text = "Placeholder")
 
 function get_line_width()
 {
-	if (locked) 
-	{
+	if (locked) {
 		return line_width - sprite_get_width(image_locked) - 60;
 	}
 	else if (image == undefined)
@@ -187,6 +186,7 @@ function calculate_text_parts()
 			array_push(text_parts, _text_paragraph);
 		}
 	}
+
 }
 
 function get_number_of_pages()
@@ -223,14 +223,13 @@ function draw()
 	// image
 	if (image_index == 1) return; // not active
 	
-	var _image = locked ? image_locked : image;
-	var _image_index = locked ? 0 : type;
+	var _image = locked ? image_locked : s_catalog_items;
 	var _xx = bbox_right + 30;
 	_yy = top_y + 57;
 	
 	if (_image != undefined)
 	{
-		draw_sprite(_image, _image_index, _xx, _yy);
+		draw_sprite(_image, type, _xx, _yy);
 	
 		// image frame
 		var _sprite_width = sprite_get_width(_image);

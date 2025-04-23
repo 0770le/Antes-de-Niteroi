@@ -81,11 +81,11 @@ function init()
 	starting_x		= get_sprite_center_x();
 	starting_y		= 300;
 	
-	root_menu = new MenuNode("Menu Principal");
+	root_menu = new MenuNode("menu-title");
 	
 	// Options	
-	var _options_node = root_menu.add_child(new MenuNode("Opções"))
-	fullscreen_button = _options_node.add_child(new MenuCheckbox("Tela Cheia", function ()
+	var _options_node = root_menu.add_child(new MenuNode("menu-options"))
+	fullscreen_button = _options_node.add_child(new MenuCheckbox("menu-options-fullscreen", function ()
 	{
 		var _is_fullscreen = global.options_controller.get_option(OPTIONS_FULLSCREEN);
 		
@@ -93,7 +93,7 @@ function init()
 	}));
 	fullscreen_button.set_checked(global.options_controller.options.fullscreen);
 	
-	volume_master = _options_node.add_child(new MenuInteger("Volume Geral", 
+	volume_master = _options_node.add_child(new MenuInteger("menu-options-volume-master", 
 	function ()
 	{
 		volume_master.set_value(volume_master.value - 1);
@@ -108,7 +108,7 @@ function init()
 	}));
 	volume_master.set_value(global.options_controller.options.master_volume);
 	
-	volume_music = _options_node.add_child(new MenuInteger("Música", 
+	volume_music = _options_node.add_child(new MenuInteger("menu-options-volume-music", 
 	function ()
 	{
 		volume_music.set_value(volume_music.value - 1);
@@ -123,7 +123,7 @@ function init()
 	}));
 	volume_music .set_value(global.options_controller.options.music_volume);
 	
-	volume_sfx = _options_node.add_child(new MenuInteger("Efeitos", 
+	volume_sfx = _options_node.add_child(new MenuInteger("menu-options-volume-sfx", 
 	function ()
 	{
 		volume_sfx.set_value(volume_sfx.value - 1);
@@ -137,7 +137,7 @@ function init()
 		global.options_controller.set_option(OPTIONS_SFX_VOLUME, volume_sfx.value);
 	}));
 	volume_sfx.set_value(global.options_controller.options.sfx_volume);
-	deaf_assistance = _options_node.add_child(new MenuCheckbox("Ajuda para Surdos", function ()
+	deaf_assistance = _options_node.add_child(new MenuCheckbox("menu-options-deaf-assistance", function ()
 	{
 		var _is_deaf_assistance = global.options_controller.get_option(OPTIONS_DEAF_ASSISTANCE);
 		
@@ -146,7 +146,7 @@ function init()
 	deaf_assistance.set_checked(global.options_controller.options.deaf_assistance);
 	
 	// Catalog	
-	root_menu.add_child(new MenuCatalog("Catálogo", function () 
+	root_menu.add_child(new MenuCatalog("menu-catalog", function () 
 	{
 		global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
 		
@@ -156,9 +156,9 @@ function init()
 	}));
 	
 	// Key Mapping
-	var _controls_node = root_menu.add_child(new MenuNode("Controles"))
-	var _gamepad_node = _controls_node.add_child(new MenuTwoColumnsNode("Gamepad"))
-	_gamepad_node.add_child(new MenuButton("Usar o Padrão", function ()
+	var _controls_node = root_menu.add_child(new MenuNode("menu-controls"))
+	var _gamepad_node = _controls_node.add_child(new MenuTwoColumnsNode("menu-controls-gamepad"))
+	_gamepad_node.add_child(new MenuButton("menu-controls-use-default", function ()
 	{
 		global.input_manager.gamepad_keymap = new OptionsModel().gamepad_keymap;
 		
@@ -170,8 +170,8 @@ function init()
 	_gamepad_node.add_child_2(new MenuInputGamepad(INPUT_IN_GAME_ACTION.BOW_SHOT));
 	_gamepad_node.add_child_2(new MenuInputGamepad(INPUT_IN_GAME_ACTION.INTERACT));
 	
-	var _keyboard_node = _controls_node.add_child(new MenuTwoColumnsNode("Teclado"))
-	_keyboard_node.add_child(new MenuButton("Usar o Padrão", function ()
+	var _keyboard_node = _controls_node.add_child(new MenuTwoColumnsNode("menu-controls-keyboard"))
+	_keyboard_node.add_child(new MenuButton("menu-controls-use-default", function ()
 	{
 		global.input_manager.keyboard_keymap = new OptionsModel().keyboard_keymap;
 		
@@ -189,24 +189,15 @@ function init()
 	_keyboard_node.add_child_2(new MenuInputKeyboard(INPUT_IN_GAME_ACTION.INTERACT));
 	
 	// Créditos
-	var _credits_node = root_menu.add_child(new MenuNode("Créditos"))
+	var _credits_node = root_menu.add_child(new MenuNode("menu-credits"))
 	_credits_node.add_child(new MenuCredits(
-		"Créditos", 
-		
-		"Projetista e Desenvolvedor: Otto Lehmann\n" + 
-		"Artista Gráfico: Leonardo Marques\n" + 
-		"Artista de Som: André Rente\n" +
-		"Desenvolvedor: Augusto Escobar\n" +
-		"Historiador: Diego Nogueira Xavier\n",
-		
-		"Referencias:\n" + 
-		"O Rio antes do Rio, por Rafael Freitas\n"+
-		"Arariboia, por Rafael Freitas\n" +
-		"1565, por Pedro Doria"
+		"menu-credits", 
+		"menu-credits-content",
+		"menu-credits-references"
 	));
 	
 	// Quit Game	
-	root_menu.add_child(new MenuButton("Menu Inicial", function() 
+	root_menu.add_child(new MenuButton("menu-main-menu", function() 
 	{ 
 		//global.initializer.focus(noone);
 		

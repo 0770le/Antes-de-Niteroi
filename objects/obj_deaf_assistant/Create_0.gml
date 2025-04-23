@@ -6,7 +6,7 @@ display_period_max		= 180;
 fading_period			= 60;
 left_position_marker	= "<";
 right_position_marker	= ">";
-marker_threshold		= 300;
+marker_threshold		= 80;
 max_markers				= 3;
 
 // controls

@@ -7,6 +7,7 @@ enum RAIN_STATE
 }
 
 state = RAIN_STATE.NONE;
+previous_captions_state = state;
 
 s_greayx_start = 0;
 x_end = 0;

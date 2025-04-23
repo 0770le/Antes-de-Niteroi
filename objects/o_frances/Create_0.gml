@@ -133,6 +133,10 @@ function play_state_update_sounds(_previous_state, _new_state) {
 	// on enter
 	switch (_new_state)
 	{
+		case frances_states.SHOOT:
+			global.deaf_assistant.show_captions_pos("Frances atirando", x);
+			
+			break;
 		case frances_states.RELOAD: 
 			global.sound_controller.update_position_and_play(
 				FMOD_EVENT.FRENCH_SHOOTER_COUCH,

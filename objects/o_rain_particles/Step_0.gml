@@ -39,12 +39,16 @@ if(is_on and global.timer mod 5 == 0) {
 		state = RAIN_STATE.NONE;
 	}
 	
-	if (_previous_state < state)
+	if (state > previous_captions_state && state - previous_captions_state >= 2)
 	{
+		previous_captions_state = state;
+		
 		global.deaf_assistant.show_captions("Chuva intensifica");
 	}
-	else if (_previous_state > state)
+	else if (previous_captions_state > state && previous_captions_state - state >= 2)
 	{
+		previous_captions_state = state;
+		
 		global.deaf_assistant.show_captions("Chuva diminui");
 	}
 	

@@ -1,5 +1,5 @@
 creation_order = [ obj_input_manager, obj_options_controller, obj_menu_controller, obj_catalog_controller, obj_deaf_assistant ]	
-always_actives = [ obj_input_manager, obj_options_controller, o_sound_controller, o_fmod, obj_fader, o_vision_blocker, o_vision_blocker_2, o_wood_wall ]
+always_actives = [ obj_input_manager, obj_options_controller, o_sound_controller, o_fmod, obj_fader, o_vision_blocker, o_vision_blocker_2, o_wood_wall, obj_i18n ]
 mutually_exclusives = [	obj_menu_controller, obj_catalog_controller	]
 is_initialized = false;
 

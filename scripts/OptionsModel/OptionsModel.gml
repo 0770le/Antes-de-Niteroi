@@ -10,6 +10,7 @@ function OptionsModel (
 		sfx_volume: 10,
 		music_parameter: FMOD_PARAMETER_MUSIC_STAGE_GENERAL_VALUE.INTRO,
 		deaf_assistance: false,
+		language: LANGUAGES.UNSET,
 		
 		unlocked_catalog_items: [],
 		checked_catalog_items: [],
@@ -109,6 +110,7 @@ constructor
 	sfx_volume = _options_model.sfx_volume;
 	music_parameter = _options_model.music_parameter;
 	deaf_assistance = _options_model.deaf_assistance;
+	language = _options_model.language;
 	
 	// catalog items
 	unlocked_catalog_items = _options_model.unlocked_catalog_items;

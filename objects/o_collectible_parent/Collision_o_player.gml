@@ -2,7 +2,7 @@
 
 global.sound_controller.update_position_and_play(FMOD_EVENT.COLLECT_REGISTER, x, y);
 
-show_msg("Novo registro adquirido: " + string(log_title),5);
+show_msg($"{global.i18n.get_message("menu-catalog-new-log-aquired")}: {string(log_title)}",5);
 o_game.collectible[collectible_index] = true;
 
 global.catalog_controller.unlock_item(catalog_item_type);

@@ -80,7 +80,7 @@ function draw()
 	var _xx = get_sprite_center_x();
 	var _yy = get_sprite_center_y();
 	
-	draw_text(_xx, _yy, label);
+	draw_text(_xx, _yy, global.i18n.get_message(label));
 	
 	if (has_new_item())
 	{

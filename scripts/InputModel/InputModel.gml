@@ -130,6 +130,8 @@ constructor
 	
 	tab_left 		= false;
 	tab_right		= false;
+	
+	change_language = false;
 }
 
 function KeyMapInputModel () : InputModel ()

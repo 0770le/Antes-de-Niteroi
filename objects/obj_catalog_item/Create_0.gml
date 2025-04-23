@@ -259,7 +259,9 @@ function draw()
 	
 	if (locked)
 	{
-		draw_text_ext(_xx, _yy - 2, "Entrada bloqueada.\n\nEncontre o registro para desbloquear.", line_separation, get_line_width());
+		var _line_width = get_line_width();
+		
+		draw_text_ext(_xx, _yy - 2, global.i18n.get_message("menu-catalog-item-locked"), line_separation, _line_width);
 	}
 	else 
 	{

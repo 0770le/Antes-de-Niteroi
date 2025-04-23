@@ -39,7 +39,7 @@ function draw_parent()
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
 	
-	draw_text(_xx, top + 88, selected_item.parent.title); 
+	draw_text(_xx, top + 88, global.i18n.get_message(selected_item.parent.title)); 
 }
 
 function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false, _second_column = false)
@@ -71,11 +71,13 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 		
-		draw_text_ext(bbox_left + 100, bbox_top + 170, _menu_item.content, 35, 800);
+		var _content = global.i18n.get_message(_menu_item.content);
+		
+		draw_text_ext(bbox_left + 100, bbox_top + 170, _content, 35, 800);
 		
 		draw_set_halign(fa_center);
 		
-		draw_text_ext(x, bbox_top + 220 + string_height_ext(_menu_item.content, 35, 800), _menu_item.references, 40, 800);
+		draw_text_ext(x, bbox_top + 220 + string_height_ext(_content, 35, 800), global.i18n.get_message(_menu_item.references), 40, 800);
 		
 		draw_set_color(c_white);
 		draw_set_halign(fa_center);
@@ -94,11 +96,11 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 	{
 		draw_set_halign(fa_left);
 		
-		draw_text(_xx - 115, _yy, _menu_item.title);
+		draw_text(_xx - 115, _yy, global.i18n.get_message(_menu_item.title));
 	}
 	else if (_menu_item.type != MENU_TYPE.CREDITS)
 	{
-		draw_text(_xx, _yy, _menu_item.title);
+		draw_text(_xx, _yy, global.i18n.get_message(_menu_item.title));
 	}	
 	
 	
@@ -156,7 +158,7 @@ function draw_controller_buttons()
 	{
 		var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TOGGLE_MENU);
 		
-		draw_text(right - (sprite_get_width(_cancel_sprite)*_scale) - margin_right - 10, bottom - margin_bottom, "Cancelar Captura");
+		draw_text(right - (sprite_get_width(_cancel_sprite)*_scale) - margin_right - 10, bottom - margin_bottom, global.i18n.get_message("menu-main-cancel-capture"));
 		draw_sprite_ext(_cancel_sprite, 0, right - margin_right, bottom - margin_bottom, _scale, _scale, 0, c_white, 1.0);
 	}
 	else 
@@ -165,14 +167,24 @@ function draw_controller_buttons()
 		var _cancel_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CANCEL);
 		var _toggle_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.TOGGLE_MENU);
 	
-		draw_text(right - (sprite_get_width(_toggle_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 71, "Fechar");
+		draw_text(right - (sprite_get_width(_toggle_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 71, global.i18n.get_message("menu-main-close"));
 		draw_sprite_ext(_toggle_sprite, 0, right - margin_right, bottom - margin_bottom - 71, _scale, _scale, 0, c_white, 1.0);
 	
-		draw_text(right - (sprite_get_width(_cancel_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 36, "Voltar");
+		draw_text(right - (sprite_get_width(_cancel_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 36, global.i18n.get_message("menu-main-back"));
 		draw_sprite_ext(_cancel_sprite, 0, right - margin_right, bottom - margin_bottom - 36, _scale, _scale, 0, c_white, 1.0);
 	
-		draw_text(right - (sprite_get_width(_confirm_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 1, "Confirmar");
+		draw_text(right - (sprite_get_width(_confirm_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 1, global.i18n.get_message("menu-main-confirm"));
 		draw_sprite_ext(_confirm_sprite, 0, right - margin_right, bottom - margin_bottom - 1, _scale, _scale, 0, c_white, 1.0);
+		
+		draw_set_halign(fa_left);
+		
+		if (global.i18n.enable)
+		{
+			var _change_language_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CHANGE_LANGUAGE);
+		
+			draw_text(left + (sprite_get_width(_toggle_sprite)*_scale) + margin_left, bottom - margin_bottom - 1, global.i18n.get_message("menu-main-change-language"));
+			draw_sprite_ext(_change_language_sprite, 0, left + margin_left + 20 - _scale, bottom - margin_bottom - 1, _scale, _scale, 0, c_white, 1.0);
+		}
 	}
 }
 
@@ -235,6 +247,13 @@ function on_input_menu(_input = new MenuInputModel())
 		global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
 		
 		close();
+	}
+	
+	if (_input.change_language && global.i18n.enable)
+	{
+		global.i18n.change_language(global.i18n.get_next_language());
+		
+		global.options_controller.set_option(global.i18n.language);
 	}
 
 	if (_input.confirm) 

@@ -224,12 +224,13 @@ function draw()
 	if (image_index == 1) return; // not active
 	
 	var _image = locked ? image_locked : s_catalog_items;
+	var _image_index = locked ? 0 : type;
 	var _xx = bbox_right + 30;
 	_yy = top_y + 57;
 	
 	if (_image != undefined)
 	{
-		draw_sprite(_image, type, _xx, _yy);
+		draw_sprite(_image, _image_index, _xx, _yy);
 	
 		// image frame
 		var _sprite_width = sprite_get_width(_image);

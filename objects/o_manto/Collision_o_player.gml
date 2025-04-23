@@ -23,5 +23,7 @@ if(!o_game.has_cloak) {
 	with(o_player) {
 		state = states.CLOAK_DISPLAY;
 		image_index=0;
+		display_timer = 0;
 	}
+	
 }

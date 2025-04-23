@@ -1,11 +1,11 @@
 
 if player_arrow {
-	image_xscale = sign(hsp);
-	x += speed * facing;
+	//image_xscale = sign(hsp);
+	//x += speed;//* facing;
 	col_head = c_blue; 
 	col_tail=  c_yellow; //make_colour_rgb(235,116,116);
 	
-	//other.x >= x ? 0 : 180
+
 	
 }else {
 	gravity= grav;

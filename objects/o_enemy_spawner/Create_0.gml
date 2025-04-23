@@ -67,8 +67,8 @@ function spawn_enemy()
 			
 	var _instance = instance_create_layer(x + irandom_range(-spawn_radius, spawn_radius), y, LAYER_INSTANCES, enemy_objects[_object_index]);
 	
-	_instance.patrol_left_limit = x - patrol_left;
-	_instance.patrol_right_limit = x + patrol_right;
+	_instance.patrol_left_limit = x - (patrol_left + random_range(0,6));
+	_instance.patrol_right_limit = x + (patrol_right + random_range(0,6));
 	
 	array_push(enemy_instances, _instance);
 }

@@ -5,7 +5,8 @@ with(o_game) {
 with(o_player) {
 	acquire_bow();
 	arrows = o_game.max_arrows;
-	
+	state = states.BOW_DISPLAY;
+	image_index = 0;
 	update_save();
 }
 

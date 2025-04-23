@@ -1,5 +1,5 @@
 patrol_left = 0;
-patrol_right = 500;
+patrol_right = TILE_SIZE*20;
 
 possible_enemies = [ENEMY_TYPE.TUPINAMBA_RANGED];
 max_enemies = 2;

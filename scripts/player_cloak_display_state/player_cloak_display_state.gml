@@ -1,9 +1,10 @@
 
 function player_cloak_display_state(){
 	hsp = 0;
+	display_timer++;
 	
 	//wait and jump
-	if ((image_index > 7) and on_ground()) {
+	if ((display_timer > room_speed *1.5 and display_timer < room_speed *1.6) and on_ground() ) {
 		launch(jump_spd,0); 
 		evade_dust();	
 		o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.JUMP,x,y);
@@ -24,12 +25,12 @@ function player_cloak_display_state(){
 	}
 	
 	//leave state
-	if (anim_end() and runned_once) {
-		state = states.JUMP;
+	if (display_timer > room_speed *2 and on_ground()) {
+		state = states.IDLE;
 		runned_once = false;
 	}
 	
 	calc_entity_movement();	
 	collision();
-	
+	anim();
 }

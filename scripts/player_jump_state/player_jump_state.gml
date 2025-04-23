@@ -29,7 +29,7 @@ function player_jump_state(){
 		
 		if(_water) {
 			emit_water(x,y-4,irandom_range(20,25));
-		} else if (vsp > 2) {
+		} else if (vsp > 0.24) {
 			instance_create_layer(x,y, LAYER_EFFECTS, o_player_dust_land);
 			o_sound_controller.update_event_parameter_and_play_pos(FMOD_EVENT.JUMP, FMOD_PARAMETER_NAME_MOVE, FMOD_PARAMETER_MOVE_JUMP.LAND,x,y);
 		}	

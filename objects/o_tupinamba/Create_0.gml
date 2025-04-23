@@ -121,7 +121,7 @@ mask_array[tupinamba_states.EVADE] = s_tupinamba_idle;
 
 function can_evade() {	
 	if (o_player.hp > 0 and has_evade and alert and !turret) {
-		if (distance_to_object(o_player) < 60) {
+		if (distance_to_object(o_player) < 60 and (abs(y-o_player.y) < 40)) {
 			stare();	
 			has_evade = false;
 			can_take_dmg = false;

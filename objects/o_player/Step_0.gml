@@ -76,7 +76,7 @@ if(global.debug) {
 		global.fader.to_room(rm_tests_augusto, 200, 200);	
 	}
 	if(keyboard_check_pressed(vk_f8) and room != rm_reri_pe) {
-		global.fader.to_room(rm_reri_pe,3822,1163);	
+		global.fader.to_room(rm_reri_pe,3415,761);	
 	}
 	if(keyboard_check_pressed(vk_f9) and room != rm_seregipe_exploding) {
 		global.fader.to_room(rm_seregipe_exploding,1606,908);	

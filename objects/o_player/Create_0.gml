@@ -106,6 +106,7 @@ lives = lives_initial;
 // 
 lives2 = lives_initial; 
 
+display_timer =0;
 
 //contrl movement
 left = 0;
@@ -147,6 +148,7 @@ enum states {
 	HURTING,	
 	HANGING,
 	CLOAK_DISPLAY,
+	BOW_DISPLAY,
 	DIE,		
 	DIE_2,		
 	GAME_END	
@@ -170,6 +172,7 @@ states_array[states.SHOOT_UP]		= player_shoot_up_state;
 states_array[states.HURTING]		= player_hurting_state;
 states_array[states.HANGING]		= player_hanging_state;
 states_array[states.CLOAK_DISPLAY]	= player_cloak_display_state;
+states_array[states.BOW_DISPLAY]	= player_bow_display_state;
 states_array[states.DIE]			= player_die_state;
 states_array[states.DIE_2]			= player_die_2_state;
 states_array[states.GAME_END]		= player_game_end_state;
@@ -192,6 +195,7 @@ sprites_array[states.SHOOT_UP]		 = s_player_bow_shoot_up;
 sprites_array[states.HURTING]		 = s_player_hurting;
 sprites_array[states.HANGING]		 = s_player_hanging;
 sprites_array[states.CLOAK_DISPLAY]	 = s_player_cloak_display;
+sprites_array[states.BOW_DISPLAY]	 = s_player_bow_display;
 sprites_array[states.DIE]			 = s_player_die;
 sprites_array[states.DIE_2]			 = s_player_die_2;
 sprites_array[states.GAME_END]		 = s_player_die_2;
@@ -213,6 +217,7 @@ mask_array[states.SHOOT_UP]			= s_player_hitbox;
 mask_array[states.HURTING]			= s_player_hitbox;
 mask_array[states.HANGING]			= s_player_hitbox;
 mask_array[states.CLOAK_DISPLAY]	= s_player_hitbox;
+mask_array[states.BOW_DISPLAY]		= s_player_hitbox;
 mask_array[states.DIE]				= s_player_hitbox_crouch;
 mask_array[states.DIE_2]			= s_player_hitbox_crouch;
 mask_array[states.GAME_END]			= s_player_hitbox_crouch;

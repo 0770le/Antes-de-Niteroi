@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"Antes de Niteroi 03",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -170,6 +170,7 @@
     {"$GMFolder":"","%Name":"collision","folderPath":"folders/Tile Sets/collision.yy","name":"collision","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"zlixo","folderPath":"folders/zlixo.yy","name":"zlixo","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"messages-en-US.json","CopyToMask":-1,"filePath":"datafiles/messages","name":"messages-en-US.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"messages-pt-BR.json","CopyToMask":-1,"filePath":"datafiles/messages","name":"messages-pt-BR.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

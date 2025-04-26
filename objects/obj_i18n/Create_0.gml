@@ -48,7 +48,7 @@ function get_message(_message_key = "hello-world", _parameters = undefined)
 		{
 			var _key = _keys[_i];
 			
-			_message = string_replace(_message, $"$\{{_key}\}", _parameters[$ _key]);
+			_message = string_replace(_message, "${"+_key+"}", _parameters[$ _key]);
 		}
 
 	}

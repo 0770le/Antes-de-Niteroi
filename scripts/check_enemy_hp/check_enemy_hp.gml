@@ -52,15 +52,6 @@ function check_enemy_hp(){
 				}
 			}
 		}
-		//score
-		switch(object_index) {
-			case o_frog:
-				score += 50;
-			break;
-			case o_bug:
-				score += 100;
-			break;
-		}
 		
 		
 		////curupira

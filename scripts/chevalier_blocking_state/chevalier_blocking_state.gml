@@ -28,5 +28,4 @@ function chevalier_blocking_state(){
 	calc_entity_movement();
 	collision();
 	
-	
 }

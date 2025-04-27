@@ -19,7 +19,7 @@ root_menu		= undefined;
 selected_item	= undefined;
 has_new_items	= false;
 
-game_version	= "v0.9.0";
+game_version	= "v1.0.0";
 
 starting_x		= get_sprite_center_x();
 starting_y		= 300;

@@ -1589,7 +1589,7 @@
           -2,0,-456,-2147483648,-2,0,-3,-2147483648,-2,0,-3,-2147483648,-2,0,2,-2147483648,1,-19,3,-10,1,-520,
           -2147483648,-2,0,-3,-2147483648,-2,0,-3,-2147483648,-2,0,1,-2147483648,-22,1,-3,-2147483648,-2,1,-505,
           -2147483648,
-        ],"TileDataFormat":1,},"tilesetId":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+        ],"TileDataFormat":1,},"tilesetId":{"name":"t_collisions","path":"tilesets/t_collisions/t_collisions.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Tiles_ground","depth":1200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"layers":[],"name":"Tiles_ground","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":94,"SerialiseWidth":563,"TileCompressedData":[
           1,300,-12,0,2,928,929,-4,0,6,953,954,0,0,953,954,-3,0,2,978,979,-3,0,2,978,979,-3,0,6,928,929,0,0,928,
           929,-3,0,6,928,929,0,0,928,929,-3,0,2,928,929,-3,0,2,928,929,-4,0,2,928,929,-306,0,-188,-2147483648,

@@ -5,4 +5,6 @@ function chevalier_turning_state(){
 		image_index = 0;
 	}
 	
+	calc_entity_movement();
+	collision();	
 }

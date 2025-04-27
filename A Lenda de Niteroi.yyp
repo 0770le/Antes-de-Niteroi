@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"Antes de Niteroi 03",
+  "%Name":"A Lenda de Niteroi",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -180,7 +180,7 @@
   "MetaData":{
     "IDEVersion":"2024.13.1.193",
   },
-  "name":"Antes de Niteroi 03",
+  "name":"A Lenda de Niteroi",
   "resources":[
     {"id":{"name":"FMOD","path":"extensions/FMOD/FMOD.yy",},},
     {"id":{"name":"fnt_arial_medium_bold","path":"fonts/fnt_arial_medium_bold/fnt_arial_medium_bold.yy",},},

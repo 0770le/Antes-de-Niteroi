@@ -531,7 +531,7 @@
     {"name":"s_fire_lighter","order":23,"path":"sprites/s_fire_lighter/s_fire_lighter.yy",},
     {"name":"s_flammable_wall_burned","order":2,"path":"sprites/s_flammable_wall_burned/s_flammable_wall_burned.yy",},
     {"name":"s_flammable_wall_burning","order":1,"path":"sprites/s_flammable_wall_burning/s_flammable_wall_burning.yy",},
-    {"name":"s_flock","order":12,"path":"sprites/s_flock/s_flock.yy",},
+    {"name":"s_flock","order":1,"path":"sprites/s_flock/s_flock.yy",},
     {"name":"s_font_arrows","order":14,"path":"sprites/s_font_arrows/s_font_arrows.yy",},
     {"name":"s_font_lives","order":16,"path":"sprites/s_font_lives/s_font_lives.yy",},
     {"name":"s_frances_arma","order":6,"path":"sprites/s_frances_arma/s_frances_arma.yy",},

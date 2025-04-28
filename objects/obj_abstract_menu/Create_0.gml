@@ -1,45 +1,49 @@
 event_inherited();
 
-font			= fnt_arial_medium_to_large;
-font_description= fnt_arial_medium;
-accent_color	= c_black;
+font				= fnt_arial_medium_to_large;
+font_description	= fnt_arial_medium;
+accent_color		= c_black;
 
-left			= bbox_left;
-right			= bbox_right;
-top				= bbox_top;
-bottom			= bbox_bottom;
-margin_left		= 50;
-margin_right	= 50;
-margin_bottom	= 64;
-margin_top		= 64;
+left				= bbox_left;
+right				= bbox_right;
+top					= bbox_top;
+bottom				= bbox_bottom;
+margin_left			= 50;
+margin_right		= 50;
+margin_bottom		= 64;
+margin_top			= 64;
 
-is_closeable    = true;
+is_closeable		= true;
 
-root_menu		= undefined;
-selected_item	= undefined;
-has_new_items	= false;
+root_menu			= undefined;
+selected_item		= undefined;
+has_new_items		= false;
 
-game_version	= "v1.0.0";
+game_version		= "v1.0.0";
 
-starting_x		= get_sprite_center_x();
-starting_y		= 300;
-button_sprite   = spr_menu_button;
-text_color		= c_white;
-text_hover_color= c_white;
-items_margin    = 70;
+starting_x			= get_sprite_center_x();
+starting_y			= 300;
+button_sprite		= spr_menu_button;
+text_color			= c_white;
+text_hover_color	= c_white;
+items_margin		= 70;
+should_draw_parent	= true;
 
 function draw_parent()
 {
-	var _xx = get_sprite_center_x();
+	if (should_draw_parent)
+	{
+		var _xx = get_sprite_center_x();
 	
-	draw_sprite_ext(spr_menu_title, 0, _xx, top + 70, 1.5, 1.1, 0, c_white, 1);
+		draw_sprite_ext(spr_menu_title, 0, _xx, top + 70, 1.5, 1.1, 0, c_white, 1);
 	
-	draw_set_font(font);
-	draw_set_color(c_white);
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_top);
+		draw_set_font(font);
+		draw_set_color(c_white);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_top);
 	
-	draw_text(_xx, top + 88, global.i18n.get_message(selected_item.parent.title)); 
+		draw_text(_xx, top + 88, global.i18n.get_message(selected_item.parent.title)); 
+	}
 }
 
 function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false, _second_column = false)
@@ -230,7 +234,7 @@ function on_input_menu(_input = new MenuInputModel())
 {
 	if (!is_open)
 	{
-		if (_input.toggle_menu)
+		if (_input.toggle_menu && !global.fader.is_active)
 		{
 			global.sound_controller.play(FMOD_EVENT.MENU_PAUSE);
 			

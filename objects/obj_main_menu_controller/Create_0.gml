@@ -39,6 +39,8 @@ volume_music		= noone;
 volume_sfx          = noone;
 deaf_assistance		= noone;
 
+should_draw_parent  = false;
+
 function draw_title()
 {
 	

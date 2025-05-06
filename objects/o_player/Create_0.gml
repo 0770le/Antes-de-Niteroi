@@ -48,17 +48,6 @@ hidden = false;
 
 recover_time = 0;
 
-////curupira
-//curupira_count_max = 10;
-//curupira_count_initial = 0;
-//curupira_count = curupira_count_initial;
-//vines_max = 3;
-//vines_initial =0;
-//vines = vines_initial;
-//vine_ball_max = 1;
-//vine_ball_initial = 0;
-//vine_ball = vine_ball_initial;
-
 //attack
 dmg = 0;
 can_attack = true;

@@ -4,9 +4,9 @@ function player_bow_display_state(){
 facing = -1;
 can_take_dmg = false;
 
-
 //arrow shoot
 if (image_index > 22 and !runned_once){
+	
 	//rising arrow
 	var inst = instance_create_layer(x+20*facing,y - 28, LAYER_PROJECTILES, o_player_rising_arrow);
 	inst.facing = facing;

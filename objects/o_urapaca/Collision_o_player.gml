@@ -3,6 +3,7 @@ with(o_game) {
 }
 
 with(o_player) {
+	o_camera.y_offset = -80;
 	acquire_bow();
 	arrows = o_game.max_arrows;
 	state = states.BOW_DISPLAY;

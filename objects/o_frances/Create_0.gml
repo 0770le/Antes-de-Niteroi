@@ -41,9 +41,7 @@ vsp_decimal = 0;
 //jump
 jump_vsp = PLAYER_JUMP_SPEED+1;
 jump_hsp = 4;
-//evade
-has_evade = true;
-evade_delay = room_speed* 3;
+
 
 //loot
 hp_drop_chance = 0.3;

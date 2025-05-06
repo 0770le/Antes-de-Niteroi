@@ -13,7 +13,7 @@ function iaguara_attack_state(){
 		
 		y-=1;
 		//player above
-		if(o_player.y < y-TILE_SIZE*5) {
+		if(o_player.y < y-TILE_SIZE*4) { //5
 			launch(8,2);
 		} else {//player under
 			launch(4.8,7);

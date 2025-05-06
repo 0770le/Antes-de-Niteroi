@@ -334,7 +334,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Karióca - Reri'pê";
-	_last_item.set_text("Alto do atual Morro da Glória (RJ). Com o apoio e a orientação de alguns franceses, os tupinambás construíram uma grande cerca de madeira, equipada com torres para armas de fogo, além de possuírem diversas espingardas.\nNa praia, haviam cavado fossos armados com estrepes como armadilhas. Chamado pelos nativos de rery-pê, lugar das ostras, ali se encontrava a primeira fortaleza tupinambá enfrentada pelos temiminós e portugueses na grande batalha de Uruçumirim.\nDurante essa batalha Estácio de Sá, mesmo usando sua armadura completa, foi mortalmente ferido por uma flecha inimiga." );
+	_last_item.set_text("Alto do atual Morro da Glória (RJ). Com o apoio e a orientação de alguns franceses, os tupinambás construíram uma grande cerca de madeira, equipada com torres para armas de fogo, além de possuírem diversas espingardas.\nNa praia, haviam cavado fossos armados com estrepes como armadilhas. Chamado pelos nativos de rery-pê, lugar das ostras, ali se encontrava a primeira fortaleza tupinambá enfrentada pelos temiminós e portugueses na grande batalha de Uruçumirim.\nDurante essa batalha, Estácio de Sá, mesmo usando sua armadura completa, foi mortalmente ferido por uma flecha inimiga." );
 	_last_item.type = CATALOG_ITEM_TYPE.RERI_PE;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
@@ -388,7 +388,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Taba";
-	_last_item.set_text("A taba era uma aldeia típica dos tupinambás. As tabas eram organizadas de forma circular ou oval, com as malocas dispostas ao redor de uma área central, onde ocorriam rituais, reuniões e atividades comunitárias.\nEssa organização favorecia a segurança e a interação social. Cada uma tinha seus domínios territoriais. Elas recebiam o mesmo nome que seu Principal escolheu para si, frequentemente valorizando algo marcante da natureza ao seu redor");
+	_last_item.set_text("A taba era uma aldeia típica dos tupinambás. As tabas eram organizadas de forma circular ou oval, com as malocas dispostas ao redor de uma área central, onde ocorriam rituais, reuniões e atividades comunitárias.\nEssa organização favorecia a segurança e a interação social. Cada uma tinha seus domínios territoriais. Elas recebiam o mesmo nome que seu Principal escolheu para si, frequentemente valorizando algo marcante da natureza ao seu redor.");
 	_last_item.type = CATALOG_ITEM_TYPE.TABA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
@@ -504,8 +504,8 @@ function create_content()
 	_last_item.type = CATALOG_ITEM_TYPE.HARPIA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Urucum e Genipapo";
-	_last_item.set_text("O urucum (Bixa orellana) e o genipapo (Genipa americana) são plantas nativas importantes para os tupinambás.\nO urucum, com suas sementes vermelhas, era amplamente utilizado para a pintura corporal, tingindo a pele em rituais de guerra e celebrações. Essa pintura possuía significados culturais profundos, identificando guerreiros e marcando momentos importantes. \nJá o genipapo, com seus frutos que produzem um suco escuro, era usado para pinturas corporais de cor preta ou azul escura, também com funções rituais e sociais. \nA combinação dessas tinturas permitia aos tupinambás criar uma rica variedade de padrões geométricos e representações simbólicas em seus corpos, expressando sua identidade, status social e participação em rituais.");
+	_last_item.label = "Urucum e Jenipapo";
+	_last_item.set_text("O urucum (Bixa orellana) e o jenipapo (Genipa americana) são plantas nativas importantes para os tupinambás.\nO urucum, com suas sementes vermelhas, era amplamente utilizado para a pintura corporal, tingindo a pele em rituais de guerra e celebrações. Essa pintura possuía significados culturais profundos, identificando guerreiros e marcando momentos importantes. \nJá o genipapo, com seus frutos que produzem um suco escuro, era usado para pinturas corporais de cor preta ou azul escura, também com funções rituais e sociais. \nA combinação dessas tinturas permitia aos tupinambás criar uma rica variedade de padrões geométricos e representações simbólicas em seus corpos, expressando sua identidade, status social e participação em rituais.");
 	_last_item.type = CATALOG_ITEM_TYPE.URUCUM_GENIPAPO;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.BIODIVERSITY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));

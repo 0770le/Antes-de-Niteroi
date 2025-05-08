@@ -2,7 +2,7 @@ if (col == c_black) {
 	switch(type) {
 		case 0:
 			//candle
-			intensity = 0.3;
+			intensity = 0.4;
 			radius = 26;
 			col = make_color_rgb(220,130,50);
 		

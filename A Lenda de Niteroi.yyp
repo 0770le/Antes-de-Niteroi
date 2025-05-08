@@ -178,7 +178,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.0.190",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"A Lenda de Niteroi",
   "resources":[
@@ -814,6 +814,12 @@
     {"id":{"name":"s_transition","path":"sprites/s_transition/s_transition.yy",},},
     {"id":{"name":"s_trigger_text","path":"sprites/s_trigger_text/s_trigger_text.yy",},},
     {"id":{"name":"s_trigger","path":"sprites/s_trigger/s_trigger.yy",},},
+    {"id":{"name":"s_tucano_1_flying","path":"sprites/s_tucano_1_flying/s_tucano_1_flying.yy",},},
+    {"id":{"name":"s_tucano_1_idle","path":"sprites/s_tucano_1_idle/s_tucano_1_idle.yy",},},
+    {"id":{"name":"s_tucano_2_flying","path":"sprites/s_tucano_2_flying/s_tucano_2_flying.yy",},},
+    {"id":{"name":"s_tucano_2_idle","path":"sprites/s_tucano_2_idle/s_tucano_2_idle.yy",},},
+    {"id":{"name":"s_tucano_3_flying","path":"sprites/s_tucano_3_flying/s_tucano_3_flying.yy",},},
+    {"id":{"name":"s_tucano_3_idle","path":"sprites/s_tucano_3_idle/s_tucano_3_idle.yy",},},
     {"id":{"name":"s_tupinamba_arma","path":"sprites/s_tupinamba_arma/s_tupinamba_arma.yy",},},
     {"id":{"name":"s_tupinamba_die","path":"sprites/s_tupinamba_die/s_tupinamba_die.yy",},},
     {"id":{"name":"s_tupinamba_evade","path":"sprites/s_tupinamba_evade/s_tupinamba_evade.yy",},},

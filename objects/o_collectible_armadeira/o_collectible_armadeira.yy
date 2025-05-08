@@ -8,8 +8,8 @@
   "name":"o_collectible_armadeira",
   "overriddenProperties":[],
   "parent":{
-    "name":"Keryi",
-    "path":"folders/Objects/Collectible/Keryi.yy",
+    "name":"Cidade Velha",
+    "path":"folders/Objects/Collectible/Cidade Velha.yy",
   },
   "parentObjectId":{
     "name":"o_collectible_parent",

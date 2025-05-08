@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.27576,
+  "duration":0.27575964,
   "name":"snd_enemies_spawn",
   "parent":{
     "name":"Sounds",

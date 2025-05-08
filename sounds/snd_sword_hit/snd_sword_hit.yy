@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.186599,
+  "duration":0.18659864,
   "name":"snd_sword_hit",
   "parent":{
     "name":"Sounds",

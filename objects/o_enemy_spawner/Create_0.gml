@@ -64,13 +64,17 @@ function step()
 function spawn_enemy()
 {
 	var _object_index = possible_enemies[irandom_range(0, array_length(possible_enemies) - 1)];
-			
-	var _instance = instance_create_layer(x + irandom_range(-spawn_radius, spawn_radius), y, LAYER_INSTANCES, enemy_objects[_object_index]);
+	var _spawn_pos = x + irandom_range(-spawn_radius, spawn_radius);
+	
+	var _instance = instance_create_layer(_spawn_pos, y, LAYER_INSTANCES, enemy_objects[_object_index]);
 	
 	_instance.patrol_left_limit = x - (patrol_left + random_range(0,6));
 	_instance.patrol_right_limit = x + (patrol_right + random_range(0,6));
 	
 	array_push(enemy_instances, _instance);
+	
+	effect_create_above(ef_explosion, _spawn_pos, y - 10, 0, c_white);
+	
 }
 
 function update_enemy_instances()

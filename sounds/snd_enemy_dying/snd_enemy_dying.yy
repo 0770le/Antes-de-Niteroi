@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.377029,
+  "duration":0.37702948,
   "name":"snd_enemy_dying",
   "parent":{
     "name":"Sounds",

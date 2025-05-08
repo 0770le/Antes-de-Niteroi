@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":98.91333,
+  "duration":99.05633,
   "name":"snd_mus_middle_park",
   "parent":{
     "name":"Sounds",

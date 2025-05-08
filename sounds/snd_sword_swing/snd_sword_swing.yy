@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.437234,
+  "duration":2.4372334,
   "name":"snd_sword_swing",
   "parent":{
     "name":"Sounds",

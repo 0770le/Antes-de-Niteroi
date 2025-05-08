@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.207354,
+  "duration":0.20736961,
   "name":"snd_arrow_firing",
   "parent":{
     "name":"Sounds",

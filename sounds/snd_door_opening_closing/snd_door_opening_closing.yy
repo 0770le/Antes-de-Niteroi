@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.720125,
+  "duration":1.7240816,
   "name":"snd_door_opening_closing",
   "parent":{
     "name":"Sounds",

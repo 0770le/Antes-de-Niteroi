@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.399728,
+  "duration":0.39972788,
   "name":"snd_gems_spawning",
   "parent":{
     "name":"Sounds",

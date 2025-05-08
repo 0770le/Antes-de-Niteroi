@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.138912,
+  "duration":0.13891156,
   "name":"snd_block",
   "parent":{
     "name":"Sounds",

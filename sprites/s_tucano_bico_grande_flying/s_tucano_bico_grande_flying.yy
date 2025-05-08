@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"s_tucano_1_flying",
+  "%Name":"s_tucano_bico_grande_flying",
   "bboxMode":0,
   "bbox_bottom":47,
   "bbox_left":0,
@@ -27,7 +27,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"82e2a52a-3ad1-49e7-91eb-3a9356076918","blendMode":0,"displayName":"default","isLocked":false,"name":"82e2a52a-3ad1-49e7-91eb-3a9356076918","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"s_tucano_1_flying",
+  "name":"s_tucano_bico_grande_flying",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -39,7 +39,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"s_tucano_1_flying",
+    "%Name":"s_tucano_bico_grande_flying",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -63,7 +63,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"s_tucano_1_flying",
+    "name":"s_tucano_bico_grande_flying",
     "playback":1,
     "playbackSpeed":20.0,
     "playbackSpeedType":0,
@@ -77,25 +77,25 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1ee334e6-0bf3-4dd3-ba25-90fe86f639e3","path":"sprites/s_tucano_1_flying/s_tucano_1_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1ee334e6-0bf3-4dd3-ba25-90fe86f639e3","path":"sprites/s_tucano_bico_grande_flying/s_tucano_bico_grande_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"f4c08899-1aa1-4100-88d6-ac91c6c6c2ac","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bd0815e1-c366-47dc-bff4-a287cb1fefd9","path":"sprites/s_tucano_1_flying/s_tucano_1_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bd0815e1-c366-47dc-bff4-a287cb1fefd9","path":"sprites/s_tucano_bico_grande_flying/s_tucano_bico_grande_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"4f2d9eb3-4f80-4706-bc58-678b834cb47b","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ebd436de-cc6c-4b23-86ae-660a89fd50c6","path":"sprites/s_tucano_1_flying/s_tucano_1_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ebd436de-cc6c-4b23-86ae-660a89fd50c6","path":"sprites/s_tucano_bico_grande_flying/s_tucano_bico_grande_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"0da773b3-68d3-4c5d-a13c-3e0b07ae8bf6","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3a51531a-8356-4fc3-9895-bd7c56f05d63","path":"sprites/s_tucano_1_flying/s_tucano_1_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3a51531a-8356-4fc3-9895-bd7c56f05d63","path":"sprites/s_tucano_bico_grande_flying/s_tucano_bico_grande_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"6b2791db-7b19-42f7-9dce-53574a3dba06","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"038fc64e-76e3-4025-95bd-9d6a55d4ae64","path":"sprites/s_tucano_1_flying/s_tucano_1_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"038fc64e-76e3-4025-95bd-9d6a55d4ae64","path":"sprites/s_tucano_bico_grande_flying/s_tucano_bico_grande_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"6b707252-df0e-48bb-a8ad-a1e5e70f352b","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f579bb7a-69ce-4f88-b536-aca24a352651","path":"sprites/s_tucano_1_flying/s_tucano_1_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f579bb7a-69ce-4f88-b536-aca24a352651","path":"sprites/s_tucano_bico_grande_flying/s_tucano_bico_grande_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"bb40aa7d-4afe-4ec8-b3a4-52bec80c88de","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bdf1b776-639c-4ec5-b6cf-55bbb702b501","path":"sprites/s_tucano_1_flying/s_tucano_1_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bdf1b776-639c-4ec5-b6cf-55bbb702b501","path":"sprites/s_tucano_bico_grande_flying/s_tucano_bico_grande_flying.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"28a49612-af64-455a-8db5-ed3c14e37a06","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

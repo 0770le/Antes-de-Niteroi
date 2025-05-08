@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.785556,
+  "duration":1.7855556,
   "name":"snd_game_start",
   "parent":{
     "name":"Sounds",

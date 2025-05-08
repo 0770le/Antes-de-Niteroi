@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.382925,
+  "duration":0.38292518,
   "name":"snd_pickup_gem",
   "parent":{
     "name":"Sounds",

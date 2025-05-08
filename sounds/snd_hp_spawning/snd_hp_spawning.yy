@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.508299,
+  "duration":0.5082993,
   "name":"snd_hp_spawning",
   "parent":{
     "name":"Sounds",

@@ -38,33 +38,50 @@ if(o_game.has_bow) {
 
 
 
-//// Colecionáveis - estilo idêntico à HUD de HP
-//var _hud_back_w = sprite_get_width(s_HUD_mirror);
-//var _hud_back_h = sprite_get_height(s_HUD_mirror);
-//var _hud_right_x = _cam_x + camera_get_view_width(view_camera[0]) - _hud_back_w - 2;
-//var _hud_right_y = _cam_y + 6;
 
-//draw_set_alpha(0.6);
-//draw_sprite_stretched(s_HUD_mirror, 0, _hud_right_x, _hud_right_y, _hud_back_w, _hud_back_h);
-//draw_set_alpha(1);
+	
+// Colecionáveis 
+var _hud_back_w = sprite_get_width(s_HUD_mirror);
+var _hud_back_h = sprite_get_height(s_HUD_mirror);
+var _hud_right_x = _cam_x + camera_get_view_width(view_camera[0]) - _hud_back_w - 2;
+var _hud_right_y = _cam_y + 6;
 
-//// Valores
-//var _collectible_percent = 87; // Substitua pela variável real
-//var _text = string(_collectible_percent);
+draw_set_alpha(0.6);
+draw_sprite_stretched(s_HUD_mirror, 0, _hud_right_x, _hud_right_y, _hud_back_w, _hud_back_h);
+draw_set_alpha(1);
 
-//// Posição do texto (centralizado)
-//var _text_x = _hud_right_x + (_hud_back_w div 2);
-//var _text_y = _hud_right_y + (_hud_back_h div 2);
+// Valores
 
-//// Largura do número com a fonte Arrow
-//draw_set_font(global.fontArrow);
-//draw_set_halign(fa_center);
-//draw_set_valign(fa_middle);
-//draw_set_color(c_white);
-//draw_text(_text_x, _text_y, _text);
+with(obj_catalog_window) {
+	var _total_items = array_length(catalog_items);
+	var _unlocked_items = array_length(
+		array_filter(catalog_items, function (_item) { return !_item.locked })
+	);
+	o_player._total_items =_total_items;
+	o_player._unlocked_items =_unlocked_items;
+}
+
+
+var _text = string(_unlocked_items) + " / " + string(_total_items);
+
+// Posição do texto (centralizado)
+var _text_x = _hud_right_x + (_hud_back_w div 2);
+var _text_y = _hud_right_y + (_hud_back_h div 2);
+
+// Largura do número com a fonte Arrow
+draw_set_font(global.fontArrow);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_color(c_white);
+draw_text(_text_x, _text_y, _text);
+
+
+
+
+
 
 //// Agora desenha o % ao lado, em fonte vermelha default
 //draw_set_font(-1); // Fonte padrão
 //draw_set_color(c_red);
 //var _text_width = string_width(_text);
-//draw_text(_text_x + (_text_width div 2) + 1, _text_y, "  %");
+//draw_text(_text_x + (_text_width div 2) + 1, _text_y, " %");

@@ -118,7 +118,9 @@ respawn_coldown = 0;
 //camera 
 o_camera.follow = o_player;
 
-
+//logs
+_total_items = 0;
+_unlocked_items = 0;
 
 //states
 enum states {

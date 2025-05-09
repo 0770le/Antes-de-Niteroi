@@ -427,13 +427,13 @@ function create_content()
 	_last_item.type = CATALOG_ITEM_TYPE.IBIRAPEMA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Urapaçã";
-	_last_item.set_text("O conjunto arco e flecha era a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos.\nÀ medida que cresciam, suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo d'água, pássaros em voo e até as finas viseiras dos elmos das armaduras europeias.");
+	_last_item.label = "Arco e Flecha";
+	_last_item.set_text("Urapaçã - O conjunto arco e flecha era a arma preferencial dos tupinambás. Desde recém nascidos recebiam uma versão diminuta do ibirapema e do arco com flechas, além das garras e dentes dos animais mais perigosos como brinquedos.\nÀ medida que cresciam, suas armas o acompanhavam. Eles se tornavam tão bons arqueiros que conseguiam acertar peixes em baixo d'água, pássaros em voo e até as finas viseiras dos elmos das armaduras europeias.");
 	_last_item.type = CATALOG_ITEM_TYPE.URAPACA;
 
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
-	_last_item.label = "Assojaba";
-	_last_item.set_text("Os mantos Tupinambá, conhecidos como assojaba, eram vestimentas sagradas de grande importância espiritual e simbólica para os Tupinambás. Confeccionados com penas de aves nativas, principalmente do guará (de cor vermelha intensa), fixadas em uma trama de fibras naturais através de técnicas ancestrais de costura, esses mantos eram utilizados em ocasiões formais e rituais significativos, como assembleias, enterros e as cerimônias antropofágicas, que eram as mais solenes.O ato de vestir o manto representava uma profunda conexão com os ancestrais e o mundo espiritual, sendo um símbolo de poder, liderança e prestígio.");
+	_last_item.label = "Manto Sagrado";
+	_last_item.set_text("Assojaba - Os mantos Tupinambá, conhecidos como assojaba, eram vestimentas sagradas de grande importância espiritual e simbólica para os Tupinambás. Confeccionados com penas de aves nativas, principalmente do guará (de cor vermelha intensa), fixadas em uma trama de fibras naturais através de técnicas ancestrais de costura, esses mantos eram utilizados em ocasiões formais e rituais significativos, como assembleias, enterros e as cerimônias antropofágicas, que eram as mais solenes.O ato de vestir o manto representava uma profunda conexão com os ancestrais e o mundo espiritual, sendo um símbolo de poder, liderança e prestígio.");
 	_last_item.type = CATALOG_ITEM_TYPE.ASSOJABA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));

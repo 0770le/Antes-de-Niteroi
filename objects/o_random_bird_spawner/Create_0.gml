@@ -15,6 +15,8 @@ flying_sound = undefined;
 
 type_picked = false;
 bird_type = 0;
+
+//calll later
 function set_bird_type(_bird_type = bird_type){
 	switch (_bird_type)
 	{
@@ -31,6 +33,21 @@ function set_bird_type(_bird_type = bird_type){
 	    case 2: // Arara Vermelha 
 	        idle_sprite = s_arara_vermelha_idle;
 	        flying_sprite = s_arara_vermelha_flying;
+	        break;
+			
+	    case 3: // Tucano bico preto 
+	        idle_sprite = s_tucano_bico_preto_idle;
+	        flying_sprite = s_tucano_bico_preto_flying;
+	        break;
+			
+	    case 4: // tucano bico verde
+	        idle_sprite = s_tucano_bico_verde_idle;
+	        flying_sprite = s_tucano_bico_verde_flying;
+	        break;
+			
+	    case 5: // tucano bico grande
+	        idle_sprite = s_tucano_bico_grande_idle;
+	        flying_sprite = s_tucano_bico_grande_flying;
 	        break;
 
 	    default: // Caso o bird_type não corresponda a nenhum dos casos

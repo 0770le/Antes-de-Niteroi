@@ -686,6 +686,7 @@
     {"id":{"name":"s_HUD_hp_bar_loss","path":"sprites/s_HUD_hp_bar_loss/s_HUD_hp_bar_loss.yy",},},
     {"id":{"name":"s_HUD_hp_bar","path":"sprites/s_HUD_hp_bar/s_HUD_hp_bar.yy",},},
     {"id":{"name":"s_HUD_lives","path":"sprites/s_HUD_lives/s_HUD_lives.yy",},},
+    {"id":{"name":"s_HUD_mirror","path":"sprites/s_HUD_mirror/s_HUD_mirror.yy",},},
     {"id":{"name":"s_humanoid_hitbox","path":"sprites/s_humanoid_hitbox/s_humanoid_hitbox.yy",},},
     {"id":{"name":"s_iaguara_attack","path":"sprites/s_iaguara_attack/s_iaguara_attack.yy",},},
     {"id":{"name":"s_iaguara_die","path":"sprites/s_iaguara_die/s_iaguara_die.yy",},},

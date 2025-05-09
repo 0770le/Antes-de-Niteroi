@@ -1,6 +1,6 @@
 
 if (!type_picked){
-	bird_type = choose(0,1,2);
+	bird_type = choose(0,1,2,3,4,5);
 	type_picked = true;
 	set_bird_type();
 }

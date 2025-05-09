@@ -563,6 +563,7 @@
     {"name":"s_HUD_hp_bar_loss","order":13,"path":"sprites/s_HUD_hp_bar_loss/s_HUD_hp_bar_loss.yy",},
     {"name":"s_HUD_hp_bar","order":9,"path":"sprites/s_HUD_hp_bar/s_HUD_hp_bar.yy",},
     {"name":"s_HUD_lives","order":17,"path":"sprites/s_HUD_lives/s_HUD_lives.yy",},
+    {"name":"s_HUD_mirror","order":18,"path":"sprites/s_HUD_mirror/s_HUD_mirror.yy",},
     {"name":"s_humanoid_hitbox","order":8,"path":"sprites/s_humanoid_hitbox/s_humanoid_hitbox.yy",},
     {"name":"s_iaguara_attack","order":2,"path":"sprites/s_iaguara_attack/s_iaguara_attack.yy",},
     {"name":"s_iaguara_die","order":10,"path":"sprites/s_iaguara_die/s_iaguara_die.yy",},

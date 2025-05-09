@@ -1,0 +1,1 @@
+sprite_index = s_arara_caninde_idle;

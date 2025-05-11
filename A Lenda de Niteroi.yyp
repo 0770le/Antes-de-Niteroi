@@ -366,6 +366,7 @@
     {"id":{"name":"o_wood_wall","path":"objects/o_wood_wall/o_wood_wall.yy",},},
     {"id":{"name":"obj_abstract_menu","path":"objects/obj_abstract_menu/obj_abstract_menu.yy",},},
     {"id":{"name":"obj_catalog_controller","path":"objects/obj_catalog_controller/obj_catalog_controller.yy",},},
+    {"id":{"name":"obj_catalog_counter","path":"objects/obj_catalog_counter/obj_catalog_counter.yy",},},
     {"id":{"name":"obj_catalog_item","path":"objects/obj_catalog_item/obj_catalog_item.yy",},},
     {"id":{"name":"obj_catalog_tab","path":"objects/obj_catalog_tab/obj_catalog_tab.yy",},},
     {"id":{"name":"obj_catalog_window","path":"objects/obj_catalog_window/obj_catalog_window.yy",},},

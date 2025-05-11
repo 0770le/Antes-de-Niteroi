@@ -297,6 +297,7 @@
     {"name":"o_water_particle","order":2,"path":"objects/o_water_particle/o_water_particle.yy",},
     {"name":"o_window_middle_center","order":1,"path":"objects/o_window_middle_center/o_window_middle_center.yy",},
     {"name":"o_wood_wall","order":17,"path":"objects/o_wood_wall/o_wood_wall.yy",},
+    {"name":"obj_catalog_counter","order":3,"path":"objects/obj_catalog_counter/obj_catalog_counter.yy",},
     {"name":"obj_catalog_tab","order":1,"path":"objects/obj_catalog_tab/obj_catalog_tab.yy",},
     {"name":"obj_catalog_window","order":2,"path":"objects/obj_catalog_window/obj_catalog_window.yy",},
     {"name":"obj_deaf_helper_rain","order":1,"path":"objects/obj_deaf_helper_rain/obj_deaf_helper_rain.yy",},

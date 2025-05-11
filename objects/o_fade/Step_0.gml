@@ -44,6 +44,7 @@ if (fade_to_colour == true) {
 	if (alpha <= 0) {
 		//reset camera pan speed
 		o_camera.camera_pan_speed = o_camera.camera_pan_speed_initial;
+		
 		instance_destroy();
 	}
 }

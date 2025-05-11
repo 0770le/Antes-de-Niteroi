@@ -72,6 +72,8 @@ function clear()
 function create_content()
 {
 	window = instance_create_layer(0, 0, LAYER_GUI_CATALOG_WINDOW, obj_catalog_window);
+	
+	instance_create_layer(0,0,LAYER_CONTROLLERS, obj_catalog_counter);
 }
 
 function init()

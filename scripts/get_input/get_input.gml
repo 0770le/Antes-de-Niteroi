@@ -9,6 +9,11 @@ function get_input() {
 	up			= _input.up;
 	down		= _input.down;
 
+	left_camera = _input.left_camera;
+	right_camera= _input.right_camera;
+	up_camera	= _input.up_camera;
+	down_camera	= _input.down_camera;
+
 	attack		= _input.attack;
 	attack_held = _input.attack_held;
 	jump		= _input.jump;

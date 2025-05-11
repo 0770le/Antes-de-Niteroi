@@ -91,6 +91,11 @@ constructor
 	left			= false;
 	right			= false;
 	
+	up_camera		= false;
+	down_camera		= false;
+	left_camera		= false;
+	right_camera	= false;
+	
 	jump			= false;
 	attack			= false;
 	dodge			= false;

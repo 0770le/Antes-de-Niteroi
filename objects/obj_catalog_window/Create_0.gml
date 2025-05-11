@@ -17,6 +17,8 @@ selected_tab				= noone;
 total_entries_text_color	= make_color_rgb(230, 230, 230);
 total_entries_background	= spr_catalog_total;
 
+total_items = 0;
+
 function open()
 {
 	is_open = true;
@@ -238,6 +240,13 @@ function draw_item_cursor_arrows()
 	}
 }
 
+function get_total_unlocked_items() 
+{	
+	return array_length(
+		array_filter(catalog_items, function (_item) { return !_item.locked })
+	);
+}
+
 function draw_total_entries()
 {
 	draw_set_font(fnt_arial_medium_to_small);
@@ -248,10 +257,8 @@ function draw_total_entries()
 	var _background_x = bbox_right - 30;
 	var _background_y = bbox_bottom;
 	
-	var _total_items = array_length(catalog_items);
-	var _unlocked_items = array_length(
-		array_filter(catalog_items, function (_item) { return !_item.locked })
-	);
+	var _total_items = total_items;  
+	var _unlocked_items = get_total_unlocked_items();
 	
 	var _text = global.i18n.get_message(
 		"menu-catalog-total-unlocks", 
@@ -569,7 +576,11 @@ function unlock_saved_items()
 
 function init()
 {
+	global.catalog_window = self;
+	
 	create_content();
+	
+	total_items = array_length(catalog_items);
 	
 	unlock_saved_items();
 	

@@ -48,4 +48,5 @@ with(o_game) {
 	logs_array[logs.LOG_PARENT] = true;
 }
 
+
 instance_destroy();

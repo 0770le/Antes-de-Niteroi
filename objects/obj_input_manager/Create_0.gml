@@ -537,13 +537,19 @@ function step_not_capturing(_should_notify = true)
 		_input_in_game.left			= gamepad_button_check(last_gamepad_index, gp_padl) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislh) < -axis_deadzone || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.LEFT]);
 		_input_in_game.right		= gamepad_button_check(last_gamepad_index, gp_padr) > 0 || gamepad_axis_value(last_gamepad_index, gp_axislh) > axis_deadzone  || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.RIGHT]);	
 	
+		_input_in_game.up_camera	= gamepad_axis_value(last_gamepad_index, gp_axisrv) < -axis_deadzone;
+		_input_in_game.down_camera  = gamepad_axis_value(last_gamepad_index, gp_axisrv) > axis_deadzone;
+		_input_in_game.left_camera  = gamepad_axis_value(last_gamepad_index, gp_axisrh) < -axis_deadzone;
+		_input_in_game.right_camera = gamepad_axis_value(last_gamepad_index, gp_axisrh) > axis_deadzone;
+		
 		_input_in_game.attack       = gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0   || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.ATTACK]);
 		_input_in_game.jump			= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0	 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.JUMP]);
 		_input_in_game.dodge		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0	 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.DODGE]);
 		_input_in_game.bow_shot		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.BOW_SHOT]);
 		_input_in_game.interact		= gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap[INPUT_IN_GAME_ACTION.INTERACT])
-										|| gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap[keyboard_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]]);
-	
+										|| gamepad_button_check_pressed(last_gamepad_index, gamepad_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]) > 0 || keyboard_check_pressed(keyboard_keymap[keyboard_keymap_alt[INPUT_IN_GAME_ACTION.INTERACT]])
+										|| _input_in_game.up;
+		
 		_input_in_game.attack_held  = gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.ATTACK]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.ATTACK]);
 		_input_in_game.jump_held	= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.JUMP]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.JUMP]);
 		_input_in_game.dodge_held	= gamepad_button_check(last_gamepad_index, gamepad_keymap[INPUT_IN_GAME_ACTION.DODGE]) > 0			 || keyboard_check(keyboard_keymap[INPUT_IN_GAME_ACTION.DODGE]);

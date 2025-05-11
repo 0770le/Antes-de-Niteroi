@@ -51,18 +51,15 @@ if(o_game.has_bow) {
 //draw_set_alpha(1);
 
 //// Valores
-//_total_items = 0;
-//_unlocked_items = 0;
 
-//with(obj_catalog_window) {
-//	var _total_items = array_length(catalog_items);
-//	var _unlocked_items = array_length(
-//		array_filter(catalog_items, function (_item) { return !_item.locked })
-//	);
-//	o_player._total_items =_total_items;
-//	o_player._unlocked_items =_unlocked_items;
-//}
-
+////with(obj_catalog_window) {
+////	var _total_items = array_length(catalog_items);
+////	var _unlocked_items = array_length(
+////		array_filter(catalog_items, function (_item) { return !_item.locked })
+////	);
+////	o_player._total_items =_total_items;
+////	o_player._unlocked_items =_unlocked_items;
+////}
 
 //var _text = string(_unlocked_items) + " / " + string(_total_items);
 
@@ -76,8 +73,4 @@ if(o_game.has_bow) {
 //draw_set_valign(fa_middle);
 //draw_set_color(c_white);
 //draw_text(_text_x, _text_y, _text);
-
-
-
-
 

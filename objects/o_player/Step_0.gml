@@ -15,10 +15,10 @@ if(on_ground()) {
 	jumpTimer--;	
 }
 
-if(up) {
+if (up or up_camera) {
 	o_camera.y_offset = -80;
 }
-if(down) {
+if (down or down_camera) {
 	o_camera.y_offset = 0;
 }
 

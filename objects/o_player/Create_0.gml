@@ -97,18 +97,24 @@ lives2 = lives_initial;
 
 display_timer =0;
 
-//contrl movement
-left = 0;
-right = 0;
-up= 0;
-down= 0;
-attack=0;
-attack_held=0;
-jump = 0;
-evade = 0;
-jump_held = 0;
-shoot = 0;
-shoot_held = 0;
+//control movement
+left =			0;
+right =			0;
+up=				0;
+down=			0;
+left_camera =	0;
+right_camera =	0;
+up_camera =		0;
+down_camera =	0;
+attack =		0;
+attack_held =	0;
+jump =			0;
+evade =			0;
+jump_held =		0;
+shoot =			0;
+shoot_held =	0;
+
+
 
 //respawn
 respawn_coldown_max = 3*60;

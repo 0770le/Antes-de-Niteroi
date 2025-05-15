@@ -150,6 +150,7 @@
   "ResourceOrderSettings":[
     {"name":"FMOD","order":1,"path":"extensions/FMOD/FMOD.yy",},
     {"name":"fnt_arial_medium_bold","order":8,"path":"fonts/fnt_arial_medium_bold/fnt_arial_medium_bold.yy",},
+    {"name":"fnt_arial_medium_catalog","order":14,"path":"fonts/fnt_arial_medium_catalog/fnt_arial_medium_catalog.yy",},
     {"name":"fnt_arial_medium_to_large","order":3,"path":"fonts/fnt_arial_medium_to_large/fnt_arial_medium_to_large.yy",},
     {"name":"fnt_arial_medium_to_small","order":4,"path":"fonts/fnt_arial_medium_to_small/fnt_arial_medium_to_small.yy",},
     {"name":"fnt_arial_medium","order":5,"path":"fonts/fnt_arial_medium/fnt_arial_medium.yy",},

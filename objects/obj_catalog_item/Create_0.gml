@@ -63,7 +63,7 @@ locked			= true;
 
 // text
 font			= fnt_arial_medium;
-font_desc		= fnt_arial_medium_to_small;
+font_desc		= fnt_arial_medium_catalog;
 label			= "Label";
 text			= "Placeholder";
 image			= s_catalog_items;

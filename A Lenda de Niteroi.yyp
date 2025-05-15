@@ -178,12 +178,13 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.13.0.190",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"A Lenda de Niteroi",
   "resources":[
     {"id":{"name":"FMOD","path":"extensions/FMOD/FMOD.yy",},},
     {"id":{"name":"fnt_arial_medium_bold","path":"fonts/fnt_arial_medium_bold/fnt_arial_medium_bold.yy",},},
+    {"id":{"name":"fnt_arial_medium_catalog","path":"fonts/fnt_arial_medium_catalog/fnt_arial_medium_catalog.yy",},},
     {"id":{"name":"fnt_arial_medium_to_large","path":"fonts/fnt_arial_medium_to_large/fnt_arial_medium_to_large.yy",},},
     {"id":{"name":"fnt_arial_medium_to_small","path":"fonts/fnt_arial_medium_to_small/fnt_arial_medium_to_small.yy",},},
     {"id":{"name":"fnt_arial_medium","path":"fonts/fnt_arial_medium/fnt_arial_medium.yy",},},

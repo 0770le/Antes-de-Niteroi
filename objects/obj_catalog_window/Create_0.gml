@@ -331,7 +331,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Ilha de Serigipe";
-	_last_item.set_text("Atual Ilha de Villegagnon (RJ), anexada ao Aeroporto Santos Dumont. Na Ilha de Serigipe ficava localizado o Forte Coligny, centro do assentamento colonial francês chamado França Antártica (1555-1560), liderado por Nicolas Durand de Villegagnon (1510-1571). " );
+	_last_item.set_text("Atual Ilha de Villegagnon (RJ), anexada ao Aeroporto Santos Dumont. Na Ilha de Serigipe ficava localizado o Forte Coligny, centro do assentamento colonial francês chamado França Antártica (1555-1560), liderado por Nicolas Durand de Villegagnon (1510-1571)." );
 	_last_item.type = CATALOG_ITEM_TYPE.SEREGIPE;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.REGIONS].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
@@ -400,7 +400,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Maloca";
-	_last_item.set_text("As malocas eram grandes habitações coletivas típicas de diversos povos indígenas do Brasil, incluindo os tupinambás.\nConstruídas com madeira, cipó e palha, abrigavam várias famílias de uma mesma comunidade");
+	_last_item.set_text("As malocas eram grandes habitações coletivas típicas de diversos povos indígenas do Brasil, incluindo os tupinambás.\nConstruídas com madeira, cipó e palha, abrigavam várias famílias de uma mesma comunidade.");
 	_last_item.type = CATALOG_ITEM_TYPE.MALOCA;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
@@ -420,7 +420,7 @@ function create_content()
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));
 	_last_item.label = "Truchement";
-	_last_item.set_text("Palavra francesa que significa 'intermediário' ou 'representante'. Franceses que eram deixados com os indígenas, muitos sendo jovens, para aprender a língua com o objetivo de fazer negócios posteriormente. Eles adotaram completamente os costumes dos tupinambás, costituindo família e participando de todos os costumes e rituais. \nServiam como tradutores para os franceses, mas, quando tinham de escolher, optavam por se rebelar contra os europeus em vez de trair ou abandonar sua taba e seus costumes");
+	_last_item.set_text("Palavra francesa que significa 'intermediário' ou 'representante'. Franceses que eram deixados com os indígenas, muitos sendo jovens, para aprender a língua com o objetivo de fazer negócios posteriormente. Eles adotaram completamente os costumes dos tupinambás, costituindo família e participando de todos os costumes e rituais. \nServiam como tradutores para os franceses, mas, quando tinham de escolher, optavam por se rebelar contra os europeus em vez de trair ou abandonar sua taba e seus costumes.");
 	_last_item.type = CATALOG_ITEM_TYPE.TRUCHEMENT;
 	
 	_last_item = catalog_tabs[CATALOG_TAB.HISTORY].add_item(instance_create_layer(0, 0, LAYER_GUI_CATALOG_BUTTONS, obj_catalog_item));

@@ -21,7 +21,7 @@ if(time > 30*60) {
 }
 
 var _x =  global.cx +  global.cw - 10;
-var _y =  global.cy + 10;
+var _y =  global.cy + 40;
 
 draw_text(_x-100, _y, "0"+string(_m));
 draw_text(_x-80, _y, ":");

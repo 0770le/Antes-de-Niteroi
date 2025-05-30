@@ -57,6 +57,10 @@ credits_title = [
 "Consultoria Histórica",
 "",
 "",
+"Audio Engine",
+"",
+"",
+"",
 "Realização",
 ];
 
@@ -84,6 +88,10 @@ credits_name = [
 "",
 "Diego Nogueira Xavier",
 "",
+"",
+"FMOD Studio",
+"Firelight Technologies",
+"Pty Ltd.",
 "",
 "",
 ];

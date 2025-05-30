@@ -1,5 +1,5 @@
 global.game = self;
-global.debug = true;
+global.debug = false;
 //global.timer = 0;
 
  randomise();

@@ -2,7 +2,9 @@
 
 global.sound_controller.update_position_and_play(FMOD_EVENT.COLLECT_REGISTER, x, y);
 
-show_msg($"{global.i18n.get_message("menu-catalog-new-log-aquired")}: {string(log_title)}",5);
+var _label = global.catalog_window.get_label_by_type(catalog_item_type);
+var _title = global.i18n.get_message(_label);
+show_msg($"{global.i18n.get_message("menu-catalog-new-log-aquired")}: {string(_title)}",5);
 o_game.collectible[collectible_index] = true;
 
 global.catalog_controller.unlock_item(catalog_item_type);

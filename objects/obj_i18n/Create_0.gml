@@ -5,7 +5,7 @@ enum LANGUAGES
 	UNSET, PT_BR, EN_US
 }
 
-enable              = false;
+enable              = true;
 language_default	= LANGUAGES.PT_BR;
 language			= language_default;
 messages			= {};

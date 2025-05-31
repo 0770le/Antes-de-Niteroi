@@ -11,7 +11,8 @@ function player_die_2_state(){
 			o_game.game_over_lose = true;
 		} else {// continue game
 			//restart msg
-			show_msg("Aperte Pular ou atacar para continuar",1);
+			var _message = global.i18n.get_message("push-to-continue");
+			show_msg(_message,1);
 				//get input
 			get_input();
 			if (jump or attack) {

@@ -3,7 +3,8 @@ show_interact_key = true;
 
 if(talk and other.interact) {
 	//show_msg(msgs[min(array_length(msgs)-1, quest_step)], 2);
-	var _text = msgs[min(array_length(msgs)-1, quest_step)];
+	var _message_index = min(array_length(msgs)-1, quest_step);
+	var _text = global.i18n.get_message(msgs[_message_index]);
 	var _text_len = string_length(_text);
 	
 	var _text_x_scale = -1;

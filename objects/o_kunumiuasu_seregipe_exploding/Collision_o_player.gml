@@ -1,6 +1,6 @@
 show_interact_key = true;
 
-var _text = "Vamos sair daqui!";
+var _text = global.i18n.get_message("tip-get-out");
 	
 text_bubble2(id, _text, -1, 4, TEXT_Y_HEIGHT_2l);
 

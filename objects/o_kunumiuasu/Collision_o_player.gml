@@ -2,7 +2,7 @@
 
 show_interact_key = true;
 
-var _text = "Deseja viajar para\n";
+var _text = global.i18n.get_message("tip-travel-to");
 
 switch(room) {
 	case rm_cidade_velha:

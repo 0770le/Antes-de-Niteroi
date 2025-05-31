@@ -43,13 +43,13 @@ if(is_on and global.timer mod 5 == 0) {
 	{
 		previous_captions_state = state;
 		
-		global.deaf_assistant.show_captions("Chuva intensifica");
+		global.deaf_assistant.show_captions("tip-rain-intensifies");
 	}
 	else if (previous_captions_state > state && previous_captions_state - state >= 2)
 	{
 		previous_captions_state = state;
 		
-		global.deaf_assistant.show_captions("Chuva diminui");
+		global.deaf_assistant.show_captions("tip-rain-intensifies");
 	}
 	
 	x_start = global.cx - 50;	

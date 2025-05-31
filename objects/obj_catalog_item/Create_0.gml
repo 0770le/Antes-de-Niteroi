@@ -137,8 +137,6 @@ function set_text(_text = "Placeholder")
 	text = _text;
 	
 	calculate_text_parts();
-	
-	cursor_max = array_length(text_parts) - 1;
 }
 
 function get_line_width()
@@ -165,7 +163,9 @@ function calculate_text_parts()
 	
 	text_parts = [""];
 	
-	var _text_paragraphs = string_split(text, "\n", true);
+	var _text = global.i18n.get_message(text);
+	
+	var _text_paragraphs = string_split(_text, "\n", true);
 	
 	var _part_index = 0;
 	
@@ -187,6 +187,7 @@ function calculate_text_parts()
 		}
 	}
 
+	cursor_max = array_length(text_parts) - 1;
 }
 
 function get_number_of_pages()
@@ -213,7 +214,7 @@ function draw()
 	
 	var _yy = get_sprite_center_y();
 	
-	draw_text(x + 15, _yy, locked ? "???" : label);
+	draw_text(x + 15, _yy, locked ? "???" : global.i18n.get_message(label));
 	
 	if (is_new)
 	{
@@ -259,10 +260,14 @@ function draw()
 	
 	if (locked)
 	{
-		draw_text_ext(_xx, _yy - 2, "Entrada bloqueada.\n\nEncontre o registro para desbloquear.", line_separation, get_line_width());
+		var _message = global.i18n.get_message("catalog-entry-locked");
+		
+		draw_text_ext(_xx, _yy - 2, _message, line_separation, get_line_width());
 	}
 	else 
 	{
+		calculate_text_parts();
+		
 		draw_text_ext(_xx, _yy, text_parts[cursor], line_separation, get_line_width());
 	}
 }

@@ -19,6 +19,6 @@ var ground = layer_get_depth(layer_get_id(LAYER_GROUND));
 var water = layer_get_depth(layer_get_id(LAYER_GROUND));
 
 if(point_distance(1690,910, global.player.x,global.player.y) < 50) {
-	var _text = "Se eu trouxer fogo aqui\no forte cairá!";
+	var _text = global.i18n.get_message("tip-bring-fire");
 	text_bubble2(global.player, _text, 200, 6, TEXT_Y_HEIGHT_2l);
 }

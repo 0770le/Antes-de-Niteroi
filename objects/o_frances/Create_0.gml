@@ -132,7 +132,7 @@ function play_state_update_sounds(_previous_state, _new_state) {
 	switch (_new_state)
 	{
 		case frances_states.SHOOT:
-			global.deaf_assistant.show_captions_pos("Frances atirando", x);
+			global.deaf_assistant.show_captions_pos("deaf-french-attacks", x);
 			
 			break;
 		case frances_states.RELOAD: 

@@ -16,6 +16,6 @@ saved = false;
 saving = false;
 released = false;
 
-msgs = ["Agradeça ao velho Anchieta\ne me encontre na praia"];
+msgs = ["tip-thank-anchieta"];
 text_x_scale = [6];
 text_y_scale = [TEXT_Y_HEIGHT_2l];

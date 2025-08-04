@@ -32,7 +32,8 @@ if(credits) {
 	var i = 0;
 	for(i = 0; i < array_length(credits_name); i++) {
 		draw_set_halign(fa_right);
-		draw_text(_x_title, credits_y + (credits_y_height*i), credits_title[i]);
+		var _title = global.i18n.get_message(credits_title[i]);
+		draw_text(_x_title, credits_y + (credits_y_height*i), _title);
 		draw_set_halign(fa_left);
 		draw_text(_x_name, credits_y + (credits_y_height*i), credits_name[i]);
 	}

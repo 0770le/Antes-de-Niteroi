@@ -16,6 +16,6 @@ saved = false;
 saving = false;
 released = false;
 
-msgs = ["Me encontre na praia\nde Morguja Uasu"];
+msgs = ["tip-find-me-at-morgujauasu-beach"];
 text_x_scale = [5]
 text_y_scale = [TEXT_Y_HEIGHT_2l];

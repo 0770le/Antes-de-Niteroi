@@ -21,7 +21,9 @@ function show_captions_pos(_captions = "Hello, World!", _emitter_x = x)
 	
 	if (_is_enabled) 
 	{
-		_captions = get_captions_with_markers(_captions, _emitter_x);
+		var _message = global.i18n.get_message(_captions);
+		
+		_captions = get_captions_with_markers(_message, _emitter_x);
 	
 		show_captions(_captions);
 	}

@@ -20,17 +20,17 @@ target_rm = rm_cidade_velha;
 target_x = 167;
 target_y = 309;
 
-msgs = ["Araryboîa! Soltai o maracajá\nque está cativo perto da praia.",
+msgs = ["tip-portuguese-step-0",
 		// depois de salvar primeiro kunu
-		"Havemos de botar abaixo o forte dos franceses.\nPassai para Nheteróia e livrai os temiminós remeiros.\nSe não souberes pra onde ir, dize-me.",
+		"tip-portuguese-step-1",
 		//depois de sair da primeira sala
-		"Vai para a ilha de Seregipe!\nA canoa está em Morgujá-uausú.\nSe o canoeiro foi levado, procura-o noutro lugar." ,
+		"tip-portuguese-step-2",
 		//depois de ir pra serigipe
-		"Tens de reaver teu arco.\nAcuda ao canoeiro cativo no forte\ne dali segue para Reri'pe." ,
+		"tip-portuguese-step-3",
 		//depois de pegar o arco
-		"Para poderdes vencer o forte,\ncareces do manto sagrado dos tupinambás;\nele se acha mato adentro em Keryi.",
+		"tip-portuguese-step-4",
 		//depois do manto
-		"É agora que havemos de atacar! Retorna para\nSerigipe e bota abaixo o forte dos adversários!"]
+		"tip-portuguese-step-5"]
 
 text_x_scale = [6.5,10.5,10,7.5,8.5,10];
 text_y_scale = [TEXT_Y_HEIGHT_2l,

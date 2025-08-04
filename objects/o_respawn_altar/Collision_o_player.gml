@@ -5,7 +5,8 @@ if(timer < 20) {
 		saved = true;
 		o_player.update_save();
 	
-		var _text = msgs[min(array_length(msgs)-1, quest_step)];
+		var _message_index = min(array_length(msgs)-1, quest_step);
+		var _text = global.i18n.get_message(msgs[_message_index]);
 		var _text_len = string_length(_text);
 	
 		var _text_x_scale = -1;

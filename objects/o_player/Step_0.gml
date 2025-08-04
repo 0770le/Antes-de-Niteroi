@@ -2,10 +2,6 @@
 
 update_saved_hp();
 
-if(mouse_check_button_pressed(mb_middle)) {
-	instance_create_layer(mouse_x,mouse_y,LAYER_INSTANCES,o_corpse);	
-}
-
 if(on_ground()) {
 	jumpTimer = jumpTimerInitial;
 	if(o_game.has_cloak and on_ground()) {

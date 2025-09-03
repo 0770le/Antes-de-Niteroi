@@ -63,8 +63,20 @@ function draw_controller_buttons2()
 	if (global.i18n.enable)
 	{	
 		var _change_language_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CHANGE_LANGUAGE);
-		draw_text(right - (sprite_get_width(_change_language_sprite)*_scale) - margin_right - 10, bottom - margin_bottom - 36, global.i18n.get_message("menu-main-change-language"));
+		var _change_language_label = global.i18n.get_message("menu-main-change-language");
+		var _change_language_label_x = right - (sprite_get_width(_change_language_sprite)*_scale) - margin_right - 10;
+		var _change_language_label_y = bottom - margin_bottom - 36;
+		var _language_flag_sprite = global.i18n.get_language_flag();
+		
+		draw_text(_change_language_label_x, _change_language_label_y, global.i18n.get_message("menu-main-change-language"));
 		draw_sprite_ext(_change_language_sprite, 0, right - margin_right, bottom - margin_bottom - 36, _scale, _scale, 0, c_white, 1.0);
+		
+		draw_sprite(
+			_language_flag_sprite, 
+			0, 
+			right - margin_right,
+			_change_language_label_y - (sprite_get_height(_language_flag_sprite)*_scale/2)
+		);
 	}
 		
 	var _confirm_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CONFIRM);

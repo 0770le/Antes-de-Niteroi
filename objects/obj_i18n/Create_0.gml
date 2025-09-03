@@ -84,6 +84,18 @@ function get_next_language()
 	}
 }
 
+function get_language_flag()
+{
+	switch (language)
+	{
+		case LANGUAGES.EN_US:
+			return spr_flag_gb_high_res;
+		case LANGUAGES.PT_BR:
+		default:
+			return spr_flag_br_high_res;
+	}
+}
+
 #endregion
 
 #region private

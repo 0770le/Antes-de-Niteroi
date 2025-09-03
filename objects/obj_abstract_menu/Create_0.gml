@@ -185,9 +185,19 @@ function draw_controller_buttons()
 		if (global.i18n.enable)
 		{
 			var _change_language_sprite = global.input_manager.get_menu_action_sprite(INPUT_MENU_ACTION.CHANGE_LANGUAGE);
+			var _change_language_label = global.i18n.get_message("menu-main-change-language");
+			var _change_language_label_x = left + (sprite_get_width(_toggle_sprite)*_scale) + margin_left;
+			var _language_flag_sprite = global.i18n.get_language_flag();
 		
-			draw_text(left + (sprite_get_width(_toggle_sprite)*_scale) + margin_left, bottom - margin_bottom - 1, global.i18n.get_message("menu-main-change-language"));
+			draw_text(_change_language_label_x, bottom - margin_bottom - 1, _change_language_label);
 			draw_sprite_ext(_change_language_sprite, 0, left + margin_left + 20 - _scale, bottom - margin_bottom - 1, _scale, _scale, 0, c_white, 1.0);
+			
+			draw_sprite(
+				_language_flag_sprite, 
+				0, 
+				left + margin_left + sprite_get_width(_language_flag_sprite) - 8, 
+				bottom - margin_bottom - 2 - (sprite_get_height(_language_flag_sprite)*_scale/2)
+			);
 		}
 	}
 }

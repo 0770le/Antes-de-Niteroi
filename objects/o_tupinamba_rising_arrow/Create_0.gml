@@ -10,6 +10,8 @@ knockback_distance = 0.1;
 dir = 0;
 damage = 1;
 
+on_fire=false;
+
 
 min_spd = 0;
 max_spd =7.5;

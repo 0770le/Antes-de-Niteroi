@@ -18,3 +18,7 @@ target_y = 309;
 show_interact_key = false;
 
 interact = true;
+
+text = global.i18n.get_message("tip-travel-to");
+
+saved = false;

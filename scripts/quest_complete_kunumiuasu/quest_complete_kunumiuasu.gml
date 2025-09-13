@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function quest_complete_kunumiuasu(){
-	if(instance_number(o_kunumiuasu) <= 0) {
-		instance_create_layer(3630,390,LAYER_INSTANCES,o_kunumiuasu);
+	if(instance_number(o_kunumiuasu_cidade_velha) <= 0) {
+		instance_create_layer(3630,390,LAYER_INSTANCES,o_kunumiuasu_cidade_velha);
 	}
 	o_game.quest_saved_kunumiuasu = true;
 	

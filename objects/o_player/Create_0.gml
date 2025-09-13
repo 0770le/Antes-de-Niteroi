@@ -88,6 +88,8 @@ hp_losing = hp;
 lives_initial = 10;
 lives = lives_initial;
 
+interact_key_array = [];
+
 // ********* Atenção ! ********* 
 //
 // coloquei essa variavel lives2 porque o GM nao estava deixando 

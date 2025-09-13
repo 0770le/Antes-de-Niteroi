@@ -29,7 +29,11 @@ gamepad_keymap = // INPUT_IN_GAME_ACTION
 	gp_face2,
 	gp_face3,
 	gp_face4,
-	gp_shoulderr
+	gp_shoulderr,
+	gp_padu,
+	gp_padl,
+	gp_padd,
+	gp_padr,
 ]
 
 gamepad_keymap_alt = // INPUT_IN_GAME_ACTION
@@ -85,6 +89,7 @@ gamepad_button_sprites = // GM Gamepad Input https://manual.gamemaker.io/monthly
 		spr_gamepad_choose, // gp_stickr
 		
 		spr_gamepad_xbox_dup, // gp_dup
+		spr_gamepad_xbox_ddown, // gp_dup
 		
 	],
 	[
@@ -103,6 +108,7 @@ gamepad_button_sprites = // GM Gamepad Input https://manual.gamemaker.io/monthly
 		spr_gamepad_choose, 
 		
 		spr_gamepad_playstation_dup,
+		spr_gamepad_playstation_ddown,
 	],
 	[
 		spr_gamepad_switch_b,
@@ -120,6 +126,7 @@ gamepad_button_sprites = // GM Gamepad Input https://manual.gamemaker.io/monthly
 		spr_gamepad_choose, 
 		
 		spr_gamepad_switch_dup,
+		spr_gamepad_switch_ddown,
 	]
 ]
 

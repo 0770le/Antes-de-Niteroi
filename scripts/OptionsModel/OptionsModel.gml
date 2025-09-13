@@ -22,7 +22,11 @@ function OptionsModel (
 			gp_face2,
 			gp_face3,
 			gp_face4,
-			gp_shoulderr
+			gp_shoulderr,
+			gp_padu,
+			gp_padl,
+			gp_padd,
+			gp_padr,
 		],
 		keyboard_keymap: 
 		[

@@ -96,7 +96,11 @@ function collision(_remove_decimal = true) {
 
 	//collision found
 	if (!death_protection and ((vt1 == DEATH) or (vt2 == DEATH)) or (y > room_height)) {
-		hp = 0;
+		if(object_index == o_player) {
+			process_damage(5);
+		} else {
+			hp = 0;
+		}
 	} else if ((vt1 != VOID and vt1 != DEATH) and (((vsp > 0 or vt1 != PLATAFORM)) and vt3 != PLATAFORM) or (vt1 == SOLID and vt3 == PLATAFORM)) or
 	   ((vt2 != VOID and vt2 != DEATH) and (((vsp > 0 or vt2 != PLATAFORM)) and vt4 != PLATAFORM) or  (vt2 == SOLID and vt4 == PLATAFORM)) {
 		

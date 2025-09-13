@@ -21,6 +21,27 @@ if (hurt == true) {
 	draw_sprite_ext(sprite_index, image_index, x,y, image_xscale *scale_x, image_yscale * scale_y, image_angle, c_white, image_alpha)
 }
 
+if(array_length(interact_key_array) > 0 ) {
+	var _scale = global.input_manager.get_input_sprite_scale_alt();
+	var _off = 0;
+	for (var i = 0; i < array_length(interact_key_array); i++) {
+		var key = interact_key_array[i]
+		var _sprite = global.input_manager.get_input_in_game_action_sprite(key);
+	    draw_sprite_ext(
+			_sprite,
+			0,
+			x - 10 + _off,
+			bbox_top - 20,
+			_scale,
+			_scale,
+			0,
+			c_white,
+			1
+		);
+		_off += (sprite_get_width(global.input_manager.get_input_in_game_action_sprite(interact_key_array[i])) * _scale) + 5;
+	}
+}
+
 
 //draw_text(x,y, hp);
 

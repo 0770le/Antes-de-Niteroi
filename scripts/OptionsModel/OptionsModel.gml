@@ -19,8 +19,8 @@ function OptionsModel (
 		gamepad_keymap: 
 		[
 			gp_face1,
-			gp_face2,
 			gp_face3,
+			gp_face2,
 			gp_face4,
 			gp_shoulderr,
 			gp_padu,

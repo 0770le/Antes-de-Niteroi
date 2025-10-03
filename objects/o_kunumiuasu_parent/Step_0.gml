@@ -16,6 +16,5 @@ if(!saved and distance_to_object(o_player) < 100) {
 	var _text_len = string_length(_text);
 	
 	text_bubble2(id, _text, _text_len * 10, 3.5, TEXT_Y_HEIGHT_1l);
+
 }
-
-

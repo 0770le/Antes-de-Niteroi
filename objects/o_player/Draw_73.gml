@@ -19,6 +19,13 @@ draw_set_alpha(1);
 draw_sprite_stretched(s_HUD_hp_bar_loss,0,_x,_y,_bar_width,_bar_height);
 
 
+if(hp_lost_fade > 0) {
+	draw_set_alpha(hp_lost_fade);
+	_bar_width = (sprite_get_width(s_HUD_hp_bar_lost)/2) * hp_lost;
+	draw_sprite_stretched(s_HUD_hp_bar_lost,0,_x,_y,_bar_width,_bar_height);
+	draw_set_alpha(1);
+}
+
 _bar_width = (sprite_get_width(s_HUD_hp_bar)/2) * hp;
 draw_sprite_stretched(s_HUD_hp_bar,0,_x,_y,_bar_width,_bar_height);
 

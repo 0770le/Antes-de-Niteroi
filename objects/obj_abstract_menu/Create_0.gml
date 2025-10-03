@@ -19,7 +19,7 @@ root_menu			= undefined;
 selected_item		= undefined;
 has_new_items		= false;
 
-game_version		= "v1.0.0";
+game_version		= "v1.0.1";
 
 starting_x			= get_sprite_center_x();
 starting_y			= 300;
@@ -28,6 +28,7 @@ text_color			= c_white;
 text_hover_color	= c_white;
 items_margin		= 70;
 should_draw_parent	= true;
+draw_shadow = false;
 
 function draw_parent()
 {
@@ -104,6 +105,11 @@ function draw_item(_menu_item = new MenuItem(), _index = 0, _dual_column = false
 	}
 	else if (_menu_item.type != MENU_TYPE.CREDITS)
 	{
+		if(draw_shadow) {
+			draw_set_color(c_black);
+			draw_text(_xx, _yy+3, global.i18n.get_message(_menu_item.title));
+			draw_set_color(_menu_item == selected_item ? text_hover_color : text_color);
+		}
 		draw_text(_xx, _yy, global.i18n.get_message(_menu_item.title));
 	}	
 	
@@ -293,7 +299,7 @@ function on_input_menu(_input = new MenuInputModel())
 				
 				global.logger.debug($"{room_get_name(room)}")
 				
-				if (room_get_name(room) != "rm_main_menu") global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
+				if (room_get_name(room) != "rm_main_menu_2") global.sound_controller.play(FMOD_EVENT.MENU_CONFIRM_RETURN);
 			
 				break;
 		}

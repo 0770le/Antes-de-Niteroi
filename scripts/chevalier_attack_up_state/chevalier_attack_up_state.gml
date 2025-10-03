@@ -11,6 +11,7 @@ function chevalier_attack_up_state(){
 		var inst = instance_create_layer(x+(facing * 30),y-120, LAYER_INSTANCES, o_enemy_attack_hitbox);
 		inst.image_xscale = facing;	
 		inst.image_yscale = 1;
+		inst.damage = 2;
 		
 		runned_once = true;
 		alarm[ONCE] = 10;

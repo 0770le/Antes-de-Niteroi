@@ -83,7 +83,7 @@ if(end_credits) {
 }
 
 if(end_credits_alpha > 1.5) {
-	room_goto(rm_main_menu);
+	room_goto(rm_main_menu_2);
 }
 
 #endregion

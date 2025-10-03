@@ -28,7 +28,7 @@ arrow_drop_chance = 0.3;
 //attack
 attack_range = 30;//nao muda a hitbox
 collision_dmg = false;
-damage = 1;
+damage = 2;
 knockback_distance = 20;
 can_attack = true;
 attack_delay = room_speed *2;

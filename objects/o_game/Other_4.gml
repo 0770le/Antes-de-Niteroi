@@ -8,7 +8,7 @@ global.tile_size = TILE_SIZE;
 var _control_rooms = [
 	rm_init,
 	rm_menu,
-	rm_main_menu,
+	rm_main_menu_2,
 	rm_paulo_gustavo,
 	rm_ending,
 	rm_studio_logo,

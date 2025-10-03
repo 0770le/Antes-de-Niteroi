@@ -1,7 +1,7 @@
 if(room != rm_paulo_gustavo and room != rm_studio_logo) {
 	stop_ambience_sounds();
 	
-	if (room == rm_main_menu or room == rm_ending)
+	if (room == rm_main_menu_2 or room == rm_ending)
 	{
 		stop_all();
 	}

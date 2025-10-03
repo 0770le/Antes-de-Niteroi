@@ -2,6 +2,14 @@
 
 update_saved_hp();
 
+if(hp_lost_fade > 0) {
+	hp_lost_fade -= 0.03;
+}
+
+if(!hurt and hp_lost_fade <= 0) {
+	hp_lost = hp;
+}
+
 if(on_ground()) {
 	jumpTimer = jumpTimerInitial;
 	if(o_game.has_cloak and on_ground()) {
@@ -65,8 +73,8 @@ if(global.debug) {
 	if(keyboard_check_pressed(vk_f5) and room != rm_morguja_uasu) {
 		global.fader.to_room(rm_morguja_uasu, 6900, 750);
 	}
-	if(keyboard_check_pressed(vk_f6) and room != rm_main_menu) {
-		global.fader.to_room(rm_main_menu);	
+	if(keyboard_check_pressed(vk_f6) and room != rm_main_menu_2) {
+		global.fader.to_room(rm_main_menu_2);	
 	}
 	if(keyboard_check_pressed(vk_f7) and room != rm_tests_augusto) {
 		global.fader.to_room(rm_tests_augusto, 200, 200);	

@@ -2,6 +2,9 @@ global.player = self;
 
 o_camera.y_offset = -80;
 
+hp_lost = 0;
+hp_lost_fade = 0;
+
 jumpTimerInitial = 15;
 jumpTimer = 0;
 
@@ -83,6 +86,7 @@ hurt_time = room_speed*1.0;
 hp = o_game.max_hp;
 //max_hp = hp;
 hp_losing = hp;
+hp_lost = hp;
 
 //lives
 lives_initial = 10;

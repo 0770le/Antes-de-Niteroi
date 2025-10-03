@@ -127,7 +127,7 @@ function get_sound_stage(_room = rm_cidade_velha)
 {
 	switch(_room)
 	{
-		case rm_main_menu:
+		case rm_main_menu_2:
 			return SOUND_STAGE_MAIN_MENU;
 		case rm_seregipe:
 			return SOUND_STAGE_SEREGIPE;

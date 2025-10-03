@@ -1,5 +1,5 @@
 /// @desc init camera
-if(room != rm_paulo_gustavo and room != rm_studio_logo and room != rm_ending) {
+if(room != rm_paulo_gustavo and room != rm_studio_logo and room != rm_main_menu_2 and room != rm_ending) {
 	create_camera();
 	view_camera[0] = camera;
 	view_enabled = true;

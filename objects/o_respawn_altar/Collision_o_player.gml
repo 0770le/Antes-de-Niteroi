@@ -23,3 +23,15 @@ if(timer < 20) {
 		quest = false;
 	}
 }
+
+if(other.hp <  o_game.max_hp) {
+	other.hp = o_game.max_hp;
+	global.sound_controller.update_position_and_play(FMOD_EVENT.COLLECT_LIFE_FULL, x, y);
+	global.options_controller.set_option(OPTIONS_PLAYER_HP, global.player.hp);
+	
+	repeat(o_game.gem_sparks) {
+		var inst = instance_create_depth(x,y, depth, o_spark);
+		inst.col_head = c_white;
+		inst.col_tail = c_green;
+	}
+}

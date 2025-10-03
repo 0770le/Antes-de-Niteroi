@@ -50,7 +50,7 @@ arrow_drop_chance = 0.3;
 //actions
 //attack
 collision_dmg = false;
-damage = 1;
+damage = 2;
 knockback_distance = 5;
 can_attack = true;
 attack_delay = room_speed;

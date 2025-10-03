@@ -21,7 +21,7 @@ function player_die_state(){
 		}
 		else 
 		{
-			global.fader.to_room(rm_main_menu);
+			global.fader.to_room(rm_main_menu_2);
 		}	
 		
 		respawn_coldown--;

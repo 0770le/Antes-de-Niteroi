@@ -201,7 +201,7 @@ function init()
 	{ 
 		//global.initializer.focus(noone);
 		
-		global.fader.to_room(rm_main_menu);
+		global.fader.to_room(rm_main_menu_2);
 	}));
 	
 	selected_item = root_menu.children[0];

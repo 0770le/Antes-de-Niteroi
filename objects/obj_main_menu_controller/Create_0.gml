@@ -2,13 +2,14 @@ event_inherited();
 
 // settings
 
-starting_x		= 140;
-starting_y		= 168;
+starting_x		= 123;
+starting_y		= 228;
 items_margin    = 25;
 button_sprite   = spr_menu_button_transparent;
 text_color		= c_white;
-text_hover_color= make_color_rgb(172, 50, 50);
+text_hover_color= make_color_rgb(217, 87, 99);
 font_description= fnt_arial_very_large;
+draw_shadow = true;
 
 // controls
 

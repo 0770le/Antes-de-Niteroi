@@ -1,5 +1,7 @@
 
 function player_hurting_state(){
+	
+	hp_lost_fade = 1;
 
 	//caculate movement
 	calc_entity_movement()

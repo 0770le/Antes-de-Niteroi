@@ -4,7 +4,7 @@ switch(room) {
 	case rm_seregipe:
 		text+= "Morguja Uasu?";
 		target_rm = rm_morguja_uasu;
-		target_x = 4460;
+		target_x = 4360;
 		target_y = 1246;
 		break;
 	case rm_morguja_uasu:

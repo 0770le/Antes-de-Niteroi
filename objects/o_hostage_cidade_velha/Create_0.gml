@@ -17,5 +17,5 @@ saving = false;
 released = false;
 
 msgs = ["tip-thank-anchieta"];
-text_x_scale = [6];
+text_x_scale = [6.8];
 text_y_scale = [TEXT_Y_HEIGHT_2l];

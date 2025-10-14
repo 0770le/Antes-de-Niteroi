@@ -35,10 +35,10 @@ function struck_by_arrow(_dir = facing, _on_fire){
 					hsp = _dir * knockback_dis;
 					//set hurt time
 					state= enemy_states.HURTING;
+					image_index = 0;
 				}
 				
 				o_sound_controller.update_position_and_play(hurt_sound_event,x,y);
-				image_index = 0;
 				//screen shake
 				scr_screen_shake(.125, -1);
 				//audio_play_sound(snd_player_hit, 20, false, global.volume);

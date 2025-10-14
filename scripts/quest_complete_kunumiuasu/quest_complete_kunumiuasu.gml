@@ -19,6 +19,7 @@ function quest_complete_kunumiuasu(){
 	o_hostage_cidade_velha.released = true;
 	o_hostage_cidade_velha.saved = true;
 	o_hostage_cidade_velha.sprite_index = s_poste_barqueiro;
+	o_hostage_cidade_velha.talk = false;
 	
 	instance_destroy(o_tupinamba_melee, false);
 	
